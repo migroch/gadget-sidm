@@ -253,6 +253,7 @@ extern struct global_data_all_processes
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK 
   double InteractionCrossSection;  /*!< Cross Section of the self interacting dark matter */
+  long unsigned Nself_interactions;     /*!< Total number of self interactions */
 #endif
 
   long long TotNumPart;		/*!< total particle numbers (global value) */

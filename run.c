@@ -373,6 +373,25 @@ void every_timestep_stuff(void)
 
   if(ThisTask == 0)
     {
+#ifdef COMPUTE_SELFINTERACTION_FORDARK 
+      if(All.ComovingIntegrationOn)
+	{
+	  z = 1.0 / (All.Time) - 1;
+	  fprintf(FdInfo, "\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %g, Dloga: %g, NselfInteractions: %lu\n", 
+		  All.NumCurrentTiStep, All.Time, z, All.TimeStep,
+		  log(All.Time) - log(All.Time - All.TimeStep),  All.Nself_interactions);
+	  printf("\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %g, Dloga: %g, NselfInteractions: %lu\n", All.NumCurrentTiStep,
+		 All.Time, z, All.TimeStep, log(All.Time) - log(All.Time - All.TimeStep), All.Nself_interactions);
+	  fflush(FdInfo);
+	}
+      else
+	{
+	  fprintf(FdInfo, "\nBegin Step %d, Time: %g, Systemstep: %g, NselfInteractions: %lu\n", All.NumCurrentTiStep, All.Time,
+		  All.TimeStep, All.Nself_interactions);
+	  printf("\nBegin Step %d, Time: %g, Systemstep: %g, NselfInteractions: %lu\n", All.NumCurrentTiStep, All.Time, All.TimeStep, All.Nself_interactions);
+	  fflush(FdInfo);
+	}
+#else       
       if(All.ComovingIntegrationOn)
 	{
 	  z = 1.0 / (All.Time) - 1;
@@ -390,7 +409,7 @@ void every_timestep_stuff(void)
 	  printf("\nBegin Step %d, Time: %g, Systemstep: %g\n", All.NumCurrentTiStep, All.Time, All.TimeStep);
 	  fflush(FdInfo);
 	}
-
+#endif
       fprintf(FdCPU, "Step %d, Time: %g, CPUs: %d\n", All.NumCurrentTiStep, All.Time, NTask);
 
       fprintf(FdCPU,

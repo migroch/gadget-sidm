@@ -81,7 +81,7 @@ OPT    += -DCOMPUTE_SELFINTERACTION_FORDARK
 
 CC       =  mpicc               # sets the C-compiler
 OPTIMIZE =  -O3 -Wall -g        # sets optimization and warning flags
-MPICHLIB =  -lmpich
+MPICHLIB =  -lmpi
 HDF5LIB  =  -lhdf5 -lz
 
 #--------------------------------------- Select target computer

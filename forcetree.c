@@ -1415,7 +1415,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
 	if (no < All.MaxPart)
 	  {
-	    if (ptype == 1 && P[no].Type == 1)
+	    if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
 	      {
 	        if (r < 2.0 * h)
 	          {
@@ -1437,7 +1437,9 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
       ninteractions++;
     }
   
-
+#ifdef COMPUTE_SELFINTERACTION_FORDARK 
+  All.Nself_interactions += si_count;
+#endif
 
   /* store result at the proper place */
   if(mode == 0)
@@ -1835,7 +1837,7 @@ int force_treeevaluate_shortrange(int target, int mode)
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
 	  if(no < All.MaxPart)
 	    {
-	      if(ptype == 1 && P[no].Type == 1)
+	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
 		{
 		  if(r < 2.0 * h)
 		    {
@@ -1858,6 +1860,9 @@ int force_treeevaluate_shortrange(int target, int mode)
 	}
     }
 
+#ifdef COMPUTE_SELFINTERACTION_FORDARK 
+  All.Nself_interactions += si_count;
+#endif
 
   /* store result at the proper place */
 
@@ -2852,7 +2857,7 @@ void force_treeallocate(int maxnodes, int maxpart)
       first_flag = 1;
 
       if(ThisTask == 0)
-	printf("\nAllocated %g MByte for BH-tree. %d\n\n", allbytes / (1024.0 * 1024.0),
+	printf("\nAllocated %g MByte for BH-tree. %lu\n\n", allbytes / (1024.0 * 1024.0),
 	       sizeof(struct NODE) + sizeof(struct extNODE));
 
       tabfac = NTAB / 3.0;
