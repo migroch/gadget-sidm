@@ -1,0 +1,713 @@
+\hypertarget{run_8c}{
+\section{run.c File Reference}
+\label{run_8c}\index{run.c@{run.c}}
+}
+
+
+iterates over timesteps, main loop  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$mpi.h$>$}\par
+{\ttfamily \#include $<$unistd.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for run.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{run_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2}{run} (void)
+\item 
+void \hyperlink{run_8c_ad52604af910b3e1677718d863ab09391}{find\_\-next\_\-sync\_\-point\_\-and\_\-drift} (void)
+\item 
+int \hyperlink{run_8c_a00802290d71ce2a6de3f121de55ddd20}{find\_\-next\_\-outputtime} (int ti\_\-curr)
+\item 
+void \hyperlink{run_8c_a7e26319b203616f2c85b5fd6f2ade85d}{every\_\-timestep\_\-stuff} (void)
+\item 
+void \hyperlink{run_8c_ae903322da17c6875ab606b032b918099}{energy\_\-statistics} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+iterates over timesteps, main loop 
+
+Definition in file \hyperlink{run_8c_source}{run.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{run_8c_ae903322da17c6875ab606b032b918099}{
+\index{run.c@{run.c}!energy\_\-statistics@{energy\_\-statistics}}
+\index{energy\_\-statistics@{energy\_\-statistics}!run.c@{run.c}}
+\subsubsection[{energy\_\-statistics}]{\setlength{\rightskip}{0pt plus 5cm}void energy\_\-statistics (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{run_8c_ae903322da17c6875ab606b032b918099}
+This routine first calls a computation of various global quantities of the particle distribution, and then writes some statistics about the energies in the various particle components to the file FdEnergy. 
+
+Definition at line 413 of file run.c.
+
+
+
+References All, compute\_\-global\_\-quantities\_\-of\_\-system(), state\_\-of\_\-system::EnergyInt, state\_\-of\_\-system::EnergyIntComp, state\_\-of\_\-system::EnergyKin, state\_\-of\_\-system::EnergyKinComp, state\_\-of\_\-system::EnergyPot, state\_\-of\_\-system::EnergyPotComp, FdEnergy, state\_\-of\_\-system::MassComp, SysState, ThisTask, and global\_\-data\_\-all\_\-processes::Time.
+
+
+
+Referenced by run().
+
+
+
+
+\begin{DoxyCode}
+{
+  compute_global_quantities_of_system();
+
+  if(ThisTask == 0)
+    {
+      fprintf(FdEnergy,
+              "%g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g 
+      %g %g %g %g %g %g\n",
+              All.Time, SysState.EnergyInt, SysState.EnergyPot, SysState.
+      EnergyKin, SysState.EnergyIntComp[0],
+              SysState.EnergyPotComp[0], SysState.EnergyKinComp[0], SysState.
+      EnergyIntComp[1],
+              SysState.EnergyPotComp[1], SysState.EnergyKinComp[1], SysState.
+      EnergyIntComp[2],
+              SysState.EnergyPotComp[2], SysState.EnergyKinComp[2], SysState.
+      EnergyIntComp[3],
+              SysState.EnergyPotComp[3], SysState.EnergyKinComp[3], SysState.
+      EnergyIntComp[4],
+              SysState.EnergyPotComp[4], SysState.EnergyKinComp[4], SysState.
+      EnergyIntComp[5],
+              SysState.EnergyPotComp[5], SysState.EnergyKinComp[5], SysState.
+      MassComp[0],
+              SysState.MassComp[1], SysState.MassComp[2], SysState.MassComp[3], 
+      SysState.MassComp[4],
+              SysState.MassComp[5]);
+
+      fflush(FdEnergy);
+    }
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{run_8c_ae903322da17c6875ab606b032b918099_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{run_8c_ae903322da17c6875ab606b032b918099_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{run_8c_a7e26319b203616f2c85b5fd6f2ade85d}{
+\index{run.c@{run.c}!every\_\-timestep\_\-stuff@{every\_\-timestep\_\-stuff}}
+\index{every\_\-timestep\_\-stuff@{every\_\-timestep\_\-stuff}!run.c@{run.c}}
+\subsubsection[{every\_\-timestep\_\-stuff}]{\setlength{\rightskip}{0pt plus 5cm}void every\_\-timestep\_\-stuff (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{run_8c_a7e26319b203616f2c85b5fd6f2ade85d}
+This routine writes one line for every timestep to two log-\/files. In FdInfo, we just list the timesteps that have been done, while in FdCPU the cumulative cpu-\/time consumption in various parts of the code is stored. 
+
+Definition at line 370 of file run.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CPU\_\-CommSum, global\_\-data\_\-all\_\-processes::CPU\_\-Domain, global\_\-data\_\-all\_\-processes::CPU\_\-EnsureNgb, global\_\-data\_\-all\_\-processes::CPU\_\-Gravity, global\_\-data\_\-all\_\-processes::CPU\_\-HydCommSumm, global\_\-data\_\-all\_\-processes::CPU\_\-HydCompWalk, global\_\-data\_\-all\_\-processes::CPU\_\-HydImbalance, global\_\-data\_\-all\_\-processes::CPU\_\-Hydro, global\_\-data\_\-all\_\-processes::CPU\_\-Imbalance, global\_\-data\_\-all\_\-processes::CPU\_\-Peano, global\_\-data\_\-all\_\-processes::CPU\_\-PM, global\_\-data\_\-all\_\-processes::CPU\_\-Potential, global\_\-data\_\-all\_\-processes::CPU\_\-Predict, global\_\-data\_\-all\_\-processes::CPU\_\-Snapshot, global\_\-data\_\-all\_\-processes::CPU\_\-TimeLine, global\_\-data\_\-all\_\-processes::CPU\_\-Total, global\_\-data\_\-all\_\-processes::CPU\_\-TreeConstruction, global\_\-data\_\-all\_\-processes::CPU\_\-TreeWalk, FdCPU, FdInfo, NTask, global\_\-data\_\-all\_\-processes::NumCurrentTiStep, set\_\-random\_\-numbers(), ThisTask, global\_\-data\_\-all\_\-processes::Time, and global\_\-data\_\-all\_\-processes::TimeStep.
+
+
+
+Referenced by run().
+
+
+
+
+\begin{DoxyCode}
+{
+  double z;
+
+  if(ThisTask == 0)
+    {
+      if(All.ComovingIntegrationOn)
+        {
+          z = 1.0 / (All.Time) - 1;
+          fprintf(FdInfo, "\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %
+      g, Dloga: %g\n",
+                  All.NumCurrentTiStep, All.Time, z, All.TimeStep,
+                  log(All.Time) - log(All.Time - All.TimeStep));
+          printf("\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %g, Dloga:
+       %g\n", All.NumCurrentTiStep,
+                 All.Time, z, All.TimeStep, log(All.Time) - log(All.Time - All.
+      TimeStep));
+          fflush(FdInfo);
+        }
+      else
+        {
+          fprintf(FdInfo, "\nBegin Step %d, Time: %g, Systemstep: %g\n", All.
+      NumCurrentTiStep, All.Time,
+                  All.TimeStep);
+          printf("\nBegin Step %d, Time: %g, Systemstep: %g\n", All.
+      NumCurrentTiStep, All.Time, All.TimeStep);
+          fflush(FdInfo);
+        }
+
+      fprintf(FdCPU, "Step %d, Time: %g, CPUs: %d\n", All.NumCurrentTiStep, All.
+      Time, NTask);
+
+      fprintf(FdCPU,
+              "%10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10
+      .2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f\n",
+              All.CPU_Total, All.CPU_Gravity, All.CPU_Hydro, All.CPU_Domain, All.
+      CPU_Potential,
+              All.CPU_Predict, All.CPU_TimeLine, All.CPU_Snapshot, All.
+      CPU_TreeWalk, All.CPU_TreeConstruction,
+              All.CPU_CommSum, All.CPU_Imbalance, All.CPU_HydCompWalk, All.
+      CPU_HydCommSumm,
+              All.CPU_HydImbalance, All.CPU_EnsureNgb, All.CPU_PM, All.CPU_Peano)
+      ;
+      fflush(FdCPU);
+    }
+
+  set_random_numbers();
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=356pt]{run_8c_a7e26319b203616f2c85b5fd6f2ade85d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{run_8c_a7e26319b203616f2c85b5fd6f2ade85d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{run_8c_a00802290d71ce2a6de3f121de55ddd20}{
+\index{run.c@{run.c}!find\_\-next\_\-outputtime@{find\_\-next\_\-outputtime}}
+\index{find\_\-next\_\-outputtime@{find\_\-next\_\-outputtime}!run.c@{run.c}}
+\subsubsection[{find\_\-next\_\-outputtime}]{\setlength{\rightskip}{0pt plus 5cm}int find\_\-next\_\-outputtime (
+\begin{DoxyParamCaption}
+\item[{int}]{ ti\_\-curr}
+\end{DoxyParamCaption}
+)}}
+\label{run_8c_a00802290d71ce2a6de3f121de55ddd20}
+this function returns the next output time that is equal or larger to ti\_\-curr 
+
+$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
+
+
+
+Definition at line 244 of file run.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, endrun(), global\_\-data\_\-all\_\-processes::OutputListLength, global\_\-data\_\-all\_\-processes::OutputListOn, global\_\-data\_\-all\_\-processes::OutputListTimes, ThisTask, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, global\_\-data\_\-all\_\-processes::TimeBegin, global\_\-data\_\-all\_\-processes::TimeBetSnapshot, global\_\-data\_\-all\_\-processes::TimeMax, and global\_\-data\_\-all\_\-processes::TimeOfFirstSnapshot.
+
+
+
+Referenced by begrun(), and find\_\-next\_\-sync\_\-point\_\-and\_\-drift().
+
+
+
+
+\begin{DoxyCode}
+{
+  int i, ti, ti_next, iter = 0;
+  double next, time;
+
+  ti_next = -1;
+
+  if(All.OutputListOn)
+    {
+      for(i = 0; i < All.OutputListLength; i++)
+        {
+          time = All.OutputListTimes[i];
+
+          if(time >= All.TimeBegin && time <= All.TimeMax)
+            {
+              if(All.ComovingIntegrationOn)
+                ti = log(time / All.TimeBegin) / All.Timebase_interval;
+              else
+                ti = (time - All.TimeBegin) / All.Timebase_interval;
+
+              if(ti >= ti_curr)
+                {
+                  if(ti_next == -1)
+                    ti_next = ti;
+
+                  if(ti_next > ti)
+                    ti_next = ti;
+                }
+            }
+        }
+    }
+  else
+    {
+      if(All.ComovingIntegrationOn)
+        {
+          if(All.TimeBetSnapshot <= 1.0)
+            {
+              printf("TimeBetSnapshot > 1.0 required for your simulation.\n");
+              endrun(13123);
+            }
+        }
+      else
+        {
+          if(All.TimeBetSnapshot <= 0.0)
+            {
+              printf("TimeBetSnapshot > 0.0 required for your simulation.\n");
+              endrun(13123);
+            }
+        }
+
+      time = All.TimeOfFirstSnapshot;
+
+      iter = 0;
+
+      while(time < All.TimeBegin)
+        {
+          if(All.ComovingIntegrationOn)
+            time *= All.TimeBetSnapshot;
+          else
+            time += All.TimeBetSnapshot;
+
+          iter++;
+
+          if(iter > 1000000)
+            {
+              printf("Can't determine next output time.\n");
+              endrun(110);
+            }
+        }
+
+      while(time <= All.TimeMax)
+        {
+          if(All.ComovingIntegrationOn)
+            ti = log(time / All.TimeBegin) / All.Timebase_interval;
+          else
+            ti = (time - All.TimeBegin) / All.Timebase_interval;
+
+          if(ti >= ti_curr)
+            {
+              ti_next = ti;
+              break;
+            }
+
+          if(All.ComovingIntegrationOn)
+            time *= All.TimeBetSnapshot;
+          else
+            time += All.TimeBetSnapshot;
+
+          iter++;
+
+          if(iter > 1000000)
+            {
+              printf("Can't determine next output time.\n");
+              endrun(111);
+            }
+        }
+    }
+
+  if(ti_next == -1)
+    {
+      ti_next = 2 * TIMEBASE;   /* this will prevent any further output */
+
+      if(ThisTask == 0)
+        printf("\nThere is no valid time for a further snapshot file.\n");
+    }
+  else
+    {
+      if(All.ComovingIntegrationOn)
+        next = All.TimeBegin * exp(ti_next * All.Timebase_interval);
+      else
+        next = All.TimeBegin + ti_next * All.Timebase_interval;
+
+      if(ThisTask == 0)
+        printf("\nSetting next time for snapshot file to Time_next= %g\n\n", next
+      );
+    }
+
+  return ti_next;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{run_8c_a00802290d71ce2a6de3f121de55ddd20_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{run_8c_a00802290d71ce2a6de3f121de55ddd20_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{run_8c_ad52604af910b3e1677718d863ab09391}{
+\index{run.c@{run.c}!find\_\-next\_\-sync\_\-point\_\-and\_\-drift@{find\_\-next\_\-sync\_\-point\_\-and\_\-drift}}
+\index{find\_\-next\_\-sync\_\-point\_\-and\_\-drift@{find\_\-next\_\-sync\_\-point\_\-and\_\-drift}!run.c@{run.c}}
+\subsubsection[{find\_\-next\_\-sync\_\-point\_\-and\_\-drift}]{\setlength{\rightskip}{0pt plus 5cm}void find\_\-next\_\-sync\_\-point\_\-and\_\-drift (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{run_8c_ad52604af910b3e1677718d863ab09391}
+This function finds the next synchronization point of the system (i.e. the earliest point of time any of the particles needs a force computation), and drifts the system to this point of time. If the system drifts over the desired time of a snapshot file, the function will drift to this moment, generate an output, and then resume the drift. 
+
+Definition at line 151 of file run.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, compute\_\-potential(), global\_\-data\_\-all\_\-processes::CPU\_\-Predict, domain\_\-Decomposition(), find\_\-next\_\-outputtime(), Flag\_\-FullStep, move\_\-particles(), NTask, global\_\-data\_\-all\_\-processes::NumForcesSinceLastDomainDecomp, NumForceUpdate, NumPart, P, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-endstep, savepositions(), second(), global\_\-data\_\-all\_\-processes::SnapshotFileCount, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Ti\_\-nextoutput, global\_\-data\_\-all\_\-processes::Time, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, global\_\-data\_\-all\_\-processes::TimeBegin, timediff(), global\_\-data\_\-all\_\-processes::TimeStep, global\_\-data\_\-all\_\-processes::TotNumPart, and global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency.
+
+
+
+Referenced by run().
+
+
+
+
+\begin{DoxyCode}
+{
+  int n, min, min_glob, flag, *temp;
+  double timeold;
+  double t0, t1;
+
+  t0 = second();
+
+  timeold = All.Time;
+
+  for(n = 1, min = P[0].Ti_endstep; n < NumPart; n++)
+    if(min > P[n].Ti_endstep)
+      min = P[n].Ti_endstep;
+
+  MPI_Allreduce(&min, &min_glob, 1, MPI_INT, MPI_MIN, MPI_COMM_WORLD);
+
+  /* We check whether this is a full step where all particles are synchronized */
+      
+  flag = 1;
+  for(n = 0; n < NumPart; n++)
+    if(P[n].Ti_endstep > min_glob)
+      flag = 0;
+
+  MPI_Allreduce(&flag, &Flag_FullStep, 1, MPI_INT, MPI_MIN, MPI_COMM_WORLD);
+
+#ifdef PMGRID
+  if(min_glob >= All.PM_Ti_endstep)
+    {
+      min_glob = All.PM_Ti_endstep;
+      Flag_FullStep = 1;
+    }
+#endif
+
+  /* Determine 'NumForceUpdate', i.e. the number of particles on this processor t
+      hat are going to be active */
+  for(n = 0, NumForceUpdate = 0; n < NumPart; n++)
+    {
+      if(P[n].Ti_endstep == min_glob)
+#ifdef SELECTIVE_NO_GRAVITY
+        if(!((1 << P[n].Type) & (SELECTIVE_NO_GRAVITY)))
+#endif
+          NumForceUpdate++;
+    }
+
+  /* note: NumForcesSinceLastDomainDecomp has type "long long" */
+  temp = malloc(NTask * sizeof(int));
+  MPI_Allgather(&NumForceUpdate, 1, MPI_INT, temp, 1, MPI_INT, MPI_COMM_WORLD);
+  for(n = 0; n < NTask; n++)
+    All.NumForcesSinceLastDomainDecomp += temp[n];
+  free(temp);
+
+
+
+  t1 = second();
+
+  All.CPU_Predict += timediff(t0, t1);
+
+  while(min_glob >= All.Ti_nextoutput && All.Ti_nextoutput >= 0)
+    {
+      move_particles(All.Ti_Current, All.Ti_nextoutput);
+
+      All.Ti_Current = All.Ti_nextoutput;
+
+      if(All.ComovingIntegrationOn)
+        All.Time = All.TimeBegin * exp(All.Ti_Current * All.Timebase_interval);
+      else
+        All.Time = All.TimeBegin + All.Ti_Current * All.Timebase_interval;
+
+#ifdef OUTPUTPOTENTIAL
+      All.NumForcesSinceLastDomainDecomp = 1 + All.TotNumPart * All.
+      TreeDomainUpdateFrequency;
+      domain_Decomposition();
+      compute_potential();
+#endif
+      savepositions(All.SnapshotFileCount++);   /* write snapshot file */
+
+      All.Ti_nextoutput = find_next_outputtime(All.Ti_nextoutput + 1);
+    }
+
+  move_particles(All.Ti_Current, min_glob);
+
+  All.Ti_Current = min_glob;
+
+  if(All.ComovingIntegrationOn)
+    All.Time = All.TimeBegin * exp(All.Ti_Current * All.Timebase_interval);
+  else
+    All.Time = All.TimeBegin + All.Ti_Current * All.Timebase_interval;
+
+  All.TimeStep = All.Time - timeold;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{run_8c_ad52604af910b3e1677718d863ab09391_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=390pt]{run_8c_ad52604af910b3e1677718d863ab09391_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2}{
+\index{run.c@{run.c}!run@{run}}
+\index{run@{run}!run.c@{run.c}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void run (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2}
+This routine contains the main simulation loop that iterates over single timesteps. The loop terminates when the cpu-\/time limit is reached, when a `stop' file is found in the output directory, or when the simulation ends because we arrived at TimeMax. 
+
+$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
+
+
+
+Definition at line 20 of file run.c.
+
+
+
+References advance\_\-and\_\-find\_\-timesteps(), All, close\_\-outputfiles(), compute\_\-accelerations(), compute\_\-potential(), global\_\-data\_\-all\_\-processes::CPU\_\-Total, CPUThisRun, global\_\-data\_\-all\_\-processes::CpuTimeBetRestartFile, domain\_\-Decomposition(), energy\_\-statistics(), every\_\-timestep\_\-stuff(), fd, find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), global\_\-data\_\-all\_\-processes::NumCurrentTiStep, global\_\-data\_\-all\_\-processes::OutputDir, restart(), global\_\-data\_\-all\_\-processes::ResubmitCommand, global\_\-data\_\-all\_\-processes::ResubmitOn, savepositions(), second(), global\_\-data\_\-all\_\-processes::SnapshotFileCount, ThisTask, global\_\-data\_\-all\_\-processes::Ti\_\-Current, global\_\-data\_\-all\_\-processes::Time, TIMEBASE, global\_\-data\_\-all\_\-processes::TimeBetStatistics, timediff(), global\_\-data\_\-all\_\-processes::TimeLastRestartFile, global\_\-data\_\-all\_\-processes::TimeLastStatistics, global\_\-data\_\-all\_\-processes::TimeLimitCPU, and global\_\-data\_\-all\_\-processes::TimeMax.
+
+
+
+Referenced by main().
+
+
+
+
+\begin{DoxyCode}
+{
+  FILE *fd;
+  int stopflag = 0;
+  char stopfname[200], contfname[200];
+  double t0, t1;
+
+
+  sprintf(stopfname, "%sstop", All.OutputDir);
+  sprintf(contfname, "%scont", All.OutputDir);
+  unlink(contfname);
+
+  do                            /* main loop */
+    {
+      t0 = second();
+
+      find_next_sync_point_and_drift(); /* find next synchronization point and dr
+      ift particles to this time.
+                                         * If needed, this function will also wri
+      te an output file
+                                         * at the desired time.
+                                         */
+
+      every_timestep_stuff();   /* write some info to log-files */
+
+
+      domain_Decomposition();   /* do domain decomposition if needed */
+
+
+      compute_accelerations(0); /* compute accelerations for 
+                                 * the particles that are to be advanced  
+                                 */
+
+      /* check whether we want a full energy statistics */
+      if((All.Time - All.TimeLastStatistics) >= All.TimeBetStatistics)
+        {
+#ifdef COMPUTE_POTENTIAL_ENERGY
+          compute_potential();
+#endif
+          energy_statistics();  /* compute and output energy statistics */
+          All.TimeLastStatistics += All.TimeBetStatistics;
+        }
+
+      advance_and_find_timesteps();     /* 'kick' active particles in
+                                         * momentum space and compute new
+                                         * timesteps for them
+                                         */
+      All.NumCurrentTiStep++;
+
+      /* Check whether we need to interrupt the run */
+      if(ThisTask == 0)
+        {
+          /* Is the stop-file present? If yes, interrupt the run. */
+          if((fd = fopen(stopfname, "r")))
+            {
+              fclose(fd);
+              stopflag = 1;
+              unlink(stopfname);
+            }
+
+          /* are we running out of CPU-time ? If yes, interrupt run. */
+          if(CPUThisRun > 0.85 * All.TimeLimitCPU)
+            {
+              printf("reaching time-limit. stopping.\n");
+              stopflag = 2;
+            }
+        }
+
+      MPI_Bcast(&stopflag, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+      if(stopflag)
+        {
+          restart(0);           /* write restart file */
+          MPI_Barrier(MPI_COMM_WORLD);
+
+          if(stopflag == 2 && ThisTask == 0)
+            {
+              if((fd = fopen(contfname, "w")))
+                fclose(fd);
+            }
+
+          if(stopflag == 2 && All.ResubmitOn && ThisTask == 0)
+            {
+              close_outputfiles();
+              system(All.ResubmitCommand);
+            }
+          return;
+        }
+
+      /* is it time to write a regular restart-file? (for security) */
+      if(ThisTask == 0)
+        {
+          if((CPUThisRun - All.TimeLastRestartFile) >= All.CpuTimeBetRestartFile)
+      
+            {
+              All.TimeLastRestartFile = CPUThisRun;
+              stopflag = 3;
+            }
+          else
+            stopflag = 0;
+        }
+
+      MPI_Bcast(&stopflag, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+      if(stopflag == 3)
+        {
+          restart(0);           /* write an occasional restart file */
+          stopflag = 0;
+        }
+
+      t1 = second();
+
+      All.CPU_Total += timediff(t0, t1);
+      CPUThisRun += timediff(t0, t1);
+    }
+  while(All.Ti_Current < TIMEBASE && All.Time <= All.TimeMax);
+
+  restart(0);
+
+  savepositions(All.SnapshotFileCount++);       /* write a last snapshot
+                                                 * file at final time (will
+                                                 * be overwritten if
+                                                 * All.TimeMax is increased
+                                                 * and the run is continued)
+                                                 */
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2_icgraph}
+\end{center}
+\end{figure}
+
+

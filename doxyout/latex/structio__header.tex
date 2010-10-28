@@ -1,0 +1,292 @@
+\hypertarget{structio__header}{
+\section{io\_\-header Struct Reference}
+\label{structio__header}\index{io\_\-header@{io\_\-header}}
+}
+
+
+{\ttfamily \#include $<$allvars.h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structio__header_adc88d581cf3d57eb975a51f587538bdd}{npart} \mbox{[}6\mbox{]}
+\item 
+double \hyperlink{structio__header_a2c387b0c7c823287d424fedc70175917}{mass} \mbox{[}6\mbox{]}
+\item 
+double \hyperlink{structio__header_ad6237959a3590772366f18000a47a7d6}{time}
+\item 
+double \hyperlink{structio__header_ae2484703f374288fb266ff268a1ffa91}{redshift}
+\item 
+int \hyperlink{structio__header_afe21a629578012fd99d118d2ad834763}{flag\_\-sfr}
+\item 
+int \hyperlink{structio__header_a98679063cc311c5f6184459600fa05a5}{flag\_\-feedback}
+\item 
+unsigned int \hyperlink{structio__header_ad63a8b413a6b56c33bf5ecc25550a6dd}{npartTotal} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{structio__header_ae877c2fcde2f096886193c22b9b73cbf}{flag\_\-cooling}
+\item 
+int \hyperlink{structio__header_a5688351781a2845beb2c52a035cc5f71}{num\_\-files}
+\item 
+double \hyperlink{structio__header_aacb7ba10d16ae90490a9deba37ace731}{BoxSize}
+\item 
+double \hyperlink{structio__header_af0d78ac0e8131523be64b3686aab9550}{Omega0}
+\item 
+double \hyperlink{structio__header_aa2cdc9653addc264b58134006bca1bb8}{OmegaLambda}
+\item 
+double \hyperlink{structio__header_ad0f0d02804350f8935aadca9b5ef0fcf}{HubbleParam}
+\item 
+int \hyperlink{structio__header_abe83e840bb4778a3be11a084dfa85c3c}{flag\_\-stellarage}
+\item 
+int \hyperlink{structio__header_ac025f6c1cff1914d893ce0c7c5fd46bb}{flag\_\-metals}
+\item 
+unsigned int \hyperlink{structio__header_a56f54a68fe289b19902b3c4c561a7159}{npartTotalHighWord} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{structio__header_a448788ace72155e22d19af1c01917857}{flag\_\-entropy\_\-instead\_\-u}
+\item 
+char \hyperlink{structio__header_ac458badfa44878ddc5deb856531a2ee2}{fill} \mbox{[}60\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header for the standard file format. 
+
+Definition at line 616 of file allvars.h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{structio__header_aacb7ba10d16ae90490a9deba37ace731}{
+\index{io\_\-header@{io\_\-header}!BoxSize@{BoxSize}}
+\index{BoxSize@{BoxSize}!io_header@{io\_\-header}}
+\subsubsection[{BoxSize}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf io\_\-header::BoxSize}}}
+\label{structio__header_aacb7ba10d16ae90490a9deba37ace731}
+box-\/size of simulation in case periodic boundaries were used 
+
+Definition at line 629 of file allvars.h.
+
+
+
+Referenced by write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_ac458badfa44878ddc5deb856531a2ee2}{
+\index{io\_\-header@{io\_\-header}!fill@{fill}}
+\index{fill@{fill}!io_header@{io\_\-header}}
+\subsubsection[{fill}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf io\_\-header::fill}\mbox{[}60\mbox{]}}}
+\label{structio__header_ac458badfa44878ddc5deb856531a2ee2}
+fills to 256 Bytes 
+
+Definition at line 637 of file allvars.h.
+
+\hypertarget{structio__header_ae877c2fcde2f096886193c22b9b73cbf}{
+\index{io\_\-header@{io\_\-header}!flag\_\-cooling@{flag\_\-cooling}}
+\index{flag\_\-cooling@{flag\_\-cooling}!io_header@{io\_\-header}}
+\subsubsection[{flag\_\-cooling}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf io\_\-header::flag\_\-cooling}}}
+\label{structio__header_ae877c2fcde2f096886193c22b9b73cbf}
+flags whether cooling was included 
+
+Definition at line 627 of file allvars.h.
+
+
+
+Referenced by write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_a448788ace72155e22d19af1c01917857}{
+\index{io\_\-header@{io\_\-header}!flag\_\-entropy\_\-instead\_\-u@{flag\_\-entropy\_\-instead\_\-u}}
+\index{flag\_\-entropy\_\-instead\_\-u@{flag\_\-entropy\_\-instead\_\-u}!io_header@{io\_\-header}}
+\subsubsection[{flag\_\-entropy\_\-instead\_\-u}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf io\_\-header::flag\_\-entropy\_\-instead\_\-u}}}
+\label{structio__header_a448788ace72155e22d19af1c01917857}
+flags that IC-\/file contains entropy instead of u 
+
+Definition at line 636 of file allvars.h.
+
+
+
+Referenced by init(), read\_\-header\_\-attributes\_\-in\_\-hdf5(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_a98679063cc311c5f6184459600fa05a5}{
+\index{io\_\-header@{io\_\-header}!flag\_\-feedback@{flag\_\-feedback}}
+\index{flag\_\-feedback@{flag\_\-feedback}!io_header@{io\_\-header}}
+\subsubsection[{flag\_\-feedback}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf io\_\-header::flag\_\-feedback}}}
+\label{structio__header_a98679063cc311c5f6184459600fa05a5}
+flags whether feedback was included (obsolete) 
+
+Definition at line 624 of file allvars.h.
+
+
+
+Referenced by write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_ac025f6c1cff1914d893ce0c7c5fd46bb}{
+\index{io\_\-header@{io\_\-header}!flag\_\-metals@{flag\_\-metals}}
+\index{flag\_\-metals@{flag\_\-metals}!io_header@{io\_\-header}}
+\subsubsection[{flag\_\-metals}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf io\_\-header::flag\_\-metals}}}
+\label{structio__header_ac025f6c1cff1914d893ce0c7c5fd46bb}
+flags whether the file contains metallicity values for gas and star particles 
+
+Definition at line 634 of file allvars.h.
+
+
+
+Referenced by write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_afe21a629578012fd99d118d2ad834763}{
+\index{io\_\-header@{io\_\-header}!flag\_\-sfr@{flag\_\-sfr}}
+\index{flag\_\-sfr@{flag\_\-sfr}!io_header@{io\_\-header}}
+\subsubsection[{flag\_\-sfr}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf io\_\-header::flag\_\-sfr}}}
+\label{structio__header_afe21a629578012fd99d118d2ad834763}
+flags whether the simulation was including star formation 
+
+Definition at line 623 of file allvars.h.
+
+
+
+Referenced by write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_abe83e840bb4778a3be11a084dfa85c3c}{
+\index{io\_\-header@{io\_\-header}!flag\_\-stellarage@{flag\_\-stellarage}}
+\index{flag\_\-stellarage@{flag\_\-stellarage}!io_header@{io\_\-header}}
+\subsubsection[{flag\_\-stellarage}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf io\_\-header::flag\_\-stellarage}}}
+\label{structio__header_abe83e840bb4778a3be11a084dfa85c3c}
+flags whether the file contains formation times of star particles 
+
+Definition at line 633 of file allvars.h.
+
+
+
+Referenced by write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_ad0f0d02804350f8935aadca9b5ef0fcf}{
+\index{io\_\-header@{io\_\-header}!HubbleParam@{HubbleParam}}
+\index{HubbleParam@{HubbleParam}!io_header@{io\_\-header}}
+\subsubsection[{HubbleParam}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf io\_\-header::HubbleParam}}}
+\label{structio__header_ad0f0d02804350f8935aadca9b5ef0fcf}
+Hubble parameter in units of 100 km/sec/Mpc 
+
+Definition at line 632 of file allvars.h.
+
+
+
+Referenced by write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_a2c387b0c7c823287d424fedc70175917}{
+\index{io\_\-header@{io\_\-header}!mass@{mass}}
+\index{mass@{mass}!io_header@{io\_\-header}}
+\subsubsection[{mass}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf io\_\-header::mass}\mbox{[}6\mbox{]}}}
+\label{structio__header_a2c387b0c7c823287d424fedc70175917}
+mass of particles of each type. If 0, then the masses are explicitly stored in the mass-\/block of the snapshot file, otherwise they are omitted 
+
+Definition at line 619 of file allvars.h.
+
+
+
+Referenced by read\_\-file(), read\_\-header\_\-attributes\_\-in\_\-hdf5(), write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_adc88d581cf3d57eb975a51f587538bdd}{
+\index{io\_\-header@{io\_\-header}!npart@{npart}}
+\index{npart@{npart}!io_header@{io\_\-header}}
+\subsubsection[{npart}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf io\_\-header::npart}\mbox{[}6\mbox{]}}}
+\label{structio__header_adc88d581cf3d57eb975a51f587538bdd}
+number of particles of each type in this file 
+
+Definition at line 618 of file allvars.h.
+
+
+
+Referenced by get\_\-particles\_\-in\_\-block(), read\_\-file(), read\_\-header\_\-attributes\_\-in\_\-hdf5(), write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_ad63a8b413a6b56c33bf5ecc25550a6dd}{
+\index{io\_\-header@{io\_\-header}!npartTotal@{npartTotal}}
+\index{npartTotal@{npartTotal}!io_header@{io\_\-header}}
+\subsubsection[{npartTotal}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf io\_\-header::npartTotal}\mbox{[}6\mbox{]}}}
+\label{structio__header_ad63a8b413a6b56c33bf5ecc25550a6dd}
+total number of particles of each type in this snapshot. This can be different from npart if one is dealing with a multi-\/file snapshot. 
+
+Definition at line 625 of file allvars.h.
+
+
+
+Referenced by read\_\-file(), read\_\-header\_\-attributes\_\-in\_\-hdf5(), write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_a56f54a68fe289b19902b3c4c561a7159}{
+\index{io\_\-header@{io\_\-header}!npartTotalHighWord@{npartTotalHighWord}}
+\index{npartTotalHighWord@{npartTotalHighWord}!io_header@{io\_\-header}}
+\subsubsection[{npartTotalHighWord}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf io\_\-header::npartTotalHighWord}\mbox{[}6\mbox{]}}}
+\label{structio__header_a56f54a68fe289b19902b3c4c561a7159}
+High word of the total number of particles of each type 
+
+Definition at line 635 of file allvars.h.
+
+
+
+Referenced by read\_\-file(), read\_\-header\_\-attributes\_\-in\_\-hdf5(), write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_a5688351781a2845beb2c52a035cc5f71}{
+\index{io\_\-header@{io\_\-header}!num\_\-files@{num\_\-files}}
+\index{num\_\-files@{num\_\-files}!io_header@{io\_\-header}}
+\subsubsection[{num\_\-files}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf io\_\-header::num\_\-files}}}
+\label{structio__header_a5688351781a2845beb2c52a035cc5f71}
+number of files in multi-\/file snapshot 
+
+Definition at line 628 of file allvars.h.
+
+
+
+Referenced by find\_\-files(), read\_\-file(), read\_\-header\_\-attributes\_\-in\_\-hdf5(), write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_af0d78ac0e8131523be64b3686aab9550}{
+\index{io\_\-header@{io\_\-header}!Omega0@{Omega0}}
+\index{Omega0@{Omega0}!io_header@{io\_\-header}}
+\subsubsection[{Omega0}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf io\_\-header::Omega0}}}
+\label{structio__header_af0d78ac0e8131523be64b3686aab9550}
+matter density in units of critical density 
+
+Definition at line 630 of file allvars.h.
+
+
+
+Referenced by write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_aa2cdc9653addc264b58134006bca1bb8}{
+\index{io\_\-header@{io\_\-header}!OmegaLambda@{OmegaLambda}}
+\index{OmegaLambda@{OmegaLambda}!io_header@{io\_\-header}}
+\subsubsection[{OmegaLambda}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf io\_\-header::OmegaLambda}}}
+\label{structio__header_aa2cdc9653addc264b58134006bca1bb8}
+cosmological constant parameter 
+
+Definition at line 631 of file allvars.h.
+
+
+
+Referenced by write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_ae2484703f374288fb266ff268a1ffa91}{
+\index{io\_\-header@{io\_\-header}!redshift@{redshift}}
+\index{redshift@{redshift}!io_header@{io\_\-header}}
+\subsubsection[{redshift}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf io\_\-header::redshift}}}
+\label{structio__header_ae2484703f374288fb266ff268a1ffa91}
+redshift of snapshot file 
+
+Definition at line 622 of file allvars.h.
+
+
+
+Referenced by write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+\hypertarget{structio__header_ad6237959a3590772366f18000a47a7d6}{
+\index{io\_\-header@{io\_\-header}!time@{time}}
+\index{time@{time}!io_header@{io\_\-header}}
+\subsubsection[{time}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf io\_\-header::time}}}
+\label{structio__header_ad6237959a3590772366f18000a47a7d6}
+time of snapshot file 
+
+Definition at line 621 of file allvars.h.
+
+
+
+Referenced by read\_\-file(), read\_\-header\_\-attributes\_\-in\_\-hdf5(), write\_\-file(), and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{allvars_8h}{allvars.h}\end{DoxyCompactItemize}

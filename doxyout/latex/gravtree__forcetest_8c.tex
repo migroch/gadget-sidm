@@ -1,0 +1,440 @@
+\hypertarget{gravtree__forcetest_8c}{
+\section{gravtree\_\-forcetest.c File Reference}
+\label{gravtree__forcetest_8c}\index{gravtree\_\-forcetest.c@{gravtree\_\-forcetest.c}}
+}
+
+
+routines for direct summation forces  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$float.h$>$}\par
+{\ttfamily \#include $<$mpi.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for gravtree\_\-forcetest.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{gravtree__forcetest_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79}{gravity\_\-forcetest} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+routines for direct summation forces The code in this file allows to compute checks of the force accuracy by an independent direct summation computation. To this end, one can instruct GADGET in the Makefile to coompute direct summation forces for a certain random subfraction of particles. 
+
+Definition in file \hyperlink{gravtree__forcetest_8c_source}{gravtree\_\-forcetest.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79}{
+\index{gravtree\_\-forcetest.c@{gravtree\_\-forcetest.c}!gravity\_\-forcetest@{gravity\_\-forcetest}}
+\index{gravity\_\-forcetest@{gravity\_\-forcetest}!gravtree_forcetest.c@{gravtree\_\-forcetest.c}}
+\subsubsection[{gravity\_\-forcetest}]{\setlength{\rightskip}{0pt plus 5cm}void gravity\_\-forcetest (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79}
+This routine does the test of the gravitational tree force by computing the force for a random subset of particles with direct summation. 
+
+Definition at line 28 of file gravtree\_\-forcetest.c.
+
+
+
+References gravdata\_\-in::Acc, All, global\_\-data\_\-all\_\-processes::BunchSizeForce, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, endrun(), Exportflag, fac1, FdForceTest, FdTimings, force\_\-treeevaluate\_\-direct(), global\_\-data\_\-all\_\-processes::G, get\_\-random\_\-number(), grav\_\-tree\_\-compare\_\-key(), particle\_\-data::GravAccel, particle\_\-data::GravAccelDirect, GravDataGet, GravDataIn, GravDataIndexTable, GravDataOut, GravDataResult, particle\_\-data::GravPM, global\_\-data\_\-all\_\-processes::Hubble, gravdata\_\-index::Index, NTask, NumForceUpdate, NumPart, particle\_\-data::OldAcc, gravdata\_\-in::OldAcc, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, global\_\-data\_\-all\_\-processes::OutputDir, P, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-endstep, particle\_\-data::Pos, gravdata\_\-in::Pos, PTask, second(), set\_\-softenings(), gravdata\_\-index::SortIndex, TAG\_\-DIRECT\_\-A, TAG\_\-DIRECT\_\-B, gravdata\_\-index::Task, ThisTask, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Time, timediff(), TimeOfLastTreeConstruction, global\_\-data\_\-all\_\-processes::TotNumPart, particle\_\-data::Type, and gravdata\_\-in::w.
+
+
+
+Referenced by compute\_\-accelerations().
+
+
+
+
+\begin{DoxyCode}
+{
+  int ntot, iter = 0, ntotleft, nthis;
+  double tstart, tend, timetree = 0;
+  int i, j, ndone, ngrp, maxfill, place, ndonetot;
+
+#ifndef NOGRAVITY
+  int *noffset, *nbuffer, *nsend, *nsend_local;
+  int k, nexport;
+  int level, sendTask, recvTask;
+  double fac1;
+  MPI_Status status;
+#endif
+  double costtotal, *costtreelist;
+  double maxt, sumt, *timetreelist;
+  double fac;
+  char buf[200];
+
+#ifdef PMGRID
+  if(All.PM_Ti_endstep != All.Ti_Current)
+    return;
+#endif
+
+  if(All.ComovingIntegrationOn)
+    set_softenings();           /* set new softening lengths */
+
+  for(i = 0, NumForceUpdate = 0; i < NumPart; i++)
+    {
+      if(P[i].Ti_endstep == All.Ti_Current)
+        {
+          if(get_random_number(P[i].ID) < FORCETEST)
+            {
+              P[i].Ti_endstep = -P[i].Ti_endstep - 1;
+              NumForceUpdate++;
+            }
+        }
+    }
+
+  /* NumForceUpdate is the number of particles on this processor that want a forc
+      e update */
+
+  MPI_Allreduce(&NumForceUpdate, &ntot, 1, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
+
+  costtotal = 0;
+
+  noffset = malloc(sizeof(int) * NTask);        /* offsets of bunches in common l
+      ist */
+  nbuffer = malloc(sizeof(int) * NTask);
+  nsend_local = malloc(sizeof(int) * NTask);
+  nsend = malloc(sizeof(int) * NTask * NTask);
+
+  i = 0;                        /* beginn with this index */
+  ntotleft = ntot;              /* particles left for all tasks together */
+
+  while(ntotleft > 0)
+    {
+      iter++;
+
+      for(j = 0; j < NTask; j++)
+        nsend_local[j] = 0;
+
+      /* do local particles and prepare export list */
+      tstart = second();
+      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - N
+      Task; i++)
+        if(P[i].Ti_endstep < 0)
+          {
+            ndone++;
+
+            for(j = 0; j < NTask; j++)
+              Exportflag[j] = 1;
+            Exportflag[ThisTask] = 0;
+
+            costtotal += force_treeevaluate_direct(i, 0);
+
+            for(j = 0; j < NTask; j++)
+              {
+                if(Exportflag[j])
+                  {
+                    for(k = 0; k < 3; k++)
+                      GravDataGet[nexport].u.Pos[k] = P[i].Pos[k];
+
+#ifdef UNEQUALSOFTENINGS
+                    GravDataGet[nexport].Type = P[i].Type;
+#endif
+                    GravDataGet[nexport].w.OldAcc = P[i].OldAcc;
+
+                    GravDataIndexTable[nexport].Task = j;
+                    GravDataIndexTable[nexport].Index = i;
+                    GravDataIndexTable[nexport].SortIndex = nexport;
+
+                    nexport++;
+                    nsend_local[j]++;
+                  }
+              }
+          }
+      tend = second();
+      timetree += timediff(tstart, tend);
+
+      qsort(GravDataIndexTable, nexport, sizeof(struct gravdata_index), 
+      grav_tree_compare_key);
+
+      for(j = 0; j < nexport; j++)
+        GravDataIn[j] = GravDataGet[GravDataIndexTable[j].SortIndex];
+
+      for(j = 1, noffset[0] = 0; j < NTask; j++)
+        noffset[j] = noffset[j - 1] + nsend_local[j - 1];
+
+      MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, MPI_COMM_
+      WORLD);
+
+      /* now do the particles that need to be exported */
+
+      for(level = 1; level < (1 << PTask); level++)
+        {
+          for(j = 0; j < NTask; j++)
+            nbuffer[j] = 0;
+          for(ngrp = level; ngrp < (1 << PTask); ngrp++)
+            {
+              maxfill = 0;
+              for(j = 0; j < NTask; j++)
+                {
+                  if((j ^ ngrp) < NTask)
+                    if(maxfill < nbuffer[j] + nsend[(j ^ ngrp) * NTask + j])
+                      maxfill = nbuffer[j] + nsend[(j ^ ngrp) * NTask + j];
+                }
+              if(maxfill >= All.BunchSizeForce)
+                break;
+
+              sendTask = ThisTask;
+              recvTask = ThisTask ^ ngrp;
+
+              if(recvTask < NTask)
+                {
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
+      Task + ThisTask] > 0)
+                    {
+                      /* get the particles */
+                      MPI_Sendrecv(&GravDataIn[noffset[recvTask]],
+                                   nsend_local[recvTask] * sizeof(struct 
+      gravdata_in), MPI_BYTE,
+                                   recvTask, TAG_DIRECT_A,
+                                   &GravDataGet[nbuffer[ThisTask]],
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
+      ruct gravdata_in), MPI_BYTE,
+                                   recvTask, TAG_DIRECT_A, MPI_COMM_WORLD, &statu
+      s);
+                    }
+                }
+
+              for(j = 0; j < NTask; j++)
+                if((j ^ ngrp) < NTask)
+                  nbuffer[j] += nsend[(j ^ ngrp) * NTask + j];
+            }
+
+          tstart = second();
+          for(j = 0; j < nbuffer[ThisTask]; j++)
+            {
+              costtotal += force_treeevaluate_direct(j, 1);
+            }
+          tend = second();
+          timetree += timediff(tstart, tend);
+
+
+          /* get the result */
+          for(j = 0; j < NTask; j++)
+            nbuffer[j] = 0;
+          for(ngrp = level; ngrp < (1 << PTask); ngrp++)
+            {
+              maxfill = 0;
+              for(j = 0; j < NTask; j++)
+                {
+                  if((j ^ ngrp) < NTask)
+                    if(maxfill < nbuffer[j] + nsend[(j ^ ngrp) * NTask + j])
+                      maxfill = nbuffer[j] + nsend[(j ^ ngrp) * NTask + j];
+                }
+              if(maxfill >= All.BunchSizeForce)
+                break;
+
+              sendTask = ThisTask;
+              recvTask = ThisTask ^ ngrp;
+              if(recvTask < NTask)
+                {
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
+      Task + ThisTask] > 0)
+                    {
+                      /* send the results */
+                      MPI_Sendrecv(&GravDataResult[nbuffer[ThisTask]],
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
+      ruct gravdata_in),
+                                   MPI_BYTE, recvTask, TAG_DIRECT_B,
+                                   &GravDataOut[noffset[recvTask]],
+                                   nsend_local[recvTask] * sizeof(struct 
+      gravdata_in),
+                                   MPI_BYTE, recvTask, TAG_DIRECT_B, MPI_COMM_WOR
+      LD, &status);
+
+                      /* add the result to the particles */
+                      for(j = 0; j < nsend_local[recvTask]; j++)
+                        {
+                          place = GravDataIndexTable[noffset[recvTask] + j].
+      Index;
+
+                          for(k = 0; k < 3; k++)
+                            P[place].GravAccelDirect[k] += GravDataOut[j + noffse
+      t[recvTask]].u.Acc[k];
+                        }
+                    }
+                }
+
+              for(j = 0; j < NTask; j++)
+                if((j ^ ngrp) < NTask)
+                  nbuffer[j] += nsend[(j ^ ngrp) * NTask + j];
+            }
+
+          level = ngrp - 1;
+        }
+
+      MPI_Allreduce(&ndone, &ndonetot, 1, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
+
+      ntotleft -= ndonetot;
+    }
+
+  free(nsend);
+  free(nsend_local);
+  free(nbuffer);
+  free(noffset);
+
+
+  /* now add things for comoving integration */
+
+  if(All.ComovingIntegrationOn)
+    {
+#ifndef PERIODIC
+      fac1 = 0.5 * All.Hubble * All.Hubble * All.Omega0 / All.G;
+
+      for(i = 0; i < NumPart; i++)
+        if(P[i].Ti_endstep < 0)
+          for(j = 0; j < 3; j++)
+            P[i].GravAccelDirect[j] += fac1 * P[i].Pos[j];
+#endif
+    }
+
+
+
+  /*  muliply by G */
+
+  for(i = 0; i < NumPart; i++)
+    if(P[i].Ti_endstep < 0)
+      for(j = 0; j < 3; j++)
+        P[i].GravAccelDirect[j] *= All.G;
+
+
+
+  /* Finally, the following factor allows a computation of cosmological simulatio
+      n 
+     with vacuum energy in physical coordinates */
+
+  if(All.ComovingIntegrationOn == 0)
+    {
+      fac1 = All.OmegaLambda * All.Hubble * All.Hubble;
+
+      for(i = 0; i < NumPart; i++)
+        if(P[i].Ti_endstep < 0)
+          for(j = 0; j < 3; j++)
+            P[i].GravAccelDirect[j] += fac1 * P[i].Pos[j];
+    }
+
+  /* now output the forces to a file */
+
+  for(nthis = 0; nthis < NTask; nthis++)
+    {
+      if(nthis == ThisTask)
+        {
+          sprintf(buf, "%s%s", All.OutputDir, "forcetest.txt");
+          if(!(FdForceTest = fopen(buf, "a")))
+            {
+              printf("error in opening file '%s'\n", buf);
+              endrun(17);
+            }
+          for(i = 0; i < NumPart; i++)
+            if(P[i].Ti_endstep < 0)
+              {
+#ifndef PMGRID
+                fprintf(FdForceTest, "%d %g %g %g %g %g %g %g %g %g %g %g\n",
+                        P[i].Type, All.Time, All.Time - 
+      TimeOfLastTreeConstruction,
+                        P[i].Pos[0], P[i].Pos[1], P[i].Pos[2],
+                        P[i].GravAccelDirect[0], P[i].GravAccelDirect[1], P[i].
+      GravAccelDirect[2],
+                        P[i].GravAccel[0], P[i].GravAccel[1], P[i].GravAccel[2]);
+      
+#else
+                fprintf(FdForceTest, "%d %g %g %g %g %g %g %g %g %g %g %g %g %g %
+      g\n",
+                        P[i].Type, All.Time, All.Time - 
+      TimeOfLastTreeConstruction,
+                        P[i].Pos[0], P[i].Pos[1], P[i].Pos[2],
+                        P[i].GravAccelDirect[0], P[i].GravAccelDirect[1], P[i].
+      GravAccelDirect[2],
+                        P[i].GravAccel[0], P[i].GravAccel[1], P[i].GravAccel[2],
+                        P[i].GravPM[0] + P[i].GravAccel[0],
+                        P[i].GravPM[1] + P[i].GravAccel[1], P[i].GravPM[2] + P[i]
+      .GravAccel[2]);
+#endif
+              }
+          fclose(FdForceTest);
+        }
+      MPI_Barrier(MPI_COMM_WORLD);
+    }
+
+  for(i = 0; i < NumPart; i++)
+    if(P[i].Ti_endstep < 0)
+      P[i].Ti_endstep = -P[i].Ti_endstep - 1;
+
+  /* Now the force computation is finished */
+
+
+
+  timetreelist = malloc(sizeof(double) * NTask);
+  costtreelist = malloc(sizeof(double) * NTask);
+
+  MPI_Gather(&costtotal, 1, MPI_DOUBLE, costtreelist, 1, MPI_DOUBLE, 0, MPI_COMM_
+      WORLD);
+  MPI_Gather(&timetree, 1, MPI_DOUBLE, timetreelist, 1, MPI_DOUBLE, 0, MPI_COMM_W
+      ORLD);
+
+  if(ThisTask == 0)
+    {
+      fac = NTask / ((double) All.TotNumPart);
+
+      for(i = 0, maxt = timetreelist[0], sumt = 0, costtotal = 0; i < NTask; i++)
+      
+        {
+          costtotal += costtreelist[i];
+
+          if(maxt < timetreelist[i])
+            maxt = timetreelist[i];
+          sumt += timetreelist[i];
+        }
+
+      fprintf(FdTimings, "DIRECT Nf= %d    part/sec=%g | %g  ia/part=%g \n", ntot
+      , ntot / (sumt + 1.0e-20),
+              ntot / (maxt * NTask), ((double) (costtotal)) / ntot);
+      fprintf(FdTimings, "\n");
+
+      fflush(FdTimings);
+    }
+
+  free(costtreelist);
+  free(timetreelist);
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79_icgraph}
+\end{center}
+\end{figure}
+
+

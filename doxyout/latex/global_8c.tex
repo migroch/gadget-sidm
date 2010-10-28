@@ -1,0 +1,300 @@
+\hypertarget{global_8c}{
+\section{global.c File Reference}
+\label{global_8c}\index{global.c@{global.c}}
+}
+
+
+Computes global physical properties of the system.  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$mpi.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for global.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{global_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{global_8c_ada58109949c2431ca9b0cdaa01cfb5b1}{compute\_\-global\_\-quantities\_\-of\_\-system} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Computes global physical properties of the system. 
+
+Definition in file \hyperlink{global_8c_source}{global.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{global_8c_ada58109949c2431ca9b0cdaa01cfb5b1}{
+\index{global.c@{global.c}!compute\_\-global\_\-quantities\_\-of\_\-system@{compute\_\-global\_\-quantities\_\-of\_\-system}}
+\index{compute\_\-global\_\-quantities\_\-of\_\-system@{compute\_\-global\_\-quantities\_\-of\_\-system}!global.c@{global.c}}
+\subsubsection[{compute\_\-global\_\-quantities\_\-of\_\-system}]{\setlength{\rightskip}{0pt plus 5cm}void compute\_\-global\_\-quantities\_\-of\_\-system (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{global_8c_ada58109949c2431ca9b0cdaa01cfb5b1}
+This routine computes various global properties of the particle distribution and stores the result in the struct `SysState'. Currently, not all the information that's computed here is actually used (e.g. momentum is not really used anywhere), just the energies are written to a log-\/file every once in a while. 
+
+$<$ adiabatic index of simulated gas
+
+$<$ adiabatic index of simulated gas 
+
+
+
+Definition at line 22 of file global.c.
+
+
+
+References All, state\_\-of\_\-system::AngMomentum, state\_\-of\_\-system::AngMomentumComp, state\_\-of\_\-system::CenterOfMass, state\_\-of\_\-system::CenterOfMassComp, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, sph\_\-particle\_\-data::DtEntropy, state\_\-of\_\-system::EnergyInt, state\_\-of\_\-system::EnergyIntComp, state\_\-of\_\-system::EnergyKin, state\_\-of\_\-system::EnergyKinComp, state\_\-of\_\-system::EnergyPot, state\_\-of\_\-system::EnergyPotComp, state\_\-of\_\-system::EnergyTot, state\_\-of\_\-system::EnergyTotComp, sph\_\-particle\_\-data::Entropy, GAMMA\_\-MINUS1, get\_\-gravkick\_\-factor(), get\_\-hydrokick\_\-factor(), particle\_\-data::GravAccel, sph\_\-particle\_\-data::HydroAccel, state\_\-of\_\-system::Mass, particle\_\-data::Mass, state\_\-of\_\-system::MassComp, state\_\-of\_\-system::Momentum, state\_\-of\_\-system::MomentumComp, NumPart, P, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-begstep, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-endstep, particle\_\-data::Pos, particle\_\-data::Potential, pow(), SphP, SysState, ThisTask, particle\_\-data::Ti\_\-begstep, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Time, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, particle\_\-data::Type, and particle\_\-data::Vel.
+
+
+
+Referenced by energy\_\-statistics().
+
+
+
+
+\begin{DoxyCode}
+{
+  int i, j, n;
+  struct state_of_system sys;
+  double a1, a2, a3;
+  double entr = 0, egyspec, vel[3];
+  double dt_entr, dt_gravkick, dt_hydrokick;
+
+
+
+  if(All.ComovingIntegrationOn)
+    {
+      a1 = All.Time;
+      a2 = All.Time * All.Time;
+      a3 = All.Time * All.Time * All.Time;
+    }
+  else
+    {
+      a1 = a2 = a3 = 1;
+    }
+
+
+  for(n = 0; n < 6; n++)
+    {
+      sys.MassComp[n] = sys.EnergyKinComp[n] = sys.EnergyPotComp[n] = sys.EnergyI
+      ntComp[n] = 0;
+
+      for(j = 0; j < 4; j++)
+        sys.CenterOfMassComp[n][j] = sys.MomentumComp[n][j] = sys.AngMomentumComp
+      [n][j] = 0;
+    }
+
+  for(i = 0; i < NumPart; i++)
+    {
+      sys.MassComp[P[i].Type] += P[i].Mass;
+
+      sys.EnergyPotComp[P[i].Type] += 0.5 * P[i].Mass * P[i].Potential / a1;
+
+      if(All.ComovingIntegrationOn)
+        {
+          dt_entr = (All.Ti_Current - (P[i].Ti_begstep + P[i].Ti_endstep) / 2) * 
+      All.Timebase_interval;
+          dt_gravkick = get_gravkick_factor(P[i].Ti_begstep, All.Ti_Current) -
+            get_gravkick_factor(P[i].Ti_begstep, (P[i].Ti_begstep + P[i].Ti_endst
+      ep) / 2);
+          dt_hydrokick = get_hydrokick_factor(P[i].Ti_begstep, All.Ti_Current) -
+            get_hydrokick_factor(P[i].Ti_begstep, (P[i].Ti_begstep + P[i].Ti_ends
+      tep) / 2);
+        }
+      else
+        dt_entr = dt_gravkick = dt_hydrokick =
+          (All.Ti_Current - (P[i].Ti_begstep + P[i].Ti_endstep) / 2) * All.
+      Timebase_interval;
+
+      for(j = 0; j < 3; j++)
+        {
+          vel[j] = P[i].Vel[j] + P[i].GravAccel[j] * dt_gravkick;
+          if(P[i].Type == 0)
+            vel[j] += SphP[i].HydroAccel[j] * dt_hydrokick;
+        }
+      if(P[i].Type == 0)
+        entr = SphP[i].Entropy + SphP[i].DtEntropy * dt_entr;
+
+#ifdef PMGRID
+      if(All.ComovingIntegrationOn)
+        dt_gravkick = get_gravkick_factor(All.PM_Ti_begstep, All.Ti_Current) -
+          get_gravkick_factor(All.PM_Ti_begstep, (All.PM_Ti_begstep + All.
+      PM_Ti_endstep) / 2);
+      else
+        dt_gravkick = (All.Ti_Current - (All.PM_Ti_begstep + All.PM_Ti_endstep) /
+       2) * All.Timebase_interval;
+
+      for(j = 0; j < 3; j++)
+        vel[j] += P[i].GravPM[j] * dt_gravkick;
+#endif
+
+      sys.EnergyKinComp[P[i].Type] +=
+        0.5 * P[i].Mass * (vel[0] * vel[0] + vel[1] * vel[1] + vel[2] * vel[2]) /
+       a2;
+
+      if(P[i].Type == 0)
+        {
+#ifdef ISOTHERM_EQS
+          egyspec = entr;
+#else
+          egyspec = entr / (GAMMA_MINUS1) * pow(SphP[i].Density / a3, 
+      GAMMA_MINUS1);
+#endif
+          sys.EnergyIntComp[0] += P[i].Mass * egyspec;
+        }
+
+
+
+      for(j = 0; j < 3; j++)
+        {
+          sys.MomentumComp[P[i].Type][j] += P[i].Mass * vel[j];
+          sys.CenterOfMassComp[P[i].Type][j] += P[i].Mass * P[i].Pos[j];
+        }
+
+      sys.AngMomentumComp[P[i].Type][0] += P[i].Mass * (P[i].Pos[1] * vel[2] - P[
+      i].Pos[2] * vel[1]);
+      sys.AngMomentumComp[P[i].Type][1] += P[i].Mass * (P[i].Pos[2] * vel[0] - P[
+      i].Pos[0] * vel[2]);
+      sys.AngMomentumComp[P[i].Type][2] += P[i].Mass * (P[i].Pos[0] * vel[1] - P[
+      i].Pos[1] * vel[0]);
+    }
+
+
+  /* some the stuff over all processors */
+  MPI_Reduce(&sys.MassComp[0], &SysState.MassComp[0], 6, MPI_DOUBLE, MPI_SUM, 0, 
+      MPI_COMM_WORLD);
+  MPI_Reduce(&sys.EnergyPotComp[0], &SysState.EnergyPotComp[0], 6, MPI_DOUBLE, MP
+      I_SUM, 0, MPI_COMM_WORLD);
+  MPI_Reduce(&sys.EnergyIntComp[0], &SysState.EnergyIntComp[0], 6, MPI_DOUBLE, MP
+      I_SUM, 0, MPI_COMM_WORLD);
+  MPI_Reduce(&sys.EnergyKinComp[0], &SysState.EnergyKinComp[0], 6, MPI_DOUBLE, MP
+      I_SUM, 0, MPI_COMM_WORLD);
+  MPI_Reduce(&sys.MomentumComp[0][0], &SysState.MomentumComp[0][0], 6 * 4, MPI_DO
+      UBLE, MPI_SUM, 0,
+             MPI_COMM_WORLD);
+  MPI_Reduce(&sys.AngMomentumComp[0][0], &SysState.AngMomentumComp[0][0], 6 * 4, 
+      MPI_DOUBLE, MPI_SUM, 0,
+             MPI_COMM_WORLD);
+  MPI_Reduce(&sys.CenterOfMassComp[0][0], &SysState.CenterOfMassComp[0][0], 6 * 4
+      , MPI_DOUBLE, MPI_SUM, 0,
+             MPI_COMM_WORLD);
+
+
+  if(ThisTask == 0)
+    {
+      for(i = 0; i < 6; i++)
+        SysState.EnergyTotComp[i] = SysState.EnergyKinComp[i] +
+          SysState.EnergyPotComp[i] + SysState.EnergyIntComp[i];
+
+      SysState.Mass = SysState.EnergyKin = SysState.EnergyPot = SysState.
+      EnergyInt = SysState.EnergyTot = 0;
+
+      for(j = 0; j < 3; j++)
+        SysState.Momentum[j] = SysState.AngMomentum[j] = SysState.CenterOfMass[j]
+       = 0;
+
+      for(i = 0; i < 6; i++)
+        {
+          SysState.Mass += SysState.MassComp[i];
+          SysState.EnergyKin += SysState.EnergyKinComp[i];
+          SysState.EnergyPot += SysState.EnergyPotComp[i];
+          SysState.EnergyInt += SysState.EnergyIntComp[i];
+          SysState.EnergyTot += SysState.EnergyTotComp[i];
+
+          for(j = 0; j < 3; j++)
+            {
+              SysState.Momentum[j] += SysState.MomentumComp[i][j];
+              SysState.AngMomentum[j] += SysState.AngMomentumComp[i][j];
+              SysState.CenterOfMass[j] += SysState.CenterOfMassComp[i][j];
+            }
+        }
+
+      for(i = 0; i < 6; i++)
+        for(j = 0; j < 3; j++)
+          if(SysState.MassComp[i] > 0)
+            SysState.CenterOfMassComp[i][j] /= SysState.MassComp[i];
+
+      for(j = 0; j < 3; j++)
+        if(SysState.Mass > 0)
+          SysState.CenterOfMass[j] /= SysState.Mass;
+
+      for(i = 0; i < 6; i++)
+        {
+          SysState.CenterOfMassComp[i][3] = SysState.MomentumComp[i][3] = 
+      SysState.AngMomentumComp[i][3] = 0;
+          for(j = 0; j < 3; j++)
+            {
+              SysState.CenterOfMassComp[i][3] +=
+                SysState.CenterOfMassComp[i][j] * SysState.CenterOfMassComp[i][j]
+      ;
+              SysState.MomentumComp[i][3] += SysState.MomentumComp[i][j] * 
+      SysState.MomentumComp[i][j];
+              SysState.AngMomentumComp[i][3] +=
+                SysState.AngMomentumComp[i][j] * SysState.AngMomentumComp[i][j];
+            }
+          SysState.CenterOfMassComp[i][3] = sqrt(SysState.CenterOfMassComp[i][3])
+      ;
+          SysState.MomentumComp[i][3] = sqrt(SysState.MomentumComp[i][3]);
+          SysState.AngMomentumComp[i][3] = sqrt(SysState.AngMomentumComp[i][3]);
+        }
+
+      SysState.CenterOfMass[3] = SysState.Momentum[3] = SysState.AngMomentum[3] =
+       0;
+
+      for(j = 0; j < 3; j++)
+        {
+          SysState.CenterOfMass[3] += SysState.CenterOfMass[j] * SysState.
+      CenterOfMass[j];
+          SysState.Momentum[3] += SysState.Momentum[j] * SysState.Momentum[j];
+          SysState.AngMomentum[3] += SysState.AngMomentum[j] * SysState.
+      AngMomentum[j];
+        }
+
+      SysState.CenterOfMass[3] = sqrt(SysState.CenterOfMass[3]);
+      SysState.Momentum[3] = sqrt(SysState.Momentum[3]);
+      SysState.AngMomentum[3] = sqrt(SysState.AngMomentum[3]);
+    }
+
+  /* give everyone the result, maybe the want to do something with it */
+  MPI_Bcast(&SysState, sizeof(struct state_of_system), MPI_BYTE, 0, MPI_COMM_WORL
+      D);
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{global_8c_ada58109949c2431ca9b0cdaa01cfb5b1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{global_8c_ada58109949c2431ca9b0cdaa01cfb5b1_icgraph}
+\end{center}
+\end{figure}
+
+

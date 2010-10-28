@@ -1,0 +1,507 @@
+\hypertarget{sidm__routines_8c}{
+\section{sidm\_\-routines.c File Reference}
+\label{sidm__routines_8c}\index{sidm\_\-routines.c@{sidm\_\-routines.c}}
+}
+
+
+Extra fuctions and routines needed for the calculations of dark matter self interactions.  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$time.h$>$}\par
+{\ttfamily \#include $<$mpi.h$>$}\par
+{\ttfamily \#include $<$gsl/gsl\_\-math.h$>$}\par
+{\ttfamily \#include $<$gsl/gsl\_\-integration.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for sidm\_\-routines.c:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{sidm__routines_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sidm__routines_8c_af3f7d23e690c4253a44e7a674d31d276}{GSLWORKSIZE}~100000
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d}{g\_\-geo} (double r)
+\item 
+double \hyperlink{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc}{geofactor\_\-integ} (double x, void $\ast$params)
+\item 
+double \hyperlink{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7}{geofactor\_\-angle\_\-integ} (double u, void $\ast$params)
+\item 
+double \hyperlink{sidm__routines_8c_a1d33f5b567083ba4e0775814536fd0b4}{kernel} (double u)
+\item 
+double \hyperlink{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8}{prob\_\-of\_\-interaction} (double r, float Vtarget\mbox{[}3\mbox{]}, float Vno\mbox{[}3\mbox{]}, int tbegin, int tend)
+\item 
+void \hyperlink{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}{calculate\_\-interact\_\-kick} (float Vtarget\mbox{[}3\mbox{]}, float Vno\mbox{[}3\mbox{]}, double kick\_\-target\mbox{[}3\mbox{]}, double kick\_\-no\mbox{[}3\mbox{]})
+\item 
+void \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\_\-geofactor\_\-table} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Extra fuctions and routines needed for the calculations of dark matter self interactions. This file contains the functions and routines necesary for the computation of the self interactions probabilities and the velocity kicks due to the interactios. Written by Miguel Rocha, \href{mailto:rocham@uci.edu}{\tt rocham@uci.edu}. Oct 2010 
+
+Definition in file \hyperlink{sidm__routines_8c_source}{sidm\_\-routines.c}.
+
+
+
+\subsection{Define Documentation}
+\hypertarget{sidm__routines_8c_af3f7d23e690c4253a44e7a674d31d276}{
+\index{sidm\_\-routines.c@{sidm\_\-routines.c}!GSLWORKSIZE@{GSLWORKSIZE}}
+\index{GSLWORKSIZE@{GSLWORKSIZE}!sidm_routines.c@{sidm\_\-routines.c}}
+\subsubsection[{GSLWORKSIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define GSLWORKSIZE~100000}}
+\label{sidm__routines_8c_af3f7d23e690c4253a44e7a674d31d276}
+
+
+Definition at line 13 of file sidm\_\-routines.c.
+
+
+
+Referenced by geofactor\_\-integ(), and init\_\-geofactor\_\-table().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}{
+\index{sidm\_\-routines.c@{sidm\_\-routines.c}!calculate\_\-interact\_\-kick@{calculate\_\-interact\_\-kick}}
+\index{calculate\_\-interact\_\-kick@{calculate\_\-interact\_\-kick}!sidm_routines.c@{sidm\_\-routines.c}}
+\subsubsection[{calculate\_\-interact\_\-kick}]{\setlength{\rightskip}{0pt plus 5cm}void calculate\_\-interact\_\-kick (
+\begin{DoxyParamCaption}
+\item[{float}]{ Vtarget\mbox{[}3\mbox{]}, }
+\item[{float}]{ Vno\mbox{[}3\mbox{]}, }
+\item[{double}]{ kick\_\-target\mbox{[}3\mbox{]}, }
+\item[{double}]{ kick\_\-no\mbox{[}3\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}
+This routine sets the kicks for each particle after it has been decided that they will interact. It uses an algorithm tha conserves energy and momentum but picks a random direction so it does not conserves angular momentum. 
+
+Definition at line 91 of file sidm\_\-routines.c.
+
+
+
+References random\_\-generator.
+
+
+
+Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange().
+
+
+
+
+\begin{DoxyCode}
+{
+  double dV,theta,phi,dvx,dvy,dvz;
+
+  dvx = Vno[0]-Vtarget[0];
+  dvy = Vno[1]-Vtarget[1];
+  dvz = Vno[2]-Vtarget[2];
+  dV = sqrt(dvx*dvx + dvy*dvy + dvz*dvz);
+
+  theta = gsl_rng_uniform(random_generator)*M_PI;
+  phi = gsl_rng_uniform(random_generator)*2.0*M_PI;
+
+  kick_target[0] = (-Vtarget[0] + Vno[0] + dV*sin(theta)*cos(phi))/2.0;
+  kick_no[0] = (Vtarget[0] - Vno[0] - dV*sin(theta)*cos(phi))/2.0;
+
+  kick_target[1] = (-Vtarget[1] + Vno[1] + dV*sin(theta)*sin(phi))/2.0;
+  kick_no[1] = (Vtarget[1] - Vno[1] - dV*sin(theta)*sin(phi))/2.0;
+
+  kick_target[2] = (-Vtarget[2] + Vno[2] + dV*cos(theta))/2.0;
+  kick_no[2] = (Vtarget[2] - Vno[2] - dV*cos(theta))/2.0;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d}{
+\index{sidm\_\-routines.c@{sidm\_\-routines.c}!g\_\-geo@{g\_\-geo}}
+\index{g\_\-geo@{g\_\-geo}!sidm_routines.c@{sidm\_\-routines.c}}
+\subsubsection[{g\_\-geo}]{\setlength{\rightskip}{0pt plus 5cm}double g\_\-geo (
+\begin{DoxyParamCaption}
+\item[{double}]{ r}
+\end{DoxyParamCaption}
+)}}
+\label{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d}
+This function returns the value of the geometrical factor needed for the calculation of the interaction probability. 
+
+Definition at line 69 of file sidm\_\-routines.c.
+
+
+
+Referenced by prob\_\-of\_\-interaction().
+
+
+
+
+\begin{DoxyCode}
+{
+  double  f, u;
+  int i;
+
+  u = r / 2.0 * GEOFACTOR_TABLE_LENGTH;
+  i = (int) u;
+  if (i >= GEOFACTOR_TABLE_LENGTH)
+    i = GEOFACTOR_TABLE_LENGTH - 1;
+
+  if (i <= 1)
+    f = 0.992318  + (GeoFactorTable[0] - 0.992318)*u;
+  else
+    f = GeoFactorTable[i - 1] + (GeoFactorTable[i] - GeoFactorTable[i - 1]) * (u 
+      - i);
+
+  return f;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7}{
+\index{sidm\_\-routines.c@{sidm\_\-routines.c}!geofactor\_\-angle\_\-integ@{geofactor\_\-angle\_\-integ}}
+\index{geofactor\_\-angle\_\-integ@{geofactor\_\-angle\_\-integ}!sidm_routines.c@{sidm\_\-routines.c}}
+\subsubsection[{geofactor\_\-angle\_\-integ}]{\setlength{\rightskip}{0pt plus 5cm}double geofactor\_\-angle\_\-integ (
+\begin{DoxyParamCaption}
+\item[{double}]{ u, }
+\item[{void $\ast$}]{ params}
+\end{DoxyParamCaption}
+)}}
+\label{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7}
+This function returns the integrand of the angular part of the integral done on \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\_\-geofactor\_\-table()}. 
+
+Definition at line 162 of file sidm\_\-routines.c.
+
+
+
+References kernel().
+
+
+
+
+\begin{DoxyCode}
+{
+  double x,r,f;
+
+  r = *(double *) params;
+  x = *(double *) (params + sizeof(double));
+  f = sqrt(x*x + r*r + 2*x*r*u);
+
+  return kernel(f);
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc}{
+\index{sidm\_\-routines.c@{sidm\_\-routines.c}!geofactor\_\-integ@{geofactor\_\-integ}}
+\index{geofactor\_\-integ@{geofactor\_\-integ}!sidm_routines.c@{sidm\_\-routines.c}}
+\subsubsection[{geofactor\_\-integ}]{\setlength{\rightskip}{0pt plus 5cm}double geofactor\_\-integ (
+\begin{DoxyParamCaption}
+\item[{double}]{ x, }
+\item[{void $\ast$}]{ params}
+\end{DoxyParamCaption}
+)}}
+\label{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc}
+This function returns the integrand of the numerical integration done on \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\_\-geofactor\_\-table()}. 
+
+Definition at line 138 of file sidm\_\-routines.c.
+
+
+
+References GSLWORKSIZE, kernel(), and workspace.
+
+
+
+
+\begin{DoxyCode}
+{
+  double result, abserr,r;
+  double newparams[2];
+
+  r = *(double *) params;
+  newparams[0] = r;
+  newparams[1] = x;
+
+  gsl_function F;
+  gsl_integration_workspace *workspace;
+  workspace = gsl_integration_workspace_alloc(GSLWORKSIZE);
+
+  F.function = &geofactor_angle_integ;
+  F.params = newparams;
+
+  gsl_integration_qag(&F, -1.0, 1.0, 0, 1.0e-8, GSLWORKSIZE, GSL_INTEG_GAUSS41,wo
+      rkspace, &result, &abserr);
+
+  return x*x*kernel(x)*result;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{
+\index{sidm\_\-routines.c@{sidm\_\-routines.c}!init\_\-geofactor\_\-table@{init\_\-geofactor\_\-table}}
+\index{init\_\-geofactor\_\-table@{init\_\-geofactor\_\-table}!sidm_routines.c@{sidm\_\-routines.c}}
+\subsubsection[{init\_\-geofactor\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-geofactor\_\-table (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}
+This routine initialazes the table that will be used to get the geometrical factor as a function of the two particle separations. It populates a table with the results of the numerical integration. 
+
+Definition at line 117 of file sidm\_\-routines.c.
+
+
+
+References GSLWORKSIZE, and workspace.
+
+
+
+Referenced by begrun().
+
+
+
+
+\begin{DoxyCode}
+{
+  int i;
+  double result, abserr,r;
+  gsl_function F;
+  gsl_integration_workspace *workspace;
+  workspace = gsl_integration_workspace_alloc(GSLWORKSIZE);
+
+  for(i = 0; i < GEOFACTOR_TABLE_LENGTH; i++)
+  {
+    r =  2.0/GEOFACTOR_TABLE_LENGTH * (i + 1);
+    F.function = &geofactor_integ;
+    F.params = &r;
+    gsl_integration_qag(&F, 0.0, 1.0, 0, 1.0e-8, GSLWORKSIZE, GSL_INTEG_GAUSS41,w
+      orkspace, &result, &abserr);
+    GeoFactorTable[i] = 2*M_PI*result;
+  }
+  gsl_integration_workspace_free(workspace);
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=356pt]{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sidm__routines_8c_a1d33f5b567083ba4e0775814536fd0b4}{
+\index{sidm\_\-routines.c@{sidm\_\-routines.c}!kernel@{kernel}}
+\index{kernel@{kernel}!sidm_routines.c@{sidm\_\-routines.c}}
+\subsubsection[{kernel}]{\setlength{\rightskip}{0pt plus 5cm}double kernel (
+\begin{DoxyParamCaption}
+\item[{double}]{ u}
+\end{DoxyParamCaption}
+)}}
+\label{sidm__routines_8c_a1d33f5b567083ba4e0775814536fd0b4}
+This function returns the value W(x). The values of the density kernel as a funtion of x=r/h. 
+
+$<$ Coefficients for SPH spline kernel and its derivative 
+
+
+
+Definition at line 175 of file sidm\_\-routines.c.
+
+
+
+References KERNEL\_\-COEFF\_\-1, KERNEL\_\-COEFF\_\-2, and KERNEL\_\-COEFF\_\-5.
+
+
+
+Referenced by geofactor\_\-angle\_\-integ(), and geofactor\_\-integ().
+
+
+
+
+\begin{DoxyCode}
+{
+  double w;
+
+  if (u < 1.0)
+    {
+      if (u <= 0.5)
+        {
+          w = KERNEL_COEFF_1 + KERNEL_COEFF_2 * (u - 1) * u * u;
+          return w;
+        }
+      else
+        {
+          w = KERNEL_COEFF_5 * (1.0 - u) * (1.0 - u) * (1.0 - u);
+          return w;
+        }
+    }
+  else
+  {
+    return 0.0;
+  }
+}\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{sidm__routines_8c_a1d33f5b567083ba4e0775814536fd0b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8}{
+\index{sidm\_\-routines.c@{sidm\_\-routines.c}!prob\_\-of\_\-interaction@{prob\_\-of\_\-interaction}}
+\index{prob\_\-of\_\-interaction@{prob\_\-of\_\-interaction}!sidm_routines.c@{sidm\_\-routines.c}}
+\subsubsection[{prob\_\-of\_\-interaction}]{\setlength{\rightskip}{0pt plus 5cm}double prob\_\-of\_\-interaction (
+\begin{DoxyParamCaption}
+\item[{double}]{ r, }
+\item[{float}]{ Vtarget\mbox{[}3\mbox{]}, }
+\item[{float}]{ Vno\mbox{[}3\mbox{]}, }
+\item[{int}]{ tbegin, }
+\item[{int}]{ tend}
+\end{DoxyParamCaption}
+)}}
+\label{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8}
+This function calculates the interaction probability between two particles. It checks if comoving integration is on and does the necesary change of variables and units. 
+
+Definition at line 32 of file sidm\_\-routines.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::ForceSoftening, g\_\-geo(), global\_\-data\_\-all\_\-processes::Hubble, hubble\_\-a, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, global\_\-data\_\-all\_\-processes::Time, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, and global\_\-data\_\-all\_\-processes::UnitLength\_\-in\_\-cm.
+
+
+
+Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange().
+
+
+
+
+\begin{DoxyCode}
+  {
+    double dT, dloga, dV, dvx, dvy, dvz, prob,h,hubble_a;
+
+    dvx = Vno[0]-Vtarget[0];
+    dvy = Vno[1]-Vtarget[1];
+    dvz = Vno[2]-Vtarget[2];
+    dV = sqrt(dvx*dvx + dvy*dvy + dvz*dvz);
+
+    if(All.ComovingIntegrationOn)
+      {
+        dloga = (tend - tbegin)*All.Timebase_interval;
+        hubble_a = (All.Omega0 / (All.Time * All.Time * All.Time)
+                    + (1 - All.Omega0 - All.OmegaLambda) / (All.Time * All.Time) 
+      + All.OmegaLambda);
+        hubble_a = All.Hubble * sqrt(hubble_a);
+        dT = dloga/hubble_a;
+
+        dV = dV/All.Time; /* Convert from internal velocity p = a^2 dx/dt to pecu
+      liar velocity v = a dx/dt*/
+        dV -= All.Time*hubble_a*r; /* Substract Hubble flow */
+
+        h = All.ForceSoftening[1]*All.Time;
+      }
+    else
+      {
+        dT = (tend-tbegin)*All.Timebase_interval;
+        h = All.ForceSoftening[1];
+      }
+
+    prob = All.InteractionCrossSection*dV*dT*g_geo(r)/(h*h*h*All.
+      UnitLength_in_cm*All.UnitLength_in_cm);
+
+    return prob;
+
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8_icgraph}
+\end{center}
+\end{figure}
+
+

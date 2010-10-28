@@ -1,0 +1,234 @@
+\hypertarget{predict_8c}{
+\section{predict.c File Reference}
+\label{predict_8c}\index{predict.c@{predict.c}}
+}
+
+
+drift particles by a small time interval  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$mpi.h$>$}\par
+{\ttfamily \#include $<$gsl/gsl\_\-math.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for predict.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{predict_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{predict_8c_a02a8a27a7a75ce5cd6c2a27b4d641e31}{move\_\-particles} (int time0, int time1)
+\item 
+void \hyperlink{predict_8c_adda9e167a16a53d1aa40180406950446}{do\_\-box\_\-wrapping} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+drift particles by a small time interval This function contains code to implement a drift operation on all the particles, which represents one part of the leapfrog integration scheme. 
+
+Definition in file \hyperlink{predict_8c_source}{predict.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{predict_8c_adda9e167a16a53d1aa40180406950446}{
+\index{predict.c@{predict.c}!do\_\-box\_\-wrapping@{do\_\-box\_\-wrapping}}
+\index{do\_\-box\_\-wrapping@{do\_\-box\_\-wrapping}!predict.c@{predict.c}}
+\subsubsection[{do\_\-box\_\-wrapping}]{\setlength{\rightskip}{0pt plus 5cm}void do\_\-box\_\-wrapping (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{predict_8c_adda9e167a16a53d1aa40180406950446}
+This function makes sure that all particle coordinates (Pos) are periodically mapped onto the interval \mbox{[}0, BoxSize\mbox{]}. After this function has been called, a new domain decomposition should be done, which will also force a new tree construction. 
+
+Definition at line 103 of file predict.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::BoxSize, NumPart, P, and particle\_\-data::Pos.
+
+
+
+Referenced by domain\_\-Decomposition().
+
+
+
+
+\begin{DoxyCode}
+{
+  int i, j;
+  double boxsize[3];
+
+  for(j = 0; j < 3; j++)
+    boxsize[j] = All.BoxSize;
+
+#ifdef LONG_X
+  boxsize[0] *= LONG_X;
+#endif
+#ifdef LONG_Y
+  boxsize[1] *= LONG_Y;
+#endif
+#ifdef LONG_Z
+  boxsize[2] *= LONG_Z;
+#endif
+
+  for(i = 0; i < NumPart; i++)
+    for(j = 0; j < 3; j++)
+      {
+        while(P[i].Pos[j] < 0)
+          P[i].Pos[j] += boxsize[j];
+
+        while(P[i].Pos[j] >= boxsize[j])
+          P[i].Pos[j] -= boxsize[j];
+      }
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{predict_8c_adda9e167a16a53d1aa40180406950446_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{predict_8c_a02a8a27a7a75ce5cd6c2a27b4d641e31}{
+\index{predict.c@{predict.c}!move\_\-particles@{move\_\-particles}}
+\index{move\_\-particles@{move\_\-particles}!predict.c@{predict.c}}
+\subsubsection[{move\_\-particles}]{\setlength{\rightskip}{0pt plus 5cm}void move\_\-particles (
+\begin{DoxyParamCaption}
+\item[{int}]{ time0, }
+\item[{int}]{ time1}
+\end{DoxyParamCaption}
+)}}
+\label{predict_8c_a02a8a27a7a75ce5cd6c2a27b4d641e31}
+This function drifts all particles from the current time to the future: time0 -\/ $>$ time1
+
+If there is no explicit tree construction in the following timestep, the tree nodes are also drifted and updated accordingly. Note: For periodic boundary conditions, the mapping of coordinates onto the interval \mbox{[}0,All.BoxSize\mbox{]} is only done before the domain decomposition, or for outputs to snapshot files. This simplifies dynamic tree updates, and allows the domain decomposition to be carried out only every once in a while. 
+
+$<$ adiabatic index of simulated gas 
+
+
+
+Definition at line 31 of file predict.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CPU\_\-Predict, NODE::d, sph\_\-particle\_\-data::Density, sph\_\-particle\_\-data::DtEntropy, sph\_\-particle\_\-data::Entropy, Extnodes, force\_\-update\_\-len(), force\_\-update\_\-pseudoparticles(), GAMMA, get\_\-drift\_\-factor(), get\_\-gravkick\_\-factor(), get\_\-hydrokick\_\-factor(), particle\_\-data::GravAccel, particle\_\-data::GravPM, sph\_\-particle\_\-data::Hsml, sph\_\-particle\_\-data::HydroAccel, global\_\-data\_\-all\_\-processes::MaxPart, global\_\-data\_\-all\_\-processes::MinGasHsml, Nodes, global\_\-data\_\-all\_\-processes::NumForcesSinceLastDomainDecomp, Numnodestree, NumPart, P, particle\_\-data::Pos, pow(), sph\_\-particle\_\-data::Pressure, second(), SphP, particle\_\-data::Ti\_\-begstep, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, timediff(), global\_\-data\_\-all\_\-processes::TotNumPart, global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency, particle\_\-data::Type, NODE::u, particle\_\-data::Vel, and extNODE::vs.
+
+
+
+Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift().
+
+
+
+
+\begin{DoxyCode}
+{
+  int i, j;
+  double dt_drift, dt_gravkick, dt_hydrokick, dt_entr;
+  double t0, t1;
+
+
+  t0 = second();
+
+  if(All.ComovingIntegrationOn)
+    {
+      dt_drift = get_drift_factor(time0, time1);
+      dt_gravkick = get_gravkick_factor(time0, time1);
+      dt_hydrokick = get_hydrokick_factor(time0, time1);
+    }
+  else
+    {
+      dt_drift = dt_gravkick = dt_hydrokick = (time1 - time0) * All.
+      Timebase_interval;
+    }
+
+  for(i = 0; i < NumPart; i++)
+    {
+      for(j = 0; j < 3; j++)
+        P[i].Pos[j] += P[i].Vel[j] * dt_drift;
+
+      if(P[i].Type == 0)
+        {
+#ifdef PMGRID
+          for(j = 0; j < 3; j++)
+            SphP[i].VelPred[j] +=
+              (P[i].GravAccel[j] + P[i].GravPM[j]) * dt_gravkick + SphP[i].
+      HydroAccel[j] * dt_hydrokick;
+#else
+          for(j = 0; j < 3; j++)
+            SphP[i].VelPred[j] += P[i].GravAccel[j] * dt_gravkick + SphP[i].Hydro
+      Accel[j] * dt_hydrokick;
+#endif
+          SphP[i].Density *= exp(-SphP[i].DivVel * dt_drift);
+          SphP[i].Hsml *= exp(0.333333333333 * SphP[i].DivVel * dt_drift);
+
+          if(SphP[i].Hsml < All.MinGasHsml)
+            SphP[i].Hsml = All.MinGasHsml;
+
+          dt_entr = (time1 - (P[i].Ti_begstep + P[i].Ti_endstep) / 2) * All.
+      Timebase_interval;
+
+          SphP[i].Pressure = (SphP[i].Entropy + SphP[i].DtEntropy * dt_entr) * 
+      pow(SphP[i].Density, GAMMA);
+        }
+    }
+
+  /* if domain-decomp and tree are not going to be reconstructed, update dynamica
+      lly.  */
+  if(All.NumForcesSinceLastDomainDecomp < All.TotNumPart * All.
+      TreeDomainUpdateFrequency)
+    {
+      for(i = 0; i < Numnodestree; i++)
+        for(j = 0; j < 3; j++)
+          Nodes[All.MaxPart + i].u.d.s[j] += Extnodes[All.MaxPart + i].vs[j] * dt
+      _drift;
+
+      force_update_len();
+
+      force_update_pseudoparticles();
+    }
+
+  t1 = second();
+
+  All.CPU_Predict += timediff(t0, t1);
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{predict_8c_a02a8a27a7a75ce5cd6c2a27b4d641e31_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{predict_8c_a02a8a27a7a75ce5cd6c2a27b4d641e31_icgraph}
+\end{center}
+\end{figure}
+
+

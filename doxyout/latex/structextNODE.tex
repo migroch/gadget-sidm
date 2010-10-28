@@ -1,0 +1,56 @@
+\hypertarget{structextNODE}{
+\section{extNODE Struct Reference}
+\label{structextNODE}\index{extNODE@{extNODE}}
+}
+
+
+{\ttfamily \#include $<$allvars.h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{structextNODE_ac479dcb30bffad0266b13b9200bbe9ad}{hmax}
+\item 
+float \hyperlink{structextNODE_a8fe64edf0e8598f60ff0ba73a04261bb}{vs} \mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+$<$ this structure holds additional tree-\/node information which is not needed in the actual gravity computation 
+
+Definition at line 602 of file allvars.h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{structextNODE_ac479dcb30bffad0266b13b9200bbe9ad}{
+\index{extNODE@{extNODE}!hmax@{hmax}}
+\index{hmax@{hmax}!extNODE@{extNODE}}
+\subsubsection[{hmax}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf extNODE::hmax}}}
+\label{structextNODE_ac479dcb30bffad0266b13b9200bbe9ad}
+maximum SPH smoothing length in node. Only used for gas particles 
+
+Definition at line 604 of file allvars.h.
+
+
+
+Referenced by force\_\-update\_\-hmax(), force\_\-update\_\-node\_\-hmax\_\-local(), force\_\-update\_\-node\_\-hmax\_\-toptree(), force\_\-update\_\-node\_\-recursive(), and ngb\_\-treefind\_\-pairs().
+
+\hypertarget{structextNODE_a8fe64edf0e8598f60ff0ba73a04261bb}{
+\index{extNODE@{extNODE}!vs@{vs}}
+\index{vs@{vs}!extNODE@{extNODE}}
+\subsubsection[{vs}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf extNODE::vs}\mbox{[}3\mbox{]}}}
+\label{structextNODE_a8fe64edf0e8598f60ff0ba73a04261bb}
+center-\/of-\/mass velocity 
+
+Definition at line 605 of file allvars.h.
+
+
+
+Referenced by force\_\-exchange\_\-pseudodata(), force\_\-treeupdate\_\-pseudos(), force\_\-update\_\-node\_\-recursive(), and move\_\-particles().
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{allvars_8h}{allvars.h}\end{DoxyCompactItemize}

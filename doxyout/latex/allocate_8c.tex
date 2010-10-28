@@ -1,0 +1,320 @@
+\hypertarget{allocate_8c}{
+\section{allocate.c File Reference}
+\label{allocate_8c}\index{allocate.c@{allocate.c}}
+}
+
+
+routines for allocating particle and tree storage  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for allocate.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{allocate_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{allocate_8c_a9e761db39213af33ba28aeed461f1a5a}{allocate\_\-commbuffers} (void)
+\item 
+void \hyperlink{allocate_8c_a7fe5e304baaf5f418a22fef9a9cc02c7}{allocate\_\-memory} (void)
+\item 
+void \hyperlink{allocate_8c_a99877ff0dc6228eabf8f959569f2771e}{free\_\-memory} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+routines for allocating particle and tree storage 
+
+Definition in file \hyperlink{allocate_8c_source}{allocate.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{allocate_8c_a9e761db39213af33ba28aeed461f1a5a}{
+\index{allocate.c@{allocate.c}!allocate\_\-commbuffers@{allocate\_\-commbuffers}}
+\index{allocate\_\-commbuffers@{allocate\_\-commbuffers}!allocate.c@{allocate.c}}
+\subsubsection[{allocate\_\-commbuffers}]{\setlength{\rightskip}{0pt plus 5cm}void allocate\_\-commbuffers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{allocate_8c_a9e761db39213af33ba28aeed461f1a5a}
+Allocates a number of small buffers and arrays, the largest one being the communication buffer. The communication buffer itself is mapped onto various tables used in the different parts of the force algorithms. We further allocate space for the top-\/level tree nodes, and auxiliary arrays for the domain decomposition algorithm. 
+
+$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+
+$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+
+$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+
+$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+
+$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+
+$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+
+$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+
+$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+
+$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition 
+
+
+
+Definition at line 19 of file allocate.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::BufferSize, global\_\-data\_\-all\_\-processes::BunchSizeDensity, global\_\-data\_\-all\_\-processes::BunchSizeDomain, global\_\-data\_\-all\_\-processes::BunchSizeForce, global\_\-data\_\-all\_\-processes::BunchSizeHydro, CommBuffer, DensDataGet, DensDataIn, DensDataPartialResult, DensDataResult, DomainCount, DomainCountSph, DomainEndList, DomainHmax, DomainKeyBuf, DomainMoment, DomainNodeIndex, DomainPartBuf, DomainSphBuf, DomainStartList, DomainTask, DomainTreeNodeLen, DomainWork, endrun(), Exportflag, FLOAT, GravDataGet, GravDataIn, GravDataIndexTable, GravDataOut, GravDataResult, HydroDataGet, HydroDataIn, HydroDataPartialResult, HydroDataResult, MAXTOPNODES, NTask, ThisTask, and TopNodes.
+
+
+
+Referenced by begrun().
+
+
+
+
+\begin{DoxyCode}
+{
+  size_t bytes;
+
+  Exportflag = malloc(NTask * sizeof(char));
+  DomainStartList = malloc(NTask * sizeof(int));
+  DomainEndList = malloc(NTask * sizeof(int));
+
+  TopNodes = malloc(MAXTOPNODES * sizeof(struct topnode_data));
+
+  DomainWork = malloc(MAXTOPNODES * sizeof(double));
+  DomainCount = malloc(MAXTOPNODES * sizeof(int));
+  DomainCountSph = malloc(MAXTOPNODES * sizeof(int));
+  DomainTask = malloc(MAXTOPNODES * sizeof(int));
+  DomainNodeIndex = malloc(MAXTOPNODES * sizeof(int));
+  DomainTreeNodeLen = malloc(MAXTOPNODES * sizeof(FLOAT));
+  DomainHmax = malloc(MAXTOPNODES * sizeof(FLOAT));
+  DomainMoment = malloc(MAXTOPNODES * sizeof(struct DomainNODE));
+
+  if(!(CommBuffer = malloc(bytes = All.BufferSize * 1024 * 1024)))
+    {
+      printf("failed to allocate memory for `CommBuffer' (%g MB).\n", bytes / (10
+      24.0 * 1024.0));
+      endrun(2);
+    }
+
+  All.BunchSizeForce =
+    (All.BufferSize * 1024 * 1024) / (sizeof(struct gravdata_index) + 2 * sizeof(
+      struct gravdata_in));
+
+  if(All.BunchSizeForce & 1)
+    All.BunchSizeForce -= 1;    /* make sure that All.BunchSizeForce is an even n
+      umber 
+                                   --> 8-byte alignment for 64bit processors */
+
+  GravDataIndexTable = (struct gravdata_index *) CommBuffer;
+  GravDataIn = (struct gravdata_in *) (GravDataIndexTable + All.BunchSizeForce);
+  GravDataGet = GravDataIn + All.BunchSizeForce;
+  GravDataOut = GravDataIn;     /* this will overwrite the GravDataIn-Table */
+  GravDataResult = GravDataGet; /* this will overwrite the GravDataGet-Table */
+
+
+  All.BunchSizeDensity =
+    (All.BufferSize * 1024 * 1024) / (2 * sizeof(struct densdata_in) + 2 * sizeof
+      (struct densdata_out));
+
+  DensDataIn = (struct densdata_in *) CommBuffer;
+  DensDataGet = DensDataIn + All.BunchSizeDensity;
+  DensDataResult = (struct densdata_out *) (DensDataGet + All.BunchSizeDensity);
+  DensDataPartialResult = DensDataResult + All.BunchSizeDensity;
+
+  All.BunchSizeHydro =
+    (All.BufferSize * 1024 * 1024) / (2 * sizeof(struct hydrodata_in) + 2 * sizeo
+      f(struct hydrodata_out));
+
+  HydroDataIn = (struct hydrodata_in *) CommBuffer;
+  HydroDataGet = HydroDataIn + All.BunchSizeHydro;
+  HydroDataResult = (struct hydrodata_out *) (HydroDataGet + All.BunchSizeHydro);
+      
+  HydroDataPartialResult = HydroDataResult + All.BunchSizeHydro;
+
+  All.BunchSizeDomain =
+    (All.BufferSize * 1024 * 1024) / (sizeof(struct particle_data) + sizeof(struc
+      t sph_particle_data) +
+                                      sizeof(peanokey));
+
+  if(All.BunchSizeDomain & 1)
+    All.BunchSizeDomain -= 1;   /* make sure that All.BunchSizeDomain is even 
+                                   --> 8-byte alignment of DomainKeyBuf for 64bit
+       processors */
+
+  DomainPartBuf = (struct particle_data *) CommBuffer;
+  DomainSphBuf = (struct sph_particle_data *) (DomainPartBuf + All.
+      BunchSizeDomain);
+  DomainKeyBuf = (peanokey *) (DomainSphBuf + All.BunchSizeDomain);
+
+
+  if(ThisTask == 0)
+    {
+      printf("\nAllocated %d MByte communication buffer per processor.\n\n", All.
+      BufferSize);
+      printf("Communication buffer has room for %d particles in gravity computati
+      on\n", All.BunchSizeForce);
+      printf("Communication buffer has room for %d particles in density computati
+      on\n", All.BunchSizeDensity);
+      printf("Communication buffer has room for %d particles in hydro computation
+      \n", All.BunchSizeHydro);
+      printf("Communication buffer has room for %d particles in domain decomposit
+      ion\n", All.BunchSizeDomain);
+      printf("\n");
+    }
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{allocate_8c_a9e761db39213af33ba28aeed461f1a5a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=368pt]{allocate_8c_a9e761db39213af33ba28aeed461f1a5a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{allocate_8c_a7fe5e304baaf5f418a22fef9a9cc02c7}{
+\index{allocate.c@{allocate.c}!allocate\_\-memory@{allocate\_\-memory}}
+\index{allocate\_\-memory@{allocate\_\-memory}!allocate.c@{allocate.c}}
+\subsubsection[{allocate\_\-memory}]{\setlength{\rightskip}{0pt plus 5cm}void allocate\_\-memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{allocate_8c_a7fe5e304baaf5f418a22fef9a9cc02c7}
+This routine allocates memory for particle storage, both the collisionless and the SPH particles. 
+
+Definition at line 103 of file allocate.c.
+
+
+
+References All, endrun(), global\_\-data\_\-all\_\-processes::MaxPart, global\_\-data\_\-all\_\-processes::MaxPartSph, P, SphP, and ThisTask.
+
+
+
+Referenced by read\_\-file(), and restart().
+
+
+
+
+\begin{DoxyCode}
+{
+  size_t bytes;
+  double bytes_tot = 0;
+
+  if(All.MaxPart > 0)
+    {
+      if(!(P = malloc(bytes = All.MaxPart * sizeof(struct particle_data))))
+        {
+          printf("failed to allocate memory for `P' (%g MB).\n", bytes / (1024.0 
+      * 1024.0));
+          endrun(1);
+        }
+      bytes_tot += bytes;
+
+      if(ThisTask == 0)
+        printf("\nAllocated %g MByte for particle storage. %d\n\n", bytes_tot / (
+      1024.0 * 1024.0), sizeof(struct particle_data));
+    }
+
+  if(All.MaxPartSph > 0)
+    {
+      bytes_tot = 0;
+
+      if(!(SphP = malloc(bytes = All.MaxPartSph * sizeof(struct 
+      sph_particle_data))))
+        {
+          printf("failed to allocate memory for `SphP' (%g MB) %d.\n", bytes / (1
+      024.0 * 1024.0), sizeof(struct sph_particle_data));
+          endrun(1);
+        }
+      bytes_tot += bytes;
+
+      if(ThisTask == 0)
+        printf("Allocated %g MByte for storage of SPH data. %d\n\n", bytes_tot / 
+      (1024.0 * 1024.0), sizeof(struct sph_particle_data));
+    }
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{allocate_8c_a7fe5e304baaf5f418a22fef9a9cc02c7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{allocate_8c_a7fe5e304baaf5f418a22fef9a9cc02c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{allocate_8c_a99877ff0dc6228eabf8f959569f2771e}{
+\index{allocate.c@{allocate.c}!free\_\-memory@{free\_\-memory}}
+\index{free\_\-memory@{free\_\-memory}!allocate.c@{allocate.c}}
+\subsubsection[{free\_\-memory}]{\setlength{\rightskip}{0pt plus 5cm}void free\_\-memory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{allocate_8c_a99877ff0dc6228eabf8f959569f2771e}
+This routine frees the memory for the particle storage. Note: We don't actually bother to call it in the code... When the program terminats, the memory will be automatically freed by the operating system. 
+
+Definition at line 144 of file allocate.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::MaxPart, global\_\-data\_\-all\_\-processes::MaxPartSph, P, and SphP.
+
+
+
+
+\begin{DoxyCode}
+{
+  if(All.MaxPartSph > 0)
+    free(SphP);
+
+  if(All.MaxPart > 0)
+    free(P);
+}
+\end{DoxyCode}
+
+

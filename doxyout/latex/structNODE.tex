@@ -1,0 +1,166 @@
+\hypertarget{structNODE}{
+\section{NODE Struct Reference}
+\label{structNODE}\index{NODE@{NODE}}
+}
+
+
+{\ttfamily \#include $<$allvars.h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{structNODE_aae35ad626e2613a4926d4e07fdf9be5c}{len}
+\item 
+float \hyperlink{structNODE_a27584ddd52a800cbf36c4de8e3fb4bc9}{center} \mbox{[}3\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>int \hyperlink{structNODE_a2a31ed85a69cd67dce1861bd327ac6e9}{suns} \mbox{[}8\mbox{]}\\
+\>struct \{\\
+\>\>float \hyperlink{structNODE_a97ef917e39b0cc8a4aae6e6362c4b3bf}{s} \mbox{[}3\mbox{]}\\
+\>\>float \hyperlink{structNODE_adfb345bd40fc1835e54589b46622efda}{mass}\\
+\>\>int \hyperlink{structNODE_a3678932e5e5b2947409657de4b70e8fc}{bitflags}\\
+\>\>int \hyperlink{structNODE_a0e5a3f58232208e4ad8570f801bf5713}{sibling}\\
+\>\>int \hyperlink{structNODE_aabf4865245a8afbec1e1cb8e664f41e8}{nextnode}\\
+\>\>int \hyperlink{structNODE_a9a1b7edbe811165e40220f63a38f2d16}{father}\\
+\>\} \hyperlink{structNODE_a5ab829c8c9c85992ba220635f776de74}{d}\\
+\} \hyperlink{structNODE_acd7e6747d70c2205a6fb3d44b6465dd4}{u}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 569 of file allvars.h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{structNODE_a3678932e5e5b2947409657de4b70e8fc}{
+\index{NODE@{NODE}!bitflags@{bitflags}}
+\index{bitflags@{bitflags}!NODE@{NODE}}
+\subsubsection[{bitflags}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NODE::bitflags}}}
+\label{structNODE_a3678932e5e5b2947409657de4b70e8fc}
+a bit-\/field with various information on the node 
+
+Definition at line 584 of file allvars.h.
+
+\hypertarget{structNODE_a27584ddd52a800cbf36c4de8e3fb4bc9}{
+\index{NODE@{NODE}!center@{center}}
+\index{center@{center}!NODE@{NODE}}
+\subsubsection[{center}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf NODE::center}\mbox{[}3\mbox{]}}}
+\label{structNODE_a27584ddd52a800cbf36c4de8e3fb4bc9}
+geometrical center of node 
+
+Definition at line 572 of file allvars.h.
+
+
+
+Referenced by force\_\-create\_\-empty\_\-nodes(), force\_\-insert\_\-pseudo\_\-particles(), force\_\-treebuild\_\-single(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), force\_\-update\_\-node\_\-len\_\-local(), force\_\-update\_\-node\_\-len\_\-toptree(), force\_\-update\_\-node\_\-recursive(), ngb\_\-treefind\_\-pairs(), and ngb\_\-treefind\_\-variable().
+
+\hypertarget{structNODE_a5ab829c8c9c85992ba220635f776de74}{
+\index{NODE@{NODE}!d@{d}}
+\index{d@{d}!NODE@{NODE}}
+\subsubsection[{d}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 
+     {\bf NODE::d}}}
+\label{structNODE_a5ab829c8c9c85992ba220635f776de74}
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), force\_\-exchange\_\-pseudodata(), force\_\-flag\_\-localnodes(), force\_\-treebuild\_\-single(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), force\_\-treeupdate\_\-pseudos(), force\_\-update\_\-node\_\-hmax\_\-local(), force\_\-update\_\-node\_\-hmax\_\-toptree(), force\_\-update\_\-node\_\-len\_\-local(), force\_\-update\_\-node\_\-len\_\-toptree(), force\_\-update\_\-node\_\-recursive(), move\_\-particles(), restart(), and setup\_\-smoothinglengths().
+
+\hypertarget{structNODE_a9a1b7edbe811165e40220f63a38f2d16}{
+\index{NODE@{NODE}!father@{father}}
+\index{father@{father}!NODE@{NODE}}
+\subsubsection[{father}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NODE::father}}}
+\label{structNODE_a9a1b7edbe811165e40220f63a38f2d16}
+this gives the parent node of each node (or -\/1 if we have the root node) 
+
+Definition at line 587 of file allvars.h.
+
+\hypertarget{structNODE_aae35ad626e2613a4926d4e07fdf9be5c}{
+\index{NODE@{NODE}!len@{len}}
+\index{len@{len}!NODE@{NODE}}
+\subsubsection[{len}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf NODE::len}}}
+\label{structNODE_aae35ad626e2613a4926d4e07fdf9be5c}
+sidelength of treenode 
+
+Definition at line 571 of file allvars.h.
+
+
+
+Referenced by ewald\_\-init(), force\_\-create\_\-empty\_\-nodes(), force\_\-treebuild\_\-single(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), force\_\-update\_\-len(), force\_\-update\_\-node\_\-len\_\-local(), force\_\-update\_\-node\_\-len\_\-toptree(), ngb\_\-treefind\_\-pairs(), ngb\_\-treefind\_\-variable(), and setup\_\-smoothinglengths().
+
+\hypertarget{structNODE_adfb345bd40fc1835e54589b46622efda}{
+\index{NODE@{NODE}!mass@{mass}}
+\index{mass@{mass}!NODE@{NODE}}
+\subsubsection[{mass}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf NODE::mass}}}
+\label{structNODE_adfb345bd40fc1835e54589b46622efda}
+mass of node 
+
+Definition at line 583 of file allvars.h.
+
+
+
+Referenced by force\_\-treeevaluate(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), and force\_\-treeevaluate\_\-shortrange().
+
+\hypertarget{structNODE_aabf4865245a8afbec1e1cb8e664f41e8}{
+\index{NODE@{NODE}!nextnode@{nextnode}}
+\index{nextnode@{nextnode}!NODE@{NODE}}
+\subsubsection[{nextnode}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NODE::nextnode}}}
+\label{structNODE_aabf4865245a8afbec1e1cb8e664f41e8}
+this gives the next node in case the current node needs to be opened 
+
+Definition at line 586 of file allvars.h.
+
+\hypertarget{structNODE_a97ef917e39b0cc8a4aae6e6362c4b3bf}{
+\index{NODE@{NODE}!s@{s}}
+\index{s@{s}!NODE@{NODE}}
+\subsubsection[{s}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf NODE::s}\mbox{[}3\mbox{]}}}
+\label{structNODE_a97ef917e39b0cc8a4aae6e6362c4b3bf}
+center of mass of node 
+
+Definition at line 582 of file allvars.h.
+
+
+
+Referenced by force\_\-insert\_\-pseudo\_\-particles().
+
+\hypertarget{structNODE_a0e5a3f58232208e4ad8570f801bf5713}{
+\index{NODE@{NODE}!sibling@{sibling}}
+\index{sibling@{sibling}!NODE@{NODE}}
+\subsubsection[{sibling}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NODE::sibling}}}
+\label{structNODE_a0e5a3f58232208e4ad8570f801bf5713}
+this gives the next node in the walk in case the current node can be used 
+
+Definition at line 585 of file allvars.h.
+
+\hypertarget{structNODE_a2a31ed85a69cd67dce1861bd327ac6e9}{
+\index{NODE@{NODE}!suns@{suns}}
+\index{suns@{suns}!NODE@{NODE}}
+\subsubsection[{suns}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NODE::suns}\mbox{[}8\mbox{]}}}
+\label{structNODE_a2a31ed85a69cd67dce1861bd327ac6e9}
+temporary pointers to daughter nodes 
+
+Definition at line 579 of file allvars.h.
+
+
+
+Referenced by force\_\-create\_\-empty\_\-nodes(), force\_\-insert\_\-pseudo\_\-particles(), force\_\-treebuild\_\-single(), and force\_\-update\_\-node\_\-recursive().
+
+\hypertarget{structNODE_acd7e6747d70c2205a6fb3d44b6465dd4}{
+\index{NODE@{NODE}!u@{u}}
+\index{u@{u}!NODE@{NODE}}
+\subsubsection[{u}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} 
+   {\bf NODE::u}}}
+\label{structNODE_acd7e6747d70c2205a6fb3d44b6465dd4}
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), ewald\_\-corr(), ewald\_\-pot\_\-corr(), force\_\-create\_\-empty\_\-nodes(), force\_\-exchange\_\-pseudodata(), force\_\-flag\_\-localnodes(), force\_\-insert\_\-pseudo\_\-particles(), force\_\-treeallocate(), force\_\-treebuild\_\-single(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-direct(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), force\_\-treeupdate\_\-pseudos(), force\_\-update\_\-node\_\-hmax\_\-local(), force\_\-update\_\-node\_\-hmax\_\-toptree(), force\_\-update\_\-node\_\-len\_\-local(), force\_\-update\_\-node\_\-len\_\-toptree(), force\_\-update\_\-node\_\-recursive(), move\_\-particles(), ngb\_\-treefind\_\-pairs(), ngb\_\-treefind\_\-variable(), restart(), and setup\_\-smoothinglengths().
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{allvars_8h}{allvars.h}\end{DoxyCompactItemize}

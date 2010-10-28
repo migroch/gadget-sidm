@@ -1,0 +1,391 @@
+The parameterfile for GADGET-\/2 is a simple text file, consisting of pairs of tags and values. For each parameter, a separate line needs to be specified, first listing the name (tag) of the parameter, and then the assigned value, separated by whitespace. It is allowed to add further text behind the assigned parameter value. The order of the parameters is arbitrary, but each one needs to occur exactly one time, otherwise an error message will be produced. Empty lines, or lines beginning with a \%-\/sign, are ignored and treated as comments.
+
+
+\begin{DoxyItemize}
+\item {\bfseries InitCondFile} \par
+ The filename of the initial conditions file. If a restart from a snapshot with the \char`\"{}2\char`\"{} option is desired, one needs to specify the snapshot file here.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries OutputDir} \par
+ Pathname of the output directory of the code.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries EnergyFile} \par
+ Filename of the log-\/file that contain the energy statistics.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries InfoFile} \par
+ Log-\/file that contains a list of the timesteps taken.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries TimingsFile} \par
+ Log-\/file with performance metrics of the gravitational tree computation.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries CpuFile} \par
+ Log-\/file with CPU time consumption in various parts of the code.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries RestartFile} \par
+ Basename of restart-\/files produced by the code.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SnapshotFileBase} \par
+ Basename of snapshot files produced by the code.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries OutputListFilename} \par
+ File with a list of the desired output times.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries TimeLimitCPU} \par
+ CPU-\/time limit for the present submission of the code. If 85 percent of this time have been reached at the end of a timestep, the code terminates itself and produces restart files.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries ResubmitOn} \par
+ If set to \char`\"{}1\char`\"{}, the code will try to resubmit itself to the queuing system when an interruption of the run due to the CPU-\/time limit occurs. The resubmission itself is done by executing the program/script given with {\itshape ResubmitCommand\/}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries ResubmitCommand} \par
+ The name of a script file or program that is executed for automatic resubmission of the job to the queuing system. Note that the file given here needs to be executable.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries ICFormat} \par
+ The file format of the initial conditions. Currently, three different formats are supported, selected by one of the choices \char`\"{}1\char`\"{}, \char`\"{}2\char`\"{}, or \char`\"{}3\char`\"{}. Format \char`\"{}1\char`\"{} is the traditional fortran-\/style unformatted format familiar from GADGET-\/1. Format \char`\"{}2\char`\"{} is a variant of this format, where each block of data is preceeded by a 4-\/character block-\/identifier. Finally, format \char`\"{}3\char`\"{} selects the HDF-\/5 format.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SnapFormat} \par
+ Similar as {\itshape ICFormat\/}, this parameter selects the file-\/format of snapshot dumps produced by the code.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries ComovingIntegrationOn} \par
+ If set to \char`\"{}1\char`\"{}, the code assumes that a cosmological integration in comoving coordinates is carried out, otherwise ordinary Newtonian dynamics is assumed.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries TypeOfTimestepCriterion} \par
+ This parameter can in principle be used to select different kinds of timestep criteria for gravitational dynamics. However, GADGET-\/2 presently only supports the standard criterion \char`\"{}0\char`\"{}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries OutputListOn} \par
+ If set to \char`\"{}1\char`\"{}, the code tries to read a list of desired output times from the file given in {\itshape OutputListFilename\/}. Otherwise, output times are generated equally spaced from the values assigned for {\itshape TimeOfFirstSnapshot\/} and {\itshape TimeBetSnapshot\/}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries PeriodicBoundariesOn} \par
+ If set to \char`\"{}1\char`\"{}, periodic boundary conditions are assumed, with a cubical box-\/size of side-\/length {\itshape BoxSize\/}. Particle coordinates are expected to be in the range \mbox{[}0,{\itshape BoxSize\/}\mbox{[}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries TimeBegin} \par
+ This sets the starting time of a simulation when the code is started from initial conditions. For cosmological integrations, the value specified here is taken as the initial scale factor.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries TimeMax} \par
+ This sets the final time for the simulation. The code normally tries to run until this time is reached. For cosmological integrations, the value given here is the final scale factor.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Omega0} \par
+ Gives the total matter density (in units of the critical density) at z=0 for cosmological simulations.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries OmegaLambda} \par
+ Gives the vacuum energy density at z=0 for cosmological simulations.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries OmegaBaryon} \par
+ Gives the baryon density at z=0 for cosmological simulations.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries HubbleParam} \par
+ This gives the Hubble constant at z=0 in units of 100 km/sec/Mpc. Note that this parameter has been basically absorbed into the definition of the internal code units, such that for gravitational dynamics and adiabatic gas dynamics the actual value assigned for {\itshape HubbleParam\/} is not used by the code.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries BoxSize} \par
+ The boxsize for simulations with periodic boundary conditions.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries TimeOfFirstSnapshot} \par
+ The time of the first desired snapshot file in case a file with output times is not specified. For cosmological simulations, the value given here is the scale factor of the first desired output.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries TimeBetSnapshot} \par
+ The time interval between two subsequent snapshot files in case a file with output times is not specified. For cosmological simulations, this is a multiplicative factor applied to the time of the last snapshot, such that the snapshots will have a constant logarithmic spacing in the scale factor. Otherwise, the parameter is an additive constant that gives the linear spacing between snapshot times.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries CpuTimeBetRestartFile} \par
+ The value specfied here gives the time in seconds the code will run before it writes regularly produced restart files. This can be useful to protect against unexpected interruptions (for example due to a hardware problem) of a simulation, particularly if it is run for a long time. It is then possible to resume a simulation from the last restart file, reducing the potential loss to the elapsed CPU-\/time since this was produced.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries TimeBetStatistics} \par
+ The code can be asked to measure the total kinetic, thermal, and potential energy in regular intervals, and to write the results to the file given in {\itshape EnergyFile\/}. The time interval between two such measurements is given by the parameter {\itshape TimeBetStatistics\/}, in an analogous way as with {\itshape TimeBetSnapshot\/}. Note that the compile time option {\itshape COMPUTE\_\-POTENTIAL\_\-ENERGY\/} needs to be activated to obtain a measurement of the gravitational potential energy.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries NumFilesPerSnapshot} \par
+ The number of separate files requested for each snapshot dump. Each file of the snapshot will hold the data of one or several processors, up to all of them. {\itshape NumFilesPerSnapshot\/} must hence lie between 1 and the number of processors used. Distributing a snapshot onto several files can be done in parallel and may lead to much better I/O performance, depending on the hardware configuration. It can also help to avoid problems due to big files ($>$2GB) for large simulations. Note that initial conditions may also be distributed into several files, the number of which is automatically recognised by the code and does not have to be equal to {\itshape NumFilesPerSnapshot\/} (it may also be larger than the number of processors).
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries NumFilesWrittenInParallel} \par
+ The number of files the code may read or write simultaneously when writing or reading snapshot/restart files. The value of this parameter must be smaller or equal to the number of processors.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries ErrTolIntAccuracy} \par
+ This dimensionless parameter controls the accuracy of the timestep criterion selected by {\itshape TypeOfTimestepCriterion\/}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries CourantFac} \par
+ This sets the value of the Courant parameter used in the determination of the hydrodynamical timestep of SPH particles.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries MaxSizeTimestep} \par
+ This gives the maximum timestep a particle may take. This should be set to a sensible value in order to protect against too large timesteps for particles with very small acceleration. For cosmological simulations, the parameter given here is the maximum allowed step in the logarithm of the expansion factor. Note that the definition of MaxSizeTimestep has {\itshape changed\/} compared to Gadget-\/1.1 for cosmological simulations.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries MinSizeTimestep} \par
+ If a particle requests a timestep smaller than the value specified here, the code will normally terminate with a warning message. If compiled with the {\itshape NOSTOP\_\-WHEN\_\-BELOW\_\-MINTIMESTEP\/} option, the code will instead force the timesteps to be at least as large as {\itshape MinSizeTimestep\/}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries TypeOfOpeningCriterion} \par
+ This selects the type of cell-\/opening criterion used in the tree walks. A value of `0' results in standard Barnes \& Hut, while `1' selects the relative opening criterion of GADGET-\/2.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries ErrTolTheta} \par
+ This gives the maximum opening angle if the BH criterion is used for the tree walk. If the relative opening criterion is used instead, a first force estimate is computed using the BH algorithm, which is then recomputed with the relative opening criterion.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries ErrTolForceAcc} \par
+ The accuracy parameter for the relative opening criterion for the tree walk.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries TreeDomainUpdateFrequency} \par
+ The domain decomposition and tree construction need not necessarily be done every single timestep. Instead, tree nodes can be dynamically updated, which is faster. However, the tree walk will become more expensive since the tree nodes have to \char`\"{}grow\char`\"{} to keep accomodating all particles they enclose. The parameter {\itshape TreeDomainUpdateFrequency\/} controls how often the domain decomposition is carried out and the tree is reconstructed from scratch. For example, a value of 0.1 means that the domain decomposition and the tree are reconstructed whenever there have been more than 0.1$\ast$N force computations since the last reconstruction, where N is the total particle number. A value of 0 will reconstruct the tree every timestep.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries MaxRMSDisplacementFac} \par
+ This parameter is an additional timestep criterion for the long-\/range integration in case the TreePM algorithm is used. It limits the long-\/range timestep such that the rms-\/displacement of particles per step is at most {\itshape MaxRMSDisplacementFac\/} times the mean particle separation, or the mesh-\/scale, whichever is smaller.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries DesNumNgb} \par
+ This sets the desired number of SPH smoothing neighbours.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries MaxNumNgbDeviation} \par
+ This sets the allowed variation of the number of neighbours around the target value {\itshape DesNumNgb\/}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries ArtBulkViscConst} \par
+ This sets the value of the artificial viscosity parameter used by GADGET-\/2.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries InitGasTemp} \par
+ This sets the initial gas temperature (assuming either a mean molecular weight corresponding to full ionization or full neutrality, depending on whether the temperature is above or below 10$^\wedge$4 K) in Kelvin when initial conditions are read. However, the gas temperature is only set to a certain temperature if {\itshape InitGasTemp\/}$>$0, and if the temperature of the gas particles in the initial conditions file is zero, otherwise the initial gas temperature is left at the value stored in the IC file.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries MinGasTemp} \par
+ A minimum temperature floor imposed by the code. This may be set to zero.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries PartAllocFactor} \par
+ Each processor allocates space for {\itshape PartAllocFactor\/} times the average number of particles per processor. This number needs to be larger than 1 to allow the simulation to achieve a good work-\/load balancing, which requires to trade particle-\/load balance for work-\/load balance. It is good to make {\itshape PartAllocFactor\/} quite a bit larger than 1, but values in excess of 3 will typically not improve performance any more. For a value that is too small, the code may not be able to succeed in the domain decomposition and terminate.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries TreeAllocFactor} \par
+ To construct the BH-\/tree for N particles, somewhat less than N internal tree-\/nodes are necessary for `normal' particle distributions. {\itshape TreeAllocFactor\/} sets the number of internal tree-\/nodes allocated in units of the particle number. By experience, space for 0.65 N internal nodes is usually fully sufficient, so a value of 0.7 should put you on the safe side.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries BufferSize} \par
+ This specifies the size (in MByte per processor) of a communication buffer used by the code.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries UnitLength\_\-in\_\-cm} \par
+ This sets the internal length unit in cm/h, where H\_\-0 = 100 h km/sec/Mpc. For example, a choice of 3.085678e21 sets the length unit to 1.0 kpc/h.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries UnitMass\_\-in\_\-g} \par
+ This sets the internal mass unit in g/h, where H\_\-0 = 100 h km/sec/Mpc. For example, a choice of 1.989e43 sets the mass unit to 10$^\wedge$10 M\_\-sun/h.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries UnitVelocity\_\-in\_\-cm\_\-per\_\-s} \par
+ This sets the internal velocity unit in cm/sec. For example, a choice of 1e5 sets the velocity unit to km/sec. Note that the specification of {\itshape UnitLength\_\-in\_\-cm\/}, {\itshape UnitMass\_\-in\_\-g\/}, and {\itshape UnitVelocity\_\-in\_\-cm\_\-per\_\-s\/} also determines the internal unit of time.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries GravityConstantInternal} \par
+ The numerical value of the gravitational constant G in internal units depends on the system of units you choose. For example, for the choices above, G=43007.1 in internal units. For {\itshape GravityConstantInternal\/}=0, the code calculates the value corresponding to the physical value of G automatically. However, you might want to set G yourself. For example, by specifying {\itshape GravityConstantInternal\/}=1, {\itshape UnitLength\_\-in\_\-cm\/}=1, {\itshape UnitMass\_\-in\_\-g\/}=1, and {\itshape UnitVelocity\_\-in\_\-cm\_\-per\_\-s\/}=1, one obtains a `natural' system of units. Note that the code will nevertheless try to use the `correct' value of the Hubble constant in this case, so you should not set {\itshape GravityConstantInternal\/} in cosmological integrations.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries MinGasHsmlFractional} \par
+ This parameter sets the minimum allowed SPH smoothing length in units of the gravitational softening length of the gas particles. The smoothing length will be prevented from falling below this value. When this bound is actually reached, the number of smoothing neighbors will instead be increased above {\itshape DesNumNgb\/}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningGas} \par
+ The Plummer equivalent gravitational softening length for particle type 0, which are the gas particles. For cosmological simulations in comoving coordinates, this is interpreted as a comoving softening length.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningHalo} \par
+ The Plummer equivalent gravitational softening length for particle type 1.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningDisk} \par
+ The Plummer equivalent gravitational softening length for particle type 2.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningBulge} \par
+ The Plummer equivalent gravitational softening length for particle type 3.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningStars} \par
+ The Plummer equivalent gravitational softening length for particle type 4.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningBndry} \par
+ The Plummer equivalent gravitational softening length for particle type 5.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningGasMaxPhys} \par
+ When comoving integration is used, this parameter gives the maximum physical gravitational softening length for particle type 0. Depening on the relative settings of {\itshape SofteningGas\/} and {\itshape SofteningGasMaxPhys\/}, the code will hence switch from a softening constant in comoving units to one constant in physical units.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningHaloMaxPhys} \par
+ When comoving integration is used, this parameter gives the maximum physical gravitational softening length for particle type 1.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningDiskMaxPhys} \par
+ When comoving integration is used, this parameter gives the maximum physical gravitational softening length for particle type 2.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningBulgeMaxPhys} \par
+ When comoving integration is used, this parameter gives the maximum physical gravitational softening length for particle type 3.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningStarsMaxPhys} \par
+ When comoving integration is used, this parameter gives the maximum physical gravitational softening length for particle type 4.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries SofteningBndryMaxPhys} \par
+ When comoving integration is used, this parameter gives the maximum physical gravitational softening length for particle type 5. 
+\end{DoxyItemize}

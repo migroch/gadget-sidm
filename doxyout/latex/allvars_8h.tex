@@ -1,0 +1,1799 @@
+\hypertarget{allvars_8h}{
+\section{allvars.h File Reference}
+\label{allvars_8h}\index{allvars.h@{allvars.h}}
+}
+
+
+declares global variables.  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$gsl/gsl\_\-rng.h$>$}\par
+{\ttfamily \#include \char`\"{}tags.h\char`\"{}}\par
+Include dependency graph for allvars.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{allvars_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{allvars_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structDomainNODE}{DomainNODE}
+\item 
+struct \hyperlink{structtopnode__data}{topnode\_\-data}
+\item 
+struct \hyperlink{structglobal__data__all__processes}{global\_\-data\_\-all\_\-processes}
+\item 
+struct \hyperlink{structparticle__data}{particle\_\-data}
+\item 
+struct \hyperlink{structsph__particle__data}{sph\_\-particle\_\-data}
+\item 
+struct \hyperlink{structNODE}{NODE}
+\item 
+struct \hyperlink{structextNODE}{extNODE}
+\item 
+struct \hyperlink{structio__header}{io\_\-header}
+\item 
+struct \hyperlink{structstate__of__system}{state\_\-of\_\-system}
+\item 
+struct \hyperlink{structgravdata__in}{gravdata\_\-in}
+\item 
+struct \hyperlink{structgravdata__index}{gravdata\_\-index}
+\item 
+struct \hyperlink{structdensdata__in}{densdata\_\-in}
+\item 
+struct \hyperlink{structdensdata__out}{densdata\_\-out}
+\item 
+struct \hyperlink{structhydrodata__in}{hydrodata\_\-in}
+\item 
+struct \hyperlink{structhydrodata__out}{hydrodata\_\-out}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{allvars_8h_aa7cd216e76b2710261f7eb5e862073a7}{GADGETVERSION}~\char`\"{}2.0\char`\"{}
+\item 
+\#define \hyperlink{allvars_8h_ad44dabdb7a0bef8536e2d34a01177d48}{TIMEBASE}~(1$<$$<$28)
+\item 
+\#define \hyperlink{allvars_8h_a803069f3cb8753ac3db10d5decebfc0d}{MAXTOPNODES}~200000
+\item 
+\#define \hyperlink{allvars_8h_a84bc981fa6ccfbb15526a6e9da12087a}{BITS\_\-PER\_\-DIMENSION}~18
+\item 
+\#define \hyperlink{allvars_8h_a2f881456983c1c8ea9e2ddd76a6eda43}{PEANOCELLS}~(((\hyperlink{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{peanokey})1)$<$$<$(3$\ast$BITS\_\-PER\_\-DIMENSION))
+\item 
+\#define \hyperlink{allvars_8h_a48e4756a015aa76380774eb445183e35}{RNDTABLE}~3000
+\item 
+\#define \hyperlink{allvars_8h_af277b171beccf0e6d25ff992ded5c566}{MAX\_\-REAL\_\-NUMBER}~1e37
+\item 
+\#define \hyperlink{allvars_8h_ab7fcc6b0ff94d9cbf1549a03bc6947e0}{MIN\_\-REAL\_\-NUMBER}~1e-\/37
+\item 
+\#define \hyperlink{allvars_8h_a741a07685761406e6bb951c6f8c9979b}{MAXLEN\_\-FILENAME}~100
+\item 
+\#define \hyperlink{allvars_8h_a8659b9de3e544ff142b153b076f30fd5}{GAMMA}~(5.0/3)
+\item 
+\#define \hyperlink{allvars_8h_a75216f9bf4030240b1fc0e1855e032d2}{GAMMA\_\-MINUS1}~(GAMMA-\/1)
+\item 
+\#define \hyperlink{allvars_8h_a67abaa49a5aa2892eba705d380652279}{HYDROGEN\_\-MASSFRAC}~0.76
+\item 
+\#define \hyperlink{allvars_8h_a6801baa546c6112d19eb095111d24720}{GRAVITY}~6.672e-\/8
+\item 
+\#define \hyperlink{allvars_8h_a6321c9a4f727494edf637f2c5559af44}{SOLAR\_\-MASS}~1.989e33
+\item 
+\#define \hyperlink{allvars_8h_ab79f83235ac3f37355ad291721d945af}{SOLAR\_\-LUM}~3.826e33
+\item 
+\#define \hyperlink{allvars_8h_a33ef0a9657b1e7d8065955f913020f0f}{RAD\_\-CONST}~7.565e-\/15
+\item 
+\#define \hyperlink{allvars_8h_a29763ca81b8e5a8c64dac560ade56b66}{AVOGADRO}~6.0222e23
+\item 
+\#define \hyperlink{allvars_8h_aa1487dae81baa2e0a5643e7b571633a0}{BOLTZMANN}~1.3806e-\/16
+\item 
+\#define \hyperlink{allvars_8h_a29ead6f96bcfe50a677f482ec638be15}{GAS\_\-CONST}~8.31425e7
+\item 
+\#define \hyperlink{allvars_8h_ac4cf4b2ab929bd23951a8676eeac086b}{C}~2.9979e10
+\item 
+\#define \hyperlink{allvars_8h_abbf43217eff86526797a20fbcfc928d2}{PLANCK}~6.6262e-\/27
+\item 
+\#define \hyperlink{allvars_8h_a5a80b30e136f7032873530b2a44e224b}{CM\_\-PER\_\-MPC}~3.085678e24
+\item 
+\#define \hyperlink{allvars_8h_a7e6cfbe5535ec2470a672abeba3fcd4d}{PROTONMASS}~1.6726e-\/24
+\item 
+\#define \hyperlink{allvars_8h_a3555a5acf70a637cd45d57d5b03b6a38}{ELECTRONMASS}~9.10953e-\/28
+\item 
+\#define \hyperlink{allvars_8h_a8bc97ad38b30a4ad622f7ebba5654485}{THOMPSON}~6.65245e-\/25
+\item 
+\#define \hyperlink{allvars_8h_a2edb0a233d93080620be2443484b704c}{ELECTRONCHARGE}~4.8032e-\/10
+\item 
+\#define \hyperlink{allvars_8h_a5de72d8762faf787d06d4dd47daeddeb}{HUBBLE}~3.2407789e-\/18
+\item 
+\#define \hyperlink{allvars_8h_af2bfce8e844bbb3b120263471c6c329e}{SEC\_\-PER\_\-MEGAYEAR}~3.155e13
+\item 
+\#define \hyperlink{allvars_8h_a8cd8e04105fec7cd442d078c303e46b9}{SEC\_\-PER\_\-YEAR}~3.155e7
+\item 
+\#define \hyperlink{allvars_8h_afde936c3d6ae18fa09bca0eb4e5c88dd}{ASMTH}~1.25
+\item 
+\#define \hyperlink{allvars_8h_a1757a8f71b37d9f5a7a8c753d9f9cab1}{RCUT}~4.5
+\item 
+\#define \hyperlink{allvars_8h_a459bf1b27bb8a17c4496d2783e62161c}{MAX\_\-NGB}~20000
+\item 
+\#define \hyperlink{allvars_8h_a15241b0cd53f02da974a64ebb05dcc8d}{MAXLEN\_\-OUTPUTLIST}~500
+\item 
+\#define \hyperlink{allvars_8h_aec9dcf4def3489f6890e20e7d66151c6}{DRIFT\_\-TABLE\_\-LENGTH}~1000
+\item 
+\#define \hyperlink{allvars_8h_a9e60f3e57fde2b9b1c7fe2eab7334add}{MAXITER}~150
+\item 
+\#define \hyperlink{allvars_8h_ae8690abbffa85934d64d545920e2b108}{FLOAT}~float
+\item 
+\#define \hyperlink{allvars_8h_a2e32e163509d0638d5c54046429c00b3}{NUMDIMS}~3
+\item 
+\#define \hyperlink{allvars_8h_ab5f539f35b0297ef0f6650cf869ce461}{KERNEL\_\-COEFF\_\-1}~2.546479089470
+\item 
+\#define \hyperlink{allvars_8h_a5d38a374d10a6baf4406b7c65b542056}{KERNEL\_\-COEFF\_\-2}~15.278874536822
+\item 
+\#define \hyperlink{allvars_8h_a3bb5c97343f773154b21becfa01914c3}{KERNEL\_\-COEFF\_\-3}~45.836623610466
+\item 
+\#define \hyperlink{allvars_8h_ad7427fba6163f65a77142f2a00d7dad1}{KERNEL\_\-COEFF\_\-4}~30.557749073644
+\item 
+\#define \hyperlink{allvars_8h_a7840162cc2fd06c919b18817d647b667}{KERNEL\_\-COEFF\_\-5}~5.092958178941
+\item 
+\#define \hyperlink{allvars_8h_a7b9464063f0137e9da842c10d1b86ed2}{KERNEL\_\-COEFF\_\-6}~(-\/15.278874536822)
+\item 
+\#define \hyperlink{allvars_8h_a2c92c6993dec8847de1e1621d81818ce}{NORM\_\-COEFF}~4.188790204786
+\item 
+\#define \hyperlink{allvars_8h_a61b78d4c6ae0a8bb9e19476b3ffb7bfb}{IO\_\-NBLOCKS}~11
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long long \hyperlink{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{peanokey}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8}{iofields} \{ \par
+\hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a0207eb67d96fe97fb8158c42af624f8f}{IO\_\-POS}, 
+\hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8aa4c3992546632e0db8015ebe534c0282}{IO\_\-VEL}, 
+\hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a34f71f128fc699de3792687fd79edf03}{IO\_\-ID}, 
+\hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a72e1cc8b602ab38f0f3491464ed82063}{IO\_\-MASS}, 
+\par
+\hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a942cbf4dca00cd5260edc905f5976682}{IO\_\-U}, 
+\hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a8dd43018a3f2d1caed951b249a38b106}{IO\_\-RHO}, 
+\hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a429c6a7a56e3b53597bd1eb72b87f941}{IO\_\-HSML}, 
+\hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a27c32f555479567b88ad11dcce803fe9}{IO\_\-POT}, 
+\par
+\hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a6f80f32dfa1c0cde8a71b773f42bb97a}{IO\_\-ACCEL}, 
+\hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a74d42dcd51f76c1919f44e9f89581457}{IO\_\-DTENTR}, 
+\hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8aac2070d9e6c597be29ae9a4c9acc36da}{IO\_\-TSTP}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{allvars_8h_a52c8c7d2abff436111942e02c5bb466a}{ThisTask}
+\item 
+int \hyperlink{allvars_8h_a675acdcd149f5993271a1fdc11673b65}{NTask}
+\item 
+int \hyperlink{allvars_8h_a9a18606803f69f24d3cb2864640c122e}{PTask}
+\item 
+int \hyperlink{allvars_8h_a9ec69b53278f9bbe12890e50299026af}{NumPart}
+\item 
+int \hyperlink{allvars_8h_a8312e7470883d71db46cda5f1e616974}{N\_\-gas}
+\item 
+long long \hyperlink{allvars_8h_a697577a2a59bfa869161211cb134a6ae}{Ntype} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{allvars_8h_a7e6cdb6eab38cb043edcf56a4518dfca}{NtypeLocal} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{allvars_8h_a4c8b412a9883b4f6e0e8962ba54fd4ef}{NumForceUpdate}
+\item 
+int \hyperlink{allvars_8h_a0da112f9d57d7d936055dbb1035cd7fa}{NumSphUpdate}
+\item 
+double \hyperlink{allvars_8h_a2550e86a899b36eaf7428b23f98a05ec}{CPUThisRun}
+\item 
+int \hyperlink{allvars_8h_a7f2decfd266dfa9b4560409b9e72b4ab}{RestartFlag}
+\item 
+char $\ast$ \hyperlink{allvars_8h_a768b23818449e1b33a55747cb3cc2025}{Exportflag}
+\item 
+int $\ast$ \hyperlink{allvars_8h_ade1b96e6772d0d1ccb06bcbec352b5bd}{Ngblist}
+\item 
+int \hyperlink{allvars_8h_aa32d7269f9baf3ffdbdd509982fca128}{TreeReconstructFlag}
+\item 
+int \hyperlink{allvars_8h_a6343a9f3619e77c1796309b8deda7f50}{Flag\_\-FullStep}
+\item 
+gsl\_\-rng $\ast$ \hyperlink{allvars_8h_a4ec93729b85eb5da23dd6ffb23c3702b}{random\_\-generator}
+\item 
+double \hyperlink{allvars_8h_aa91f67a734086ebfa758994e579c80a9}{RndTable} \mbox{[}3000\mbox{]}
+\item 
+double \hyperlink{allvars_8h_a55dacf524ba7bbc5210fc68469a05d0f}{DomainCorner} \mbox{[}3\mbox{]}
+\item 
+double \hyperlink{allvars_8h_ad13aabcbb50307c005ffa0b2edccdaeb}{DomainCenter} \mbox{[}3\mbox{]}
+\item 
+double \hyperlink{allvars_8h_a3dd9593672bf68f0c36fa3e5451e9265}{DomainLen}
+\item 
+double \hyperlink{allvars_8h_a4488078cfcc203156f193c43a1d3a2ef}{DomainFac}
+\item 
+int \hyperlink{allvars_8h_a424b31dae72cd3331485d2fb6490c7ac}{DomainMyStart}
+\item 
+int \hyperlink{allvars_8h_ad6c1a01f55d5c8b7b642525118acbebe}{DomainMyLast}
+\item 
+int $\ast$ \hyperlink{allvars_8h_a3c2a7b96fe94b5151d568fe321888d23}{DomainStartList}
+\item 
+int $\ast$ \hyperlink{allvars_8h_abb42257c117a39d968334cd054c16dcf}{DomainEndList}
+\item 
+double $\ast$ \hyperlink{allvars_8h_aed1b2c641567602d5935709a6a05b363}{DomainWork}
+\item 
+int $\ast$ \hyperlink{allvars_8h_a743ddd39e492911973f9acd210df0c7c}{DomainCount}
+\item 
+int $\ast$ \hyperlink{allvars_8h_acfb9351c127127b0de4a310bf91974e4}{DomainCountSph}
+\item 
+int $\ast$ \hyperlink{allvars_8h_a6f4a30ea20d1347d14d2e32de91390bb}{DomainTask}
+\item 
+int $\ast$ \hyperlink{allvars_8h_acd2b211f08f9b7e83da8cb58bf3931a0}{DomainNodeIndex}
+\item 
+float $\ast$ \hyperlink{allvars_8h_a52e5390127f5298d6639b9399077bfbf}{DomainTreeNodeLen}
+\item 
+float $\ast$ \hyperlink{allvars_8h_a5a4689ebf26bc52b81819580362ef4dc}{DomainHmax}
+\item 
+struct \hyperlink{structDomainNODE}{DomainNODE} $\ast$ \hyperlink{allvars_8h_a422cdcf73caef7cc559090cab77839e3}{DomainMoment}
+\item 
+\hyperlink{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{peanokey} $\ast$ \hyperlink{allvars_8h_a6918a0815266193ad242888c455c5886}{DomainKeyBuf}
+\item 
+\hyperlink{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{peanokey} $\ast$ \hyperlink{allvars_8h_a828333e1bfb5cffdb0e67942bbcd6cdb}{Key}
+\item 
+\hyperlink{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{peanokey} $\ast$ \hyperlink{allvars_8h_a8b9ee62bf965346f051e19e013d998b4}{KeySorted}
+\item 
+int \hyperlink{allvars_8h_a269a1fc2bea249d93115b160fd42ee84}{NTopnodes}
+\item 
+int \hyperlink{allvars_8h_a820bd6735d7313b9e7a3dcbe6c2f93d4}{NTopleaves}
+\item 
+struct \hyperlink{structtopnode__data}{topnode\_\-data} $\ast$ \hyperlink{allvars_8h_a49037625c4cfadc0fc7c0d900486ccc4}{TopNodes}
+\item 
+double \hyperlink{allvars_8h_ae43d9623e3a2c88558e99ecf90948906}{TimeOfLastTreeConstruction}
+\item 
+char \hyperlink{allvars_8h_aad74b601033a4fe957c6129de6e8406c}{ParameterFile} \mbox{[}100\mbox{]}
+\item 
+FILE $\ast$ \hyperlink{allvars_8h_af26719ed46b19cc760b7b55c3cb9968c}{FdInfo}
+\item 
+FILE $\ast$ \hyperlink{allvars_8h_a0230903e40950ac42dbff71dddd12176}{FdEnergy}
+\item 
+FILE $\ast$ \hyperlink{allvars_8h_a603fc3e63a037dff4463c67aa7a4c91e}{FdTimings}
+\item 
+FILE $\ast$ \hyperlink{allvars_8h_a889700103f4f515009e98a7d789fd164}{FdCPU}
+\item 
+FILE $\ast$ \hyperlink{allvars_8h_ae16a08c18946ccba84c72541b51055dd}{FdForceTest}
+\item 
+double \hyperlink{allvars_8h_a074db1ef4adfe88a5f3b07eac8c1daae}{DriftTable} \mbox{[}1000\mbox{]}
+\item 
+double \hyperlink{allvars_8h_a38e5d8b595161f074f7fbede3a8fda66}{GravKickTable} \mbox{[}1000\mbox{]}
+\item 
+double \hyperlink{allvars_8h_a274a5737d1578d54d6f82130e3064771}{HydroKickTable} \mbox{[}1000\mbox{]}
+\item 
+void $\ast$ \hyperlink{allvars_8h_ab9d6a5a8cf4049ad304ea6d23d8efb09}{CommBuffer}
+\item 
+struct \hyperlink{structglobal__data__all__processes}{global\_\-data\_\-all\_\-processes} \hyperlink{allvars_8h_ac8b78c0f0374aecf7aec8da076574dd3}{All}
+\item 
+struct \hyperlink{structparticle__data}{particle\_\-data} $\ast$ \hyperlink{allvars_8h_ac2474070ba8a23d796836d10c5d5f171}{P}
+\item 
+struct \hyperlink{structparticle__data}{particle\_\-data} $\ast$ \hyperlink{allvars_8h_a333f7897f74be0a8dbbf252242ab6e6d}{DomainPartBuf}
+\item 
+struct \hyperlink{structsph__particle__data}{sph\_\-particle\_\-data} $\ast$ \hyperlink{allvars_8h_a8a7e4a61647bbfa2ba060e2828c9a071}{SphP}
+\item 
+struct \hyperlink{structsph__particle__data}{sph\_\-particle\_\-data} $\ast$ \hyperlink{allvars_8h_ae6cc3e9e736680cf5255430ed1ac9b46}{DomainSphBuf}
+\item 
+int \hyperlink{allvars_8h_aca70a1751175167a36c1c6775a338bee}{MaxNodes}
+\item 
+int \hyperlink{allvars_8h_acf4151281b98d29aa500c5e56e66741f}{Numnodestree}
+\item 
+struct \hyperlink{structNODE}{NODE} $\ast$ \hyperlink{allvars_8h_adcab3d35d39a1fab757a93c8370af036}{Nodes\_\-base}
+\item 
+struct \hyperlink{structNODE}{NODE} $\ast$ \hyperlink{allvars_8h_a064cd3ea05dbc39224d5c4d6d87a51a4}{Nodes}
+\item 
+int $\ast$ \hyperlink{allvars_8h_ad14ab43f541f9c33cb9222ea018c1365}{Nextnode}
+\item 
+int $\ast$ \hyperlink{allvars_8h_ae1adfde6b271afd077130a64e6b85766}{Father}
+\item 
+struct \hyperlink{structextNODE}{extNODE} $\ast$ \hyperlink{allvars_8h_ab88f28f281293c932082c083b5b37c65}{Extnodes\_\-base}
+\item 
+struct \hyperlink{structextNODE}{extNODE} $\ast$ \hyperlink{allvars_8h_ae10c0a0d592e19b36fcf68b3492c364f}{Extnodes}
+\item 
+struct \hyperlink{structio__header}{io\_\-header} \hyperlink{allvars_8h_ab32a0614ea7e4791435d61dbb9652e00}{header}
+\item 
+char \hyperlink{allvars_8h_ab0664df93d97f96270978b84eb6fb80c}{Tab\_\-IO\_\-Labels} \mbox{[}11\mbox{]}\mbox{[}4\mbox{]}
+\item 
+struct \hyperlink{structstate__of__system}{state\_\-of\_\-system} \hyperlink{allvars_8h_abf8cf148b3694ed9d2ddfa49c2e88ab0}{SysState}
+\item 
+struct \hyperlink{structgravdata__in}{gravdata\_\-in} $\ast$ \hyperlink{allvars_8h_a0202ec7197196dd7d7fda746465659d7}{GravDataIn}
+\item 
+struct \hyperlink{structgravdata__in}{gravdata\_\-in} $\ast$ \hyperlink{allvars_8h_a57d0973f01bdcb2fa5d780058aab11c7}{GravDataGet}
+\item 
+struct \hyperlink{structgravdata__in}{gravdata\_\-in} $\ast$ \hyperlink{allvars_8h_a77de038fc404ee0d679d54a4b783c508}{GravDataResult}
+\item 
+struct \hyperlink{structgravdata__in}{gravdata\_\-in} $\ast$ \hyperlink{allvars_8h_aa21c5832ee4077e36639e1357252a3c3}{GravDataOut}
+\item 
+struct \hyperlink{structgravdata__index}{gravdata\_\-index} $\ast$ \hyperlink{allvars_8h_ab5ef88b406ac9d29bbd68978d47bdcde}{GravDataIndexTable}
+\item 
+struct \hyperlink{structdensdata__in}{densdata\_\-in} $\ast$ \hyperlink{allvars_8h_af36a3314e5ba2993fb9f4bd31f1fb46e}{DensDataIn}
+\item 
+struct \hyperlink{structdensdata__in}{densdata\_\-in} $\ast$ \hyperlink{allvars_8h_adce7bcb3ba145a70337ac58206404f7a}{DensDataGet}
+\item 
+struct \hyperlink{structdensdata__out}{densdata\_\-out} $\ast$ \hyperlink{allvars_8h_a9038ccdd06875b04b52dd3e1c1ebf5d8}{DensDataResult}
+\item 
+struct \hyperlink{structdensdata__out}{densdata\_\-out} $\ast$ \hyperlink{allvars_8h_adf1e42b0c831dc0da9690458a9f4e355}{DensDataPartialResult}
+\item 
+struct \hyperlink{structhydrodata__in}{hydrodata\_\-in} $\ast$ \hyperlink{allvars_8h_ab0bc3f2f42a5306625ed069dbc8d000a}{HydroDataIn}
+\item 
+struct \hyperlink{structhydrodata__in}{hydrodata\_\-in} $\ast$ \hyperlink{allvars_8h_a9a89bbf2d5e91c917a65e180b0551db5}{HydroDataGet}
+\item 
+struct \hyperlink{structhydrodata__out}{hydrodata\_\-out} $\ast$ \hyperlink{allvars_8h_a640e014b66b10adc033a159528455534}{HydroDataResult}
+\item 
+struct \hyperlink{structhydrodata__out}{hydrodata\_\-out} $\ast$ \hyperlink{allvars_8h_ae2294233324fafb23adc0248a48c5f82}{HydroDataPartialResult}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+declares global variables. This file declares all global variables. Further variables should be added here, and declared as 'extern'. The actual existence of these variables is provided by the file 'allvars.c'. To produce 'allvars.c' from 'allvars.h', do the following:
+
+
+\begin{DoxyItemize}
+\item Erase all define's, typedef's, and enum's
+\item add include \char`\"{}allvars.h\char`\"{}, delete the ifndef ALLVARS\_\-H conditional
+\item delete all keywords 'extern'
+\item delete all struct definitions enclosed in \{...\}, e.g. \char`\"{}extern struct global\_\-data\_\-all\_\-processes \{....\} All;\char`\"{} becomes \char`\"{}struct global\_\-data\_\-all\_\-processes All;\char`\"{} 
+\end{DoxyItemize}
+
+Definition in file \hyperlink{allvars_8h_source}{allvars.h}.
+
+
+
+\subsection{Define Documentation}
+\hypertarget{allvars_8h_afde936c3d6ae18fa09bca0eb4e5c88dd}{
+\index{allvars.h@{allvars.h}!ASMTH@{ASMTH}}
+\index{ASMTH@{ASMTH}!allvars.h@{allvars.h}}
+\subsubsection[{ASMTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define ASMTH~1.25}}
+\label{allvars_8h_afde936c3d6ae18fa09bca0eb4e5c88dd}
+ASMTH gives the scale of the short-\/range/long-\/range force split in units of FFT-\/mesh cells 
+
+Definition at line 83 of file allvars.h.
+
+
+
+Referenced by pm\_\-init\_\-periodic().
+
+\hypertarget{allvars_8h_a29763ca81b8e5a8c64dac560ade56b66}{
+\index{allvars.h@{allvars.h}!AVOGADRO@{AVOGADRO}}
+\index{AVOGADRO@{AVOGADRO}!allvars.h@{allvars.h}}
+\subsubsection[{AVOGADRO}]{\setlength{\rightskip}{0pt plus 5cm}\#define AVOGADRO~6.0222e23}}
+\label{allvars_8h_a29763ca81b8e5a8c64dac560ade56b66}
+
+
+Definition at line 65 of file allvars.h.
+
+\hypertarget{allvars_8h_a84bc981fa6ccfbb15526a6e9da12087a}{
+\index{allvars.h@{allvars.h}!BITS\_\-PER\_\-DIMENSION@{BITS\_\-PER\_\-DIMENSION}}
+\index{BITS\_\-PER\_\-DIMENSION@{BITS\_\-PER\_\-DIMENSION}!allvars.h@{allvars.h}}
+\subsubsection[{BITS\_\-PER\_\-DIMENSION}]{\setlength{\rightskip}{0pt plus 5cm}\#define BITS\_\-PER\_\-DIMENSION~18}}
+\label{allvars_8h_a84bc981fa6ccfbb15526a6e9da12087a}
+Bits per dimension available for Peano-\/Hilbert order. Note: If peanokey is defined as type int, the allowed maximum is 10. If 64-\/bit integers are used, the maximum is 21 
+
+Definition at line 34 of file allvars.h.
+
+
+
+Referenced by domain\_\-determineTopTree(), and force\_\-treebuild\_\-single().
+
+\hypertarget{allvars_8h_aa1487dae81baa2e0a5643e7b571633a0}{
+\index{allvars.h@{allvars.h}!BOLTZMANN@{BOLTZMANN}}
+\index{BOLTZMANN@{BOLTZMANN}!allvars.h@{allvars.h}}
+\subsubsection[{BOLTZMANN}]{\setlength{\rightskip}{0pt plus 5cm}\#define BOLTZMANN~1.3806e-\/16}}
+\label{allvars_8h_aa1487dae81baa2e0a5643e7b571633a0}
+
+
+Definition at line 66 of file allvars.h.
+
+
+
+Referenced by read\_\-ic(), and set\_\-units().
+
+\hypertarget{allvars_8h_ac4cf4b2ab929bd23951a8676eeac086b}{
+\index{allvars.h@{allvars.h}!C@{C}}
+\index{C@{C}!allvars.h@{allvars.h}}
+\subsubsection[{C}]{\setlength{\rightskip}{0pt plus 5cm}\#define C~2.9979e10}}
+\label{allvars_8h_ac4cf4b2ab929bd23951a8676eeac086b}
+
+
+Definition at line 68 of file allvars.h.
+
+\hypertarget{allvars_8h_a5a80b30e136f7032873530b2a44e224b}{
+\index{allvars.h@{allvars.h}!CM\_\-PER\_\-MPC@{CM\_\-PER\_\-MPC}}
+\index{CM\_\-PER\_\-MPC@{CM\_\-PER\_\-MPC}!allvars.h@{allvars.h}}
+\subsubsection[{CM\_\-PER\_\-MPC}]{\setlength{\rightskip}{0pt plus 5cm}\#define CM\_\-PER\_\-MPC~3.085678e24}}
+\label{allvars_8h_a5a80b30e136f7032873530b2a44e224b}
+
+
+Definition at line 70 of file allvars.h.
+
+\hypertarget{allvars_8h_aec9dcf4def3489f6890e20e7d66151c6}{
+\index{allvars.h@{allvars.h}!DRIFT\_\-TABLE\_\-LENGTH@{DRIFT\_\-TABLE\_\-LENGTH}}
+\index{DRIFT\_\-TABLE\_\-LENGTH@{DRIFT\_\-TABLE\_\-LENGTH}!allvars.h@{allvars.h}}
+\subsubsection[{DRIFT\_\-TABLE\_\-LENGTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define DRIFT\_\-TABLE\_\-LENGTH~1000}}
+\label{allvars_8h_aec9dcf4def3489f6890e20e7d66151c6}
+length of the lookup table used to hold the drift and kick factors 
+
+Definition at line 95 of file allvars.h.
+
+
+
+Referenced by get\_\-drift\_\-factor(), get\_\-gravkick\_\-factor(), and get\_\-hydrokick\_\-factor().
+
+\hypertarget{allvars_8h_a2edb0a233d93080620be2443484b704c}{
+\index{allvars.h@{allvars.h}!ELECTRONCHARGE@{ELECTRONCHARGE}}
+\index{ELECTRONCHARGE@{ELECTRONCHARGE}!allvars.h@{allvars.h}}
+\subsubsection[{ELECTRONCHARGE}]{\setlength{\rightskip}{0pt plus 5cm}\#define ELECTRONCHARGE~4.8032e-\/10}}
+\label{allvars_8h_a2edb0a233d93080620be2443484b704c}
+
+
+Definition at line 74 of file allvars.h.
+
+\hypertarget{allvars_8h_a3555a5acf70a637cd45d57d5b03b6a38}{
+\index{allvars.h@{allvars.h}!ELECTRONMASS@{ELECTRONMASS}}
+\index{ELECTRONMASS@{ELECTRONMASS}!allvars.h@{allvars.h}}
+\subsubsection[{ELECTRONMASS}]{\setlength{\rightskip}{0pt plus 5cm}\#define ELECTRONMASS~9.10953e-\/28}}
+\label{allvars_8h_a3555a5acf70a637cd45d57d5b03b6a38}
+
+
+Definition at line 72 of file allvars.h.
+
+\hypertarget{allvars_8h_ae8690abbffa85934d64d545920e2b108}{
+\index{allvars.h@{allvars.h}!FLOAT@{FLOAT}}
+\index{FLOAT@{FLOAT}!allvars.h@{allvars.h}}
+\subsubsection[{FLOAT}]{\setlength{\rightskip}{0pt plus 5cm}\#define FLOAT~float}}
+\label{allvars_8h_ae8690abbffa85934d64d545920e2b108}
+
+
+Definition at line 103 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), allocate\_\-commbuffers(), density\_\-evaluate(), dump\_\-particles(), ewald\_\-init(), fill\_\-write\_\-buffer(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-shortrange(), force\_\-treeupdate\_\-pseudos(), force\_\-update\_\-hmax(), force\_\-update\_\-len(), force\_\-update\_\-node\_\-len\_\-local(), force\_\-update\_\-node\_\-len\_\-toptree(), force\_\-update\_\-node\_\-recursive(), hydro\_\-evaluate(), ngb\_\-clear\_\-buf(), ngb\_\-treefind\_\-pairs(), ngb\_\-treefind\_\-variable(), and restart().
+
+\hypertarget{allvars_8h_aa7cd216e76b2710261f7eb5e862073a7}{
+\index{allvars.h@{allvars.h}!GADGETVERSION@{GADGETVERSION}}
+\index{GADGETVERSION@{GADGETVERSION}!allvars.h@{allvars.h}}
+\subsubsection[{GADGETVERSION}]{\setlength{\rightskip}{0pt plus 5cm}\#define GADGETVERSION~\char`\"{}2.0\char`\"{}}}
+\label{allvars_8h_aa7cd216e76b2710261f7eb5e862073a7}
+code version string 
+
+Definition at line 23 of file allvars.h.
+
+
+
+Referenced by begrun().
+
+\hypertarget{allvars_8h_a8659b9de3e544ff142b153b076f30fd5}{
+\index{allvars.h@{allvars.h}!GAMMA@{GAMMA}}
+\index{GAMMA@{GAMMA}!allvars.h@{allvars.h}}
+\subsubsection[{GAMMA}]{\setlength{\rightskip}{0pt plus 5cm}\#define GAMMA~(5.0/3)}}
+\label{allvars_8h_a8659b9de3e544ff142b153b076f30fd5}
+adiabatic index of simulated gas 
+
+Definition at line 52 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), density(), fill\_\-write\_\-buffer(), get\_\-timestep(), hydro\_\-evaluate(), hydro\_\-force(), and move\_\-particles().
+
+\hypertarget{allvars_8h_a75216f9bf4030240b1fc0e1855e032d2}{
+\index{allvars.h@{allvars.h}!GAMMA\_\-MINUS1@{GAMMA\_\-MINUS1}}
+\index{GAMMA\_\-MINUS1@{GAMMA\_\-MINUS1}!allvars.h@{allvars.h}}
+\subsubsection[{GAMMA\_\-MINUS1}]{\setlength{\rightskip}{0pt plus 5cm}\#define GAMMA\_\-MINUS1~(GAMMA-\/1)}}
+\label{allvars_8h_a75216f9bf4030240b1fc0e1855e032d2}
+
+
+Definition at line 55 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quantities\_\-of\_\-system(), fill\_\-write\_\-buffer(), hydro\_\-force(), hydrokick\_\-integ(), init(), and read\_\-ic().
+
+\hypertarget{allvars_8h_a29ead6f96bcfe50a677f482ec638be15}{
+\index{allvars.h@{allvars.h}!GAS\_\-CONST@{GAS\_\-CONST}}
+\index{GAS\_\-CONST@{GAS\_\-CONST}!allvars.h@{allvars.h}}
+\subsubsection[{GAS\_\-CONST}]{\setlength{\rightskip}{0pt plus 5cm}\#define GAS\_\-CONST~8.31425e7}}
+\label{allvars_8h_a29ead6f96bcfe50a677f482ec638be15}
+
+
+Definition at line 67 of file allvars.h.
+
+\hypertarget{allvars_8h_a6801baa546c6112d19eb095111d24720}{
+\index{allvars.h@{allvars.h}!GRAVITY@{GRAVITY}}
+\index{GRAVITY@{GRAVITY}!allvars.h@{allvars.h}}
+\subsubsection[{GRAVITY}]{\setlength{\rightskip}{0pt plus 5cm}\#define GRAVITY~6.672e-\/8}}
+\label{allvars_8h_a6801baa546c6112d19eb095111d24720}
+Gravitational constant (in cgs units) 
+
+Definition at line 61 of file allvars.h.
+
+
+
+Referenced by set\_\-units().
+
+\hypertarget{allvars_8h_a5de72d8762faf787d06d4dd47daeddeb}{
+\index{allvars.h@{allvars.h}!HUBBLE@{HUBBLE}}
+\index{HUBBLE@{HUBBLE}!allvars.h@{allvars.h}}
+\subsubsection[{HUBBLE}]{\setlength{\rightskip}{0pt plus 5cm}\#define HUBBLE~3.2407789e-\/18}}
+\label{allvars_8h_a5de72d8762faf787d06d4dd47daeddeb}
+
+
+Definition at line 75 of file allvars.h.
+
+
+
+Referenced by set\_\-units().
+
+\hypertarget{allvars_8h_a67abaa49a5aa2892eba705d380652279}{
+\index{allvars.h@{allvars.h}!HYDROGEN\_\-MASSFRAC@{HYDROGEN\_\-MASSFRAC}}
+\index{HYDROGEN\_\-MASSFRAC@{HYDROGEN\_\-MASSFRAC}!allvars.h@{allvars.h}}
+\subsubsection[{HYDROGEN\_\-MASSFRAC}]{\setlength{\rightskip}{0pt plus 5cm}\#define HYDROGEN\_\-MASSFRAC~0.76}}
+\label{allvars_8h_a67abaa49a5aa2892eba705d380652279}
+mass fraction of hydrogen, relevant only for radiative cooling 
+
+Definition at line 57 of file allvars.h.
+
+\hypertarget{allvars_8h_a61b78d4c6ae0a8bb9e19476b3ffb7bfb}{
+\index{allvars.h@{allvars.h}!IO\_\-NBLOCKS@{IO\_\-NBLOCKS}}
+\index{IO\_\-NBLOCKS@{IO\_\-NBLOCKS}!allvars.h@{allvars.h}}
+\subsubsection[{IO\_\-NBLOCKS}]{\setlength{\rightskip}{0pt plus 5cm}\#define IO\_\-NBLOCKS~11}}
+\label{allvars_8h_a61b78d4c6ae0a8bb9e19476b3ffb7bfb}
+total number of defined information blocks for snapshot files. Must be equal to the number of entries in \char`\"{}enum iofields\char`\"{} 
+
+Definition at line 642 of file allvars.h.
+
+\hypertarget{allvars_8h_ab5f539f35b0297ef0f6650cf869ce461}{
+\index{allvars.h@{allvars.h}!KERNEL\_\-COEFF\_\-1@{KERNEL\_\-COEFF\_\-1}}
+\index{KERNEL\_\-COEFF\_\-1@{KERNEL\_\-COEFF\_\-1}!allvars.h@{allvars.h}}
+\subsubsection[{KERNEL\_\-COEFF\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define KERNEL\_\-COEFF\_\-1~2.546479089470}}
+\label{allvars_8h_ab5f539f35b0297ef0f6650cf869ce461}
+Coefficients for SPH spline kernel and its derivative 
+
+Definition at line 109 of file allvars.h.
+
+
+
+Referenced by density\_\-evaluate(), and kernel().
+
+\hypertarget{allvars_8h_a5d38a374d10a6baf4406b7c65b542056}{
+\index{allvars.h@{allvars.h}!KERNEL\_\-COEFF\_\-2@{KERNEL\_\-COEFF\_\-2}}
+\index{KERNEL\_\-COEFF\_\-2@{KERNEL\_\-COEFF\_\-2}!allvars.h@{allvars.h}}
+\subsubsection[{KERNEL\_\-COEFF\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}\#define KERNEL\_\-COEFF\_\-2~15.278874536822}}
+\label{allvars_8h_a5d38a374d10a6baf4406b7c65b542056}
+
+
+Definition at line 110 of file allvars.h.
+
+
+
+Referenced by density\_\-evaluate(), and kernel().
+
+\hypertarget{allvars_8h_a3bb5c97343f773154b21becfa01914c3}{
+\index{allvars.h@{allvars.h}!KERNEL\_\-COEFF\_\-3@{KERNEL\_\-COEFF\_\-3}}
+\index{KERNEL\_\-COEFF\_\-3@{KERNEL\_\-COEFF\_\-3}!allvars.h@{allvars.h}}
+\subsubsection[{KERNEL\_\-COEFF\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}\#define KERNEL\_\-COEFF\_\-3~45.836623610466}}
+\label{allvars_8h_a3bb5c97343f773154b21becfa01914c3}
+
+
+Definition at line 111 of file allvars.h.
+
+
+
+Referenced by density\_\-evaluate(), and hydro\_\-evaluate().
+
+\hypertarget{allvars_8h_ad7427fba6163f65a77142f2a00d7dad1}{
+\index{allvars.h@{allvars.h}!KERNEL\_\-COEFF\_\-4@{KERNEL\_\-COEFF\_\-4}}
+\index{KERNEL\_\-COEFF\_\-4@{KERNEL\_\-COEFF\_\-4}!allvars.h@{allvars.h}}
+\subsubsection[{KERNEL\_\-COEFF\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}\#define KERNEL\_\-COEFF\_\-4~30.557749073644}}
+\label{allvars_8h_ad7427fba6163f65a77142f2a00d7dad1}
+
+
+Definition at line 112 of file allvars.h.
+
+\hypertarget{allvars_8h_a7840162cc2fd06c919b18817d647b667}{
+\index{allvars.h@{allvars.h}!KERNEL\_\-COEFF\_\-5@{KERNEL\_\-COEFF\_\-5}}
+\index{KERNEL\_\-COEFF\_\-5@{KERNEL\_\-COEFF\_\-5}!allvars.h@{allvars.h}}
+\subsubsection[{KERNEL\_\-COEFF\_\-5}]{\setlength{\rightskip}{0pt plus 5cm}\#define KERNEL\_\-COEFF\_\-5~5.092958178941}}
+\label{allvars_8h_a7840162cc2fd06c919b18817d647b667}
+
+
+Definition at line 113 of file allvars.h.
+
+
+
+Referenced by density\_\-evaluate(), and kernel().
+
+\hypertarget{allvars_8h_a7b9464063f0137e9da842c10d1b86ed2}{
+\index{allvars.h@{allvars.h}!KERNEL\_\-COEFF\_\-6@{KERNEL\_\-COEFF\_\-6}}
+\index{KERNEL\_\-COEFF\_\-6@{KERNEL\_\-COEFF\_\-6}!allvars.h@{allvars.h}}
+\subsubsection[{KERNEL\_\-COEFF\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}\#define KERNEL\_\-COEFF\_\-6~(-\/15.278874536822)}}
+\label{allvars_8h_a7b9464063f0137e9da842c10d1b86ed2}
+
+
+Definition at line 114 of file allvars.h.
+
+
+
+Referenced by density\_\-evaluate(), and hydro\_\-evaluate().
+
+\hypertarget{allvars_8h_a459bf1b27bb8a17c4496d2783e62161c}{
+\index{allvars.h@{allvars.h}!MAX\_\-NGB@{MAX\_\-NGB}}
+\index{MAX\_\-NGB@{MAX\_\-NGB}!allvars.h@{allvars.h}}
+\subsubsection[{MAX\_\-NGB}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-NGB~20000}}
+\label{allvars_8h_a459bf1b27bb8a17c4496d2783e62161c}
+defines maximum length of neighbour list 
+
+Definition at line 91 of file allvars.h.
+
+
+
+Referenced by init(), ngb\_\-treefind\_\-pairs(), ngb\_\-treefind\_\-variable(), and restart().
+
+\hypertarget{allvars_8h_af277b171beccf0e6d25ff992ded5c566}{
+\index{allvars.h@{allvars.h}!MAX\_\-REAL\_\-NUMBER@{MAX\_\-REAL\_\-NUMBER}}
+\index{MAX\_\-REAL\_\-NUMBER@{MAX\_\-REAL\_\-NUMBER}!allvars.h@{allvars.h}}
+\subsubsection[{MAX\_\-REAL\_\-NUMBER}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-REAL\_\-NUMBER~1e37}}
+\label{allvars_8h_af277b171beccf0e6d25ff992ded5c566}
+
+
+Definition at line 44 of file allvars.h.
+
+\hypertarget{allvars_8h_a9e60f3e57fde2b9b1c7fe2eab7334add}{
+\index{allvars.h@{allvars.h}!MAXITER@{MAXITER}}
+\index{MAXITER@{MAXITER}!allvars.h@{allvars.h}}
+\subsubsection[{MAXITER}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAXITER~150}}
+\label{allvars_8h_a9e60f3e57fde2b9b1c7fe2eab7334add}
+maxmimum number of steps for SPH neighbour iteration If defined, the variable type FLOAT is set to \char`\"{}double\char`\"{}, otherwise to FLOAT 
+
+Definition at line 97 of file allvars.h.
+
+
+
+Referenced by density().
+
+\hypertarget{allvars_8h_a741a07685761406e6bb951c6f8c9979b}{
+\index{allvars.h@{allvars.h}!MAXLEN\_\-FILENAME@{MAXLEN\_\-FILENAME}}
+\index{MAXLEN\_\-FILENAME@{MAXLEN\_\-FILENAME}!allvars.h@{allvars.h}}
+\subsubsection[{MAXLEN\_\-FILENAME}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAXLEN\_\-FILENAME~100}}
+\label{allvars_8h_a741a07685761406e6bb951c6f8c9979b}
+Maximum number of characters for filenames (including the full path) 
+
+Definition at line 47 of file allvars.h.
+
+\hypertarget{allvars_8h_a15241b0cd53f02da974a64ebb05dcc8d}{
+\index{allvars.h@{allvars.h}!MAXLEN\_\-OUTPUTLIST@{MAXLEN\_\-OUTPUTLIST}}
+\index{MAXLEN\_\-OUTPUTLIST@{MAXLEN\_\-OUTPUTLIST}!allvars.h@{allvars.h}}
+\subsubsection[{MAXLEN\_\-OUTPUTLIST}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAXLEN\_\-OUTPUTLIST~500}}
+\label{allvars_8h_a15241b0cd53f02da974a64ebb05dcc8d}
+maxmimum number of entries in list of snapshot output times 
+
+Definition at line 93 of file allvars.h.
+
+
+
+Referenced by read\_\-outputlist().
+
+\hypertarget{allvars_8h_a803069f3cb8753ac3db10d5decebfc0d}{
+\index{allvars.h@{allvars.h}!MAXTOPNODES@{MAXTOPNODES}}
+\index{MAXTOPNODES@{MAXTOPNODES}!allvars.h@{allvars.h}}
+\subsubsection[{MAXTOPNODES}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAXTOPNODES~200000}}
+\label{allvars_8h_a803069f3cb8753ac3db10d5decebfc0d}
+Maximum number of nodes in the top-\/level tree used for domain decomposition 
+
+Definition at line 29 of file allvars.h.
+
+
+
+Referenced by allocate\_\-commbuffers(), domain\_\-topsplit(), domain\_\-topsplit\_\-local(), force\_\-treeallocate(), and restart().
+
+\hypertarget{allvars_8h_ab7fcc6b0ff94d9cbf1549a03bc6947e0}{
+\index{allvars.h@{allvars.h}!MIN\_\-REAL\_\-NUMBER@{MIN\_\-REAL\_\-NUMBER}}
+\index{MIN\_\-REAL\_\-NUMBER@{MIN\_\-REAL\_\-NUMBER}!allvars.h@{allvars.h}}
+\subsubsection[{MIN\_\-REAL\_\-NUMBER}]{\setlength{\rightskip}{0pt plus 5cm}\#define MIN\_\-REAL\_\-NUMBER~1e-\/37}}
+\label{allvars_8h_ab7fcc6b0ff94d9cbf1549a03bc6947e0}
+
+
+Definition at line 45 of file allvars.h.
+
+\hypertarget{allvars_8h_a2c92c6993dec8847de1e1621d81818ce}{
+\index{allvars.h@{allvars.h}!NORM\_\-COEFF@{NORM\_\-COEFF}}
+\index{NORM\_\-COEFF@{NORM\_\-COEFF}!allvars.h@{allvars.h}}
+\subsubsection[{NORM\_\-COEFF}]{\setlength{\rightskip}{0pt plus 5cm}\#define NORM\_\-COEFF~4.188790204786}}
+\label{allvars_8h_a2c92c6993dec8847de1e1621d81818ce}
+Coefficient for kernel normalization. Note: 4.0/3 $\ast$ PI = 4.188790204786 
+
+Definition at line 115 of file allvars.h.
+
+
+
+Referenced by density\_\-evaluate().
+
+\hypertarget{allvars_8h_a2e32e163509d0638d5c54046429c00b3}{
+\index{allvars.h@{allvars.h}!NUMDIMS@{NUMDIMS}}
+\index{NUMDIMS@{NUMDIMS}!allvars.h@{allvars.h}}
+\subsubsection[{NUMDIMS}]{\setlength{\rightskip}{0pt plus 5cm}\#define NUMDIMS~3}}
+\label{allvars_8h_a2e32e163509d0638d5c54046429c00b3}
+For 3D-\/normalized kernel 
+
+Definition at line 108 of file allvars.h.
+
+
+
+Referenced by density(), and density\_\-evaluate().
+
+\hypertarget{allvars_8h_a2f881456983c1c8ea9e2ddd76a6eda43}{
+\index{allvars.h@{allvars.h}!PEANOCELLS@{PEANOCELLS}}
+\index{PEANOCELLS@{PEANOCELLS}!allvars.h@{allvars.h}}
+\subsubsection[{PEANOCELLS}]{\setlength{\rightskip}{0pt plus 5cm}\#define PEANOCELLS~((({\bf peanokey})1)$<$$<$(3$\ast$BITS\_\-PER\_\-DIMENSION))}}
+\label{allvars_8h_a2f881456983c1c8ea9e2ddd76a6eda43}
+The number of different Peano-\/Hilbert cells 
+
+Definition at line 38 of file allvars.h.
+
+\hypertarget{allvars_8h_abbf43217eff86526797a20fbcfc928d2}{
+\index{allvars.h@{allvars.h}!PLANCK@{PLANCK}}
+\index{PLANCK@{PLANCK}!allvars.h@{allvars.h}}
+\subsubsection[{PLANCK}]{\setlength{\rightskip}{0pt plus 5cm}\#define PLANCK~6.6262e-\/27}}
+\label{allvars_8h_abbf43217eff86526797a20fbcfc928d2}
+
+
+Definition at line 69 of file allvars.h.
+
+\hypertarget{allvars_8h_a7e6cfbe5535ec2470a672abeba3fcd4d}{
+\index{allvars.h@{allvars.h}!PROTONMASS@{PROTONMASS}}
+\index{PROTONMASS@{PROTONMASS}!allvars.h@{allvars.h}}
+\subsubsection[{PROTONMASS}]{\setlength{\rightskip}{0pt plus 5cm}\#define PROTONMASS~1.6726e-\/24}}
+\label{allvars_8h_a7e6cfbe5535ec2470a672abeba3fcd4d}
+
+
+Definition at line 71 of file allvars.h.
+
+
+
+Referenced by set\_\-units().
+
+\hypertarget{allvars_8h_a33ef0a9657b1e7d8065955f913020f0f}{
+\index{allvars.h@{allvars.h}!RAD\_\-CONST@{RAD\_\-CONST}}
+\index{RAD\_\-CONST@{RAD\_\-CONST}!allvars.h@{allvars.h}}
+\subsubsection[{RAD\_\-CONST}]{\setlength{\rightskip}{0pt plus 5cm}\#define RAD\_\-CONST~7.565e-\/15}}
+\label{allvars_8h_a33ef0a9657b1e7d8065955f913020f0f}
+
+
+Definition at line 64 of file allvars.h.
+
+\hypertarget{allvars_8h_a1757a8f71b37d9f5a7a8c753d9f9cab1}{
+\index{allvars.h@{allvars.h}!RCUT@{RCUT}}
+\index{RCUT@{RCUT}!allvars.h@{allvars.h}}
+\subsubsection[{RCUT}]{\setlength{\rightskip}{0pt plus 5cm}\#define RCUT~4.5}}
+\label{allvars_8h_a1757a8f71b37d9f5a7a8c753d9f9cab1}
+RCUT gives the maximum distance (in units of the scale used for the force split) out to which short-\/range forces are evaluated in the short-\/range tree walk. 
+
+Definition at line 87 of file allvars.h.
+
+
+
+Referenced by pm\_\-init\_\-periodic().
+
+\hypertarget{allvars_8h_a48e4756a015aa76380774eb445183e35}{
+\index{allvars.h@{allvars.h}!RNDTABLE@{RNDTABLE}}
+\index{RNDTABLE@{RNDTABLE}!allvars.h@{allvars.h}}
+\subsubsection[{RNDTABLE}]{\setlength{\rightskip}{0pt plus 5cm}\#define RNDTABLE~3000}}
+\label{allvars_8h_a48e4756a015aa76380774eb445183e35}
+gives the length of a table with random numbers, refreshed at every timestep. This is used to allow application of random numbers to a specific particle in a way that is independent of the number of processors used. 
+
+Definition at line 41 of file allvars.h.
+
+\hypertarget{allvars_8h_af2bfce8e844bbb3b120263471c6c329e}{
+\index{allvars.h@{allvars.h}!SEC\_\-PER\_\-MEGAYEAR@{SEC\_\-PER\_\-MEGAYEAR}}
+\index{SEC\_\-PER\_\-MEGAYEAR@{SEC\_\-PER\_\-MEGAYEAR}!allvars.h@{allvars.h}}
+\subsubsection[{SEC\_\-PER\_\-MEGAYEAR}]{\setlength{\rightskip}{0pt plus 5cm}\#define SEC\_\-PER\_\-MEGAYEAR~3.155e13}}
+\label{allvars_8h_af2bfce8e844bbb3b120263471c6c329e}
+
+
+Definition at line 79 of file allvars.h.
+
+\hypertarget{allvars_8h_a8cd8e04105fec7cd442d078c303e46b9}{
+\index{allvars.h@{allvars.h}!SEC\_\-PER\_\-YEAR@{SEC\_\-PER\_\-YEAR}}
+\index{SEC\_\-PER\_\-YEAR@{SEC\_\-PER\_\-YEAR}!allvars.h@{allvars.h}}
+\subsubsection[{SEC\_\-PER\_\-YEAR}]{\setlength{\rightskip}{0pt plus 5cm}\#define SEC\_\-PER\_\-YEAR~3.155e7}}
+\label{allvars_8h_a8cd8e04105fec7cd442d078c303e46b9}
+
+
+Definition at line 80 of file allvars.h.
+
+\hypertarget{allvars_8h_ab79f83235ac3f37355ad291721d945af}{
+\index{allvars.h@{allvars.h}!SOLAR\_\-LUM@{SOLAR\_\-LUM}}
+\index{SOLAR\_\-LUM@{SOLAR\_\-LUM}!allvars.h@{allvars.h}}
+\subsubsection[{SOLAR\_\-LUM}]{\setlength{\rightskip}{0pt plus 5cm}\#define SOLAR\_\-LUM~3.826e33}}
+\label{allvars_8h_ab79f83235ac3f37355ad291721d945af}
+
+
+Definition at line 63 of file allvars.h.
+
+\hypertarget{allvars_8h_a6321c9a4f727494edf637f2c5559af44}{
+\index{allvars.h@{allvars.h}!SOLAR\_\-MASS@{SOLAR\_\-MASS}}
+\index{SOLAR\_\-MASS@{SOLAR\_\-MASS}!allvars.h@{allvars.h}}
+\subsubsection[{SOLAR\_\-MASS}]{\setlength{\rightskip}{0pt plus 5cm}\#define SOLAR\_\-MASS~1.989e33}}
+\label{allvars_8h_a6321c9a4f727494edf637f2c5559af44}
+
+
+Definition at line 62 of file allvars.h.
+
+\hypertarget{allvars_8h_a8bc97ad38b30a4ad622f7ebba5654485}{
+\index{allvars.h@{allvars.h}!THOMPSON@{THOMPSON}}
+\index{THOMPSON@{THOMPSON}!allvars.h@{allvars.h}}
+\subsubsection[{THOMPSON}]{\setlength{\rightskip}{0pt plus 5cm}\#define THOMPSON~6.65245e-\/25}}
+\label{allvars_8h_a8bc97ad38b30a4ad622f7ebba5654485}
+
+
+Definition at line 73 of file allvars.h.
+
+\hypertarget{allvars_8h_ad44dabdb7a0bef8536e2d34a01177d48}{
+\index{allvars.h@{allvars.h}!TIMEBASE@{TIMEBASE}}
+\index{TIMEBASE@{TIMEBASE}!allvars.h@{allvars.h}}
+\subsubsection[{TIMEBASE}]{\setlength{\rightskip}{0pt plus 5cm}\#define TIMEBASE~(1$<$$<$28)}}
+\label{allvars_8h_ad44dabdb7a0bef8536e2d34a01177d48}
+The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
+
+Definition at line 25 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), get\_\-timestep(), init(), readjust\_\-timebase(), and run().
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{
+\index{allvars.h@{allvars.h}!peanokey@{peanokey}}
+\index{peanokey@{peanokey}!allvars.h@{allvars.h}}
+\subsubsection[{peanokey}]{\setlength{\rightskip}{0pt plus 5cm}typedef long long {\bf peanokey}}}
+\label{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}
+defines the variable type used for Peano-\/Hilbert keys 
+
+Definition at line 32 of file allvars.h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8}{
+\index{allvars.h@{allvars.h}!iofields@{iofields}}
+\index{iofields@{iofields}!allvars.h@{allvars.h}}
+\subsubsection[{iofields}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf iofields}}}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8}
+$<$ this enumeration lists the defined output blocks in snapshot files. Not all of them need to be present. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{IO\_\-POS@{IO\_\-POS}!allvars.h@{allvars.h}}\index{allvars.h@{allvars.h}!IO\_\-POS@{IO\_\-POS}}\item[{\em 
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a0207eb67d96fe97fb8158c42af624f8f}{
+IO\_\-POS}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a0207eb67d96fe97fb8158c42af624f8f}
+}]\index{IO\_\-VEL@{IO\_\-VEL}!allvars.h@{allvars.h}}\index{allvars.h@{allvars.h}!IO\_\-VEL@{IO\_\-VEL}}\item[{\em 
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8aa4c3992546632e0db8015ebe534c0282}{
+IO\_\-VEL}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8aa4c3992546632e0db8015ebe534c0282}
+}]\index{IO\_\-ID@{IO\_\-ID}!allvars.h@{allvars.h}}\index{allvars.h@{allvars.h}!IO\_\-ID@{IO\_\-ID}}\item[{\em 
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a34f71f128fc699de3792687fd79edf03}{
+IO\_\-ID}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a34f71f128fc699de3792687fd79edf03}
+}]\index{IO\_\-MASS@{IO\_\-MASS}!allvars.h@{allvars.h}}\index{allvars.h@{allvars.h}!IO\_\-MASS@{IO\_\-MASS}}\item[{\em 
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a72e1cc8b602ab38f0f3491464ed82063}{
+IO\_\-MASS}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a72e1cc8b602ab38f0f3491464ed82063}
+}]\index{IO\_\-U@{IO\_\-U}!allvars.h@{allvars.h}}\index{allvars.h@{allvars.h}!IO\_\-U@{IO\_\-U}}\item[{\em 
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a942cbf4dca00cd5260edc905f5976682}{
+IO\_\-U}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a942cbf4dca00cd5260edc905f5976682}
+}]\index{IO\_\-RHO@{IO\_\-RHO}!allvars.h@{allvars.h}}\index{allvars.h@{allvars.h}!IO\_\-RHO@{IO\_\-RHO}}\item[{\em 
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a8dd43018a3f2d1caed951b249a38b106}{
+IO\_\-RHO}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a8dd43018a3f2d1caed951b249a38b106}
+}]\index{IO\_\-HSML@{IO\_\-HSML}!allvars.h@{allvars.h}}\index{allvars.h@{allvars.h}!IO\_\-HSML@{IO\_\-HSML}}\item[{\em 
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a429c6a7a56e3b53597bd1eb72b87f941}{
+IO\_\-HSML}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a429c6a7a56e3b53597bd1eb72b87f941}
+}]\index{IO\_\-POT@{IO\_\-POT}!allvars.h@{allvars.h}}\index{allvars.h@{allvars.h}!IO\_\-POT@{IO\_\-POT}}\item[{\em 
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a27c32f555479567b88ad11dcce803fe9}{
+IO\_\-POT}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a27c32f555479567b88ad11dcce803fe9}
+}]\index{IO\_\-ACCEL@{IO\_\-ACCEL}!allvars.h@{allvars.h}}\index{allvars.h@{allvars.h}!IO\_\-ACCEL@{IO\_\-ACCEL}}\item[{\em 
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a6f80f32dfa1c0cde8a71b773f42bb97a}{
+IO\_\-ACCEL}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a6f80f32dfa1c0cde8a71b773f42bb97a}
+}]\index{IO\_\-DTENTR@{IO\_\-DTENTR}!allvars.h@{allvars.h}}\index{allvars.h@{allvars.h}!IO\_\-DTENTR@{IO\_\-DTENTR}}\item[{\em 
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a74d42dcd51f76c1919f44e9f89581457}{
+IO\_\-DTENTR}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8a74d42dcd51f76c1919f44e9f89581457}
+}]\index{IO\_\-TSTP@{IO\_\-TSTP}!allvars.h@{allvars.h}}\index{allvars.h@{allvars.h}!IO\_\-TSTP@{IO\_\-TSTP}}\item[{\em 
+\hypertarget{allvars_8h_a3f7452ec51c4f746e7070abd666147d8aac2070d9e6c597be29ae9a4c9acc36da}{
+IO\_\-TSTP}
+\label{allvars_8h_a3f7452ec51c4f746e7070abd666147d8aac2070d9e6c597be29ae9a4c9acc36da}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 645 of file allvars.h.
+
+
+
+
+\begin{DoxyCode}
+{ 
+  IO_POS,
+  IO_VEL,
+  IO_ID,
+  IO_MASS,
+  IO_U,
+  IO_RHO,
+  IO_HSML,
+  IO_POT,
+  IO_ACCEL,
+  IO_DTENTR,
+  IO_TSTP,
+};
+\end{DoxyCode}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{allvars_8h_ac8b78c0f0374aecf7aec8da076574dd3}{
+\index{allvars.h@{allvars.h}!All@{All}}
+\index{All@{All}!allvars.h@{allvars.h}}
+\subsubsection[{All}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf global\_\-data\_\-all\_\-processes}
+  {\bf All}}}
+\label{allvars_8h_ac8b78c0f0374aecf7aec8da076574dd3}
+This structure contains data which is the SAME for all tasks (mostly code parameters read from the parameter file). Holding this data in a structure is convenient for writing/reading the restart file, and it allows the introduction of new global variables in a simple way. The only thing to do is to introduce them into this structure. a container variable for global variables that are equal on all processors \hypertarget{allvars_8h_ab9d6a5a8cf4049ad304ea6d23d8efb09}{
+\index{allvars.h@{allvars.h}!CommBuffer@{CommBuffer}}
+\index{CommBuffer@{CommBuffer}!allvars.h@{allvars.h}}
+\subsubsection[{CommBuffer}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf CommBuffer}}}
+\label{allvars_8h_ab9d6a5a8cf4049ad304ea6d23d8efb09}
+points to communication buffer, which is used in the domain decomposition, the parallel tree-\/force computation, the SPH routines, etc. 
+
+Definition at line 102 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), empty\_\-read\_\-buffer(), fill\_\-write\_\-buffer(), read\_\-file(), and write\_\-file().
+
+\hypertarget{allvars_8h_a2550e86a899b36eaf7428b23f98a05ec}{
+\index{allvars.h@{allvars.h}!CPUThisRun@{CPUThisRun}}
+\index{CPUThisRun@{CPUThisRun}!allvars.h@{allvars.h}}
+\subsubsection[{CPUThisRun}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf CPUThisRun}}}
+\label{allvars_8h_a2550e86a899b36eaf7428b23f98a05ec}
+Sums the CPU time for the process (current submission only) 
+
+Definition at line 23 of file allvars.c.
+
+
+
+Referenced by begrun(), main(), and run().
+
+\hypertarget{allvars_8h_adce7bcb3ba145a70337ac58206404f7a}{
+\index{allvars.h@{allvars.h}!DensDataGet@{DensDataGet}}
+\index{DensDataGet@{DensDataGet}!allvars.h@{allvars.h}}
+\subsubsection[{DensDataGet}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf densdata\_\-in}
+ $\ast$ {\bf DensDataGet}}}
+\label{allvars_8h_adce7bcb3ba145a70337ac58206404f7a}
+holds imported particle data for SPH density computation \hypertarget{allvars_8h_af36a3314e5ba2993fb9f4bd31f1fb46e}{
+\index{allvars.h@{allvars.h}!DensDataIn@{DensDataIn}}
+\index{DensDataIn@{DensDataIn}!allvars.h@{allvars.h}}
+\subsubsection[{DensDataIn}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf densdata\_\-in}
+ $\ast$ {\bf DensDataIn}}}
+\label{allvars_8h_af36a3314e5ba2993fb9f4bd31f1fb46e}
+holds particle data for SPH density computation to be exported to other processors \hypertarget{allvars_8h_adf1e42b0c831dc0da9690458a9f4e355}{
+\index{allvars.h@{allvars.h}!DensDataPartialResult@{DensDataPartialResult}}
+\index{DensDataPartialResult@{DensDataPartialResult}!allvars.h@{allvars.h}}
+\subsubsection[{DensDataPartialResult}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf densdata\_\-out}
+ $\ast$ {\bf DensDataPartialResult}}}
+\label{allvars_8h_adf1e42b0c831dc0da9690458a9f4e355}
+imported partial SPH density results from other processors \hypertarget{allvars_8h_a9038ccdd06875b04b52dd3e1c1ebf5d8}{
+\index{allvars.h@{allvars.h}!DensDataResult@{DensDataResult}}
+\index{DensDataResult@{DensDataResult}!allvars.h@{allvars.h}}
+\subsubsection[{DensDataResult}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf densdata\_\-out}
+ $\ast$ {\bf DensDataResult}}}
+\label{allvars_8h_a9038ccdd06875b04b52dd3e1c1ebf5d8}
+stores the locally computed SPH density results for imported particles \hypertarget{allvars_8h_ad13aabcbb50307c005ffa0b2edccdaeb}{
+\index{allvars.h@{allvars.h}!DomainCenter@{DomainCenter}}
+\index{DomainCenter@{DomainCenter}!allvars.h@{allvars.h}}
+\subsubsection[{DomainCenter}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf DomainCenter}\mbox{[}3\mbox{]}}}
+\label{allvars_8h_ad13aabcbb50307c005ffa0b2edccdaeb}
+gives the center of simulation volume 
+
+Definition at line 45 of file allvars.c.
+
+
+
+Referenced by domain\_\-findExtent(), force\_\-treebuild\_\-single(), and restart().
+
+\hypertarget{allvars_8h_a55dacf524ba7bbc5210fc68469a05d0f}{
+\index{allvars.h@{allvars.h}!DomainCorner@{DomainCorner}}
+\index{DomainCorner@{DomainCorner}!allvars.h@{allvars.h}}
+\subsubsection[{DomainCorner}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf DomainCorner}\mbox{[}3\mbox{]}}}
+\label{allvars_8h_a55dacf524ba7bbc5210fc68469a05d0f}
+gives the lower left corner of simulation volume 
+
+Definition at line 44 of file allvars.c.
+
+
+
+Referenced by domain\_\-determineTopTree(), domain\_\-findExtent(), force\_\-treebuild\_\-single(), and restart().
+
+\hypertarget{allvars_8h_a743ddd39e492911973f9acd210df0c7c}{
+\index{allvars.h@{allvars.h}!DomainCount@{DomainCount}}
+\index{DomainCount@{DomainCount}!allvars.h@{allvars.h}}
+\subsubsection[{DomainCount}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf DomainCount}}}
+\label{allvars_8h_a743ddd39e492911973f9acd210df0c7c}
+a table that gives the total number of particles held by each processor 
+
+Definition at line 53 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), domain\_\-findSplit(), domain\_\-shiftSplit(), and domain\_\-sumCost().
+
+\hypertarget{allvars_8h_acfb9351c127127b0de4a310bf91974e4}{
+\index{allvars.h@{allvars.h}!DomainCountSph@{DomainCountSph}}
+\index{DomainCountSph@{DomainCountSph}!allvars.h@{allvars.h}}
+\subsubsection[{DomainCountSph}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf DomainCountSph}}}
+\label{allvars_8h_acfb9351c127127b0de4a310bf91974e4}
+a table that gives the total number of SPH particles held by each processor 
+
+Definition at line 54 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), domain\_\-findSplit(), domain\_\-shiftSplit(), and domain\_\-sumCost().
+
+\hypertarget{allvars_8h_abb42257c117a39d968334cd054c16dcf}{
+\index{allvars.h@{allvars.h}!DomainEndList@{DomainEndList}}
+\index{DomainEndList@{DomainEndList}!allvars.h@{allvars.h}}
+\subsubsection[{DomainEndList}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf DomainEndList}}}
+\label{allvars_8h_abb42257c117a39d968334cd054c16dcf}
+a table that lists the last domain mesh cell for all processors 
+
+Definition at line 51 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), domain\_\-decompose(), domain\_\-findSplit(), domain\_\-shiftSplit(), force\_\-exchange\_\-pseudodata(), force\_\-update\_\-hmax(), force\_\-update\_\-len(), and restart().
+
+\hypertarget{allvars_8h_a4488078cfcc203156f193c43a1d3a2ef}{
+\index{allvars.h@{allvars.h}!DomainFac@{DomainFac}}
+\index{DomainFac@{DomainFac}!allvars.h@{allvars.h}}
+\subsubsection[{DomainFac}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf DomainFac}}}
+\label{allvars_8h_a4488078cfcc203156f193c43a1d3a2ef}
+factor used for converting particle coordinates to a Peano-\/Hilbert mesh covering the simulation volume 
+
+Definition at line 47 of file allvars.c.
+
+
+
+Referenced by domain\_\-determineTopTree(), domain\_\-findExtent(), force\_\-treebuild\_\-single(), and restart().
+
+\hypertarget{allvars_8h_a5a4689ebf26bc52b81819580362ef4dc}{
+\index{allvars.h@{allvars.h}!DomainHmax@{DomainHmax}}
+\index{DomainHmax@{DomainHmax}!allvars.h@{allvars.h}}
+\subsubsection[{DomainHmax}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$ {\bf DomainHmax}}}
+\label{allvars_8h_a5a4689ebf26bc52b81819580362ef4dc}
+this table gives for each leaf of the top-\/level tree the maximum SPH smoothing length among the particles of the corresponding node of the gravitational tree 
+
+Definition at line 59 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), force\_\-update\_\-hmax(), force\_\-update\_\-node\_\-hmax\_\-toptree(), and restart().
+
+\hypertarget{allvars_8h_a6918a0815266193ad242888c455c5886}{
+\index{allvars.h@{allvars.h}!DomainKeyBuf@{DomainKeyBuf}}
+\index{DomainKeyBuf@{DomainKeyBuf}!allvars.h@{allvars.h}}
+\subsubsection[{DomainKeyBuf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf peanokey}$\ast$ {\bf DomainKeyBuf}}}
+\label{allvars_8h_a6918a0815266193ad242888c455c5886}
+this points to a buffer used during the exchange of particle data 
+
+Definition at line 64 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), and domain\_\-exchangeParticles().
+
+\hypertarget{allvars_8h_a3dd9593672bf68f0c36fa3e5451e9265}{
+\index{allvars.h@{allvars.h}!DomainLen@{DomainLen}}
+\index{DomainLen@{DomainLen}!allvars.h@{allvars.h}}
+\subsubsection[{DomainLen}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf DomainLen}}}
+\label{allvars_8h_a3dd9593672bf68f0c36fa3e5451e9265}
+gives the (maximum) side-\/length of simulation volume 
+
+Definition at line 46 of file allvars.c.
+
+
+
+Referenced by domain\_\-findExtent(), force\_\-treebuild\_\-single(), and restart().
+
+\hypertarget{allvars_8h_a422cdcf73caef7cc559090cab77839e3}{
+\index{allvars.h@{allvars.h}!DomainMoment@{DomainMoment}}
+\index{DomainMoment@{DomainMoment}!allvars.h@{allvars.h}}
+\subsubsection[{DomainMoment}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf DomainNODE}
+ $\ast$ {\bf DomainMoment}}}
+\label{allvars_8h_a422cdcf73caef7cc559090cab77839e3}
+this table stores for each node of the top-\/level tree corresponding node data from the gravitational tree \hypertarget{allvars_8h_ad6c1a01f55d5c8b7b642525118acbebe}{
+\index{allvars.h@{allvars.h}!DomainMyLast@{DomainMyLast}}
+\index{DomainMyLast@{DomainMyLast}!allvars.h@{allvars.h}}
+\subsubsection[{DomainMyLast}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf DomainMyLast}}}
+\label{allvars_8h_ad6c1a01f55d5c8b7b642525118acbebe}
+last domain mesh cell that resides on the local processor 
+
+Definition at line 49 of file allvars.c.
+
+
+
+Referenced by domain\_\-decompose(), force\_\-exchange\_\-pseudodata(), force\_\-flag\_\-localnodes(), force\_\-insert\_\-pseudo\_\-particles(), force\_\-treeupdate\_\-pseudos(), force\_\-update\_\-hmax(), force\_\-update\_\-len(), force\_\-update\_\-node\_\-hmax\_\-toptree(), force\_\-update\_\-node\_\-len\_\-toptree(), and restart().
+
+\hypertarget{allvars_8h_a424b31dae72cd3331485d2fb6490c7ac}{
+\index{allvars.h@{allvars.h}!DomainMyStart@{DomainMyStart}}
+\index{DomainMyStart@{DomainMyStart}!allvars.h@{allvars.h}}
+\subsubsection[{DomainMyStart}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf DomainMyStart}}}
+\label{allvars_8h_a424b31dae72cd3331485d2fb6490c7ac}
+first domain mesh cell that resides on the local processor 
+
+Definition at line 48 of file allvars.c.
+
+
+
+Referenced by domain\_\-decompose(), force\_\-exchange\_\-pseudodata(), force\_\-flag\_\-localnodes(), force\_\-update\_\-hmax(), force\_\-update\_\-len(), and restart().
+
+\hypertarget{allvars_8h_acd2b211f08f9b7e83da8cb58bf3931a0}{
+\index{allvars.h@{allvars.h}!DomainNodeIndex@{DomainNodeIndex}}
+\index{DomainNodeIndex@{DomainNodeIndex}!allvars.h@{allvars.h}}
+\subsubsection[{DomainNodeIndex}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf DomainNodeIndex}}}
+\label{allvars_8h_acd2b211f08f9b7e83da8cb58bf3931a0}
+this table gives for each leaf of the top-\/level tree the corresponding node of the gravitational tree 
+
+Definition at line 57 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), force\_\-create\_\-empty\_\-nodes(), force\_\-exchange\_\-pseudodata(), force\_\-flag\_\-localnodes(), force\_\-insert\_\-pseudo\_\-particles(), force\_\-treebuild\_\-single(), force\_\-treeupdate\_\-pseudos(), force\_\-update\_\-hmax(), force\_\-update\_\-len(), force\_\-update\_\-node\_\-hmax\_\-toptree(), force\_\-update\_\-node\_\-len\_\-toptree(), and restart().
+
+\hypertarget{allvars_8h_a333f7897f74be0a8dbbf252242ab6e6d}{
+\index{allvars.h@{allvars.h}!DomainPartBuf@{DomainPartBuf}}
+\index{DomainPartBuf@{DomainPartBuf}!allvars.h@{allvars.h}}
+\subsubsection[{DomainPartBuf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf particle\_\-data}
+ $\ast$ {\bf DomainPartBuf}}}
+\label{allvars_8h_a333f7897f74be0a8dbbf252242ab6e6d}
+buffer for particle data used in domain decomposition \hypertarget{allvars_8h_ae6cc3e9e736680cf5255430ed1ac9b46}{
+\index{allvars.h@{allvars.h}!DomainSphBuf@{DomainSphBuf}}
+\index{DomainSphBuf@{DomainSphBuf}!allvars.h@{allvars.h}}
+\subsubsection[{DomainSphBuf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf sph\_\-particle\_\-data}
+ $\ast$ {\bf DomainSphBuf}}}
+\label{allvars_8h_ae6cc3e9e736680cf5255430ed1ac9b46}
+buffer for SPH particle data in domain decomposition \hypertarget{allvars_8h_a3c2a7b96fe94b5151d568fe321888d23}{
+\index{allvars.h@{allvars.h}!DomainStartList@{DomainStartList}}
+\index{DomainStartList@{DomainStartList}!allvars.h@{allvars.h}}
+\subsubsection[{DomainStartList}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf DomainStartList}}}
+\label{allvars_8h_a3c2a7b96fe94b5151d568fe321888d23}
+a table that lists the first domain mesh cell for all processors 
+
+Definition at line 50 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), domain\_\-decompose(), domain\_\-findSplit(), domain\_\-shiftSplit(), force\_\-exchange\_\-pseudodata(), force\_\-update\_\-hmax(), force\_\-update\_\-len(), and restart().
+
+\hypertarget{allvars_8h_a6f4a30ea20d1347d14d2e32de91390bb}{
+\index{allvars.h@{allvars.h}!DomainTask@{DomainTask}}
+\index{DomainTask@{DomainTask}!allvars.h@{allvars.h}}
+\subsubsection[{DomainTask}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf DomainTask}}}
+\label{allvars_8h_a6f4a30ea20d1347d14d2e32de91390bb}
+this table gives for each leaf of the top-\/level tree the processor it was assigned to 
+
+Definition at line 56 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), domain\_\-countToGo(), domain\_\-exchangeParticles(), domain\_\-findSplit(), domain\_\-shiftSplit(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), ngb\_\-treefind\_\-pairs(), ngb\_\-treefind\_\-variable(), and restart().
+
+\hypertarget{allvars_8h_a52e5390127f5298d6639b9399077bfbf}{
+\index{allvars.h@{allvars.h}!DomainTreeNodeLen@{DomainTreeNodeLen}}
+\index{DomainTreeNodeLen@{DomainTreeNodeLen}!allvars.h@{allvars.h}}
+\subsubsection[{DomainTreeNodeLen}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$ {\bf DomainTreeNodeLen}}}
+\label{allvars_8h_a52e5390127f5298d6639b9399077bfbf}
+this table gives for each leaf of the top-\/level tree the side-\/length of the corresponding node of the gravitational tree 
+
+Definition at line 58 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), force\_\-update\_\-len(), force\_\-update\_\-node\_\-len\_\-toptree(), and restart().
+
+\hypertarget{allvars_8h_aed1b2c641567602d5935709a6a05b363}{
+\index{allvars.h@{allvars.h}!DomainWork@{DomainWork}}
+\index{DomainWork@{DomainWork}!allvars.h@{allvars.h}}
+\subsubsection[{DomainWork}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ {\bf DomainWork}}}
+\label{allvars_8h_aed1b2c641567602d5935709a6a05b363}
+a table that gives the total \char`\"{}work\char`\"{} due to the particles stored by each processor 
+
+Definition at line 52 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), domain\_\-shiftSplit(), and domain\_\-sumCost().
+
+\hypertarget{allvars_8h_a074db1ef4adfe88a5f3b07eac8c1daae}{
+\index{allvars.h@{allvars.h}!DriftTable@{DriftTable}}
+\index{DriftTable@{DriftTable}!allvars.h@{allvars.h}}
+\subsubsection[{DriftTable}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf DriftTable}\mbox{[}1000\mbox{]}}}
+\label{allvars_8h_a074db1ef4adfe88a5f3b07eac8c1daae}
+table for the cosmological drift factors 
+
+Definition at line 98 of file allvars.c.
+
+
+
+Referenced by get\_\-drift\_\-factor(), and init\_\-drift\_\-table().
+
+\hypertarget{allvars_8h_a768b23818449e1b33a55747cb3cc2025}{
+\index{allvars.h@{allvars.h}!Exportflag@{Exportflag}}
+\index{Exportflag@{Exportflag}!allvars.h@{allvars.h}}
+\subsubsection[{Exportflag}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf Exportflag}}}
+\label{allvars_8h_a768b23818449e1b33a55747cb3cc2025}
+Buffer used for flagging whether a particle needs to be exported to another process 
+
+Definition at line 30 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), compute\_\-potential(), density(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), gravity\_\-forcetest(), gravity\_\-tree(), hydro\_\-force(), ngb\_\-treefind\_\-pairs(), and ngb\_\-treefind\_\-variable().
+
+\hypertarget{allvars_8h_ae10c0a0d592e19b36fcf68b3492c364f}{
+\index{allvars.h@{allvars.h}!Extnodes@{Extnodes}}
+\index{Extnodes@{Extnodes}!allvars.h@{allvars.h}}
+\subsubsection[{Extnodes}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf extNODE}
+ $\ast$ {\bf Extnodes}}}
+\label{allvars_8h_ae10c0a0d592e19b36fcf68b3492c364f}
+provides shifted access to extended node information, parallel to Nodes/Nodes\_\-base \hypertarget{allvars_8h_ab88f28f281293c932082c083b5b37c65}{
+\index{allvars.h@{allvars.h}!Extnodes\_\-base@{Extnodes\_\-base}}
+\index{Extnodes\_\-base@{Extnodes\_\-base}!allvars.h@{allvars.h}}
+\subsubsection[{Extnodes\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf extNODE}
+ $\ast$ {\bf Extnodes\_\-base}}}
+\label{allvars_8h_ab88f28f281293c932082c083b5b37c65}
+$<$ this structure holds additional tree-\/node information which is not needed in the actual gravity computation points to the actual memory allocted for the extended node information \hypertarget{allvars_8h_ae1adfde6b271afd077130a64e6b85766}{
+\index{allvars.h@{allvars.h}!Father@{Father}}
+\index{Father@{Father}!allvars.h@{allvars.h}}
+\subsubsection[{Father}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf Father}}}
+\label{allvars_8h_ae1adfde6b271afd077130a64e6b85766}
+gives parent node in tree 
+
+Definition at line 149 of file allvars.c.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), force\_\-treeallocate(), force\_\-treefree(), force\_\-update\_\-node\_\-hmax\_\-local(), force\_\-update\_\-node\_\-len\_\-local(), force\_\-update\_\-node\_\-recursive(), restart(), and setup\_\-smoothinglengths().
+
+\hypertarget{allvars_8h_a889700103f4f515009e98a7d789fd164}{
+\index{allvars.h@{allvars.h}!FdCPU@{FdCPU}}
+\index{FdCPU@{FdCPU}!allvars.h@{allvars.h}}
+\subsubsection[{FdCPU}]{\setlength{\rightskip}{0pt plus 5cm}FILE$\ast$ {\bf FdCPU}}}
+\label{allvars_8h_a889700103f4f515009e98a7d789fd164}
+file handle for cpu.txt log-\/file. 
+
+Definition at line 88 of file allvars.c.
+
+
+
+Referenced by close\_\-outputfiles(), every\_\-timestep\_\-stuff(), and open\_\-outputfiles().
+
+\hypertarget{allvars_8h_a0230903e40950ac42dbff71dddd12176}{
+\index{allvars.h@{allvars.h}!FdEnergy@{FdEnergy}}
+\index{FdEnergy@{FdEnergy}!allvars.h@{allvars.h}}
+\subsubsection[{FdEnergy}]{\setlength{\rightskip}{0pt plus 5cm}FILE$\ast$ {\bf FdEnergy}}}
+\label{allvars_8h_a0230903e40950ac42dbff71dddd12176}
+file handle for energy.txt log-\/file. 
+
+Definition at line 86 of file allvars.c.
+
+
+
+Referenced by close\_\-outputfiles(), energy\_\-statistics(), and open\_\-outputfiles().
+
+\hypertarget{allvars_8h_ae16a08c18946ccba84c72541b51055dd}{
+\index{allvars.h@{allvars.h}!FdForceTest@{FdForceTest}}
+\index{FdForceTest@{FdForceTest}!allvars.h@{allvars.h}}
+\subsubsection[{FdForceTest}]{\setlength{\rightskip}{0pt plus 5cm}FILE$\ast$ {\bf FdForceTest}}}
+\label{allvars_8h_ae16a08c18946ccba84c72541b51055dd}
+file handle for forcetest.txt log-\/file. 
+
+Definition at line 91 of file allvars.c.
+
+
+
+Referenced by close\_\-outputfiles(), gravity\_\-forcetest(), and open\_\-outputfiles().
+
+\hypertarget{allvars_8h_af26719ed46b19cc760b7b55c3cb9968c}{
+\index{allvars.h@{allvars.h}!FdInfo@{FdInfo}}
+\index{FdInfo@{FdInfo}!allvars.h@{allvars.h}}
+\subsubsection[{FdInfo}]{\setlength{\rightskip}{0pt plus 5cm}FILE$\ast$ {\bf FdInfo}}}
+\label{allvars_8h_af26719ed46b19cc760b7b55c3cb9968c}
+file handle for info.txt log-\/file. 
+
+Definition at line 85 of file allvars.c.
+
+
+
+Referenced by close\_\-outputfiles(), every\_\-timestep\_\-stuff(), and open\_\-outputfiles().
+
+\hypertarget{allvars_8h_a603fc3e63a037dff4463c67aa7a4c91e}{
+\index{allvars.h@{allvars.h}!FdTimings@{FdTimings}}
+\index{FdTimings@{FdTimings}!allvars.h@{allvars.h}}
+\subsubsection[{FdTimings}]{\setlength{\rightskip}{0pt plus 5cm}FILE$\ast$ {\bf FdTimings}}}
+\label{allvars_8h_a603fc3e63a037dff4463c67aa7a4c91e}
+file handle for timings.txt log-\/file. 
+
+Definition at line 87 of file allvars.c.
+
+
+
+Referenced by close\_\-outputfiles(), gravity\_\-forcetest(), gravity\_\-tree(), and open\_\-outputfiles().
+
+\hypertarget{allvars_8h_a6343a9f3619e77c1796309b8deda7f50}{
+\index{allvars.h@{allvars.h}!Flag\_\-FullStep@{Flag\_\-FullStep}}
+\index{Flag\_\-FullStep@{Flag\_\-FullStep}!allvars.h@{allvars.h}}
+\subsubsection[{Flag\_\-FullStep}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Flag\_\-FullStep}}}
+\label{allvars_8h_a6343a9f3619e77c1796309b8deda7f50}
+This flag signals that the current step involves all particles 
+
+Definition at line 36 of file allvars.c.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and init().
+
+\hypertarget{allvars_8h_a57d0973f01bdcb2fa5d780058aab11c7}{
+\index{allvars.h@{allvars.h}!GravDataGet@{GravDataGet}}
+\index{GravDataGet@{GravDataGet}!allvars.h@{allvars.h}}
+\subsubsection[{GravDataGet}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf gravdata\_\-in}
+ $\ast$ {\bf GravDataGet}}}
+\label{allvars_8h_a57d0973f01bdcb2fa5d780058aab11c7}
+holds particle data imported from other processors \hypertarget{allvars_8h_a0202ec7197196dd7d7fda746465659d7}{
+\index{allvars.h@{allvars.h}!GravDataIn@{GravDataIn}}
+\index{GravDataIn@{GravDataIn}!allvars.h@{allvars.h}}
+\subsubsection[{GravDataIn}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf gravdata\_\-in}
+ $\ast$ {\bf GravDataIn}}}
+\label{allvars_8h_a0202ec7197196dd7d7fda746465659d7}
+holds particle data to be exported to other processors \hypertarget{allvars_8h_ab5ef88b406ac9d29bbd68978d47bdcde}{
+\index{allvars.h@{allvars.h}!GravDataIndexTable@{GravDataIndexTable}}
+\index{GravDataIndexTable@{GravDataIndexTable}!allvars.h@{allvars.h}}
+\subsubsection[{GravDataIndexTable}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf gravdata\_\-index}
+ $\ast$ {\bf GravDataIndexTable}}}
+\label{allvars_8h_ab5ef88b406ac9d29bbd68978d47bdcde}
+the particles to be exported are grouped by task-\/number. This table allows the results to be disentangled again and to be assigned to the correct particle \hypertarget{allvars_8h_aa21c5832ee4077e36639e1357252a3c3}{
+\index{allvars.h@{allvars.h}!GravDataOut@{GravDataOut}}
+\index{GravDataOut@{GravDataOut}!allvars.h@{allvars.h}}
+\subsubsection[{GravDataOut}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf gravdata\_\-in}
+ $\ast$ {\bf GravDataOut}}}
+\label{allvars_8h_aa21c5832ee4077e36639e1357252a3c3}
+holds partial results received from other processors. This will overwrite the GravDataIn array \hypertarget{allvars_8h_a77de038fc404ee0d679d54a4b783c508}{
+\index{allvars.h@{allvars.h}!GravDataResult@{GravDataResult}}
+\index{GravDataResult@{GravDataResult}!allvars.h@{allvars.h}}
+\subsubsection[{GravDataResult}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf gravdata\_\-in}
+ $\ast$ {\bf GravDataResult}}}
+\label{allvars_8h_a77de038fc404ee0d679d54a4b783c508}
+holds the partial results computed for imported particles. Note: We use GravDataResult = GravDataGet, such that the result replaces the imported data \hypertarget{allvars_8h_a38e5d8b595161f074f7fbede3a8fda66}{
+\index{allvars.h@{allvars.h}!GravKickTable@{GravKickTable}}
+\index{GravKickTable@{GravKickTable}!allvars.h@{allvars.h}}
+\subsubsection[{GravKickTable}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf GravKickTable}\mbox{[}1000\mbox{]}}}
+\label{allvars_8h_a38e5d8b595161f074f7fbede3a8fda66}
+table for the cosmological kick factor for gravitational forces 
+
+Definition at line 99 of file allvars.c.
+
+
+
+Referenced by get\_\-gravkick\_\-factor(), and init\_\-drift\_\-table().
+
+\hypertarget{allvars_8h_ab32a0614ea7e4791435d61dbb9652e00}{
+\index{allvars.h@{allvars.h}!header@{header}}
+\index{header@{header}!allvars.h@{allvars.h}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf io\_\-header}
+  {\bf header}}}
+\label{allvars_8h_ab32a0614ea7e4791435d61dbb9652e00}
+Header for the standard file format. holds header for snapshot files \hypertarget{allvars_8h_a9a89bbf2d5e91c917a65e180b0551db5}{
+\index{allvars.h@{allvars.h}!HydroDataGet@{HydroDataGet}}
+\index{HydroDataGet@{HydroDataGet}!allvars.h@{allvars.h}}
+\subsubsection[{HydroDataGet}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf hydrodata\_\-in}
+ $\ast$ {\bf HydroDataGet}}}
+\label{allvars_8h_a9a89bbf2d5e91c917a65e180b0551db5}
+holds imported particle data for SPH hydro-\/force computation \hypertarget{allvars_8h_ab0bc3f2f42a5306625ed069dbc8d000a}{
+\index{allvars.h@{allvars.h}!HydroDataIn@{HydroDataIn}}
+\index{HydroDataIn@{HydroDataIn}!allvars.h@{allvars.h}}
+\subsubsection[{HydroDataIn}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf hydrodata\_\-in}
+ $\ast$ {\bf HydroDataIn}}}
+\label{allvars_8h_ab0bc3f2f42a5306625ed069dbc8d000a}
+holds particle data for SPH hydro-\/force computation to be exported to other processors \hypertarget{allvars_8h_ae2294233324fafb23adc0248a48c5f82}{
+\index{allvars.h@{allvars.h}!HydroDataPartialResult@{HydroDataPartialResult}}
+\index{HydroDataPartialResult@{HydroDataPartialResult}!allvars.h@{allvars.h}}
+\subsubsection[{HydroDataPartialResult}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf hydrodata\_\-out}
+ $\ast$ {\bf HydroDataPartialResult}}}
+\label{allvars_8h_ae2294233324fafb23adc0248a48c5f82}
+imported partial SPH hydro-\/force results from other processors \hypertarget{allvars_8h_a640e014b66b10adc033a159528455534}{
+\index{allvars.h@{allvars.h}!HydroDataResult@{HydroDataResult}}
+\index{HydroDataResult@{HydroDataResult}!allvars.h@{allvars.h}}
+\subsubsection[{HydroDataResult}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf hydrodata\_\-out}
+ $\ast$ {\bf HydroDataResult}}}
+\label{allvars_8h_a640e014b66b10adc033a159528455534}
+stores the locally computed SPH hydro results for imported particles \hypertarget{allvars_8h_a274a5737d1578d54d6f82130e3064771}{
+\index{allvars.h@{allvars.h}!HydroKickTable@{HydroKickTable}}
+\index{HydroKickTable@{HydroKickTable}!allvars.h@{allvars.h}}
+\subsubsection[{HydroKickTable}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf HydroKickTable}\mbox{[}1000\mbox{]}}}
+\label{allvars_8h_a274a5737d1578d54d6f82130e3064771}
+table for the cosmological kick factor for hydrodynmical forces 
+
+Definition at line 100 of file allvars.c.
+
+
+
+Referenced by get\_\-hydrokick\_\-factor(), and init\_\-drift\_\-table().
+
+\hypertarget{allvars_8h_a828333e1bfb5cffdb0e67942bbcd6cdb}{
+\index{allvars.h@{allvars.h}!Key@{Key}}
+\index{Key@{Key}!allvars.h@{allvars.h}}
+\subsubsection[{Key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf peanokey}$\ast$ {\bf Key}}}
+\label{allvars_8h_a828333e1bfb5cffdb0e67942bbcd6cdb}
+a table used for storing Peano-\/Hilbert keys for particles 
+
+Definition at line 66 of file allvars.c.
+
+
+
+Referenced by domain\_\-countToGo(), domain\_\-Decomposition(), domain\_\-determineTopTree(), domain\_\-exchangeParticles(), domain\_\-sumCost(), and peano\_\-hilbert\_\-order().
+
+\hypertarget{allvars_8h_a8b9ee62bf965346f051e19e013d998b4}{
+\index{allvars.h@{allvars.h}!KeySorted@{KeySorted}}
+\index{KeySorted@{KeySorted}!allvars.h@{allvars.h}}
+\subsubsection[{KeySorted}]{\setlength{\rightskip}{0pt plus 5cm}{\bf peanokey}$\ast$ {\bf KeySorted}}}
+\label{allvars_8h_a8b9ee62bf965346f051e19e013d998b4}
+holds a sorted table of Peano-\/Hilbert keys for all particles, used to construct top-\/level tree 
+
+Definition at line 67 of file allvars.c.
+
+
+
+Referenced by domain\_\-Decomposition(), domain\_\-determineTopTree(), and domain\_\-topsplit\_\-local().
+
+\hypertarget{allvars_8h_aca70a1751175167a36c1c6775a338bee}{
+\index{allvars.h@{allvars.h}!MaxNodes@{MaxNodes}}
+\index{MaxNodes@{MaxNodes}!allvars.h@{allvars.h}}
+\subsubsection[{MaxNodes}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf MaxNodes}}}
+\label{allvars_8h_aca70a1751175167a36c1c6775a338bee}
+maximum allowed number of internal nodes 
+
+Definition at line 139 of file allvars.c.
+
+
+
+Referenced by force\_\-create\_\-empty\_\-nodes(), force\_\-insert\_\-pseudo\_\-particles(), force\_\-treeallocate(), force\_\-treebuild\_\-single(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), force\_\-update\_\-node\_\-recursive(), ngb\_\-treefind\_\-pairs(), ngb\_\-treefind\_\-variable(), and restart().
+
+\hypertarget{allvars_8h_a8312e7470883d71db46cda5f1e616974}{
+\index{allvars.h@{allvars.h}!N\_\-gas@{N\_\-gas}}
+\index{N\_\-gas@{N\_\-gas}!allvars.h@{allvars.h}}
+\subsubsection[{N\_\-gas}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf N\_\-gas}}}
+\label{allvars_8h_a8312e7470883d71db46cda5f1e616974}
+number of gas particles on the LOCAL processor 
+
+Definition at line 16 of file allvars.c.
+
+
+
+Referenced by density(), domain\_\-Decomposition(), domain\_\-exchangeParticles(), force\_\-update\_\-node\_\-hmax\_\-local(), hydro\_\-force(), init(), ngb\_\-treebuild(), peano\_\-hilbert\_\-order(), read\_\-file(), read\_\-ic(), reorder\_\-gas(), reorder\_\-particles(), restart(), and setup\_\-smoothinglengths().
+
+\hypertarget{allvars_8h_ad14ab43f541f9c33cb9222ea018c1365}{
+\index{allvars.h@{allvars.h}!Nextnode@{Nextnode}}
+\index{Nextnode@{Nextnode}!allvars.h@{allvars.h}}
+\subsubsection[{Nextnode}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf Nextnode}}}
+\label{allvars_8h_ad14ab43f541f9c33cb9222ea018c1365}
+gives next node in tree walk 
+
+Definition at line 148 of file allvars.c.
+
+
+
+Referenced by force\_\-treeallocate(), force\_\-treebuild\_\-single(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), force\_\-treefree(), force\_\-update\_\-node\_\-recursive(), ngb\_\-treefind\_\-pairs(), ngb\_\-treefind\_\-variable(), and restart().
+
+\hypertarget{allvars_8h_ade1b96e6772d0d1ccb06bcbec352b5bd}{
+\index{allvars.h@{allvars.h}!Ngblist@{Ngblist}}
+\index{Ngblist@{Ngblist}!allvars.h@{allvars.h}}
+\subsubsection[{Ngblist}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf Ngblist}}}
+\label{allvars_8h_ade1b96e6772d0d1ccb06bcbec352b5bd}
+Buffer to hold indices of neighbours retrieved by the neighbour search routines 
+
+Definition at line 32 of file allvars.c.
+
+
+
+Referenced by density\_\-evaluate(), hydro\_\-evaluate(), ngb\_\-clear\_\-buf(), ngb\_\-treeallocate(), ngb\_\-treefind\_\-pairs(), ngb\_\-treefind\_\-variable(), and ngb\_\-treefree().
+
+\hypertarget{allvars_8h_a064cd3ea05dbc39224d5c4d6d87a51a4}{
+\index{allvars.h@{allvars.h}!Nodes@{Nodes}}
+\index{Nodes@{Nodes}!allvars.h@{allvars.h}}
+\subsubsection[{Nodes}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf NODE}
+ $\ast$ {\bf Nodes}}}
+\label{allvars_8h_a064cd3ea05dbc39224d5c4d6d87a51a4}
+this is a pointer used to access the nodes which is shifted such that Nodes\mbox{[}All.MaxPart\mbox{]} gives the first allocated node \hypertarget{allvars_8h_adcab3d35d39a1fab757a93c8370af036}{
+\index{allvars.h@{allvars.h}!Nodes\_\-base@{Nodes\_\-base}}
+\index{Nodes\_\-base@{Nodes\_\-base}!allvars.h@{allvars.h}}
+\subsubsection[{Nodes\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf NODE}
+ $\ast$ {\bf Nodes\_\-base}}}
+\label{allvars_8h_adcab3d35d39a1fab757a93c8370af036}
+points to the actual memory allocted for the nodes \hypertarget{allvars_8h_a675acdcd149f5993271a1fdc11673b65}{
+\index{allvars.h@{allvars.h}!NTask@{NTask}}
+\index{NTask@{NTask}!allvars.h@{allvars.h}}
+\subsubsection[{NTask}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NTask}}}
+\label{allvars_8h_a675acdcd149f5993271a1fdc11673b65}
+number of processors 
+
+Definition at line 12 of file allvars.c.
+
+
+
+Referenced by allocate\_\-commbuffers(), begrun(), compute\_\-potential(), density(), domain\_\-countToGo(), domain\_\-decompose(), domain\_\-Decomposition(), domain\_\-determineTopTree(), domain\_\-findExchangeNumbers(), domain\_\-shiftSplit(), domain\_\-topsplit(), domain\_\-topsplit\_\-local(), every\_\-timestep\_\-stuff(), ewald\_\-init(), find\_\-dt\_\-displacement\_\-constraint(), find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), force\_\-exchange\_\-pseudodata(), force\_\-update\_\-hmax(), force\_\-update\_\-len(), gravity\_\-forcetest(), gravity\_\-tree(), hydro\_\-force(), main(), pm\_\-init\_\-periodic(), pmforce\_\-periodic(), pmpotential\_\-periodic(), read\_\-file(), read\_\-ic(), read\_\-parameter\_\-file(), restart(), and savepositions().
+
+\hypertarget{allvars_8h_a820bd6735d7313b9e7a3dcbe6c2f93d4}{
+\index{allvars.h@{allvars.h}!NTopleaves@{NTopleaves}}
+\index{NTopleaves@{NTopleaves}!allvars.h@{allvars.h}}
+\subsubsection[{NTopleaves}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NTopleaves}}}
+\label{allvars_8h_a820bd6735d7313b9e7a3dcbe6c2f93d4}
+number of leaves in top-\/level tree. Each leaf can be assigned to a different processor 
+
+Definition at line 71 of file allvars.c.
+
+
+
+Referenced by domain\_\-decompose(), domain\_\-shiftSplit(), domain\_\-sumCost(), domain\_\-walktoptree(), force\_\-flag\_\-localnodes(), force\_\-insert\_\-pseudo\_\-particles(), force\_\-treeupdate\_\-pseudos(), force\_\-update\_\-node\_\-hmax\_\-toptree(), and force\_\-update\_\-node\_\-len\_\-toptree().
+
+\hypertarget{allvars_8h_a269a1fc2bea249d93115b160fd42ee84}{
+\index{allvars.h@{allvars.h}!NTopnodes@{NTopnodes}}
+\index{NTopnodes@{NTopnodes}!allvars.h@{allvars.h}}
+\subsubsection[{NTopnodes}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NTopnodes}}}
+\label{allvars_8h_a269a1fc2bea249d93115b160fd42ee84}
+total number of nodes in top-\/level tree 
+
+Definition at line 70 of file allvars.c.
+
+
+
+Referenced by domain\_\-determineTopTree(), domain\_\-sumCost(), domain\_\-topsplit(), and domain\_\-topsplit\_\-local().
+
+\hypertarget{allvars_8h_a697577a2a59bfa869161211cb134a6ae}{
+\index{allvars.h@{allvars.h}!Ntype@{Ntype}}
+\index{Ntype@{Ntype}!allvars.h@{allvars.h}}
+\subsubsection[{Ntype}]{\setlength{\rightskip}{0pt plus 5cm}long long {\bf Ntype}\mbox{[}6\mbox{]}}}
+\label{allvars_8h_a697577a2a59bfa869161211cb134a6ae}
+total number of particles of each type 
+
+Definition at line 17 of file allvars.c.
+
+
+
+Referenced by domain\_\-decompose().
+
+\hypertarget{allvars_8h_a7e6cdb6eab38cb043edcf56a4518dfca}{
+\index{allvars.h@{allvars.h}!NtypeLocal@{NtypeLocal}}
+\index{NtypeLocal@{NtypeLocal}!allvars.h@{allvars.h}}
+\subsubsection[{NtypeLocal}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NtypeLocal}\mbox{[}6\mbox{]}}}
+\label{allvars_8h_a7e6cdb6eab38cb043edcf56a4518dfca}
+local number of particles of each type 
+
+Definition at line 18 of file allvars.c.
+
+
+
+Referenced by domain\_\-decompose().
+
+\hypertarget{allvars_8h_a4c8b412a9883b4f6e0e8962ba54fd4ef}{
+\index{allvars.h@{allvars.h}!NumForceUpdate@{NumForceUpdate}}
+\index{NumForceUpdate@{NumForceUpdate}!allvars.h@{allvars.h}}
+\subsubsection[{NumForceUpdate}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NumForceUpdate}}}
+\label{allvars_8h_a4c8b412a9883b4f6e0e8962ba54fd4ef}
+number of active particles on local processor in current timestep 
+
+Definition at line 20 of file allvars.c.
+
+
+
+Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), gravity\_\-forcetest(), and gravity\_\-tree().
+
+\hypertarget{allvars_8h_acf4151281b98d29aa500c5e56e66741f}{
+\index{allvars.h@{allvars.h}!Numnodestree@{Numnodestree}}
+\index{Numnodestree@{Numnodestree}!allvars.h@{allvars.h}}
+\subsubsection[{Numnodestree}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Numnodestree}}}
+\label{allvars_8h_acf4151281b98d29aa500c5e56e66741f}
+number of (internal) nodes in each tree 
+
+Definition at line 140 of file allvars.c.
+
+
+
+Referenced by force\_\-treebuild(), gravity\_\-tree(), move\_\-particles(), and restart().
+
+\hypertarget{allvars_8h_a9ec69b53278f9bbe12890e50299026af}{
+\index{allvars.h@{allvars.h}!NumPart@{NumPart}}
+\index{NumPart@{NumPart}!allvars.h@{allvars.h}}
+\subsubsection[{NumPart}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NumPart}}}
+\label{allvars_8h_a9ec69b53278f9bbe12890e50299026af}
+number of particles on the LOCAL processor 
+
+Definition at line 15 of file allvars.c.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), check\_\-omega(), compute\_\-global\_\-quantities\_\-of\_\-system(), compute\_\-potential(), density(), do\_\-box\_\-wrapping(), domain\_\-countToGo(), domain\_\-decompose(), domain\_\-Decomposition(), domain\_\-determineTopTree(), domain\_\-exchangeParticles(), domain\_\-findExtent(), domain\_\-sumCost(), dump\_\-particles(), find\_\-dt\_\-displacement\_\-constraint(), find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), force\_\-treeevaluate\_\-direct(), force\_\-update\_\-node\_\-len\_\-local(), gravity\_\-forcetest(), gravity\_\-tree(), init(), long\_\-range\_\-force(), move\_\-particles(), peano\_\-hilbert\_\-order(), pmforce\_\-periodic(), pmpotential\_\-periodic(), read\_\-file(), read\_\-ic(), readjust\_\-timebase(), reorder\_\-particles(), restart(), and savepositions().
+
+\hypertarget{allvars_8h_a0da112f9d57d7d936055dbb1035cd7fa}{
+\index{allvars.h@{allvars.h}!NumSphUpdate@{NumSphUpdate}}
+\index{NumSphUpdate@{NumSphUpdate}!allvars.h@{allvars.h}}
+\subsubsection[{NumSphUpdate}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NumSphUpdate}}}
+\label{allvars_8h_a0da112f9d57d7d936055dbb1035cd7fa}
+number of active SPH particles on local processor in current timestep 
+
+Definition at line 21 of file allvars.c.
+
+
+
+Referenced by density(), and hydro\_\-force().
+
+\hypertarget{allvars_8h_ac2474070ba8a23d796836d10c5d5f171}{
+\index{allvars.h@{allvars.h}!P@{P}}
+\index{P@{P}!allvars.h@{allvars.h}}
+\subsubsection[{P}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf particle\_\-data}
+ $\ast$ {\bf P}}}
+\label{allvars_8h_ac2474070ba8a23d796836d10c5d5f171}
+This structure holds all the information that is stored for each particle of the simulation. holds particle data on local processor \hypertarget{allvars_8h_aad74b601033a4fe957c6129de6e8406c}{
+\index{allvars.h@{allvars.h}!ParameterFile@{ParameterFile}}
+\index{ParameterFile@{ParameterFile}!allvars.h@{allvars.h}}
+\subsubsection[{ParameterFile}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ParameterFile}\mbox{[}100\mbox{]}}}
+\label{allvars_8h_aad74b601033a4fe957c6129de6e8406c}
+file name of parameterfile used for starting the simulation 
+
+Definition at line 83 of file allvars.c.
+
+
+
+Referenced by begrun(), and main().
+
+\hypertarget{allvars_8h_a9a18606803f69f24d3cb2864640c122e}{
+\index{allvars.h@{allvars.h}!PTask@{PTask}}
+\index{PTask@{PTask}!allvars.h@{allvars.h}}
+\subsubsection[{PTask}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf PTask}}}
+\label{allvars_8h_a9a18606803f69f24d3cb2864640c122e}
+smallest integer such that NTask $<$= 2$^\wedge$PTask 
+
+Definition at line 13 of file allvars.c.
+
+
+
+Referenced by compute\_\-potential(), density(), domain\_\-decompose(), force\_\-exchange\_\-pseudodata(), force\_\-update\_\-hmax(), force\_\-update\_\-len(), gravity\_\-forcetest(), gravity\_\-tree(), hydro\_\-force(), main(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+
+\hypertarget{allvars_8h_a4ec93729b85eb5da23dd6ffb23c3702b}{
+\index{allvars.h@{allvars.h}!random\_\-generator@{random\_\-generator}}
+\index{random\_\-generator@{random\_\-generator}!allvars.h@{allvars.h}}
+\subsubsection[{random\_\-generator}]{\setlength{\rightskip}{0pt plus 5cm}gsl\_\-rng$\ast$ {\bf random\_\-generator}}}
+\label{allvars_8h_a4ec93729b85eb5da23dd6ffb23c3702b}
+the employed random number generator of the GSL library 
+
+Definition at line 39 of file allvars.c.
+
+
+
+Referenced by begrun(), calculate\_\-interact\_\-kick(), restart(), and set\_\-random\_\-numbers().
+
+\hypertarget{allvars_8h_a7f2decfd266dfa9b4560409b9e72b4ab}{
+\index{allvars.h@{allvars.h}!RestartFlag@{RestartFlag}}
+\index{RestartFlag@{RestartFlag}!allvars.h@{allvars.h}}
+\subsubsection[{RestartFlag}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf RestartFlag}}}
+\label{allvars_8h_a7f2decfd266dfa9b4560409b9e72b4ab}
+taken from command line used to start code. 0 is normal start-\/up from initial conditions, 1 is resuming a run from a set of restart files, while 2 marks a restart from a snapshot file. 
+
+Definition at line 26 of file allvars.c.
+
+
+
+Referenced by begrun(), init(), long\_\-range\_\-init\_\-regionsize(), main(), open\_\-outputfiles(), read\_\-file(), read\_\-ic(), and setup\_\-smoothinglengths().
+
+\hypertarget{allvars_8h_aa91f67a734086ebfa758994e579c80a9}{
+\index{allvars.h@{allvars.h}!RndTable@{RndTable}}
+\index{RndTable@{RndTable}!allvars.h@{allvars.h}}
+\subsubsection[{RndTable}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf RndTable}\mbox{[}3000\mbox{]}}}
+\label{allvars_8h_aa91f67a734086ebfa758994e579c80a9}
+Hold a table with random numbers, refreshed every timestep 
+
+Definition at line 41 of file allvars.c.
+
+
+
+Referenced by get\_\-random\_\-number(), and set\_\-random\_\-numbers().
+
+\hypertarget{allvars_8h_a8a7e4a61647bbfa2ba060e2828c9a071}{
+\index{allvars.h@{allvars.h}!SphP@{SphP}}
+\index{SphP@{SphP}!allvars.h@{allvars.h}}
+\subsubsection[{SphP}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf sph\_\-particle\_\-data}
+ $\ast$ {\bf SphP}}}
+\label{allvars_8h_a8a7e4a61647bbfa2ba060e2828c9a071}
+holds SPH particle data on local processor \hypertarget{allvars_8h_abf8cf148b3694ed9d2ddfa49c2e88ab0}{
+\index{allvars.h@{allvars.h}!SysState@{SysState}}
+\index{SysState@{SysState}!allvars.h@{allvars.h}}
+\subsubsection[{SysState}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf state\_\-of\_\-system}
+  {\bf SysState}}}
+\label{allvars_8h_abf8cf148b3694ed9d2ddfa49c2e88ab0}
+\hypertarget{allvars_8h_ab0664df93d97f96270978b84eb6fb80c}{
+\index{allvars.h@{allvars.h}!Tab\_\-IO\_\-Labels@{Tab\_\-IO\_\-Labels}}
+\index{Tab\_\-IO\_\-Labels@{Tab\_\-IO\_\-Labels}!allvars.h@{allvars.h}}
+\subsubsection[{Tab\_\-IO\_\-Labels}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf Tab\_\-IO\_\-Labels}\mbox{[}11\mbox{]}\mbox{[}4\mbox{]}}}
+\label{allvars_8h_ab0664df93d97f96270978b84eb6fb80c}
+
+
+Definition at line 167 of file allvars.c.
+
+
+
+Referenced by fill\_\-Tab\_\-IO\_\-Labels(), read\_\-file(), and write\_\-file().
+
+\hypertarget{allvars_8h_a52c8c7d2abff436111942e02c5bb466a}{
+\index{allvars.h@{allvars.h}!ThisTask@{ThisTask}}
+\index{ThisTask@{ThisTask}!allvars.h@{allvars.h}}
+\subsubsection[{ThisTask}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ThisTask}}}
+\label{allvars_8h_a52c8c7d2abff436111942e02c5bb466a}
+the rank of the local processor 
+
+Definition at line 11 of file allvars.c.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), allocate\_\-commbuffers(), allocate\_\-memory(), begrun(), check\_\-omega(), close\_\-outputfiles(), compute\_\-accelerations(), compute\_\-global\_\-quantities\_\-of\_\-system(), compute\_\-potential(), density(), distribute\_\-file(), domain\_\-countToGo(), domain\_\-decompose(), domain\_\-Decomposition(), domain\_\-exchangeParticles(), domain\_\-sumCost(), domain\_\-topsplit(), domain\_\-topsplit\_\-local(), dump\_\-particles(), endrun(), energy\_\-statistics(), every\_\-timestep\_\-stuff(), ewald\_\-init(), find\_\-dt\_\-displacement\_\-constraint(), find\_\-files(), find\_\-next\_\-outputtime(), force\_\-create\_\-empty\_\-nodes(), force\_\-exchange\_\-pseudodata(), force\_\-treeallocate(), force\_\-treebuild\_\-single(), force\_\-update\_\-hmax(), force\_\-update\_\-len(), get\_\-timestep(), gravity\_\-forcetest(), gravity\_\-tree(), hydro\_\-force(), init(), main(), my\_\-fread(), my\_\-fwrite(), ngb\_\-treeallocate(), ngb\_\-treebuild(), ngb\_\-treefind\_\-pairs(), ngb\_\-treefind\_\-variable(), open\_\-outputfiles(), peano\_\-hilbert\_\-order(), pm\_\-init\_\-periodic(), pm\_\-init\_\-periodic\_\-allocate(), pmforce\_\-periodic(), pmpotential\_\-periodic(), read\_\-file(), read\_\-ic(), read\_\-parameter\_\-file(), readjust\_\-timebase(), restart(), run(), savepositions(), set\_\-units(), and write\_\-file().
+
+\hypertarget{allvars_8h_ae43d9623e3a2c88558e99ecf90948906}{
+\index{allvars.h@{allvars.h}!TimeOfLastTreeConstruction@{TimeOfLastTreeConstruction}}
+\index{TimeOfLastTreeConstruction@{TimeOfLastTreeConstruction}!allvars.h@{allvars.h}}
+\subsubsection[{TimeOfLastTreeConstruction}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf TimeOfLastTreeConstruction}}}
+\label{allvars_8h_ae43d9623e3a2c88558e99ecf90948906}
+holds what it says, only used in connection with FORCETEST 
+
+Definition at line 77 of file allvars.c.
+
+
+
+Referenced by force\_\-treebuild(), and gravity\_\-forcetest().
+
+\hypertarget{allvars_8h_a49037625c4cfadc0fc7c0d900486ccc4}{
+\index{allvars.h@{allvars.h}!TopNodes@{TopNodes}}
+\index{TopNodes@{TopNodes}!allvars.h@{allvars.h}}
+\subsubsection[{TopNodes}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf topnode\_\-data}
+ $\ast$ {\bf TopNodes}}}
+\label{allvars_8h_a49037625c4cfadc0fc7c0d900486ccc4}
+points to the root node of the top-\/level tree \hypertarget{allvars_8h_aa32d7269f9baf3ffdbdd509982fca128}{
+\index{allvars.h@{allvars.h}!TreeReconstructFlag@{TreeReconstructFlag}}
+\index{TreeReconstructFlag@{TreeReconstructFlag}!allvars.h@{allvars.h}}
+\subsubsection[{TreeReconstructFlag}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf TreeReconstructFlag}}}
+\label{allvars_8h_aa32d7269f9baf3ffdbdd509982fca128}
+Signals that a new tree needs to be constructed 
+
+Definition at line 34 of file allvars.c.
+
+
+
+Referenced by compute\_\-potential(), domain\_\-Decomposition(), gravity\_\-tree(), and init().
+

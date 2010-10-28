@@ -1,0 +1,221 @@
+\hypertarget{structparticle__data}{
+\section{particle\_\-data Struct Reference}
+\label{structparticle__data}\index{particle\_\-data@{particle\_\-data}}
+}
+
+
+{\ttfamily \#include $<$allvars.h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{structparticle__data_a764ffe35d82a64065f585e3a84263dd1}{Pos} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{structparticle__data_a710e551be01f4ef85442d0928aca728c}{Mass}
+\item 
+float \hyperlink{structparticle__data_ad7808af1e23fbd920d7eb477bc68bd00}{Vel} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{structparticle__data_a601ab390c85cd05a5c965e3353d403f3}{GravAccel} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{structparticle__data_a66cad4fae4501e68c9be5f6c643a8798}{GravPM} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{structparticle__data_ae4d6efa44515e66a9b7806d8d57a88bf}{GravAccelDirect} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{structparticle__data_a9d45a0cefc6121831905e169072550d0}{Potential}
+\item 
+float \hyperlink{structparticle__data_a5466aae28c06365368c9399c8f7cc02d}{OldAcc}
+\item 
+unsigned int \hyperlink{structparticle__data_aefa92af245e44af30d28799ab1419e74}{ID}
+\item 
+int \hyperlink{structparticle__data_ab6119b261ff95e8f84ae171139704cbd}{Type}
+\item 
+int \hyperlink{structparticle__data_a9bf2c52c7378a961222d9fe8faa9c208}{Ti\_\-endstep}
+\item 
+int \hyperlink{structparticle__data_a6c9f057d234839cecaaeffc87b7a9794}{Ti\_\-begstep}
+\item 
+float \hyperlink{structparticle__data_a2f34828ae7803611a4e86bb201697317}{GravCost}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This structure holds all the information that is stored for each particle of the simulation. 
+
+Definition at line 497 of file allvars.h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{structparticle__data_a601ab390c85cd05a5c965e3353d403f3}{
+\index{particle\_\-data@{particle\_\-data}!GravAccel@{GravAccel}}
+\index{GravAccel@{GravAccel}!particle_data@{particle\_\-data}}
+\subsubsection[{GravAccel}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf particle\_\-data::GravAccel}\mbox{[}3\mbox{]}}}
+\label{structparticle__data_a601ab390c85cd05a5c965e3353d403f3}
+particle acceleration due to gravity 
+
+Definition at line 502 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quantities\_\-of\_\-system(), fill\_\-write\_\-buffer(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-shortrange(), get\_\-timestep(), gravity\_\-forcetest(), gravity\_\-tree(), and move\_\-particles().
+
+\hypertarget{structparticle__data_ae4d6efa44515e66a9b7806d8d57a88bf}{
+\index{particle\_\-data@{particle\_\-data}!GravAccelDirect@{GravAccelDirect}}
+\index{GravAccelDirect@{GravAccelDirect}!particle_data@{particle\_\-data}}
+\subsubsection[{GravAccelDirect}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf particle\_\-data::GravAccelDirect}\mbox{[}3\mbox{]}}}
+\label{structparticle__data_ae4d6efa44515e66a9b7806d8d57a88bf}
+particle acceleration when computed with direct summation 
+
+Definition at line 507 of file allvars.h.
+
+
+
+Referenced by force\_\-treeevaluate\_\-direct(), and gravity\_\-forcetest().
+
+\hypertarget{structparticle__data_a2f34828ae7803611a4e86bb201697317}{
+\index{particle\_\-data@{particle\_\-data}!GravCost@{GravCost}}
+\index{GravCost@{GravCost}!particle_data@{particle\_\-data}}
+\subsubsection[{GravCost}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf particle\_\-data::GravCost}}}
+\label{structparticle__data_a2f34828ae7803611a4e86bb201697317}
+weight factor used for balancing the work-\/load 
+
+Definition at line 523 of file allvars.h.
+
+
+
+Referenced by domain\_\-sumCost(), force\_\-treebuild\_\-single(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-shortrange(), gravity\_\-tree(), and init().
+
+\hypertarget{structparticle__data_a66cad4fae4501e68c9be5f6c643a8798}{
+\index{particle\_\-data@{particle\_\-data}!GravPM@{GravPM}}
+\index{GravPM@{GravPM}!particle_data@{particle\_\-data}}
+\subsubsection[{GravPM}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf particle\_\-data::GravPM}\mbox{[}3\mbox{]}}}
+\label{structparticle__data_a66cad4fae4501e68c9be5f6c643a8798}
+particle acceleration due to long-\/range PM gravity force 
+
+Definition at line 504 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), get\_\-timestep(), gravity\_\-forcetest(), gravity\_\-tree(), move\_\-particles(), and pmforce\_\-periodic().
+
+\hypertarget{structparticle__data_aefa92af245e44af30d28799ab1419e74}{
+\index{particle\_\-data@{particle\_\-data}!ID@{ID}}
+\index{ID@{ID}!particle_data@{particle\_\-data}}
+\subsubsection[{ID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf particle\_\-data::ID}}}
+\label{structparticle__data_aefa92af245e44af30d28799ab1419e74}
+particle identifier 
+
+Definition at line 512 of file allvars.h.
+
+
+
+Referenced by empty\_\-read\_\-buffer(), and fill\_\-write\_\-buffer().
+
+\hypertarget{structparticle__data_a710e551be01f4ef85442d0928aca728c}{
+\index{particle\_\-data@{particle\_\-data}!Mass@{Mass}}
+\index{Mass@{Mass}!particle_data@{particle\_\-data}}
+\subsubsection[{Mass}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf particle\_\-data::Mass}}}
+\label{structparticle__data_a710e551be01f4ef85442d0928aca728c}
+particle mass 
+
+Definition at line 500 of file allvars.h.
+
+
+
+Referenced by compute\_\-global\_\-quantities\_\-of\_\-system(), compute\_\-potential(), density\_\-evaluate(), empty\_\-read\_\-buffer(), fill\_\-write\_\-buffer(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-direct(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), force\_\-update\_\-node\_\-recursive(), hydro\_\-evaluate(), hydro\_\-force(), pmforce\_\-periodic(), pmpotential\_\-periodic(), read\_\-ic(), and setup\_\-smoothinglengths().
+
+\hypertarget{structparticle__data_a5466aae28c06365368c9399c8f7cc02d}{
+\index{particle\_\-data@{particle\_\-data}!OldAcc@{OldAcc}}
+\index{OldAcc@{OldAcc}!particle_data@{particle\_\-data}}
+\subsubsection[{OldAcc}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf particle\_\-data::OldAcc}}}
+\label{structparticle__data_a5466aae28c06365368c9399c8f7cc02d}
+magnitude of old gravitational force. Used in relative opening criterion 
+
+Definition at line 510 of file allvars.h.
+
+
+
+Referenced by compute\_\-potential(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), gravity\_\-forcetest(), gravity\_\-tree(), and init().
+
+\hypertarget{structparticle__data_a764ffe35d82a64065f585e3a84263dd1}{
+\index{particle\_\-data@{particle\_\-data}!Pos@{Pos}}
+\index{Pos@{Pos}!particle_data@{particle\_\-data}}
+\subsubsection[{Pos}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf particle\_\-data::Pos}\mbox{[}3\mbox{]}}}
+\label{structparticle__data_a764ffe35d82a64065f585e3a84263dd1}
+particle position at its current time 
+
+Definition at line 499 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quantities\_\-of\_\-system(), compute\_\-potential(), density(), density\_\-evaluate(), do\_\-box\_\-wrapping(), domain\_\-findExtent(), empty\_\-read\_\-buffer(), fill\_\-write\_\-buffer(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-direct(), force\_\-treeevaluate\_\-ewald\_\-correction(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), force\_\-update\_\-node\_\-len\_\-local(), force\_\-update\_\-node\_\-recursive(), get\_\-timestep(), gravity\_\-forcetest(), gravity\_\-tree(), hydro\_\-evaluate(), hydro\_\-force(), move\_\-particles(), ngb\_\-clear\_\-buf(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+
+\hypertarget{structparticle__data_a9d45a0cefc6121831905e169072550d0}{
+\index{particle\_\-data@{particle\_\-data}!Potential@{Potential}}
+\index{Potential@{Potential}!particle_data@{particle\_\-data}}
+\subsubsection[{Potential}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf particle\_\-data::Potential}}}
+\label{structparticle__data_a9d45a0cefc6121831905e169072550d0}
+gravitational potential 
+
+Definition at line 509 of file allvars.h.
+
+
+
+Referenced by compute\_\-global\_\-quantities\_\-of\_\-system(), compute\_\-potential(), fill\_\-write\_\-buffer(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), init(), and pmpotential\_\-periodic().
+
+\hypertarget{structparticle__data_a6c9f057d234839cecaaeffc87b7a9794}{
+\index{particle\_\-data@{particle\_\-data}!Ti\_\-begstep@{Ti\_\-begstep}}
+\index{Ti\_\-begstep@{Ti\_\-begstep}!particle_data@{particle\_\-data}}
+\subsubsection[{Ti\_\-begstep}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf particle\_\-data::Ti\_\-begstep}}}
+\label{structparticle__data_a6c9f057d234839cecaaeffc87b7a9794}
+marks end of current timestep of particle on integer timeline 
+
+Definition at line 519 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quantities\_\-of\_\-system(), density(), fill\_\-write\_\-buffer(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-shortrange(), gravity\_\-tree(), hydro\_\-evaluate(), hydro\_\-force(), init(), move\_\-particles(), and readjust\_\-timebase().
+
+\hypertarget{structparticle__data_a9bf2c52c7378a961222d9fe8faa9c208}{
+\index{particle\_\-data@{particle\_\-data}!Ti\_\-endstep@{Ti\_\-endstep}}
+\index{Ti\_\-endstep@{Ti\_\-endstep}!particle_data@{particle\_\-data}}
+\subsubsection[{Ti\_\-endstep}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf particle\_\-data::Ti\_\-endstep}}}
+\label{structparticle__data_a9bf2c52c7378a961222d9fe8faa9c208}
+marks start of current timestep of particle on integer timeline 
+
+Definition at line 518 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quantities\_\-of\_\-system(), density(), fill\_\-write\_\-buffer(), find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-shortrange(), gravity\_\-forcetest(), gravity\_\-tree(), hydro\_\-evaluate(), hydro\_\-force(), init(), move\_\-particles(), and readjust\_\-timebase().
+
+\hypertarget{structparticle__data_ab6119b261ff95e8f84ae171139704cbd}{
+\index{particle\_\-data@{particle\_\-data}!Type@{Type}}
+\index{Type@{Type}!particle_data@{particle\_\-data}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf particle\_\-data::Type}}}
+\label{structparticle__data_ab6119b261ff95e8f84ae171139704cbd}
+flags particle type. 0=gas, 1=halo, 2=disk, 3=bulge, 4=stars, 5=bndry 
+
+Definition at line 517 of file allvars.h.
+
+
+
+Referenced by compute\_\-global\_\-quantities\_\-of\_\-system(), compute\_\-potential(), empty\_\-read\_\-buffer(), find\_\-dt\_\-displacement\_\-constraint(), force\_\-treebuild\_\-single(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-direct(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), force\_\-update\_\-node\_\-recursive(), get\_\-timestep(), gravity\_\-forcetest(), gravity\_\-tree(), move\_\-particles(), and read\_\-ic().
+
+\hypertarget{structparticle__data_ad7808af1e23fbd920d7eb477bc68bd00}{
+\index{particle\_\-data@{particle\_\-data}!Vel@{Vel}}
+\index{Vel@{Vel}!particle_data@{particle\_\-data}}
+\subsubsection[{Vel}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf particle\_\-data::Vel}\mbox{[}3\mbox{]}}}
+\label{structparticle__data_ad7808af1e23fbd920d7eb477bc68bd00}
+particle velocity at its current time 
+
+Definition at line 501 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quantities\_\-of\_\-system(), empty\_\-read\_\-buffer(), fill\_\-write\_\-buffer(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-shortrange(), force\_\-update\_\-node\_\-recursive(), gravity\_\-tree(), init(), and move\_\-particles().
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{allvars_8h}{allvars.h}\end{DoxyCompactItemize}

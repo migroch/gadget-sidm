@@ -1,0 +1,622 @@
+\hypertarget{driftfac_8c}{
+\section{driftfac.c File Reference}
+\label{driftfac_8c}\index{driftfac.c@{driftfac.c}}
+}
+
+
+compute loop-\/up tables for prefactors in cosmological integration  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$mpi.h$>$}\par
+{\ttfamily \#include $<$gsl/gsl\_\-math.h$>$}\par
+{\ttfamily \#include $<$gsl/gsl\_\-integration.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for driftfac.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{driftfac_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{driftfac_8c_a2adb5d14857fdbea8ba352245450e52a}{WORKSIZE}~100000
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{driftfac_8c_aea1f81063199abb9d89802b444098018}{init\_\-drift\_\-table} (void)
+\item 
+double \hyperlink{driftfac_8c_adadb384299eb936596574417d4b6b28c}{get\_\-drift\_\-factor} (int time0, int time1)
+\item 
+double \hyperlink{driftfac_8c_a29057b821b850ab54b318d7339633059}{get\_\-gravkick\_\-factor} (int time0, int time1)
+\item 
+double \hyperlink{driftfac_8c_ace65dca1556185b12c7f22427724c90c}{get\_\-hydrokick\_\-factor} (int time0, int time1)
+\item 
+double \hyperlink{driftfac_8c_a8cb77fa18fd6b91a358bd0a9c04cbf2e}{drift\_\-integ} (double a, void $\ast$param)
+\item 
+double \hyperlink{driftfac_8c_a2eafe05fb12d7f9d954d5b501e186051}{gravkick\_\-integ} (double a, void $\ast$param)
+\item 
+double \hyperlink{driftfac_8c_a5ebdee2c7332bed6c1a8994ac3c38c0d}{hydrokick\_\-integ} (double a, void $\ast$param)
+\item 
+double \hyperlink{driftfac_8c_a9690d42f31f3e278745a9e19b5a0ec6f}{growthfactor\_\-integ} (double a, void $\ast$param)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{driftfac_8c_adf1795a43a5fd6de0a14b805094dac47}{logTimeBegin}
+\item 
+static double \hyperlink{driftfac_8c_a0e08a12787034f570c56ff664de37e2a}{logTimeMax}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+compute loop-\/up tables for prefactors in cosmological integration 
+
+Definition in file \hyperlink{driftfac_8c_source}{driftfac.c}.
+
+
+
+\subsection{Define Documentation}
+\hypertarget{driftfac_8c_a2adb5d14857fdbea8ba352245450e52a}{
+\index{driftfac.c@{driftfac.c}!WORKSIZE@{WORKSIZE}}
+\index{WORKSIZE@{WORKSIZE}!driftfac.c@{driftfac.c}}
+\subsubsection[{WORKSIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define WORKSIZE~100000}}
+\label{driftfac_8c_a2adb5d14857fdbea8ba352245450e52a}
+
+
+Referenced by init\_\-drift\_\-table().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{driftfac_8c_a8cb77fa18fd6b91a358bd0a9c04cbf2e}{
+\index{driftfac.c@{driftfac.c}!drift\_\-integ@{drift\_\-integ}}
+\index{drift\_\-integ@{drift\_\-integ}!driftfac.c@{driftfac.c}}
+\subsubsection[{drift\_\-integ}]{\setlength{\rightskip}{0pt plus 5cm}double drift\_\-integ (
+\begin{DoxyParamCaption}
+\item[{double}]{ a, }
+\item[{void $\ast$}]{ param}
+\end{DoxyParamCaption}
+)}}
+\label{driftfac_8c_a8cb77fa18fd6b91a358bd0a9c04cbf2e}
+Integration kernel for drift factor computation. 
+
+Definition at line 179 of file driftfac.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::Hubble, global\_\-data\_\-all\_\-processes::Omega0, and global\_\-data\_\-all\_\-processes::OmegaLambda.
+
+
+
+
+\begin{DoxyCode}
+{
+  double h;
+
+  h = All.Omega0 / (a * a * a) + (1 - All.Omega0 - All.OmegaLambda) / (a * a) + 
+      All.OmegaLambda;
+  h = All.Hubble * sqrt(h);
+
+  return 1 / (h * a * a * a);
+}
+\end{DoxyCode}
+
+
+\hypertarget{driftfac_8c_adadb384299eb936596574417d4b6b28c}{
+\index{driftfac.c@{driftfac.c}!get\_\-drift\_\-factor@{get\_\-drift\_\-factor}}
+\index{get\_\-drift\_\-factor@{get\_\-drift\_\-factor}!driftfac.c@{driftfac.c}}
+\subsubsection[{get\_\-drift\_\-factor}]{\setlength{\rightskip}{0pt plus 5cm}double get\_\-drift\_\-factor (
+\begin{DoxyParamCaption}
+\item[{int}]{ time0, }
+\item[{int}]{ time1}
+\end{DoxyParamCaption}
+)}}
+\label{driftfac_8c_adadb384299eb936596574417d4b6b28c}
+This function integrates the cosmological prefactor for a drift step between time0 and time1. The value returned is $\ast$ \[ \int_{a_0}^{a_1} \frac{{\rm d}a}{H(a)} * \] 
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors 
+
+
+
+Definition at line 67 of file driftfac.c.
+
+
+
+References All, DRIFT\_\-TABLE\_\-LENGTH, DriftTable, logTimeBegin, logTimeMax, and global\_\-data\_\-all\_\-processes::Timebase\_\-interval.
+
+
+
+Referenced by move\_\-particles().
+
+
+
+
+\begin{DoxyCode}
+{
+  double a1, a2, df1, df2, u1, u2;
+  int i1, i2;
+
+  /* note: will only be called for cosmological integration */
+
+  a1 = logTimeBegin + time0 * All.Timebase_interval;
+  a2 = logTimeBegin + time1 * All.Timebase_interval;
+
+  u1 = (a1 - logTimeBegin) / (logTimeMax - logTimeBegin) * DRIFT_TABLE_LENGTH;
+  i1 = (int) u1;
+  if(i1 >= DRIFT_TABLE_LENGTH)
+    i1 = DRIFT_TABLE_LENGTH - 1;
+
+  if(i1 <= 1)
+    df1 = u1 * DriftTable[0];
+  else
+    df1 = DriftTable[i1 - 1] + (DriftTable[i1] - DriftTable[i1 - 1]) * (u1 - i1);
+      
+
+
+  u2 = (a2 - logTimeBegin) / (logTimeMax - logTimeBegin) * DRIFT_TABLE_LENGTH;
+  i2 = (int) u2;
+  if(i2 >= DRIFT_TABLE_LENGTH)
+    i2 = DRIFT_TABLE_LENGTH - 1;
+
+  if(i2 <= 1)
+    df2 = u2 * DriftTable[0];
+  else
+    df2 = DriftTable[i2 - 1] + (DriftTable[i2] - DriftTable[i2 - 1]) * (u2 - i2);
+      
+
+  return df2 - df1;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{driftfac_8c_adadb384299eb936596574417d4b6b28c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{driftfac_8c_a29057b821b850ab54b318d7339633059}{
+\index{driftfac.c@{driftfac.c}!get\_\-gravkick\_\-factor@{get\_\-gravkick\_\-factor}}
+\index{get\_\-gravkick\_\-factor@{get\_\-gravkick\_\-factor}!driftfac.c@{driftfac.c}}
+\subsubsection[{get\_\-gravkick\_\-factor}]{\setlength{\rightskip}{0pt plus 5cm}double get\_\-gravkick\_\-factor (
+\begin{DoxyParamCaption}
+\item[{int}]{ time0, }
+\item[{int}]{ time1}
+\end{DoxyParamCaption}
+)}}
+\label{driftfac_8c_a29057b821b850ab54b318d7339633059}
+This function integrates the cosmological prefactor for a kick step of the gravitational force. 
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors 
+
+
+
+Definition at line 105 of file driftfac.c.
+
+
+
+References All, DRIFT\_\-TABLE\_\-LENGTH, GravKickTable, logTimeBegin, logTimeMax, and global\_\-data\_\-all\_\-processes::Timebase\_\-interval.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quantities\_\-of\_\-system(), fill\_\-write\_\-buffer(), and move\_\-particles().
+
+
+
+
+\begin{DoxyCode}
+{
+  double a1, a2, df1, df2, u1, u2;
+  int i1, i2;
+
+  /* note: will only be called for cosmological integration */
+
+  a1 = logTimeBegin + time0 * All.Timebase_interval;
+  a2 = logTimeBegin + time1 * All.Timebase_interval;
+
+  u1 = (a1 - logTimeBegin) / (logTimeMax - logTimeBegin) * DRIFT_TABLE_LENGTH;
+  i1 = (int) u1;
+  if(i1 >= DRIFT_TABLE_LENGTH)
+    i1 = DRIFT_TABLE_LENGTH - 1;
+
+  if(i1 <= 1)
+    df1 = u1 * GravKickTable[0];
+  else
+    df1 = GravKickTable[i1 - 1] + (GravKickTable[i1] - GravKickTable[i1 - 1]) * (
+      u1 - i1);
+
+
+  u2 = (a2 - logTimeBegin) / (logTimeMax - logTimeBegin) * DRIFT_TABLE_LENGTH;
+  i2 = (int) u2;
+  if(i2 >= DRIFT_TABLE_LENGTH)
+    i2 = DRIFT_TABLE_LENGTH - 1;
+
+  if(i2 <= 1)
+    df2 = u2 * GravKickTable[0];
+  else
+    df2 = GravKickTable[i2 - 1] + (GravKickTable[i2] - GravKickTable[i2 - 1]) * (
+      u2 - i2);
+
+  return df2 - df1;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{driftfac_8c_a29057b821b850ab54b318d7339633059_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{driftfac_8c_ace65dca1556185b12c7f22427724c90c}{
+\index{driftfac.c@{driftfac.c}!get\_\-hydrokick\_\-factor@{get\_\-hydrokick\_\-factor}}
+\index{get\_\-hydrokick\_\-factor@{get\_\-hydrokick\_\-factor}!driftfac.c@{driftfac.c}}
+\subsubsection[{get\_\-hydrokick\_\-factor}]{\setlength{\rightskip}{0pt plus 5cm}double get\_\-hydrokick\_\-factor (
+\begin{DoxyParamCaption}
+\item[{int}]{ time0, }
+\item[{int}]{ time1}
+\end{DoxyParamCaption}
+)}}
+\label{driftfac_8c_ace65dca1556185b12c7f22427724c90c}
+This function integrates the cosmological prefactor for a kick step of the hydrodynamical force. 
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors 
+
+
+
+Definition at line 142 of file driftfac.c.
+
+
+
+References All, DRIFT\_\-TABLE\_\-LENGTH, HydroKickTable, logTimeBegin, logTimeMax, and global\_\-data\_\-all\_\-processes::Timebase\_\-interval.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quantities\_\-of\_\-system(), fill\_\-write\_\-buffer(), and move\_\-particles().
+
+
+
+
+\begin{DoxyCode}
+{
+  double a1, a2, df1, df2, u1, u2;
+  int i1, i2;
+
+  /* note: will only be called for cosmological integration */
+
+  a1 = logTimeBegin + time0 * All.Timebase_interval;
+  a2 = logTimeBegin + time1 * All.Timebase_interval;
+
+  u1 = (a1 - logTimeBegin) / (logTimeMax - logTimeBegin) * DRIFT_TABLE_LENGTH;
+  i1 = (int) u1;
+  if(i1 >= DRIFT_TABLE_LENGTH)
+    i1 = DRIFT_TABLE_LENGTH - 1;
+
+  if(i1 <= 1)
+    df1 = u1 * HydroKickTable[0];
+  else
+    df1 = HydroKickTable[i1 - 1] + (HydroKickTable[i1] - HydroKickTable[i1 - 1]) 
+      * (u1 - i1);
+
+
+  u2 = (a2 - logTimeBegin) / (logTimeMax - logTimeBegin) * DRIFT_TABLE_LENGTH;
+  i2 = (int) u2;
+  if(i2 >= DRIFT_TABLE_LENGTH)
+    i2 = DRIFT_TABLE_LENGTH - 1;
+
+  if(i2 <= 1)
+    df2 = u2 * HydroKickTable[0];
+  else
+    df2 = HydroKickTable[i2 - 1] + (HydroKickTable[i2] - HydroKickTable[i2 - 1]) 
+      * (u2 - i2);
+
+  return df2 - df1;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{driftfac_8c_ace65dca1556185b12c7f22427724c90c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{driftfac_8c_a2eafe05fb12d7f9d954d5b501e186051}{
+\index{driftfac.c@{driftfac.c}!gravkick\_\-integ@{gravkick\_\-integ}}
+\index{gravkick\_\-integ@{gravkick\_\-integ}!driftfac.c@{driftfac.c}}
+\subsubsection[{gravkick\_\-integ}]{\setlength{\rightskip}{0pt plus 5cm}double gravkick\_\-integ (
+\begin{DoxyParamCaption}
+\item[{double}]{ a, }
+\item[{void $\ast$}]{ param}
+\end{DoxyParamCaption}
+)}}
+\label{driftfac_8c_a2eafe05fb12d7f9d954d5b501e186051}
+Integration kernel for gravitational kick factor computation. 
+
+Definition at line 191 of file driftfac.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::Hubble, global\_\-data\_\-all\_\-processes::Omega0, and global\_\-data\_\-all\_\-processes::OmegaLambda.
+
+
+
+
+\begin{DoxyCode}
+{
+  double h;
+
+  h = All.Omega0 / (a * a * a) + (1 - All.Omega0 - All.OmegaLambda) / (a * a) + 
+      All.OmegaLambda;
+  h = All.Hubble * sqrt(h);
+
+  return 1 / (h * a * a);
+}
+\end{DoxyCode}
+
+
+\hypertarget{driftfac_8c_a9690d42f31f3e278745a9e19b5a0ec6f}{
+\index{driftfac.c@{driftfac.c}!growthfactor\_\-integ@{growthfactor\_\-integ}}
+\index{growthfactor\_\-integ@{growthfactor\_\-integ}!driftfac.c@{driftfac.c}}
+\subsubsection[{growthfactor\_\-integ}]{\setlength{\rightskip}{0pt plus 5cm}double growthfactor\_\-integ (
+\begin{DoxyParamCaption}
+\item[{double}]{ a, }
+\item[{void $\ast$}]{ param}
+\end{DoxyParamCaption}
+)}}
+\label{driftfac_8c_a9690d42f31f3e278745a9e19b5a0ec6f}
+
+
+Definition at line 214 of file driftfac.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, and pow().
+
+
+
+
+\begin{DoxyCode}
+{
+  double s;
+
+  s = All.Omega0 + (1 - All.Omega0 - All.OmegaLambda) * a + All.OmegaLambda * a *
+       a * a;
+  s = sqrt(s);
+
+  return pow(sqrt(a) / s, 3);
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{driftfac_8c_a9690d42f31f3e278745a9e19b5a0ec6f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{driftfac_8c_a5ebdee2c7332bed6c1a8994ac3c38c0d}{
+\index{driftfac.c@{driftfac.c}!hydrokick\_\-integ@{hydrokick\_\-integ}}
+\index{hydrokick\_\-integ@{hydrokick\_\-integ}!driftfac.c@{driftfac.c}}
+\subsubsection[{hydrokick\_\-integ}]{\setlength{\rightskip}{0pt plus 5cm}double hydrokick\_\-integ (
+\begin{DoxyParamCaption}
+\item[{double}]{ a, }
+\item[{void $\ast$}]{ param}
+\end{DoxyParamCaption}
+)}}
+\label{driftfac_8c_a5ebdee2c7332bed6c1a8994ac3c38c0d}
+Integration kernel for hydrodynamical kick factor computation. 
+
+$<$ adiabatic index of simulated gas 
+
+
+
+Definition at line 204 of file driftfac.c.
+
+
+
+References All, GAMMA\_\-MINUS1, global\_\-data\_\-all\_\-processes::Hubble, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, and pow().
+
+
+
+
+\begin{DoxyCode}
+{
+  double h;
+
+  h = All.Omega0 / (a * a * a) + (1 - All.Omega0 - All.OmegaLambda) / (a * a) + 
+      All.OmegaLambda;
+  h = All.Hubble * sqrt(h);
+
+  return 1 / (h * pow(a, 3 * GAMMA_MINUS1) * a);
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{driftfac_8c_a5ebdee2c7332bed6c1a8994ac3c38c0d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{driftfac_8c_aea1f81063199abb9d89802b444098018}{
+\index{driftfac.c@{driftfac.c}!init\_\-drift\_\-table@{init\_\-drift\_\-table}}
+\index{init\_\-drift\_\-table@{init\_\-drift\_\-table}!driftfac.c@{driftfac.c}}
+\subsubsection[{init\_\-drift\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-drift\_\-table (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{driftfac_8c_aea1f81063199abb9d89802b444098018}
+This function computes look-\/up tables for factors needed in cosmological integrations. The (simple) integrations are carried out with the GSL library. Separate factors are computed for the \char`\"{}drift\char`\"{}, and the gravitational and hydrodynamical \char`\"{}kicks\char`\"{}. The lookup-\/table is used for reasons of speed. 
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors
+
+$<$ length of the lookup table used to hold the drift and kick factors 
+
+
+
+Definition at line 26 of file driftfac.c.
+
+
+
+References All, DriftTable, GravKickTable, HydroKickTable, logTimeBegin, logTimeMax, global\_\-data\_\-all\_\-processes::TimeBegin, global\_\-data\_\-all\_\-processes::TimeMax, WORKSIZE, and workspace.
+
+
+
+Referenced by begrun().
+
+
+
+
+\begin{DoxyCode}
+{
+#define WORKSIZE 100000
+  int i;
+  double result, abserr;
+  gsl_function F;
+  gsl_integration_workspace *workspace;
+
+  logTimeBegin = log(All.TimeBegin);
+  logTimeMax = log(All.TimeMax);
+
+  workspace = gsl_integration_workspace_alloc(WORKSIZE);
+
+  for(i = 0; i < DRIFT_TABLE_LENGTH; i++)
+    {
+      F.function = &drift_integ;
+      gsl_integration_qag(&F, exp(logTimeBegin), exp(logTimeBegin + ((logTimeMax 
+      - logTimeBegin) / DRIFT_TABLE_LENGTH) * (i + 1)), 0,
+                          1.0e-8, WORKSIZE, GSL_INTEG_GAUSS41, workspace, &result
+      , &abserr);
+      DriftTable[i] = result;
+
+
+      F.function = &gravkick_integ;
+      gsl_integration_qag(&F, exp(logTimeBegin), exp(logTimeBegin + ((logTimeMax 
+      - logTimeBegin) / DRIFT_TABLE_LENGTH) * (i + 1)), 0,
+                          1.0e-8, WORKSIZE, GSL_INTEG_GAUSS41, workspace, &result
+      , &abserr);
+      GravKickTable[i] = result;
+
+
+      F.function = &hydrokick_integ;
+      gsl_integration_qag(&F, exp(logTimeBegin), exp(logTimeBegin + ((logTimeMax 
+      - logTimeBegin) / DRIFT_TABLE_LENGTH) * (i + 1)), 0,
+                          1.0e-8, WORKSIZE, GSL_INTEG_GAUSS41, workspace, &result
+      , &abserr);
+      HydroKickTable[i] = result;
+    }
+
+  gsl_integration_workspace_free(workspace);
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{driftfac_8c_aea1f81063199abb9d89802b444098018_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{driftfac_8c_adf1795a43a5fd6de0a14b805094dac47}{
+\index{driftfac.c@{driftfac.c}!logTimeBegin@{logTimeBegin}}
+\index{logTimeBegin@{logTimeBegin}!driftfac.c@{driftfac.c}}
+\subsubsection[{logTimeBegin}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf logTimeBegin}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{driftfac_8c_adf1795a43a5fd6de0a14b805094dac47}
+
+
+Definition at line 16 of file driftfac.c.
+
+
+
+Referenced by get\_\-drift\_\-factor(), get\_\-gravkick\_\-factor(), get\_\-hydrokick\_\-factor(), and init\_\-drift\_\-table().
+
+\hypertarget{driftfac_8c_a0e08a12787034f570c56ff664de37e2a}{
+\index{driftfac.c@{driftfac.c}!logTimeMax@{logTimeMax}}
+\index{logTimeMax@{logTimeMax}!driftfac.c@{driftfac.c}}
+\subsubsection[{logTimeMax}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf logTimeMax}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{driftfac_8c_a0e08a12787034f570c56ff664de37e2a}
+
+
+Definition at line 17 of file driftfac.c.
+
+
+
+Referenced by get\_\-drift\_\-factor(), get\_\-gravkick\_\-factor(), get\_\-hydrokick\_\-factor(), and init\_\-drift\_\-table().
+

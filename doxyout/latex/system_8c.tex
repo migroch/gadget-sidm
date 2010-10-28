@@ -1,0 +1,435 @@
+\hypertarget{system_8c}{
+\section{system.c File Reference}
+\label{system_8c}\index{system.c@{system.c}}
+}
+
+
+contains miscellaneous routines, e.g. elapsed time measurements  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$time.h$>$}\par
+{\ttfamily \#include $<$sys/time.h$>$}\par
+{\ttfamily \#include $<$sys/resource.h$>$}\par
+{\ttfamily \#include $<$unistd.h$>$}\par
+{\ttfamily \#include $<$signal.h$>$}\par
+{\ttfamily \#include $<$gsl/gsl\_\-rng.h$>$}\par
+{\ttfamily \#include $<$mpi.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for system.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{system_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{system_8c_a0d508d57eb6f608ff6eec8ac11bb9c05}{get\_\-random\_\-number} (int id)
+\item 
+void \hyperlink{system_8c_a9cb45ef22cae101906f021fb7a23afbe}{set\_\-random\_\-numbers} (void)
+\item 
+double \hyperlink{system_8c_ad24c35a2016ce428248988795c1d3174}{second} (void)
+\item 
+double \hyperlink{system_8c_a890645bdc4536bd797ca53028072e30d}{timediff} (double t0, double t1)
+\item 
+double \hyperlink{system_8c_aec69e4c89b77badf104ae9d6ae393b2c}{dmax} (double x, double y)
+\item 
+double \hyperlink{system_8c_a04e03b7aad55468a8b8eae326087338a}{dmin} (double x, double y)
+\item 
+int \hyperlink{system_8c_ae9a47395801b541ac371150583719128}{imax} (int x, int y)
+\item 
+int \hyperlink{system_8c_aeddbbb9a6197286f3a26ce5305ac02eb}{imin} (int x, int y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+contains miscellaneous routines, e.g. elapsed time measurements 
+
+Definition in file \hyperlink{system_8c_source}{system.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{system_8c_aec69e4c89b77badf104ae9d6ae393b2c}{
+\index{system.c@{system.c}!dmax@{dmax}}
+\index{dmax@{dmax}!system.c@{system.c}}
+\subsubsection[{dmax}]{\setlength{\rightskip}{0pt plus 5cm}double dmax (
+\begin{DoxyParamCaption}
+\item[{double}]{ x, }
+\item[{double}]{ y}
+\end{DoxyParamCaption}
+)}}
+\label{system_8c_aec69e4c89b77badf104ae9d6ae393b2c}
+returns the maximum of two double 
+
+Definition at line 91 of file system.c.
+
+
+
+Referenced by density(), domain\_\-findSplit(), domain\_\-shiftSplit(), fill\_\-write\_\-buffer(), force\_\-treeevaluate\_\-direct(), and read\_\-ic().
+
+
+
+
+\begin{DoxyCode}
+{
+  if(x > y)
+    return x;
+  else
+    return y;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{system_8c_aec69e4c89b77badf104ae9d6ae393b2c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{system_8c_a04e03b7aad55468a8b8eae326087338a}{
+\index{system.c@{system.c}!dmin@{dmin}}
+\index{dmin@{dmin}!system.c@{system.c}}
+\subsubsection[{dmin}]{\setlength{\rightskip}{0pt plus 5cm}double dmin (
+\begin{DoxyParamCaption}
+\item[{double}]{ x, }
+\item[{double}]{ y}
+\end{DoxyParamCaption}
+)}}
+\label{system_8c_a04e03b7aad55468a8b8eae326087338a}
+returns the minimum of two double 
+
+Definition at line 101 of file system.c.
+
+
+
+Referenced by hydro\_\-evaluate().
+
+
+
+
+\begin{DoxyCode}
+{
+  if(x < y)
+    return x;
+  else
+    return y;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{system_8c_a04e03b7aad55468a8b8eae326087338a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{system_8c_a0d508d57eb6f608ff6eec8ac11bb9c05}{
+\index{system.c@{system.c}!get\_\-random\_\-number@{get\_\-random\_\-number}}
+\index{get\_\-random\_\-number@{get\_\-random\_\-number}!system.c@{system.c}}
+\subsubsection[{get\_\-random\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}double get\_\-random\_\-number (
+\begin{DoxyParamCaption}
+\item[{int}]{ id}
+\end{DoxyParamCaption}
+)}}
+\label{system_8c_a0d508d57eb6f608ff6eec8ac11bb9c05}
+This routine returns a random number taken from a table of random numbers, which is refilled every timestep. This method is used to allow random number application to particles independent of the number of processors used, and independent of the particular order the particles have. In order to work properly, the particle IDs should be set properly to unique integer values. 
+
+$<$ gives the length of a table with random numbers, refreshed at every timestep. This is used to allow application of random numbers to a specific particle in a way that is independent of the number of processors used. 
+
+
+
+Definition at line 29 of file system.c.
+
+
+
+References RndTable.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), force\_\-treebuild\_\-single(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-shortrange(), gravity\_\-forcetest(), and init().
+
+
+
+
+\begin{DoxyCode}
+{
+  return RndTable[(id % RNDTABLE)];
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{system_8c_a0d508d57eb6f608ff6eec8ac11bb9c05_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{system_8c_ae9a47395801b541ac371150583719128}{
+\index{system.c@{system.c}!imax@{imax}}
+\index{imax@{imax}!system.c@{system.c}}
+\subsubsection[{imax}]{\setlength{\rightskip}{0pt plus 5cm}int imax (
+\begin{DoxyParamCaption}
+\item[{int}]{ x, }
+\item[{int}]{ y}
+\end{DoxyParamCaption}
+)}}
+\label{system_8c_ae9a47395801b541ac371150583719128}
+returns the maximum of two integers 
+
+Definition at line 111 of file system.c.
+
+
+
+Referenced by hydro\_\-evaluate(), and pm\_\-init\_\-periodic\_\-allocate().
+
+
+
+
+\begin{DoxyCode}
+{
+  if(x > y)
+    return x;
+  else
+    return y;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{system_8c_ae9a47395801b541ac371150583719128_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{system_8c_aeddbbb9a6197286f3a26ce5305ac02eb}{
+\index{system.c@{system.c}!imin@{imin}}
+\index{imin@{imin}!system.c@{system.c}}
+\subsubsection[{imin}]{\setlength{\rightskip}{0pt plus 5cm}int imin (
+\begin{DoxyParamCaption}
+\item[{int}]{ x, }
+\item[{int}]{ y}
+\end{DoxyParamCaption}
+)}}
+\label{system_8c_aeddbbb9a6197286f3a26ce5305ac02eb}
+returns the minimum of two integers 
+
+Definition at line 121 of file system.c.
+
+
+
+Referenced by domain\_\-findExchangeNumbers().
+
+
+
+
+\begin{DoxyCode}
+{
+  if(x < y)
+    return x;
+  else
+    return y;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{system_8c_aeddbbb9a6197286f3a26ce5305ac02eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{system_8c_ad24c35a2016ce428248988795c1d3174}{
+\index{system.c@{system.c}!second@{second}}
+\index{second@{second}!system.c@{system.c}}
+\subsubsection[{second}]{\setlength{\rightskip}{0pt plus 5cm}double second (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{system_8c_ad24c35a2016ce428248988795c1d3174}
+returns the number of cpu-\/ticks in seconds that have elapsed, or the wall-\/clock time obtained with MPI\_\-Wtime(). 
+
+Definition at line 49 of file system.c.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-accelerations(), compute\_\-potential(), density(), domain\_\-Decomposition(), find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), gravity\_\-forcetest(), gravity\_\-tree(), hydro\_\-force(), main(), move\_\-particles(), run(), and savepositions().
+
+
+
+
+\begin{DoxyCode}
+{
+#ifdef WALLCLOCK
+  return MPI_Wtime();
+#else
+  return ((double) clock()) / CLOCKS_PER_SEC;
+#endif
+  
+  /* note: on AIX and presumably many other 32bit systems, 
+   * clock() has only a resolution of 10ms=0.01sec 
+   */
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{system_8c_ad24c35a2016ce428248988795c1d3174_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{system_8c_a9cb45ef22cae101906f021fb7a23afbe}{
+\index{system.c@{system.c}!set\_\-random\_\-numbers@{set\_\-random\_\-numbers}}
+\index{set\_\-random\_\-numbers@{set\_\-random\_\-numbers}!system.c@{system.c}}
+\subsubsection[{set\_\-random\_\-numbers}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-random\_\-numbers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{system_8c_a9cb45ef22cae101906f021fb7a23afbe}
+This routine fills the random number table. 
+
+$<$ gives the length of a table with random numbers, refreshed at every timestep. This is used to allow application of random numbers to a specific particle in a way that is independent of the number of processors used. 
+
+
+
+Definition at line 37 of file system.c.
+
+
+
+References random\_\-generator, and RndTable.
+
+
+
+Referenced by begrun(), and every\_\-timestep\_\-stuff().
+
+
+
+
+\begin{DoxyCode}
+{
+  int i;
+
+  for(i = 0; i < RNDTABLE; i++)
+    RndTable[i] = gsl_rng_uniform(random_generator);
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{system_8c_a9cb45ef22cae101906f021fb7a23afbe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{system_8c_a890645bdc4536bd797ca53028072e30d}{
+\index{system.c@{system.c}!timediff@{timediff}}
+\index{timediff@{timediff}!system.c@{system.c}}
+\subsubsection[{timediff}]{\setlength{\rightskip}{0pt plus 5cm}double timediff (
+\begin{DoxyParamCaption}
+\item[{double}]{ t0, }
+\item[{double}]{ t1}
+\end{DoxyParamCaption}
+)}}
+\label{system_8c_a890645bdc4536bd797ca53028072e30d}
+returns the time difference between two measurements obtained with \hyperlink{proto_8h_ad24c35a2016ce428248988795c1d3174}{second()}. The routine takes care of the possible overflow of the tick counter on 32bit systems, but depending on the system, this may not always work properly. Similarly, in some MPI implementations, the MPI\_\-Wtime() function may also overflow, in which case a negative time difference would be returned. The routine returns instead a time difference equal to 0. 
+
+Definition at line 70 of file system.c.
+
+
+
+References pow().
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-accelerations(), compute\_\-potential(), density(), domain\_\-Decomposition(), find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), gravity\_\-forcetest(), gravity\_\-tree(), hydro\_\-force(), main(), move\_\-particles(), run(), and savepositions().
+
+
+
+
+\begin{DoxyCode}
+{
+  double dt;
+
+  dt = t1 - t0;
+
+  if(dt < 0)    /* overflow has occured (for systems with 32bit tick counter) */
+    {
+#ifdef WALLCLOCK
+      dt = 0;
+#else
+      dt = t1 + pow(2, 32) / CLOCKS_PER_SEC - t0;
+#endif
+    }
+
+  return dt;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{system_8c_a890645bdc4536bd797ca53028072e30d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{system_8c_a890645bdc4536bd797ca53028072e30d_icgraph}
+\end{center}
+\end{figure}
+
+

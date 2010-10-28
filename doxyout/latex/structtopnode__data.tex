@@ -1,0 +1,131 @@
+\hypertarget{structtopnode__data}{
+\section{topnode\_\-data Struct Reference}
+\label{structtopnode__data}\index{topnode\_\-data@{topnode\_\-data}}
+}
+
+
+{\ttfamily \#include $<$allvars.h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structtopnode__data_ad2e76e39d74f3c299b38fa680ecdb794}{Daughter}
+\item 
+int \hyperlink{structtopnode__data_abe0b214b3cf372c95a16966304b1592c}{Pstart}
+\item 
+int \hyperlink{structtopnode__data_abad41cd99537e7a3a0d78ac5f291e42d}{Blocks}
+\item 
+int \hyperlink{structtopnode__data_aa5c48f2ae0bd1e2ed8ca069e4eeb29cd}{Leaf}
+\item 
+\hyperlink{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{peanokey} \hyperlink{structtopnode__data_a7a06f0263a5602d4c073100a517892b8}{Size}
+\item 
+\hyperlink{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{peanokey} \hyperlink{structtopnode__data_ab6ae6e924fec05c69ab73ddc2941e855}{StartKey}
+\item 
+long long \hyperlink{structtopnode__data_a3cae714f1f71f6ce4750004ee6fbda06}{Count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 204 of file allvars.h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{structtopnode__data_abad41cd99537e7a3a0d78ac5f291e42d}{
+\index{topnode\_\-data@{topnode\_\-data}!Blocks@{Blocks}}
+\index{Blocks@{Blocks}!topnode_data@{topnode\_\-data}}
+\subsubsection[{Blocks}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf topnode\_\-data::Blocks}}}
+\label{structtopnode__data_abad41cd99537e7a3a0d78ac5f291e42d}
+for the present top-\/level node, this gives the number of corresponding nodes in the concatenated list of topnodes collected from all processors 
+
+Definition at line 208 of file allvars.h.
+
+
+
+Referenced by domain\_\-determineTopTree(), and domain\_\-topsplit().
+
+\hypertarget{structtopnode__data_a3cae714f1f71f6ce4750004ee6fbda06}{
+\index{topnode\_\-data@{topnode\_\-data}!Count@{Count}}
+\index{Count@{Count}!topnode_data@{topnode\_\-data}}
+\subsubsection[{Count}]{\setlength{\rightskip}{0pt plus 5cm}long long {\bf topnode\_\-data::Count}}}
+\label{structtopnode__data_a3cae714f1f71f6ce4750004ee6fbda06}
+counts the number of particles in this top-\/level node 
+
+Definition at line 212 of file allvars.h.
+
+
+
+Referenced by domain\_\-determineTopTree(), domain\_\-topsplit(), and domain\_\-topsplit\_\-local().
+
+\hypertarget{structtopnode__data_ad2e76e39d74f3c299b38fa680ecdb794}{
+\index{topnode\_\-data@{topnode\_\-data}!Daughter@{Daughter}}
+\index{Daughter@{Daughter}!topnode_data@{topnode\_\-data}}
+\subsubsection[{Daughter}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf topnode\_\-data::Daughter}}}
+\label{structtopnode__data_ad2e76e39d74f3c299b38fa680ecdb794}
+index of first daughter cell (out of 8) of top-\/level node 
+
+Definition at line 206 of file allvars.h.
+
+
+
+Referenced by domain\_\-countToGo(), domain\_\-determineTopTree(), domain\_\-exchangeParticles(), domain\_\-sumCost(), domain\_\-topsplit(), domain\_\-topsplit\_\-local(), force\_\-create\_\-empty\_\-nodes(), and force\_\-treebuild\_\-single().
+
+\hypertarget{structtopnode__data_aa5c48f2ae0bd1e2ed8ca069e4eeb29cd}{
+\index{topnode\_\-data@{topnode\_\-data}!Leaf@{Leaf}}
+\index{Leaf@{Leaf}!topnode_data@{topnode\_\-data}}
+\subsubsection[{Leaf}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf topnode\_\-data::Leaf}}}
+\label{structtopnode__data_aa5c48f2ae0bd1e2ed8ca069e4eeb29cd}
+if the node is a leaf, this gives its number when all leaves are traversed in Peano-\/Hilbert order 
+
+Definition at line 209 of file allvars.h.
+
+
+
+Referenced by domain\_\-countToGo(), domain\_\-exchangeParticles(), domain\_\-sumCost(), domain\_\-walktoptree(), force\_\-create\_\-empty\_\-nodes(), and force\_\-treebuild\_\-single().
+
+\hypertarget{structtopnode__data_abe0b214b3cf372c95a16966304b1592c}{
+\index{topnode\_\-data@{topnode\_\-data}!Pstart@{Pstart}}
+\index{Pstart@{Pstart}!topnode_data@{topnode\_\-data}}
+\subsubsection[{Pstart}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf topnode\_\-data::Pstart}}}
+\label{structtopnode__data_abe0b214b3cf372c95a16966304b1592c}
+for the present top-\/level node, this gives the index of the first node in the concatenated list of topnodes collected from all processors 
+
+Definition at line 207 of file allvars.h.
+
+
+
+Referenced by domain\_\-determineTopTree(), domain\_\-topsplit(), and domain\_\-topsplit\_\-local().
+
+\hypertarget{structtopnode__data_a7a06f0263a5602d4c073100a517892b8}{
+\index{topnode\_\-data@{topnode\_\-data}!Size@{Size}}
+\index{Size@{Size}!topnode_data@{topnode\_\-data}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf peanokey} {\bf topnode\_\-data::Size}}}
+\label{structtopnode__data_a7a06f0263a5602d4c073100a517892b8}
+number of Peano-\/Hilbert mesh-\/cells represented by top-\/level node 
+
+Definition at line 210 of file allvars.h.
+
+
+
+Referenced by domain\_\-determineTopTree(), domain\_\-topsplit(), and domain\_\-topsplit\_\-local().
+
+\hypertarget{structtopnode__data_ab6ae6e924fec05c69ab73ddc2941e855}{
+\index{topnode\_\-data@{topnode\_\-data}!StartKey@{StartKey}}
+\index{StartKey@{StartKey}!topnode_data@{topnode\_\-data}}
+\subsubsection[{StartKey}]{\setlength{\rightskip}{0pt plus 5cm}{\bf peanokey} {\bf topnode\_\-data::StartKey}}}
+\label{structtopnode__data_ab6ae6e924fec05c69ab73ddc2941e855}
+first Peano-\/Hilbert key in top-\/level node 
+
+Definition at line 211 of file allvars.h.
+
+
+
+Referenced by domain\_\-countToGo(), domain\_\-determineTopTree(), domain\_\-exchangeParticles(), domain\_\-sumCost(), domain\_\-topsplit(), domain\_\-topsplit\_\-local(), and force\_\-treebuild\_\-single().
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{allvars_8h}{allvars.h}\end{DoxyCompactItemize}

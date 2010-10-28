@@ -1,0 +1,840 @@
+\hypertarget{ngb_8c}{
+\section{ngb.c File Reference}
+\label{ngb_8c}\index{ngb.c@{ngb.c}}
+}
+
+
+neighbour search by means of the tree  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$time.h$>$}\par
+{\ttfamily \#include $<$mpi.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for ngb.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{ngb_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ngb_8c_a5c5328b307b005e6682669279878cef0}{boxSize\_\-X}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\item 
+\#define \hyperlink{ngb_8c_a0ecceb71797a529fb6f2b8c47b51686c}{boxHalf\_\-X}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\item 
+\#define \hyperlink{ngb_8c_ab0db73a31e08d33d840e28651e3cf610}{boxSize\_\-Y}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\item 
+\#define \hyperlink{ngb_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{boxHalf\_\-Y}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\item 
+\#define \hyperlink{ngb_8c_a8a97a1c456bdd396791c84c370f0aa18}{boxSize\_\-Z}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\item 
+\#define \hyperlink{ngb_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{boxHalf\_\-Z}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\item 
+\#define \hyperlink{ngb_8c_a49d4cb21065981774552d097f6f8832c}{NGB\_\-PERIODIC\_\-X}(x)~(xtmp=(x),(xtmp$>$boxHalf\_\-X)?(xtmp-\/boxSize\_\-X):((xtmp$<$-\/boxHalf\_\-X)?(xtmp+boxSize\_\-X):xtmp))
+\item 
+\#define \hyperlink{ngb_8c_a3721767146404458e6955428a6e78cfd}{NGB\_\-PERIODIC\_\-Y}(x)~(xtmp=(x),(xtmp$>$boxHalf\_\-Y)?(xtmp-\/boxSize\_\-Y):((xtmp$<$-\/boxHalf\_\-Y)?(xtmp+boxSize\_\-Y):xtmp))
+\item 
+\#define \hyperlink{ngb_8c_ab563068e480f07f2fea4a94fb29ac11b}{NGB\_\-PERIODIC\_\-Z}(x)~(xtmp=(x),(xtmp$>$boxHalf\_\-Z)?(xtmp-\/boxSize\_\-Z):((xtmp$<$-\/boxHalf\_\-Z)?(xtmp+boxSize\_\-Z):xtmp))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd}{ngb\_\-treefind\_\-pairs} (float searchcenter\mbox{[}3\mbox{]}, float hsml, int $\ast$startnode)
+\item 
+int \hyperlink{ngb_8c_ae39a878e9bb71ae346097aace71632f9}{ngb\_\-treefind\_\-variable} (float searchcenter\mbox{[}3\mbox{]}, float hsml, int $\ast$startnode)
+\item 
+int \hyperlink{ngb_8c_a674ac0d18eaff78ba700f1278f078274}{ngb\_\-clear\_\-buf} (float searchcenter\mbox{[}3\mbox{]}, float hsml, int numngb)
+\item 
+void \hyperlink{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55}{ngb\_\-treeallocate} (int npart)
+\item 
+void \hyperlink{ngb_8c_aab22cf240079ef5846d83729e4565f97}{ngb\_\-treefree} (void)
+\item 
+void \hyperlink{ngb_8c_ac56af97a1dbbbbb07db8207246852f79}{ngb\_\-treebuild} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\item 
+static double \hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+neighbour search by means of the tree This file contains routines for neighbour finding. We use the gravity-\/tree and a range-\/searching technique to find neighbours. 
+
+Definition in file \hyperlink{ngb_8c_source}{ngb.c}.
+
+
+
+\subsection{Define Documentation}
+\hypertarget{ngb_8c_a0ecceb71797a529fb6f2b8c47b51686c}{
+\index{ngb.c@{ngb.c}!boxHalf\_\-X@{boxHalf\_\-X}}
+\index{boxHalf\_\-X@{boxHalf\_\-X}!ngb.c@{ngb.c}}
+\subsubsection[{boxHalf\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-X~{\bf boxHalf}}}
+\label{ngb_8c_a0ecceb71797a529fb6f2b8c47b51686c}
+
+
+Definition at line 26 of file ngb.c.
+
+
+
+Referenced by ngb\_\-treeallocate().
+
+\hypertarget{ngb_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{
+\index{ngb.c@{ngb.c}!boxHalf\_\-Y@{boxHalf\_\-Y}}
+\index{boxHalf\_\-Y@{boxHalf\_\-Y}!ngb.c@{ngb.c}}
+\subsubsection[{boxHalf\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-Y~{\bf boxHalf}}}
+\label{ngb_8c_a59f20d7decc2bdfedcaafb70ef23df0e}
+
+
+Definition at line 32 of file ngb.c.
+
+
+
+Referenced by ngb\_\-treeallocate().
+
+\hypertarget{ngb_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{
+\index{ngb.c@{ngb.c}!boxHalf\_\-Z@{boxHalf\_\-Z}}
+\index{boxHalf\_\-Z@{boxHalf\_\-Z}!ngb.c@{ngb.c}}
+\subsubsection[{boxHalf\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-Z~{\bf boxHalf}}}
+\label{ngb_8c_a34e9d5d079320cbfc0576d26f58d2fe7}
+
+
+Definition at line 38 of file ngb.c.
+
+
+
+Referenced by ngb\_\-treeallocate().
+
+\hypertarget{ngb_8c_a5c5328b307b005e6682669279878cef0}{
+\index{ngb.c@{ngb.c}!boxSize\_\-X@{boxSize\_\-X}}
+\index{boxSize\_\-X@{boxSize\_\-X}!ngb.c@{ngb.c}}
+\subsubsection[{boxSize\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-X~{\bf boxSize}}}
+\label{ngb_8c_a5c5328b307b005e6682669279878cef0}
+
+
+Definition at line 25 of file ngb.c.
+
+
+
+Referenced by ngb\_\-treeallocate().
+
+\hypertarget{ngb_8c_ab0db73a31e08d33d840e28651e3cf610}{
+\index{ngb.c@{ngb.c}!boxSize\_\-Y@{boxSize\_\-Y}}
+\index{boxSize\_\-Y@{boxSize\_\-Y}!ngb.c@{ngb.c}}
+\subsubsection[{boxSize\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-Y~{\bf boxSize}}}
+\label{ngb_8c_ab0db73a31e08d33d840e28651e3cf610}
+
+
+Definition at line 31 of file ngb.c.
+
+
+
+Referenced by ngb\_\-treeallocate().
+
+\hypertarget{ngb_8c_a8a97a1c456bdd396791c84c370f0aa18}{
+\index{ngb.c@{ngb.c}!boxSize\_\-Z@{boxSize\_\-Z}}
+\index{boxSize\_\-Z@{boxSize\_\-Z}!ngb.c@{ngb.c}}
+\subsubsection[{boxSize\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-Z~{\bf boxSize}}}
+\label{ngb_8c_a8a97a1c456bdd396791c84c370f0aa18}
+
+
+Definition at line 37 of file ngb.c.
+
+
+
+Referenced by ngb\_\-treeallocate().
+
+\hypertarget{ngb_8c_a49d4cb21065981774552d097f6f8832c}{
+\index{ngb.c@{ngb.c}!NGB\_\-PERIODIC\_\-X@{NGB\_\-PERIODIC\_\-X}}
+\index{NGB\_\-PERIODIC\_\-X@{NGB\_\-PERIODIC\_\-X}!ngb.c@{ngb.c}}
+\subsubsection[{NGB\_\-PERIODIC\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define NGB\_\-PERIODIC\_\-X(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(xtmp=(x),(xtmp$>$boxHalf\_\-X)?(xtmp-\/boxSize\_\-X):((xtmp$<$-\/boxHalf\_\-X)?(xtmp+boxSize\_\-X):xtmp))}}
+\label{ngb_8c_a49d4cb21065981774552d097f6f8832c}
+these macros maps a coordinate difference to the nearest periodic image 
+
+Definition at line 47 of file ngb.c.
+
+
+
+Referenced by ngb\_\-clear\_\-buf(), ngb\_\-treefind\_\-pairs(), and ngb\_\-treefind\_\-variable().
+
+\hypertarget{ngb_8c_a3721767146404458e6955428a6e78cfd}{
+\index{ngb.c@{ngb.c}!NGB\_\-PERIODIC\_\-Y@{NGB\_\-PERIODIC\_\-Y}}
+\index{NGB\_\-PERIODIC\_\-Y@{NGB\_\-PERIODIC\_\-Y}!ngb.c@{ngb.c}}
+\subsubsection[{NGB\_\-PERIODIC\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define NGB\_\-PERIODIC\_\-Y(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(xtmp=(x),(xtmp$>$boxHalf\_\-Y)?(xtmp-\/boxSize\_\-Y):((xtmp$<$-\/boxHalf\_\-Y)?(xtmp+boxSize\_\-Y):xtmp))}}
+\label{ngb_8c_a3721767146404458e6955428a6e78cfd}
+
+
+Definition at line 48 of file ngb.c.
+
+
+
+Referenced by ngb\_\-clear\_\-buf(), ngb\_\-treefind\_\-pairs(), and ngb\_\-treefind\_\-variable().
+
+\hypertarget{ngb_8c_ab563068e480f07f2fea4a94fb29ac11b}{
+\index{ngb.c@{ngb.c}!NGB\_\-PERIODIC\_\-Z@{NGB\_\-PERIODIC\_\-Z}}
+\index{NGB\_\-PERIODIC\_\-Z@{NGB\_\-PERIODIC\_\-Z}!ngb.c@{ngb.c}}
+\subsubsection[{NGB\_\-PERIODIC\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define NGB\_\-PERIODIC\_\-Z(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(xtmp=(x),(xtmp$>$boxHalf\_\-Z)?(xtmp-\/boxSize\_\-Z):((xtmp$<$-\/boxHalf\_\-Z)?(xtmp+boxSize\_\-Z):xtmp))}}
+\label{ngb_8c_ab563068e480f07f2fea4a94fb29ac11b}
+
+
+Definition at line 49 of file ngb.c.
+
+
+
+Referenced by ngb\_\-clear\_\-buf(), ngb\_\-treefind\_\-pairs(), and ngb\_\-treefind\_\-variable().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ngb_8c_a674ac0d18eaff78ba700f1278f078274}{
+\index{ngb.c@{ngb.c}!ngb\_\-clear\_\-buf@{ngb\_\-clear\_\-buf}}
+\index{ngb\_\-clear\_\-buf@{ngb\_\-clear\_\-buf}!ngb.c@{ngb.c}}
+\subsubsection[{ngb\_\-clear\_\-buf}]{\setlength{\rightskip}{0pt plus 5cm}int ngb\_\-clear\_\-buf (
+\begin{DoxyParamCaption}
+\item[{float}]{ searchcenter\mbox{[}3\mbox{]}, }
+\item[{float}]{ hsml, }
+\item[{int}]{ numngb}
+\end{DoxyParamCaption}
+)}}
+\label{ngb_8c_a674ac0d18eaff78ba700f1278f078274}
+The buffer for the neighbour list has a finite length MAX\_\-NGB. For a large search region, this buffer can get full, in which case this routine can be called to eliminate some of the superfluous particles in the \char`\"{}corners\char`\"{} of the search box -\/ only the ones in the inscribed sphere need to be kept. 
+
+Definition at line 320 of file ngb.c.
+
+
+
+References FLOAT, NGB\_\-PERIODIC\_\-X, NGB\_\-PERIODIC\_\-Y, NGB\_\-PERIODIC\_\-Z, Ngblist, P, and particle\_\-data::Pos.
+
+
+
+Referenced by ngb\_\-treefind\_\-variable().
+
+
+
+
+\begin{DoxyCode}
+{
+  int i, p;
+  FLOAT dx, dy, dz, r2;
+
+#ifdef PERIODIC
+  double xtmp;
+#endif
+
+  for(i = 0; i < numngb; i++)
+    {
+      p = Ngblist[i];
+#ifdef PERIODIC
+      dx = NGB_PERIODIC_X(P[p].Pos[0] - searchcenter[0]);
+      dy = NGB_PERIODIC_Y(P[p].Pos[1] - searchcenter[1]);
+      dz = NGB_PERIODIC_Z(P[p].Pos[2] - searchcenter[2]);
+#else
+      dx = P[p].Pos[0] - searchcenter[0];
+      dy = P[p].Pos[1] - searchcenter[1];
+      dz = P[p].Pos[2] - searchcenter[2];
+#endif
+      r2 = dx * dx + dy * dy + dz * dz;
+
+      if(r2 > hsml * hsml)
+        {
+          Ngblist[i] = Ngblist[numngb - 1];
+          i--;
+          numngb--;
+        }
+    }
+
+  return numngb;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{ngb_8c_a674ac0d18eaff78ba700f1278f078274_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55}{
+\index{ngb.c@{ngb.c}!ngb\_\-treeallocate@{ngb\_\-treeallocate}}
+\index{ngb\_\-treeallocate@{ngb\_\-treeallocate}!ngb.c@{ngb.c}}
+\subsubsection[{ngb\_\-treeallocate}]{\setlength{\rightskip}{0pt plus 5cm}void ngb\_\-treeallocate (
+\begin{DoxyParamCaption}
+\item[{int}]{ npart}
+\end{DoxyParamCaption}
+)}}
+\label{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55}
+Allocates memory for the neighbour list buffer. 
+
+Definition at line 358 of file ngb.c.
+
+
+
+References All, boxHalf, boxHalf\_\-X, boxHalf\_\-Y, boxHalf\_\-Z, global\_\-data\_\-all\_\-processes::BoxSize, boxSize, boxSize\_\-X, boxSize\_\-Y, boxSize\_\-Z, endrun(), Ngblist, and ThisTask.
+
+
+
+Referenced by init(), and restart().
+
+
+
+
+\begin{DoxyCode}
+{
+  double totbytes = 0;
+  size_t bytes;
+
+#ifdef PERIODIC
+  boxSize = All.BoxSize;
+  boxHalf = 0.5 * All.BoxSize;
+#ifdef LONG_X
+  boxHalf_X = boxHalf * LONG_X;
+  boxSize_X = boxSize * LONG_X;
+#endif
+#ifdef LONG_Y
+  boxHalf_Y = boxHalf * LONG_Y;
+  boxSize_Y = boxSize * LONG_Y;
+#endif
+#ifdef LONG_Z
+  boxHalf_Z = boxHalf * LONG_Z;
+  boxSize_Z = boxSize * LONG_Z;
+#endif
+#endif
+
+  if(!(Ngblist = malloc(bytes = npart * (long) sizeof(int))))
+    {
+      printf("Failed to allocate %g MB for ngblist array\n", bytes / (1024.0 * 10
+      24.0));
+      endrun(78);
+    }
+  totbytes += bytes;
+
+  if(ThisTask == 0)
+    printf("allocated %g Mbyte for ngb search.\n", totbytes / (1024.0 * 1024.0));
+      
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ngb_8c_ac56af97a1dbbbbb07db8207246852f79}{
+\index{ngb.c@{ngb.c}!ngb\_\-treebuild@{ngb\_\-treebuild}}
+\index{ngb\_\-treebuild@{ngb\_\-treebuild}!ngb.c@{ngb.c}}
+\subsubsection[{ngb\_\-treebuild}]{\setlength{\rightskip}{0pt plus 5cm}void ngb\_\-treebuild (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{ngb_8c_ac56af97a1dbbbbb07db8207246852f79}
+This function constructs the neighbour tree. To this end, we actually need to construct the gravitational tree, because we use it now for the neighbour search. 
+
+Definition at line 403 of file ngb.c.
+
+
+
+References force\_\-treebuild(), N\_\-gas, and ThisTask.
+
+
+
+Referenced by init().
+
+
+
+
+\begin{DoxyCode}
+{
+  if(ThisTask == 0)
+    printf("Begin Ngb-tree construction.\n");
+
+  force_treebuild(N_gas);
+
+  if(ThisTask == 0)
+    printf("Ngb-Tree contruction finished \n");
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{ngb_8c_ac56af97a1dbbbbb07db8207246852f79_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=394pt]{ngb_8c_ac56af97a1dbbbbb07db8207246852f79_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd}{
+\index{ngb.c@{ngb.c}!ngb\_\-treefind\_\-pairs@{ngb\_\-treefind\_\-pairs}}
+\index{ngb\_\-treefind\_\-pairs@{ngb\_\-treefind\_\-pairs}!ngb.c@{ngb.c}}
+\subsubsection[{ngb\_\-treefind\_\-pairs}]{\setlength{\rightskip}{0pt plus 5cm}int ngb\_\-treefind\_\-pairs (
+\begin{DoxyParamCaption}
+\item[{float}]{ searchcenter\mbox{[}3\mbox{]}, }
+\item[{float}]{ hsml, }
+\item[{int $\ast$}]{ startnode}
+\end{DoxyParamCaption}
+)}}
+\label{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd}
+This routine finds all neighbours `j' that can interact with the particle `i' in the communication buffer.
+
+Note that an interaction can take place if $ r_{ij} < h_i $ OR if $ r_{ij} < h_j $.
+
+In the range-\/search this is taken into account, i.e. it is guaranteed that all particles are found that fulfil this condition, including the (more difficult) second part of it. For this purpose, each node knows the maximum h occuring among the particles it represents. 
+
+$<$ defines maximum length of neighbour list 
+
+
+
+Definition at line 64 of file ngb.c.
+
+
+
+References All, NODE::center, DomainTask, Exportflag, Extnodes, FLOAT, extNODE::hmax, sph\_\-particle\_\-data::Hsml, NODE::len, MAX\_\-NGB, MaxNodes, global\_\-data\_\-all\_\-processes::MaxPart, Nextnode, NGB\_\-PERIODIC\_\-X, NGB\_\-PERIODIC\_\-Y, NGB\_\-PERIODIC\_\-Z, Ngblist, Nodes, P, SphP, ThisTask, and NODE::u.
+
+
+
+Referenced by hydro\_\-evaluate().
+
+
+
+
+\begin{DoxyCode}
+{
+  int k, no, p, numngb;
+  FLOAT hdiff;
+  FLOAT searchmin[3], searchmax[3];
+  struct NODE *this;
+
+#ifdef PERIODIC
+  double xtmp;
+#endif
+
+  for(k = 0; k < 3; k++)        /* cube-box window */
+    {
+      searchmin[k] = searchcenter[k] - hsml;
+      searchmax[k] = searchcenter[k] + hsml;
+    }
+
+  numngb = 0;
+  no = *startnode;
+
+  while(no >= 0)
+    {
+      if(no < All.MaxPart)      /* single particle */
+        {
+          p = no;
+          no = Nextnode[no];
+
+          if(P[p].Type > 0)
+            continue;
+
+          hdiff = SphP[p].Hsml - hsml;
+          if(hdiff < 0)
+            hdiff = 0;
+
+#ifdef PERIODIC
+          if(NGB_PERIODIC_X(P[p].Pos[0] - searchcenter[0]) < (-hsml - hdiff))
+            continue;
+          if(NGB_PERIODIC_X(P[p].Pos[0] - searchcenter[0]) > (hsml + hdiff))
+            continue;
+          if(NGB_PERIODIC_Y(P[p].Pos[1] - searchcenter[1]) < (-hsml - hdiff))
+            continue;
+          if(NGB_PERIODIC_Y(P[p].Pos[1] - searchcenter[1]) > (hsml + hdiff))
+            continue;
+          if(NGB_PERIODIC_Z(P[p].Pos[2] - searchcenter[2]) < (-hsml - hdiff))
+            continue;
+          if(NGB_PERIODIC_Z(P[p].Pos[2] - searchcenter[2]) > (hsml + hdiff))
+            continue;
+#else
+          if(P[p].Pos[0] < (searchmin[0] - hdiff))
+            continue;
+          if(P[p].Pos[0] > (searchmax[0] + hdiff))
+            continue;
+          if(P[p].Pos[1] < (searchmin[1] - hdiff))
+            continue;
+          if(P[p].Pos[1] > (searchmax[1] + hdiff))
+            continue;
+          if(P[p].Pos[2] < (searchmin[2] - hdiff))
+            continue;
+          if(P[p].Pos[2] > (searchmax[2] + hdiff))
+            continue;
+#endif
+          Ngblist[numngb++] = p;
+
+          if(numngb == MAX_NGB)
+            {
+              printf
+                ("ThisTask=%d: Need to do a second neighbour loop in hydro-force 
+      for (%g|%g|%g) hsml=%g no=%d\n",
+                 ThisTask, searchcenter[0], searchcenter[1], searchcenter[2], hsm
+      l, no);
+              *startnode = no;
+              return numngb;
+            }
+        }
+      else
+        {
+          if(no >= All.MaxPart + MaxNodes)      /* pseudo particle */
+            {
+              Exportflag[DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
+              no = Nextnode[no - MaxNodes];
+              continue;
+            }
+
+          this = &Nodes[no];
+          hdiff = Extnodes[no].hmax - hsml;
+          if(hdiff < 0)
+            hdiff = 0;
+
+          no = this->u.d.sibling;       /* in case the node can be discarded */
+
+#ifdef PERIODIC
+          if((NGB_PERIODIC_X(this->center[0] - searchcenter[0]) + 0.5 * this->
+      len) < (-hsml - hdiff))
+            continue;
+          if((NGB_PERIODIC_X(this->center[0] - searchcenter[0]) - 0.5 * this->
+      len) > (hsml + hdiff))
+            continue;
+          if((NGB_PERIODIC_Y(this->center[1] - searchcenter[1]) + 0.5 * this->
+      len) < (-hsml - hdiff))
+            continue;
+          if((NGB_PERIODIC_Y(this->center[1] - searchcenter[1]) - 0.5 * this->
+      len) > (hsml + hdiff))
+            continue;
+          if((NGB_PERIODIC_Z(this->center[2] - searchcenter[2]) + 0.5 * this->
+      len) < (-hsml - hdiff))
+            continue;
+          if((NGB_PERIODIC_Z(this->center[2] - searchcenter[2]) - 0.5 * this->
+      len) > (hsml + hdiff))
+            continue;
+#else
+          if((this->center[0] + 0.5 * this->len) < (searchmin[0] - hdiff))
+            continue;
+          if((this->center[0] - 0.5 * this->len) > (searchmax[0] + hdiff))
+            continue;
+          if((this->center[1] + 0.5 * this->len) < (searchmin[1] - hdiff))
+            continue;
+          if((this->center[1] - 0.5 * this->len) > (searchmax[1] + hdiff))
+            continue;
+          if((this->center[2] + 0.5 * this->len) < (searchmin[2] - hdiff))
+            continue;
+          if((this->center[2] - 0.5 * this->len) > (searchmax[2] + hdiff))
+            continue;
+#endif
+          no = this->u.d.nextnode;      /* ok, we need to open the node */
+        }
+    }
+
+  *startnode = -1;
+  return numngb;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ngb_8c_ae39a878e9bb71ae346097aace71632f9}{
+\index{ngb.c@{ngb.c}!ngb\_\-treefind\_\-variable@{ngb\_\-treefind\_\-variable}}
+\index{ngb\_\-treefind\_\-variable@{ngb\_\-treefind\_\-variable}!ngb.c@{ngb.c}}
+\subsubsection[{ngb\_\-treefind\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}int ngb\_\-treefind\_\-variable (
+\begin{DoxyParamCaption}
+\item[{float}]{ searchcenter\mbox{[}3\mbox{]}, }
+\item[{float}]{ hsml, }
+\item[{int $\ast$}]{ startnode}
+\end{DoxyParamCaption}
+)}}
+\label{ngb_8c_ae39a878e9bb71ae346097aace71632f9}
+This function returns neighbours with distance $<$= hsml and returns them in Ngblist. Actually, particles in a box of half side length hsml are returned, i.e. the reduction to a sphere still needs to be done in the calling routine. 
+
+$<$ defines maximum length of neighbour list
+
+$<$ defines maximum length of neighbour list 
+
+
+
+Definition at line 194 of file ngb.c.
+
+
+
+References All, NODE::center, DomainTask, Exportflag, FLOAT, NODE::len, MAX\_\-NGB, MaxNodes, global\_\-data\_\-all\_\-processes::MaxPart, Nextnode, ngb\_\-clear\_\-buf(), NGB\_\-PERIODIC\_\-X, NGB\_\-PERIODIC\_\-Y, NGB\_\-PERIODIC\_\-Z, Ngblist, Nodes, P, ThisTask, and NODE::u.
+
+
+
+Referenced by density\_\-evaluate().
+
+
+
+
+\begin{DoxyCode}
+{
+  int k, numngb;
+  int no, p;
+  struct NODE *this;
+  FLOAT searchmin[3], searchmax[3];
+
+#ifdef PERIODIC
+  double xtmp;
+#endif
+
+  for(k = 0; k < 3; k++)        /* cube-box window */
+    {
+      searchmin[k] = searchcenter[k] - hsml;
+      searchmax[k] = searchcenter[k] + hsml;
+    }
+
+  numngb = 0;
+  no = *startnode;
+
+  while(no >= 0)
+    {
+      if(no < All.MaxPart)      /* single particle */
+        {
+          p = no;
+          no = Nextnode[no];
+
+          if(P[p].Type > 0)
+            continue;
+
+#ifdef PERIODIC
+          if(NGB_PERIODIC_X(P[p].Pos[0] - searchcenter[0]) < -hsml)
+            continue;
+          if(NGB_PERIODIC_X(P[p].Pos[0] - searchcenter[0]) > hsml)
+            continue;
+          if(NGB_PERIODIC_Y(P[p].Pos[1] - searchcenter[1]) < -hsml)
+            continue;
+          if(NGB_PERIODIC_Y(P[p].Pos[1] - searchcenter[1]) > hsml)
+            continue;
+          if(NGB_PERIODIC_Z(P[p].Pos[2] - searchcenter[2]) < -hsml)
+            continue;
+          if(NGB_PERIODIC_Z(P[p].Pos[2] - searchcenter[2]) > hsml)
+            continue;
+#else
+          if(P[p].Pos[0] < searchmin[0])
+            continue;
+          if(P[p].Pos[0] > searchmax[0])
+            continue;
+          if(P[p].Pos[1] < searchmin[1])
+            continue;
+          if(P[p].Pos[1] > searchmax[1])
+            continue;
+          if(P[p].Pos[2] < searchmin[2])
+            continue;
+          if(P[p].Pos[2] > searchmax[2])
+            continue;
+#endif
+          Ngblist[numngb++] = p;
+
+          if(numngb == MAX_NGB)
+            {
+              numngb = ngb_clear_buf(searchcenter, hsml, numngb);
+              if(numngb == MAX_NGB)
+                {
+                  printf("ThisTask=%d: Need to do a second neighbour loop for (%g
+      |%g|%g) hsml=%g no=%d\n",
+                         ThisTask, searchcenter[0], searchcenter[1], searchcenter
+      [2], hsml, no);
+                  *startnode = no;
+                  return numngb;
+                }
+            }
+        }
+      else
+        {
+          if(no >= All.MaxPart + MaxNodes)      /* pseudo particle */
+            {
+              Exportflag[DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
+              no = Nextnode[no - MaxNodes];
+              continue;
+            }
+
+          this = &Nodes[no];
+
+          no = this->u.d.sibling;       /* in case the node can be discarded */
+#ifdef PERIODIC
+          if((NGB_PERIODIC_X(this->center[0] - searchcenter[0]) + 0.5 * this->
+      len) < -hsml)
+            continue;
+          if((NGB_PERIODIC_X(this->center[0] - searchcenter[0]) - 0.5 * this->
+      len) > hsml)
+            continue;
+          if((NGB_PERIODIC_Y(this->center[1] - searchcenter[1]) + 0.5 * this->
+      len) < -hsml)
+            continue;
+          if((NGB_PERIODIC_Y(this->center[1] - searchcenter[1]) - 0.5 * this->
+      len) > hsml)
+            continue;
+          if((NGB_PERIODIC_Z(this->center[2] - searchcenter[2]) + 0.5 * this->
+      len) < -hsml)
+            continue;
+          if((NGB_PERIODIC_Z(this->center[2] - searchcenter[2]) - 0.5 * this->
+      len) > hsml)
+            continue;
+#else
+          if((this->center[0] + 0.5 * this->len) < (searchmin[0]))
+            continue;
+          if((this->center[0] - 0.5 * this->len) > (searchmax[0]))
+            continue;
+          if((this->center[1] + 0.5 * this->len) < (searchmin[1]))
+            continue;
+          if((this->center[1] - 0.5 * this->len) > (searchmax[1]))
+            continue;
+          if((this->center[2] + 0.5 * this->len) < (searchmin[2]))
+            continue;
+          if((this->center[2] - 0.5 * this->len) > (searchmax[2]))
+            continue;
+#endif
+          no = this->u.d.nextnode;      /* ok, we need to open the node */
+        }
+    }
+
+  *startnode = -1;
+  return numngb;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{ngb_8c_ae39a878e9bb71ae346097aace71632f9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{ngb_8c_ae39a878e9bb71ae346097aace71632f9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ngb_8c_aab22cf240079ef5846d83729e4565f97}{
+\index{ngb.c@{ngb.c}!ngb\_\-treefree@{ngb\_\-treefree}}
+\index{ngb\_\-treefree@{ngb\_\-treefree}!ngb.c@{ngb.c}}
+\subsubsection[{ngb\_\-treefree}]{\setlength{\rightskip}{0pt plus 5cm}void ngb\_\-treefree (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{ngb_8c_aab22cf240079ef5846d83729e4565f97}
+free memory allocated for neighbour list buffer. 
+
+Definition at line 394 of file ngb.c.
+
+
+
+References Ngblist.
+
+
+
+
+\begin{DoxyCode}
+{
+  free(Ngblist);
+}
+\end{DoxyCode}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{ngb_8c_af62571c97dc75a691aeafead0528b369}{
+\index{ngb.c@{ngb.c}!boxHalf@{boxHalf}}
+\index{boxHalf@{boxHalf}!ngb.c@{ngb.c}}
+\subsubsection[{boxHalf}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf boxHalf}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{ngb_8c_af62571c97dc75a691aeafead0528b369}
+
+
+Definition at line 20 of file ngb.c.
+
+
+
+Referenced by ngb\_\-treeallocate().
+
+\hypertarget{ngb_8c_ac9067960018a06b81c117434c01f19cc}{
+\index{ngb.c@{ngb.c}!boxSize@{boxSize}}
+\index{boxSize@{boxSize}!ngb.c@{ngb.c}}
+\subsubsection[{boxSize}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf boxSize}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{ngb_8c_ac9067960018a06b81c117434c01f19cc}
+
+
+Definition at line 20 of file ngb.c.
+
+
+
+Referenced by ngb\_\-treeallocate().
+

@@ -1,0 +1,434 @@
+\hypertarget{potential_8c}{
+\section{potential.c File Reference}
+\label{potential_8c}\index{potential.c@{potential.c}}
+}
+
+
+Computation of the gravitational potential of particles.  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$float.h$>$}\par
+{\ttfamily \#include $<$mpi.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for potential.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{potential_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{potential_8c_a04474459731219f9601aaefedb37ab27}{compute\_\-potential} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Computation of the gravitational potential of particles. 
+
+Definition in file \hyperlink{potential_8c_source}{potential.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{potential_8c_a04474459731219f9601aaefedb37ab27}{
+\index{potential.c@{potential.c}!compute\_\-potential@{compute\_\-potential}}
+\index{compute\_\-potential@{compute\_\-potential}!potential.c@{potential.c}}
+\subsubsection[{compute\_\-potential}]{\setlength{\rightskip}{0pt plus 5cm}void compute\_\-potential (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{potential_8c_a04474459731219f9601aaefedb37ab27}
+This function computes the gravitational potential for ALL the particles. First, the (short-\/range) tree potential is computed, and then, if needed, the long range PM potential is added. 
+
+Definition at line 22 of file potential.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::BunchSizeForce, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CPU\_\-Potential, global\_\-data\_\-all\_\-processes::CPU\_\-TreeConstruction, endrun(), Exportflag, force\_\-treebuild(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), global\_\-data\_\-all\_\-processes::G, grav\_\-tree\_\-compare\_\-key(), GravDataGet, GravDataIn, GravDataIndexTable, GravDataOut, GravDataResult, sph\_\-particle\_\-data::Hsml, global\_\-data\_\-all\_\-processes::Hubble, gravdata\_\-index::Index, particle\_\-data::Mass, NTask, NumPart, particle\_\-data::OldAcc, gravdata\_\-in::OldAcc, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, P, global\_\-data\_\-all\_\-processes::PeriodicBoundariesOn, pm\_\-init\_\-regionsize(), pm\_\-setup\_\-nonperiodic\_\-kernel(), pmpotential\_\-nonperiodic(), pmpotential\_\-periodic(), particle\_\-data::Pos, gravdata\_\-in::Pos, gravdata\_\-in::Potential, particle\_\-data::Potential, pow(), PTask, second(), set\_\-softenings(), global\_\-data\_\-all\_\-processes::SofteningTable, gravdata\_\-index::SortIndex, SphP, TAG\_\-POTENTIAL\_\-A, TAG\_\-POTENTIAL\_\-B, gravdata\_\-index::Task, ThisTask, timediff(), TreeReconstructFlag, particle\_\-data::Type, gravdata\_\-in::u, and gravdata\_\-in::w.
+
+
+
+Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
+
+
+
+
+\begin{DoxyCode}
+{
+  int i;
+
+#ifndef NOGRAVITY
+  long long ntot, ntotleft;
+  int j, k, level, sendTask, recvTask;
+  int ndone;
+  int maxfill, ngrp, place, nexport;
+  int *nsend, *noffset, *nsend_local, *nbuffer, *ndonelist, *numlist;
+  double fac;
+  double t0, t1, tstart, tend;
+  MPI_Status status;
+  double r2;
+
+  t0 = second();
+
+  if(All.ComovingIntegrationOn)
+    set_softenings();
+
+  if(ThisTask == 0)
+    {
+      printf("Start computation of potential for all particles...\n");
+      fflush(stdout);
+    }
+
+
+  tstart = second();
+  if(TreeReconstructFlag)
+    {
+      if(ThisTask == 0)
+        printf("Tree construction.\n");
+
+      force_treebuild(NumPart);
+
+      TreeReconstructFlag = 0;
+
+      if(ThisTask == 0)
+        printf("Tree construction done.\n");
+    }
+  tend = second();
+  All.CPU_TreeConstruction += timediff(tstart, tend);
+
+  numlist = malloc(NTask * sizeof(int) * NTask);
+  MPI_Allgather(&NumPart, 1, MPI_INT, numlist, 1, MPI_INT, MPI_COMM_WORLD);
+  for(i = 0, ntot = 0; i < NTask; i++)
+    ntot += numlist[i];
+  free(numlist);
+
+  noffset = malloc(sizeof(int) * NTask);        /* offsets of bunches in common l
+      ist */
+  nbuffer = malloc(sizeof(int) * NTask);
+  nsend_local = malloc(sizeof(int) * NTask);
+  nsend = malloc(sizeof(int) * NTask * NTask);
+  ndonelist = malloc(sizeof(int) * NTask);
+
+  i = 0;                        /* beginn with this index */
+  ntotleft = ntot;              /* particles left for all tasks together */
+
+  while(ntotleft > 0)
+    {
+      for(j = 0; j < NTask; j++)
+        nsend_local[j] = 0;
+
+      /* do local particles and prepare export list */
+      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - N
+      Task; i++)
+        {
+          ndone++;
+
+          for(j = 0; j < NTask; j++)
+            Exportflag[j] = 0;
+
+#ifndef PMGRID
+          force_treeevaluate_potential(i, 0);
+#else
+          force_treeevaluate_potential_shortrange(i, 0);
+#endif
+
+          for(j = 0; j < NTask; j++)
+            {
+              if(Exportflag[j])
+                {
+                  for(k = 0; k < 3; k++)
+                    GravDataGet[nexport].u.Pos[k] = P[i].Pos[k];
+#ifdef UNEQUALSOFTENINGS
+                  GravDataGet[nexport].Type = P[i].Type;
+#ifdef ADAPTIVE_GRAVSOFT_FORGAS
+                  if(P[i].Type == 0)
+                    GravDataGet[nexport].Soft = SphP[i].Hsml;
+#endif
+#endif
+                  GravDataGet[nexport].w.OldAcc = P[i].OldAcc;
+
+                  GravDataIndexTable[nexport].Task = j;
+                  GravDataIndexTable[nexport].Index = i;
+                  GravDataIndexTable[nexport].SortIndex = nexport;
+
+                  nexport++;
+                  nsend_local[j]++;
+                }
+            }
+        }
+
+      qsort(GravDataIndexTable, nexport, sizeof(struct gravdata_index), 
+      grav_tree_compare_key);
+
+      for(j = 0; j < nexport; j++)
+        GravDataIn[j] = GravDataGet[GravDataIndexTable[j].SortIndex];
+
+      for(j = 1, noffset[0] = 0; j < NTask; j++)
+        noffset[j] = noffset[j - 1] + nsend_local[j - 1];
+
+      MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, MPI_COMM_
+      WORLD);
+
+      /* now do the particles that need to be exported */
+
+      for(level = 1; level < (1 << PTask); level++)
+        {
+          for(j = 0; j < NTask; j++)
+            nbuffer[j] = 0;
+          for(ngrp = level; ngrp < (1 << PTask); ngrp++)
+            {
+              maxfill = 0;
+              for(j = 0; j < NTask; j++)
+                {
+                  if((j ^ ngrp) < NTask)
+                    if(maxfill < nbuffer[j] + nsend[(j ^ ngrp) * NTask + j])
+                      maxfill = nbuffer[j] + nsend[(j ^ ngrp) * NTask + j];
+                }
+              if(maxfill >= All.BunchSizeForce)
+                break;
+
+              sendTask = ThisTask;
+              recvTask = ThisTask ^ ngrp;
+
+              if(recvTask < NTask)
+                {
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
+      Task + ThisTask] > 0)
+                    {
+                      /* get the particles */
+                      MPI_Sendrecv(&GravDataIn[noffset[recvTask]],
+                                   nsend_local[recvTask] * sizeof(struct 
+      gravdata_in), MPI_BYTE,
+                                   recvTask, TAG_POTENTIAL_A,
+                                   &GravDataGet[nbuffer[ThisTask]],
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
+      ruct gravdata_in), MPI_BYTE,
+                                   recvTask, TAG_POTENTIAL_A, MPI_COMM_WORLD, &st
+      atus);
+                    }
+                }
+
+              for(j = 0; j < NTask; j++)
+                if((j ^ ngrp) < NTask)
+                  nbuffer[j] += nsend[(j ^ ngrp) * NTask + j];
+            }
+
+          for(j = 0; j < nbuffer[ThisTask]; j++)
+            {
+#ifndef PMGRID
+              force_treeevaluate_potential(j, 1);
+#else
+              force_treeevaluate_potential_shortrange(j, 1);
+#endif
+            }
+
+
+          /* get the result */
+          for(j = 0; j < NTask; j++)
+            nbuffer[j] = 0;
+          for(ngrp = level; ngrp < (1 << PTask); ngrp++)
+            {
+              maxfill = 0;
+              for(j = 0; j < NTask; j++)
+                {
+                  if((j ^ ngrp) < NTask)
+                    if(maxfill < nbuffer[j] + nsend[(j ^ ngrp) * NTask + j])
+                      maxfill = nbuffer[j] + nsend[(j ^ ngrp) * NTask + j];
+                }
+              if(maxfill >= All.BunchSizeForce)
+                break;
+
+              sendTask = ThisTask;
+              recvTask = ThisTask ^ ngrp;
+
+              if(recvTask < NTask)
+                {
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
+      Task + ThisTask] > 0)
+                    {
+                      /* send the results */
+                      MPI_Sendrecv(&GravDataResult[nbuffer[ThisTask]],
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
+      ruct gravdata_in),
+                                   MPI_BYTE, recvTask, TAG_POTENTIAL_B,
+                                   &GravDataOut[noffset[recvTask]],
+                                   nsend_local[recvTask] * sizeof(struct 
+      gravdata_in),
+                                   MPI_BYTE, recvTask, TAG_POTENTIAL_B, MPI_COMM_
+      WORLD, &status);
+
+                      /* add the result to the particles */
+                      for(j = 0; j < nsend_local[recvTask]; j++)
+                        {
+                          place = GravDataIndexTable[noffset[recvTask] + j].
+      Index;
+
+                          P[place].Potential += GravDataOut[j + noffset[recvTask]
+      ].u.Potential;
+                        }
+                    }
+                }
+
+              for(j = 0; j < NTask; j++)
+                if((j ^ ngrp) < NTask)
+                  nbuffer[j] += nsend[(j ^ ngrp) * NTask + j];
+            }
+
+          level = ngrp - 1;
+        }
+
+      MPI_Allgather(&ndone, 1, MPI_INT, ndonelist, 1, MPI_INT, MPI_COMM_WORLD);
+      for(j = 0; j < NTask; j++)
+        ntotleft -= ndonelist[j];
+    }
+
+  free(ndonelist);
+  free(nsend);
+  free(nsend_local);
+  free(nbuffer);
+  free(noffset);
+
+
+  /* add correction to exclude self-potential */
+
+  for(i = 0; i < NumPart; i++)
+    {
+      /* remove self-potential */
+      P[i].Potential += P[i].Mass / All.SofteningTable[P[i].Type];
+
+      if(All.ComovingIntegrationOn)
+        if(All.PeriodicBoundariesOn)
+          P[i].Potential -= 2.8372975 * pow(P[i].Mass, 2.0 / 3) *
+            pow(All.Omega0 * 3 * All.Hubble * All.Hubble / (8 * M_PI * All.G), 1.
+      0 / 3);
+    }
+
+
+  /* multiply with the gravitational constant */
+
+  for(i = 0; i < NumPart; i++)
+    P[i].Potential *= All.G;
+
+
+#ifdef PMGRID
+
+#ifdef PERIODIC
+  pmpotential_periodic();
+#ifdef PLACEHIGHRESREGION
+  i = pmpotential_nonperiodic(1);
+  if(i == 1)  /* this is returned if a particle lied outside allowed range */
+    {
+      pm_init_regionsize();
+      pm_setup_nonperiodic_kernel();
+      i = pmpotential_nonperiodic(1);   /* try again */
+    }
+  if(i == 1)
+    endrun(88686);
+#endif
+#else
+  i = pmpotential_nonperiodic(0);
+  if(i == 1)                    /* this is returned if a particle lied outside al
+      lowed range */
+    {
+      pm_init_regionsize();
+      pm_setup_nonperiodic_kernel();
+      i = pmpotential_nonperiodic(0);   /* try again */
+    }
+  if(i == 1)
+    endrun(88687);
+#ifdef PLACEHIGHRESREGION
+  i = pmpotential_nonperiodic(1);
+  if(i == 1)                    /* this is returned if a particle lied outside al
+      lowed range */
+    {
+      pm_init_regionsize();
+
+      i = pmpotential_nonperiodic(1);
+    }
+  if(i != 0)
+    endrun(88688);
+#endif
+#endif
+
+#endif
+
+
+
+  if(All.ComovingIntegrationOn)
+    {
+#ifndef PERIODIC
+      fac = -0.5 * All.Omega0 * All.Hubble * All.Hubble;
+
+      for(i = 0; i < NumPart; i++)
+        {
+          for(k = 0, r2 = 0; k < 3; k++)
+            r2 += P[i].Pos[k] * P[i].Pos[k];
+
+          P[i].Potential += fac * r2;
+        }
+#endif
+    }
+  else
+    {
+      fac = -0.5 * All.OmegaLambda * All.Hubble * All.Hubble;
+      if(fac != 0)
+        {
+          for(i = 0; i < NumPart; i++)
+            {
+              for(k = 0, r2 = 0; k < 3; k++)
+                r2 += P[i].Pos[k] * P[i].Pos[k];
+
+              P[i].Potential += fac * r2;
+            }
+        }
+    }
+
+
+  if(ThisTask == 0)
+    {
+      printf("potential done.\n");
+      fflush(stdout);
+    }
+
+  t1 = second();
+
+  All.CPU_Potential += timediff(t0, t1);
+
+#else
+  for(i = 0; i < NumPart; i++)
+    P[i].Potential = 0;
+#endif
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{potential_8c_a04474459731219f9601aaefedb37ab27_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{potential_8c_a04474459731219f9601aaefedb37ab27_icgraph}
+\end{center}
+\end{figure}
+
+

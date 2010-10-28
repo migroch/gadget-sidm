@@ -1,0 +1,166 @@
+\hypertarget{accel_8c}{
+\section{accel.c File Reference}
+\label{accel_8c}\index{accel.c@{accel.c}}
+}
+
+
+driver routine to carry out force computation  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$mpi.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for accel.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{accel_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{accel_8c_a147f9422f4bca4666608da992486b417}{compute\_\-accelerations} (int mode)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+driver routine to carry out force computation 
+
+Definition in file \hyperlink{accel_8c_source}{accel.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{accel_8c_a147f9422f4bca4666608da992486b417}{
+\index{accel.c@{accel.c}!compute\_\-accelerations@{compute\_\-accelerations}}
+\index{compute\_\-accelerations@{compute\_\-accelerations}!accel.c@{accel.c}}
+\subsubsection[{compute\_\-accelerations}]{\setlength{\rightskip}{0pt plus 5cm}void compute\_\-accelerations (
+\begin{DoxyParamCaption}
+\item[{int}]{ mode}
+\end{DoxyParamCaption}
+)}}
+\label{accel_8c_a147f9422f4bca4666608da992486b417}
+This routine computes the accelerations for all active particles. First, the long-\/range PM force is computed if the TreePM algorithm is used and a \char`\"{}big\char`\"{} PM step is done. Next, the gravitational tree forces are computed. This also constructs the tree, if needed.
+
+If gas particles are present, the density-\/loop for active SPH particles is carried out. This includes an iteration on the correct number of neighbours. Finally, the hydrodynamical forces are added. 
+
+Definition at line 24 of file accel.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::CPU\_\-Gravity, global\_\-data\_\-all\_\-processes::CPU\_\-Hydro, global\_\-data\_\-all\_\-processes::CPU\_\-PM, global\_\-data\_\-all\_\-processes::CPU\_\-Predict, density(), force\_\-update\_\-hmax(), gravity\_\-forcetest(), gravity\_\-tree(), hydro\_\-force(), long\_\-range\_\-force(), global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-endstep, second(), ThisTask, global\_\-data\_\-all\_\-processes::Ti\_\-Current, timediff(), global\_\-data\_\-all\_\-processes::TotN\_\-gas, and global\_\-data\_\-all\_\-processes::TypeOfOpeningCriterion.
+
+
+
+Referenced by run().
+
+
+
+
+\begin{DoxyCode}
+{
+  double tstart, tend;
+
+  if(ThisTask == 0)
+    {
+      printf("Start force computation...\n");
+      fflush(stdout);
+    }
+
+#ifdef PMGRID
+  if(All.PM_Ti_endstep == All.Ti_Current)
+    {
+      tstart = second();
+      long_range_force();
+      tend = second();
+      All.CPU_PM += timediff(tstart, tend);
+    }
+#endif
+
+  tstart = second();            /* measure the time for the full force computatio
+      n */
+
+  gravity_tree();               /* computes gravity accel. */
+
+  if(All.TypeOfOpeningCriterion == 1 && All.Ti_Current == 0)
+    gravity_tree();             /* For the first timestep, we redo it
+                                 * to allow usage of relative opening
+                                 * criterion for consistent accuracy.
+                                 */
+  tend = second();
+  All.CPU_Gravity += timediff(tstart, tend);
+
+#ifdef FORCETEST
+  gravity_forcetest();
+#endif
+
+  if(All.TotN_gas > 0)
+    {
+      if(ThisTask == 0)
+        {
+          printf("Start density computation...\n");
+          fflush(stdout);
+        }
+
+      tstart = second();
+      density();                /* computes density, and pressure */
+      tend = second();
+      All.CPU_Hydro += timediff(tstart, tend);
+
+      tstart = second();
+      force_update_hmax();      /* tell the tree nodes the new SPH smoothing leng
+      th such that they are guaranteed to hold the correct max(Hsml) */
+      tend = second();
+      All.CPU_Predict += timediff(tstart, tend);
+
+
+      if(ThisTask == 0)
+        {
+          printf("Start hydro-force computation...\n");
+          fflush(stdout);
+        }
+
+      tstart = second();
+      hydro_force();            /* adds hydrodynamical accelerations and computes
+       viscous entropy injection  */
+      tend = second();
+      All.CPU_Hydro += timediff(tstart, tend);
+    }
+
+  if(ThisTask == 0)
+    {
+      printf("force computation done.\n");
+      fflush(stdout);
+    }
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{accel_8c_a147f9422f4bca4666608da992486b417_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=354pt]{accel_8c_a147f9422f4bca4666608da992486b417_icgraph}
+\end{center}
+\end{figure}
+
+

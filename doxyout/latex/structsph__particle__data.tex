@@ -1,0 +1,251 @@
+\hypertarget{structsph__particle__data}{
+\section{sph\_\-particle\_\-data Struct Reference}
+\label{structsph__particle__data}\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}}
+}
+
+
+{\ttfamily \#include $<$allvars.h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{structsph__particle__data_a7cbe9bb2086f525f400b2c12103b3116}{Entropy}
+\item 
+float \hyperlink{structsph__particle__data_aaeca7f3efec44ebd5b7d36ce79d38779}{Density}
+\item 
+float \hyperlink{structsph__particle__data_af9efa599cdd656b26a0df5f89430b4d1}{Hsml}
+\item 
+float \hyperlink{structsph__particle__data_a05d75ccc7dbd52562b7211fc74e674af}{Left}
+\item 
+float \hyperlink{structsph__particle__data_ae21f207de0a8a6f53cc891a7556f2592}{Right}
+\item 
+float \hyperlink{structsph__particle__data_a8038c8b4be4a553e5c13c9b9e711c5c0}{NumNgb}
+\item 
+float \hyperlink{structsph__particle__data_a9201a97de5fe06f6ed6fcc33386eccda}{Pressure}
+\item 
+float \hyperlink{structsph__particle__data_a27aeefa50674867d3dec1c359b7191c8}{DtEntropy}
+\item 
+float \hyperlink{structsph__particle__data_aa3441b1ee8351048b3dcac10b36b0b6c}{HydroAccel} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{structsph__particle__data_a730acdc1da11f80da2214ebb76e6c2b3}{VelPred} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{structsph__particle__data_a1af47e5f5e7ef9e4a656411c468c8d14}{DivVel}
+\item 
+float \hyperlink{structsph__particle__data_a843c827a50c8783218cd850925deb575}{CurlVel}
+\item 
+float \hyperlink{structsph__particle__data_a6b9b7ed346c2d65d50dacd4b43cdd1d2}{Rot} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{structsph__particle__data_af49cca403dc402fdb0d0d481d49d7b53}{DhsmlDensityFactor}
+\item 
+float \hyperlink{structsph__particle__data_a86da008875968dfca41b35f4ca7f3164}{MaxSignalVel}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 538 of file allvars.h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{structsph__particle__data_a843c827a50c8783218cd850925deb575}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!CurlVel@{CurlVel}}
+\index{CurlVel@{CurlVel}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{CurlVel}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::CurlVel}}}
+\label{structsph__particle__data_a843c827a50c8783218cd850925deb575}
+local velocity curl 
+
+Definition at line 551 of file allvars.h.
+
+
+
+Referenced by density(), hydro\_\-evaluate(), and hydro\_\-force().
+
+\hypertarget{structsph__particle__data_aaeca7f3efec44ebd5b7d36ce79d38779}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!Density@{Density}}
+\index{Density@{Density}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{Density}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::Density}}}
+\label{structsph__particle__data_aaeca7f3efec44ebd5b7d36ce79d38779}
+current baryonic mass density of particle 
+
+Definition at line 541 of file allvars.h.
+
+
+
+Referenced by density(), density\_\-evaluate(), fill\_\-write\_\-buffer(), hydro\_\-evaluate(), hydro\_\-force(), init(), and move\_\-particles().
+
+\hypertarget{structsph__particle__data_af49cca403dc402fdb0d0d481d49d7b53}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!DhsmlDensityFactor@{DhsmlDensityFactor}}
+\index{DhsmlDensityFactor@{DhsmlDensityFactor}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{DhsmlDensityFactor}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::DhsmlDensityFactor}}}
+\label{structsph__particle__data_af49cca403dc402fdb0d0d481d49d7b53}
+correction factor needed in the equation of motion of the conservative entropy formulation of SPH 
+
+Definition at line 553 of file allvars.h.
+
+
+
+Referenced by density(), density\_\-evaluate(), hydro\_\-evaluate(), and hydro\_\-force().
+
+\hypertarget{structsph__particle__data_a1af47e5f5e7ef9e4a656411c468c8d14}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!DivVel@{DivVel}}
+\index{DivVel@{DivVel}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{DivVel}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::DivVel}}}
+\label{structsph__particle__data_a1af47e5f5e7ef9e4a656411c468c8d14}
+local velocity divergence 
+
+Definition at line 550 of file allvars.h.
+
+
+
+Referenced by density(), and density\_\-evaluate().
+
+\hypertarget{structsph__particle__data_a27aeefa50674867d3dec1c359b7191c8}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!DtEntropy@{DtEntropy}}
+\index{DtEntropy@{DtEntropy}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{DtEntropy}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::DtEntropy}}}
+\label{structsph__particle__data_a27aeefa50674867d3dec1c359b7191c8}
+rate of change of entropy 
+
+Definition at line 547 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quantities\_\-of\_\-system(), density(), fill\_\-write\_\-buffer(), hydro\_\-evaluate(), hydro\_\-force(), init(), and move\_\-particles().
+
+\hypertarget{structsph__particle__data_a7cbe9bb2086f525f400b2c12103b3116}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!Entropy@{Entropy}}
+\index{Entropy@{Entropy}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{Entropy}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::Entropy}}}
+\label{structsph__particle__data_a7cbe9bb2086f525f400b2c12103b3116}
+current value of entropy (actually entropic function) of particle 
+
+Definition at line 540 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quantities\_\-of\_\-system(), density(), fill\_\-write\_\-buffer(), move\_\-particles(), and read\_\-ic().
+
+\hypertarget{structsph__particle__data_af9efa599cdd656b26a0df5f89430b4d1}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!Hsml@{Hsml}}
+\index{Hsml@{Hsml}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{Hsml}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::Hsml}}}
+\label{structsph__particle__data_af9efa599cdd656b26a0df5f89430b4d1}
+current smoothing length 
+
+Definition at line 542 of file allvars.h.
+
+
+
+Referenced by compute\_\-potential(), density(), density\_\-evaluate(), fill\_\-write\_\-buffer(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), force\_\-update\_\-node\_\-hmax\_\-local(), force\_\-update\_\-node\_\-recursive(), get\_\-timestep(), gravity\_\-tree(), hydro\_\-evaluate(), hydro\_\-force(), init(), move\_\-particles(), ngb\_\-treefind\_\-pairs(), and setup\_\-smoothinglengths().
+
+\hypertarget{structsph__particle__data_aa3441b1ee8351048b3dcac10b36b0b6c}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!HydroAccel@{HydroAccel}}
+\index{HydroAccel@{HydroAccel}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{HydroAccel}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::HydroAccel}\mbox{[}3\mbox{]}}}
+\label{structsph__particle__data_aa3441b1ee8351048b3dcac10b36b0b6c}
+acceleration due to hydrodynamical force 
+
+Definition at line 548 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quantities\_\-of\_\-system(), fill\_\-write\_\-buffer(), get\_\-timestep(), init(), and move\_\-particles().
+
+\hypertarget{structsph__particle__data_a05d75ccc7dbd52562b7211fc74e674af}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!Left@{Left}}
+\index{Left@{Left}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{Left}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::Left}}}
+\label{structsph__particle__data_a05d75ccc7dbd52562b7211fc74e674af}
+lower bound in iterative smoothing length search 
+
+Definition at line 543 of file allvars.h.
+
+
+
+Referenced by density().
+
+\hypertarget{structsph__particle__data_a86da008875968dfca41b35f4ca7f3164}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!MaxSignalVel@{MaxSignalVel}}
+\index{MaxSignalVel@{MaxSignalVel}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{MaxSignalVel}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::MaxSignalVel}}}
+\label{structsph__particle__data_a86da008875968dfca41b35f4ca7f3164}
+maximum \char`\"{}signal velocity\char`\"{} occuring for this particle 
+
+Definition at line 554 of file allvars.h.
+
+
+
+Referenced by get\_\-timestep(), hydro\_\-evaluate(), and hydro\_\-force().
+
+\hypertarget{structsph__particle__data_a8038c8b4be4a553e5c13c9b9e711c5c0}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!NumNgb@{NumNgb}}
+\index{NumNgb@{NumNgb}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{NumNgb}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::NumNgb}}}
+\label{structsph__particle__data_a8038c8b4be4a553e5c13c9b9e711c5c0}
+weighted number of neighbours found 
+
+Definition at line 545 of file allvars.h.
+
+
+
+Referenced by density(), and density\_\-evaluate().
+
+\hypertarget{structsph__particle__data_a9201a97de5fe06f6ed6fcc33386eccda}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!Pressure@{Pressure}}
+\index{Pressure@{Pressure}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{Pressure}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::Pressure}}}
+\label{structsph__particle__data_a9201a97de5fe06f6ed6fcc33386eccda}
+current pressure 
+
+Definition at line 546 of file allvars.h.
+
+
+
+Referenced by density(), hydro\_\-evaluate(), hydro\_\-force(), and move\_\-particles().
+
+\hypertarget{structsph__particle__data_ae21f207de0a8a6f53cc891a7556f2592}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!Right@{Right}}
+\index{Right@{Right}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{Right}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::Right}}}
+\label{structsph__particle__data_ae21f207de0a8a6f53cc891a7556f2592}
+upper bound in iterative smoothing length search 
+
+Definition at line 544 of file allvars.h.
+
+
+
+Referenced by density().
+
+\hypertarget{structsph__particle__data_a6b9b7ed346c2d65d50dacd4b43cdd1d2}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!Rot@{Rot}}
+\index{Rot@{Rot}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{Rot}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::Rot}\mbox{[}3\mbox{]}}}
+\label{structsph__particle__data_a6b9b7ed346c2d65d50dacd4b43cdd1d2}
+local velocity curl 
+
+Definition at line 552 of file allvars.h.
+
+
+
+Referenced by density(), and density\_\-evaluate().
+
+\hypertarget{structsph__particle__data_a730acdc1da11f80da2214ebb76e6c2b3}{
+\index{sph\_\-particle\_\-data@{sph\_\-particle\_\-data}!VelPred@{VelPred}}
+\index{VelPred@{VelPred}!sph_particle_data@{sph\_\-particle\_\-data}}
+\subsubsection[{VelPred}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf sph\_\-particle\_\-data::VelPred}\mbox{[}3\mbox{]}}}
+\label{structsph__particle__data_a730acdc1da11f80da2214ebb76e6c2b3}
+predicted SPH particle velocity at the current time 
+
+Definition at line 549 of file allvars.h.
+
+
+
+Referenced by advance\_\-and\_\-find\_\-timesteps(), density(), density\_\-evaluate(), hydro\_\-evaluate(), hydro\_\-force(), and init().
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{allvars_8h}{allvars.h}\end{DoxyCompactItemize}

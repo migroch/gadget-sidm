@@ -1,0 +1,980 @@
+\hypertarget{hydra_8c}{
+\section{hydra.c File Reference}
+\label{hydra_8c}\index{hydra.c@{hydra.c}}
+}
+
+
+Computation of SPH forces and rate of entropy generation.  
+
+
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$mpi.h$>$}\par
+{\ttfamily \#include $<$gsl/gsl\_\-math.h$>$}\par
+{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
+Include dependency graph for hydra.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{hydra_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{hydra_8c_a5c5328b307b005e6682669279878cef0}{boxSize\_\-X}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\item 
+\#define \hyperlink{hydra_8c_a0ecceb71797a529fb6f2b8c47b51686c}{boxHalf\_\-X}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\item 
+\#define \hyperlink{hydra_8c_ab0db73a31e08d33d840e28651e3cf610}{boxSize\_\-Y}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\item 
+\#define \hyperlink{hydra_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{boxHalf\_\-Y}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\item 
+\#define \hyperlink{hydra_8c_a8a97a1c456bdd396791c84c370f0aa18}{boxSize\_\-Z}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\item 
+\#define \hyperlink{hydra_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{boxHalf\_\-Z}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{hydra_8c_a6789381bce7d1c316df8ecf04b47a607}{hydro\_\-force} (void)
+\item 
+void \hyperlink{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e}{hydro\_\-evaluate} (int target, int mode)
+\item 
+int \hyperlink{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a}{hydro\_\-compare\_\-key} (const void $\ast$a, const void $\ast$b)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{hydra_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}{hubble\_\-a}
+\item 
+static double \hyperlink{hydra_8c_aec7bcb1d46812f966d89f66dc1a399ea}{atime}
+\item 
+static double \hyperlink{hydra_8c_a15cf7694d03164516fd55696b858a125}{hubble\_\-a2}
+\item 
+static double \hyperlink{hydra_8c_acb165aa9c0459664aba04d793812aa34}{fac\_\-mu}
+\item 
+static double \hyperlink{hydra_8c_a99addeb2d520f107c59e4e228e8e76dd}{fac\_\-vsic\_\-fix}
+\item 
+static double \hyperlink{hydra_8c_a7f2a6bb4bade30e4e04ee29be22d0962}{a3inv}
+\item 
+static double \hyperlink{hydra_8c_a10ab9a51765fc1b79e1282b3cccb2085}{fac\_\-egy}
+\item 
+static double \hyperlink{hydra_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\item 
+static double \hyperlink{hydra_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Computation of SPH forces and rate of entropy generation. This file contains the \char`\"{}second SPH loop\char`\"{}, where the SPH forces are computed, and where the rate of change of entropy due to the shock heating (via artificial viscosity) is computed. 
+
+Definition in file \hyperlink{hydra_8c_source}{hydra.c}.
+
+
+
+\subsection{Define Documentation}
+\hypertarget{hydra_8c_a0ecceb71797a529fb6f2b8c47b51686c}{
+\index{hydra.c@{hydra.c}!boxHalf\_\-X@{boxHalf\_\-X}}
+\index{boxHalf\_\-X@{boxHalf\_\-X}!hydra.c@{hydra.c}}
+\subsubsection[{boxHalf\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-X~{\bf boxHalf}}}
+\label{hydra_8c_a0ecceb71797a529fb6f2b8c47b51686c}
+
+
+Definition at line 28 of file hydra.c.
+
+
+
+Referenced by hydro\_\-evaluate(), and hydro\_\-force().
+
+\hypertarget{hydra_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{
+\index{hydra.c@{hydra.c}!boxHalf\_\-Y@{boxHalf\_\-Y}}
+\index{boxHalf\_\-Y@{boxHalf\_\-Y}!hydra.c@{hydra.c}}
+\subsubsection[{boxHalf\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-Y~{\bf boxHalf}}}
+\label{hydra_8c_a59f20d7decc2bdfedcaafb70ef23df0e}
+
+
+Definition at line 34 of file hydra.c.
+
+
+
+Referenced by hydro\_\-evaluate(), and hydro\_\-force().
+
+\hypertarget{hydra_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{
+\index{hydra.c@{hydra.c}!boxHalf\_\-Z@{boxHalf\_\-Z}}
+\index{boxHalf\_\-Z@{boxHalf\_\-Z}!hydra.c@{hydra.c}}
+\subsubsection[{boxHalf\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-Z~{\bf boxHalf}}}
+\label{hydra_8c_a34e9d5d079320cbfc0576d26f58d2fe7}
+
+
+Definition at line 40 of file hydra.c.
+
+
+
+Referenced by hydro\_\-evaluate(), and hydro\_\-force().
+
+\hypertarget{hydra_8c_a5c5328b307b005e6682669279878cef0}{
+\index{hydra.c@{hydra.c}!boxSize\_\-X@{boxSize\_\-X}}
+\index{boxSize\_\-X@{boxSize\_\-X}!hydra.c@{hydra.c}}
+\subsubsection[{boxSize\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-X~{\bf boxSize}}}
+\label{hydra_8c_a5c5328b307b005e6682669279878cef0}
+
+
+Definition at line 27 of file hydra.c.
+
+
+
+Referenced by hydro\_\-force().
+
+\hypertarget{hydra_8c_ab0db73a31e08d33d840e28651e3cf610}{
+\index{hydra.c@{hydra.c}!boxSize\_\-Y@{boxSize\_\-Y}}
+\index{boxSize\_\-Y@{boxSize\_\-Y}!hydra.c@{hydra.c}}
+\subsubsection[{boxSize\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-Y~{\bf boxSize}}}
+\label{hydra_8c_ab0db73a31e08d33d840e28651e3cf610}
+
+
+Definition at line 33 of file hydra.c.
+
+
+
+Referenced by hydro\_\-force().
+
+\hypertarget{hydra_8c_a8a97a1c456bdd396791c84c370f0aa18}{
+\index{hydra.c@{hydra.c}!boxSize\_\-Z@{boxSize\_\-Z}}
+\index{boxSize\_\-Z@{boxSize\_\-Z}!hydra.c@{hydra.c}}
+\subsubsection[{boxSize\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-Z~{\bf boxSize}}}
+\label{hydra_8c_a8a97a1c456bdd396791c84c370f0aa18}
+
+
+Definition at line 39 of file hydra.c.
+
+
+
+Referenced by hydro\_\-force().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a}{
+\index{hydra.c@{hydra.c}!hydro\_\-compare\_\-key@{hydro\_\-compare\_\-key}}
+\index{hydro\_\-compare\_\-key@{hydro\_\-compare\_\-key}!hydra.c@{hydra.c}}
+\subsubsection[{hydro\_\-compare\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int hydro\_\-compare\_\-key (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{ a, }
+\item[{const void $\ast$}]{ b}
+\end{DoxyParamCaption}
+)}}
+\label{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a}
+This is a comparison kernel for a sort routine, which is used to group particles that are going to be exported to the same CPU. 
+
+Definition at line 563 of file hydra.c.
+
+
+
+Referenced by hydro\_\-force().
+
+
+
+
+\begin{DoxyCode}
+{
+  if(((struct hydrodata_in *) a)->Task < (((struct hydrodata_in *) b)->Task))
+    return -1;
+  if(((struct hydrodata_in *) a)->Task > (((struct hydrodata_in *) b)->Task))
+    return +1;
+  return 0;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e}{
+\index{hydra.c@{hydra.c}!hydro\_\-evaluate@{hydro\_\-evaluate}}
+\index{hydro\_\-evaluate@{hydro\_\-evaluate}!hydra.c@{hydra.c}}
+\subsubsection[{hydro\_\-evaluate}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\_\-evaluate (
+\begin{DoxyParamCaption}
+\item[{int}]{ target, }
+\item[{int}]{ mode}
+\end{DoxyParamCaption}
+)}}
+\label{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e}
+This function is the 'core' of the SPH force computation. A target particle is specified which may either be local, or reside in the communication buffer. 
+
+$<$ adiabatic index of simulated gas
+
+$<$ adiabatic index of simulated gas
+
+$<$ adiabatic index of simulated gas 
+
+
+
+Definition at line 353 of file hydra.c.
+
+
+
+References All, global\_\-data\_\-all\_\-processes::ArtBulkViscConst, boxHalf\_\-X, boxHalf\_\-Y, boxHalf\_\-Z, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, sph\_\-particle\_\-data::CurlVel, hydrodata\_\-in::Density, sph\_\-particle\_\-data::Density, hydrodata\_\-in::DhsmlDensityFactor, sph\_\-particle\_\-data::DhsmlDensityFactor, dmin(), hydrodata\_\-out::DtEntropy, sph\_\-particle\_\-data::DtEntropy, hydrodata\_\-in::F1, fac\_\-mu, fac\_\-vsic\_\-fix, FLOAT, GAMMA, hydrodata\_\-in::Hsml, sph\_\-particle\_\-data::Hsml, hubble\_\-a2, HydroDataGet, HydroDataResult, imax(), KERNEL\_\-COEFF\_\-3, KERNEL\_\-COEFF\_\-6, state\_\-of\_\-system::Mass, hydrodata\_\-in::Mass, particle\_\-data::Mass, global\_\-data\_\-all\_\-processes::MaxPart, hydrodata\_\-out::MaxSignalVel, sph\_\-particle\_\-data::MaxSignalVel, ngb\_\-treefind\_\-pairs(), Ngblist, P, hydrodata\_\-in::Pos, particle\_\-data::Pos, hydrodata\_\-in::Pressure, sph\_\-particle\_\-data::Pressure, SphP, particle\_\-data::Ti\_\-begstep, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, hydrodata\_\-in::Timestep, hydrodata\_\-in::Vel, and sph\_\-particle\_\-data::VelPred.
+
+
+
+Referenced by hydro\_\-force().
+
+
+
+
+\begin{DoxyCode}
+{
+  int j, k, n, timestep, startnode, numngb;
+  FLOAT *pos, *vel;
+  FLOAT mass, h_i, dhsmlDensityFactor, rho, pressure, f1, f2;
+  double acc[3], dtEntropy, maxSignalVel;
+  double dx, dy, dz, dvx, dvy, dvz;
+  double h_i2, hinv, hinv4;
+  double p_over_rho2_i, p_over_rho2_j, soundspeed_i, soundspeed_j;
+  double hfc, dwk_i, vdotr, vdotr2, visc, mu_ij, rho_ij, vsig;
+  double h_j, dwk_j, r, r2, u, hfc_visc;
+
+#ifndef NOVISCOSITYLIMITER
+  double dt;
+#endif
+
+  if(mode == 0)
+    {
+      pos = P[target].Pos;
+      vel = SphP[target].VelPred;
+      h_i = SphP[target].Hsml;
+      mass = P[target].Mass;
+      dhsmlDensityFactor = SphP[target].DhsmlDensityFactor;
+      rho = SphP[target].Density;
+      pressure = SphP[target].Pressure;
+      timestep = P[target].Ti_endstep - P[target].Ti_begstep;
+      soundspeed_i = sqrt(GAMMA * pressure / rho);
+      f1 = fabs(SphP[target].DivVel) /
+        (fabs(SphP[target].DivVel) + SphP[target].CurlVel +
+         0.0001 * soundspeed_i / SphP[target].Hsml / fac_mu);
+    }
+  else
+    {
+      pos = HydroDataGet[target].Pos;
+      vel = HydroDataGet[target].Vel;
+      h_i = HydroDataGet[target].Hsml;
+      mass = HydroDataGet[target].Mass;
+      dhsmlDensityFactor = HydroDataGet[target].DhsmlDensityFactor;
+      rho = HydroDataGet[target].Density;
+      pressure = HydroDataGet[target].Pressure;
+      timestep = HydroDataGet[target].Timestep;
+      soundspeed_i = sqrt(GAMMA * pressure / rho);
+      f1 = HydroDataGet[target].F1;
+    }
+
+
+  /* initialize variables before SPH loop is started */
+  acc[0] = acc[1] = acc[2] = dtEntropy = 0;
+  maxSignalVel = 0;
+
+  p_over_rho2_i = pressure / (rho * rho) * dhsmlDensityFactor;
+  h_i2 = h_i * h_i;
+
+  /* Now start the actual SPH computation for this particle */
+  startnode = All.MaxPart;
+  do
+    {
+      numngb = ngb_treefind_pairs(&pos[0], h_i, &startnode);
+
+      for(n = 0; n < numngb; n++)
+        {
+          j = Ngblist[n];
+
+          dx = pos[0] - P[j].Pos[0];
+          dy = pos[1] - P[j].Pos[1];
+          dz = pos[2] - P[j].Pos[2];
+
+#ifdef PERIODIC                 /*  find the closest image in the given box size 
+       */
+          if(dx > boxHalf_X)
+            dx -= boxSize_X;
+          if(dx < -boxHalf_X)
+            dx += boxSize_X;
+          if(dy > boxHalf_Y)
+            dy -= boxSize_Y;
+          if(dy < -boxHalf_Y)
+            dy += boxSize_Y;
+          if(dz > boxHalf_Z)
+            dz -= boxSize_Z;
+          if(dz < -boxHalf_Z)
+            dz += boxSize_Z;
+#endif
+          r2 = dx * dx + dy * dy + dz * dz;
+          h_j = SphP[j].Hsml;
+          if(r2 < h_i2 || r2 < h_j * h_j)
+            {
+              r = sqrt(r2);
+              if(r > 0)
+                {
+                  p_over_rho2_j = SphP[j].Pressure / (SphP[j].Density * SphP[j].
+      Density);
+                  soundspeed_j = sqrt(GAMMA * p_over_rho2_j * SphP[j].Density);
+                  dvx = vel[0] - SphP[j].VelPred[0];
+                  dvy = vel[1] - SphP[j].VelPred[1];
+                  dvz = vel[2] - SphP[j].VelPred[2];
+                  vdotr = dx * dvx + dy * dvy + dz * dvz;
+
+                  if(All.ComovingIntegrationOn)
+                    vdotr2 = vdotr + hubble_a2 * r2;
+                  else
+                    vdotr2 = vdotr;
+
+                  if(r2 < h_i2)
+                    {
+                      hinv = 1.0 / h_i;
+#ifndef  TWODIMS
+                      hinv4 = hinv * hinv * hinv * hinv;
+#else
+                      hinv4 = hinv * hinv * hinv / boxSize_Z;
+#endif
+                      u = r * hinv;
+                      if(u < 0.5)
+                        dwk_i = hinv4 * u * (KERNEL_COEFF_3 * u - KERNEL_COEFF_4)
+      ;
+                      else
+                        dwk_i = hinv4 * KERNEL_COEFF_6 * (1.0 - u) * (1.0 - u);
+                    }
+                  else
+                    {
+                      dwk_i = 0;
+                    }
+
+                  if(r2 < h_j * h_j)
+                    {
+                      hinv = 1.0 / h_j;
+#ifndef  TWODIMS
+                      hinv4 = hinv * hinv * hinv * hinv;
+#else
+                      hinv4 = hinv * hinv * hinv / boxSize_Z;
+#endif
+                      u = r * hinv;
+                      if(u < 0.5)
+                        dwk_j = hinv4 * u * (KERNEL_COEFF_3 * u - KERNEL_COEFF_4)
+      ;
+                      else
+                        dwk_j = hinv4 * KERNEL_COEFF_6 * (1.0 - u) * (1.0 - u);
+                    }
+                  else
+                    {
+                      dwk_j = 0;
+                    }
+
+                  if(soundspeed_i + soundspeed_j > maxSignalVel)
+                    maxSignalVel = soundspeed_i + soundspeed_j;
+
+                  if(vdotr2 < 0)        /* ... artificial viscosity */
+                    {
+                      mu_ij = fac_mu * vdotr2 / r;      /* note: this is negative
+      ! */
+
+                      vsig = soundspeed_i + soundspeed_j - 3 * mu_ij;
+
+                      if(vsig > maxSignalVel)
+                        maxSignalVel = vsig;
+
+                      rho_ij = 0.5 * (rho + SphP[j].Density);
+                      f2 =
+                        fabs(SphP[j].DivVel) / (fabs(SphP[j].DivVel) + SphP[j].
+      CurlVel +
+                                                0.0001 * soundspeed_j / fac_mu / 
+      SphP[j].Hsml);
+
+                      visc = 0.25 * All.ArtBulkViscConst * vsig * (-mu_ij) / rho_
+      ij * (f1 + f2);
+
+                      /* .... end artificial viscosity evaluation */
+#ifndef NOVISCOSITYLIMITER
+                      /* make sure that viscous acceleration is not too large */
+                      dt = imax(timestep, (P[j].Ti_endstep - P[j].Ti_begstep)) * 
+      All.Timebase_interval;
+                      if(dt > 0 && (dwk_i + dwk_j) < 0)
+                        {
+                          visc = dmin(visc, 0.5 * fac_vsic_fix * vdotr2 /
+                                      (0.5 * (mass + P[j].Mass) * (dwk_i + dwk_j)
+       * r * dt));
+                        }
+#endif
+                    }
+                  else
+                    visc = 0;
+
+                  p_over_rho2_j *= SphP[j].DhsmlDensityFactor;
+
+                  hfc_visc = 0.5 * P[j].Mass * visc * (dwk_i + dwk_j) / r;
+
+                  hfc = hfc_visc + P[j].Mass * (p_over_rho2_i * dwk_i + p_over_rh
+      o2_j * dwk_j) / r;
+
+                  acc[0] -= hfc * dx;
+                  acc[1] -= hfc * dy;
+                  acc[2] -= hfc * dz;
+                  dtEntropy += 0.5 * hfc_visc * vdotr2;
+                }
+            }
+        }
+    }
+  while(startnode >= 0);
+
+  /* Now collect the result at the right place */
+  if(mode == 0)
+    {
+      for(k = 0; k < 3; k++)
+        SphP[target].HydroAccel[k] = acc[k];
+      SphP[target].DtEntropy = dtEntropy;
+      SphP[target].MaxSignalVel = maxSignalVel;
+    }
+  else
+    {
+      for(k = 0; k < 3; k++)
+        HydroDataResult[target].Acc[k] = acc[k];
+      HydroDataResult[target].DtEntropy = dtEntropy;
+      HydroDataResult[target].MaxSignalVel = maxSignalVel;
+    }
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{hydra_8c_a6789381bce7d1c316df8ecf04b47a607}{
+\index{hydra.c@{hydra.c}!hydro\_\-force@{hydro\_\-force}}
+\index{hydro\_\-force@{hydro\_\-force}!hydra.c@{hydra.c}}
+\subsubsection[{hydro\_\-force}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\_\-force (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{hydra_8c_a6789381bce7d1c316df8ecf04b47a607}
+This function is the driver routine for the calculation of hydrodynamical force and rate of change of entropy due to shock heating for all active particles . 
+
+$<$ adiabatic index of simulated gas
+
+$<$ adiabatic index of simulated gas
+
+$<$ adiabatic index of simulated gas
+
+$<$ adiabatic index of simulated gas
+
+$<$ adiabatic index of simulated gas
+
+$<$ adiabatic index of simulated gas 
+
+
+
+Definition at line 50 of file hydra.c.
+
+
+
+References a3inv, All, atime, boxHalf, boxHalf\_\-X, boxHalf\_\-Y, boxHalf\_\-Z, global\_\-data\_\-all\_\-processes::BoxSize, boxSize, boxSize\_\-X, boxSize\_\-Y, boxSize\_\-Z, global\_\-data\_\-all\_\-processes::BunchSizeHydro, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CPU\_\-HydCommSumm, global\_\-data\_\-all\_\-processes::CPU\_\-HydCompWalk, global\_\-data\_\-all\_\-processes::CPU\_\-HydImbalance, sph\_\-particle\_\-data::CurlVel, sph\_\-particle\_\-data::Density, hydrodata\_\-in::Density, sph\_\-particle\_\-data::DhsmlDensityFactor, hydrodata\_\-in::DhsmlDensityFactor, hydrodata\_\-out::DtEntropy, sph\_\-particle\_\-data::DtEntropy, Exportflag, hydrodata\_\-in::F1, fac\_\-egy, fac\_\-mu, fac\_\-vsic\_\-fix, GAMMA, GAMMA\_\-MINUS1, sph\_\-particle\_\-data::Hsml, hydrodata\_\-in::Hsml, global\_\-data\_\-all\_\-processes::Hubble, hubble\_\-a, hubble\_\-a2, hydro\_\-compare\_\-key(), hydro\_\-evaluate(), HydroDataGet, HydroDataIn, HydroDataPartialResult, HydroDataResult, hydrodata\_\-in::Index, particle\_\-data::Mass, hydrodata\_\-in::Mass, hydrodata\_\-out::MaxSignalVel, sph\_\-particle\_\-data::MaxSignalVel, N\_\-gas, NTask, NumSphUpdate, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, P, particle\_\-data::Pos, hydrodata\_\-in::Pos, pow(), sph\_\-particle\_\-data::Pressure, hydrodata\_\-in::Pressure, PTask, second(), SphP, TAG\_\-HYDRO\_\-A, TAG\_\-HYDRO\_\-B, hydrodata\_\-in::Task, ThisTask, particle\_\-data::Ti\_\-begstep, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Time, timediff(), hydrodata\_\-in::Timestep, hydrodata\_\-in::Vel, and sph\_\-particle\_\-data::VelPred.
+
+
+
+Referenced by compute\_\-accelerations().
+
+
+
+
+\begin{DoxyCode}
+{
+  long long ntot, ntotleft;
+  int i, j, k, n, ngrp, maxfill, source, ndone;
+  int *nbuffer, *noffset, *nsend_local, *nsend, *numlist, *ndonelist;
+  int level, sendTask, recvTask, nexport, place;
+  double soundspeed_i;
+  double tstart, tend, sumt, sumcomm;
+  double timecomp = 0, timecommsumm = 0, timeimbalance = 0, sumimbalance;
+  MPI_Status status;
+
+#ifdef PERIODIC
+  boxSize = All.BoxSize;
+  boxHalf = 0.5 * All.BoxSize;
+#ifdef LONG_X
+  boxHalf_X = boxHalf * LONG_X;
+  boxSize_X = boxSize * LONG_X;
+#endif
+#ifdef LONG_Y
+  boxHalf_Y = boxHalf * LONG_Y;
+  boxSize_Y = boxSize * LONG_Y;
+#endif
+#ifdef LONG_Z
+  boxHalf_Z = boxHalf * LONG_Z;
+  boxSize_Z = boxSize * LONG_Z;
+#endif
+#endif
+
+  if(All.ComovingIntegrationOn)
+    {
+      /* Factors for comoving integration of hydro */
+      hubble_a = All.Omega0 / (All.Time * All.Time * All.Time)
+        + (1 - All.Omega0 - All.OmegaLambda) / (All.Time * All.Time) + All.
+      OmegaLambda;
+
+      hubble_a = All.Hubble * sqrt(hubble_a);
+      hubble_a2 = All.Time * All.Time * hubble_a;
+
+      fac_mu = pow(All.Time, 3 * (GAMMA - 1) / 2) / All.Time;
+
+      fac_egy = pow(All.Time, 3 * (GAMMA - 1));
+
+      fac_vsic_fix = hubble_a * pow(All.Time, 3 * GAMMA_MINUS1);
+
+      a3inv = 1 / (All.Time * All.Time * All.Time);
+      atime = All.Time;
+    }
+  else
+    hubble_a = hubble_a2 = atime = fac_mu = fac_vsic_fix = a3inv = fac_egy = 1.0;
+      
+
+
+  /* `NumSphUpdate' gives the number of particles on this processor that want a f
+      orce update */
+  for(n = 0, NumSphUpdate = 0; n < N_gas; n++)
+    {
+      if(P[n].Ti_endstep == All.Ti_Current)
+        NumSphUpdate++;
+    }
+
+  numlist = malloc(NTask * sizeof(int) * NTask);
+  MPI_Allgather(&NumSphUpdate, 1, MPI_INT, numlist, 1, MPI_INT, MPI_COMM_WORLD);
+  for(i = 0, ntot = 0; i < NTask; i++)
+    ntot += numlist[i];
+  free(numlist);
+
+
+  noffset = malloc(sizeof(int) * NTask);        /* offsets of bunches in common l
+      ist */
+  nbuffer = malloc(sizeof(int) * NTask);
+  nsend_local = malloc(sizeof(int) * NTask);
+  nsend = malloc(sizeof(int) * NTask * NTask);
+  ndonelist = malloc(sizeof(int) * NTask);
+
+
+  i = 0;                        /* first particle for this task */
+  ntotleft = ntot;              /* particles left for all tasks together */
+
+  while(ntotleft > 0)
+    {
+      for(j = 0; j < NTask; j++)
+        nsend_local[j] = 0;
+
+      /* do local particles and prepare export list */
+      tstart = second();
+      for(nexport = 0, ndone = 0; i < N_gas && nexport < All.BunchSizeHydro - NTa
+      sk; i++)
+        if(P[i].Ti_endstep == All.Ti_Current)
+          {
+            ndone++;
+
+            for(j = 0; j < NTask; j++)
+              Exportflag[j] = 0;
+
+            hydro_evaluate(i, 0);
+
+            for(j = 0; j < NTask; j++)
+              {
+                if(Exportflag[j])
+                  {
+                    for(k = 0; k < 3; k++)
+                      {
+                        HydroDataIn[nexport].Pos[k] = P[i].Pos[k];
+                        HydroDataIn[nexport].Vel[k] = SphP[i].VelPred[k];
+                      }
+                    HydroDataIn[nexport].Hsml = SphP[i].Hsml;
+                    HydroDataIn[nexport].Mass = P[i].Mass;
+                    HydroDataIn[nexport].DhsmlDensityFactor = SphP[i].
+      DhsmlDensityFactor;
+                    HydroDataIn[nexport].Density = SphP[i].Density;
+                    HydroDataIn[nexport].Pressure = SphP[i].Pressure;
+                    HydroDataIn[nexport].Timestep = P[i].Ti_endstep - P[i].
+      Ti_begstep;
+
+                    /* calculation of F1 */
+                    soundspeed_i = sqrt(GAMMA * SphP[i].Pressure / SphP[i].Densit
+      y);
+                    HydroDataIn[nexport].F1 = fabs(SphP[i].DivVel) /
+                      (fabs(SphP[i].DivVel) + SphP[i].CurlVel +
+                       0.0001 * soundspeed_i / SphP[i].Hsml / fac_mu);
+
+                    HydroDataIn[nexport].Index = i;
+                    HydroDataIn[nexport].Task = j;
+                    nexport++;
+                    nsend_local[j]++;
+                  }
+              }
+          }
+      tend = second();
+      timecomp += timediff(tstart, tend);
+
+      qsort(HydroDataIn, nexport, sizeof(struct hydrodata_in), hydro_compare_key)
+      ;
+
+      for(j = 1, noffset[0] = 0; j < NTask; j++)
+        noffset[j] = noffset[j - 1] + nsend_local[j - 1];
+
+      tstart = second();
+
+      MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, MPI_COMM_
+      WORLD);
+
+      tend = second();
+      timeimbalance += timediff(tstart, tend);
+
+
+
+      /* now do the particles that need to be exported */
+
+      for(level = 1; level < (1 << PTask); level++)
+        {
+          tstart = second();
+          for(j = 0; j < NTask; j++)
+            nbuffer[j] = 0;
+          for(ngrp = level; ngrp < (1 << PTask); ngrp++)
+            {
+              maxfill = 0;
+              for(j = 0; j < NTask; j++)
+                {
+                  if((j ^ ngrp) < NTask)
+                    if(maxfill < nbuffer[j] + nsend[(j ^ ngrp) * NTask + j])
+                      maxfill = nbuffer[j] + nsend[(j ^ ngrp) * NTask + j];
+                }
+              if(maxfill >= All.BunchSizeHydro)
+                break;
+
+              sendTask = ThisTask;
+              recvTask = ThisTask ^ ngrp;
+
+              if(recvTask < NTask)
+                {
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
+      Task + ThisTask] > 0)
+                    {
+                      /* get the particles */
+                      MPI_Sendrecv(&HydroDataIn[noffset[recvTask]],
+                                   nsend_local[recvTask] * sizeof(struct 
+      hydrodata_in), MPI_BYTE,
+                                   recvTask, TAG_HYDRO_A,
+                                   &HydroDataGet[nbuffer[ThisTask]],
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
+      ruct hydrodata_in), MPI_BYTE,
+                                   recvTask, TAG_HYDRO_A, MPI_COMM_WORLD, &status
+      );
+                    }
+                }
+
+              for(j = 0; j < NTask; j++)
+                if((j ^ ngrp) < NTask)
+                  nbuffer[j] += nsend[(j ^ ngrp) * NTask + j];
+            }
+          tend = second();
+          timecommsumm += timediff(tstart, tend);
+
+          /* now do the imported particles */
+          tstart = second();
+          for(j = 0; j < nbuffer[ThisTask]; j++)
+            hydro_evaluate(j, 1);
+          tend = second();
+          timecomp += timediff(tstart, tend);
+
+          /* do a block to measure imbalance */
+          tstart = second();
+          MPI_Barrier(MPI_COMM_WORLD);
+          tend = second();
+          timeimbalance += timediff(tstart, tend);
+
+          /* get the result */
+          tstart = second();
+          for(j = 0; j < NTask; j++)
+            nbuffer[j] = 0;
+          for(ngrp = level; ngrp < (1 << PTask); ngrp++)
+            {
+              maxfill = 0;
+              for(j = 0; j < NTask; j++)
+                {
+                  if((j ^ ngrp) < NTask)
+                    if(maxfill < nbuffer[j] + nsend[(j ^ ngrp) * NTask + j])
+                      maxfill = nbuffer[j] + nsend[(j ^ ngrp) * NTask + j];
+                }
+              if(maxfill >= All.BunchSizeHydro)
+                break;
+
+              sendTask = ThisTask;
+              recvTask = ThisTask ^ ngrp;
+
+              if(recvTask < NTask)
+                {
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
+      Task + ThisTask] > 0)
+                    {
+                      /* send the results */
+                      MPI_Sendrecv(&HydroDataResult[nbuffer[ThisTask]],
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
+      ruct hydrodata_out),
+                                   MPI_BYTE, recvTask, TAG_HYDRO_B,
+                                   &HydroDataPartialResult[noffset[recvTask]],
+                                   nsend_local[recvTask] * sizeof(struct 
+      hydrodata_out),
+                                   MPI_BYTE, recvTask, TAG_HYDRO_B, MPI_COMM_WORL
+      D, &status);
+
+                      /* add the result to the particles */
+                      for(j = 0; j < nsend_local[recvTask]; j++)
+                        {
+                          source = j + noffset[recvTask];
+                          place = HydroDataIn[source].Index;
+
+                          for(k = 0; k < 3; k++)
+                            SphP[place].HydroAccel[k] += HydroDataPartialResult[s
+      ource].Acc[k];
+
+                          SphP[place].DtEntropy += HydroDataPartialResult[source]
+      .DtEntropy;
+
+                          if(SphP[place].MaxSignalVel < HydroDataPartialResult[so
+      urce].MaxSignalVel)
+                            SphP[place].MaxSignalVel = HydroDataPartialResult[sou
+      rce].MaxSignalVel;
+                        }
+                    }
+                }
+
+              for(j = 0; j < NTask; j++)
+                if((j ^ ngrp) < NTask)
+                  nbuffer[j] += nsend[(j ^ ngrp) * NTask + j];
+            }
+          tend = second();
+          timecommsumm += timediff(tstart, tend);
+
+          level = ngrp - 1;
+        }
+
+      MPI_Allgather(&ndone, 1, MPI_INT, ndonelist, 1, MPI_INT, MPI_COMM_WORLD);
+      for(j = 0; j < NTask; j++)
+        ntotleft -= ndonelist[j];
+    }
+
+  free(ndonelist);
+  free(nsend);
+  free(nsend_local);
+  free(nbuffer);
+  free(noffset);
+
+
+
+  /* do final operations on results */
+  tstart = second();
+
+  for(i = 0; i < N_gas; i++)
+    if(P[i].Ti_endstep == All.Ti_Current)
+      {
+        SphP[i].DtEntropy *= GAMMA_MINUS1 / (hubble_a2 * pow(SphP[i].Density, 
+      GAMMA_MINUS1));
+#ifdef SPH_BND_PARTICLES
+        if(P[i].ID == 0)
+          {
+            SphP[i].DtEntropy = 0;
+            for(k = 0; k < 3; k++)
+              SphP[i].HydroAccel[k] = 0;
+          }
+#endif
+      }
+
+  tend = second();
+  timecomp += timediff(tstart, tend);
+
+  /* collect some timing information */
+
+  MPI_Reduce(&timecomp, &sumt, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+  MPI_Reduce(&timecommsumm, &sumcomm, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+      
+  MPI_Reduce(&timeimbalance, &sumimbalance, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_W
+      ORLD);
+
+  if(ThisTask == 0)
+    {
+      All.CPU_HydCompWalk += sumt / NTask;
+      All.CPU_HydCommSumm += sumcomm / NTask;
+      All.CPU_HydImbalance += sumimbalance / NTask;
+    }
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{hydra_8c_a6789381bce7d1c316df8ecf04b47a607_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{hydra_8c_a6789381bce7d1c316df8ecf04b47a607_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{hydra_8c_a7f2a6bb4bade30e4e04ee29be22d0962}{
+\index{hydra.c@{hydra.c}!a3inv@{a3inv}}
+\index{a3inv@{a3inv}!hydra.c@{hydra.c}}
+\subsubsection[{a3inv}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf a3inv}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{hydra_8c_a7f2a6bb4bade30e4e04ee29be22d0962}
+
+
+Definition at line 19 of file hydra.c.
+
+
+
+Referenced by fill\_\-write\_\-buffer(), and hydro\_\-force().
+
+\hypertarget{hydra_8c_aec7bcb1d46812f966d89f66dc1a399ea}{
+\index{hydra.c@{hydra.c}!atime@{atime}}
+\index{atime@{atime}!hydra.c@{hydra.c}}
+\subsubsection[{atime}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf atime}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{hydra_8c_aec7bcb1d46812f966d89f66dc1a399ea}
+
+
+Definition at line 19 of file hydra.c.
+
+
+
+Referenced by hydro\_\-force().
+
+\hypertarget{hydra_8c_af62571c97dc75a691aeafead0528b369}{
+\index{hydra.c@{hydra.c}!boxHalf@{boxHalf}}
+\index{boxHalf@{boxHalf}!hydra.c@{hydra.c}}
+\subsubsection[{boxHalf}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf boxHalf}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{hydra_8c_af62571c97dc75a691aeafead0528b369}
+
+
+Definition at line 22 of file hydra.c.
+
+
+
+Referenced by hydro\_\-force().
+
+\hypertarget{hydra_8c_ac9067960018a06b81c117434c01f19cc}{
+\index{hydra.c@{hydra.c}!boxSize@{boxSize}}
+\index{boxSize@{boxSize}!hydra.c@{hydra.c}}
+\subsubsection[{boxSize}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf boxSize}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{hydra_8c_ac9067960018a06b81c117434c01f19cc}
+
+
+Definition at line 22 of file hydra.c.
+
+
+
+Referenced by hydro\_\-force().
+
+\hypertarget{hydra_8c_a10ab9a51765fc1b79e1282b3cccb2085}{
+\index{hydra.c@{hydra.c}!fac\_\-egy@{fac\_\-egy}}
+\index{fac\_\-egy@{fac\_\-egy}!hydra.c@{hydra.c}}
+\subsubsection[{fac\_\-egy}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac\_\-egy}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{hydra_8c_a10ab9a51765fc1b79e1282b3cccb2085}
+
+
+Definition at line 19 of file hydra.c.
+
+
+
+Referenced by hydro\_\-force().
+
+\hypertarget{hydra_8c_acb165aa9c0459664aba04d793812aa34}{
+\index{hydra.c@{hydra.c}!fac\_\-mu@{fac\_\-mu}}
+\index{fac\_\-mu@{fac\_\-mu}!hydra.c@{hydra.c}}
+\subsubsection[{fac\_\-mu}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac\_\-mu}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{hydra_8c_acb165aa9c0459664aba04d793812aa34}
+
+
+Definition at line 19 of file hydra.c.
+
+
+
+Referenced by hydro\_\-evaluate(), and hydro\_\-force().
+
+\hypertarget{hydra_8c_a99addeb2d520f107c59e4e228e8e76dd}{
+\index{hydra.c@{hydra.c}!fac\_\-vsic\_\-fix@{fac\_\-vsic\_\-fix}}
+\index{fac\_\-vsic\_\-fix@{fac\_\-vsic\_\-fix}!hydra.c@{hydra.c}}
+\subsubsection[{fac\_\-vsic\_\-fix}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac\_\-vsic\_\-fix}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{hydra_8c_a99addeb2d520f107c59e4e228e8e76dd}
+
+
+Definition at line 19 of file hydra.c.
+
+
+
+Referenced by hydro\_\-evaluate(), and hydro\_\-force().
+
+\hypertarget{hydra_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}{
+\index{hydra.c@{hydra.c}!hubble\_\-a@{hubble\_\-a}}
+\index{hubble\_\-a@{hubble\_\-a}!hydra.c@{hydra.c}}
+\subsubsection[{hubble\_\-a}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hubble\_\-a}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{hydra_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}
+
+
+Definition at line 19 of file hydra.c.
+
+
+
+Referenced by hydro\_\-force(), and prob\_\-of\_\-interaction().
+
+\hypertarget{hydra_8c_a15cf7694d03164516fd55696b858a125}{
+\index{hydra.c@{hydra.c}!hubble\_\-a2@{hubble\_\-a2}}
+\index{hubble\_\-a2@{hubble\_\-a2}!hydra.c@{hydra.c}}
+\subsubsection[{hubble\_\-a2}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hubble\_\-a2}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{hydra_8c_a15cf7694d03164516fd55696b858a125}
+
+
+Definition at line 19 of file hydra.c.
+
+
+
+Referenced by hydro\_\-evaluate(), and hydro\_\-force().
+
