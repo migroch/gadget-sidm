@@ -31,7 +31,7 @@ double kernel(double u);
  */
 double prob_of_interaction(double r, FLOAT Vtarget[3], FLOAT Vno[3], int tbegin, int tend)
   {
-    double dT, dloga, dV, dvx, dvy, dvz, prob,h,hubble_a;
+    double dT, dloga, dV, dvx, dvy, dvz, prob,h,hubble_a,mp;
 
     dvx = Vno[0]-Vtarget[0];
     dvy = Vno[1]-Vtarget[1];
@@ -40,16 +40,18 @@ double prob_of_interaction(double r, FLOAT Vtarget[3], FLOAT Vno[3], int tbegin,
 
     if(All.ComovingIntegrationOn)
       {
-        dloga = (tend - tbegin)*All.Timebase_interval;
+	r =  All.Time*r;
+	h = All.ForceSoftening[1]*All.Time;
+
+	dloga = (tend - tbegin)*All.Timebase_interval;
         hubble_a = (All.Omega0 / (All.Time * All.Time * All.Time)
                     + (1 - All.Omega0 - All.OmegaLambda) / (All.Time * All.Time) + All.OmegaLambda);
         hubble_a = All.Hubble * sqrt(hubble_a);
         dT = dloga/hubble_a;
 
         dV = dV/All.Time; /* Convert from internal velocity p = a^2 dx/dt to peculiar velocity v = a dx/dt*/
-        dV -= All.Time*hubble_a*r; /* Substract Hubble flow */
-
-        h = All.ForceSoftening[1]*All.Time;
+        dV -= hubble_a*r; /* Substract Hubble flow */
+   
       }
     else
       {
@@ -57,7 +59,8 @@ double prob_of_interaction(double r, FLOAT Vtarget[3], FLOAT Vno[3], int tbegin,
         h = All.ForceSoftening[1];
       }
 
-    prob = All.InteractionCrossSection*dV*dT*g_geo(r)/(h*h*h*All.UnitLength_in_cm*All.UnitLength_in_cm);
+    mp =  All.MassTable[1]*All.UnitMass_in_g*(2.998e10)*(2.998e10)*624.15097;  /* convert particle mass to Gev */
+    prob = mp*All.InteractionCrossSection*dV*dT*g_geo(r/h)/(h*h*h*All.UnitLength_in_cm*All.UnitLength_in_cm);
 
     return prob;
 
@@ -152,6 +155,8 @@ double geofactor_integ(double x, void * params)
   F.params = newparams;
 
   gsl_integration_qag(&F, -1.0, 1.0, 0, 1.0e-8, GSLWORKSIZE, GSL_INTEG_GAUSS41,workspace, &result, &abserr);
+
+  gsl_integration_workspace_free(workspace);
 
   return x*x*kernel(x)*result;
 }

@@ -391,6 +391,7 @@ void every_timestep_stuff(void)
 	  printf("\nBegin Step %d, Time: %g, Systemstep: %g, NselfInteractions: %lu\n", All.NumCurrentTiStep, All.Time, All.TimeStep, All.Nself_interactions);
 	  fflush(FdInfo);
 	}
+      All.Nself_interactions = 0;
 #else       
       if(All.ComovingIntegrationOn)
 	{

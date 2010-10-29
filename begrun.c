@@ -127,11 +127,11 @@ void begrun(void)
 #ifdef PMGRID
   long_range_init_regionsize();
 #endif
-
+ 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
   init_geofactor_table();
 #endif
-
+ 
   if(All.ComovingIntegrationOn)
     init_drift_table();
 

@@ -9,7 +9,7 @@
 
 #--------------------------------------- Basic operation mode of code
 #OPT   +=  -DPERIODIC 
-#OPT   +=  -DUNEQUALSOFTENINGS
+OPT   +=  -DUNEQUALSOFTENINGS
 
 
 #--------------------------------------- Things that are always recommended
@@ -79,9 +79,9 @@ OPT    += -DCOMPUTE_SELFINTERACTION_FORDARK
 
 #--------------------------------------- Select some defaults
 
-CC       =  mpicc               # sets the C-compiler
+CC       =  mpicc.mpich2               # sets the C-compiler
 OPTIMIZE =  -O3 -Wall -g        # sets optimization and warning flags
-MPICHLIB =  -lmpi
+MPICHLIB =  -lmpich
 HDF5LIB  =  -lhdf5 -lz
 
 #--------------------------------------- Select target computer
