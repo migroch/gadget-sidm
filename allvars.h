@@ -700,9 +700,15 @@ extern struct gravdata_in
     FLOAT Vel[3];
     int Ti_begstep;
     int Ti_endstep;
+    unsigned int ID;
 #endif
   }
   u;
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+#ifndef UNEQUALSOFTENINGS
+  int Type;
+#endif
+#endif
 #ifdef UNEQUALSOFTENINGS
   int Type;
 #ifdef ADAPTIVE_GRAVSOFT_FORGAS

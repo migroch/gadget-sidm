@@ -128,10 +128,11 @@ void gravity_tree(void)
 		      GravDataGet[nexport].u.Pos[k] = P[i].Pos[k];
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
 		    for(k = 0; k < 3; k++)
-		      GravDataGet[nexport].u.Vel[k] = P[i].Vel[k];
-  		  
+		      GravDataGet[nexport].u.Vel[k] = P[i].Vel[k];  		  
 		    GravDataGet[nexport].u.Ti_begstep = P[i].Ti_begstep;
 		    GravDataGet[nexport].u.Ti_endstep = P[i].Ti_endstep;
+		    GravDataGet[nexport].u.ID = P[i].ID;
+		    GravDataGet[nexport].Type = P[i].Type;
 #endif
 #ifdef UNEQUALSOFTENINGS
 		    GravDataGet[nexport].Type = P[i].Type;

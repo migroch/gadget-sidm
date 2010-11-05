@@ -1146,6 +1146,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
   double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob;
   FLOAT  targetVel[3];
   int targetBegstep,targetEndstep;
+  unsigned int targetID;
   int si_count,i;
   kick_x = 0;
   kick_y = 0;
@@ -1157,6 +1158,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
       targetVel[i] = P[target].Vel[i];
     targetBegstep = P[target].Ti_begstep;
     targetEndstep = P[target].Ti_endstep;
+    targetID      = P[target].ID;
   }
   else
   {
@@ -1164,6 +1166,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
       targetVel[i] = GravDataGet[target].u.Vel[i];
     targetBegstep = GravDataGet[target].u.Ti_begstep;
     targetEndstep = GravDataGet[target].u.Ti_endstep;
+    targetID      = GravDataGet[target].u.ID;
   }
 #endif
 
@@ -1193,6 +1196,9 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
       ptype = GravDataGet[target].Type;
 #else
       ptype = P[0].Type;
+#ifdef COMPUTE_SELFINTERACTION_FORDARK      
+      ptype = GravDataGet[target].Type;
+#endif
 #endif
       aold = All.ErrTolForceAcc * GravDataGet[target].w.OldAcc;
 #ifdef ADAPTIVE_GRAVSOFT_FORGAS
@@ -1417,7 +1423,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 	  {
 	    if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
 	      {
-	        if (r < 2.0 * h)
+	        if (r < 2.0 * All.ForceSoftening[1])
 	          {
 	            prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
 	            if (get_random_number(P[no].ID) < prob)
@@ -1515,6 +1521,7 @@ int force_treeevaluate_shortrange(int target, int mode)
   double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob;
   FLOAT targetVel[3];
   int targetBegstep,targetEndstep;
+  unsigned int targetID;
   int si_count,i;
   kick_x = 0;
   kick_y = 0;
@@ -1526,6 +1533,7 @@ int force_treeevaluate_shortrange(int target, int mode)
         targetVel[i] = P[target].Vel[i];
       targetBegstep = P[target].Ti_begstep;
       targetEndstep = P[target].Ti_endstep;
+      targetID      = P[target].ID;
     }
   else
     {
@@ -1533,6 +1541,7 @@ int force_treeevaluate_shortrange(int target, int mode)
         targetVel[i] = GravDataGet[target].u.Vel[i];
       targetBegstep = GravDataGet[target].u.Ti_begstep;
       targetEndstep = GravDataGet[target].u.Ti_endstep;
+      targetID      = GravDataGet[target].u.ID;
     }
 #endif
 
@@ -1562,6 +1571,9 @@ int force_treeevaluate_shortrange(int target, int mode)
       ptype = GravDataGet[target].Type;
 #else
       ptype = P[0].Type;
+#ifdef COMPUTE_SELFINTERACTION_FORDARK      
+      ptype = GravDataGet[target].Type;
+#endif
 #endif
       aold = All.ErrTolForceAcc * GravDataGet[target].w.OldAcc;
 #ifdef ADAPTIVE_GRAVSOFT_FORGAS
@@ -1839,7 +1851,7 @@ int force_treeevaluate_shortrange(int target, int mode)
 	    {
 	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
 		{
-		  if(r < 2.0 * h)
+		  if(r < 2.0 * All.ForceSoftenig[1])
 		    {
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
 		      if(get_random_number(P[no].ID) < prob)
