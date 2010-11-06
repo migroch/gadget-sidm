@@ -199,3 +199,113 @@ double kernel(double u)
     return 0.0;
   }
 }
+
+/*! This routine updates the interaction table each time there is an interaction.
+*/
+void update_interaction_table(unsigned int id1, unsigned int id2)
+{
+  int i,j,id1_index,id2_index;
+  id1 += 1;
+  id2 += 1;
+  id1_index = -1;
+  id2_index = -1;
+
+  for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+    {
+      if(InteractionTable[i][0] == id1) id1_index = i;
+      if(InteractionTable[i][0] == id2) id2_index = i;
+    }
+
+   if(id1_index == -1)
+    {
+      for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+	{
+	  if(InteractionTable[i][0] == 0)
+	    {
+	      InteractionTable[i][0] = id1;
+	      InteractionTable[i][1] = id2;
+	      break;
+	    }
+	  printf("ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH. Calling endrun()");
+	  endrun(1);
+	}
+    }
+  else
+    {
+      for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+	{
+	  if(InteractionTable[id1_index][j] == 0)
+	    {
+	      InteractionTable[id1_index][j] = id2;
+	      break;
+	    }
+	  printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERACTIONS. Calling endrun()");
+	  endrun(1);
+	}
+    } 
+
+  if(id2_index == -1)
+    {
+      for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+	{
+	  if(InteractionTable[i][0] == 0)
+	    {
+	      InteractionTable[i][0] = id2;
+	      InteractionTable[i][1] = id1;
+	      break;
+	    }
+	  printf("ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH. Calling endrun()");
+	  endrun(1);
+	}
+    }
+  else
+    {
+      for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+	{
+	  if(InteractionTable[id2_index][j] == 0)
+	    {
+	      InteractionTable[id2_index][j] = id1;
+	      break;
+	    }
+	  printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERACTIONS. Calling endrun()");
+	  endrun(1);
+	}
+    }
+}
+
+
+/*! This function checks if a pair of particles have interacted in the current time step. It looks at the InteractionTable
+  and returns 0 if the pair is not found and 1 if pair is found. This is used to avoid double counting of interactions.
+*/
+int check_interaction_table(unsigned int id1, unsigned int id2)
+{
+  int i,j,flag;
+  
+  flag = 0;
+  id1 += 1;
+  id2 += 1;
+  
+  for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+    { 
+      if(InteractionTable[i][0] == id1 || InteractionTable[i][0] == id2 )
+	{
+	  for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+	    {
+	      if(InteractionTable[i][0] == id1 && InteractionTable[i][j] == id2)
+		{ 
+		  flag = 1;
+		  break;
+		}
+	      if(InteractionTable[i][0] == id2 && InteractionTable[i][j] == id1)
+		{
+		  flag = 1;
+		  break;
+		}
+	    }
+	}
+    }
+
+  return flag;
+}
+
+

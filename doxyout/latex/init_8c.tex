@@ -13,7 +13,8 @@ Code for initialisation of a simulation from initial conditions.
 {\ttfamily \#include $<$mpi.h$>$}\par
 {\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for init.c:\nopagebreak
+Include dependency graph for init.c:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -50,7 +51,7 @@ Definition in file \hyperlink{init_8c_source}{init.c}.
 \label{init_8c_a1b96c5b41f1209ee91cd369f01a52352}
 This routine computes the mass content of the box and compares it to the specified value of Omega-\/matter. If discrepant, the run is terminated. 
 
-Definition at line 161 of file init.c.
+Definition at line 169 of file init.c.
 
 
 
@@ -98,7 +99,8 @@ Referenced by init().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -109,7 +111,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -199,6 +202,14 @@ Referenced by begrun().
 
   All.NumCurrentTiStep = 0;     /* setup some counters */
   All.SnapshotFileCount = 0;
+
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+  All.Nself_interactions = 0;
+  for (i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+    for(j = 0; j < PARTICLE_MAX_INTERACTIONS; j++)
+      InteractionTable[i][j]= 0;
+#endif
+
   if(RestartFlag == 2)
     All.SnapshotFileCount = atoi(All.InitCondFile + strlen(All.InitCondFile) - 3)
        + 1;
@@ -302,7 +313,8 @@ Referenced by begrun().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -313,7 +325,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -333,7 +346,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{init_8c_abca44f066552d38c44a1cd6020d349d5}
 This function is used to find an initial smoothing length for each SPH particle. It guarantees that the number of neighbours will be between desired\_\-ngb-\/MAXDEV and desired\_\-ngb+MAXDEV. For simplicity, a first guess of the smoothing length is provided to the function \hyperlink{density_8c_ad86cdeb9e3bfbe9af379ac9f7daf194c}{density()}, which will then iterate if needed to find the right smoothing length. 
 
-Definition at line 198 of file init.c.
+Definition at line 206 of file init.c.
 
 
 
@@ -385,7 +398,8 @@ Referenced by init().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -396,7 +410,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

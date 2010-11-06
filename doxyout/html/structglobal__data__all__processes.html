@@ -167,7 +167,7 @@ Data Fields</h2></td></tr>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>This structure contains data which is the SAME for all tasks (mostly code parameters read from the parameter file). Holding this data in a structure is convenient for writing/reading the restart file, and it allows the introduction of new global variables in a simple way. The only thing to do is to introduce them into this structure. </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00251">251</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00255">255</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 <hr/><h2>Field Documentation</h2>
 <a class="anchor" id="a14b9df6a6579d2ce6ef7c86aa0230217"></a><!-- doxytag: member="global_data_all_processes::ArtBulkViscConst" ref="a14b9df6a6579d2ce6ef7c86aa0230217" args="" -->
 <div class="memitem">
@@ -181,7 +181,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Sets the parameter <img class="formulaInl" alt="$\alpha$" src="form_0.png"/> of the artificial viscosity </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00293">293</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00298">298</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -199,9 +199,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Gives the scale of the long-range/short-range split (in mesh-cells), both for the coarse and the high-res mesh </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00379">379</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00384">384</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="forcetree_8c_source.html#l02474">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01491">force_treeevaluate_shortrange()</a>, <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, and <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, and <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>.</p>
 
 </div>
 </div>
@@ -217,9 +217,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Boxsize in case periodic boundary conditions are used </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00264">264</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00269">269</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="init_8c_source.html#l00161">check_omega()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="predict_8c_source.html#l00103">do_box_wrapping()</a>, <a class="el" href="forcetree_8c_source.html#l03060">ewald_init()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02890">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l01915">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02197">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02474">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01491">force_treeevaluate_shortrange()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="ngb_8c_source.html#l00358">ngb_treeallocate()</a>, <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
+<p>Referenced by <a class="el" href="init_8c_source.html#l00169">check_omega()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="predict_8c_source.html#l00103">do_box_wrapping()</a>, <a class="el" href="forcetree_8c_source.html#l03079">ewald_init()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02909">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="ngb_8c_source.html#l00358">ngb_treeallocate()</a>, <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
 </div>
 </div>
@@ -235,7 +235,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>size of communication buffer in MB </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00274">274</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00279">279</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
@@ -253,7 +253,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>number of particles fitting into the communication buffer in the density computation </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00276">276</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00281">281</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, and <a class="el" href="density_8c_source.html#l00056">density()</a>.</p>
 
@@ -271,7 +271,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>number of particles fitting into the communication buffer in the domain decomposition </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00278">278</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00283">283</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, and <a class="el" href="domain_8c_source.html#l00534">domain_findExchangeNumbers()</a>.</p>
 
@@ -289,7 +289,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>number of particles fitting into the buffer in the parallel tree-force algorithm </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00275">275</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00280">280</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, and <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>.</p>
 
@@ -307,7 +307,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>number of particles fitting into the communication buffer in the SPH hydrodynamical force computation </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00277">277</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00282">282</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, and <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>.</p>
 
@@ -325,9 +325,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>flags that comoving integration is enabled </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00333">333</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00338">338</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>, <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>, <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
 </div>
 </div>
@@ -343,7 +343,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>lower left corner of coarse and high-res PM-mesh </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00381">381</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00386">386</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 </div>
 </div>
@@ -359,7 +359,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>SPH-Courant factor </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00433">433</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00438">438</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -377,7 +377,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>accumulated time used for communication, and for collecting partial results, in tree-gravity </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00399">399</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00404">404</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -395,7 +395,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>cumulative time spent for domain decomposition </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00396">396</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00401">401</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -413,7 +413,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>time needed to iterate on correct neighbour numbers </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00405">405</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00410">410</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -431,7 +431,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>cumulative time used for gravity computation (tree-algorithm only) </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00394">394</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00399">399</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -449,7 +449,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>cumulative time used for communication in SPH, and for collecting partial results </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00402">402</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00407">407</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -467,7 +467,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>time used for actual SPH computations, including neighbour search </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00401">401</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00406">406</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -485,7 +485,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>cumulative time lost due to work-load imbalance in SPH </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00403">403</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00408">408</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -503,7 +503,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>cumulative time spent for SPH related computations </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00404">404</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00409">409</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -521,7 +521,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>cumulative time lost accross all processors as work-load imbalance in gravitational tree </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00400">400</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00405">405</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -539,7 +539,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>time required to establish Peano-Hilbert order </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00409">409</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00414">414</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -557,7 +557,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>time used for long-range gravitational force </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00408">408</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00413">413</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -575,7 +575,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>time used for computing gravitational potentials </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00395">395</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00400">400</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -593,7 +593,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>cumulative time to drift the system forward in time, including dynamic tree updates </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00406">406</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00411">411</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, and <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>.</p>
 
@@ -611,7 +611,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>time used for writing snapshot files </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00397">397</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00402">402</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, and <a class="el" href="io_8c_source.html#l00033">savepositions()</a>.</p>
 
@@ -629,7 +629,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>time used for determining new timesteps, and for organizing the timestepping, including kicks of active particles </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00407">407</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00412">412</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -647,7 +647,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>cumulative time spent for domain decomposition </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00398">398</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00403">403</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -665,7 +665,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>time spent for constructing the gravitational tree </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00392">392</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00397">397</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -683,7 +683,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>actual time spent for pure tree-walks </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00393">393</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00398">398</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -701,7 +701,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>name of file with cpu-time statistics </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00479">479</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00484">484</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -719,7 +719,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>cpu-time between regularly generated restart files </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00346">346</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00351">351</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -737,9 +737,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Desired number of SPH neighbours </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00290">290</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00295">295</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="init_8c_source.html#l00198">setup_smoothinglengths()</a>.</p>
+<p>Referenced by <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="init_8c_source.html#l00206">setup_smoothinglengths()</a>.</p>
 
 </div>
 </div>
@@ -755,7 +755,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>name of file with energy statistics </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00478">478</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00483">483</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -773,9 +773,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>parameter for relative opening criterion in tree walk </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00414">414</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00419">419</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02197">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02474">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01491">force_treeevaluate_shortrange()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
 </div>
 </div>
@@ -791,7 +791,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>accuracy tolerance parameter <img class="formulaInl" alt="$ \eta $" src="form_1.png"/> for timestep criterion. The timestep is <img class="formulaInl" alt="$ \Delta t = \sqrt{\frac{2 \eta eps}{a}} $" src="form_2.png"/> </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00419">419</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00424">424</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -809,9 +809,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>BH tree opening angle </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00413">413</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00418">418</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l01915">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02197">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02474">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01491">force_treeevaluate_shortrange()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
+<p>Referenced by <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
 </div>
 </div>
@@ -827,9 +827,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>the same, but multiplied by a factor 2.8 - at that scale the force is Newtonian </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00464">464</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00469">469</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02890">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l01915">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02197">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02474">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01491">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l00732">force_treeupdate_pseudos()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02909">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l00732">force_treeupdate_pseudos()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -845,9 +845,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Gravity-constant in internal units </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00307">307</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00312">312</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="init_8c_source.html#l00161">check_omega()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="init_8c_source.html#l00169">check_omega()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
 </div>
 </div>
@@ -863,7 +863,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>If set to zero in the parameterfile, the internal value of the gravitational constant is set to the Newtonian value based on the system of units specified. Otherwise the value provided is taken as internal gravity constant G. </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00317">317</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00322">322</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
@@ -881,9 +881,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Hubble-constant in internal units </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00324">324</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00329">329</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="init_8c_source.html#l00161">check_omega()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="driftfac_8c_source.html#l00179">drift_integ()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="driftfac_8c_source.html#l00191">gravkick_integ()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="driftfac_8c_source.html#l00204">hydrokick_integ()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="init_8c_source.html#l00169">check_omega()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="driftfac_8c_source.html#l00179">drift_integ()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="driftfac_8c_source.html#l00191">gravkick_integ()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="driftfac_8c_source.html#l00204">hydrokick_integ()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
 </div>
 </div>
@@ -899,7 +899,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>little `h', i.e. Hubble constant in units of 100 km/s/Mpc. Only needed to get absolute physical values for cooling physics </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00328">328</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00333">333</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
@@ -917,7 +917,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>selects different versions of IC file-format </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00266">266</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00271">271</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="read__ic_8c_source.html#l00615">find_files()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -935,7 +935,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>name of log-file with a list of the timesteps taken </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00480">480</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00485">485</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -953,7 +953,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>filename of initial conditions </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00475">475</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00480">480</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="init_8c_source.html#l00020">init()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -971,7 +971,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>may be used to set the temperature in the IC's </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00294">294</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00299">299</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -989,9 +989,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Table with particle masses for particle types with equal mass. If particle masses are all equal for one type, the corresponding entry in MassTable is set to this value, allowing the size of the snapshot files to be reduced. </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00467">467</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00472">472</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="io_8c_source.html#l00465">get_particles_in_block()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
+<p>Referenced by <a class="el" href="io_8c_source.html#l00465">get_particles_in_block()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
 </div>
 </div>
@@ -1007,7 +1007,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Maximum allowed deviation neighbour number </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00291">291</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00296">296</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -1025,9 +1025,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>This gives the maxmimum number of particles that can be stored on one processor. </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00261">261</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00266">266</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="allocate_8c_source.html#l00103">allocate_memory()</a>, <a class="el" href="density_8c_source.html#l00467">density_evaluate()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00534">domain_findExchangeNumbers()</a>, <a class="el" href="forcetree_8c_source.html#l00346">force_insert_pseudo_particles()</a>, <a class="el" href="forcetree_8c_source.html#l02808">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l01915">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02197">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02474">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01491">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="allocate_8c_source.html#l00144">free_memory()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
+<p>Referenced by <a class="el" href="allocate_8c_source.html#l00103">allocate_memory()</a>, <a class="el" href="density_8c_source.html#l00467">density_evaluate()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00534">domain_findExchangeNumbers()</a>, <a class="el" href="forcetree_8c_source.html#l00346">force_insert_pseudo_particles()</a>, <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="allocate_8c_source.html#l00144">free_memory()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
 </div>
 </div>
@@ -1043,7 +1043,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>This gives the maxmimum number of SPH particles that can be stored on one processor. </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00262">262</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00267">267</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00103">allocate_memory()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00534">domain_findExchangeNumbers()</a>, <a class="el" href="allocate_8c_source.html#l00144">free_memory()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -1061,7 +1061,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>this determines a global timestep criterion for cosmological simulations in comoving coordinates. To this end, the code computes the rms velocity of all particles, and limits the timestep such that the rms displacement is a fraction of the mean particle separation (determined from the particle mass and the cosmological parameters). This parameter specifies this fraction. </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00426">426</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00431">431</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -1079,7 +1079,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>maximum allowed timestep </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00424">424</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00429">429</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -1097,7 +1097,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>the minimum allowed temperature expressed as energy per unit mass </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00296">296</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00301">301</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
@@ -1115,9 +1115,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>minimum allowed SPH smoothing length </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00446">446</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00451">451</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1133,9 +1133,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>minimum allowed SPH smoothing length in units of SPH gravitational softening length </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00445">445</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00450">450</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1151,7 +1151,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>may be used to set a floor for the gas temperature </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00295">295</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00300">300</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
@@ -1169,7 +1169,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>minimum allowed timestep. Normally, the simulation terminates if the timestep determined by the timestep criteria falls below this limit. </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00422">422</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00427">427</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -1187,7 +1187,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>counts the number of system steps taken up to this point </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00350">350</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00355">355</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -1205,7 +1205,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>number of files in multi-file snapshot dumps </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00270">270</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00275">275</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, <a class="el" href="io_8c_source.html#l00033">savepositions()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
@@ -1223,7 +1223,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>maximum number of files that may be written simultaneously when writing/reading restart-files, or when writing snapshot files </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00271">271</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00276">276</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="io_8c_source.html#l00033">savepositions()</a>.</p>
 
@@ -1241,7 +1241,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>count particle updates since last domain decomposition </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00302">302</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00307">307</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, and <a class="el" href="io_8c_source.html#l00033">savepositions()</a>.</p>
 
@@ -1259,9 +1259,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>matter density in units of the critical density (at z=0) </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00325">325</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00330">330</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="init_8c_source.html#l00161">check_omega()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="driftfac_8c_source.html#l00179">drift_integ()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="driftfac_8c_source.html#l00191">gravkick_integ()</a>, <a class="el" href="driftfac_8c_source.html#l00214">growthfactor_integ()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="driftfac_8c_source.html#l00204">hydrokick_integ()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="init_8c_source.html#l00169">check_omega()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="driftfac_8c_source.html#l00179">drift_integ()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="driftfac_8c_source.html#l00191">gravkick_integ()</a>, <a class="el" href="driftfac_8c_source.html#l00214">growthfactor_integ()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="driftfac_8c_source.html#l00204">hydrokick_integ()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
 </div>
 </div>
@@ -1277,7 +1277,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>baryon density in units of the critical density (at z=0) </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00327">327</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00332">332</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -1295,7 +1295,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>vaccum energy density relative to crictical density (at z=0) </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00326">326</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00331">331</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="driftfac_8c_source.html#l00179">drift_integ()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="driftfac_8c_source.html#l00191">gravkick_integ()</a>, <a class="el" href="driftfac_8c_source.html#l00214">growthfactor_integ()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="driftfac_8c_source.html#l00204">hydrokick_integ()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
@@ -1313,7 +1313,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>output directory of the code </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00476">476</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00481">481</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, <a class="el" href="run_8c_source.html#l00020">run()</a>, and <a class="el" href="io_8c_source.html#l00033">savepositions()</a>.</p>
 
@@ -1331,7 +1331,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>name of file with list of desired output times </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00484">484</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00489">489</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -1349,7 +1349,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>number of output times stored in the table of desired output times </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00487">487</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00492">492</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, <a class="el" href="begrun_8c_source.html#l00769">read_outputlist()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -1367,7 +1367,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>flags that output times are listed in a specified file </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00338">338</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00343">343</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -1385,7 +1385,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>table with desired output times </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00486">486</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00491">491</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, and <a class="el" href="begrun_8c_source.html#l00769">read_outputlist()</a>.</p>
 
@@ -1403,7 +1403,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>in order to maintain work-load balance, the particle load will usually NOT be balanced. Each processor allocates memory for PartAllocFactor times the average number of particles to allow for that </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00280">280</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00285">285</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -1421,7 +1421,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>flags that periodic boundaries are enabled </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00334">334</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00339">339</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -1439,7 +1439,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>end of present long-range timestep </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00372">372</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00377">377</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, and <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>.</p>
 
@@ -1457,7 +1457,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>begin of present long-range timestep </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00371">371</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00376">376</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, and <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>.</p>
 
@@ -1475,9 +1475,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Gives the maximum radius for which the short-range force is evaluated with the tree (in mesh-cells), both for the coarse and the high-res mesh </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00380">380</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00385">385</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="forcetree_8c_source.html#l02474">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01491">force_treeevaluate_shortrange()</a>, and <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>.</p>
+<p>Referenced by <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, and <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>.</p>
 
 </div>
 </div>
@@ -1493,7 +1493,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>basename of restart-files </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00482">482</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00487">487</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -1511,7 +1511,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>name of script-file that will be executed for automatic restart </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00483">483</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00488">488</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -1529,7 +1529,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>flags that automatic resubmission of job to queue system is enabled </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00335">335</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00340">340</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -1547,7 +1547,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>selects different versions of snapshot file-formats </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00268">268</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00273">273</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, <a class="el" href="io_8c_source.html#l00033">savepositions()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
@@ -1565,7 +1565,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>basename to construct the names of snapshotf files </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00477">477</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00482">482</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="io_8c_source.html#l00033">savepositions()</a>.</p>
 
@@ -1583,7 +1583,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>number of snapshot that is written next </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00343">343</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00348">348</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -1601,9 +1601,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>comoving gravitational softening lengths for type 5 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00454">454</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00459">459</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1619,9 +1619,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>maximum physical softening length for type 5 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00461">461</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00466">466</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1637,9 +1637,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>comoving gravitational softening lengths for type 3 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00452">452</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00457">457</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1655,9 +1655,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>maximum physical softening length for type 3 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00459">459</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00464">464</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1673,9 +1673,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>comoving gravitational softening lengths for type 2 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00451">451</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00456">456</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1691,9 +1691,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>maximum physical softening length for type 2 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00458">458</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00463">463</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1709,9 +1709,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>comoving gravitational softening lengths for type 0 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00449">449</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00454">454</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1727,9 +1727,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>maximum physical softening length for type 0 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00456">456</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00461">461</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1745,9 +1745,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>comoving gravitational softening lengths for type 1 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00450">450</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00455">455</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1763,9 +1763,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>maximum physical softening length for type 1 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00457">457</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00462">462</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1781,9 +1781,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>comoving gravitational softening lengths for type 4 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00453">453</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00458">458</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1799,9 +1799,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>maximum physical softening length for type 4 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00460">460</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00465">465</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1817,9 +1817,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>current (comoving) gravitational softening lengths for each particle type </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00463">463</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00468">468</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, and <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>.</p>
+<p>Referenced by <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, and <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>.</p>
 
 </div>
 </div>
@@ -1835,7 +1835,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>current time on integer timeline </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00364">364</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00369">369</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -1853,7 +1853,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>next output time on integer timeline </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00365">365</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00370">370</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, and <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>.</p>
 
@@ -1871,9 +1871,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>current time of the simulation </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00355">355</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00360">360</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="run_8c_source.html#l00413">energy_statistics()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="forcetree_8c_source.html#l00061">force_treebuild()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, <a class="el" href="run_8c_source.html#l00020">run()</a>, <a class="el" href="gravtree_8c_source.html#l00464">set_softenings()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="run_8c_source.html#l00437">energy_statistics()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="forcetree_8c_source.html#l00061">force_treebuild()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, <a class="el" href="run_8c_source.html#l00020">run()</a>, <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
 </div>
 </div>
@@ -1889,7 +1889,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>factor to convert from floating point time interval to integer timeline </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00363">363</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00368">368</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="driftfac_8c_source.html#l00067">get_drift_factor()</a>, <a class="el" href="driftfac_8c_source.html#l00105">get_gravkick_factor()</a>, <a class="el" href="driftfac_8c_source.html#l00142">get_hydrokick_factor()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, and <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>.</p>
 
@@ -1907,7 +1907,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>time of initial conditions of the simulation </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00356">356</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00361">361</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="driftfac_8c_source.html#l00026">init_drift_table()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>.</p>
 
@@ -1925,7 +1925,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>simulation time interval between snapshot files </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00344">344</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00349">349</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -1943,7 +1943,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>simulation time interval between computations of energy statistics </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00348">348</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00353">353</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -1961,7 +1961,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>cpu-time when last restart-file was written </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00347">347</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00352">352</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -1979,7 +1979,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>simulation time when the energy statistics was computed the last time </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00349">349</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00354">354</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="init_8c_source.html#l00020">init()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -1997,7 +1997,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>CPU time limit as defined in parameterfile </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00391">391</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00396">396</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -2015,7 +2015,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>marks the point of time until the simulation is to be evolved </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00358">358</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00363">363</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="driftfac_8c_source.html#l00026">init_drift_table()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -2033,7 +2033,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>simulation time of first snapshot files </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00345">345</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00350">350</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -2051,7 +2051,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>difference between current times of previous and current timestep </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00357">357</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00362">362</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, and <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>.</p>
 
@@ -2069,7 +2069,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>name of file with performance metrics of gravitational tree algorithm </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00481">481</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00486">486</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -2087,7 +2087,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>total extension of coarse and high-res PM-mesh </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00385">385</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00390">390</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 </div>
 </div>
@@ -2103,7 +2103,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>total gas particle number (global value) </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00259">259</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00264">264</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -2121,7 +2121,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>counts total number of force computations </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00301">301</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00306">306</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, and <a class="el" href="init_8c_source.html#l00020">init()</a>.</p>
 
@@ -2139,7 +2139,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>total particle numbers (global value) </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00258">258</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00263">263</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l01049">domain_topsplit()</a>, <a class="el" href="domain_8c_source.html#l00982">domain_topsplit_local()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="io_8c_source.html#l00033">savepositions()</a>.</p>
 
@@ -2157,7 +2157,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Each processor allocates a number of nodes which is TreeAllocFactor times the maximum(!) number of particles. Note: A typical local tree for N particles needs usually about ~0.65*N nodes. </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00284">284</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00289">289</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -2175,7 +2175,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>controls frequency of domain decompositions </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00438">438</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00443">443</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="io_8c_source.html#l00033">savepositions()</a>.</p>
 
@@ -2193,7 +2193,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>determines tree cell-opening criterion: 0 for Barnes-Hut, 1 for relative criterion </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00336">336</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00341">341</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -2211,7 +2211,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>gives type of timestep criterion (only 0 supported right now - unlike gadget-1.1) </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00337">337</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00342">342</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, and <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>.</p>
 
@@ -2229,7 +2229,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>factor to convert internal cooling rate to cgs units </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00314">314</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00319">319</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
@@ -2247,7 +2247,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>factor to convert internal length unit to g/cm^3*h^2 </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00313">313</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00318">318</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
@@ -2265,7 +2265,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>factor to convert internal energy to cgs units </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00315">315</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00320">320</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
@@ -2283,7 +2283,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>factor to convert internal length unit to cm/h </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00311">311</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00316">316</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
@@ -2301,9 +2301,9 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>factor to convert internal mass unit to grams/h </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00309">309</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00314">314</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
-<p>Referenced by <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
+<p>Referenced by <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
 </div>
 </div>
@@ -2319,7 +2319,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>factor to convert internal pressure unit to cgs units (little 'h' still around!) </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00312">312</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00317">317</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
@@ -2337,7 +2337,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>factor to convert internal time to megayears/h </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00316">316</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00321">321</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
@@ -2355,7 +2355,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>factor to convert internal time unit to seconds/h </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00308">308</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00313">313</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
@@ -2373,7 +2373,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>factor to convert intqernal velocity unit to cm/sec </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00310">310</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00315">315</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, and <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>.</p>
 
@@ -2391,7 +2391,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>upper right corner of coarse and high-res PM-mesh </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00382">382</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00387">387</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 </div>
 </div>
@@ -2407,7 +2407,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>maximum particle coordinates both for coarse and high-res PM-mesh </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00384">384</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00389">389</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 </div>
 </div>
@@ -2423,7 +2423,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>minimum particle coordinates both for coarse and high-res PM-mesh </p>
 
-<p>Definition at line <a class="el" href="allvars_8h_source.html#l00383">383</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8h_source.html#l00388">388</a> of file <a class="el" href="allvars_8h_source.html">allvars.h</a>.</p>
 
 </div>
 </div>
@@ -2431,7 +2431,7 @@ Data Fields</h2></td></tr>
 <li><a class="el" href="allvars_8h_source.html">allvars.h</a></li>
 </ul>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 26 2010 21:34:17 for GADGET-2 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Nov 5 2010 18:27:05 for GADGET-2 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

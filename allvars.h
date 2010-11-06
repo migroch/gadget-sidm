@@ -239,7 +239,11 @@ extern void *CommBuffer;   /*!< points to communication buffer, which is used in
                                 parallel tree-force computation, the SPH routines, etc. */
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-#define GEOFACTOR_TABLE_LENGTH 1000  /*!< length of the lookup table used to hold the geometric factor */
+#define GEOFACTOR_TABLE_LENGTH 1000  /*!< length of the table used for the geometric factor spline */
+#define INTERACTION_TABLE_LENGTH 20000 /*!< This should be set to twice the maximum number of interactions
+					 you expect at each timestep */
+#define PARTICLE_MAX_INTERACTIONS 1000 /*!< Maximum number of interactions a particle can have at each time step */
+extern unsigned int InteractionTable[INTERACTION_TABLE_LENGTH][PARTICLE_MAX_INTERACTIONS + 1];
 extern double GeoFactorTable[GEOFACTOR_TABLE_LENGTH];
 #endif
 

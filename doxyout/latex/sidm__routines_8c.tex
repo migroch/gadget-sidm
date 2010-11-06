@@ -46,6 +46,10 @@ double \hyperlink{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8}{prob\_\-o
 void \hyperlink{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}{calculate\_\-interact\_\-kick} (float Vtarget\mbox{[}3\mbox{]}, float Vno\mbox{[}3\mbox{]}, double kick\_\-target\mbox{[}3\mbox{]}, double kick\_\-no\mbox{[}3\mbox{]})
 \item 
 void \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\_\-geofactor\_\-table} (void)
+\item 
+void \hyperlink{sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719}{update\_\-interaction\_\-table} (unsigned int id1, unsigned int id2)
+\item 
+int \hyperlink{sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d}{check\_\-interaction\_\-table} (unsigned int id1, unsigned int id2)
 \end{DoxyCompactItemize}
 
 
@@ -87,7 +91,7 @@ Referenced by geofactor\_\-integ(), and init\_\-geofactor\_\-table().
 \label{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}
 This routine sets the kicks for each particle after it has been decided that they will interact. It uses an algorithm tha conserves energy and momentum but picks a random direction so it does not conserves angular momentum. 
 
-Definition at line 91 of file sidm\_\-routines.c.
+Definition at line 94 of file sidm\_\-routines.c.
 
 
 
@@ -136,6 +140,72 @@ Here is the caller graph for this function:
 \end{figure}
 
 
+\hypertarget{sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d}{
+\index{sidm\_\-routines.c@{sidm\_\-routines.c}!check\_\-interaction\_\-table@{check\_\-interaction\_\-table}}
+\index{check\_\-interaction\_\-table@{check\_\-interaction\_\-table}!sidm_routines.c@{sidm\_\-routines.c}}
+\subsubsection[{check\_\-interaction\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int check\_\-interaction\_\-table (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ id1, }
+\item[{unsigned int}]{ id2}
+\end{DoxyParamCaption}
+)}}
+\label{sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d}
+This function checks if a pair of particles have interacted in the current time step. It looks at the InteractionTable and returns 0 if the pair is not found and 1 if pair is found. This is used to avoid double counting of interactions. 
+
+Definition at line 280 of file sidm\_\-routines.c.
+
+
+
+Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange().
+
+
+
+
+\begin{DoxyCode}
+{
+  int i,j,flag;
+  
+  flag = 0;
+  id1 += 1;
+  id2 += 1;
+  
+  for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+    { 
+      if(InteractionTable[i][0] == id1 || InteractionTable[i][0] == id2 )
+        {
+          for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+            {
+              if(InteractionTable[i][0] == id1 && InteractionTable[i][j] == id2)
+                { 
+                  flag = 1;
+                  break;
+                }
+              if(InteractionTable[i][0] == id2 && InteractionTable[i][j] == id1)
+                {
+                  flag = 1;
+                  break;
+                }
+            }
+        }
+    }
+
+  return flag;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d}{
 \index{sidm\_\-routines.c@{sidm\_\-routines.c}!g\_\-geo@{g\_\-geo}}
 \index{g\_\-geo@{g\_\-geo}!sidm_routines.c@{sidm\_\-routines.c}}
@@ -147,7 +217,7 @@ Here is the caller graph for this function:
 \label{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d}
 This function returns the value of the geometrical factor needed for the calculation of the interaction probability. 
 
-Definition at line 69 of file sidm\_\-routines.c.
+Definition at line 72 of file sidm\_\-routines.c.
 
 
 
@@ -201,7 +271,7 @@ Here is the caller graph for this function:
 \label{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7}
 This function returns the integrand of the angular part of the integral done on \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\_\-geofactor\_\-table()}. 
 
-Definition at line 162 of file sidm\_\-routines.c.
+Definition at line 167 of file sidm\_\-routines.c.
 
 
 
@@ -247,7 +317,7 @@ Here is the call graph for this function:
 \label{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc}
 This function returns the integrand of the numerical integration done on \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\_\-geofactor\_\-table()}. 
 
-Definition at line 138 of file sidm\_\-routines.c.
+Definition at line 141 of file sidm\_\-routines.c.
 
 
 
@@ -274,6 +344,8 @@ References GSLWORKSIZE, kernel(), and workspace.
 
   gsl_integration_qag(&F, -1.0, 1.0, 0, 1.0e-8, GSLWORKSIZE, GSL_INTEG_GAUSS41,wo
       rkspace, &result, &abserr);
+
+  gsl_integration_workspace_free(workspace);
 
   return x*x*kernel(x)*result;
 }
@@ -303,7 +375,7 @@ Here is the call graph for this function:
 \label{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}
 This routine initialazes the table that will be used to get the geometrical factor as a function of the two particle separations. It populates a table with the results of the numerical integration. 
 
-Definition at line 117 of file sidm\_\-routines.c.
+Definition at line 120 of file sidm\_\-routines.c.
 
 
 
@@ -365,7 +437,7 @@ $<$ Coefficients for SPH spline kernel and its derivative
 
 
 
-Definition at line 175 of file sidm\_\-routines.c.
+Definition at line 180 of file sidm\_\-routines.c.
 
 
 
@@ -399,7 +471,8 @@ Referenced by geofactor\_\-angle\_\-integ(), and geofactor\_\-integ().
   {
     return 0.0;
   }
-}\end{DoxyCode}
+}
+\end{DoxyCode}
 
 
 
@@ -433,7 +506,7 @@ Definition at line 32 of file sidm\_\-routines.c.
 
 
 
-References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::ForceSoftening, g\_\-geo(), global\_\-data\_\-all\_\-processes::Hubble, hubble\_\-a, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, global\_\-data\_\-all\_\-processes::Time, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, and global\_\-data\_\-all\_\-processes::UnitLength\_\-in\_\-cm.
+References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::ForceSoftening, g\_\-geo(), global\_\-data\_\-all\_\-processes::Hubble, hubble\_\-a, global\_\-data\_\-all\_\-processes::MassTable, mp, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, global\_\-data\_\-all\_\-processes::Time, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, global\_\-data\_\-all\_\-processes::UnitLength\_\-in\_\-cm, and global\_\-data\_\-all\_\-processes::UnitMass\_\-in\_\-g.
 
 
 
@@ -444,7 +517,7 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
 
 \begin{DoxyCode}
   {
-    double dT, dloga, dV, dvx, dvy, dvz, prob,h,hubble_a;
+    double dT, dloga, dV, dvx, dvy, dvz, prob,h,hubble_a,mp;
 
     dvx = Vno[0]-Vtarget[0];
     dvy = Vno[1]-Vtarget[1];
@@ -453,6 +526,9 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
 
     if(All.ComovingIntegrationOn)
       {
+        r =  All.Time*r;
+        h = All.ForceSoftening[1]*All.Time;
+
         dloga = (tend - tbegin)*All.Timebase_interval;
         hubble_a = (All.Omega0 / (All.Time * All.Time * All.Time)
                     + (1 - All.Omega0 - All.OmegaLambda) / (All.Time * All.Time) 
@@ -462,9 +538,8 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
 
         dV = dV/All.Time; /* Convert from internal velocity p = a^2 dx/dt to pecu
       liar velocity v = a dx/dt*/
-        dV -= All.Time*hubble_a*r; /* Substract Hubble flow */
-
-        h = All.ForceSoftening[1]*All.Time;
+        dV -= hubble_a*r; /* Substract Hubble flow */
+   
       }
     else
       {
@@ -472,7 +547,9 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
         h = All.ForceSoftening[1];
       }
 
-    prob = All.InteractionCrossSection*dV*dT*g_geo(r)/(h*h*h*All.
+    mp =  All.MassTable[1]*All.UnitMass_in_g*(2.998e10)*(2.998e10)*624.15097;  /*
+       convert particle mass to Gev */
+    prob = mp*All.InteractionCrossSection*dV*dT*g_geo(r/h)/(h*h*h*All.
       UnitLength_in_cm*All.UnitLength_in_cm);
 
     return prob;
@@ -501,6 +578,132 @@ Here is the caller graph for this function:
 \begin{center}
 \leavevmode
 \includegraphics[width=400pt]{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719}{
+\index{sidm\_\-routines.c@{sidm\_\-routines.c}!update\_\-interaction\_\-table@{update\_\-interaction\_\-table}}
+\index{update\_\-interaction\_\-table@{update\_\-interaction\_\-table}!sidm_routines.c@{sidm\_\-routines.c}}
+\subsubsection[{update\_\-interaction\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}void update\_\-interaction\_\-table (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ id1, }
+\item[{unsigned int}]{ id2}
+\end{DoxyParamCaption}
+)}}
+\label{sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719}
+This routine updates the interaction table each time there is an interaction. 
+
+Definition at line 205 of file sidm\_\-routines.c.
+
+
+
+References endrun().
+
+
+
+Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange().
+
+
+
+
+\begin{DoxyCode}
+{
+  int i,j,id1_index,id2_index;
+  id1 += 1;
+  id2 += 1;
+  id1_index = -1;
+  id2_index = -1;
+
+  for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+    {
+      if(InteractionTable[i][0] == id1) id1_index = i;
+      if(InteractionTable[i][0] == id2) id2_index = i;
+    }
+
+   if(id1_index == -1)
+    {
+      for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+        {
+          if(InteractionTable[i][0] == 0)
+            {
+              InteractionTable[i][0] = id1;
+              InteractionTable[i][1] = id2;
+              break;
+            }
+          printf("ERROR: There were more interactions in this timestep than INTER
+      ACTION_TABLE_LENGTH. Calling endrun()");
+          endrun(1);
+        }
+    }
+  else
+    {
+      for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+        {
+          if(InteractionTable[id1_index][j] == 0)
+            {
+              InteractionTable[id1_index][j] = id2;
+              break;
+            }
+          printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERA
+      CTIONS. Calling endrun()");
+          endrun(1);
+        }
+    } 
+
+  if(id2_index == -1)
+    {
+      for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+        {
+          if(InteractionTable[i][0] == 0)
+            {
+              InteractionTable[i][0] = id2;
+              InteractionTable[i][1] = id1;
+              break;
+            }
+          printf("ERROR: There were more interactions in this timestep than INTER
+      ACTION_TABLE_LENGTH. Calling endrun()");
+          endrun(1);
+        }
+    }
+  else
+    {
+      for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+        {
+          if(InteractionTable[id2_index][j] == 0)
+            {
+              InteractionTable[id2_index][j] = id1;
+              break;
+            }
+          printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERA
+      CTIONS. Calling endrun()");
+          endrun(1);
+        }
+    }
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_icgraph}
 \end{center}
 \end{figure}
 

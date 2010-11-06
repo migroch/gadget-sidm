@@ -14,7 +14,8 @@ main driver routines for gravitational (short-\/range) force computation
 {\ttfamily \#include $<$mpi.h$>$}\par
 {\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for gravtree.c:\nopagebreak
+Include dependency graph for gravtree.c:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -52,7 +53,7 @@ Definition in file \hyperlink{gravtree_8c_source}{gravtree.c}.
 \label{gravtree_8c_ae9c157451dcc4cdbe02813141df2be42}
 This function is used as a comparison kernel in a sort routine. It is used to group particles in the communication buffer that are going to be sent to the same CPU. 
 
-Definition at line 521 of file gravtree.c.
+Definition at line 522 of file gravtree.c.
 
 
 
@@ -78,7 +79,8 @@ Referenced by compute\_\-potential(), gravity\_\-forcetest(), and gravity\_\-tre
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -102,7 +104,7 @@ Definition at line 27 of file gravtree.c.
 
 
 
-References gravdata\_\-in::Acc, All, global\_\-data\_\-all\_\-processes::BunchSizeForce, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CPU\_\-CommSum, global\_\-data\_\-all\_\-processes::CPU\_\-Imbalance, global\_\-data\_\-all\_\-processes::CPU\_\-TreeConstruction, global\_\-data\_\-all\_\-processes::CPU\_\-TreeWalk, global\_\-data\_\-all\_\-processes::ErrTolTheta, Exportflag, FdTimings, force\_\-treebuild(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-shortrange(), global\_\-data\_\-all\_\-processes::G, grav\_\-tree\_\-compare\_\-key(), particle\_\-data::GravAccel, particle\_\-data::GravCost, GravDataGet, GravDataIn, GravDataIndexTable, GravDataOut, GravDataResult, particle\_\-data::GravPM, sph\_\-particle\_\-data::Hsml, global\_\-data\_\-all\_\-processes::Hubble, gravdata\_\-index::Index, global\_\-data\_\-all\_\-processes::MaxPart, gravdata\_\-in::Ninteractions, NTask, global\_\-data\_\-all\_\-processes::NumCurrentTiStep, NumForceUpdate, Numnodestree, NumPart, particle\_\-data::OldAcc, gravdata\_\-in::OldAcc, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, P, particle\_\-data::Pos, gravdata\_\-in::Pos, PTask, second(), set\_\-softenings(), gravdata\_\-index::SortIndex, SphP, TAG\_\-GRAV\_\-A, TAG\_\-GRAV\_\-B, gravdata\_\-index::Task, ThisTask, particle\_\-data::Ti\_\-begstep, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Time, timediff(), global\_\-data\_\-all\_\-processes::TimeStep, global\_\-data\_\-all\_\-processes::TotNumOfForces, global\_\-data\_\-all\_\-processes::TotNumPart, global\_\-data\_\-all\_\-processes::TreeAllocFactor, TreeReconstructFlag, particle\_\-data::Type, global\_\-data\_\-all\_\-processes::TypeOfOpeningCriterion, gravdata\_\-in::u, particle\_\-data::Vel, and gravdata\_\-in::w.
+References gravdata\_\-in::Acc, All, global\_\-data\_\-all\_\-processes::BunchSizeForce, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CPU\_\-CommSum, global\_\-data\_\-all\_\-processes::CPU\_\-Imbalance, global\_\-data\_\-all\_\-processes::CPU\_\-TreeConstruction, global\_\-data\_\-all\_\-processes::CPU\_\-TreeWalk, global\_\-data\_\-all\_\-processes::ErrTolTheta, Exportflag, FdTimings, force\_\-treebuild(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-shortrange(), global\_\-data\_\-all\_\-processes::G, grav\_\-tree\_\-compare\_\-key(), particle\_\-data::GravAccel, particle\_\-data::GravCost, GravDataGet, GravDataIn, GravDataIndexTable, GravDataOut, GravDataResult, particle\_\-data::GravPM, sph\_\-particle\_\-data::Hsml, global\_\-data\_\-all\_\-processes::Hubble, particle\_\-data::ID, gravdata\_\-index::Index, global\_\-data\_\-all\_\-processes::MaxPart, gravdata\_\-in::Ninteractions, NTask, global\_\-data\_\-all\_\-processes::NumCurrentTiStep, NumForceUpdate, Numnodestree, NumPart, particle\_\-data::OldAcc, gravdata\_\-in::OldAcc, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, P, particle\_\-data::Pos, gravdata\_\-in::Pos, PTask, second(), set\_\-softenings(), gravdata\_\-index::SortIndex, SphP, TAG\_\-GRAV\_\-A, TAG\_\-GRAV\_\-B, gravdata\_\-index::Task, ThisTask, particle\_\-data::Ti\_\-begstep, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Time, timediff(), global\_\-data\_\-all\_\-processes::TimeStep, global\_\-data\_\-all\_\-processes::TotNumOfForces, global\_\-data\_\-all\_\-processes::TotNumPart, global\_\-data\_\-all\_\-processes::TreeAllocFactor, TreeReconstructFlag, particle\_\-data::Type, global\_\-data\_\-all\_\-processes::TypeOfOpeningCriterion, gravdata\_\-in::u, particle\_\-data::Vel, and gravdata\_\-in::w.
 
 
 
@@ -220,10 +222,12 @@ Referenced by compute\_\-accelerations().
                       GravDataGet[nexport].u.Pos[k] = P[i].Pos[k];
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
                     for(k = 0; k < 3; k++)
-                      GravDataGet[nexport].u.Vel[k] = P[i].Vel[k];
-                  
+                      GravDataGet[nexport].u.Vel[k] = P[i].Vel[k];               
+       
                     GravDataGet[nexport].u.Ti_begstep = P[i].Ti_begstep;
                     GravDataGet[nexport].u.Ti_endstep = P[i].Ti_endstep;
+                    GravDataGet[nexport].u.ID = P[i].ID;
+                    GravDataGet[nexport].Type = P[i].Type;
 #endif
 #ifdef UNEQUALSOFTENINGS
                     GravDataGet[nexport].Type = P[i].Type;
@@ -592,7 +596,8 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -612,7 +617,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{gravtree_8c_aab39b7857a85e95ef6f926ac82d4ff91}
 This function sets the (comoving) softening length of all particle types in the table All.SofteningTable\mbox{[}...\mbox{]}. We check that the physical softening length is bounded by the Softening-\/MaxPhys values. 
 
-Definition at line 464 of file gravtree.c.
+Definition at line 465 of file gravtree.c.
 
 
 
@@ -681,7 +686,8 @@ Referenced by compute\_\-potential(), gravity\_\-forcetest(), gravity\_\-tree(),
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -67,6 +67,8 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sidm__routines_8c.html#a5b36e92449c7102086706b7b24899be8">prob_of_interaction</a> (double r, float Vtarget[3], float Vno[3], int tbegin, int tend)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sidm__routines_8c.html#a7601ceef7848e2277fd5dd1f2800dfd9">calculate_interact_kick</a> (float Vtarget[3], float Vno[3], double kick_target[3], double kick_no[3])</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sidm__routines_8c.html#ae54bb3071b061a41ef29fcd551f50da5">init_geofactor_table</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sidm__routines_8c.html#a6754f6d28b3de6f16e3f98d6f79b5719">update_interaction_table</a> (unsigned int id1, unsigned int id2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sidm__routines_8c.html#a74f3632c9a90fd460cb308e906b91d5d">check_interaction_table</a> (unsigned int id1, unsigned int id2)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Extra fuctions and routines needed for the calculations of dark matter self interactions. </p>
@@ -87,7 +89,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00013">13</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
 
-<p>Referenced by <a class="el" href="sidm__routines_8c_source.html#l00138">geofactor_integ()</a>, and <a class="el" href="sidm__routines_8c_source.html#l00117">init_geofactor_table()</a>.</p>
+<p>Referenced by <a class="el" href="sidm__routines_8c_source.html#l00141">geofactor_integ()</a>, and <a class="el" href="sidm__routines_8c_source.html#l00120">init_geofactor_table()</a>.</p>
 
 </div>
 </div>
@@ -130,11 +132,11 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>This routine sets the kicks for each particle after it has been decided that they will interact. It uses an algorithm tha conserves energy and momentum but picks a random direction so it does not conserves angular momentum. </p>
 
-<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00091">91</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
+<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00094">94</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
 
 <p>References <a class="el" href="allvars_8c_source.html#l00039">random_generator</a>.</p>
 
-<p>Referenced by <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, and <a class="el" href="forcetree_8c_source.html#l01491">force_treeevaluate_shortrange()</a>.</p>
+<p>Referenced by <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, and <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>.</p>
 
 <p><div class="fragment"><pre class="fragment">{
   <span class="keywordtype">double</span> dV,theta,phi,dvx,dvy,dvz;
@@ -169,6 +171,78 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a74f3632c9a90fd460cb308e906b91d5d"></a><!-- doxytag: member="sidm_routines.c::check_interaction_table" ref="a74f3632c9a90fd460cb308e906b91d5d" args="(unsigned int id1, unsigned int id2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int check_interaction_table </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>id1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>id2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This function checks if a pair of particles have interacted in the current time step. It looks at the InteractionTable and returns 0 if the pair is not found and 1 if pair is found. This is used to avoid double counting of interactions. </p>
+
+<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00280">280</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
+
+<p>Referenced by <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, and <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>.</p>
+
+<p><div class="fragment"><pre class="fragment">{
+  <span class="keywordtype">int</span> i,j,flag;
+  
+  flag = 0;
+  id1 += 1;
+  id2 += 1;
+  
+  <span class="keywordflow">for</span>(i = 0; i &lt; INTERACTION_TABLE_LENGTH; i++)
+    { 
+      <span class="keywordflow">if</span>(InteractionTable[i][0] == id1 || InteractionTable[i][0] == id2 )
+        {
+          <span class="keywordflow">for</span>(j = 1; j &lt; PARTICLE_MAX_INTERACTIONS; j++)
+            {
+              <span class="keywordflow">if</span>(InteractionTable[i][0] == id1 &amp;&amp; InteractionTable[i][j] == id2)
+                { 
+                  flag = 1;
+                  <span class="keywordflow">break</span>;
+                }
+              <span class="keywordflow">if</span>(InteractionTable[i][0] == id2 &amp;&amp; InteractionTable[i][j] == id1)
+                {
+                  flag = 1;
+                  <span class="keywordflow">break</span>;
+                }
+            }
+        }
+    }
+
+  <span class="keywordflow">return</span> flag;
+}
+</pre></div></p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d_icgraph.png" border="0" usemap="#sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d_icgraph" alt=""/></div>
+<map name="sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d_icgraph" id="sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d_icgraph">
+<area shape="rect" id="node3" href="proto_8h.html#a59ae74ef51d6a7065605638422489391" title="force_treeevaluate" alt="" coords="265,5,407,35"/><area shape="rect" id="node13" href="proto_8h.html#ae01e179b7686a7fe62970160b7bbdb46" title="force_treeevaluate_shortrange" alt="" coords="227,59,445,88"/><area shape="rect" id="node5" href="proto_8h.html#ac559dc2aeb21d5a379a3751bea7736af" title="gravity_tree" alt="" coords="493,32,592,61"/><area shape="rect" id="node7" href="proto_8h.html#a147f9422f4bca4666608da992486b417" title="compute_accelerations" alt="" coords="640,32,811,61"/><area shape="rect" id="node9" href="run_8c.html#a05e0ffe612d44e6d7f3a9ae5b9df56a2" title="run" alt="" coords="859,32,901,61"/><area shape="rect" id="node11" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="951,32,1004,61"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ab5ff10bfb368309b0dd01aaa72c6be1d"></a><!-- doxytag: member="sidm_routines.c::g_geo" ref="ab5ff10bfb368309b0dd01aaa72c6be1d" args="(double r)" -->
 <div class="memitem">
 <div class="memproto">
@@ -186,7 +260,7 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 <p>This function returns the value of the geometrical factor needed for the calculation of the interaction probability. </p>
 
-<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00069">69</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
+<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00072">72</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
 
 <p>Referenced by <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>.</p>
 
@@ -245,9 +319,9 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 <p>This function returns the integrand of the angular part of the integral done on <a class="el" href="sidm__routines_8c.html#ae54bb3071b061a41ef29fcd551f50da5">init_geofactor_table()</a>. </p>
 
-<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00162">162</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
+<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00167">167</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
 
-<p>References <a class="el" href="sidm__routines_8c_source.html#l00175">kernel()</a>.</p>
+<p>References <a class="el" href="sidm__routines_8c_source.html#l00180">kernel()</a>.</p>
 
 <p><div class="fragment"><pre class="fragment">{
   <span class="keywordtype">double</span> x,r,f;
@@ -297,9 +371,9 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 <p>This function returns the integrand of the numerical integration done on <a class="el" href="sidm__routines_8c.html#ae54bb3071b061a41ef29fcd551f50da5">init_geofactor_table()</a>. </p>
 
-<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00138">138</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
+<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00141">141</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
 
-<p>References <a class="el" href="sidm__routines_8c_source.html#l00013">GSLWORKSIZE</a>, <a class="el" href="sidm__routines_8c_source.html#l00175">kernel()</a>, and <a class="el" href="pm__periodic_8c_source.html#l00045">workspace</a>.</p>
+<p>References <a class="el" href="sidm__routines_8c_source.html#l00013">GSLWORKSIZE</a>, <a class="el" href="sidm__routines_8c_source.html#l00180">kernel()</a>, and <a class="el" href="pm__periodic_8c_source.html#l00045">workspace</a>.</p>
 
 <p><div class="fragment"><pre class="fragment">{
   <span class="keywordtype">double</span> result, abserr,r;
@@ -317,6 +391,8 @@ Here is the call graph for this function:</div>
   F.params = newparams;
 
   gsl_integration_qag(&amp;F, -1.0, 1.0, 0, 1.0e-8, <a class="code" href="sidm__routines_8c.html#af3f7d23e690c4253a44e7a674d31d276">GSLWORKSIZE</a>, GSL_INTEG_GAUSS41,workspace, &amp;result, &amp;abserr);
+
+  gsl_integration_workspace_free(workspace);
 
   <span class="keywordflow">return</span> x*x*<a class="code" href="sidm__routines_8c.html#a1d33f5b567083ba4e0775814536fd0b4">kernel</a>(x)*result;
 }
@@ -350,7 +426,7 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 <p>This routine initialazes the table that will be used to get the geometrical factor as a function of the two particle separations. It populates a table with the results of the numerical integration. </p>
 
-<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00117">117</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
+<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00120">120</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
 
 <p>References <a class="el" href="sidm__routines_8c_source.html#l00013">GSLWORKSIZE</a>, and <a class="el" href="pm__periodic_8c_source.html#l00045">workspace</a>.</p>
 
@@ -406,11 +482,11 @@ Here is the caller graph for this function:</div>
 <p><p>&lt; Coefficients for SPH spline kernel and its derivative </p>
 </p>
 
-<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00175">175</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
+<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00180">180</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
 
 <p>References <a class="el" href="allvars_8h_source.html#l00109">KERNEL_COEFF_1</a>, <a class="el" href="allvars_8h_source.html#l00110">KERNEL_COEFF_2</a>, and <a class="el" href="allvars_8h_source.html#l00113">KERNEL_COEFF_5</a>.</p>
 
-<p>Referenced by <a class="el" href="sidm__routines_8c_source.html#l00162">geofactor_angle_integ()</a>, and <a class="el" href="sidm__routines_8c_source.html#l00138">geofactor_integ()</a>.</p>
+<p>Referenced by <a class="el" href="sidm__routines_8c_source.html#l00167">geofactor_angle_integ()</a>, and <a class="el" href="sidm__routines_8c_source.html#l00141">geofactor_integ()</a>.</p>
 
 <p><div class="fragment"><pre class="fragment">{
   <span class="keywordtype">double</span> w;
@@ -432,7 +508,8 @@ Here is the caller graph for this function:</div>
   {
     <span class="keywordflow">return</span> 0.0;
   }
-}</pre></div></p>
+}
+</pre></div></p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -491,12 +568,12 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00032">32</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
 
-<p>References <a class="el" href="allvars_8c_source.html#l00112">All</a>, <a class="el" href="allvars_8h_source.html#l00333">global_data_all_processes::ComovingIntegrationOn</a>, <a class="el" href="allvars_8h_source.html#l00464">global_data_all_processes::ForceSoftening</a>, <a class="el" href="sidm__routines_8c_source.html#l00069">g_geo()</a>, <a class="el" href="allvars_8h_source.html#l00324">global_data_all_processes::Hubble</a>, <a class="el" href="hydra_8c_source.html#l00019">hubble_a</a>, <a class="el" href="allvars_8h_source.html#l00325">global_data_all_processes::Omega0</a>, <a class="el" href="allvars_8h_source.html#l00326">global_data_all_processes::OmegaLambda</a>, <a class="el" href="allvars_8h_source.html#l00355">global_data_all_processes::Time</a>, <a class="el" href="allvars_8h_source.html#l00363">global_data_all_processes::Timebase_interval</a>, and <a class="el" href="allvars_8h_source.html#l00311">global_data_all_processes::UnitLength_in_cm</a>.</p>
+<p>References <a class="el" href="allvars_8c_source.html#l00113">All</a>, <a class="el" href="allvars_8h_source.html#l00338">global_data_all_processes::ComovingIntegrationOn</a>, <a class="el" href="allvars_8h_source.html#l00469">global_data_all_processes::ForceSoftening</a>, <a class="el" href="sidm__routines_8c_source.html#l00072">g_geo()</a>, <a class="el" href="allvars_8h_source.html#l00329">global_data_all_processes::Hubble</a>, <a class="el" href="hydra_8c_source.html#l00019">hubble_a</a>, <a class="el" href="allvars_8h_source.html#l00472">global_data_all_processes::MassTable</a>, <a class="el" href="peano_8c.html#a6bca09dac540caff82dc91b8875b2893">mp</a>, <a class="el" href="allvars_8h_source.html#l00330">global_data_all_processes::Omega0</a>, <a class="el" href="allvars_8h_source.html#l00331">global_data_all_processes::OmegaLambda</a>, <a class="el" href="allvars_8h_source.html#l00360">global_data_all_processes::Time</a>, <a class="el" href="allvars_8h_source.html#l00368">global_data_all_processes::Timebase_interval</a>, <a class="el" href="allvars_8h_source.html#l00316">global_data_all_processes::UnitLength_in_cm</a>, and <a class="el" href="allvars_8h_source.html#l00314">global_data_all_processes::UnitMass_in_g</a>.</p>
 
-<p>Referenced by <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, and <a class="el" href="forcetree_8c_source.html#l01491">force_treeevaluate_shortrange()</a>.</p>
+<p>Referenced by <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, and <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>.</p>
 
 <p><div class="fragment"><pre class="fragment">  {
-    <span class="keywordtype">double</span> dT, dloga, dV, dvx, dvy, dvz, prob,h,<a class="code" href="hydra_8c.html#abb7074f2e4b01309c6f2dc87bb3a1a40">hubble_a</a>;
+    <span class="keywordtype">double</span> dT, dloga, dV, dvx, dvy, dvz, prob,h,<a class="code" href="hydra_8c.html#abb7074f2e4b01309c6f2dc87bb3a1a40">hubble_a</a>,<a class="code" href="peano_8c.html#a6bca09dac540caff82dc91b8875b2893">mp</a>;
 
     dvx = Vno[0]-Vtarget[0];
     dvy = Vno[1]-Vtarget[1];
@@ -505,6 +582,9 @@ Here is the caller graph for this function:</div>
 
     <span class="keywordflow">if</span>(<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a4104c753df69fb4da0dd9bbb57e2a5f4">ComovingIntegrationOn</a>)
       {
+        r =  <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a25b9da73fdcbdc45fbe4a6ad45479f09">Time</a>*r;
+        h = <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a2f875884085b35ff64047e46f5348be4">ForceSoftening</a>[1]*<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a25b9da73fdcbdc45fbe4a6ad45479f09">Time</a>;
+
         dloga = (tend - tbegin)*<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a0dd4962a455bb955f04ec271d7af7bb4">Timebase_interval</a>;
         hubble_a = (<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#abac5eca1b5851e670eec01d4dd47c417">Omega0</a> / (<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a25b9da73fdcbdc45fbe4a6ad45479f09">Time</a> * <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a25b9da73fdcbdc45fbe4a6ad45479f09">Time</a> * <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a25b9da73fdcbdc45fbe4a6ad45479f09">Time</a>)
                     + (1 - <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#abac5eca1b5851e670eec01d4dd47c417">Omega0</a> - <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#ae272abeafbcb16230374a903a3e4e298">OmegaLambda</a>) / (<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a25b9da73fdcbdc45fbe4a6ad45479f09">Time</a> * <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a25b9da73fdcbdc45fbe4a6ad45479f09">Time</a>) + <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#ae272abeafbcb16230374a903a3e4e298">OmegaLambda</a>);
@@ -512,9 +592,8 @@ Here is the caller graph for this function:</div>
         dT = dloga/hubble_a;
 
         dV = dV/<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a25b9da73fdcbdc45fbe4a6ad45479f09">Time</a>; <span class="comment">/* Convert from internal velocity p = a^2 dx/dt to peculiar velocity v = a dx/dt*/</span>
-        dV -= <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a25b9da73fdcbdc45fbe4a6ad45479f09">Time</a>*hubble_a*r; <span class="comment">/* Substract Hubble flow */</span>
-
-        h = <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a2f875884085b35ff64047e46f5348be4">ForceSoftening</a>[1]*<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a25b9da73fdcbdc45fbe4a6ad45479f09">Time</a>;
+        dV -= hubble_a*r; <span class="comment">/* Substract Hubble flow */</span>
+   
       }
     <span class="keywordflow">else</span>
       {
@@ -522,7 +601,8 @@ Here is the caller graph for this function:</div>
         h = <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a2f875884085b35ff64047e46f5348be4">ForceSoftening</a>[1];
       }
 
-    prob = <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.InteractionCrossSection*dV*dT*<a class="code" href="sidm__routines_8c.html#ab5ff10bfb368309b0dd01aaa72c6be1d">g_geo</a>(r)/(h*h*h*<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a111a45896aafd67faa8f0c9ef897612f">UnitLength_in_cm</a>*<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a111a45896aafd67faa8f0c9ef897612f">UnitLength_in_cm</a>);
+    mp =  <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a0d1dbe97a03958559781d9619f8b17c1">MassTable</a>[1]*<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#adccf5aa82d4252d8d24ead7681b29052">UnitMass_in_g</a>*(2.998e10)*(2.998e10)*624.15097;  <span class="comment">/* convert particle mass to Gev */</span>
+    prob = mp*<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.InteractionCrossSection*dV*dT*<a class="code" href="sidm__routines_8c.html#ab5ff10bfb368309b0dd01aaa72c6be1d">g_geo</a>(r/h)/(h*h*h*<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a111a45896aafd67faa8f0c9ef897612f">UnitLength_in_cm</a>*<a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a111a45896aafd67faa8f0c9ef897612f">UnitLength_in_cm</a>);
 
     <span class="keywordflow">return</span> prob;
 
@@ -549,8 +629,131 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a6754f6d28b3de6f16e3f98d6f79b5719"></a><!-- doxytag: member="sidm_routines.c::update_interaction_table" ref="a6754f6d28b3de6f16e3f98d6f79b5719" args="(unsigned int id1, unsigned int id2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void update_interaction_table </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>id1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>id2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 26 2010 21:34:17 for GADGET-2 by&nbsp;
+<div class="memdoc">
+<p>This routine updates the interaction table each time there is an interaction. </p>
+
+<p>Definition at line <a class="el" href="sidm__routines_8c_source.html#l00205">205</a> of file <a class="el" href="sidm__routines_8c_source.html">sidm_routines.c</a>.</p>
+
+<p>References <a class="el" href="endrun_8c_source.html#l00025">endrun()</a>.</p>
+
+<p>Referenced by <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, and <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>.</p>
+
+<p><div class="fragment"><pre class="fragment">{
+  <span class="keywordtype">int</span> i,j,id1_index,id2_index;
+  id1 += 1;
+  id2 += 1;
+  id1_index = -1;
+  id2_index = -1;
+
+  <span class="keywordflow">for</span>(i = 0; i &lt; INTERACTION_TABLE_LENGTH; i++)
+    {
+      <span class="keywordflow">if</span>(InteractionTable[i][0] == id1) id1_index = i;
+      <span class="keywordflow">if</span>(InteractionTable[i][0] == id2) id2_index = i;
+    }
+
+   <span class="keywordflow">if</span>(id1_index == -1)
+    {
+      <span class="keywordflow">for</span>(i = 0; i &lt; INTERACTION_TABLE_LENGTH; i++)
+        {
+          <span class="keywordflow">if</span>(InteractionTable[i][0] == 0)
+            {
+              InteractionTable[i][0] = id1;
+              InteractionTable[i][1] = id2;
+              <span class="keywordflow">break</span>;
+            }
+          printf(<span class="stringliteral">&quot;ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH. Calling endrun()&quot;</span>);
+          <a class="code" href="endrun_8c.html#a6c7c5d488c8a9e1fb9c408ae00aa8839">endrun</a>(1);
+        }
+    }
+  <span class="keywordflow">else</span>
+    {
+      <span class="keywordflow">for</span>(j = 1; j &lt; PARTICLE_MAX_INTERACTIONS; j++)
+        {
+          <span class="keywordflow">if</span>(InteractionTable[id1_index][j] == 0)
+            {
+              InteractionTable[id1_index][j] = id2;
+              <span class="keywordflow">break</span>;
+            }
+          printf(<span class="stringliteral">&quot;ERROR: A particle interacted with more than PARTICLE_MAX_INTERACTIONS. Calling endrun()&quot;</span>);
+          <a class="code" href="endrun_8c.html#a6c7c5d488c8a9e1fb9c408ae00aa8839">endrun</a>(1);
+        }
+    } 
+
+  <span class="keywordflow">if</span>(id2_index == -1)
+    {
+      <span class="keywordflow">for</span>(i = 0; i &lt; INTERACTION_TABLE_LENGTH; i++)
+        {
+          <span class="keywordflow">if</span>(InteractionTable[i][0] == 0)
+            {
+              InteractionTable[i][0] = id2;
+              InteractionTable[i][1] = id1;
+              <span class="keywordflow">break</span>;
+            }
+          printf(<span class="stringliteral">&quot;ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH. Calling endrun()&quot;</span>);
+          <a class="code" href="endrun_8c.html#a6c7c5d488c8a9e1fb9c408ae00aa8839">endrun</a>(1);
+        }
+    }
+  <span class="keywordflow">else</span>
+    {
+      <span class="keywordflow">for</span>(j = 1; j &lt; PARTICLE_MAX_INTERACTIONS; j++)
+        {
+          <span class="keywordflow">if</span>(InteractionTable[id2_index][j] == 0)
+            {
+              InteractionTable[id2_index][j] = id1;
+              <span class="keywordflow">break</span>;
+            }
+          printf(<span class="stringliteral">&quot;ERROR: A particle interacted with more than PARTICLE_MAX_INTERACTIONS. Calling endrun()&quot;</span>);
+          <a class="code" href="endrun_8c.html#a6c7c5d488c8a9e1fb9c408ae00aa8839">endrun</a>(1);
+        }
+    }
+}
+</pre></div></p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_cgraph.png" border="0" usemap="#sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_cgraph" alt=""/></div>
+<map name="sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_cgraph" id="sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_cgraph">
+<area shape="rect" id="node3" href="endrun_8c.html#a6c7c5d488c8a9e1fb9c408ae00aa8839" title="endrun" alt="" coords="235,5,301,35"/><area shape="rect" id="node5" href="proto_8h.html#a869daac8b2af5667db265026f09fb9d8" title="terminate_processes" alt="" coords="349,5,507,35"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_icgraph.png" border="0" usemap="#sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_icgraph" alt=""/></div>
+<map name="sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_icgraph" id="sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_icgraph">
+<area shape="rect" id="node3" href="proto_8h.html#a59ae74ef51d6a7065605638422489391" title="force_treeevaluate" alt="" coords="273,5,415,35"/><area shape="rect" id="node13" href="proto_8h.html#ae01e179b7686a7fe62970160b7bbdb46" title="force_treeevaluate_shortrange" alt="" coords="235,59,453,88"/><area shape="rect" id="node5" href="proto_8h.html#ac559dc2aeb21d5a379a3751bea7736af" title="gravity_tree" alt="" coords="501,32,600,61"/><area shape="rect" id="node7" href="proto_8h.html#a147f9422f4bca4666608da992486b417" title="compute_accelerations" alt="" coords="648,32,819,61"/><area shape="rect" id="node9" href="run_8c.html#a05e0ffe612d44e6d7f3a9ae5b9df56a2" title="run" alt="" coords="867,32,909,61"/><area shape="rect" id="node11" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="959,32,1012,61"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address class="footer"><small>Generated on Fri Nov 5 2010 18:27:05 for GADGET-2 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

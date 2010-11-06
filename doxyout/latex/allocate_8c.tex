@@ -13,7 +13,8 @@ routines for allocating particle and tree storage
 {\ttfamily \#include $<$math.h$>$}\par
 {\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for allocate.c:\nopagebreak
+Include dependency graph for allocate.c:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -180,7 +181,8 @@ Referenced by begrun().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -191,7 +193,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -240,8 +243,8 @@ Referenced by read\_\-file(), and restart().
       bytes_tot += bytes;
 
       if(ThisTask == 0)
-        printf("\nAllocated %g MByte for particle storage. %d\n\n", bytes_tot / (
-      1024.0 * 1024.0), sizeof(struct particle_data));
+        printf("\nAllocated %g MByte for particle storage. %lu\n\n", bytes_tot / 
+      (1024.0 * 1024.0), sizeof(struct particle_data));
     }
 
   if(All.MaxPartSph > 0)
@@ -251,15 +254,15 @@ Referenced by read\_\-file(), and restart().
       if(!(SphP = malloc(bytes = All.MaxPartSph * sizeof(struct 
       sph_particle_data))))
         {
-          printf("failed to allocate memory for `SphP' (%g MB) %d.\n", bytes / (1
-      024.0 * 1024.0), sizeof(struct sph_particle_data));
+          printf("failed to allocate memory for `SphP' (%g MB) %lu.\n", bytes / (
+      1024.0 * 1024.0), sizeof(struct sph_particle_data));
           endrun(1);
         }
       bytes_tot += bytes;
 
       if(ThisTask == 0)
-        printf("Allocated %g MByte for storage of SPH data. %d\n\n", bytes_tot / 
-      (1024.0 * 1024.0), sizeof(struct sph_particle_data));
+        printf("Allocated %g MByte for storage of SPH data. %lu\n\n", bytes_tot /
+       (1024.0 * 1024.0), sizeof(struct sph_particle_data));
     }
 }
 \end{DoxyCode}
@@ -267,7 +270,8 @@ Referenced by read\_\-file(), and restart().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -278,7 +282,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

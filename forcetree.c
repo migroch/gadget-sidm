@@ -1423,7 +1423,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 	  {
 	    if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
 	      {
-	        if (r < 2.0 * All.ForceSoftening[1])
+	        if (r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 	          {
 	            prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
 	            if (get_random_number(P[no].ID) < prob)
@@ -1435,6 +1435,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 	                for (i = 0; i < 3 ; i++)
 	                  P[no].Vel[i] += kick_no[i];
 	                si_count+=1;
+			update_interaction_table(targetID,P[no].ID);
 	              }
 	          }
 	      }
@@ -1851,7 +1852,7 @@ int force_treeevaluate_shortrange(int target, int mode)
 	    {
 	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
 		{
-		  if(r < 2.0 * All.ForceSoftenig[1])
+		  if(r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 		    {
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
 		      if(get_random_number(P[no].ID) < prob)
@@ -1863,6 +1864,7 @@ int force_treeevaluate_shortrange(int target, int mode)
 			  for(i = 0; i < 3 ; i++)
 			      P[no].Vel[i] += kick_no[i];
 			  si_count+=1;
+			  update_interaction_table(targetID,P[no].ID);
 			}
 		    }
 		}

@@ -64,6 +64,9 @@ void init(void)
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
   All.Nself_interactions = 0;
+  for (i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+    for(j = 0; j < PARTICLE_MAX_INTERACTIONS; j++)
+      InteractionTable[i][j]= 0;
 #endif
 
   if(RestartFlag == 2)

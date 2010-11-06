@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$proto_8h.html#a25b4f5eb395f918bad4b4bc1fc3dc729" title="domain_determineTopTree" alt="" coords="353,57,543,87"/>
+<area shape="rect" id="node3" href="$proto_8h.html#a25b4f5eb395f918bad4b4bc1fc3dc729" title="domain_determineTopTree" alt="" coords="352,57,544,87"/>
 <area shape="rect" id="node21" href="$proto_8h.html#a606de536756a67ad8f79f1135009195e" title="domain_topsplit" alt="" coords="180,95,303,124"/>
 <area shape="rect" id="node5" href="$proto_8h.html#a647e0c1a76b7f064ed5d201662f364bf" title="domain_decompose" alt="" coords="592,57,744,87"/>
 <area shape="rect" id="node7" href="$proto_8h.html#ae8e3aa408eaab9544cb7f93e69185492" title="domain_Decomposition" alt="" coords="792,57,965,87"/>

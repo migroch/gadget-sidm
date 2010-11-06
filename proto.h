@@ -14,6 +14,8 @@
 double prob_of_interaction(double r, FLOAT Vtarget[3], FLOAT Vno[3], int tbegin, int tend);
 void  calculate_interact_kick(FLOAT Vtarget[3], FLOAT Vno[3], double kick_target[3], double kick_no[3]);
 void  init_geofactor_table(void);
+void update_interaction_table(unsigned int id1, unsigned int id2);
+int check_interaction_table(unsigned int id1, unsigned int id2);
 #endif
 
 void   advance_and_find_timesteps(void);

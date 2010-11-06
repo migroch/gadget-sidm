@@ -11,7 +11,8 @@ provides instances of all global variables.
 {\ttfamily \#include $<$gsl/gsl\_\-rng.h$>$}\par
 {\ttfamily \#include \char`\"{}tags.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-Include dependency graph for allvars.c:\nopagebreak
+Include dependency graph for allvars.c:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -196,7 +197,7 @@ Definition in file \hyperlink{allvars_8c_source}{allvars.c}.
 \label{allvars_8c_ad49123ae0461ffe61629a0d4cf2ba91f}
 This structure contains data which is the SAME for all tasks (mostly code parameters read from the parameter file). Holding this data in a structure is convenient for writing/reading the restart file, and it allows the introduction of new global variables in a simple way. The only thing to do is to introduce them into this structure. 
 
-Definition at line 112 of file allvars.c.
+Definition at line 113 of file allvars.c.
 
 
 
@@ -209,7 +210,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), allocate\_\-commbuffers(), 
 \label{allvars_8c_ab9d6a5a8cf4049ad304ea6d23d8efb09}
 points to communication buffer, which is used in the domain decomposition, the parallel tree-\/force computation, the SPH routines, etc. 
 
-Definition at line 102 of file allvars.c.
+Definition at line 103 of file allvars.c.
 
 
 
@@ -235,7 +236,7 @@ Referenced by begrun(), main(), and run().
 \label{allvars_8c_aa2903f03b426e94ee0e7dbd08e281e3e}
 holds imported particle data for SPH density computation 
 
-Definition at line 191 of file allvars.c.
+Definition at line 192 of file allvars.c.
 
 
 
@@ -248,7 +249,7 @@ Referenced by allocate\_\-commbuffers(), density(), and density\_\-evaluate().
 \label{allvars_8c_ae697d6f8bee6bc6d77eb68e46155aed6}
 holds particle data for SPH density computation to be exported to other processors 
 
-Definition at line 191 of file allvars.c.
+Definition at line 192 of file allvars.c.
 
 
 
@@ -261,7 +262,7 @@ Referenced by allocate\_\-commbuffers(), and density().
 \label{allvars_8c_a6ba7d2763f0c08d5759c63d3ba44b3bd}
 imported partial SPH density results from other processors 
 
-Definition at line 195 of file allvars.c.
+Definition at line 196 of file allvars.c.
 
 
 
@@ -274,7 +275,7 @@ Referenced by allocate\_\-commbuffers(), and density().
 \label{allvars_8c_a85a5932e895f3ffca16cbfdb0b0d4b10}
 stores the locally computed SPH density results for imported particles 
 
-Definition at line 195 of file allvars.c.
+Definition at line 196 of file allvars.c.
 
 
 
@@ -456,7 +457,7 @@ Referenced by allocate\_\-commbuffers(), force\_\-create\_\-empty\_\-nodes(), fo
 \label{allvars_8c_a386309bed4018948d42bc72ae4b5e1bb}
 buffer for particle data used in domain decomposition 
 
-Definition at line 120 of file allvars.c.
+Definition at line 121 of file allvars.c.
 
 
 
@@ -469,7 +470,7 @@ Referenced by allocate\_\-commbuffers(), and domain\_\-exchangeParticles().
 \label{allvars_8c_a6034b1d1d1f6fb31d07d2077914aa1fc}
 buffer for SPH particle data in domain decomposition 
 
-Definition at line 128 of file allvars.c.
+Definition at line 129 of file allvars.c.
 
 
 
@@ -534,7 +535,7 @@ Referenced by allocate\_\-commbuffers(), domain\_\-shiftSplit(), and domain\_\-s
 \label{allvars_8c_a074db1ef4adfe88a5f3b07eac8c1daae}
 table for the cosmological drift factors 
 
-Definition at line 98 of file allvars.c.
+Definition at line 99 of file allvars.c.
 
 
 
@@ -560,7 +561,7 @@ Referenced by allocate\_\-commbuffers(), compute\_\-potential(), density(), forc
 \label{allvars_8c_a32df265d89a3353759d155bbfad4f3e6}
 provides shifted access to extended node information, parallel to Nodes/Nodes\_\-base 
 
-Definition at line 152 of file allvars.c.
+Definition at line 153 of file allvars.c.
 
 
 
@@ -573,7 +574,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), force\_\-exchange\_\-pseudo
 \label{allvars_8c_a57932378336b142ac6e6a9ddb60dce3f}
 $<$ this structure holds additional tree-\/node information which is not needed in the actual gravity computation points to the actual memory allocted for the extended node information 
 
-Definition at line 152 of file allvars.c.
+Definition at line 153 of file allvars.c.
 
 
 
@@ -586,7 +587,7 @@ Referenced by force\_\-treeallocate(), force\_\-treefree(), and restart().
 \label{allvars_8c_ae1adfde6b271afd077130a64e6b85766}
 gives parent node in tree 
 
-Definition at line 149 of file allvars.c.
+Definition at line 150 of file allvars.c.
 
 
 
@@ -677,7 +678,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), find\_\-next\_\-sync\_\-poi
 \label{allvars_8c_abc4ea40ab91f3e9288a0394c2544c65b}
 holds particle data imported from other processors 
 
-Definition at line 180 of file allvars.c.
+Definition at line 181 of file allvars.c.
 
 
 
@@ -690,7 +691,7 @@ Referenced by allocate\_\-commbuffers(), compute\_\-potential(), force\_\-treeev
 \label{allvars_8c_aeb6d889627ff712e7f0f30510842eb2c}
 holds particle data to be exported to other processors 
 
-Definition at line 180 of file allvars.c.
+Definition at line 181 of file allvars.c.
 
 
 
@@ -703,7 +704,7 @@ Referenced by allocate\_\-commbuffers(), compute\_\-potential(), gravity\_\-forc
 \label{allvars_8c_a430ddb048d692102568b323d8ebe1812}
 the particles to be exported are grouped by task-\/number. This table allows the results to be disentangled again and to be assigned to the correct particle 
 
-Definition at line 186 of file allvars.c.
+Definition at line 187 of file allvars.c.
 
 
 
@@ -716,7 +717,7 @@ Referenced by allocate\_\-commbuffers(), compute\_\-potential(), gravity\_\-forc
 \label{allvars_8c_a7b537ba13fc3cfff5d6fbb245e892fb6}
 holds partial results received from other processors. This will overwrite the GravDataIn array 
 
-Definition at line 180 of file allvars.c.
+Definition at line 181 of file allvars.c.
 
 
 
@@ -729,7 +730,7 @@ Referenced by allocate\_\-commbuffers(), compute\_\-potential(), gravity\_\-forc
 \label{allvars_8c_a1aab0f29675c0745b5c2887e4791c070}
 holds the partial results computed for imported particles. Note: We use GravDataResult = GravDataGet, such that the result replaces the imported data 
 
-Definition at line 180 of file allvars.c.
+Definition at line 181 of file allvars.c.
 
 
 
@@ -742,7 +743,7 @@ Referenced by allocate\_\-commbuffers(), compute\_\-potential(), force\_\-treeev
 \label{allvars_8c_a38e5d8b595161f074f7fbede3a8fda66}
 table for the cosmological kick factor for gravitational forces 
 
-Definition at line 99 of file allvars.c.
+Definition at line 100 of file allvars.c.
 
 
 
@@ -755,7 +756,7 @@ Referenced by get\_\-gravkick\_\-factor(), and init\_\-drift\_\-table().
 \label{allvars_8c_a5d111aa83cef5894eea3939d815bb803}
 Header for the standard file format. holds header for snapshot files 
 
-Definition at line 162 of file allvars.c.
+Definition at line 163 of file allvars.c.
 
 
 
@@ -768,7 +769,7 @@ Referenced by find\_\-files(), get\_\-particles\_\-in\_\-block(), init(), read\_
 \label{allvars_8c_a361f3970d23b525898314bd2742ecf8c}
 holds imported particle data for SPH hydro-\/force computation 
 
-Definition at line 201 of file allvars.c.
+Definition at line 202 of file allvars.c.
 
 
 
@@ -781,7 +782,7 @@ Referenced by allocate\_\-commbuffers(), hydro\_\-evaluate(), and hydro\_\-force
 \label{allvars_8c_ac76194e83ab629234cfbe7ea412f4147}
 holds particle data for SPH hydro-\/force computation to be exported to other processors 
 
-Definition at line 201 of file allvars.c.
+Definition at line 202 of file allvars.c.
 
 
 
@@ -794,7 +795,7 @@ Referenced by allocate\_\-commbuffers(), and hydro\_\-force().
 \label{allvars_8c_ab7f7e4c36b3ed818849ba610d82b38bc}
 imported partial SPH hydro-\/force results from other processors 
 
-Definition at line 205 of file allvars.c.
+Definition at line 206 of file allvars.c.
 
 
 
@@ -807,7 +808,7 @@ Referenced by allocate\_\-commbuffers(), and hydro\_\-force().
 \label{allvars_8c_a4ec6a36a80786f2f8e7fb9794c1f6629}
 stores the locally computed SPH hydro results for imported particles 
 
-Definition at line 205 of file allvars.c.
+Definition at line 206 of file allvars.c.
 
 
 
@@ -820,7 +821,7 @@ Referenced by allocate\_\-commbuffers(), hydro\_\-evaluate(), and hydro\_\-force
 \label{allvars_8c_a274a5737d1578d54d6f82130e3064771}
 table for the cosmological kick factor for hydrodynmical forces 
 
-Definition at line 100 of file allvars.c.
+Definition at line 101 of file allvars.c.
 
 
 
@@ -859,7 +860,7 @@ Referenced by domain\_\-Decomposition(), domain\_\-determineTopTree(), and domai
 \label{allvars_8c_aca70a1751175167a36c1c6775a338bee}
 maximum allowed number of internal nodes 
 
-Definition at line 139 of file allvars.c.
+Definition at line 140 of file allvars.c.
 
 
 
@@ -885,7 +886,7 @@ Referenced by density(), domain\_\-Decomposition(), domain\_\-exchangeParticles(
 \label{allvars_8c_ad14ab43f541f9c33cb9222ea018c1365}
 gives next node in tree walk 
 
-Definition at line 148 of file allvars.c.
+Definition at line 149 of file allvars.c.
 
 
 
@@ -911,7 +912,7 @@ Referenced by density\_\-evaluate(), hydro\_\-evaluate(), ngb\_\-clear\_\-buf(),
 \label{allvars_8c_ac46f89ba3715dfa877c2e1b8822da657}
 this is a pointer used to access the nodes which is shifted such that Nodes\mbox{[}All.MaxPart\mbox{]} gives the first allocated node 
 
-Definition at line 142 of file allvars.c.
+Definition at line 143 of file allvars.c.
 
 
 
@@ -924,7 +925,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), force\_\-create\_\-empty\_\
 \label{allvars_8c_a0cb940c6ac9331805bcc91b437c78e9a}
 points to the actual memory allocted for the nodes 
 
-Definition at line 142 of file allvars.c.
+Definition at line 143 of file allvars.c.
 
 
 
@@ -1015,7 +1016,7 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), gravity\_\-forcet
 \label{allvars_8c_acf4151281b98d29aa500c5e56e66741f}
 number of (internal) nodes in each tree 
 
-Definition at line 140 of file allvars.c.
+Definition at line 141 of file allvars.c.
 
 
 
@@ -1054,7 +1055,7 @@ Referenced by density(), and hydro\_\-force().
 \label{allvars_8c_a29aa1b496fa7d42c32c4cae3c77aa068}
 This structure holds all the information that is stored for each particle of the simulation. holds particle data on local processor 
 
-Definition at line 120 of file allvars.c.
+Definition at line 121 of file allvars.c.
 
 
 
@@ -1132,7 +1133,7 @@ Referenced by get\_\-random\_\-number(), and set\_\-random\_\-numbers().
 \label{allvars_8c_a331d32b863e95f7d488a26ae38bda6af}
 holds SPH particle data on local processor 
 
-Definition at line 128 of file allvars.c.
+Definition at line 129 of file allvars.c.
 
 
 
@@ -1145,7 +1146,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), allocate\_\-memory(), compu
 \label{allvars_8c_af53292602db23da91797b37daeb9b8ce}
 
 
-Definition at line 173 of file allvars.c.
+Definition at line 174 of file allvars.c.
 
 
 
@@ -1158,7 +1159,7 @@ Referenced by compute\_\-global\_\-quantities\_\-of\_\-system(), and energy\_\-s
 \label{allvars_8c_ab0664df93d97f96270978b84eb6fb80c}
 
 
-Definition at line 167 of file allvars.c.
+Definition at line 168 of file allvars.c.
 
 
 

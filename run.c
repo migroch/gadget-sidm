@@ -373,7 +373,8 @@ void every_timestep_stuff(void)
 
   if(ThisTask == 0)
     {
-#ifdef COMPUTE_SELFINTERACTION_FORDARK 
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+      int i,j;
       if(All.ComovingIntegrationOn)
 	{
 	  z = 1.0 / (All.Time) - 1;
@@ -392,6 +393,9 @@ void every_timestep_stuff(void)
 	  fflush(FdInfo);
 	}
       All.Nself_interactions = 0;
+      for (i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+	for(j = 0; j < PARTICLE_MAX_INTERACTIONS; j++)
+	  InteractionTable[i][j] = 0;
 #else       
       if(All.ComovingIntegrationOn)
 	{

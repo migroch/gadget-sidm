@@ -15,7 +15,8 @@ gravitational tree and code for Ewald correction
 {\ttfamily \#include $<$mpi.h$>$}\par
 {\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for forcetree.c:\nopagebreak
+Include dependency graph for forcetree.c:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -182,7 +183,7 @@ Referenced by force\_\-treeallocate(), force\_\-treeevaluate\_\-potential\_\-sho
 \label{forcetree_8c_ab303b92c6d6b4144999c5cebabd65ec0}
 This function dumps some of the basic particle data to a file. In case the tree construction fails, it is called just before the run terminates with an error message. Examination of the generated file may then give clues to what caused the problem. 
 
-Definition at line 3021 of file forcetree.c.
+Definition at line 3040 of file forcetree.c.
 
 
 
@@ -221,7 +222,8 @@ Referenced by force\_\-create\_\-empty\_\-nodes(), and force\_\-treebuild\_\-sin
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -232,7 +234,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -255,7 +258,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{forcetree_8c_ad8b8e212e593e1795f6ba522239086fc}
 This function looks up the correction force due to the infinite number of periodic particle/node images. We here use trilinear interpolation to get it from the precomputed tables, which contain one octant around the target particle at the origin. The other octants are obtained from it by exploiting the symmetry properties. 
 
-Definition at line 3209 of file forcetree.c.
+Definition at line 3228 of file forcetree.c.
 
 
 
@@ -356,7 +359,8 @@ Referenced by force\_\-treeevaluate\_\-direct().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -380,7 +384,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{forcetree_8c_a49e4b7c0d57d0ab446b4ec38f3618925}
 This function computes the force correction term (difference between full force of infinite lattice and nearest image) by Ewald summation. 
 
-Definition at line 3392 of file forcetree.c.
+Definition at line 3411 of file forcetree.c.
 
 
 
@@ -446,7 +450,8 @@ Referenced by ewald\_\-init().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -468,7 +473,7 @@ This function initializes tables with the correction force and the correction po
 
 The correction fields are stored on disk once they are computed. If a corresponding file is found, they are loaded from disk to speed up the initialization. The Ewald summation is done in parallel, i.e. the processors share the work to compute the tables if needed. 
 
-Definition at line 3060 of file forcetree.c.
+Definition at line 3079 of file forcetree.c.
 
 
 
@@ -635,7 +640,8 @@ Referenced by begrun().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -646,7 +652,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -668,7 +675,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{forcetree_8c_aa0657e3de6bfb76715c14ddd72d25e58}
 This function looks up the correction potential due to the infinite number of periodic particle/node images. We here use tri-\/linear interpolation to get it from the precomputed table, which contains one octant around the target particle at the origin. The other octants are obtained from it by exploiting symmetry properties. 
 
-Definition at line 3298 of file forcetree.c.
+Definition at line 3317 of file forcetree.c.
 
 
 
@@ -734,7 +741,8 @@ Referenced by force\_\-treeevaluate\_\-potential().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -754,7 +762,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{forcetree_8c_a4a219224b239f0c20497e54ae421f134}
 This function computes the potential correction term by means of Ewald summation. 
 
-Definition at line 3351 of file forcetree.c.
+Definition at line 3370 of file forcetree.c.
 
 
 
@@ -805,7 +813,8 @@ Referenced by ewald\_\-init().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -902,7 +911,8 @@ Referenced by force\_\-create\_\-empty\_\-nodes(), and force\_\-treebuild\_\-sin
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -913,7 +923,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -997,7 +1008,8 @@ Referenced by force\_\-update\_\-pseudoparticles().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1078,7 +1090,8 @@ Referenced by force\_\-treebuild().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1177,7 +1190,8 @@ Referenced by force\_\-treebuild\_\-single().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1188,7 +1202,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1215,7 +1230,7 @@ $<$ Maximum number of nodes in the top-\/level tree used for domain decompositio
 
 
 
-Definition at line 2808 of file forcetree.c.
+Definition at line 2827 of file forcetree.c.
 
 
 
@@ -1279,8 +1294,8 @@ Referenced by init(), pmforce\_\-periodic(), pmpotential\_\-periodic(), and rest
       first_flag = 1;
 
       if(ThisTask == 0)
-        printf("\nAllocated %g MByte for BH-tree. %d\n\n", allbytes / (1024.0 * 1
-      024.0),
+        printf("\nAllocated %g MByte for BH-tree. %lu\n\n", allbytes / (1024.0 * 
+      1024.0),
                sizeof(struct NODE) + sizeof(struct extNODE));
 
       tabfac = NTAB / 3.0;
@@ -1298,7 +1313,8 @@ Referenced by init(), pmforce\_\-periodic(), pmpotential\_\-periodic(), and rest
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1309,7 +1325,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1359,7 +1376,8 @@ Referenced by compute\_\-potential(), gravity\_\-tree(), and ngb\_\-treebuild().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1370,7 +1388,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1614,7 +1633,8 @@ Referenced by force\_\-treebuild().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1625,7 +1645,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1651,7 +1672,7 @@ Definition at line 1126 of file forcetree.c.
 
 
 
-References gravdata\_\-in::Acc, All, global\_\-data\_\-all\_\-processes::BoxSize, calculate\_\-interact\_\-kick(), NODE::center, NODE::d, DomainTask, endrun(), global\_\-data\_\-all\_\-processes::ErrTolForceAcc, global\_\-data\_\-all\_\-processes::ErrTolTheta, Exportflag, FLOAT, force\_\-treeevaluate\_\-ewald\_\-correction(), global\_\-data\_\-all\_\-processes::ForceSoftening, get\_\-random\_\-number(), particle\_\-data::GravAccel, particle\_\-data::GravCost, GravDataGet, GravDataResult, sph\_\-particle\_\-data::Hsml, NODE::len, particle\_\-data::Mass, NODE::mass, MaxNodes, global\_\-data\_\-all\_\-processes::MaxPart, NEAREST, Nextnode, gravdata\_\-in::Ninteractions, Nodes, gravdata\_\-in::OldAcc, particle\_\-data::OldAcc, P, gravdata\_\-in::Pos, particle\_\-data::Pos, prob\_\-of\_\-interaction(), SphP, particle\_\-data::Ti\_\-begstep, particle\_\-data::Ti\_\-endstep, particle\_\-data::Type, gravdata\_\-in::u, NODE::u, particle\_\-data::Vel, and gravdata\_\-in::w.
+References gravdata\_\-in::Acc, All, global\_\-data\_\-all\_\-processes::BoxSize, calculate\_\-interact\_\-kick(), NODE::center, check\_\-interaction\_\-table(), NODE::d, DomainTask, endrun(), global\_\-data\_\-all\_\-processes::ErrTolForceAcc, global\_\-data\_\-all\_\-processes::ErrTolTheta, Exportflag, FLOAT, force\_\-treeevaluate\_\-ewald\_\-correction(), global\_\-data\_\-all\_\-processes::ForceSoftening, get\_\-random\_\-number(), particle\_\-data::GravAccel, particle\_\-data::GravCost, GravDataGet, GravDataResult, sph\_\-particle\_\-data::Hsml, particle\_\-data::ID, NODE::len, particle\_\-data::Mass, NODE::mass, MaxNodes, global\_\-data\_\-all\_\-processes::MaxPart, NEAREST, Nextnode, gravdata\_\-in::Ninteractions, Nodes, gravdata\_\-in::OldAcc, particle\_\-data::OldAcc, P, gravdata\_\-in::Pos, particle\_\-data::Pos, prob\_\-of\_\-interaction(), SphP, particle\_\-data::Ti\_\-begstep, particle\_\-data::Ti\_\-endstep, particle\_\-data::Type, gravdata\_\-in::u, NODE::u, update\_\-interaction\_\-table(), particle\_\-data::Vel, and gravdata\_\-in::w.
 
 
 
@@ -1683,6 +1704,7 @@ Referenced by gravity\_\-tree().
   double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob;
   FLOAT  targetVel[3];
   int targetBegstep,targetEndstep;
+  unsigned int targetID;
   int si_count,i;
   kick_x = 0;
   kick_y = 0;
@@ -1694,6 +1716,7 @@ Referenced by gravity\_\-tree().
       targetVel[i] = P[target].Vel[i];
     targetBegstep = P[target].Ti_begstep;
     targetEndstep = P[target].Ti_endstep;
+    targetID      = P[target].ID;
   }
   else
   {
@@ -1701,6 +1724,7 @@ Referenced by gravity\_\-tree().
       targetVel[i] = GravDataGet[target].u.Vel[i];
     targetBegstep = GravDataGet[target].u.Ti_begstep;
     targetEndstep = GravDataGet[target].u.Ti_endstep;
+    targetID      = GravDataGet[target].u.ID;
   }
 #endif
 
@@ -1730,6 +1754,9 @@ Referenced by gravity\_\-tree().
       ptype = GravDataGet[target].Type;
 #else
       ptype = P[0].Type;
+#ifdef COMPUTE_SELFINTERACTION_FORDARK      
+      ptype = GravDataGet[target].Type;
+#endif
 #endif
       aold = All.ErrTolForceAcc * GravDataGet[target].w.OldAcc;
 #ifdef ADAPTIVE_GRAVSOFT_FORGAS
@@ -1962,9 +1989,12 @@ Referenced by gravity\_\-tree().
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
         if (no < All.MaxPart)
           {
-            if (ptype == 1 && P[no].Type == 1)
+            if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1
+      ) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no
+      ].Type == 1)*/
               {
-                if (r < 2.0 * h)
+                if (r < 2.0 * All.ForceSoftening[1] && check_interaction_table(ta
+      rgetID,P[no].ID) == 0)
                   {
                     prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBeg
       step, targetEndstep);
@@ -1978,6 +2008,7 @@ Referenced by gravity\_\-tree().
                         for (i = 0; i < 3 ; i++)
                           P[no].Vel[i] += kick_no[i];
                         si_count+=1;
+                        update_interaction_table(targetID,P[no].ID);
                       }
                   }
               }
@@ -1986,7 +2017,9 @@ Referenced by gravity\_\-tree().
       ninteractions++;
     }
   
-
+#ifdef COMPUTE_SELFINTERACTION_FORDARK 
+  All.Nself_interactions += si_count;
+#endif
 
   /* store result at the proper place */
   if(mode == 0)
@@ -2038,7 +2071,8 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2059,7 +2093,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{forcetree_8c_a0ec221b2517893874b12dc366bfe0da8}
 This function does the force computation with direct summation for the specified particle in the communication buffer. This can be useful for debugging purposes, in particular for explicit checks of the force accuracy. 
 
-Definition at line 2890 of file forcetree.c.
+Definition at line 2909 of file forcetree.c.
 
 
 
@@ -2202,7 +2236,8 @@ Referenced by gravity\_\-forcetest().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2213,7 +2248,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2238,7 +2274,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{forcetree_8c_ab6894fe5ae268ea8f6bc7c4a8c87a87f}
 This function computes the Ewald correction, and is needed if periodic boundary conditions together with a pure tree algorithm are used. Note that the ordinary tree walk does not carry out this correction directly as it was done in Gadget-\/1.1. Instead, the tree is walked a second time. This is actually faster because the \char`\"{}Ewald-\/Treewalk\char`\"{} can use a different opening criterion than the normal tree walk. In particular, the Ewald correction is negligible for particles that are very close, but it is large for particles that are far away (this is quite different for the normal direct force). So we can here use a different opening criterion. Sufficient accuracy is usually obtained if the node length has dropped to a certain fraction $\sim$$<$ 0.25 of the BoxLength. However, we may only short-\/cut the interaction list of the normal full Ewald tree walk if we are sure that the whole node and all daughter nodes \char`\"{}lie on the same side\char`\"{} of the periodic boundary, i.e. that the real tree walk would not find a daughter node or particle that was mapped to a different nearest neighbour position when the tree walk would be further refined. 
 
-Definition at line 1915 of file forcetree.c.
+Definition at line 1934 of file forcetree.c.
 
 
 
@@ -2534,7 +2570,8 @@ Referenced by force\_\-treeevaluate().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2555,7 +2592,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{forcetree_8c_af29d257a1e4545ba4b9c3648444979b6}
 This routine computes the gravitational potential by walking the tree. The same opening criteria is used as for the gravitational force walk. 
 
-Definition at line 2197 of file forcetree.c.
+Definition at line 2216 of file forcetree.c.
 
 
 
@@ -2850,7 +2887,8 @@ Referenced by compute\_\-potential().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2861,7 +2899,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2882,7 +2921,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{forcetree_8c_abd9d86a6c08e77a4fa78fa76b96cdde7}
 This function computes the short-\/range potential when the TreePM algorithm is used. This potential is the Newtonian potential, modified by a complementary error function. 
 
-Definition at line 2474 of file forcetree.c.
+Definition at line 2493 of file forcetree.c.
 
 
 
@@ -3234,7 +3273,8 @@ Referenced by compute\_\-potential().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3245,7 +3285,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3266,11 +3307,11 @@ Here is the caller graph for this function:\nopagebreak
 \label{forcetree_8c_ae01e179b7686a7fe62970160b7bbdb46}
 In the TreePM algorithm, the tree is walked only locally around the target coordinate. Tree nodes that fall outside a box of half side-\/length Rcut= RCUT$\ast$ASMTH$\ast$MeshSize can be discarded. The short-\/range potential is modified by a complementary error function, multiplied with the Newtonian form. The resulting short-\/range suppression compared to the Newtonian force is tabulated, because looking up from this table is faster than recomputing the corresponding factor, despite the memory-\/access panelty (which reduces cache performance) incurred by the table. 
 
-Definition at line 1491 of file forcetree.c.
+Definition at line 1500 of file forcetree.c.
 
 
 
-References gravdata\_\-in::Acc, All, global\_\-data\_\-all\_\-processes::Asmth, global\_\-data\_\-all\_\-processes::BoxSize, calculate\_\-interact\_\-kick(), NODE::center, NODE::d, DomainTask, endrun(), global\_\-data\_\-all\_\-processes::ErrTolForceAcc, global\_\-data\_\-all\_\-processes::ErrTolTheta, Exportflag, FLOAT, global\_\-data\_\-all\_\-processes::ForceSoftening, get\_\-random\_\-number(), particle\_\-data::GravAccel, particle\_\-data::GravCost, GravDataGet, GravDataResult, sph\_\-particle\_\-data::Hsml, NODE::len, particle\_\-data::Mass, NODE::mass, MaxNodes, global\_\-data\_\-all\_\-processes::MaxPart, NEAREST, Nextnode, gravdata\_\-in::Ninteractions, Nodes, NTAB, gravdata\_\-in::OldAcc, particle\_\-data::OldAcc, P, gravdata\_\-in::Pos, particle\_\-data::Pos, prob\_\-of\_\-interaction(), global\_\-data\_\-all\_\-processes::Rcut, shortrange\_\-table, SphP, particle\_\-data::Ti\_\-begstep, particle\_\-data::Ti\_\-endstep, particle\_\-data::Type, gravdata\_\-in::u, NODE::u, particle\_\-data::Vel, and gravdata\_\-in::w.
+References gravdata\_\-in::Acc, All, global\_\-data\_\-all\_\-processes::Asmth, global\_\-data\_\-all\_\-processes::BoxSize, calculate\_\-interact\_\-kick(), NODE::center, check\_\-interaction\_\-table(), NODE::d, DomainTask, endrun(), global\_\-data\_\-all\_\-processes::ErrTolForceAcc, global\_\-data\_\-all\_\-processes::ErrTolTheta, Exportflag, FLOAT, global\_\-data\_\-all\_\-processes::ForceSoftening, get\_\-random\_\-number(), particle\_\-data::GravAccel, particle\_\-data::GravCost, GravDataGet, GravDataResult, sph\_\-particle\_\-data::Hsml, particle\_\-data::ID, NODE::len, particle\_\-data::Mass, NODE::mass, MaxNodes, global\_\-data\_\-all\_\-processes::MaxPart, NEAREST, Nextnode, gravdata\_\-in::Ninteractions, Nodes, NTAB, gravdata\_\-in::OldAcc, particle\_\-data::OldAcc, P, gravdata\_\-in::Pos, particle\_\-data::Pos, prob\_\-of\_\-interaction(), global\_\-data\_\-all\_\-processes::Rcut, shortrange\_\-table, SphP, particle\_\-data::Ti\_\-begstep, particle\_\-data::Ti\_\-endstep, particle\_\-data::Type, gravdata\_\-in::u, NODE::u, update\_\-interaction\_\-table(), particle\_\-data::Vel, and gravdata\_\-in::w.
 
 
 
@@ -3304,6 +3345,7 @@ Referenced by gravity\_\-tree().
   double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob;
   FLOAT targetVel[3];
   int targetBegstep,targetEndstep;
+  unsigned int targetID;
   int si_count,i;
   kick_x = 0;
   kick_y = 0;
@@ -3315,6 +3357,7 @@ Referenced by gravity\_\-tree().
         targetVel[i] = P[target].Vel[i];
       targetBegstep = P[target].Ti_begstep;
       targetEndstep = P[target].Ti_endstep;
+      targetID      = P[target].ID;
     }
   else
     {
@@ -3322,6 +3365,7 @@ Referenced by gravity\_\-tree().
         targetVel[i] = GravDataGet[target].u.Vel[i];
       targetBegstep = GravDataGet[target].u.Ti_begstep;
       targetEndstep = GravDataGet[target].u.Ti_endstep;
+      targetID      = GravDataGet[target].u.ID;
     }
 #endif
 
@@ -3351,6 +3395,9 @@ Referenced by gravity\_\-tree().
       ptype = GravDataGet[target].Type;
 #else
       ptype = P[0].Type;
+#ifdef COMPUTE_SELFINTERACTION_FORDARK      
+      ptype = GravDataGet[target].Type;
+#endif
 #endif
       aold = All.ErrTolForceAcc * GravDataGet[target].w.OldAcc;
 #ifdef ADAPTIVE_GRAVSOFT_FORGAS
@@ -3634,9 +3681,12 @@ Referenced by gravity\_\-tree().
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
           if(no < All.MaxPart)
             {
-              if(ptype == 1 && P[no].Type == 1)
+              if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type ==
+       1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[
+      no].Type == 1)*/
                 {
-                  if(r < 2.0 * h)
+                  if(r < 2.0 * All.ForceSoftening[1] && check_interaction_table(t
+      argetID,P[no].ID) == 0)
                     {
                       prob = prob_of_interaction(r, targetVel, P[no].Vel, targetB
       egstep, targetEndstep);
@@ -3650,6 +3700,7 @@ Referenced by gravity\_\-tree().
                           for(i = 0; i < 3 ; i++)
                               P[no].Vel[i] += kick_no[i];
                           si_count+=1;
+                          update_interaction_table(targetID,P[no].ID);
                         }
                     }
                 }
@@ -3659,6 +3710,9 @@ Referenced by gravity\_\-tree().
         }
     }
 
+#ifdef COMPUTE_SELFINTERACTION_FORDARK 
+  All.Nself_interactions += si_count;
+#endif
 
   /* store result at the proper place */
 
@@ -3706,7 +3760,8 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3726,7 +3781,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{forcetree_8c_a0a9667f530dad09ebed8c0c98e5d3888}
 This function frees the memory allocated for the tree, i.e. it frees the space allocated by the function \hyperlink{forcetree_8c_ab98788ba31869c7bc55ce71b807d2ff2}{force\_\-treeallocate()}. 
 
-Definition at line 2873 of file forcetree.c.
+Definition at line 2892 of file forcetree.c.
 
 
 
@@ -3751,7 +3806,8 @@ Referenced by pmforce\_\-periodic(), and pmpotential\_\-periodic().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3889,7 +3945,8 @@ Referenced by force\_\-update\_\-pseudoparticles().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3963,7 +4020,8 @@ Referenced by compute\_\-accelerations().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3974,7 +4032,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4047,7 +4106,8 @@ Referenced by move\_\-particles().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4058,7 +4118,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4126,7 +4187,8 @@ Referenced by force\_\-update\_\-hmax().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4193,7 +4255,8 @@ Referenced by force\_\-update\_\-hmax().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4273,7 +4336,8 @@ Referenced by force\_\-update\_\-len().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4344,7 +4408,8 @@ Referenced by force\_\-update\_\-len().
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4635,7 +4700,8 @@ Referenced by force\_\-treebuild\_\-single(), and force\_\-update\_\-node\_\-rec
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4646,7 +4712,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4690,7 +4757,8 @@ Referenced by force\_\-treebuild(), and move\_\-particles().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4701,7 +4769,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

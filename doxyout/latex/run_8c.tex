@@ -15,7 +15,8 @@ iterates over timesteps, main loop
 {\ttfamily \#include $<$unistd.h$>$}\par
 {\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for run.c:\nopagebreak
+Include dependency graph for run.c:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -56,7 +57,7 @@ Definition in file \hyperlink{run_8c_source}{run.c}.
 \label{run_8c_ae903322da17c6875ab606b032b918099}
 This routine first calls a computation of various global quantities of the particle distribution, and then writes some statistics about the energies in the various particle components to the file FdEnergy. 
 
-Definition at line 413 of file run.c.
+Definition at line 437 of file run.c.
 
 
 
@@ -104,7 +105,8 @@ Referenced by run().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -115,7 +117,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -154,6 +157,36 @@ Referenced by run().
 
   if(ThisTask == 0)
     {
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+      int i,j;
+      if(All.ComovingIntegrationOn)
+        {
+          z = 1.0 / (All.Time) - 1;
+          fprintf(FdInfo, "\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %
+      g, Dloga: %g, NselfInteractions: %lu\n", 
+                  All.NumCurrentTiStep, All.Time, z, All.TimeStep,
+                  log(All.Time) - log(All.Time - All.TimeStep),  All.Nself_intera
+      ctions);
+          printf("\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %g, Dloga:
+       %g, NselfInteractions: %lu\n", All.NumCurrentTiStep,
+                 All.Time, z, All.TimeStep, log(All.Time) - log(All.Time - All.
+      TimeStep), All.Nself_interactions);
+          fflush(FdInfo);
+        }
+      else
+        {
+          fprintf(FdInfo, "\nBegin Step %d, Time: %g, Systemstep: %g, NselfIntera
+      ctions: %lu\n", All.NumCurrentTiStep, All.Time,
+                  All.TimeStep, All.Nself_interactions);
+          printf("\nBegin Step %d, Time: %g, Systemstep: %g, NselfInteractions: %
+      lu\n", All.NumCurrentTiStep, All.Time, All.TimeStep, All.Nself_interactions);
+          fflush(FdInfo);
+        }
+      All.Nself_interactions = 0;
+      for (i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+        for(j = 0; j < PARTICLE_MAX_INTERACTIONS; j++)
+          InteractionTable[i][j] = 0;
+#else       
       if(All.ComovingIntegrationOn)
         {
           z = 1.0 / (All.Time) - 1;
@@ -176,7 +209,7 @@ Referenced by run().
       NumCurrentTiStep, All.Time, All.TimeStep);
           fflush(FdInfo);
         }
-
+#endif
       fprintf(FdCPU, "Step %d, Time: %g, CPUs: %d\n", All.NumCurrentTiStep, All.
       Time, NTask);
 
@@ -201,7 +234,8 @@ Referenced by run().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -212,7 +246,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -373,7 +408,8 @@ Referenced by begrun(), and find\_\-next\_\-sync\_\-point\_\-and\_\-drift().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -384,7 +420,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -512,7 +549,8 @@ Referenced by run().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -523,7 +561,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -691,7 +730,8 @@ Referenced by main().
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -702,7 +742,8 @@ Here is the call graph for this function:\nopagebreak
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
