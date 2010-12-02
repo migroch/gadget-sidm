@@ -59,7 +59,7 @@ double prob_of_interaction(double r, FLOAT Vtarget[3], FLOAT Vno[3], int tbegin,
         h = All.ForceSoftening[1];
       }
 
-    mp =  All.MassTable[1]*All.UnitMass_in_g*(2.998e10)*(2.998e10)*624.15097;  /* convert particle mass to Gev */
+    mp =  All.MassTable[1]*All.UnitMass_in_g;
     prob = mp*All.InteractionCrossSection*dV*dT*g_geo(r/h)/(h*h*h*All.UnitLength_in_cm*All.UnitLength_in_cm);
 
     return prob;
