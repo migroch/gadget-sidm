@@ -128,10 +128,10 @@ void gravity_tree(void)
 		      GravDataGet[nexport].u.Pos[k] = P[i].Pos[k];
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
 		    for(k = 0; k < 3; k++)
-		      GravDataGet[nexport].u.Vel[k] = P[i].Vel[k];  		  
-		    GravDataGet[nexport].u.Ti_begstep = P[i].Ti_begstep;
-		    GravDataGet[nexport].u.Ti_endstep = P[i].Ti_endstep;
-		    GravDataGet[nexport].u.ID = P[i].ID;
+		      GravDataGet[nexport].Vel[k] = P[i].Vel[k];  		  
+		    GravDataGet[nexport].Ti_begstep = P[i].Ti_begstep;
+		    GravDataGet[nexport].Ti_endstep = P[i].Ti_endstep;
+		    GravDataGet[nexport].ID = P[i].ID;
 		    GravDataGet[nexport].Type = P[i].Type;
 #endif
 #ifdef UNEQUALSOFTENINGS
@@ -268,8 +268,11 @@ void gravity_tree(void)
 			  for(k = 0; k < 3; k++)
 			    P[place].GravAccel[k] += GravDataOut[j + noffset[recvTask]].u.Acc[k];
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-			  for(k = 0; k < 3; k++)
-			    P[place].Vel[k] += GravDataOut[j + noffset[recvTask]].u.Vel[k];
+			  if( All.ErrTolTheta == 0 || All.TypeOfOpeningCriterion == 0)
+			    {
+			      for(k = 0; k < 3; k++)
+				P[place].Vel[k] += GravDataOut[j + noffset[recvTask]].Vel[k];
+			    }
 #endif
 			  P[place].GravCost += GravDataOut[j + noffset[recvTask]].w.Ninteractions;
 			}

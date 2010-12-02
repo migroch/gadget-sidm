@@ -80,7 +80,7 @@ OPT    += -DCOMPUTE_SELFINTERACTION_FORDARK
 #--------------------------------------- Select some defaults
 
 CC       =  mpicc.mpich2               # sets the C-compiler
-OPTIMIZE =  -O3 -Wall -g        # sets optimization and warning flags
+OPTIMIZE =  -O3 -Wall -ggdb        # sets optimization and warning flags
 MPICHLIB =  -lmpich
 HDF5LIB  =  -lhdf5 -lz
 
@@ -234,7 +234,11 @@ OBJS   = main.o  run.o  predict.o begrun.o endrun.o global.o  \
 	 domain.o  allvars.o potential.o  \
          forcetree.o   peano.o gravtree_forcetest.o \
 	 pm_periodic.o pm_nonperiodic.o longrange.o \
-	 sidm_routines.o
+
+
+ifeq (COMPUTE_SELFINTERACTION_FORDARK,$(findstring COMPUTE_SELFINTERACTION_FORDARK, $(OPT)))
+OBJS += sidm_routines.o
+endif
 
 INCL   = allvars.h  proto.h  tags.h  Makefile
 

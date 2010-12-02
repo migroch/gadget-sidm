@@ -7,6 +7,10 @@
 #include "tags.h"
 #include "allvars.h"
 
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+double GeoFactorTable[GEOFACTOR_TABLE_LENGTH];
+IDTYPE** InteractionTable;
+#endif
 
 int ThisTask;		/*!< the rank of the local processor */
 int NTask;               /*!< number of processors */
@@ -89,11 +93,6 @@ FILE *FdCPU;        /*!< file handle for cpu.txt log-file. */
 
 #ifdef FORCETEST
 FILE *FdForceTest;  /*!< file handle for forcetest.txt log-file. */
-#endif
-
-#ifdef COMPUTE_SELFINTERACTION_FORDARK
-double GeoFactorTable[GEOFACTOR_TABLE_LENGTH];
-unsigned int InteractionTable[INTERACTION_TABLE_LENGTH][PARTICLE_MAX_INTERACTIONS + 1];
 #endif
 
 double DriftTable[DRIFT_TABLE_LENGTH];      /*!< table for the cosmological drift factors */

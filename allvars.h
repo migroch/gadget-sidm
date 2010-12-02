@@ -13,6 +13,22 @@
  *        becomes "struct global_data_all_processes All;"
  */
 
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+#ifdef LONGIDS
+#define IDTYPE unsigned long long
+#else
+#define IDTYPE unsigned int
+#endif
+
+#define GEOFACTOR_TABLE_LENGTH 1000    /*!< length of the table used for the geometric factor spline */
+#define INTERACTION_TABLE_LENGTH 20000 /*!< This should be set to twice the maximum number of interactions 
+					 you expect at each timestep */
+#define PARTICLE_MAX_INTERACTIONS 1000 /*!< Maximum number of interactions a particle can have at each time step */
+
+extern double GeoFactorTable[GEOFACTOR_TABLE_LENGTH];
+extern IDTYPE** InteractionTable;
+#endif
+
 #ifndef ALLVARS_H
 #define ALLVARS_H
 
@@ -238,14 +254,6 @@ extern double HydroKickTable[DRIFT_TABLE_LENGTH];  /*!< table for the cosmologic
 extern void *CommBuffer;   /*!< points to communication buffer, which is used in the domain decomposition, the
                                 parallel tree-force computation, the SPH routines, etc. */
 
-#ifdef COMPUTE_SELFINTERACTION_FORDARK
-#define GEOFACTOR_TABLE_LENGTH 1000  /*!< length of the table used for the geometric factor spline */
-#define INTERACTION_TABLE_LENGTH 20000 /*!< This should be set to twice the maximum number of interactions
-					 you expect at each timestep */
-#define PARTICLE_MAX_INTERACTIONS 1000 /*!< Maximum number of interactions a particle can have at each time step */
-extern unsigned int InteractionTable[INTERACTION_TABLE_LENGTH][PARTICLE_MAX_INTERACTIONS + 1];
-extern double GeoFactorTable[GEOFACTOR_TABLE_LENGTH];
-#endif
 
 /*! This structure contains data which is the SAME for all tasks (mostly code parameters read from the
  * parameter file).  Holding this data in a structure is convenient for writing/reading the restart file, and
@@ -700,15 +708,13 @@ extern struct gravdata_in
     FLOAT Pos[3];
     FLOAT Acc[3];
     FLOAT Potential;
-#ifdef COMPUTE_SELFINTERACTION_FORDARK
-    FLOAT Vel[3];
-    int Ti_begstep;
-    int Ti_endstep;
-    unsigned int ID;
-#endif
   }
   u;
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
+  FLOAT Vel[3];
+  int Ti_begstep;
+  int Ti_endstep;
+  IDTYPE ID;		
 #ifndef UNEQUALSOFTENINGS
   int Type;
 #endif

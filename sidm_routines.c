@@ -202,7 +202,7 @@ double kernel(double u)
 
 /*! This routine updates the interaction table each time there is an interaction.
 */
-void update_interaction_table(unsigned int id1, unsigned int id2)
+void update_interaction_table(IDTYPE id1, IDTYPE id2)
 {
   int i,j,id1_index,id2_index;
   id1 += 1;
@@ -226,21 +226,27 @@ void update_interaction_table(unsigned int id1, unsigned int id2)
 	      InteractionTable[i][1] = id2;
 	      break;
 	    }
-	  printf("ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH. Calling endrun()");
-	  endrun(1);
+	  if (i == INTERACTION_TABLE_LENGTH - 1)
+	    {
+	      printf("ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH");
+	      endrun(1);
+	    }
 	}
     }
   else
     {
-      for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+      for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
 	{
 	  if(InteractionTable[id1_index][j] == 0)
 	    {
 	      InteractionTable[id1_index][j] = id2;
 	      break;
 	    }
-	  printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERACTIONS. Calling endrun()");
-	  endrun(1);
+	  if (i == PARTICLE_MAX_INTERACTIONS )
+	    {
+	      printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERACTIONS");
+	      endrun(1);
+	    }
 	}
     } 
 
@@ -254,21 +260,27 @@ void update_interaction_table(unsigned int id1, unsigned int id2)
 	      InteractionTable[i][1] = id1;
 	      break;
 	    }
-	  printf("ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH. Calling endrun()");
-	  endrun(1);
+	  if (i == INTERACTION_TABLE_LENGTH - 1)
+	    {
+	      printf("ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH");
+	      endrun(1);
+	    }
 	}
     }
   else
     {
-      for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+      for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
 	{
 	  if(InteractionTable[id2_index][j] == 0)
 	    {
 	      InteractionTable[id2_index][j] = id1;
 	      break;
 	    }
-	  printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERACTIONS. Calling endrun()");
-	  endrun(1);
+	  if (i == PARTICLE_MAX_INTERACTIONS )
+	    {
+	      printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERACTIONS");
+	      endrun(1);
+	    }
 	}
     }
 }
@@ -277,7 +289,7 @@ void update_interaction_table(unsigned int id1, unsigned int id2)
 /*! This function checks if a pair of particles have interacted in the current time step. It looks at the InteractionTable
   and returns 0 if the pair is not found and 1 if pair is found. This is used to avoid double counting of interactions.
 */
-int check_interaction_table(unsigned int id1, unsigned int id2)
+int check_interaction_table(IDTYPE id1, IDTYPE id2)
 {
   int i,j,flag;
   
@@ -289,7 +301,7 @@ int check_interaction_table(unsigned int id1, unsigned int id2)
     { 
       if(InteractionTable[i][0] == id1 || InteractionTable[i][0] == id2 )
 	{
-	  for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+	  for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
 	    {
 	      if(InteractionTable[i][0] == id1 && InteractionTable[i][j] == id2)
 		{ 
@@ -308,4 +320,30 @@ int check_interaction_table(unsigned int id1, unsigned int id2)
   return flag;
 }
 
+void AllocateInteractionTable(int x, int y)
+{
+  int i,j;
 
+  InteractionTable = (IDTYPE**) malloc(x*sizeof(IDTYPE*)); 
+  if (InteractionTable == NULL)
+    {
+      free(InteractionTable);
+      printf("Failed to allocate memory for the interaction table");
+      endrun(2);
+    }
+
+  for (i = 0; i < x; i++)
+    {   
+      InteractionTable[i] = (IDTYPE*) malloc(y*sizeof(IDTYPE)); 
+      if (InteractionTable[i] == NULL)
+	{
+	  free(InteractionTable[i]);
+	  printf("Failed to allocate memory for the interaction table");
+	  endrun(2);
+	}
+    }
+  
+    for (i = 0; i < x; i++)
+      for(j = 0; j < y; j++)
+	InteractionTable[i][j]= 0;
+}

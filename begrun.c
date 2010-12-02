@@ -56,6 +56,11 @@ void begrun(void)
 
   All.TimeLastRestartFile = CPUThisRun;
 
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+    All.Nself_interactions = 0;
+    AllocateInteractionTable(INTERACTION_TABLE_LENGTH, PARTICLE_MAX_INTERACTIONS + 1);
+#endif
+
   if(RestartFlag == 0 || RestartFlag == 2)
     {
       set_random_numbers();

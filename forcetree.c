@@ -1146,7 +1146,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
   double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob;
   FLOAT  targetVel[3];
   int targetBegstep,targetEndstep;
-  unsigned int targetID;
+  IDTYPE targetID;		
   int si_count,i;
   kick_x = 0;
   kick_y = 0;
@@ -1163,10 +1163,10 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
   else
   {
     for(i=0;i<3;i++)
-      targetVel[i] = GravDataGet[target].u.Vel[i];
-    targetBegstep = GravDataGet[target].u.Ti_begstep;
-    targetEndstep = GravDataGet[target].u.Ti_endstep;
-    targetID      = GravDataGet[target].u.ID;
+      targetVel[i] = GravDataGet[target].Vel[i];
+    targetBegstep = GravDataGet[target].Ti_begstep;
+    targetEndstep = GravDataGet[target].Ti_endstep;
+    targetID      = GravDataGet[target].ID;
   }
 #endif
 
@@ -1468,9 +1468,9 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
       GravDataResult[target].u.Acc[2] = acc_z;
       GravDataResult[target].w.Ninteractions = ninteractions;
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-      GravDataResult[target].u.Vel[0] = kick_x;
-      GravDataResult[target].u.Vel[1] = kick_y;
-      GravDataResult[target].u.Vel[2] = kick_z;
+      GravDataResult[target].Vel[0] = kick_x;
+      GravDataResult[target].Vel[1] = kick_y;
+      GravDataResult[target].Vel[2] = kick_z;
 #endif
     }
 
@@ -1522,7 +1522,7 @@ int force_treeevaluate_shortrange(int target, int mode)
   double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob;
   FLOAT targetVel[3];
   int targetBegstep,targetEndstep;
-  unsigned int targetID;
+  IDTYPE targetID;		
   int si_count,i;
   kick_x = 0;
   kick_y = 0;
@@ -1539,10 +1539,10 @@ int force_treeevaluate_shortrange(int target, int mode)
   else
     {
       for(i=0;i<3;i++)
-        targetVel[i] = GravDataGet[target].u.Vel[i];
-      targetBegstep = GravDataGet[target].u.Ti_begstep;
-      targetEndstep = GravDataGet[target].u.Ti_endstep;
-      targetID      = GravDataGet[target].u.ID;
+        targetVel[i] = GravDataGet[target].Vel[i];
+      targetBegstep = GravDataGet[target].Ti_begstep;
+      targetEndstep = GravDataGet[target].Ti_endstep;
+      targetID      = GravDataGet[target].ID;
     }
 #endif
 
@@ -1899,9 +1899,9 @@ int force_treeevaluate_shortrange(int target, int mode)
       GravDataResult[target].u.Acc[2] = acc_z;
       GravDataResult[target].w.Ninteractions = ninteractions;
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-      GravDataResult[target].u.Vel[0] = kick_x;
-      GravDataResult[target].u.Vel[1] = kick_y;
-      GravDataResult[target].u.Vel[2] = kick_z;
+      GravDataResult[target].Vel[0] = kick_x;
+      GravDataResult[target].Vel[1] = kick_y;
+      GravDataResult[target].Vel[2] = kick_z;
 #endif
     }
 

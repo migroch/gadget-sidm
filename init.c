@@ -62,13 +62,6 @@ void init(void)
   All.NumCurrentTiStep = 0;	/* setup some counters */
   All.SnapshotFileCount = 0;
 
-#ifdef COMPUTE_SELFINTERACTION_FORDARK
-  All.Nself_interactions = 0;
-  for (i = 0; i < INTERACTION_TABLE_LENGTH; i++)
-    for(j = 0; j < PARTICLE_MAX_INTERACTIONS; j++)
-      InteractionTable[i][j]= 0;
-#endif
-
   if(RestartFlag == 2)
     All.SnapshotFileCount = atoi(All.InitCondFile + strlen(All.InitCondFile) - 3) + 1;
 

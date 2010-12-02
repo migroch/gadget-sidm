@@ -394,7 +394,7 @@ void every_timestep_stuff(void)
 	}
       All.Nself_interactions = 0;
       for (i = 0; i < INTERACTION_TABLE_LENGTH; i++)
-	for(j = 0; j < PARTICLE_MAX_INTERACTIONS; j++)
+	for(j = 0; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
 	  InteractionTable[i][j] = 0;
 #else       
       if(All.ComovingIntegrationOn)
