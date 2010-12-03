@@ -242,9 +242,9 @@ void update_interaction_table(IDTYPE id1, IDTYPE id2)
 	      InteractionTable[id1_index][j] = id2;
 	      break;
 	    }
-	  if (i == PARTICLE_MAX_INTERACTIONS )
+	  if (j == PARTICLE_MAX_INTERACTIONS )
 	    {
-	      printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERACTIONS");
+	      printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERACTIONS");
 	      endrun(1);
 	    }
 	}
@@ -276,9 +276,9 @@ void update_interaction_table(IDTYPE id1, IDTYPE id2)
 	      InteractionTable[id2_index][j] = id1;
 	      break;
 	    }
-	  if (i == PARTICLE_MAX_INTERACTIONS )
+	  if (j == PARTICLE_MAX_INTERACTIONS )
 	    {
-	      printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERACTIONS");
+	      printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERACTIONS");
 	      endrun(1);
 	    }
 	}
