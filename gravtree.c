@@ -413,7 +413,7 @@ void gravity_tree(void)
   MPI_Reduce(&timeimbalance, &sumimbalance, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-  Nself_interactionsList = malloc(sizeof(int) * NTask);
+  Nself_interactionsList = malloc(sizeof(unsigned long) * NTask);
   MPI_Gather(&All.Nself_interactions, 1, MPI_UNSIGNED_LONG, Nself_interactionsList, 1, MPI_UNSIGNED_LONG, 0, MPI_COMM_WORLD);
 #endif
 
@@ -476,6 +476,9 @@ void gravity_tree(void)
   free(costtreelist);
   free(timecommlist);
   free(timetreelist);
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+  free(Nself_interactionsList);
+#endif
 }
 
 

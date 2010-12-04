@@ -80,7 +80,7 @@ OPT    += -DCOMPUTE_SELFINTERACTION_FORDARK
 #--------------------------------------- Select some defaults
 
 CC       =  mpicc.mpich2               # sets the C-compiler
-OPTIMIZE =  -O3 -Wall -ggdb        # sets optimization and warning flags
+OPTIMIZE =  -Wall -ggdb -m64       # sets optimization and warning flags
 MPICHLIB =  -lmpich
 HDF5LIB  =  -lhdf5 -lz
 
@@ -94,7 +94,7 @@ HDF5LIB  =  -lhdf5 -lz
 #SYSTYPE="OpteronMPA"
 #SYSTYPE="OPA-Cluster32"
 #SYSTYPE="OPA-Cluster64"
-#SYSTYPE="greenplanet"
+SYSTYPE="greenplanet"
 
 #--------------------------------------- Adjust settings for target computer
 
@@ -102,7 +102,7 @@ HDF5LIB  =  -lhdf5 -lz
 ifeq ($(SYSTYPE),"greenplanet")
 #CC       =   /opt/mpich/intel/bin/mpicc    
 CC = mpicc
-OPTIMIZE =  -O3 # -Wall -m64 
+OPTIMIZE =   -03 -Wall -m64    # -ggdb
 GSL_INCL =  -I/home/rocham/include
 GSL_LIBS =  -L/home/rocham/lib
 FFTW_INCL=  -I/home/rocham/include
