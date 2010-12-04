@@ -46,6 +46,10 @@ void gravity_tree(void)
   MPI_Status status;
 #endif
 
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+  unsigned long *Nself_interactionsList;
+#endif
+
   /* set new softening lengths */
   if(All.ComovingIntegrationOn)
     set_softenings();
@@ -89,6 +93,13 @@ void gravity_tree(void)
       P[i].Ti_endstep = -P[i].Ti_endstep - 1;
 #endif
 
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+  All.Nself_interactions = 0;
+  All.Nself_interactionsSum = 0;
+  for (i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+    for(j = 0; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
+      InteractionTable[i][j] = 0;
+#endif
 
   noffset = malloc(sizeof(int) * NTask);	/* offsets of bunches in common list */
   nbuffer = malloc(sizeof(int) * NTask);
@@ -401,6 +412,11 @@ void gravity_tree(void)
   MPI_Reduce(&nexportsum, &nexport, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
   MPI_Reduce(&timeimbalance, &sumimbalance, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+  Nself_interactionsList = malloc(sizeof(int) * NTask);
+  MPI_Gather(&All.Nself_interactions, 1, MPI_UNSIGNED_LONG, Nself_interactionsList, 1, MPI_UNSIGNED_LONG, 0, MPI_COMM_WORLD);
+#endif
+
   if(ThisTask == 0)
     {
       All.TotNumOfForces += ntot;
@@ -417,6 +433,9 @@ void gravity_tree(void)
       for(i = 0, maxt = timetreelist[0], sumt = 0, plb_max = 0,
 	  maxnumnodes = 0, costtotal = 0, sumcomm = 0, ewaldtot = 0; i < NTask; i++)
 	{
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+	  All.Nself_interactionsSum += Nself_interactionsList[i];
+#endif
 	  costtotal += costtreelist[i];
 
 	  sumcomm += timecommlist[i];

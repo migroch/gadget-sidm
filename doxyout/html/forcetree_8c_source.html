@@ -1067,7 +1067,7 @@
 <a name="l01146"></a>01146 <span class="preprocessor"></span>  <span class="keywordtype">double</span>  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob;
 <a name="l01147"></a>01147   <a class="code" href="allvars_8h.html#ae8690abbffa85934d64d545920e2b108">FLOAT</a>  targetVel[3];
 <a name="l01148"></a>01148   <span class="keywordtype">int</span> targetBegstep,targetEndstep;
-<a name="l01149"></a>01149   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> targetID;
+<a name="l01149"></a>01149   IDTYPE targetID;              
 <a name="l01150"></a>01150   <span class="keywordtype">int</span> si_count,i;
 <a name="l01151"></a>01151   kick_x = 0;
 <a name="l01152"></a>01152   kick_y = 0;
@@ -1084,10 +1084,10 @@
 <a name="l01163"></a>01163   <span class="keywordflow">else</span>
 <a name="l01164"></a>01164   {
 <a name="l01165"></a>01165     <span class="keywordflow">for</span>(i=0;i&lt;3;i++)
-<a name="l01166"></a>01166       targetVel[i] = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].u.Vel[i];
-<a name="l01167"></a>01167     targetBegstep = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.Ti_begstep;
-<a name="l01168"></a>01168     targetEndstep = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.Ti_endstep;
-<a name="l01169"></a>01169     targetID      = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.ID;
+<a name="l01166"></a>01166       targetVel[i] = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].Vel[i];
+<a name="l01167"></a>01167     targetBegstep = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].Ti_begstep;
+<a name="l01168"></a>01168     targetEndstep = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].Ti_endstep;
+<a name="l01169"></a>01169     targetID      = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].ID;
 <a name="l01170"></a>01170   }
 <a name="l01171"></a>01171 <span class="preprocessor">#endif</span>
 <a name="l01172"></a>01172 <span class="preprocessor"></span>
@@ -1344,7 +1344,7 @@
 <a name="l01423"></a>01423           {
 <a name="l01424"></a>01424             <span class="keywordflow">if</span> ((ptype == 1 &amp;&amp; <a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].Type == 4) || (ptype == 4 &amp;&amp; <a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].Type == 1) ) <span class="comment">/*This line has been modified for the Test1. original: if (ptype == 1 &amp;&amp; P[no].Type == 1)*/</span>
 <a name="l01425"></a>01425               {
-<a name="l01426"></a>01426                 <span class="keywordflow">if</span> (r &lt; 2.0 * <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a2f875884085b35ff64047e46f5348be4">ForceSoftening</a>[1] &amp;&amp; <a class="code" href="sidm__routines_8c.html#a74f3632c9a90fd460cb308e906b91d5d">check_interaction_table</a>(targetID,<a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].ID) == 0)
+<a name="l01426"></a>01426                 <span class="keywordflow">if</span> (r &lt; 2.0 * <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a2f875884085b35ff64047e46f5348be4">ForceSoftening</a>[1] &amp;&amp; <a class="code" href="sidm__routines_8c.html#a06b0e0f213ae5bd086307e76cddc68a4">check_interaction_table</a>(targetID,<a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].ID) == 0)
 <a name="l01427"></a>01427                   {
 <a name="l01428"></a>01428                     prob = <a class="code" href="sidm__routines_8c.html#a5b36e92449c7102086706b7b24899be8">prob_of_interaction</a>(r, targetVel, <a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].Vel, targetBegstep, targetEndstep);
 <a name="l01429"></a>01429                     <span class="keywordflow">if</span> (<a class="code" href="proto_8h.html#a0d508d57eb6f608ff6eec8ac11bb9c05">get_random_number</a>(<a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].ID) &lt; prob)
@@ -1356,7 +1356,7 @@
 <a name="l01435"></a>01435                         <span class="keywordflow">for</span> (i = 0; i &lt; 3 ; i++)
 <a name="l01436"></a>01436                           <a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].Vel[i] += kick_no[i];
 <a name="l01437"></a>01437                         si_count+=1;
-<a name="l01438"></a>01438                         <a class="code" href="sidm__routines_8c.html#a6754f6d28b3de6f16e3f98d6f79b5719">update_interaction_table</a>(targetID,<a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].ID);
+<a name="l01438"></a>01438                         <a class="code" href="sidm__routines_8c.html#a07ab80a1f9370ead2bc2a38884436615">update_interaction_table</a>(targetID,<a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].ID);
 <a name="l01439"></a>01439                       }
 <a name="l01440"></a>01440                   }
 <a name="l01441"></a>01441               }
@@ -1389,9 +1389,9 @@
 <a name="l01468"></a>01468       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.<a class="code" href="structgravdata__in.html#a6850a5b240d113f9c28c27762d3c44ff">Acc</a>[2] = acc_z;
 <a name="l01469"></a>01469       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].<a class="code" href="structgravdata__in.html#aa49666c565d68dcd6c3b6a6015f8a51f">w</a>.<a class="code" href="structgravdata__in.html#a6b47f6ca387f17b375c949bbc9c0572f">Ninteractions</a> = ninteractions;
 <a name="l01470"></a>01470 <span class="preprocessor">#ifdef COMPUTE_SELFINTERACTION_FORDARK</span>
-<a name="l01471"></a>01471 <span class="preprocessor"></span>      <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.Vel[0] = kick_x;
-<a name="l01472"></a>01472       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.Vel[1] = kick_y;
-<a name="l01473"></a>01473       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.Vel[2] = kick_z;
+<a name="l01471"></a>01471 <span class="preprocessor"></span>      <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].Vel[0] = kick_x;
+<a name="l01472"></a>01472       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].Vel[1] = kick_y;
+<a name="l01473"></a>01473       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].Vel[2] = kick_z;
 <a name="l01474"></a>01474 <span class="preprocessor">#endif</span>
 <a name="l01475"></a>01475 <span class="preprocessor"></span>    }
 <a name="l01476"></a>01476 
@@ -1434,7 +1434,7 @@
 <a name="l01522"></a>01522 <span class="preprocessor"></span>  <span class="keywordtype">double</span>  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob;
 <a name="l01523"></a>01523   <a class="code" href="allvars_8h.html#ae8690abbffa85934d64d545920e2b108">FLOAT</a> targetVel[3];
 <a name="l01524"></a>01524   <span class="keywordtype">int</span> targetBegstep,targetEndstep;
-<a name="l01525"></a>01525   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> targetID;
+<a name="l01525"></a>01525   IDTYPE targetID;              
 <a name="l01526"></a>01526   <span class="keywordtype">int</span> si_count,i;
 <a name="l01527"></a>01527   kick_x = 0;
 <a name="l01528"></a>01528   kick_y = 0;
@@ -1451,10 +1451,10 @@
 <a name="l01539"></a>01539   <span class="keywordflow">else</span>
 <a name="l01540"></a>01540     {
 <a name="l01541"></a>01541       <span class="keywordflow">for</span>(i=0;i&lt;3;i++)
-<a name="l01542"></a>01542         targetVel[i] = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].u.Vel[i];
-<a name="l01543"></a>01543       targetBegstep = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.Ti_begstep;
-<a name="l01544"></a>01544       targetEndstep = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.Ti_endstep;
-<a name="l01545"></a>01545       targetID      = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.ID;
+<a name="l01542"></a>01542         targetVel[i] = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].Vel[i];
+<a name="l01543"></a>01543       targetBegstep = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].Ti_begstep;
+<a name="l01544"></a>01544       targetEndstep = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].Ti_endstep;
+<a name="l01545"></a>01545       targetID      = <a class="code" href="allvars_8c.html#abc4ea40ab91f3e9288a0394c2544c65b">GravDataGet</a>[target].ID;
 <a name="l01546"></a>01546     }
 <a name="l01547"></a>01547 <span class="preprocessor">#endif</span>
 <a name="l01548"></a>01548 <span class="preprocessor"></span>
@@ -1764,7 +1764,7 @@
 <a name="l01852"></a>01852             {
 <a name="l01853"></a>01853               <span class="keywordflow">if</span> ((ptype == 1 &amp;&amp; <a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].Type == 4) || (ptype == 4 &amp;&amp; <a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].<a class="code" href="structparticle__data.html#ab6119b261ff95e8f84ae171139704cbd">Type</a> == 1) ) <span class="comment">/*This line has been modified for the Test1. original: if (ptype == 1 &amp;&amp; P[no].Type == 1)*/</span>
 <a name="l01854"></a>01854                 {
-<a name="l01855"></a>01855                   <span class="keywordflow">if</span>(r &lt; 2.0 * <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a2f875884085b35ff64047e46f5348be4">ForceSoftening</a>[1] &amp;&amp; <a class="code" href="sidm__routines_8c.html#a74f3632c9a90fd460cb308e906b91d5d">check_interaction_table</a>(targetID,<a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].ID) == 0)
+<a name="l01855"></a>01855                   <span class="keywordflow">if</span>(r &lt; 2.0 * <a class="code" href="allvars_8c.html#ad49123ae0461ffe61629a0d4cf2ba91f">All</a>.<a class="code" href="structglobal__data__all__processes.html#a2f875884085b35ff64047e46f5348be4">ForceSoftening</a>[1] &amp;&amp; <a class="code" href="sidm__routines_8c.html#a06b0e0f213ae5bd086307e76cddc68a4">check_interaction_table</a>(targetID,<a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].ID) == 0)
 <a name="l01856"></a>01856                     {
 <a name="l01857"></a>01857                       prob = <a class="code" href="sidm__routines_8c.html#a5b36e92449c7102086706b7b24899be8">prob_of_interaction</a>(r, targetVel, <a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].Vel, targetBegstep, targetEndstep);
 <a name="l01858"></a>01858                       <span class="keywordflow">if</span>(<a class="code" href="proto_8h.html#a0d508d57eb6f608ff6eec8ac11bb9c05">get_random_number</a>(<a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].ID) &lt; prob)
@@ -1776,7 +1776,7 @@
 <a name="l01864"></a>01864                           <span class="keywordflow">for</span>(i = 0; i &lt; 3 ; i++)
 <a name="l01865"></a>01865                               <a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].Vel[i] += kick_no[i];
 <a name="l01866"></a>01866                           si_count+=1;
-<a name="l01867"></a>01867                           <a class="code" href="sidm__routines_8c.html#a6754f6d28b3de6f16e3f98d6f79b5719">update_interaction_table</a>(targetID,<a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].ID);
+<a name="l01867"></a>01867                           <a class="code" href="sidm__routines_8c.html#a07ab80a1f9370ead2bc2a38884436615">update_interaction_table</a>(targetID,<a class="code" href="allvars_8c.html#a29aa1b496fa7d42c32c4cae3c77aa068">P</a>[no].ID);
 <a name="l01868"></a>01868                         }
 <a name="l01869"></a>01869                     }
 <a name="l01870"></a>01870                 }
@@ -1811,9 +1811,9 @@
 <a name="l01899"></a>01899       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.<a class="code" href="structgravdata__in.html#a6850a5b240d113f9c28c27762d3c44ff">Acc</a>[2] = acc_z;
 <a name="l01900"></a>01900       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].<a class="code" href="structgravdata__in.html#aa49666c565d68dcd6c3b6a6015f8a51f">w</a>.<a class="code" href="structgravdata__in.html#a6b47f6ca387f17b375c949bbc9c0572f">Ninteractions</a> = ninteractions;
 <a name="l01901"></a>01901 <span class="preprocessor">#ifdef COMPUTE_SELFINTERACTION_FORDARK</span>
-<a name="l01902"></a>01902 <span class="preprocessor"></span>      <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.Vel[0] = kick_x;
-<a name="l01903"></a>01903       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.Vel[1] = kick_y;
-<a name="l01904"></a>01904       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].<a class="code" href="structgravdata__in.html#a89df6fdf4fb1512fa2b491eb4fb10662">u</a>.Vel[2] = kick_z;
+<a name="l01902"></a>01902 <span class="preprocessor"></span>      <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].Vel[0] = kick_x;
+<a name="l01903"></a>01903       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].Vel[1] = kick_y;
+<a name="l01904"></a>01904       <a class="code" href="allvars_8c.html#a1aab0f29675c0745b5c2887e4791c070">GravDataResult</a>[target].Vel[2] = kick_z;
 <a name="l01905"></a>01905 <span class="preprocessor">#endif</span>
 <a name="l01906"></a>01906 <span class="preprocessor"></span>    }
 <a name="l01907"></a>01907 
@@ -3301,7 +3301,7 @@
 <a name="l03462"></a>03462 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Fri Nov 5 2010 18:27:03 for GADGET-2 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Dec 3 2010 18:45:42 for GADGET-2 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

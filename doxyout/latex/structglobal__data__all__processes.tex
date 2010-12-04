@@ -266,7 +266,7 @@ int \hyperlink{structglobal__data__all__processes_af0ada535a17b75233e0e0de6ff8fa
 \subsection{Detailed Description}
 This structure contains data which is the SAME for all tasks (mostly code parameters read from the parameter file). Holding this data in a structure is convenient for writing/reading the restart file, and it allows the introduction of new global variables in a simple way. The only thing to do is to introduce them into this structure. 
 
-Definition at line 255 of file allvars.h.
+Definition at line 263 of file allvars.h.
 
 
 
@@ -278,7 +278,7 @@ Definition at line 255 of file allvars.h.
 \label{structglobal__data__all__processes_a14b9df6a6579d2ce6ef7c86aa0230217}
 Sets the parameter $\alpha$ of the artificial viscosity 
 
-Definition at line 298 of file allvars.h.
+Definition at line 307 of file allvars.h.
 
 
 
@@ -291,7 +291,7 @@ Referenced by begrun(), hydro\_\-evaluate(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_a3bf3f2dd9be45f8f203424e57b9d9de3}
 Gives the scale of the long-\/range/short-\/range split (in mesh-\/cells), both for the coarse and the high-\/res mesh 
 
-Definition at line 384 of file allvars.h.
+Definition at line 393 of file allvars.h.
 
 
 
@@ -304,7 +304,7 @@ Referenced by find\_\-dt\_\-displacement\_\-constraint(), force\_\-treeevaluate\
 \label{structglobal__data__all__processes_ac1b2e52cf547f5b2fe4bdfb0eaafa22f}
 Boxsize in case periodic boundary conditions are used 
 
-Definition at line 269 of file allvars.h.
+Definition at line 278 of file allvars.h.
 
 
 
@@ -317,7 +317,7 @@ Referenced by check\_\-omega(), density(), do\_\-box\_\-wrapping(), ewald\_\-ini
 \label{structglobal__data__all__processes_abd0120516eb7fee5a534464546fc5c7f}
 size of communication buffer in MB 
 
-Definition at line 279 of file allvars.h.
+Definition at line 288 of file allvars.h.
 
 
 
@@ -330,7 +330,7 @@ Referenced by allocate\_\-commbuffers(), begrun(), read\_\-file(), read\_\-param
 \label{structglobal__data__all__processes_a9ab84bfa2f66ade551d613aeb3921d76}
 number of particles fitting into the communication buffer in the density computation 
 
-Definition at line 281 of file allvars.h.
+Definition at line 290 of file allvars.h.
 
 
 
@@ -343,7 +343,7 @@ Referenced by allocate\_\-commbuffers(), begrun(), and density().
 \label{structglobal__data__all__processes_abf3206e6032910640e91585c25bd85b2}
 number of particles fitting into the communication buffer in the domain decomposition 
 
-Definition at line 283 of file allvars.h.
+Definition at line 292 of file allvars.h.
 
 
 
@@ -356,7 +356,7 @@ Referenced by allocate\_\-commbuffers(), begrun(), and domain\_\-findExchangeNum
 \label{structglobal__data__all__processes_a2f6d4697219a2ec2e3db7f09ab31bcea}
 number of particles fitting into the buffer in the parallel tree-\/force algorithm 
 
-Definition at line 280 of file allvars.h.
+Definition at line 289 of file allvars.h.
 
 
 
@@ -369,7 +369,7 @@ Referenced by allocate\_\-commbuffers(), begrun(), compute\_\-potential(), gravi
 \label{structglobal__data__all__processes_afe2775a289a902710358d98ba607a0aa}
 number of particles fitting into the communication buffer in the SPH hydrodynamical force computation 
 
-Definition at line 282 of file allvars.h.
+Definition at line 291 of file allvars.h.
 
 
 
@@ -382,7 +382,7 @@ Referenced by allocate\_\-commbuffers(), begrun(), and hydro\_\-force().
 \label{structglobal__data__all__processes_a4104c753df69fb4da0dd9bbb57e2a5f4}
 flags that comoving integration is enabled 
 
-Definition at line 338 of file allvars.h.
+Definition at line 347 of file allvars.h.
 
 
 
@@ -395,7 +395,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), begrun(), compute\_\-global
 \label{structglobal__data__all__processes_a5ffb63ff788ca6eee831b5d4d0d9e150}
 lower left corner of coarse and high-\/res PM-\/mesh 
 
-Definition at line 386 of file allvars.h.
+Definition at line 395 of file allvars.h.
 
 \hypertarget{structglobal__data__all__processes_aa4cf405da4e0a6fc588f5a5ba7e8fde8}{
 \index{global\_\-data\_\-all\_\-processes@{global\_\-data\_\-all\_\-processes}!CourantFac@{CourantFac}}
@@ -404,7 +404,7 @@ Definition at line 386 of file allvars.h.
 \label{structglobal__data__all__processes_aa4cf405da4e0a6fc588f5a5ba7e8fde8}
 SPH-\/Courant factor 
 
-Definition at line 438 of file allvars.h.
+Definition at line 447 of file allvars.h.
 
 
 
@@ -417,7 +417,7 @@ Referenced by begrun(), get\_\-timestep(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_a41ab81d126219e1ff8119f8400428216}
 accumulated time used for communication, and for collecting partial results, in tree-\/gravity 
 
-Definition at line 404 of file allvars.h.
+Definition at line 413 of file allvars.h.
 
 
 
@@ -430,7 +430,7 @@ Referenced by every\_\-timestep\_\-stuff(), gravity\_\-tree(), and main().
 \label{structglobal__data__all__processes_a786736d9e91341733e286f6e03ab26a5}
 cumulative time spent for domain decomposition 
 
-Definition at line 401 of file allvars.h.
+Definition at line 410 of file allvars.h.
 
 
 
@@ -443,7 +443,7 @@ Referenced by domain\_\-Decomposition(), every\_\-timestep\_\-stuff(), and main(
 \label{structglobal__data__all__processes_ad3447593858d4165b669b5e70b2521cd}
 time needed to iterate on correct neighbour numbers 
 
-Definition at line 410 of file allvars.h.
+Definition at line 419 of file allvars.h.
 
 
 
@@ -456,7 +456,7 @@ Referenced by density(), every\_\-timestep\_\-stuff(), and main().
 \label{structglobal__data__all__processes_a27dce58feba6ff0e933ed6f24f857168}
 cumulative time used for gravity computation (tree-\/algorithm only) 
 
-Definition at line 399 of file allvars.h.
+Definition at line 408 of file allvars.h.
 
 
 
@@ -469,7 +469,7 @@ Referenced by compute\_\-accelerations(), every\_\-timestep\_\-stuff(), and main
 \label{structglobal__data__all__processes_ad03842fb23d3c15316ca07c7ac1bce27}
 cumulative time used for communication in SPH, and for collecting partial results 
 
-Definition at line 407 of file allvars.h.
+Definition at line 416 of file allvars.h.
 
 
 
@@ -482,7 +482,7 @@ Referenced by density(), every\_\-timestep\_\-stuff(), hydro\_\-force(), and mai
 \label{structglobal__data__all__processes_a918e3d80cf4fdaf22a803f4014588ad4}
 time used for actual SPH computations, including neighbour search 
 
-Definition at line 406 of file allvars.h.
+Definition at line 415 of file allvars.h.
 
 
 
@@ -495,7 +495,7 @@ Referenced by density(), every\_\-timestep\_\-stuff(), hydro\_\-force(), and mai
 \label{structglobal__data__all__processes_a848f914dfb3ae24d6faedc1944bcb265}
 cumulative time lost due to work-\/load imbalance in SPH 
 
-Definition at line 408 of file allvars.h.
+Definition at line 417 of file allvars.h.
 
 
 
@@ -508,7 +508,7 @@ Referenced by density(), every\_\-timestep\_\-stuff(), hydro\_\-force(), and mai
 \label{structglobal__data__all__processes_add20a8e70f3c4cc7912dc81ef141daa2}
 cumulative time spent for SPH related computations 
 
-Definition at line 409 of file allvars.h.
+Definition at line 418 of file allvars.h.
 
 
 
@@ -521,7 +521,7 @@ Referenced by compute\_\-accelerations(), every\_\-timestep\_\-stuff(), and main
 \label{structglobal__data__all__processes_a94e4eed16c5b353ec3c3c9ce380ec96a}
 cumulative time lost accross all processors as work-\/load imbalance in gravitational tree 
 
-Definition at line 405 of file allvars.h.
+Definition at line 414 of file allvars.h.
 
 
 
@@ -534,7 +534,7 @@ Referenced by every\_\-timestep\_\-stuff(), gravity\_\-tree(), and main().
 \label{structglobal__data__all__processes_a3d1492ec738b3ebf2025de1d2f398b7d}
 time required to establish Peano-\/Hilbert order 
 
-Definition at line 414 of file allvars.h.
+Definition at line 423 of file allvars.h.
 
 
 
@@ -547,7 +547,7 @@ Referenced by domain\_\-Decomposition(), every\_\-timestep\_\-stuff(), and main(
 \label{structglobal__data__all__processes_a2251bf94479cb20a7af9c34ed56587d1}
 time used for long-\/range gravitational force 
 
-Definition at line 413 of file allvars.h.
+Definition at line 422 of file allvars.h.
 
 
 
@@ -560,7 +560,7 @@ Referenced by compute\_\-accelerations(), every\_\-timestep\_\-stuff(), and main
 \label{structglobal__data__all__processes_ab5f1e056cdaa2562ec2bd3945f634d73}
 time used for computing gravitational potentials 
 
-Definition at line 400 of file allvars.h.
+Definition at line 409 of file allvars.h.
 
 
 
@@ -573,7 +573,7 @@ Referenced by compute\_\-potential(), every\_\-timestep\_\-stuff(), and main().
 \label{structglobal__data__all__processes_afb9d30620ea0dc8b9e46000e3ce0b3e3}
 cumulative time to drift the system forward in time, including dynamic tree updates 
 
-Definition at line 411 of file allvars.h.
+Definition at line 420 of file allvars.h.
 
 
 
@@ -586,7 +586,7 @@ Referenced by compute\_\-accelerations(), every\_\-timestep\_\-stuff(), find\_\-
 \label{structglobal__data__all__processes_a4b533ec2fc1af7ee057eaa5805a65a7a}
 time used for writing snapshot files 
 
-Definition at line 402 of file allvars.h.
+Definition at line 411 of file allvars.h.
 
 
 
@@ -599,7 +599,7 @@ Referenced by every\_\-timestep\_\-stuff(), main(), and savepositions().
 \label{structglobal__data__all__processes_a675f7230ece5f6d88fcc0384a8e1f6c9}
 time used for determining new timesteps, and for organizing the timestepping, including kicks of active particles 
 
-Definition at line 412 of file allvars.h.
+Definition at line 421 of file allvars.h.
 
 
 
@@ -612,7 +612,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), every\_\-timestep\_\-stuff(
 \label{structglobal__data__all__processes_a3d87cd9a94ce540341d4fb713b253c9e}
 cumulative time spent for domain decomposition 
 
-Definition at line 403 of file allvars.h.
+Definition at line 412 of file allvars.h.
 
 
 
@@ -625,7 +625,7 @@ Referenced by every\_\-timestep\_\-stuff(), main(), and run().
 \label{structglobal__data__all__processes_ac9eb650a8550b48eb464b6a0a8629a27}
 time spent for constructing the gravitational tree 
 
-Definition at line 397 of file allvars.h.
+Definition at line 406 of file allvars.h.
 
 
 
@@ -638,7 +638,7 @@ Referenced by compute\_\-potential(), every\_\-timestep\_\-stuff(), gravity\_\-t
 \label{structglobal__data__all__processes_acf5e983357d7be116cd6663958e5a149}
 actual time spent for pure tree-\/walks 
 
-Definition at line 398 of file allvars.h.
+Definition at line 407 of file allvars.h.
 
 
 
@@ -651,7 +651,7 @@ Referenced by every\_\-timestep\_\-stuff(), gravity\_\-tree(), and main().
 \label{structglobal__data__all__processes_ac2ba980c60460b89534ca8bba63cd679}
 name of file with cpu-\/time statistics 
 
-Definition at line 484 of file allvars.h.
+Definition at line 493 of file allvars.h.
 
 
 
@@ -664,7 +664,7 @@ Referenced by begrun(), open\_\-outputfiles(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_af087b459cc41cb6b81bdbdd0e339cb6f}
 cpu-\/time between regularly generated restart files 
 
-Definition at line 351 of file allvars.h.
+Definition at line 360 of file allvars.h.
 
 
 
@@ -677,7 +677,7 @@ Referenced by begrun(), read\_\-parameter\_\-file(), and run().
 \label{structglobal__data__all__processes_accb74aa1ccf3fb13e31f5704bb692313}
 Desired number of SPH neighbours 
 
-Definition at line 295 of file allvars.h.
+Definition at line 304 of file allvars.h.
 
 
 
@@ -690,7 +690,7 @@ Referenced by density(), read\_\-parameter\_\-file(), and setup\_\-smoothingleng
 \label{structglobal__data__all__processes_aa97394ab3a522c46b75f8b57a59ca0b5}
 name of file with energy statistics 
 
-Definition at line 483 of file allvars.h.
+Definition at line 492 of file allvars.h.
 
 
 
@@ -703,7 +703,7 @@ Referenced by begrun(), open\_\-outputfiles(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_a5a8eb914026679a7c816a09c20d25de0}
 parameter for relative opening criterion in tree walk 
 
-Definition at line 419 of file allvars.h.
+Definition at line 428 of file allvars.h.
 
 
 
@@ -716,7 +716,7 @@ Referenced by begrun(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-potent
 \label{structglobal__data__all__processes_a73f3a95e03513c038cf3215a2204bce4}
 accuracy tolerance parameter $ \eta $ for timestep criterion. The timestep is $ \Delta t = \sqrt{\frac{2 \eta eps}{a}} $ 
 
-Definition at line 424 of file allvars.h.
+Definition at line 433 of file allvars.h.
 
 
 
@@ -729,7 +729,7 @@ Referenced by begrun(), get\_\-timestep(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_ac3edc89fa5616655618ddccb430e3dfe}
 BH tree opening angle 
 
-Definition at line 418 of file allvars.h.
+Definition at line 427 of file allvars.h.
 
 
 
@@ -742,7 +742,7 @@ Referenced by force\_\-treeevaluate(), force\_\-treeevaluate\_\-ewald\_\-correct
 \label{structglobal__data__all__processes_a2f875884085b35ff64047e46f5348be4}
 the same, but multiplied by a factor 2.8 -\/ at that scale the force is Newtonian 
 
-Definition at line 469 of file allvars.h.
+Definition at line 478 of file allvars.h.
 
 
 
@@ -755,7 +755,7 @@ Referenced by force\_\-treebuild\_\-single(), force\_\-treeevaluate(), force\_\-
 \label{structglobal__data__all__processes_a1250b5c6e116b576ff09cbcd928d2063}
 Gravity-\/constant in internal units 
 
-Definition at line 312 of file allvars.h.
+Definition at line 321 of file allvars.h.
 
 
 
@@ -768,7 +768,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), check\_\-omega(), compute\_
 \label{structglobal__data__all__processes_a3ebe48dc90c65aa0ed7ddfe8431987b1}
 If set to zero in the parameterfile, the internal value of the gravitational constant is set to the Newtonian value based on the system of units specified. Otherwise the value provided is taken as internal gravity constant G. 
 
-Definition at line 322 of file allvars.h.
+Definition at line 331 of file allvars.h.
 
 
 
@@ -781,7 +781,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-units().
 \label{structglobal__data__all__processes_a6e6a37250907d90a56f92a55aefdda5f}
 Hubble-\/constant in internal units 
 
-Definition at line 329 of file allvars.h.
+Definition at line 338 of file allvars.h.
 
 
 
@@ -794,7 +794,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), check\_\-omega(), compute\_
 \label{structglobal__data__all__processes_a51f2bde6feb49841d60397964a9740ac}
 little `h', i.e. Hubble constant in units of 100 km/s/Mpc. Only needed to get absolute physical values for cooling physics 
 
-Definition at line 333 of file allvars.h.
+Definition at line 342 of file allvars.h.
 
 
 
@@ -807,7 +807,7 @@ Referenced by read\_\-parameter\_\-file(), and write\_\-file().
 \label{structglobal__data__all__processes_a1c63650e75378a527870ab40f1145df1}
 selects different versions of IC file-\/format 
 
-Definition at line 271 of file allvars.h.
+Definition at line 280 of file allvars.h.
 
 
 
@@ -820,7 +820,7 @@ Referenced by find\_\-files(), init(), read\_\-file(), read\_\-ic(), and read\_\
 \label{structglobal__data__all__processes_a3cbcdacb8b522288268993f0ce5b15ac}
 name of log-\/file with a list of the timesteps taken 
 
-Definition at line 485 of file allvars.h.
+Definition at line 494 of file allvars.h.
 
 
 
@@ -833,7 +833,7 @@ Referenced by begrun(), open\_\-outputfiles(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_adacd2b54a924bb4ce144afc1abbc6138}
 filename of initial conditions 
 
-Definition at line 480 of file allvars.h.
+Definition at line 489 of file allvars.h.
 
 
 
@@ -846,7 +846,7 @@ Referenced by init(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_a633fbd557554f7932dab2641d15e6ea1}
 may be used to set the temperature in the IC's 
 
-Definition at line 299 of file allvars.h.
+Definition at line 308 of file allvars.h.
 
 
 
@@ -859,7 +859,7 @@ Referenced by read\_\-ic(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_a0d1dbe97a03958559781d9619f8b17c1}
 Table with particle masses for particle types with equal mass. If particle masses are all equal for one type, the corresponding entry in MassTable is set to this value, allowing the size of the snapshot files to be reduced. 
 
-Definition at line 472 of file allvars.h.
+Definition at line 481 of file allvars.h.
 
 
 
@@ -872,7 +872,7 @@ Referenced by get\_\-particles\_\-in\_\-block(), prob\_\-of\_\-interaction(), re
 \label{structglobal__data__all__processes_a388690a6ee1497eea2f19e3984afa088}
 Maximum allowed deviation neighbour number 
 
-Definition at line 296 of file allvars.h.
+Definition at line 305 of file allvars.h.
 
 
 
@@ -885,7 +885,7 @@ Referenced by begrun(), density(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_a413b30e91ae833d0c78b42744a99e67f}
 This gives the maxmimum number of particles that can be stored on one processor. 
 
-Definition at line 266 of file allvars.h.
+Definition at line 275 of file allvars.h.
 
 
 
@@ -898,7 +898,7 @@ Referenced by allocate\_\-memory(), density\_\-evaluate(), domain\_\-Decompositi
 \label{structglobal__data__all__processes_a43dccd3997af759d43a2f3bcce44a2c4}
 This gives the maxmimum number of SPH particles that can be stored on one processor. 
 
-Definition at line 267 of file allvars.h.
+Definition at line 276 of file allvars.h.
 
 
 
@@ -911,7 +911,7 @@ Referenced by allocate\_\-memory(), domain\_\-Decomposition(), domain\_\-findExc
 \label{structglobal__data__all__processes_a988ecf1fcfe5e61ff9ac29792c816c24}
 this determines a global timestep criterion for cosmological simulations in comoving coordinates. To this end, the code computes the rms velocity of all particles, and limits the timestep such that the rms displacement is a fraction of the mean particle separation (determined from the particle mass and the cosmological parameters). This parameter specifies this fraction. 
 
-Definition at line 431 of file allvars.h.
+Definition at line 440 of file allvars.h.
 
 
 
@@ -924,7 +924,7 @@ Referenced by begrun(), find\_\-dt\_\-displacement\_\-constraint(), and read\_\-
 \label{structglobal__data__all__processes_a7303c9f6c34ee3befcac84043c8ec3ea}
 maximum allowed timestep 
 
-Definition at line 429 of file allvars.h.
+Definition at line 438 of file allvars.h.
 
 
 
@@ -937,7 +937,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), begrun(), find\_\-dt\_\-dis
 \label{structglobal__data__all__processes_ae298f2b76a8f1d0b932bee24c28987cf}
 the minimum allowed temperature expressed as energy per unit mass 
 
-Definition at line 301 of file allvars.h.
+Definition at line 310 of file allvars.h.
 
 
 
@@ -950,7 +950,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), fill\_\-write\_\-buffer(), 
 \label{structglobal__data__all__processes_aec92c94dd2a1d0f0e1ad56f2e790384a}
 minimum allowed SPH smoothing length 
 
-Definition at line 451 of file allvars.h.
+Definition at line 460 of file allvars.h.
 
 
 
@@ -963,7 +963,7 @@ Referenced by density(), move\_\-particles(), and set\_\-softenings().
 \label{structglobal__data__all__processes_acddf5d973c6847405b85f4531d5b7510}
 minimum allowed SPH smoothing length in units of SPH gravitational softening length 
 
-Definition at line 450 of file allvars.h.
+Definition at line 459 of file allvars.h.
 
 
 
@@ -976,7 +976,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a728a84084280f547b1b68dbb143570ad}
 may be used to set a floor for the gas temperature 
 
-Definition at line 300 of file allvars.h.
+Definition at line 309 of file allvars.h.
 
 
 
@@ -989,7 +989,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-units().
 \label{structglobal__data__all__processes_ab5f56d94a4417c5a703b6d2d4cb81a05}
 minimum allowed timestep. Normally, the simulation terminates if the timestep determined by the timestep criteria falls below this limit. 
 
-Definition at line 427 of file allvars.h.
+Definition at line 436 of file allvars.h.
 
 
 
@@ -1002,7 +1002,7 @@ Referenced by begrun(), get\_\-timestep(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_a35de8a7666698b80478bfedf4362e844}
 counts the number of system steps taken up to this point 
 
-Definition at line 355 of file allvars.h.
+Definition at line 364 of file allvars.h.
 
 
 
@@ -1015,7 +1015,7 @@ Referenced by every\_\-timestep\_\-stuff(), gravity\_\-tree(), init(), and run()
 \label{structglobal__data__all__processes_a3749135400fbf51c319054233d7a64a7}
 number of files in multi-\/file snapshot dumps 
 
-Definition at line 275 of file allvars.h.
+Definition at line 284 of file allvars.h.
 
 
 
@@ -1028,7 +1028,7 @@ Referenced by begrun(), read\_\-parameter\_\-file(), savepositions(), and write\
 \label{structglobal__data__all__processes_a0e328240a1fb59c7bf55332a1a691029}
 maximum number of files that may be written simultaneously when writing/reading restart-\/files, or when writing snapshot files 
 
-Definition at line 276 of file allvars.h.
+Definition at line 285 of file allvars.h.
 
 
 
@@ -1041,7 +1041,7 @@ Referenced by begrun(), read\_\-ic(), read\_\-parameter\_\-file(), restart(), an
 \label{structglobal__data__all__processes_a64e0b5f35f25dd09297bc41acf0502f7}
 count particle updates since last domain decomposition 
 
-Definition at line 307 of file allvars.h.
+Definition at line 316 of file allvars.h.
 
 
 
@@ -1054,7 +1054,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), domain\_\-Decomposition(), 
 \label{structglobal__data__all__processes_abac5eca1b5851e670eec01d4dd47c417}
 matter density in units of the critical density (at z=0) 
 
-Definition at line 330 of file allvars.h.
+Definition at line 339 of file allvars.h.
 
 
 
@@ -1067,7 +1067,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), check\_\-omega(), compute\_
 \label{structglobal__data__all__processes_a5656f8668fd420a86cb7372869745fee}
 baryon density in units of the critical density (at z=0) 
 
-Definition at line 332 of file allvars.h.
+Definition at line 341 of file allvars.h.
 
 
 
@@ -1080,7 +1080,7 @@ Referenced by find\_\-dt\_\-displacement\_\-constraint(), and read\_\-parameter\
 \label{structglobal__data__all__processes_ae272abeafbcb16230374a903a3e4e298}
 vaccum energy density relative to crictical density (at z=0) 
 
-Definition at line 331 of file allvars.h.
+Definition at line 340 of file allvars.h.
 
 
 
@@ -1093,7 +1093,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-potential(), dri
 \label{structglobal__data__all__processes_aebda5d1b80cfb767b9668d7858c36bcc}
 output directory of the code 
 
-Definition at line 481 of file allvars.h.
+Definition at line 490 of file allvars.h.
 
 
 
@@ -1106,7 +1106,7 @@ Referenced by begrun(), gravity\_\-forcetest(), open\_\-outputfiles(), read\_\-p
 \label{structglobal__data__all__processes_a063be13ecadec873ebaad1b3645a5323}
 name of file with list of desired output times 
 
-Definition at line 489 of file allvars.h.
+Definition at line 498 of file allvars.h.
 
 
 
@@ -1119,7 +1119,7 @@ Referenced by begrun(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_af0ada535a17b75233e0e0de6ff8fa448}
 number of output times stored in the table of desired output times 
 
-Definition at line 492 of file allvars.h.
+Definition at line 501 of file allvars.h.
 
 
 
@@ -1132,7 +1132,7 @@ Referenced by begrun(), find\_\-next\_\-outputtime(), read\_\-outputlist(), and 
 \label{structglobal__data__all__processes_a4e9d69a3dd88c6aef6f4afd640243950}
 flags that output times are listed in a specified file 
 
-Definition at line 343 of file allvars.h.
+Definition at line 352 of file allvars.h.
 
 
 
@@ -1145,7 +1145,7 @@ Referenced by begrun(), find\_\-next\_\-outputtime(), and read\_\-parameter\_\-f
 \label{structglobal__data__all__processes_a7f3307450336a806e545661ba6c79ba5}
 table with desired output times 
 
-Definition at line 491 of file allvars.h.
+Definition at line 500 of file allvars.h.
 
 
 
@@ -1158,7 +1158,7 @@ Referenced by begrun(), find\_\-next\_\-outputtime(), and read\_\-outputlist().
 \label{structglobal__data__all__processes_aa9ceb5cacadcf2cadfc7154ab8d7fc88}
 in order to maintain work-\/load balance, the particle load will usually NOT be balanced. Each processor allocates memory for PartAllocFactor times the average number of particles to allow for that 
 
-Definition at line 285 of file allvars.h.
+Definition at line 294 of file allvars.h.
 
 
 
@@ -1171,7 +1171,7 @@ Referenced by read\_\-file(), read\_\-parameter\_\-file(), and restart().
 \label{structglobal__data__all__processes_a52b027433ffad064869c606656e9bf7d}
 flags that periodic boundaries are enabled 
 
-Definition at line 339 of file allvars.h.
+Definition at line 348 of file allvars.h.
 
 
 
@@ -1184,7 +1184,7 @@ Referenced by compute\_\-potential(), init(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_a53412b692a49924318748259987031aa}
 end of present long-\/range timestep 
 
-Definition at line 377 of file allvars.h.
+Definition at line 386 of file allvars.h.
 
 
 
@@ -1197,7 +1197,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quanti
 \label{structglobal__data__all__processes_a723a0aa2f2ac0ac4cc58ebc049dda9b3}
 begin of present long-\/range timestep 
 
-Definition at line 376 of file allvars.h.
+Definition at line 385 of file allvars.h.
 
 
 
@@ -1210,7 +1210,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-accelerations(),
 \label{structglobal__data__all__processes_aeb7ceb2f4d86465e1febbfad5fa849d6}
 Gives the maximum radius for which the short-\/range force is evaluated with the tree (in mesh-\/cells), both for the coarse and the high-\/res mesh 
 
-Definition at line 385 of file allvars.h.
+Definition at line 394 of file allvars.h.
 
 
 
@@ -1223,7 +1223,7 @@ Referenced by force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treee
 \label{structglobal__data__all__processes_a67e197a37469217aa8ad32c42230b286}
 basename of restart-\/files 
 
-Definition at line 487 of file allvars.h.
+Definition at line 496 of file allvars.h.
 
 
 
@@ -1236,7 +1236,7 @@ Referenced by begrun(), read\_\-parameter\_\-file(), and restart().
 \label{structglobal__data__all__processes_a59f86964a3a1b03933a787cfc280951a}
 name of script-\/file that will be executed for automatic restart 
 
-Definition at line 488 of file allvars.h.
+Definition at line 497 of file allvars.h.
 
 
 
@@ -1249,7 +1249,7 @@ Referenced by begrun(), read\_\-parameter\_\-file(), and run().
 \label{structglobal__data__all__processes_a6578ce0ee08f770891c662c0ab4ad10c}
 flags that automatic resubmission of job to queue system is enabled 
 
-Definition at line 340 of file allvars.h.
+Definition at line 349 of file allvars.h.
 
 
 
@@ -1262,7 +1262,7 @@ Referenced by begrun(), read\_\-parameter\_\-file(), and run().
 \label{structglobal__data__all__processes_a6e7d07e68bd6242059d1adac6dabf0d1}
 selects different versions of snapshot file-\/formats 
 
-Definition at line 273 of file allvars.h.
+Definition at line 282 of file allvars.h.
 
 
 
@@ -1275,7 +1275,7 @@ Referenced by begrun(), read\_\-parameter\_\-file(), savepositions(), and write\
 \label{structglobal__data__all__processes_a4bcf5b5c31545691038015af9ae9acb3}
 basename to construct the names of snapshotf files 
 
-Definition at line 482 of file allvars.h.
+Definition at line 491 of file allvars.h.
 
 
 
@@ -1288,7 +1288,7 @@ Referenced by begrun(), read\_\-parameter\_\-file(), and savepositions().
 \label{structglobal__data__all__processes_aac0d3fcbac688a31e6bda55ef819c44b}
 number of snapshot that is written next 
 
-Definition at line 348 of file allvars.h.
+Definition at line 357 of file allvars.h.
 
 
 
@@ -1301,7 +1301,7 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), init(), and run()
 \label{structglobal__data__all__processes_a8c31c4a347bca34b4e8d2292f710596d}
 comoving gravitational softening lengths for type 5 
 
-Definition at line 459 of file allvars.h.
+Definition at line 468 of file allvars.h.
 
 
 
@@ -1314,7 +1314,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_af989ac3052ad7e6bf7d7bfc824274715}
 maximum physical softening length for type 5 
 
-Definition at line 466 of file allvars.h.
+Definition at line 475 of file allvars.h.
 
 
 
@@ -1327,7 +1327,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a1a0c9ca2f3dfdb2371785b66ced141d7}
 comoving gravitational softening lengths for type 3 
 
-Definition at line 457 of file allvars.h.
+Definition at line 466 of file allvars.h.
 
 
 
@@ -1340,7 +1340,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a215c28ea2e54629e8537bd9868401fa7}
 maximum physical softening length for type 3 
 
-Definition at line 464 of file allvars.h.
+Definition at line 473 of file allvars.h.
 
 
 
@@ -1353,7 +1353,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a4a4453f9f76bb91ff3418d864caf3222}
 comoving gravitational softening lengths for type 2 
 
-Definition at line 456 of file allvars.h.
+Definition at line 465 of file allvars.h.
 
 
 
@@ -1366,7 +1366,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a575a685feed5223ffc7c5b42b2b369b9}
 maximum physical softening length for type 2 
 
-Definition at line 463 of file allvars.h.
+Definition at line 472 of file allvars.h.
 
 
 
@@ -1379,7 +1379,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a1f85943960c69ff351b48fc2f3933ec2}
 comoving gravitational softening lengths for type 0 
 
-Definition at line 454 of file allvars.h.
+Definition at line 463 of file allvars.h.
 
 
 
@@ -1392,7 +1392,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a1e7634a0c6aa4affa124e095bf32285b}
 maximum physical softening length for type 0 
 
-Definition at line 461 of file allvars.h.
+Definition at line 470 of file allvars.h.
 
 
 
@@ -1405,7 +1405,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a892cb7014ecd4b3910c493755b875b7e}
 comoving gravitational softening lengths for type 1 
 
-Definition at line 455 of file allvars.h.
+Definition at line 464 of file allvars.h.
 
 
 
@@ -1418,7 +1418,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a1d4f323715e8df4ea4be9296348cca25}
 maximum physical softening length for type 1 
 
-Definition at line 462 of file allvars.h.
+Definition at line 471 of file allvars.h.
 
 
 
@@ -1431,7 +1431,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a5502dc85fd165d33e9ba8d0f8c01867c}
 comoving gravitational softening lengths for type 4 
 
-Definition at line 458 of file allvars.h.
+Definition at line 467 of file allvars.h.
 
 
 
@@ -1444,7 +1444,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a7ace4652c6c05275e4fa28dfe6fb374e}
 maximum physical softening length for type 4 
 
-Definition at line 465 of file allvars.h.
+Definition at line 474 of file allvars.h.
 
 
 
@@ -1457,7 +1457,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-softenings().
 \label{structglobal__data__all__processes_a5d557dca41d454bbc34153a0df2a4338}
 current (comoving) gravitational softening lengths for each particle type 
 
-Definition at line 468 of file allvars.h.
+Definition at line 477 of file allvars.h.
 
 
 
@@ -1470,7 +1470,7 @@ Referenced by compute\_\-potential(), domain\_\-decompose(), get\_\-timestep(), 
 \label{structglobal__data__all__processes_ab0720db6b598f7295ec843708a1d3c6f}
 current time on integer timeline 
 
-Definition at line 369 of file allvars.h.
+Definition at line 378 of file allvars.h.
 
 
 
@@ -1483,7 +1483,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), begrun(), compute\_\-accele
 \label{structglobal__data__all__processes_af1655016614a8c7ae59520abae300f67}
 next output time on integer timeline 
 
-Definition at line 370 of file allvars.h.
+Definition at line 379 of file allvars.h.
 
 
 
@@ -1496,7 +1496,7 @@ Referenced by begrun(), and find\_\-next\_\-sync\_\-point\_\-and\_\-drift().
 \label{structglobal__data__all__processes_a25b9da73fdcbdc45fbe4a6ad45479f09}
 current time of the simulation 
 
-Definition at line 360 of file allvars.h.
+Definition at line 369 of file allvars.h.
 
 
 
@@ -1509,7 +1509,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quanti
 \label{structglobal__data__all__processes_a0dd4962a455bb955f04ec271d7af7bb4}
 factor to convert from floating point time interval to integer timeline 
 
-Definition at line 368 of file allvars.h.
+Definition at line 377 of file allvars.h.
 
 
 
@@ -1522,7 +1522,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), compute\_\-global\_\-quanti
 \label{structglobal__data__all__processes_ad671e0af15abea094631b996dc78c8f1}
 time of initial conditions of the simulation 
 
-Definition at line 361 of file allvars.h.
+Definition at line 370 of file allvars.h.
 
 
 
@@ -1535,7 +1535,7 @@ Referenced by find\_\-next\_\-outputtime(), find\_\-next\_\-sync\_\-point\_\-and
 \label{structglobal__data__all__processes_a0c02c06bb5214dcf72dd4eb757df8ad3}
 simulation time interval between snapshot files 
 
-Definition at line 349 of file allvars.h.
+Definition at line 358 of file allvars.h.
 
 
 
@@ -1548,7 +1548,7 @@ Referenced by begrun(), find\_\-next\_\-outputtime(), and read\_\-parameter\_\-f
 \label{structglobal__data__all__processes_a516be9ff5c4fd4171aa8e1a687e1e72d}
 simulation time interval between computations of energy statistics 
 
-Definition at line 353 of file allvars.h.
+Definition at line 362 of file allvars.h.
 
 
 
@@ -1561,7 +1561,7 @@ Referenced by begrun(), init(), read\_\-parameter\_\-file(), and run().
 \label{structglobal__data__all__processes_a1042ebf3c648c2b23dca6fc65ff22785}
 cpu-\/time when last restart-\/file was written 
 
-Definition at line 352 of file allvars.h.
+Definition at line 361 of file allvars.h.
 
 
 
@@ -1574,7 +1574,7 @@ Referenced by begrun(), and run().
 \label{structglobal__data__all__processes_ab088f20e7889a88f2e0f652df4781e44}
 simulation time when the energy statistics was computed the last time 
 
-Definition at line 354 of file allvars.h.
+Definition at line 363 of file allvars.h.
 
 
 
@@ -1587,7 +1587,7 @@ Referenced by init(), and run().
 \label{structglobal__data__all__processes_accf0e0ec1acab3f51f583470910049d2}
 CPU time limit as defined in parameterfile 
 
-Definition at line 396 of file allvars.h.
+Definition at line 405 of file allvars.h.
 
 
 
@@ -1600,7 +1600,7 @@ Referenced by begrun(), read\_\-parameter\_\-file(), and run().
 \label{structglobal__data__all__processes_a3e22fbc2ce177c1e383e9acbbf44f8d5}
 marks the point of time until the simulation is to be evolved 
 
-Definition at line 363 of file allvars.h.
+Definition at line 372 of file allvars.h.
 
 
 
@@ -1613,7 +1613,7 @@ Referenced by begrun(), find\_\-next\_\-outputtime(), init(), init\_\-drift\_\-t
 \label{structglobal__data__all__processes_a18e4063fbc1f92e8c59d6e59c7b20631}
 simulation time of first snapshot files 
 
-Definition at line 350 of file allvars.h.
+Definition at line 359 of file allvars.h.
 
 
 
@@ -1626,7 +1626,7 @@ Referenced by find\_\-next\_\-outputtime(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_a05a40a90ec77ac379054f82acbec87dc}
 difference between current times of previous and current timestep 
 
-Definition at line 362 of file allvars.h.
+Definition at line 371 of file allvars.h.
 
 
 
@@ -1639,7 +1639,7 @@ Referenced by every\_\-timestep\_\-stuff(), find\_\-next\_\-sync\_\-point\_\-and
 \label{structglobal__data__all__processes_ae0f7c691d211f8076374cc55271022e8}
 name of file with performance metrics of gravitational tree algorithm 
 
-Definition at line 486 of file allvars.h.
+Definition at line 495 of file allvars.h.
 
 
 
@@ -1652,7 +1652,7 @@ Referenced by begrun(), open\_\-outputfiles(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_a1d2411089720f3ad0b8a294f5a693475}
 total extension of coarse and high-\/res PM-\/mesh 
 
-Definition at line 390 of file allvars.h.
+Definition at line 399 of file allvars.h.
 
 \hypertarget{structglobal__data__all__processes_a2bb70816a4d5f56e0df2d9b8d706cef2}{
 \index{global\_\-data\_\-all\_\-processes@{global\_\-data\_\-all\_\-processes}!TotN\_\-gas@{TotN\_\-gas}}
@@ -1661,7 +1661,7 @@ Definition at line 390 of file allvars.h.
 \label{structglobal__data__all__processes_a2bb70816a4d5f56e0df2d9b8d706cef2}
 total gas particle number (global value) 
 
-Definition at line 264 of file allvars.h.
+Definition at line 273 of file allvars.h.
 
 
 
@@ -1674,7 +1674,7 @@ Referenced by compute\_\-accelerations(), domain\_\-decompose(), read\_\-file(),
 \label{structglobal__data__all__processes_a44181b6f6375de86c7dda1059d2fc3f4}
 counts total number of force computations 
 
-Definition at line 306 of file allvars.h.
+Definition at line 315 of file allvars.h.
 
 
 
@@ -1687,7 +1687,7 @@ Referenced by gravity\_\-tree(), and init().
 \label{structglobal__data__all__processes_a853bbd3ea833c0a6a57af1434b611868}
 total particle numbers (global value) 
 
-Definition at line 263 of file allvars.h.
+Definition at line 272 of file allvars.h.
 
 
 
@@ -1700,7 +1700,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), domain\_\-Decomposition(), 
 \label{structglobal__data__all__processes_a374a92c40b930e388b7180b8862c3670}
 Each processor allocates a number of nodes which is TreeAllocFactor times the maximum(!) number of particles. Note: A typical local tree for N particles needs usually about $\sim$0.65$\ast$N nodes. 
 
-Definition at line 289 of file allvars.h.
+Definition at line 298 of file allvars.h.
 
 
 
@@ -1713,7 +1713,7 @@ Referenced by gravity\_\-tree(), init(), pmforce\_\-periodic(), pmpotential\_\-p
 \label{structglobal__data__all__processes_a31f122fafb06e13f611ff905f514bfa9}
 controls frequency of domain decompositions 
 
-Definition at line 443 of file allvars.h.
+Definition at line 452 of file allvars.h.
 
 
 
@@ -1726,7 +1726,7 @@ Referenced by advance\_\-and\_\-find\_\-timesteps(), begrun(), domain\_\-Decompo
 \label{structglobal__data__all__processes_a0c2a481de17eefbbd973fb8a7bb6f8fc}
 determines tree cell-\/opening criterion: 0 for Barnes-\/Hut, 1 for relative criterion 
 
-Definition at line 341 of file allvars.h.
+Definition at line 350 of file allvars.h.
 
 
 
@@ -1739,7 +1739,7 @@ Referenced by begrun(), compute\_\-accelerations(), gravity\_\-tree(), and read\
 \label{structglobal__data__all__processes_a2cc704c49ada031fae9619dbf163e32d}
 gives type of timestep criterion (only 0 supported right now -\/ unlike gadget-\/1.1) 
 
-Definition at line 342 of file allvars.h.
+Definition at line 351 of file allvars.h.
 
 
 
@@ -1752,7 +1752,7 @@ Referenced by begrun(), get\_\-timestep(), and read\_\-parameter\_\-file().
 \label{structglobal__data__all__processes_a79739025eb7e66065966227036437e06}
 factor to convert internal cooling rate to cgs units 
 
-Definition at line 319 of file allvars.h.
+Definition at line 328 of file allvars.h.
 
 
 
@@ -1765,7 +1765,7 @@ Referenced by set\_\-units().
 \label{structglobal__data__all__processes_aeccb92d371d0cfbd90cc34f85c8aa25f}
 factor to convert internal length unit to g/cm$^\wedge$3$\ast$h$^\wedge$2 
 
-Definition at line 318 of file allvars.h.
+Definition at line 327 of file allvars.h.
 
 
 
@@ -1778,7 +1778,7 @@ Referenced by set\_\-units().
 \label{structglobal__data__all__processes_ab0d48e2253ad31d76eda8e677eba2cf1}
 factor to convert internal energy to cgs units 
 
-Definition at line 320 of file allvars.h.
+Definition at line 329 of file allvars.h.
 
 
 
@@ -1791,7 +1791,7 @@ Referenced by read\_\-ic(), and set\_\-units().
 \label{structglobal__data__all__processes_a111a45896aafd67faa8f0c9ef897612f}
 factor to convert internal length unit to cm/h 
 
-Definition at line 316 of file allvars.h.
+Definition at line 325 of file allvars.h.
 
 
 
@@ -1804,7 +1804,7 @@ Referenced by prob\_\-of\_\-interaction(), read\_\-parameter\_\-file(), and set\
 \label{structglobal__data__all__processes_adccf5aa82d4252d8d24ead7681b29052}
 factor to convert internal mass unit to grams/h 
 
-Definition at line 314 of file allvars.h.
+Definition at line 323 of file allvars.h.
 
 
 
@@ -1817,7 +1817,7 @@ Referenced by prob\_\-of\_\-interaction(), read\_\-ic(), read\_\-parameter\_\-fi
 \label{structglobal__data__all__processes_a4938f30bc3da1d4583d42f806ad11201}
 factor to convert internal pressure unit to cgs units (little 'h' still around!) 
 
-Definition at line 317 of file allvars.h.
+Definition at line 326 of file allvars.h.
 
 
 
@@ -1830,7 +1830,7 @@ Referenced by set\_\-units().
 \label{structglobal__data__all__processes_a833ed48234b2780d7a668ae90c84318e}
 factor to convert internal time to megayears/h 
 
-Definition at line 321 of file allvars.h.
+Definition at line 330 of file allvars.h.
 
 
 
@@ -1843,7 +1843,7 @@ Referenced by set\_\-units().
 \label{structglobal__data__all__processes_a4fa94d45bad042101623c3403f6b8c37}
 factor to convert internal time unit to seconds/h 
 
-Definition at line 313 of file allvars.h.
+Definition at line 322 of file allvars.h.
 
 
 
@@ -1856,7 +1856,7 @@ Referenced by set\_\-units().
 \label{structglobal__data__all__processes_a04f4a1972c99f3ab4ba2483237a9d8ab}
 factor to convert intqernal velocity unit to cm/sec 
 
-Definition at line 315 of file allvars.h.
+Definition at line 324 of file allvars.h.
 
 
 
@@ -1869,7 +1869,7 @@ Referenced by read\_\-parameter\_\-file(), and set\_\-units().
 \label{structglobal__data__all__processes_a2a0fb0d1cda3309f002d1c0984209111}
 upper right corner of coarse and high-\/res PM-\/mesh 
 
-Definition at line 387 of file allvars.h.
+Definition at line 396 of file allvars.h.
 
 \hypertarget{structglobal__data__all__processes_a3818f3c9b2979834f6938c7f18b39b0e}{
 \index{global\_\-data\_\-all\_\-processes@{global\_\-data\_\-all\_\-processes}!Xmaxtot@{Xmaxtot}}
@@ -1878,7 +1878,7 @@ Definition at line 387 of file allvars.h.
 \label{structglobal__data__all__processes_a3818f3c9b2979834f6938c7f18b39b0e}
 maximum particle coordinates both for coarse and high-\/res PM-\/mesh 
 
-Definition at line 389 of file allvars.h.
+Definition at line 398 of file allvars.h.
 
 \hypertarget{structglobal__data__all__processes_a767b48fe7db038566f36edbb935d56f8}{
 \index{global\_\-data\_\-all\_\-processes@{global\_\-data\_\-all\_\-processes}!Xmintot@{Xmintot}}
@@ -1887,7 +1887,7 @@ Definition at line 389 of file allvars.h.
 \label{structglobal__data__all__processes_a767b48fe7db038566f36edbb935d56f8}
 minimum particle coordinates both for coarse and high-\/res PM-\/mesh 
 
-Definition at line 388 of file allvars.h.
+Definition at line 397 of file allvars.h.
 
 
 

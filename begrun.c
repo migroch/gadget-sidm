@@ -57,8 +57,8 @@ void begrun(void)
   All.TimeLastRestartFile = CPUThisRun;
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-    All.Nself_interactions = 0;
-    AllocateInteractionTable(INTERACTION_TABLE_LENGTH, PARTICLE_MAX_INTERACTIONS + 1);
+  AllocateInteractionTable(INTERACTION_TABLE_LENGTH, PARTICLE_MAX_INTERACTIONS + 1);
+  init_geofactor_table();
 #endif
 
   if(RestartFlag == 0 || RestartFlag == 2)
@@ -131,10 +131,6 @@ void begrun(void)
 
 #ifdef PMGRID
   long_range_init_regionsize();
-#endif
- 
-#ifdef COMPUTE_SELFINTERACTION_FORDARK
-  init_geofactor_table();
 #endif
  
   if(All.ComovingIntegrationOn)

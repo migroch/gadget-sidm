@@ -117,7 +117,7 @@ Definition at line 28 of file begrun.c.
 
 
 
-References All, allocate\_\-commbuffers(), global\_\-data\_\-all\_\-processes::ArtBulkViscConst, global\_\-data\_\-all\_\-processes::BufferSize, global\_\-data\_\-all\_\-processes::BunchSizeDensity, global\_\-data\_\-all\_\-processes::BunchSizeDomain, global\_\-data\_\-all\_\-processes::BunchSizeForce, global\_\-data\_\-all\_\-processes::BunchSizeHydro, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CourantFac, global\_\-data\_\-all\_\-processes::CpuFile, CPUThisRun, global\_\-data\_\-all\_\-processes::CpuTimeBetRestartFile, global\_\-data\_\-all\_\-processes::EnergyFile, global\_\-data\_\-all\_\-processes::ErrTolForceAcc, global\_\-data\_\-all\_\-processes::ErrTolIntAccuracy, ewald\_\-init(), find\_\-next\_\-outputtime(), GADGETVERSION, global\_\-data\_\-all\_\-processes::InfoFile, init(), init\_\-drift\_\-table(), init\_\-geofactor\_\-table(), long\_\-range\_\-init(), long\_\-range\_\-init\_\-regionsize(), global\_\-data\_\-all\_\-processes::MaxNumNgbDeviation, global\_\-data\_\-all\_\-processes::MaxRMSDisplacementFac, global\_\-data\_\-all\_\-processes::MaxSizeTimestep, global\_\-data\_\-all\_\-processes::MinSizeTimestep, NTask, global\_\-data\_\-all\_\-processes::NumFilesPerSnapshot, global\_\-data\_\-all\_\-processes::NumFilesWrittenInParallel, open\_\-outputfiles(), global\_\-data\_\-all\_\-processes::OutputDir, global\_\-data\_\-all\_\-processes::OutputListFilename, global\_\-data\_\-all\_\-processes::OutputListLength, global\_\-data\_\-all\_\-processes::OutputListOn, global\_\-data\_\-all\_\-processes::OutputListTimes, ParameterFile, random\_\-generator, read\_\-parameter\_\-file(), readjust\_\-timebase(), restart(), global\_\-data\_\-all\_\-processes::RestartFile, RestartFlag, global\_\-data\_\-all\_\-processes::ResubmitCommand, global\_\-data\_\-all\_\-processes::ResubmitOn, set\_\-random\_\-numbers(), set\_\-units(), global\_\-data\_\-all\_\-processes::SnapFormat, global\_\-data\_\-all\_\-processes::SnapshotFileBase, ThisTask, global\_\-data\_\-all\_\-processes::Ti\_\-Current, global\_\-data\_\-all\_\-processes::Ti\_\-nextoutput, global\_\-data\_\-all\_\-processes::TimeBetSnapshot, global\_\-data\_\-all\_\-processes::TimeBetStatistics, global\_\-data\_\-all\_\-processes::TimeLastRestartFile, global\_\-data\_\-all\_\-processes::TimeLimitCPU, global\_\-data\_\-all\_\-processes::TimeMax, global\_\-data\_\-all\_\-processes::TimingsFile, global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency, global\_\-data\_\-all\_\-processes::TypeOfOpeningCriterion, and global\_\-data\_\-all\_\-processes::TypeOfTimestepCriterion.
+References All, allocate\_\-commbuffers(), AllocateInteractionTable(), global\_\-data\_\-all\_\-processes::ArtBulkViscConst, global\_\-data\_\-all\_\-processes::BufferSize, global\_\-data\_\-all\_\-processes::BunchSizeDensity, global\_\-data\_\-all\_\-processes::BunchSizeDomain, global\_\-data\_\-all\_\-processes::BunchSizeForce, global\_\-data\_\-all\_\-processes::BunchSizeHydro, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CourantFac, global\_\-data\_\-all\_\-processes::CpuFile, CPUThisRun, global\_\-data\_\-all\_\-processes::CpuTimeBetRestartFile, global\_\-data\_\-all\_\-processes::EnergyFile, global\_\-data\_\-all\_\-processes::ErrTolForceAcc, global\_\-data\_\-all\_\-processes::ErrTolIntAccuracy, ewald\_\-init(), find\_\-next\_\-outputtime(), GADGETVERSION, global\_\-data\_\-all\_\-processes::InfoFile, init(), init\_\-drift\_\-table(), init\_\-geofactor\_\-table(), long\_\-range\_\-init(), long\_\-range\_\-init\_\-regionsize(), global\_\-data\_\-all\_\-processes::MaxNumNgbDeviation, global\_\-data\_\-all\_\-processes::MaxRMSDisplacementFac, global\_\-data\_\-all\_\-processes::MaxSizeTimestep, global\_\-data\_\-all\_\-processes::MinSizeTimestep, NTask, global\_\-data\_\-all\_\-processes::NumFilesPerSnapshot, global\_\-data\_\-all\_\-processes::NumFilesWrittenInParallel, open\_\-outputfiles(), global\_\-data\_\-all\_\-processes::OutputDir, global\_\-data\_\-all\_\-processes::OutputListFilename, global\_\-data\_\-all\_\-processes::OutputListLength, global\_\-data\_\-all\_\-processes::OutputListOn, global\_\-data\_\-all\_\-processes::OutputListTimes, ParameterFile, random\_\-generator, read\_\-parameter\_\-file(), readjust\_\-timebase(), restart(), global\_\-data\_\-all\_\-processes::RestartFile, RestartFlag, global\_\-data\_\-all\_\-processes::ResubmitCommand, global\_\-data\_\-all\_\-processes::ResubmitOn, set\_\-random\_\-numbers(), set\_\-units(), global\_\-data\_\-all\_\-processes::SnapFormat, global\_\-data\_\-all\_\-processes::SnapshotFileBase, ThisTask, global\_\-data\_\-all\_\-processes::Ti\_\-Current, global\_\-data\_\-all\_\-processes::Ti\_\-nextoutput, global\_\-data\_\-all\_\-processes::TimeBetSnapshot, global\_\-data\_\-all\_\-processes::TimeBetStatistics, global\_\-data\_\-all\_\-processes::TimeLastRestartFile, global\_\-data\_\-all\_\-processes::TimeLimitCPU, global\_\-data\_\-all\_\-processes::TimeMax, global\_\-data\_\-all\_\-processes::TimingsFile, global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency, global\_\-data\_\-all\_\-processes::TypeOfOpeningCriterion, and global\_\-data\_\-all\_\-processes::TypeOfTimestepCriterion.
 
 
 
@@ -157,6 +157,12 @@ Referenced by main().
 #endif
 
   All.TimeLastRestartFile = CPUThisRun;
+
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+  AllocateInteractionTable(INTERACTION_TABLE_LENGTH, PARTICLE_MAX_INTERACTIONS + 
+      1);
+  init_geofactor_table();
+#endif
 
   if(RestartFlag == 0 || RestartFlag == 2)
     {
@@ -236,10 +242,6 @@ Referenced by main().
   long_range_init_regionsize();
 #endif
  
-#ifdef COMPUTE_SELFINTERACTION_FORDARK
-  init_geofactor_table();
-#endif
- 
   if(All.ComovingIntegrationOn)
     init_drift_table();
 
@@ -289,7 +291,7 @@ Here is the caller graph for this function:
 \label{begrun_8c_aa1abb9ee0e0a43ec19cdaa55c8ecd43c}
 This function closes the global log-\/files. 
 
-Definition at line 261 of file begrun.c.
+Definition at line 262 of file begrun.c.
 
 
 
@@ -342,7 +344,7 @@ Here is the caller graph for this function:
 \label{begrun_8c_a6f629274f7b036874c743fb81d58ce68}
 This function opens various log-\/files that report on the status and performance of the simulstion. On restart from restart-\/files (start-\/option 1), the code will append to these files. 
 
-Definition at line 203 of file begrun.c.
+Definition at line 204 of file begrun.c.
 
 
 
@@ -452,7 +454,7 @@ $<$ maxmimum number of entries in list of snapshot output times
 
 
 
-Definition at line 769 of file begrun.c.
+Definition at line 770 of file begrun.c.
 
 
 
@@ -517,7 +519,7 @@ Here is the caller graph for this function:
 \label{begrun_8c_a952eae1977b498c4fdfabed1742a3ba2}
 This function parses the parameterfile in a simple way. Each paramater is defined by a keyword (`tag'), and can be either of type double, int, or character string. The routine makes sure that each parameter appears exactly once in the parameterfile, otherwise error messages are produced that complain about the missing parameters. 
 
-Definition at line 284 of file begrun.c.
+Definition at line 285 of file begrun.c.
 
 
 
@@ -1062,7 +1064,7 @@ $<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPA
 
 
 
-Definition at line 803 of file begrun.c.
+Definition at line 804 of file begrun.c.
 
 
 
@@ -1165,7 +1167,7 @@ $<$ adiabatic index of simulated gas
 
 
 
-Definition at line 153 of file begrun.c.
+Definition at line 154 of file begrun.c.
 
 
 

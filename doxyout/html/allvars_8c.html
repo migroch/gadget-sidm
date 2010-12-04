@@ -147,9 +147,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>This structure contains data which is the SAME for all tasks (mostly code parameters read from the parameter file). Holding this data in a structure is convenient for writing/reading the restart file, and it allows the introduction of new global variables in a simple way. The only thing to do is to introduce them into this structure. </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00113">113</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00112">112</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="allocate_8c_source.html#l00103">allocate_memory()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="init_8c_source.html#l00169">check_omega()</a>, <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="density_8c_source.html#l00467">density_evaluate()</a>, <a class="el" href="predict_8c_source.html#l00103">do_box_wrapping()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00534">domain_findExchangeNumbers()</a>, <a class="el" href="domain_8c_source.html#l01049">domain_topsplit()</a>, <a class="el" href="domain_8c_source.html#l00982">domain_topsplit_local()</a>, <a class="el" href="driftfac_8c_source.html#l00179">drift_integ()</a>, <a class="el" href="run_8c_source.html#l00437">energy_statistics()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="forcetree_8c_source.html#l03079">ewald_init()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="read__ic_8c_source.html#l00615">find_files()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="forcetree_8c_source.html#l00346">force_insert_pseudo_particles()</a>, <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l00061">force_treebuild()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02909">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l00732">force_treeupdate_pseudos()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="allocate_8c_source.html#l00144">free_memory()</a>, <a class="el" href="driftfac_8c_source.html#l00067">get_drift_factor()</a>, <a class="el" href="driftfac_8c_source.html#l00105">get_gravkick_factor()</a>, <a class="el" href="driftfac_8c_source.html#l00142">get_hydrokick_factor()</a>, <a class="el" href="io_8c_source.html#l00465">get_particles_in_block()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="driftfac_8c_source.html#l00191">gravkick_integ()</a>, <a class="el" href="driftfac_8c_source.html#l00214">growthfactor_integ()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="driftfac_8c_source.html#l00204">hydrokick_integ()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="driftfac_8c_source.html#l00026">init_drift_table()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="ngb_8c_source.html#l00358">ngb_treeallocate()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>, <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00769">read_outputlist()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, <a class="el" href="run_8c_source.html#l00020">run()</a>, <a class="el" href="io_8c_source.html#l00033">savepositions()</a>, <a class="el" href="gravtree_8c_source.html#l00465">set_softenings()</a>, <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>, <a class="el" href="init_8c_source.html#l00206">setup_smoothinglengths()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="allocate_8c_source.html#l00103">allocate_memory()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="init_8c_source.html#l00162">check_omega()</a>, <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="density_8c_source.html#l00467">density_evaluate()</a>, <a class="el" href="predict_8c_source.html#l00103">do_box_wrapping()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00534">domain_findExchangeNumbers()</a>, <a class="el" href="domain_8c_source.html#l01049">domain_topsplit()</a>, <a class="el" href="domain_8c_source.html#l00982">domain_topsplit_local()</a>, <a class="el" href="driftfac_8c_source.html#l00179">drift_integ()</a>, <a class="el" href="run_8c_source.html#l00432">energy_statistics()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="forcetree_8c_source.html#l03079">ewald_init()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="read__ic_8c_source.html#l00615">find_files()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="forcetree_8c_source.html#l00346">force_insert_pseudo_particles()</a>, <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l00061">force_treebuild()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02909">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l00732">force_treeupdate_pseudos()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="allocate_8c_source.html#l00144">free_memory()</a>, <a class="el" href="driftfac_8c_source.html#l00067">get_drift_factor()</a>, <a class="el" href="driftfac_8c_source.html#l00105">get_gravkick_factor()</a>, <a class="el" href="driftfac_8c_source.html#l00142">get_hydrokick_factor()</a>, <a class="el" href="io_8c_source.html#l00465">get_particles_in_block()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="driftfac_8c_source.html#l00191">gravkick_integ()</a>, <a class="el" href="driftfac_8c_source.html#l00214">growthfactor_integ()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="driftfac_8c_source.html#l00204">hydrokick_integ()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="driftfac_8c_source.html#l00026">init_drift_table()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="ngb_8c_source.html#l00358">ngb_treeallocate()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, <a class="el" href="begrun_8c_source.html#l00204">open_outputfiles()</a>, <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="sidm__routines_8c_source.html#l00032">prob_of_interaction()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00770">read_outputlist()</a>, <a class="el" href="begrun_8c_source.html#l00285">read_parameter_file()</a>, <a class="el" href="begrun_8c_source.html#l00804">readjust_timebase()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, <a class="el" href="run_8c_source.html#l00020">run()</a>, <a class="el" href="io_8c_source.html#l00033">savepositions()</a>, <a class="el" href="gravtree_8c_source.html#l00487">set_softenings()</a>, <a class="el" href="begrun_8c_source.html#l00154">set_units()</a>, <a class="el" href="init_8c_source.html#l00199">setup_smoothinglengths()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
 </div>
 </div>
@@ -165,7 +165,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>points to communication buffer, which is used in the domain decomposition, the parallel tree-force computation, the SPH routines, etc. </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00103">103</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00102">102</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="read__ic_8c_source.html#l00168">empty_read_buffer()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
@@ -183,7 +183,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>Sums the CPU time for the process (current submission only) </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00023">23</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00027">27</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, and <a class="el" href="run_8c_source.html#l00020">run()</a>.</p>
 
@@ -201,7 +201,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>holds imported particle data for SPH density computation </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00192">192</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00191">191</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, and <a class="el" href="density_8c_source.html#l00467">density_evaluate()</a>.</p>
 
@@ -219,7 +219,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>holds particle data for SPH density computation to be exported to other processors </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00192">192</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00191">191</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, and <a class="el" href="density_8c_source.html#l00056">density()</a>.</p>
 
@@ -237,7 +237,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>imported partial SPH density results from other processors </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00196">196</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00195">195</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, and <a class="el" href="density_8c_source.html#l00056">density()</a>.</p>
 
@@ -255,7 +255,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>stores the locally computed SPH density results for imported particles </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00196">196</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00195">195</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, and <a class="el" href="density_8c_source.html#l00467">density_evaluate()</a>.</p>
 
@@ -273,7 +273,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>gives the center of simulation volume </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00045">45</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00049">49</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00845">domain_findExtent()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -291,7 +291,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>gives the lower left corner of simulation volume </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00044">44</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00048">48</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00845">domain_findExtent()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -309,7 +309,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>a table that gives the total number of particles held by each processor </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00053">53</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00057">57</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="domain_8c_source.html#l00327">domain_findSplit()</a>, <a class="el" href="domain_8c_source.html#l00447">domain_shiftSplit()</a>, and <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>.</p>
 
@@ -327,7 +327,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>a table that gives the total number of SPH particles held by each processor </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00054">54</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00058">58</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="domain_8c_source.html#l00327">domain_findSplit()</a>, <a class="el" href="domain_8c_source.html#l00447">domain_shiftSplit()</a>, and <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>.</p>
 
@@ -345,7 +345,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>a table that lists the last domain mesh cell for all processors </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00051">51</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00055">55</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00327">domain_findSplit()</a>, <a class="el" href="domain_8c_source.html#l00447">domain_shiftSplit()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -363,7 +363,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>factor used for converting particle coordinates to a Peano-Hilbert mesh covering the simulation volume </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00047">47</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00051">51</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00845">domain_findExtent()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -381,7 +381,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>this table gives for each leaf of the top-level tree the maximum SPH smoothing length among the particles of the corresponding node of the gravitational tree </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00059">59</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00063">63</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l01087">force_update_node_hmax_toptree()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -399,7 +399,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>this points to a buffer used during the exchange of particle data </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00064">64</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00068">68</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, and <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>.</p>
 
@@ -417,7 +417,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>gives the (maximum) side-length of simulation volume </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00046">46</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00050">50</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00845">domain_findExtent()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -435,7 +435,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>this table stores for each node of the top-level tree corresponding node data from the gravitational tree </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00061">61</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00065">65</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l00346">force_insert_pseudo_particles()</a>, <a class="el" href="forcetree_8c_source.html#l00732">force_treeupdate_pseudos()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -453,7 +453,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>last domain mesh cell that resides on the local processor </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00049">49</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00053">53</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l00834">force_flag_localnodes()</a>, <a class="el" href="forcetree_8c_source.html#l00346">force_insert_pseudo_particles()</a>, <a class="el" href="forcetree_8c_source.html#l00732">force_treeupdate_pseudos()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, <a class="el" href="forcetree_8c_source.html#l01087">force_update_node_hmax_toptree()</a>, <a class="el" href="forcetree_8c_source.html#l00970">force_update_node_len_toptree()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -471,7 +471,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>first domain mesh cell that resides on the local processor </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00048">48</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00052">52</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l00834">force_flag_localnodes()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -489,7 +489,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>this table gives for each leaf of the top-level tree the corresponding node of the gravitational tree </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00057">57</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00061">61</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="forcetree_8c_source.html#l00292">force_create_empty_nodes()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l00834">force_flag_localnodes()</a>, <a class="el" href="forcetree_8c_source.html#l00346">force_insert_pseudo_particles()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l00732">force_treeupdate_pseudos()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, <a class="el" href="forcetree_8c_source.html#l01087">force_update_node_hmax_toptree()</a>, <a class="el" href="forcetree_8c_source.html#l00970">force_update_node_len_toptree()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -507,7 +507,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>buffer for particle data used in domain decomposition </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00121">121</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00120">120</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, and <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>.</p>
 
@@ -525,7 +525,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>buffer for SPH particle data in domain decomposition </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00129">129</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00128">128</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, and <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>.</p>
 
@@ -543,7 +543,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>a table that lists the first domain mesh cell for all processors </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00050">50</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00054">54</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00327">domain_findSplit()</a>, <a class="el" href="domain_8c_source.html#l00447">domain_shiftSplit()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -561,7 +561,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>this table gives for each leaf of the top-level tree the processor it was assigned to </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00056">56</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00060">60</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="domain_8c_source.html#l00729">domain_countToGo()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="domain_8c_source.html#l00327">domain_findSplit()</a>, <a class="el" href="domain_8c_source.html#l00447">domain_shiftSplit()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -579,7 +579,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>this table gives for each leaf of the top-level tree the side-length of the corresponding node of the gravitational tree </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00058">58</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00062">62</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, <a class="el" href="forcetree_8c_source.html#l00970">force_update_node_len_toptree()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -597,7 +597,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>a table that gives the total "work" due to the particles stored by each processor </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00052">52</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00056">56</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="domain_8c_source.html#l00447">domain_shiftSplit()</a>, and <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>.</p>
 
@@ -615,7 +615,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>table for the cosmological drift factors </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00099">99</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00098">98</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="driftfac_8c_source.html#l00067">get_drift_factor()</a>, and <a class="el" href="driftfac_8c_source.html#l00026">init_drift_table()</a>.</p>
 
@@ -633,7 +633,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>Buffer used for flagging whether a particle needs to be exported to another process </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00030">30</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00034">34</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, and <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>.</p>
 
@@ -651,7 +651,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>provides shifted access to extended node information, parallel to Nodes/Nodes_base </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00153">153</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00152">152</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l00732">force_treeupdate_pseudos()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l01051">force_update_node_hmax_local()</a>, <a class="el" href="forcetree_8c_source.html#l01087">force_update_node_hmax_toptree()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, and <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>.</p>
 
@@ -669,7 +669,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>&lt; this structure holds additional tree-node information which is not needed in the actual gravity computation points to the actual memory allocted for the extended node information </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00153">153</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00152">152</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l02892">force_treefree()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -687,9 +687,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>gives parent node in tree </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00150">150</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00149">149</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l02892">force_treefree()</a>, <a class="el" href="forcetree_8c_source.html#l01051">force_update_node_hmax_local()</a>, <a class="el" href="forcetree_8c_source.html#l00923">force_update_node_len_local()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="init_8c_source.html#l00206">setup_smoothinglengths()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l02892">force_treefree()</a>, <a class="el" href="forcetree_8c_source.html#l01051">force_update_node_hmax_local()</a>, <a class="el" href="forcetree_8c_source.html#l00923">force_update_node_len_local()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="init_8c_source.html#l00199">setup_smoothinglengths()</a>.</p>
 
 </div>
 </div>
@@ -705,9 +705,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>file handle for cpu.txt log-file. </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00088">88</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00092">92</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00261">close_outputfiles()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00262">close_outputfiles()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="begrun_8c_source.html#l00204">open_outputfiles()</a>.</p>
 
 </div>
 </div>
@@ -723,9 +723,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>file handle for energy.txt log-file. </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00086">86</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00090">90</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00261">close_outputfiles()</a>, <a class="el" href="run_8c_source.html#l00437">energy_statistics()</a>, and <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00262">close_outputfiles()</a>, <a class="el" href="run_8c_source.html#l00432">energy_statistics()</a>, and <a class="el" href="begrun_8c_source.html#l00204">open_outputfiles()</a>.</p>
 
 </div>
 </div>
@@ -741,9 +741,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>file handle for forcetest.txt log-file. </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00091">91</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00095">95</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00261">close_outputfiles()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, and <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00262">close_outputfiles()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, and <a class="el" href="begrun_8c_source.html#l00204">open_outputfiles()</a>.</p>
 
 </div>
 </div>
@@ -759,9 +759,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>file handle for info.txt log-file. </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00085">85</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00089">89</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00261">close_outputfiles()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00262">close_outputfiles()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, and <a class="el" href="begrun_8c_source.html#l00204">open_outputfiles()</a>.</p>
 
 </div>
 </div>
@@ -777,9 +777,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>file handle for timings.txt log-file. </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00087">87</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00091">91</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00261">close_outputfiles()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, and <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00262">close_outputfiles()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, and <a class="el" href="begrun_8c_source.html#l00204">open_outputfiles()</a>.</p>
 
 </div>
 </div>
@@ -795,7 +795,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>This flag signals that the current step involves all particles </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00036">36</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00040">40</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, and <a class="el" href="init_8c_source.html#l00020">init()</a>.</p>
 
@@ -813,7 +813,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>holds particle data imported from other processors </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00181">181</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00180">180</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02909">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, and <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>.</p>
 
@@ -831,7 +831,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>holds particle data to be exported to other processors </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00181">181</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00180">180</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, and <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>.</p>
 
@@ -849,7 +849,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>the particles to be exported are grouped by task-number. This table allows the results to be disentangled again and to be assigned to the correct particle </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00187">187</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00186">186</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, and <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>.</p>
 
@@ -867,7 +867,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>holds partial results received from other processors. This will overwrite the GravDataIn array </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00181">181</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00180">180</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, and <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>.</p>
 
@@ -885,7 +885,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>holds the partial results computed for imported particles. Note: We use GravDataResult = GravDataGet, such that the result replaces the imported data </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00181">181</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00180">180</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02909">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, and <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>.</p>
 
@@ -903,7 +903,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>table for the cosmological kick factor for gravitational forces </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00100">100</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00099">99</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="driftfac_8c_source.html#l00105">get_gravkick_factor()</a>, and <a class="el" href="driftfac_8c_source.html#l00026">init_drift_table()</a>.</p>
 
@@ -921,7 +921,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>Header for the standard file format. holds header for snapshot files </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00163">163</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00162">162</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="read__ic_8c_source.html#l00615">find_files()</a>, <a class="el" href="io_8c_source.html#l00465">get_particles_in_block()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00764">read_header_attributes_in_hdf5()</a>, <a class="el" href="io_8c_source.html#l00672">write_file()</a>, and <a class="el" href="io_8c_source.html#l00998">write_header_attributes_in_hdf5()</a>.</p>
 
@@ -939,7 +939,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>holds imported particle data for SPH hydro-force computation </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00202">202</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00201">201</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, and <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>.</p>
 
@@ -957,7 +957,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>holds particle data for SPH hydro-force computation to be exported to other processors </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00202">202</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00201">201</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, and <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>.</p>
 
@@ -975,7 +975,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>imported partial SPH hydro-force results from other processors </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00206">206</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00205">205</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, and <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>.</p>
 
@@ -993,7 +993,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>stores the locally computed SPH hydro results for imported particles </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00206">206</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00205">205</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, and <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>.</p>
 
@@ -1011,7 +1011,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>table for the cosmological kick factor for hydrodynmical forces </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00101">101</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00100">100</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="driftfac_8c_source.html#l00142">get_hydrokick_factor()</a>, and <a class="el" href="driftfac_8c_source.html#l00026">init_drift_table()</a>.</p>
 
@@ -1029,7 +1029,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>a table used for storing Peano-Hilbert keys for particles </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00066">66</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00070">70</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00729">domain_countToGo()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>, and <a class="el" href="peano_8c_source.html#l00034">peano_hilbert_order()</a>.</p>
 
@@ -1047,7 +1047,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>holds a sorted table of Peano-Hilbert keys for all particles, used to construct top-level tree </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00067">67</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00071">71</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, and <a class="el" href="domain_8c_source.html#l00982">domain_topsplit_local()</a>.</p>
 
@@ -1065,7 +1065,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>maximum allowed number of internal nodes </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00140">140</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00139">139</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="forcetree_8c_source.html#l00292">force_create_empty_nodes()</a>, <a class="el" href="forcetree_8c_source.html#l00346">force_insert_pseudo_particles()</a>, <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -1083,9 +1083,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>number of gas particles on the LOCAL processor </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00016">16</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00020">20</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="forcetree_8c_source.html#l01051">force_update_node_hmax_local()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="ngb_8c_source.html#l00403">ngb_treebuild()</a>, <a class="el" href="peano_8c_source.html#l00034">peano_hilbert_order()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="peano_8c_source.html#l00117">reorder_gas()</a>, <a class="el" href="peano_8c_source.html#l00166">reorder_particles()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="init_8c_source.html#l00206">setup_smoothinglengths()</a>.</p>
+<p>Referenced by <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="forcetree_8c_source.html#l01051">force_update_node_hmax_local()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="ngb_8c_source.html#l00403">ngb_treebuild()</a>, <a class="el" href="peano_8c_source.html#l00034">peano_hilbert_order()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="peano_8c_source.html#l00117">reorder_gas()</a>, <a class="el" href="peano_8c_source.html#l00166">reorder_particles()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="init_8c_source.html#l00199">setup_smoothinglengths()</a>.</p>
 
 </div>
 </div>
@@ -1101,7 +1101,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>gives next node in tree walk </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00149">149</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00148">148</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l02892">force_treefree()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -1119,7 +1119,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>Buffer to hold indices of neighbours retrieved by the neighbour search routines </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00032">32</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00036">36</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="density_8c_source.html#l00467">density_evaluate()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="ngb_8c_source.html#l00320">ngb_clear_buf()</a>, <a class="el" href="ngb_8c_source.html#l00358">ngb_treeallocate()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, and <a class="el" href="ngb_8c_source.html#l00394">ngb_treefree()</a>.</p>
 
@@ -1137,9 +1137,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>this is a pointer used to access the nodes which is shifted such that Nodes[All.MaxPart] gives the first allocated node </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00143">143</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00142">142</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="forcetree_8c_source.html#l00292">force_create_empty_nodes()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l00834">force_flag_localnodes()</a>, <a class="el" href="forcetree_8c_source.html#l00346">force_insert_pseudo_particles()</a>, <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l00732">force_treeupdate_pseudos()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, <a class="el" href="forcetree_8c_source.html#l01051">force_update_node_hmax_local()</a>, <a class="el" href="forcetree_8c_source.html#l01087">force_update_node_hmax_toptree()</a>, <a class="el" href="forcetree_8c_source.html#l00923">force_update_node_len_local()</a>, <a class="el" href="forcetree_8c_source.html#l00970">force_update_node_len_toptree()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, and <a class="el" href="init_8c_source.html#l00206">setup_smoothinglengths()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="forcetree_8c_source.html#l00292">force_create_empty_nodes()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l00834">force_flag_localnodes()</a>, <a class="el" href="forcetree_8c_source.html#l00346">force_insert_pseudo_particles()</a>, <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l00732">force_treeupdate_pseudos()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, <a class="el" href="forcetree_8c_source.html#l01051">force_update_node_hmax_local()</a>, <a class="el" href="forcetree_8c_source.html#l01087">force_update_node_hmax_toptree()</a>, <a class="el" href="forcetree_8c_source.html#l00923">force_update_node_len_local()</a>, <a class="el" href="forcetree_8c_source.html#l00970">force_update_node_len_toptree()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, and <a class="el" href="init_8c_source.html#l00199">setup_smoothinglengths()</a>.</p>
 
 </div>
 </div>
@@ -1155,7 +1155,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>points to the actual memory allocted for the nodes </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00143">143</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00142">142</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l02892">force_treefree()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -1173,9 +1173,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>number of processors </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00012">12</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00016">16</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="domain_8c_source.html#l00729">domain_countToGo()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00534">domain_findExchangeNumbers()</a>, <a class="el" href="domain_8c_source.html#l00447">domain_shiftSplit()</a>, <a class="el" href="domain_8c_source.html#l01049">domain_topsplit()</a>, <a class="el" href="domain_8c_source.html#l00982">domain_topsplit_local()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="forcetree_8c_source.html#l03079">ewald_init()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="io_8c_source.html#l00033">savepositions()</a>.</p>
+<p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="domain_8c_source.html#l00729">domain_countToGo()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00534">domain_findExchangeNumbers()</a>, <a class="el" href="domain_8c_source.html#l00447">domain_shiftSplit()</a>, <a class="el" href="domain_8c_source.html#l01049">domain_topsplit()</a>, <a class="el" href="domain_8c_source.html#l00982">domain_topsplit_local()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="forcetree_8c_source.html#l03079">ewald_init()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00285">read_parameter_file()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="io_8c_source.html#l00033">savepositions()</a>.</p>
 
 </div>
 </div>
@@ -1191,7 +1191,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>number of leaves in top-level tree. Each leaf can be assigned to a different processor </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00071">71</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00075">75</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00447">domain_shiftSplit()</a>, <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>, <a class="el" href="domain_8c_source.html#l00765">domain_walktoptree()</a>, <a class="el" href="forcetree_8c_source.html#l00834">force_flag_localnodes()</a>, <a class="el" href="forcetree_8c_source.html#l00346">force_insert_pseudo_particles()</a>, <a class="el" href="forcetree_8c_source.html#l00732">force_treeupdate_pseudos()</a>, <a class="el" href="forcetree_8c_source.html#l01087">force_update_node_hmax_toptree()</a>, and <a class="el" href="forcetree_8c_source.html#l00970">force_update_node_len_toptree()</a>.</p>
 
@@ -1209,7 +1209,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>total number of nodes in top-level tree </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00070">70</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00074">74</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>, <a class="el" href="domain_8c_source.html#l01049">domain_topsplit()</a>, and <a class="el" href="domain_8c_source.html#l00982">domain_topsplit_local()</a>.</p>
 
@@ -1227,7 +1227,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>total number of particles of each type </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00017">17</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00021">21</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>.</p>
 
@@ -1245,7 +1245,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>local number of particles of each type </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00018">18</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00022">22</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>.</p>
 
@@ -1263,7 +1263,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>number of active particles on local processor in current timestep </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00020">20</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00024">24</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, and <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>.</p>
 
@@ -1281,7 +1281,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>number of (internal) nodes in each tree </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00141">141</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00140">140</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="forcetree_8c_source.html#l00061">force_treebuild()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, and <a class="el" href="restart_8c_source.html#l00035">restart()</a>.</p>
 
@@ -1299,9 +1299,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>number of particles on the LOCAL processor </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00015">15</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00019">19</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="init_8c_source.html#l00169">check_omega()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="predict_8c_source.html#l00103">do_box_wrapping()</a>, <a class="el" href="domain_8c_source.html#l00729">domain_countToGo()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="domain_8c_source.html#l00845">domain_findExtent()</a>, <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>, <a class="el" href="forcetree_8c_source.html#l03040">dump_particles()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="forcetree_8c_source.html#l02909">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l00923">force_update_node_len_local()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="peano_8c_source.html#l00034">peano_hilbert_order()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>, <a class="el" href="peano_8c_source.html#l00166">reorder_particles()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="io_8c_source.html#l00033">savepositions()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="init_8c_source.html#l00162">check_omega()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="predict_8c_source.html#l00103">do_box_wrapping()</a>, <a class="el" href="domain_8c_source.html#l00729">domain_countToGo()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="domain_8c_source.html#l00845">domain_findExtent()</a>, <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>, <a class="el" href="forcetree_8c_source.html#l03040">dump_particles()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="forcetree_8c_source.html#l02909">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l00923">force_update_node_len_local()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="peano_8c_source.html#l00034">peano_hilbert_order()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00804">readjust_timebase()</a>, <a class="el" href="peano_8c_source.html#l00166">reorder_particles()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="io_8c_source.html#l00033">savepositions()</a>.</p>
 
 </div>
 </div>
@@ -1317,7 +1317,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>number of active SPH particles on local processor in current timestep </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00021">21</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00025">25</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="density_8c_source.html#l00056">density()</a>, and <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>.</p>
 
@@ -1335,9 +1335,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>This structure holds all the information that is stored for each particle of the simulation. holds particle data on local processor </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00121">121</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00120">120</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="allocate_8c_source.html#l00103">allocate_memory()</a>, <a class="el" href="init_8c_source.html#l00169">check_omega()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="density_8c_source.html#l00467">density_evaluate()</a>, <a class="el" href="predict_8c_source.html#l00103">do_box_wrapping()</a>, <a class="el" href="domain_8c_source.html#l00729">domain_countToGo()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="domain_8c_source.html#l00845">domain_findExtent()</a>, <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>, <a class="el" href="forcetree_8c_source.html#l03040">dump_particles()</a>, <a class="el" href="read__ic_8c_source.html#l00168">empty_read_buffer()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02909">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l00923">force_update_node_len_local()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="allocate_8c_source.html#l00144">free_memory()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="ngb_8c_source.html#l00320">ngb_clear_buf()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>, <a class="el" href="peano_8c_source.html#l00117">reorder_gas()</a>, <a class="el" href="peano_8c_source.html#l00166">reorder_particles()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, <a class="el" href="io_8c_source.html#l00033">savepositions()</a>, and <a class="el" href="init_8c_source.html#l00206">setup_smoothinglengths()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="allocate_8c_source.html#l00103">allocate_memory()</a>, <a class="el" href="init_8c_source.html#l00162">check_omega()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="density_8c_source.html#l00467">density_evaluate()</a>, <a class="el" href="predict_8c_source.html#l00103">do_box_wrapping()</a>, <a class="el" href="domain_8c_source.html#l00729">domain_countToGo()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="domain_8c_source.html#l00845">domain_findExtent()</a>, <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>, <a class="el" href="forcetree_8c_source.html#l03040">dump_particles()</a>, <a class="el" href="read__ic_8c_source.html#l00168">empty_read_buffer()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="run_8c_source.html#l00151">find_next_sync_point_and_drift()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02909">force_treeevaluate_direct()</a>, <a class="el" href="forcetree_8c_source.html#l01934">force_treeevaluate_ewald_correction()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l00923">force_update_node_len_local()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="allocate_8c_source.html#l00144">free_memory()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="longrange_8c_source.html#l00056">long_range_force()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="ngb_8c_source.html#l00320">ngb_clear_buf()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00804">readjust_timebase()</a>, <a class="el" href="peano_8c_source.html#l00117">reorder_gas()</a>, <a class="el" href="peano_8c_source.html#l00166">reorder_particles()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, <a class="el" href="io_8c_source.html#l00033">savepositions()</a>, and <a class="el" href="init_8c_source.html#l00199">setup_smoothinglengths()</a>.</p>
 
 </div>
 </div>
@@ -1353,7 +1353,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>file name of parameterfile used for starting the simulation </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00083">83</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00087">87</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, and <a class="el" href="main_8c_source.html#l00022">main()</a>.</p>
 
@@ -1371,7 +1371,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>smallest integer such that NTask &lt;= 2^PTask </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00013">13</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00017">17</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, and <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>.</p>
 
@@ -1389,7 +1389,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>the employed random number generator of the GSL library </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00039">39</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00043">43</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="sidm__routines_8c_source.html#l00094">calculate_interact_kick()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="system_8c_source.html#l00037">set_random_numbers()</a>.</p>
 
@@ -1407,9 +1407,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>taken from command line used to start code. 0 is normal start-up from initial conditions, 1 is resuming a run from a set of restart files, while 2 marks a restart from a snapshot file. </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00026">26</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00030">30</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="longrange_8c_source.html#l00036">long_range_init_regionsize()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, and <a class="el" href="init_8c_source.html#l00206">setup_smoothinglengths()</a>.</p>
+<p>Referenced by <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="longrange_8c_source.html#l00036">long_range_init_regionsize()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, <a class="el" href="begrun_8c_source.html#l00204">open_outputfiles()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, and <a class="el" href="init_8c_source.html#l00199">setup_smoothinglengths()</a>.</p>
 
 </div>
 </div>
@@ -1425,7 +1425,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>Hold a table with random numbers, refreshed every timestep </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00041">41</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00045">45</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="system_8c_source.html#l00029">get_random_number()</a>, and <a class="el" href="system_8c_source.html#l00037">set_random_numbers()</a>.</p>
 
@@ -1443,9 +1443,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>holds SPH particle data on local processor </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00129">129</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00128">128</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="allocate_8c_source.html#l00103">allocate_memory()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="density_8c_source.html#l00467">density_evaluate()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="read__ic_8c_source.html#l00168">empty_read_buffer()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01051">force_update_node_hmax_local()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="allocate_8c_source.html#l00144">free_memory()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="peano_8c_source.html#l00117">reorder_gas()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="init_8c_source.html#l00206">setup_smoothinglengths()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="allocate_8c_source.html#l00103">allocate_memory()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="density_8c_source.html#l00467">density_evaluate()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="read__ic_8c_source.html#l00168">empty_read_buffer()</a>, <a class="el" href="io_8c_source.html#l00129">fill_write_buffer()</a>, <a class="el" href="forcetree_8c_source.html#l01126">force_treeevaluate()</a>, <a class="el" href="forcetree_8c_source.html#l02216">force_treeevaluate_potential()</a>, <a class="el" href="forcetree_8c_source.html#l02493">force_treeevaluate_potential_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01500">force_treeevaluate_shortrange()</a>, <a class="el" href="forcetree_8c_source.html#l01051">force_update_node_hmax_local()</a>, <a class="el" href="forcetree_8c_source.html#l00422">force_update_node_recursive()</a>, <a class="el" href="allocate_8c_source.html#l00144">free_memory()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00353">hydro_evaluate()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="predict_8c_source.html#l00031">move_particles()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="peano_8c_source.html#l00117">reorder_gas()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, and <a class="el" href="init_8c_source.html#l00199">setup_smoothinglengths()</a>.</p>
 
 </div>
 </div>
@@ -1460,9 +1460,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00174">174</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00173">173</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, and <a class="el" href="run_8c_source.html#l00437">energy_statistics()</a>.</p>
+<p>Referenced by <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, and <a class="el" href="run_8c_source.html#l00432">energy_statistics()</a>.</p>
 
 </div>
 </div>
@@ -1477,7 +1477,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00168">168</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00167">167</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="io_8c_source.html#l00566">fill_Tab_IO_Labels()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
@@ -1495,9 +1495,9 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>the rank of the local processor </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00011">11</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00015">15</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
-<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="allocate_8c_source.html#l00103">allocate_memory()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="init_8c_source.html#l00169">check_omega()</a>, <a class="el" href="begrun_8c_source.html#l00261">close_outputfiles()</a>, <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="read__ic_8c_source.html#l00724">distribute_file()</a>, <a class="el" href="domain_8c_source.html#l00729">domain_countToGo()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>, <a class="el" href="domain_8c_source.html#l01049">domain_topsplit()</a>, <a class="el" href="domain_8c_source.html#l00982">domain_topsplit_local()</a>, <a class="el" href="forcetree_8c_source.html#l03040">dump_particles()</a>, <a class="el" href="endrun_8c_source.html#l00025">endrun()</a>, <a class="el" href="run_8c_source.html#l00437">energy_statistics()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="forcetree_8c_source.html#l03079">ewald_init()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="read__ic_8c_source.html#l00615">find_files()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, <a class="el" href="forcetree_8c_source.html#l00292">force_create_empty_nodes()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, <a class="el" href="io_8c_source.html#l01139">my_fread()</a>, <a class="el" href="io_8c_source.html#l01122">my_fwrite()</a>, <a class="el" href="ngb_8c_source.html#l00358">ngb_treeallocate()</a>, <a class="el" href="ngb_8c_source.html#l00403">ngb_treebuild()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, <a class="el" href="begrun_8c_source.html#l00203">open_outputfiles()</a>, <a class="el" href="peano_8c_source.html#l00034">peano_hilbert_order()</a>, <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00113">pm_init_periodic_allocate()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00284">read_parameter_file()</a>, <a class="el" href="begrun_8c_source.html#l00803">readjust_timebase()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, <a class="el" href="run_8c_source.html#l00020">run()</a>, <a class="el" href="io_8c_source.html#l00033">savepositions()</a>, <a class="el" href="begrun_8c_source.html#l00153">set_units()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
+<p>Referenced by <a class="el" href="timestep_8c_source.html#l00024">advance_and_find_timesteps()</a>, <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="allocate_8c_source.html#l00103">allocate_memory()</a>, <a class="el" href="begrun_8c_source.html#l00028">begrun()</a>, <a class="el" href="init_8c_source.html#l00162">check_omega()</a>, <a class="el" href="begrun_8c_source.html#l00262">close_outputfiles()</a>, <a class="el" href="accel_8c_source.html#l00024">compute_accelerations()</a>, <a class="el" href="global_8c_source.html#l00022">compute_global_quantities_of_system()</a>, <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="density_8c_source.html#l00056">density()</a>, <a class="el" href="read__ic_8c_source.html#l00724">distribute_file()</a>, <a class="el" href="domain_8c_source.html#l00729">domain_countToGo()</a>, <a class="el" href="domain_8c_source.html#l00154">domain_decompose()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>, <a class="el" href="domain_8c_source.html#l01049">domain_topsplit()</a>, <a class="el" href="domain_8c_source.html#l00982">domain_topsplit_local()</a>, <a class="el" href="forcetree_8c_source.html#l03040">dump_particles()</a>, <a class="el" href="endrun_8c_source.html#l00025">endrun()</a>, <a class="el" href="run_8c_source.html#l00432">energy_statistics()</a>, <a class="el" href="run_8c_source.html#l00370">every_timestep_stuff()</a>, <a class="el" href="forcetree_8c_source.html#l03079">ewald_init()</a>, <a class="el" href="timestep_8c_source.html#l00566">find_dt_displacement_constraint()</a>, <a class="el" href="read__ic_8c_source.html#l00615">find_files()</a>, <a class="el" href="run_8c_source.html#l00244">find_next_outputtime()</a>, <a class="el" href="forcetree_8c_source.html#l00292">force_create_empty_nodes()</a>, <a class="el" href="forcetree_8c_source.html#l00684">force_exchange_pseudodata()</a>, <a class="el" href="forcetree_8c_source.html#l02827">force_treeallocate()</a>, <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>, <a class="el" href="forcetree_8c_source.html#l01014">force_update_hmax()</a>, <a class="el" href="forcetree_8c_source.html#l00885">force_update_len()</a>, <a class="el" href="timestep_8c_source.html#l00423">get_timestep()</a>, <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, <a class="el" href="hydra_8c_source.html#l00050">hydro_force()</a>, <a class="el" href="init_8c_source.html#l00020">init()</a>, <a class="el" href="main_8c_source.html#l00022">main()</a>, <a class="el" href="io_8c_source.html#l01139">my_fread()</a>, <a class="el" href="io_8c_source.html#l01122">my_fwrite()</a>, <a class="el" href="ngb_8c_source.html#l00358">ngb_treeallocate()</a>, <a class="el" href="ngb_8c_source.html#l00403">ngb_treebuild()</a>, <a class="el" href="ngb_8c_source.html#l00064">ngb_treefind_pairs()</a>, <a class="el" href="ngb_8c_source.html#l00194">ngb_treefind_variable()</a>, <a class="el" href="begrun_8c_source.html#l00204">open_outputfiles()</a>, <a class="el" href="peano_8c_source.html#l00034">peano_hilbert_order()</a>, <a class="el" href="pm__periodic_8c_source.html#l00055">pm_init_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00113">pm_init_periodic_allocate()</a>, <a class="el" href="pm__periodic_8c_source.html#l00180">pmforce_periodic()</a>, <a class="el" href="pm__periodic_8c_source.html#l00693">pmpotential_periodic()</a>, <a class="el" href="read__ic_8c_source.html#l00244">read_file()</a>, <a class="el" href="read__ic_8c_source.html#l00031">read_ic()</a>, <a class="el" href="begrun_8c_source.html#l00285">read_parameter_file()</a>, <a class="el" href="begrun_8c_source.html#l00804">readjust_timebase()</a>, <a class="el" href="restart_8c_source.html#l00035">restart()</a>, <a class="el" href="run_8c_source.html#l00020">run()</a>, <a class="el" href="io_8c_source.html#l00033">savepositions()</a>, <a class="el" href="begrun_8c_source.html#l00154">set_units()</a>, and <a class="el" href="io_8c_source.html#l00672">write_file()</a>.</p>
 
 </div>
 </div>
@@ -1513,7 +1513,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>holds what it says, only used in connection with FORCETEST </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00077">77</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00081">81</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="forcetree_8c_source.html#l00061">force_treebuild()</a>, and <a class="el" href="gravtree__forcetest_8c_source.html#l00028">gravity_forcetest()</a>.</p>
 
@@ -1531,7 +1531,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>points to the root node of the top-level tree </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00073">73</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00077">77</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="allocate_8c_source.html#l00019">allocate_commbuffers()</a>, <a class="el" href="domain_8c_source.html#l00729">domain_countToGo()</a>, <a class="el" href="domain_8c_source.html#l00896">domain_determineTopTree()</a>, <a class="el" href="domain_8c_source.html#l00595">domain_exchangeParticles()</a>, <a class="el" href="domain_8c_source.html#l00786">domain_sumCost()</a>, <a class="el" href="domain_8c_source.html#l01049">domain_topsplit()</a>, <a class="el" href="domain_8c_source.html#l00982">domain_topsplit_local()</a>, <a class="el" href="domain_8c_source.html#l00765">domain_walktoptree()</a>, <a class="el" href="forcetree_8c_source.html#l00292">force_create_empty_nodes()</a>, and <a class="el" href="forcetree_8c_source.html#l00093">force_treebuild_single()</a>.</p>
 
@@ -1549,14 +1549,14 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>Signals that a new tree needs to be constructed </p>
 
-<p>Definition at line <a class="el" href="allvars_8c_source.html#l00034">34</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
+<p>Definition at line <a class="el" href="allvars_8c_source.html#l00038">38</a> of file <a class="el" href="allvars_8c_source.html">allvars.c</a>.</p>
 
 <p>Referenced by <a class="el" href="potential_8c_source.html#l00022">compute_potential()</a>, <a class="el" href="domain_8c_source.html#l00062">domain_Decomposition()</a>, <a class="el" href="gravtree_8c_source.html#l00027">gravity_tree()</a>, and <a class="el" href="init_8c_source.html#l00020">init()</a>.</p>
 
 </div>
 </div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Fri Nov 5 2010 18:27:03 for GADGET-2 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Dec 3 2010 18:45:43 for GADGET-2 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

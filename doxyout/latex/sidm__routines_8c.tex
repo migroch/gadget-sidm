@@ -47,9 +47,11 @@ void \hyperlink{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}{calculate\_
 \item 
 void \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\_\-geofactor\_\-table} (void)
 \item 
-void \hyperlink{sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719}{update\_\-interaction\_\-table} (unsigned int id1, unsigned int id2)
+void \hyperlink{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615}{update\_\-interaction\_\-table} (IDTYPE id1, IDTYPE id2)
 \item 
-int \hyperlink{sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d}{check\_\-interaction\_\-table} (unsigned int id1, unsigned int id2)
+int \hyperlink{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4}{check\_\-interaction\_\-table} (IDTYPE id1, IDTYPE id2)
+\item 
+void \hyperlink{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1}{AllocateInteractionTable} (int x, int y)
 \end{DoxyCompactItemize}
 
 
@@ -77,6 +79,85 @@ Referenced by geofactor\_\-integ(), and init\_\-geofactor\_\-table().
 
 
 \subsection{Function Documentation}
+\hypertarget{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1}{
+\index{sidm\_\-routines.c@{sidm\_\-routines.c}!AllocateInteractionTable@{AllocateInteractionTable}}
+\index{AllocateInteractionTable@{AllocateInteractionTable}!sidm_routines.c@{sidm\_\-routines.c}}
+\subsubsection[{AllocateInteractionTable}]{\setlength{\rightskip}{0pt plus 5cm}void AllocateInteractionTable (
+\begin{DoxyParamCaption}
+\item[{int}]{ x, }
+\item[{int}]{ y}
+\end{DoxyParamCaption}
+)}}
+\label{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1}
+
+
+Definition at line 323 of file sidm\_\-routines.c.
+
+
+
+References endrun().
+
+
+
+Referenced by begrun().
+
+
+
+
+\begin{DoxyCode}
+{
+  int i,j;
+
+  InteractionTable = (IDTYPE**) malloc(x*sizeof(IDTYPE*)); 
+  if (InteractionTable == NULL)
+    {
+      free(InteractionTable);
+      printf("Failed to allocate memory for the interaction table");
+      endrun(2);
+    }
+
+  for (i = 0; i < x; i++)
+    {   
+      InteractionTable[i] = (IDTYPE*) malloc(y*sizeof(IDTYPE)); 
+      if (InteractionTable[i] == NULL)
+        {
+          free(InteractionTable[i]);
+          printf("Failed to allocate memory for the interaction table");
+          endrun(2);
+        }
+    }
+  
+    for (i = 0; i < x; i++)
+      for(j = 0; j < y; j++)
+        InteractionTable[i][j]= 0;
+}
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=376pt]{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}{
 \index{sidm\_\-routines.c@{sidm\_\-routines.c}!calculate\_\-interact\_\-kick@{calculate\_\-interact\_\-kick}}
 \index{calculate\_\-interact\_\-kick@{calculate\_\-interact\_\-kick}!sidm_routines.c@{sidm\_\-routines.c}}
@@ -140,19 +221,19 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d}{
+\hypertarget{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4}{
 \index{sidm\_\-routines.c@{sidm\_\-routines.c}!check\_\-interaction\_\-table@{check\_\-interaction\_\-table}}
 \index{check\_\-interaction\_\-table@{check\_\-interaction\_\-table}!sidm_routines.c@{sidm\_\-routines.c}}
 \subsubsection[{check\_\-interaction\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int check\_\-interaction\_\-table (
 \begin{DoxyParamCaption}
-\item[{unsigned int}]{ id1, }
-\item[{unsigned int}]{ id2}
+\item[{IDTYPE}]{ id1, }
+\item[{IDTYPE}]{ id2}
 \end{DoxyParamCaption}
 )}}
-\label{sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d}
+\label{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4}
 This function checks if a pair of particles have interacted in the current time step. It looks at the InteractionTable and returns 0 if the pair is not found and 1 if pair is found. This is used to avoid double counting of interactions. 
 
-Definition at line 280 of file sidm\_\-routines.c.
+Definition at line 292 of file sidm\_\-routines.c.
 
 
 
@@ -173,7 +254,7 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
     { 
       if(InteractionTable[i][0] == id1 || InteractionTable[i][0] == id2 )
         {
-          for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+          for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
             {
               if(InteractionTable[i][0] == id1 && InteractionTable[i][j] == id2)
                 { 
@@ -201,7 +282,7 @@ Here is the caller graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{sidm__routines_8c_a74f3632c9a90fd460cb308e906b91d5d_icgraph}
+\includegraphics[width=400pt]{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4_icgraph}
 \end{center}
 \end{figure}
 
@@ -547,8 +628,7 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
         h = All.ForceSoftening[1];
       }
 
-    mp =  All.MassTable[1]*All.UnitMass_in_g*(2.998e10)*(2.998e10)*624.15097;  /*
-       convert particle mass to Gev */
+    mp =  All.MassTable[1]*All.UnitMass_in_g;
     prob = mp*All.InteractionCrossSection*dV*dT*g_geo(r/h)/(h*h*h*All.
       UnitLength_in_cm*All.UnitLength_in_cm);
 
@@ -582,16 +662,16 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719}{
+\hypertarget{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615}{
 \index{sidm\_\-routines.c@{sidm\_\-routines.c}!update\_\-interaction\_\-table@{update\_\-interaction\_\-table}}
 \index{update\_\-interaction\_\-table@{update\_\-interaction\_\-table}!sidm_routines.c@{sidm\_\-routines.c}}
 \subsubsection[{update\_\-interaction\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}void update\_\-interaction\_\-table (
 \begin{DoxyParamCaption}
-\item[{unsigned int}]{ id1, }
-\item[{unsigned int}]{ id2}
+\item[{IDTYPE}]{ id1, }
+\item[{IDTYPE}]{ id2}
 \end{DoxyParamCaption}
 )}}
-\label{sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719}
+\label{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615}
 This routine updates the interaction table each time there is an interaction. 
 
 Definition at line 205 of file sidm\_\-routines.c.
@@ -631,23 +711,29 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
               InteractionTable[i][1] = id2;
               break;
             }
-          printf("ERROR: There were more interactions in this timestep than INTER
-      ACTION_TABLE_LENGTH. Calling endrun()");
-          endrun(1);
+          if (i == INTERACTION_TABLE_LENGTH - 1)
+            {
+              printf("ERROR: There were more interactions in this timestep than I
+      NTERACTION_TABLE_LENGTH");
+              endrun(1);
+            }
         }
     }
   else
     {
-      for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+      for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
         {
           if(InteractionTable[id1_index][j] == 0)
             {
               InteractionTable[id1_index][j] = id2;
               break;
             }
-          printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERA
-      CTIONS. Calling endrun()");
-          endrun(1);
+          if (j == PARTICLE_MAX_INTERACTIONS )
+            {
+              printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERAC
+      TIONS");
+              endrun(1);
+            }
         }
     } 
 
@@ -661,23 +747,29 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
               InteractionTable[i][1] = id1;
               break;
             }
-          printf("ERROR: There were more interactions in this timestep than INTER
-      ACTION_TABLE_LENGTH. Calling endrun()");
-          endrun(1);
+          if (i == INTERACTION_TABLE_LENGTH - 1)
+            {
+              printf("ERROR: There were more interactions in this timestep than I
+      NTERACTION_TABLE_LENGTH");
+              endrun(1);
+            }
         }
     }
   else
     {
-      for(j = 1; j < PARTICLE_MAX_INTERACTIONS; j++)
+      for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
         {
           if(InteractionTable[id2_index][j] == 0)
             {
               InteractionTable[id2_index][j] = id1;
               break;
             }
-          printf("ERROR: A particle interacted with more than PARTICLE_MAX_INTERA
-      CTIONS. Calling endrun()");
-          endrun(1);
+          if (j == PARTICLE_MAX_INTERACTIONS )
+            {
+              printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERAC
+      TIONS");
+              endrun(1);
+            }
         }
     }
 }
@@ -691,7 +783,7 @@ Here is the call graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_cgraph}
+\includegraphics[width=400pt]{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615_cgraph}
 \end{center}
 \end{figure}
 
@@ -703,7 +795,7 @@ Here is the caller graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{sidm__routines_8c_a6754f6d28b3de6f16e3f98d6f79b5719_icgraph}
+\includegraphics[width=400pt]{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615_icgraph}
 \end{center}
 \end{figure}
 
