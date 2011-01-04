@@ -1279,6 +1279,32 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 	    h = All.ForceSoftening[P[no].Type];
 #endif
 #endif
+
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+	  r = sqrt(r2);
+	  if (targetID != P[no].ID)
+	    {
+	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
+		{
+		  if (r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
+		    {
+		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
+		      if (get_random_number(P[no].ID) < prob)
+			{
+			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);
+			  kick_x += kick_target[0];
+			  kick_y += kick_target[1];
+			  kick_z += kick_target[2];
+			  for (i = 0; i < 3 ; i++)
+			    P[no].Vel[i] += kick_no[i];
+			  si_count+=1;
+			  update_interaction_table(targetID,P[no].ID);
+			}
+		    }
+		}
+	    }
+#endif
+	  
 	  no = Nextnode[no];
 	}
       else			/* we have an  internal node. Need to check opening criterion */
@@ -1418,29 +1444,6 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 	acc_y += dy * fac;
 	acc_z += dz * fac;
 
-#ifdef COMPUTE_SELFINTERACTION_FORDARK
-	if (no < All.MaxPart)
-	  {
-	    if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
-	      {
-	        if (r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
-	          {
-	            prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
-	            if (get_random_number(P[no].ID) < prob)
-	              {
-	                calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);
-	                kick_x += kick_target[0];
-	                kick_y += kick_target[1];
-	                kick_z += kick_target[2];
-	                for (i = 0; i < 3 ; i++)
-	                  P[no].Vel[i] += kick_no[i];
-	                si_count+=1;
-			update_interaction_table(targetID,P[no].ID);
-	              }
-	          }
-	      }
-	  }
-#endif
       ninteractions++;
     }
   
@@ -1642,6 +1645,32 @@ int force_treeevaluate_shortrange(int target, int mode)
 	    h = All.ForceSoftening[P[no].Type];
 #endif
 #endif
+
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+	  r = sqrt(r2);
+	  if(targetID != P[no].ID)
+	    {
+	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
+		{
+		  if(r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
+		    {
+		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
+		      if(get_random_number(P[no].ID) < prob)
+			{
+			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);
+			  kick_x += kick_target[0];
+			  kick_y += kick_target[1];
+			  kick_z += kick_target[2];
+			  for(i = 0; i < 3 ; i++)
+			    P[no].Vel[i] += kick_no[i];
+			  si_count+=1;
+			  update_interaction_table(targetID,P[no].ID);
+			}
+		    }
+		}
+	    }
+#endif
+	  
 	  no = Nextnode[no];
 	}
       else			/* we have an  internal node */
@@ -1846,30 +1875,7 @@ int force_treeevaluate_shortrange(int target, int mode)
 	  acc_x += dx * fac;
 	  acc_y += dy * fac;
 	  acc_z += dz * fac;
-	
-#ifdef COMPUTE_SELFINTERACTION_FORDARK
-	  if(no < All.MaxPart)
-	    {
-	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
-		{
-		  if(r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
-		    {
-		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
-		      if(get_random_number(P[no].ID) < prob)
-			{
-			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);
-			  kick_x += kick_target[0];
-			  kick_y += kick_target[1];
-			  kick_z += kick_target[2];
-			  for(i = 0; i < 3 ; i++)
-			      P[no].Vel[i] += kick_no[i];
-			  si_count+=1;
-			  update_interaction_table(targetID,P[no].ID);
-			}
-		    }
-		}
-	    }
-#endif
+
 	  ninteractions++;
 	}
     }
