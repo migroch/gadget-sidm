@@ -1143,7 +1143,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 #endif
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-  double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob;
+  double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob,prob_tmp;
   FLOAT  targetVel[3];
   int targetBegstep,targetEndstep;
   IDTYPE targetID;		
@@ -1289,6 +1289,20 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 		  if (r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 		    {
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
+		      if(prob > 1 && All.MaxSizeTimestepChanged == 0)
+			{
+			  prob_tmp = prob;
+			  All.MaxSizeTimestep = (targetEndstep-targetBegstep)*All.Timebase_interval;
+			  while(prob_tmp > 1)
+			    {
+			      All.MaxSizeTimestep = All.MaxSizeTimestep/2.0; 
+			      prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0.0, (int) (All.MaxSizeTimestep/All.Timebase_interval)); 
+			    }
+			  All.MaxSizeTimestepChanged = 1;
+			  MPI_Bcast(&All.MaxSizeTimestep, sizeof(double), MPI_DOUBLE, ThisTask, MPI_COMM_WORLD);
+			  MPI_Bcast(&All.MaxSizeTimestepChanged, sizeof(int), MPI_INT, ThisTask, MPI_COMM_WORLD);
+			  printf("A self interacting probability greater that one has been found!! MaxSizeTimestep has be reduced to %g\n",All.MaxSizeTimestep);
+			}
 		      if (get_random_number(P[no].ID) < prob)
 			{
 			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);
@@ -1522,7 +1536,7 @@ int force_treeevaluate_shortrange(int target, int mode)
 #endif
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-  double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob;
+  double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob,prob_tmp;
   FLOAT targetVel[3];
   int targetBegstep,targetEndstep;
   IDTYPE targetID;		
@@ -1655,6 +1669,20 @@ int force_treeevaluate_shortrange(int target, int mode)
 		  if(r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 		    {
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
+                      if(prob > 1 && All.MaxSizeTimestepChanged == 0)
+                        {
+                          prob_tmp = prob;
+                          All.MaxSizeTimestep = (targetEndstep-targetBegstep)*All.Timebase_interval;
+                          while(prob_tmp > 1)
+                            {
+                              All.MaxSizeTimestep = All.MaxSizeTimestep/2.0;
+                              prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0.0, (int) (All.MaxSizeTimestep/All.Timebase_interval));
+                            }
+                          All.MaxSizeTimestepChanged = 1;
+                          MPI_Bcast(&All.MaxSizeTimestep, sizeof(double), MPI_DOUBLE, ThisTask, MPI_COMM_WORLD);
+                          MPI_Bcast(&All.MaxSizeTimestepChanged, sizeof(int), MPI_INT, ThisTask, MPI_COMM_WORLD);
+                          printf("A self interacting probability greater that one has been found!! MaxSizeTimestep has be reduced to %g\n",All.MaxSizeTimestep);
+			}
 		      if(get_random_number(P[no].ID) < prob)
 			{
 			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);

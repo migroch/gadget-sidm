@@ -264,6 +264,7 @@ extern struct global_data_all_processes
 {
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK 
+  int MaxSizeTimestepChanged;        /*!< Flags weather the MaxSizeTimestep parameter has been changed on the current timestep*/
   double InteractionCrossSection;    /*!< Cross Section of the self interacting dark matter */
   unsigned long Nself_interactions;  /*!< Number of self interactions computed at this Task */
   unsigned long Nself_interactionsSum;  /*!< Sum Nself_interactions over all Tasks. Only the root Task keeps track of this value */

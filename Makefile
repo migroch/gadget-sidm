@@ -94,7 +94,7 @@ HDF5LIB  =  -lhdf5 -lz
 #SYSTYPE="OpteronMPA"
 #SYSTYPE="OPA-Cluster32"
 #SYSTYPE="OPA-Cluster64"
-SYSTYPE="greenplanet"
+#SYSTYPE="greenplanet"
 
 #--------------------------------------- Adjust settings for target computer
 

@@ -94,6 +94,7 @@ void gravity_tree(void)
 #endif
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
+  All.MaxSizeTimestepChanged = 0;
   All.Nself_interactions = 0;
   All.Nself_interactionsSum = 0;
   for (i = 0; i < INTERACTION_TABLE_LENGTH; i++)

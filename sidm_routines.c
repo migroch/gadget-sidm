@@ -228,7 +228,7 @@ void update_interaction_table(IDTYPE id1, IDTYPE id2)
 	    }
 	  if (i == INTERACTION_TABLE_LENGTH - 1)
 	    {
-	      printf("ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH");
+	      printf("ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH\n");
 	      endrun(1);
 	    }
 	}
@@ -244,7 +244,7 @@ void update_interaction_table(IDTYPE id1, IDTYPE id2)
 	    }
 	  if (j == PARTICLE_MAX_INTERACTIONS )
 	    {
-	      printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERACTIONS");
+	      printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERACTIONS\n");
 	      endrun(1);
 	    }
 	}
@@ -262,7 +262,7 @@ void update_interaction_table(IDTYPE id1, IDTYPE id2)
 	    }
 	  if (i == INTERACTION_TABLE_LENGTH - 1)
 	    {
-	      printf("ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH");
+	      printf("ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH\n");
 	      endrun(1);
 	    }
 	}
@@ -278,7 +278,7 @@ void update_interaction_table(IDTYPE id1, IDTYPE id2)
 	    }
 	  if (j == PARTICLE_MAX_INTERACTIONS )
 	    {
-	      printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERACTIONS");
+	      printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERACTIONS\n");
 	      endrun(1);
 	    }
 	}
@@ -328,7 +328,7 @@ void AllocateInteractionTable(int x, int y)
   if (InteractionTable == NULL)
     {
       free(InteractionTable);
-      printf("Failed to allocate memory for the interaction table");
+      printf("Failed to allocate memory for the interaction table\n");
       endrun(2);
     }
 
@@ -338,7 +338,7 @@ void AllocateInteractionTable(int x, int y)
       if (InteractionTable[i] == NULL)
 	{
 	  free(InteractionTable[i]);
-	  printf("Failed to allocate memory for the interaction table");
+	  printf("Failed to allocate memory for the interaction table\n");
 	  endrun(2);
 	}
     }
