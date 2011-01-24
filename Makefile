@@ -94,7 +94,7 @@ HDF5LIB  =  -lhdf5 -lz
 #SYSTYPE="OpteronMPA"
 #SYSTYPE="OPA-Cluster32"
 #SYSTYPE="OPA-Cluster64"
-#SYSTYPE="greenplanet"
+SYSTYPE="greenplanet"
 
 #--------------------------------------- Adjust settings for target computer
 
@@ -102,7 +102,7 @@ HDF5LIB  =  -lhdf5 -lz
 ifeq ($(SYSTYPE),"greenplanet")
 #CC       =   /opt/mpich/intel/bin/mpicc    
 CC = mpicc
-OPTIMIZE =   -O3 -Wall -m64    # -ggdb
+OPTIMIZE =   -Wall -m64 -O3 #-ggdb 
 GSL_INCL =  -I/home/rocham/include
 GSL_LIBS =  -L/home/rocham/lib
 FFTW_INCL=  -I/home/rocham/include

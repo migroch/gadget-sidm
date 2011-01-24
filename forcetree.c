@@ -1289,7 +1289,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 		  if (r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 		    {
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
-		      if(prob > 1 && All.MaxSizeTimestepChanged == 0)
+		      if(prob > 1 && prob_of_interaction(r, targetVel, P[no].Vel, 0.0, (int) (All.MaxSizeTimestep/All.Timebase_interval)) > 1)
 			{
 			  prob_tmp = prob;
 			  All.MaxSizeTimestep = (targetEndstep-targetBegstep)*All.Timebase_interval;
@@ -1298,10 +1298,6 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 			      All.MaxSizeTimestep = All.MaxSizeTimestep/2.0; 
 			      prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0.0, (int) (All.MaxSizeTimestep/All.Timebase_interval)); 
 			    }
-			  All.MaxSizeTimestepChanged = 1;
-			  MPI_Bcast(&All.MaxSizeTimestep, sizeof(double), MPI_DOUBLE, ThisTask, MPI_COMM_WORLD);
-			  MPI_Bcast(&All.MaxSizeTimestepChanged, sizeof(int), MPI_INT, ThisTask, MPI_COMM_WORLD);
-			  printf("A self interacting probability greater that one has been found!! MaxSizeTimestep has be reduced to %g\n",All.MaxSizeTimestep);
 			}
 		      if (get_random_number(P[no].ID) < prob)
 			{
@@ -1669,7 +1665,7 @@ int force_treeevaluate_shortrange(int target, int mode)
 		  if(r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 		    {
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
-                      if(prob > 1 && All.MaxSizeTimestepChanged == 0)
+                      if(prob > 1 && prob_of_interaction(r, targetVel, P[no].Vel, 0.0, (int) (All.MaxSizeTimestep/All.Timebase_interval)) > 1)
                         {
                           prob_tmp = prob;
                           All.MaxSizeTimestep = (targetEndstep-targetBegstep)*All.Timebase_interval;
@@ -1678,10 +1674,6 @@ int force_treeevaluate_shortrange(int target, int mode)
                               All.MaxSizeTimestep = All.MaxSizeTimestep/2.0;
                               prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0.0, (int) (All.MaxSizeTimestep/All.Timebase_interval));
                             }
-                          All.MaxSizeTimestepChanged = 1;
-                          MPI_Bcast(&All.MaxSizeTimestep, sizeof(double), MPI_DOUBLE, ThisTask, MPI_COMM_WORLD);
-                          MPI_Bcast(&All.MaxSizeTimestepChanged, sizeof(int), MPI_INT, ThisTask, MPI_COMM_WORLD);
-                          printf("A self interacting probability greater that one has been found!! MaxSizeTimestep has be reduced to %g\n",All.MaxSizeTimestep);
 			}
 		      if(get_random_number(P[no].ID) < prob)
 			{
