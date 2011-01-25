@@ -59,6 +59,8 @@ void begrun(void)
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
   AllocateInteractionTable(INTERACTION_TABLE_LENGTH, PARTICLE_MAX_INTERACTIONS + 1);
   init_geofactor_table();
+  for(i = 0; i < NumPart; i++)
+    P[i].dTi_selfInt = 0;
 #endif
 
   if(RestartFlag == 0 || RestartFlag == 2)

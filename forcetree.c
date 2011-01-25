@@ -1143,15 +1143,16 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 #endif
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-  double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob,prob_tmp;
+  double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob,prob_tmp,max_prob;
   FLOAT  targetVel[3];
-  int targetBegstep,targetEndstep;
+  int targetBegstep,targetEndstep,targetdTi_selfInt;
   IDTYPE targetID;		
   int si_count,i;
   kick_x = 0;
   kick_y = 0;
   kick_z = 0;
   si_count = 0;
+  max_prob = 0;
   if(mode == 0)
   {
     for(i=0;i<3;i++)
@@ -1159,6 +1160,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
     targetBegstep = P[target].Ti_begstep;
     targetEndstep = P[target].Ti_endstep;
     targetID      = P[target].ID;
+    targetdTi_selfInt = P[target].dTi_selfInt;
   }
   else
   {
@@ -1167,6 +1169,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
     targetBegstep = GravDataGet[target].Ti_begstep;
     targetEndstep = GravDataGet[target].Ti_endstep;
     targetID      = GravDataGet[target].ID;
+    targetdTi_selfInt =  GravDataGet[target].dTi_selfInt;
   }
 #endif
 
@@ -1289,16 +1292,22 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 		  if (r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 		    {
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
-		      if(prob > 1 && prob_of_interaction(r, targetVel, P[no].Vel, 0.0, (int) (All.MaxSizeTimestep/All.Timebase_interval)) > 1)
+		      if(prob > max_prob) max_prob = prob;
+		      
+		      if(prob > 1)
 			{
-			  prob_tmp = prob;
-			  All.MaxSizeTimestep = (targetEndstep-targetBegstep)*All.Timebase_interval;
-			  while(prob_tmp > 1)
+			  if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt)> 1)
 			    {
-			      All.MaxSizeTimestep = All.MaxSizeTimestep/2.0; 
-			      prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0.0, (int) (All.MaxSizeTimestep/All.Timebase_interval)); 
+			      targetdTi_selfInt = targetEndstep-targetBegstep;
+			      prob_tmp = prob;
+			      while(prob_tmp > 1)
+				{
+				  targetdTi_selfInt /= 2; 
+				  prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt); 
+				}
 			    }
 			}
+		      
 		      if (get_random_number(P[no].ID) < prob)
 			{
 			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);
@@ -1459,6 +1468,14 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
   
 #ifdef COMPUTE_SELFINTERACTION_FORDARK 
   All.Nself_interactions += si_count;
+  if(max_prob < 0.25 && targetdTi_selfInt > 0)
+    {
+      while(max_prob < 0.25)
+	{
+	  targetdTi_selfInt *= 2; 
+	  max_prob *= 2.0;
+	}
+    }
 #endif
 
   /* store result at the proper place */
@@ -1472,6 +1489,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
       P[target].Vel[0] += kick_x;
       P[target].Vel[1] += kick_y;
       P[target].Vel[2] += kick_z;
+      P[target].dTi_selfInt = targetdTi_selfInt;
 #endif
     }
   else
@@ -1484,6 +1502,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
       GravDataResult[target].Vel[0] = kick_x;
       GravDataResult[target].Vel[1] = kick_y;
       GravDataResult[target].Vel[2] = kick_z;
+      GravDataResult[target].dTi_selfInt = targetdTi_selfInt;
 #endif
     }
 
@@ -1532,9 +1551,9 @@ int force_treeevaluate_shortrange(int target, int mode)
 #endif
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-  double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob,prob_tmp;
+  double  dist_to_center,kick_x,kick_y,kick_z,kick_target[3],kick_no[3],prob,prob_tmp,max_prob;
   FLOAT targetVel[3];
-  int targetBegstep,targetEndstep;
+  int targetBegstep,targetEndstep,targetdTi_selfInt;
   IDTYPE targetID;		
   int si_count,i;
   kick_x = 0;
@@ -1548,6 +1567,7 @@ int force_treeevaluate_shortrange(int target, int mode)
       targetBegstep = P[target].Ti_begstep;
       targetEndstep = P[target].Ti_endstep;
       targetID      = P[target].ID;
+      targetdTi_selfInt = P[target].dTi_selfInt;
     }
   else
     {
@@ -1556,6 +1576,7 @@ int force_treeevaluate_shortrange(int target, int mode)
       targetBegstep = GravDataGet[target].Ti_begstep;
       targetEndstep = GravDataGet[target].Ti_endstep;
       targetID      = GravDataGet[target].ID;
+      targetdTi_selfInt = GravDataGet[target].dTi_selfInt;;
     }
 #endif
 
@@ -1665,16 +1686,22 @@ int force_treeevaluate_shortrange(int target, int mode)
 		  if(r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 		    {
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
-                      if(prob > 1 && prob_of_interaction(r, targetVel, P[no].Vel, 0.0, (int) (All.MaxSizeTimestep/All.Timebase_interval)) > 1)
-                        {
-                          prob_tmp = prob;
-                          All.MaxSizeTimestep = (targetEndstep-targetBegstep)*All.Timebase_interval;
-                          while(prob_tmp > 1)
-                            {
-                              All.MaxSizeTimestep = All.MaxSizeTimestep/2.0;
-                              prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0.0, (int) (All.MaxSizeTimestep/All.Timebase_interval));
-                            }
+                      if(prob > max_prob) max_prob = prob;
+		      
+		      if(prob > 1)
+			{
+			  if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt)> 1)
+			    {
+			      targetdTi_selfInt = targetEndstep-targetBegstep;
+			      prob_tmp = prob;
+			      while(prob_tmp > 1)
+				{
+				  targetdTi_selfInt /= 2; 
+				  prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt); 
+				}
+			    }
 			}
+
 		      if(get_random_number(P[no].ID) < prob)
 			{
 			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);
@@ -1902,6 +1929,14 @@ int force_treeevaluate_shortrange(int target, int mode)
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK 
   All.Nself_interactions += si_count;
+  if(max_prob < 0.25 && targetdTi_selfInt > 0)
+    {
+      while(max_prob < 0.25)
+	{
+	  targetdTi_selfInt *= 2; 
+	  max_prob *= 2.0;
+	}
+    }
 #endif
 
   /* store result at the proper place */
@@ -1916,6 +1951,7 @@ int force_treeevaluate_shortrange(int target, int mode)
       P[target].Vel[0] += kick_x;
       P[target].Vel[1] += kick_y;
       P[target].Vel[2] += kick_z;
+      P[target].dTi_selfInt = targetdTi_selfInt;
 #endif
     }
   else
@@ -1928,6 +1964,7 @@ int force_treeevaluate_shortrange(int target, int mode)
       GravDataResult[target].Vel[0] = kick_x;
       GravDataResult[target].Vel[1] = kick_y;
       GravDataResult[target].Vel[2] = kick_z;
+      GravDataResult[target].dTi_selfInt = targetdTi_selfInt;
 #endif
     }
 

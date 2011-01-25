@@ -48,7 +48,6 @@ void gravity_tree(void)
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
   unsigned long *Nself_interactionsList;
-  double MaxSizeTimestep_prev, MaxSizeTimestep_min;
 #endif
 
   /* set new softening lengths */
@@ -95,7 +94,6 @@ void gravity_tree(void)
 #endif
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-  MaxSizeTimestep_prev = All.MaxSizeTimestep;
   All.Nself_interactions = 0;
   All.Nself_interactionsSum = 0;
   for (i = 0; i < INTERACTION_TABLE_LENGTH; i++)
@@ -144,6 +142,7 @@ void gravity_tree(void)
 		      GravDataGet[nexport].Vel[k] = P[i].Vel[k];  		  
 		    GravDataGet[nexport].Ti_begstep = P[i].Ti_begstep;
 		    GravDataGet[nexport].Ti_endstep = P[i].Ti_endstep;
+		    GravDataGet[nexport].dTi_selfInt;
 		    GravDataGet[nexport].ID = P[i].ID;
 		    GravDataGet[nexport].Type = P[i].Type;
 #endif
@@ -285,6 +284,7 @@ void gravity_tree(void)
 			    {
 			      for(k = 0; k < 3; k++)
 				P[place].Vel[k] += GravDataOut[j + noffset[recvTask]].Vel[k];
+			      P[place].dTi_selfInt = GravDataOut[j + noffset[recvTask]].dTi_selfInt;
 			    }
 #endif
 			  P[place].GravCost += GravDataOut[j + noffset[recvTask]].w.Ninteractions;
@@ -417,15 +417,8 @@ void gravity_tree(void)
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
   Nself_interactionsList = malloc(sizeof(unsigned long) * NTask);
   MPI_Gather(&All.Nself_interactions, 1, MPI_UNSIGNED_LONG, Nself_interactionsList, 1, MPI_UNSIGNED_LONG, 0, MPI_COMM_WORLD);
-  MPI_Reduce(&All.MaxSizeTimestep, &MaxSizeTimestep_min, 1, MPI_DOUBLE, MPI_MIN, 0, MPI_COMM_WORLD);
-  MPI_Bcast(&MaxSizeTimestep_min, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-  All.MaxSizeTimestep = MaxSizeTimestep_min;
   if(ThisTask == 0)
     {
-      if(All.MaxSizeTimestep != MaxSizeTimestep_prev)
-	{
-	  printf("A self interacting probability greater that one has been found!! MaxSizeTimestep has be reduced to %g\n",All.MaxSizeTimestep);
-	}
       for(i = 0; i < NTask; i++)
         {
           All.Nself_interactionsSum += Nself_interactionsList[i];

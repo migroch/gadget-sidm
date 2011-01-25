@@ -531,6 +531,11 @@ extern struct particle_data
   int Type;		        /*!< flags particle type.  0=gas, 1=halo, 2=disk, 3=bulge, 4=stars, 5=bndry */
   int Ti_endstep;               /*!< marks start of current timestep of particle on integer timeline */ 
   int Ti_begstep;               /*!< marks end of current timestep of particle on integer timeline */
+
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+  int dTi_selfInt;              /*!< timestep used if probabilities for self interaction greater than one are found */ 
+#endif
+
 #ifdef FLEXSTEPS
   int FlexStepGrp;		/*!< a random 'offset' on the timeline to create a smooth groouping of particles */
 #endif
@@ -713,6 +718,7 @@ extern struct gravdata_in
   u;
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
   FLOAT Vel[3];
+  int dTi_selfInt;
   int Ti_begstep;
   int Ti_endstep;
   IDTYPE ID;		

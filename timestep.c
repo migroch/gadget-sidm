@@ -534,6 +534,19 @@ int get_timestep(int p,		/*!< particle index */
 
   ti_step = dt / All.Timebase_interval;
 
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+  if(P[p].dTi_selfInt > 0)
+    {
+      if(P[p].dTi_selfInt < ti_step)
+	ti_step = P[p].dTi_selfInt;
+      else
+	P[p].dTi_selfInt = 0;
+      
+      if(ti_step*All.Timebase_interval < All.MinSizeTimestep)
+	printf("Warning: A Timestep below the limit`MinSizeTimestep' is being used to keep self interaction probabilities smaller than one. dt = %g\n",ti_step*All.Timebase_interval);
+    }
+#endif
+
   if(!(ti_step > 0 && ti_step < TIMEBASE))
     {
       printf("\nError: A timestep of size zero was assigned on the integer timeline!\n"
