@@ -142,7 +142,7 @@ void gravity_tree(void)
 		      GravDataGet[nexport].Vel[k] = P[i].Vel[k];  		  
 		    GravDataGet[nexport].Ti_begstep = P[i].Ti_begstep;
 		    GravDataGet[nexport].Ti_endstep = P[i].Ti_endstep;
-		    GravDataGet[nexport].dTi_selfInt;
+		    GravDataGet[nexport].dTi_selfInt = P[i].dTi_selfInt;
 		    GravDataGet[nexport].ID = P[i].ID;
 		    GravDataGet[nexport].Type = P[i].Type;
 #endif

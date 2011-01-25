@@ -1560,6 +1560,7 @@ int force_treeevaluate_shortrange(int target, int mode)
   kick_y = 0;
   kick_z = 0;
   si_count = 0;
+  max_prob = 0;
   if(mode == 0)
     {
       for(i=0;i<3;i++)

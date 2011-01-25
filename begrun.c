@@ -57,10 +57,11 @@ void begrun(void)
   All.TimeLastRestartFile = CPUThisRun;
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-  AllocateInteractionTable(INTERACTION_TABLE_LENGTH, PARTICLE_MAX_INTERACTIONS + 1);
-  init_geofactor_table();
+  int i;
   for(i = 0; i < NumPart; i++)
     P[i].dTi_selfInt = 0;
+  AllocateInteractionTable(INTERACTION_TABLE_LENGTH, PARTICLE_MAX_INTERACTIONS + 1);
+  init_geofactor_table();
 #endif
 
   if(RestartFlag == 0 || RestartFlag == 2)
