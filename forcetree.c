@@ -1294,13 +1294,13 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
 		      if(prob > max_prob) max_prob = prob;
 		      
-		      if(prob > 1)
+		      if(prob > 0.5)
 			{
-			  if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt)> 1)
+			  if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt) > 1)
 			    {
 			      targetdTi_selfInt = targetEndstep-targetBegstep;
 			      prob_tmp = prob;
-			      while(prob_tmp > 1)
+			      while(prob_tmp > 0.5)
 				{
 				  targetdTi_selfInt /= 2; 
 				  prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt); 
@@ -1468,7 +1468,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
   
 #ifdef COMPUTE_SELFINTERACTION_FORDARK 
   All.Nself_interactions += si_count;
-  if(max_prob < 0.25 && targetdTi_selfInt > 0)
+  if(max_prob < 0.25 && max_prob > 0 && mode == 0 && targetdTi_selfInt > 0)
     {
       while(max_prob < 0.25)
 	{
@@ -1689,13 +1689,13 @@ int force_treeevaluate_shortrange(int target, int mode)
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
                       if(prob > max_prob) max_prob = prob;
 		      
-		      if(prob > 1)
+		      if(prob > 0.5)
 			{
-			  if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt)> 1)
+			  if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt) > 0.5)
 			    {
 			      targetdTi_selfInt = targetEndstep-targetBegstep;
 			      prob_tmp = prob;
-			      while(prob_tmp > 1)
+			      while(prob_tmp > 0.5)
 				{
 				  targetdTi_selfInt /= 2; 
 				  prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt); 
@@ -1930,7 +1930,7 @@ int force_treeevaluate_shortrange(int target, int mode)
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK 
   All.Nself_interactions += si_count;
-  if(max_prob < 0.25 && targetdTi_selfInt > 0)
+  if(max_prob < 0.25 && max_prob > 0 && mode == 0 && targetdTi_selfInt > 0)
     {
       while(max_prob < 0.25)
 	{

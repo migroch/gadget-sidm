@@ -102,7 +102,7 @@ SYSTYPE="greenplanet"
 ifeq ($(SYSTYPE),"greenplanet")
 #CC       =   /opt/mpich/intel/bin/mpicc    
 CC = mpicc
-OPTIMIZE =   -Wall -m64 -O3 #-ggdb 
+OPTIMIZE =   -Wall -m64 -ggdb #-O3 #-ggdb 
 GSL_INCL =  -I/home/rocham/include
 GSL_LIBS =  -L/home/rocham/lib
 FFTW_INCL=  -I/home/rocham/include
