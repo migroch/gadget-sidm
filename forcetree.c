@@ -1287,7 +1287,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 	  r = sqrt(r2);
 	  if (targetID != P[no].ID)
 	    {
-	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
+	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for Test1 only. Original: if (ptype == 1 && P[no].Type == 1). CHANGE FOR ANY OTHER RUNS!!*/
 		{
 		  if (r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 		    {
@@ -1316,7 +1316,8 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 			  kick_z += kick_target[2];
 			  for (i = 0; i < 3 ; i++)
 			    P[no].Vel[i] += kick_no[i];
-			  si_count+=1;
+			  if(sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) > 127.0 && sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) < 167.0 ) /* This if statement is for the sake of Test1 only. REMOVE FOR ANY OTHER RUNS!!.*/
+			    si_count+=1;
 			  update_interaction_table(targetID,P[no].ID);
 			}
 		    }
@@ -1711,7 +1712,8 @@ int force_treeevaluate_shortrange(int target, int mode)
 			  kick_z += kick_target[2];
 			  for(i = 0; i < 3 ; i++)
 			    P[no].Vel[i] += kick_no[i];
-			  si_count+=1;
+			  if(sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) > 127.0 && sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) < 167.0 ) /* This if statement is for the sake of Test1 only. REMOVE FOR ANY OTHER RUNS!!.*/
+			    si_count+=1;
 			  update_interaction_table(targetID,P[no].ID);
 			}
 		    }
