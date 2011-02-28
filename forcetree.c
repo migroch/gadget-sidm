@@ -1287,7 +1287,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 	  r = sqrt(r2);
 	  if (targetID != P[no].ID)
 	    {
-	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for Test1 only. Original: if (ptype == 1 && P[no].Type == 1). CHANGE FOR ANY OTHER RUNS!!*/
+	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for Test1 and Test2 only. Original: if (ptype == 1 && P[no].Type == 1). CHANGE FOR ANY OTHER RUNS!!*/
 		{
 		  if (r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 		    {
@@ -1310,14 +1310,16 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 		      
 		      if (get_random_number(P[no].ID) < prob)
 			{
-			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);
-			  kick_x += kick_target[0];
-			  kick_y += kick_target[1];
-			  kick_z += kick_target[2];
-			  for (i = 0; i < 3 ; i++)
-			    P[no].Vel[i] += kick_no[i];
-			  if(sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) > 127.0 && sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) < 167.0 ) /* This if statement is for the sake of Test1 only. REMOVE FOR ANY OTHER RUNS!!.*/
-			    si_count+=1;
+			  //THE LINES BELOW ARE COMMENTED FOR TEST2_NOKICK, WE ONLY WANT TO TEST THE NUMBER OF INTERACTIONS. 
+
+			  //calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no); This is commented out for Test2_noKick
+			  //kick_x += kick_target[0];
+			  //kick_y += kick_target[1];
+			  //kick_z += kick_target[2];
+			  //for (i = 0; i < 3 ; i++)
+			  //  P[no].Vel[i] += kick_no[i];
+			  //if(sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) > 127.0 && sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) < 167.0 ) /* This if statement is for the sake of Test1 only. REMOVE FOR ANY OTHER RUNS!!.*/
+			  si_count+=1;
 			  update_interaction_table(targetID,P[no].ID);
 			}
 		    }
@@ -1477,6 +1479,11 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 	  max_prob *= 2.0;
 	}
     }
+
+  //for test2 we want to turn off gravity for all the particles
+  acc_x = 0.0;
+  acc_y = 0.0;
+  acc_z = 0.0;
 #endif
 
   /* store result at the proper place */
