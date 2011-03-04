@@ -1308,7 +1308,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 			    }
 			}
 		      
-		      if (get_random_number(P[no].ID) < prob)
+		      if (gsl_rng_uniform(random_generator) < prob)
 			{
 			  //THE LINES BELOW ARE COMMENTED FOR TEST2_NOKICK, WE ONLY WANT TO TEST THE NUMBER OF INTERACTIONS. 
 
@@ -1711,7 +1711,7 @@ int force_treeevaluate_shortrange(int target, int mode)
 			    }
 			}
 
-		      if(get_random_number(P[no].ID) < prob)
+		      if(gsl_rng_uniform(random_generator) < prob)
 			{
 			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);
 			  kick_x += kick_target[0];
