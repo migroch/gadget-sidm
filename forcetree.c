@@ -1310,14 +1310,12 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 		      
 		      if (gsl_rng_uniform(random_generator) < prob)
 			{
-			  //THE LINES BELOW ARE COMMENTED FOR TEST2_NOKICK, WE ONLY WANT TO TEST THE NUMBER OF INTERACTIONS. 
-
-			  //calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no); This is commented out for Test2_noKick
-			  //kick_x += kick_target[0];
-			  //kick_y += kick_target[1];
-			  //kick_z += kick_target[2];
-			  //for (i = 0; i < 3 ; i++)
-			  //  P[no].Vel[i] += kick_no[i];
+			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no); 
+			  kick_x += kick_target[0];
+			  kick_y += kick_target[1];
+			  kick_z += kick_target[2];
+			  for (i = 0; i < 3 ; i++)
+			   P[no].Vel[i] += kick_no[i];
 			  //if(sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) > 127.0 && sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) < 167.0 ) /* This if statement is for the sake of Test1 only. REMOVE FOR ANY OTHER RUNS!!.*/
 			  si_count+=1;
 			  update_interaction_table(targetID,P[no].ID);
@@ -1719,8 +1717,8 @@ int force_treeevaluate_shortrange(int target, int mode)
 			  kick_z += kick_target[2];
 			  for(i = 0; i < 3 ; i++)
 			    P[no].Vel[i] += kick_no[i];
-			  if(sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) > 127.0 && sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) < 167.0 ) /* This if statement is for the sake of Test1 only. REMOVE FOR ANY OTHER RUNS!!.*/
-			    si_count+=1;
+			  //if(sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) > 127.0 && sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) < 167.0 ) /* This if statement is for the sake of Test1 only. REMOVE FOR ANY OTHER RUNS!!.*/
+			  si_count+=1;
 			  update_interaction_table(targetID,P[no].ID);
 			}
 		    }

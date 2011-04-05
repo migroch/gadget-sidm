@@ -21,8 +21,7 @@
 #endif
 
 #define GEOFACTOR_TABLE_LENGTH 1000    /*!< length of the table used for the geometric factor spline */
-#define INTERACTION_TABLE_LENGTH 20000 /*!< This should be set to twice the maximum number of interactions 
-					 you expect at each timestep */
+#define INTERACTION_TABLE_LENGTH 5000  /*!< This should be about the maximum number of interactions expected at each timestep */
 #define PARTICLE_MAX_INTERACTIONS 1000 /*!< Maximum number of interactions a particle can have at each time step */
 
 extern double GeoFactorTable[GEOFACTOR_TABLE_LENGTH];

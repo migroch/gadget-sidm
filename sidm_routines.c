@@ -62,8 +62,8 @@ double prob_of_interaction(double r, FLOAT Vtarget[3], FLOAT Vno[3], int tbegin,
     mp =  All.MassTable[1]*All.UnitMass_in_g;
     prob = mp*All.InteractionCrossSection*dV*dT*g_geo(r/h)/(h*h*h*All.UnitLength_in_cm*All.UnitLength_in_cm);
 
-    return prob;
-
+    return prob/2; /* The factor of 2 comes from tests showing that the number of interactions converge to twice the
+                      expected number of interactions*/
   }
 
 /*! This function returns the value of the geometrical factor needed for 
@@ -212,11 +212,19 @@ void update_interaction_table(IDTYPE id1, IDTYPE id2)
 
   for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
     {
-      if(InteractionTable[i][0] == id1) id1_index = i;
-      if(InteractionTable[i][0] == id2) id2_index = i;
+      if(InteractionTable[i][0] == id1)
+	{
+	  id1_index = i;
+	  break;
+	}
+      else if(InteractionTable[i][0] == id2) 
+	{
+	  id2_index = i;
+	  break;
+	}
     }
 
-   if(id1_index == -1)
+   if(id1_index == -1 && id2_index == -1)
     {
       for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
 	{
@@ -233,56 +241,38 @@ void update_interaction_table(IDTYPE id1, IDTYPE id2)
 	    }
 	}
     }
-  else
-    {
-      for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
-	{
-	  if(InteractionTable[id1_index][j] == 0)
-	    {
-	      InteractionTable[id1_index][j] = id2;
-	      break;
-	    }
-	  if (j == PARTICLE_MAX_INTERACTIONS )
-	    {
-	      printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERACTIONS\n");
-	      endrun(1);
-	    }
-	}
-    } 
-
-  if(id2_index == -1)
-    {
-      for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
-	{
-	  if(InteractionTable[i][0] == 0)
-	    {
-	      InteractionTable[i][0] = id2;
-	      InteractionTable[i][1] = id1;
-	      break;
-	    }
-	  if (i == INTERACTION_TABLE_LENGTH - 1)
-	    {
-	      printf("ERROR: There were more interactions in this timestep than INTERACTION_TABLE_LENGTH\n");
-	      endrun(1);
-	    }
-	}
-    }
-  else
-    {
-      for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
-	{
-	  if(InteractionTable[id2_index][j] == 0)
-	    {
-	      InteractionTable[id2_index][j] = id1;
-	      break;
-	    }
-	  if (j == PARTICLE_MAX_INTERACTIONS )
-	    {
-	      printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERACTIONS\n");
-	      endrun(1);
-	    }
-	}
-    }
+   else if(id1_index >= 0)
+     {
+       for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
+	 {
+	   if(InteractionTable[id1_index][j] == 0)
+	     {
+	       InteractionTable[id1_index][j] = id2;
+	       break;
+	     }
+	   if (j == PARTICLE_MAX_INTERACTIONS )
+	     {
+	       printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERACTIONS\n");
+	       endrun(1);
+	     }
+	 }
+     } 
+   else if(id2_index >= 0)
+     {
+       for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
+	 {
+	   if(InteractionTable[id2_index][j] == 0)
+	     {
+	       InteractionTable[id2_index][j] = id1;
+	       break;
+	     }
+	   if (j == PARTICLE_MAX_INTERACTIONS )
+	     {
+	       printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERACTIONS\n");
+	       endrun(1);
+	     }
+	 }
+     }
 }
 
 
@@ -299,19 +289,32 @@ int check_interaction_table(IDTYPE id1, IDTYPE id2)
   
   for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
     { 
-      if(InteractionTable[i][0] == id1 || InteractionTable[i][0] == id2 )
+      if(InteractionTable[i][0] == id1)
 	{
 	  for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
 	    {
-	      if(InteractionTable[i][0] == id1 && InteractionTable[i][j] == id2)
+	      if(InteractionTable[i][j] == id2)
 		{ 
 		  flag = 1;
 		  break;
 		}
-	      if(InteractionTable[i][0] == id2 && InteractionTable[i][j] == id1)
+	    }
+	}
+    }
+
+  if(flag == 0)
+    {
+      for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+	{ 
+	  if(InteractionTable[i][0] == id2)
+	    {
+	      for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
 		{
-		  flag = 1;
-		  break;
+		  if(InteractionTable[i][j] == id1)
+		    { 
+		      flag = 1;
+		      break;
+		    }
 		}
 	    }
 	}
