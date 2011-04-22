@@ -41,7 +41,7 @@ double prob_of_interaction(double r, FLOAT Vtarget[3], FLOAT Vno[3], int tbegin,
     if(All.ComovingIntegrationOn)
       {
 	r =  All.Time*r;
-	h = All.ForceSoftening[1]*All.Time;
+	h = 2.0*All.ForceSoftening[1]*All.Time;
 
 	dloga = (tend - tbegin)*All.Timebase_interval;
         hubble_a = (All.Omega0 / (All.Time * All.Time * All.Time)
@@ -50,13 +50,13 @@ double prob_of_interaction(double r, FLOAT Vtarget[3], FLOAT Vno[3], int tbegin,
         dT = dloga/hubble_a;
 
         dV = dV/All.Time; /* Convert from internal velocity p = a^2 dx/dt to peculiar velocity v = a dx/dt*/
-        dV -= hubble_a*r; /* Substract Hubble flow */
+        //dV -= hubble_a*r; /* This is not the right way to do it, disregard for know */
    
       }
     else
       {
         dT = (tend-tbegin)*All.Timebase_interval;
-        h = All.ForceSoftening[1];
+        h = 2.0*All.ForceSoftening[1];
       }
 
     mp =  All.MassTable[1]*All.UnitMass_in_g;

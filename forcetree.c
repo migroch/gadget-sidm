@@ -1287,20 +1287,21 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 	  r = sqrt(r2);
 	  if (targetID != P[no].ID)
 	    {
-	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for Test1 and Test2 only. Original: if (ptype == 1 && P[no].Type == 1). CHANGE FOR ANY OTHER RUNS!!*/
+	      if (ptype == 1 && P[no].Type == 1) 
+	    //if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*Use this for Test1 and Test2 only*/
 		{
-		  if (r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
+		  if (r < 2.0*2.0*All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 		    {
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
 		      if(prob > max_prob) max_prob = prob;
 		      
-		      if(prob > 0.5)
+		      if(prob > 0.2)
 			{
 			  if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt) > 1)
 			    {
 			      targetdTi_selfInt = targetEndstep-targetBegstep;
 			      prob_tmp = prob;
-			      while(prob_tmp > 0.5)
+			      while(prob_tmp > 0.2)
 				{
 				  targetdTi_selfInt /= 2; 
 				  prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt); 
@@ -1346,7 +1347,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
                                 (nop->center[1] - pos_y)*(nop->center[1] - pos_y) +
                                 (nop->center[2] - pos_z)*(nop->center[2] - pos_z));
 	   /* check if any portion the cell lies withing the intercation range */
-	  if(dist_to_center - nop->len * sqrt(3.0) / 2.0 < 2.0 * All.ForceSoftening[1])
+	  if(dist_to_center - nop->len*sqrt(3.0)/2.0 < 2.0*2.0*All.ForceSoftening[1])
 	    {
 	      /* open cell */
 	      no = nop->u.d.nextnode;
@@ -1469,19 +1470,19 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
   
 #ifdef COMPUTE_SELFINTERACTION_FORDARK 
   All.Nself_interactions += si_count;
-  if(max_prob < 0.25 && max_prob > 0 && mode == 0 && targetdTi_selfInt > 0)
+  if(max_prob < 0.1 && max_prob > 0 && mode == 0 && targetdTi_selfInt > 0)
     {
-      while(max_prob < 0.25)
+      while(max_prob < 0.1)
 	{
 	  targetdTi_selfInt *= 2; 
 	  max_prob *= 2.0;
 	}
     }
 
-  //for test2 we want to turn off gravity for all the particles
+  /*for test2 we want to turn off gravity for all the particles
   acc_x = 0.0;
   acc_y = 0.0;
-  acc_z = 0.0;
+  acc_z = 0.0;*/
 #endif
 
   /* store result at the proper place */
@@ -1688,20 +1689,21 @@ int force_treeevaluate_shortrange(int target, int mode)
 	  r = sqrt(r2);
 	  if(targetID != P[no].ID)
 	    {
-	      if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*This line has been modified for the Test1. original: if (ptype == 1 && P[no].Type == 1)*/
+	      if (ptype == 1 && P[no].Type == 1) 
+	    //if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*Use this for Test1 and Test2 only*/
 		{
-		  if(r < 2.0 * All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
+		  if(r < 2.0*2.0*All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
 		    {
 		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
                       if(prob > max_prob) max_prob = prob;
 		      
-		      if(prob > 0.5)
+		      if(prob > 0.2)
 			{
 			  if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt) > 0.5)
 			    {
 			      targetdTi_selfInt = targetEndstep-targetBegstep;
 			      prob_tmp = prob;
-			      while(prob_tmp > 0.5)
+			      while(prob_tmp > 0.2)
 				{
 				  targetdTi_selfInt /= 2; 
 				  prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt); 
@@ -1808,7 +1810,7 @@ int force_treeevaluate_shortrange(int target, int mode)
 				(nop->center[1] - pos_y)*(nop->center[1] - pos_y) +
 				(nop->center[2] - pos_z)*(nop->center[2] - pos_z));
 	  /*check if any portion the cell lies withing the intercation range */
-	  if(dist_to_center - nop->len * sqrt(3.0) / 2.0 < 2.0 * All.ForceSoftening[1])
+	  if(dist_to_center - nop->len*sqrt(3.0)/2.0 < 2.0*2.0*All.ForceSoftening[1])
 	    {
 	      /* open cell */
 	      no = nop->u.d.nextnode;
@@ -1937,14 +1939,19 @@ int force_treeevaluate_shortrange(int target, int mode)
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK 
   All.Nself_interactions += si_count;
-  if(max_prob < 0.25 && max_prob > 0 && mode == 0 && targetdTi_selfInt > 0)
+  if(max_prob < 0.1 && max_prob > 0 && mode == 0 && targetdTi_selfInt > 0)
     {
-      while(max_prob < 0.25)
+      while(max_prob < 0.1)
 	{
 	  targetdTi_selfInt *= 2; 
 	  max_prob *= 2.0;
 	}
     }
+ 
+  /*for test2 we want to turn off gravity for all the particles
+  acc_x = 0.0;
+  acc_y = 0.0;
+  acc_z = 0.0;*/
 #endif
 
   /* store result at the proper place */
