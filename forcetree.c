@@ -1284,42 +1284,45 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 #endif
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-	  r = sqrt(r2);
 	  if (targetID != P[no].ID)
 	    {
 	      if (ptype == 1 && P[no].Type == 1) 
-	    //if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*Use this for Test1 and Test2 only*/
+              //if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*Use this for Test1 and Test2 only*/
 		{
-		  if (r < 2.0*2.0*All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
+		  r = sqrt(r2);
+		  if (r < 2.0*2.0*All.ForceSoftening[1])
 		    {
-		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
-		      if(prob > max_prob) max_prob = prob;
-		      
-		      if(prob > 0.2)
+		      if (check_interaction_table(targetID,P[no].ID) == 0)
 			{
-			  if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt) > 1)
+			  prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
+			  if(prob > max_prob) max_prob = prob;
+			  
+			  if(prob > 0.2)
 			    {
-			      targetdTi_selfInt = targetEndstep-targetBegstep;
-			      prob_tmp = prob;
-			      while(prob_tmp > 0.2)
+			      if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt) > 0.2)
 				{
-				  targetdTi_selfInt /= 2; 
-				  prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt); 
+				  targetdTi_selfInt = targetEndstep-targetBegstep;
+				  prob_tmp = prob;
+				  while(prob_tmp > 0.2)
+				    {
+				      targetdTi_selfInt /= 2; 
+				      prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt); 
+				    }
 				}
 			    }
-			}
-		      
-		      if (gsl_rng_uniform(random_generator) < prob)
-			{
-			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no); 
-			  kick_x += kick_target[0];
-			  kick_y += kick_target[1];
-			  kick_z += kick_target[2];
-			  for (i = 0; i < 3 ; i++)
-			   P[no].Vel[i] += kick_no[i];
-			  //if(sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) > 127.0 && sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) < 167.0 ) /* This if statement is for the sake of Test1 only. REMOVE FOR ANY OTHER RUNS!!.*/
-			  si_count+=1;
-			  update_interaction_table(targetID,P[no].ID);
+			  
+			  if (gsl_rng_uniform(random_generator) < prob)
+			    {
+			      calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no); 
+			      kick_x += kick_target[0];
+			      kick_y += kick_target[1];
+			      kick_z += kick_target[2];
+			      for (i = 0; i < 3 ; i++)
+				P[no].Vel[i] += kick_no[i];
+			      //if(sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) > 127.0 && sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) < 167.0 ) /* This if statement is for the sake of Test1 only. REMOVE FOR ANY OTHER RUNS!!.*/
+			      si_count+=1;
+			      update_interaction_table(targetID,P[no].ID);
+			    }			
 			}
 		    }
 		}
@@ -1686,42 +1689,45 @@ int force_treeevaluate_shortrange(int target, int mode)
 #endif
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-	  r = sqrt(r2);
-	  if(targetID != P[no].ID)
-	    {
-	      if (ptype == 1 && P[no].Type == 1) 
-	    //if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*Use this for Test1 and Test2 only*/
-		{
-		  if(r < 2.0*2.0*All.ForceSoftening[1] && check_interaction_table(targetID,P[no].ID) == 0)
-		    {
-		      prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
-                      if(prob > max_prob) max_prob = prob;
-		      
-		      if(prob > 0.2)
-			{
-			  if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt) > 0.5)
+	  if (targetID != P[no].ID)
+            {
+              if (ptype == 1 && P[no].Type == 1)
+	      //if ((ptype == 1 && P[no].Type == 4) || (ptype == 4 && P[no].Type == 1) ) /*Use this for Test1 and Test2 only*/ 
+                {
+                  r = sqrt(r2);
+                  if (r < 2.0*2.0*All.ForceSoftening[1])
+                    {
+                      if (check_interaction_table(targetID,P[no].ID) == 0)
+                        {
+			  prob = prob_of_interaction(r, targetVel, P[no].Vel, targetBegstep, targetEndstep);
+			  if(prob > max_prob) max_prob = prob;
+			  
+			  if(prob > 0.2)
 			    {
-			      targetdTi_selfInt = targetEndstep-targetBegstep;
-			      prob_tmp = prob;
-			      while(prob_tmp > 0.2)
+			      if(targetdTi_selfInt == 0 || prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt) > 0.2)
 				{
-				  targetdTi_selfInt /= 2; 
-				  prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt); 
+				  targetdTi_selfInt = targetEndstep-targetBegstep;
+				  prob_tmp = prob;
+				  while(prob_tmp > 0.2)
+				    {
+				      targetdTi_selfInt /= 2; 
+				      prob_tmp = prob_of_interaction(r, targetVel, P[no].Vel, 0, targetdTi_selfInt); 
+				    }
 				}
 			    }
-			}
-
-		      if(gsl_rng_uniform(random_generator) < prob)
-			{
-			  calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);
-			  kick_x += kick_target[0];
-			  kick_y += kick_target[1];
-			  kick_z += kick_target[2];
-			  for(i = 0; i < 3 ; i++)
-			    P[no].Vel[i] += kick_no[i];
-			  //if(sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) > 127.0 && sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) < 167.0 ) /* This if statement is for the sake of Test1 only. REMOVE FOR ANY OTHER RUNS!!.*/
-			  si_count+=1;
-			  update_interaction_table(targetID,P[no].ID);
+			  
+			  if(gsl_rng_uniform(random_generator) < prob)
+			    {
+			      calculate_interact_kick(targetVel, P[no].Vel, kick_target, kick_no);
+			      kick_x += kick_target[0];
+			      kick_y += kick_target[1];
+			      kick_z += kick_target[2];
+			      for(i = 0; i < 3 ; i++)
+				P[no].Vel[i] += kick_no[i];
+			      //if(sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) > 127.0 && sqrt(pos_x*pos_x + pos_y*pos_y + pos_z*pos_z) < 167.0 ) /* This if statement is for the sake of Test1 only. REMOVE FOR ANY OTHER RUNS!!.*/
+			      si_count+=1;
+			      update_interaction_table(targetID,P[no].ID);
+			    }
 			}
 		    }
 		}
