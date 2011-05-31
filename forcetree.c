@@ -2090,7 +2090,7 @@ int force_treeevaluate_ewald_correction(int target, int mode, double pos_x, doub
 	                      (nop->center[1] - pos_y)*(nop->center[1] - pos_y) +
 	                      (nop->center[2] - pos_z)*(nop->center[2] - pos_z));
 	  /*check if any portion the cell lies withing the intercation range*/
-  	if(dist_to_center - nop->len * sqrt(3.0) / 2.0 < 2.0 * All.ForceSoftening[1])
+  	if(dist_to_center - nop->len * sqrt(3.0) / 2.0 < 2.0*2.0*All.ForceSoftening[1])
 	    {
 	      /* open cell */
 	      no = nop->u.d.nextnode;
@@ -2442,7 +2442,7 @@ void force_treeevaluate_potential(int target, int mode)
 				(nop->center[1] - pos_y)*(nop->center[1] - pos_y) +
 				(nop->center[2] - pos_z)*(nop->center[2] - pos_z));
 	   /*check if any portion the cell lies withing the intercation range*/
-	  if(dist_to_center - nop->len * sqrt(3.0) / 2.0 < 2.0 * All.ForceSoftening[1])
+	  if(dist_to_center - nop->len * sqrt(3.0) / 2.0 < 2.0*2.0*All.ForceSoftening[1])
 	  {
 	    /* open cell */
 	    no = nop->u.d.nextnode;
@@ -2769,7 +2769,7 @@ void force_treeevaluate_potential_shortrange(int target, int mode)
 				(nop->center[1] - pos_y)*(nop->center[1] - pos_y) +
 				(nop->center[2] - pos_z)*(nop->center[2] - pos_z));
 	   /*check if any portion the cell lies withing the intercation range*/
-	  if(dist_to_center - nop->len * sqrt(3.0) / 2.0 < 2.0 * All.ForceSoftening[1])
+	  if(dist_to_center - nop->len * sqrt(3.0) / 2.0 < 2.0*2.0*All.ForceSoftening[1])
 	  {
 	    /* open cell */
 	    no = nop->u.d.nextnode;

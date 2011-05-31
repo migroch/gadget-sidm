@@ -100,7 +100,7 @@ void  calculate_interact_kick(FLOAT Vtarget[3], FLOAT Vno[3], double kick_target
   dvz = Vno[2]-Vtarget[2];
   dV = sqrt(dvx*dvx + dvy*dvy + dvz*dvz);
 
-  theta = gsl_rng_uniform(random_generator)*M_PI;
+  theta = acos(2*gsl_rng_uniform(random_generator)-1.0);
   phi = gsl_rng_uniform(random_generator)*2.0*M_PI;
 
   kick_target[0] = (-Vtarget[0] + Vno[0] + dV*sin(theta)*cos(phi))/2.0;
