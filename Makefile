@@ -8,9 +8,8 @@
 
 
 #--------------------------------------- Basic operation mode of code
-#OPT   +=  -DPERIODIC 
+OPT   +=  -DPERIODIC 
 OPT   +=  -DUNEQUALSOFTENINGS
-
 
 #--------------------------------------- Things that are always recommended
 OPT   +=  -DPEANOHILBERT
@@ -18,7 +17,7 @@ OPT   +=  -DWALLCLOCK
 
 
 #--------------------------------------- TreePM Options
-#OPT   +=  -DPMGRID=256
+OPT   +=  -DPMGRID=256
 #OPT   +=  -DPLACEHIGHRESREGION=3
 #OPT   +=  -DENLARGEREGION=1.2
 #OPT   +=  -DASMTH=1.25
@@ -39,8 +38,8 @@ OPT   +=  -DSYNCHRONIZATION
 
 
 #--------------------------------------- Output 
-OPT   +=  -DHAVE_HDF5  
-#OPT   +=  -DOUTPUTPOTENTIAL
+#OPT   +=  -DHAVE_HDF5  
+OPT   +=  -DOUTPUTPOTENTIAL
 #OPT   +=  -DOUTPUTACCELERATION
 #OPT   +=  -DOUTPUTCHANGEOFENTROPY
 #OPT   +=  -DOUTPUTTIMESTEP
@@ -94,15 +93,41 @@ HDF5LIB  =  -lhdf5 -lz
 #SYSTYPE="OpteronMPA"
 #SYSTYPE="OPA-Cluster32"
 #SYSTYPE="OPA-Cluster64"
-SYSTYPE="greenplanet"
+#SYSTYPE="greenplanet"
+#SYSTYPE="kraken"
+SYSTYPE="pleiades"
 
 #--------------------------------------- Adjust settings for target computer
 
+ifeq ($(SYSTYPE),"pleiades")
+CC       =  mpicc
+OPTIMIZE =  -O3 -Wall -m64 
+GSL_INCL =  -I/nasa/gsl/1.14/include
+GSL_LIBS =  -L/nasa/gsl/1.14/lib  -Wl,"-R /usr/common/pdsoft/lib"
+FFTW_INCL=  -I/$(HOME)/code/include
+FFTW_LIBS=  -L/$(HOME)/code/lib
+MPICHLIB =  -lmpich
+HDF5INCL =  -I/nasa/hdf5/1.6.5/serial/include
+HDF5LIB  =  -L/nasa/hdf5/1.6.5/serial/lib -lhdf5 -lz   
+endif
+
+ifeq ($(SYSTYPE),"kraken")
+CC	 =  cc
+OPTIMIZE = -Wall -m64 -O3
+GSL_INCL = -I${GSL_DIR}/include
+GSL_LIBS = -L${GSL_DIR}/lib
+FFTW_INCL= -I${FFTW_INC}
+FFTW_LIBS= -L${FFTW_DIR}
+MPICHLIB =
+HDF5INCL = ${HDF5_CLIB}
+HDF5LIB  = ${HDF5_CLIB}
+#OPT	+= -DNOTYPEPREFIX_FFTW
+endif
 
 ifeq ($(SYSTYPE),"greenplanet")
 #CC       =   /opt/mpich/intel/bin/mpicc    
 CC = mpicc
-OPTIMIZE =   -Wall -m64  -O3 # -ggdb
+OPTIMIZE =   -Wall -m64  -O3 
 GSL_INCL =  -I/home/rocham/include
 GSL_LIBS =  -L/home/rocham/lib
 FFTW_INCL=  -I/home/rocham/include

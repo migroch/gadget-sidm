@@ -41,7 +41,7 @@ double prob_of_interaction(double r, FLOAT Vtarget[3], FLOAT Vno[3], int tbegin,
     if(All.ComovingIntegrationOn)
       {
 	r =  All.Time*r;
-	h = 2.0*All.ForceSoftening[1]*All.Time;
+	h = 0.5*All.ForceSoftening[1]*All.Time;
 
 	dloga = (tend - tbegin)*All.Timebase_interval;
         hubble_a = (All.Omega0 / (All.Time * All.Time * All.Time)
@@ -56,7 +56,7 @@ double prob_of_interaction(double r, FLOAT Vtarget[3], FLOAT Vno[3], int tbegin,
     else
       {
         dT = (tend-tbegin)*All.Timebase_interval;
-        h = 2.0*All.ForceSoftening[1];
+        h = 0.5*All.ForceSoftening[1];
       }
 
     mp =  All.MassTable[1]*All.UnitMass_in_g;
