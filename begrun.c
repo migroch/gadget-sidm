@@ -598,6 +598,10 @@ void read_parameter_file(char *fname)
       strcpy(tag[nt], "InteractionCrossSection");
       addr[nt] = &All.InteractionCrossSection;
       id[nt++] = DOUBLE;
+
+      strcpy(tag[nt], "SIDMSmoothingFactor");
+      addr[nt] = &All.SIDMSmoothingFactor;
+      id[nt++] = DOUBLE;
 #endif
 
       if((fd = fopen(fname, "r")))

@@ -264,6 +264,7 @@ extern struct global_data_all_processes
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK 
   double InteractionCrossSection;    /*!< Cross Section of the self interacting dark matter */
+  double SIDMSmoothingFactor;        /*!< Self interaction smoothing length in units of the force softening, i.e. h_sidm =  All.SIDMSmoothingFactor*All.ForceSoftening[1]. */
   unsigned long Nself_interactions;  /*!< Number of self interactions computed at this Task */
   unsigned long Nself_interactionsSum;  /*!< Sum Nself_interactions over all Tasks. Only the root Task keeps track of this value */
 #endif
