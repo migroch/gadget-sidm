@@ -1,11 +1,11 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$read__ic_8c.html#affd0f4e6b7bcdabf7d6f8191145f78d1" title="read_file" alt="" coords="199,5,273,35"/>
-<area shape="rect" id="node13" href="$proto_8h.html#a48b0ed3a843924501df8ed871e08e77c" title="write_file" alt="" coords="197,59,275,88"/>
-<area shape="rect" id="node5" href="$read__ic_8c.html#a150344fdc0c6e132aecdb6c646529df1" title="read_ic" alt="" coords="344,5,411,35"/>
-<area shape="rect" id="node7" href="$proto_8h.html#a2858154e2009b0e6e616f313177762bc" title="init" alt="" coords="569,5,609,35"/>
-<area shape="rect" id="node9" href="$proto_8h.html#aceeb5c8909331b90ea8345e0fc853f82" title="begrun" alt="" coords="747,5,813,35"/>
-<area shape="rect" id="node11" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="863,32,916,61"/>
-<area shape="rect" id="node15" href="$proto_8h.html#a523730833804b6d92aa7f4dd474805c5" title="savepositions" alt="" coords="323,59,432,88"/>
-<area shape="rect" id="node17" href="$run_8c.html#ad52604af910b3e1677718d863ab09391" title="find_next_sync_point_and_drift" alt="" coords="480,59,699,88"/>
-<area shape="rect" id="node19" href="$run_8c.html#a05e0ffe612d44e6d7f3a9ae5b9df56a2" title="run" alt="" coords="759,59,801,88"/>
+<area shape="rect" id="node3" href="$read__ic_8c.html#affd0f4e6b7bcdabf7d6f8191145f78d1" title="read_file" alt="" coords="199,5,273,33"/>
+<area shape="rect" id="node13" href="$proto_8h.html#a48b0ed3a843924501df8ed871e08e77c" title="write_file" alt="" coords="197,55,275,83"/>
+<area shape="rect" id="node5" href="$read__ic_8c.html#a150344fdc0c6e132aecdb6c646529df1" title="read_ic" alt="" coords="344,5,411,33"/>
+<area shape="rect" id="node7" href="$proto_8h.html#a2858154e2009b0e6e616f313177762bc" title="init" alt="" coords="569,5,609,33"/>
+<area shape="rect" id="node9" href="$proto_8h.html#aceeb5c8909331b90ea8345e0fc853f82" title="begrun" alt="" coords="747,5,813,33"/>
+<area shape="rect" id="node11" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="863,30,916,58"/>
+<area shape="rect" id="node15" href="$proto_8h.html#a523730833804b6d92aa7f4dd474805c5" title="savepositions" alt="" coords="323,55,432,83"/>
+<area shape="rect" id="node17" href="$run_8c.html#a05e0ffe612d44e6d7f3a9ae5b9df56a2" title="run" alt="" coords="759,55,801,83"/>
+<area shape="rect" id="node20" href="$run_8c.html#ad52604af910b3e1677718d863ab09391" title="find_next_sync_point_and_drift" alt="" coords="480,106,699,134"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$proto_8h.html#a57f2f415791cd83ace42bff59b2feb97" title="pm_init_regionsize" alt="" coords="281,5,423,35"/>
-<area shape="rect" id="node5" href="$proto_8h.html#ae3950c19708f6a2886dd32897efa10c4" title="pm_setup_nonperiodic_kernel" alt="" coords="245,59,459,88"/>
+<area shape="rect" id="node3" href="$proto_8h.html#a57f2f415791cd83ace42bff59b2feb97" title="pm_init_regionsize" alt="" coords="281,5,423,33"/>
+<area shape="rect" id="node5" href="$proto_8h.html#ae3950c19708f6a2886dd32897efa10c4" title="pm_setup_nonperiodic_kernel" alt="" coords="245,55,459,83"/>
 </map>

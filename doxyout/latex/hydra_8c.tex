@@ -1,183 +1,166 @@
-\hypertarget{hydra_8c}{
-\section{hydra.c File Reference}
-\label{hydra_8c}\index{hydra.c@{hydra.c}}
+\hypertarget{hydra_8c}{\section{hydra.\-c \-File \-Reference}
+\label{hydra_8c}\index{hydra.\-c@{hydra.\-c}}
 }
 
 
-Computation of SPH forces and rate of entropy generation.  
+\-Computation of \-S\-P\-H forces and rate of entropy generation.  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include $<$gsl/gsl\_\-math.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for hydra.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include $<$gsl/gsl\-\_\-math.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for hydra.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{hydra_8c__incl}
+\includegraphics[width=350pt]{hydra_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Defines}
+\subsection*{\-Defines}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{hydra_8c_a5c5328b307b005e6682669279878cef0}{boxSize\_\-X}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\#define \hyperlink{hydra_8c_a5c5328b307b005e6682669279878cef0}{box\-Size\-\_\-\-X}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-\#define \hyperlink{hydra_8c_a0ecceb71797a529fb6f2b8c47b51686c}{boxHalf\_\-X}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\#define \hyperlink{hydra_8c_a0ecceb71797a529fb6f2b8c47b51686c}{box\-Half\-\_\-\-X}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \item 
-\#define \hyperlink{hydra_8c_ab0db73a31e08d33d840e28651e3cf610}{boxSize\_\-Y}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\#define \hyperlink{hydra_8c_ab0db73a31e08d33d840e28651e3cf610}{box\-Size\-\_\-\-Y}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-\#define \hyperlink{hydra_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{boxHalf\_\-Y}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\#define \hyperlink{hydra_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{box\-Half\-\_\-\-Y}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \item 
-\#define \hyperlink{hydra_8c_a8a97a1c456bdd396791c84c370f0aa18}{boxSize\_\-Z}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\#define \hyperlink{hydra_8c_a8a97a1c456bdd396791c84c370f0aa18}{box\-Size\-\_\-\-Z}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-\#define \hyperlink{hydra_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{boxHalf\_\-Z}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\#define \hyperlink{hydra_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{box\-Half\-\_\-\-Z}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \end{DoxyCompactItemize}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{hydra_8c_a6789381bce7d1c316df8ecf04b47a607}{hydro\_\-force} (void)
+void \hyperlink{hydra_8c_a6789381bce7d1c316df8ecf04b47a607}{hydro\-\_\-force} (void)
 \item 
-void \hyperlink{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e}{hydro\_\-evaluate} (int target, int mode)
+void \hyperlink{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e}{hydro\-\_\-evaluate} (int target, int mode)
 \item 
-int \hyperlink{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a}{hydro\_\-compare\_\-key} (const void $\ast$a, const void $\ast$b)
+int \hyperlink{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a}{hydro\-\_\-compare\-\_\-key} (const void $\ast$a, const void $\ast$b)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
+\subsection*{\-Variables}
 \begin{DoxyCompactItemize}
 \item 
-static double \hyperlink{hydra_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}{hubble\_\-a}
+static double \hyperlink{hydra_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}{hubble\-\_\-a}
 \item 
 static double \hyperlink{hydra_8c_aec7bcb1d46812f966d89f66dc1a399ea}{atime}
 \item 
-static double \hyperlink{hydra_8c_a15cf7694d03164516fd55696b858a125}{hubble\_\-a2}
+static double \hyperlink{hydra_8c_a15cf7694d03164516fd55696b858a125}{hubble\-\_\-a2}
 \item 
-static double \hyperlink{hydra_8c_acb165aa9c0459664aba04d793812aa34}{fac\_\-mu}
+static double \hyperlink{hydra_8c_acb165aa9c0459664aba04d793812aa34}{fac\-\_\-mu}
 \item 
-static double \hyperlink{hydra_8c_a99addeb2d520f107c59e4e228e8e76dd}{fac\_\-vsic\_\-fix}
+static double \hyperlink{hydra_8c_a99addeb2d520f107c59e4e228e8e76dd}{fac\-\_\-vsic\-\_\-fix}
 \item 
 static double \hyperlink{hydra_8c_a7f2a6bb4bade30e4e04ee29be22d0962}{a3inv}
 \item 
-static double \hyperlink{hydra_8c_a10ab9a51765fc1b79e1282b3cccb2085}{fac\_\-egy}
+static double \hyperlink{hydra_8c_a10ab9a51765fc1b79e1282b3cccb2085}{fac\-\_\-egy}
 \item 
-static double \hyperlink{hydra_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+static double \hyperlink{hydra_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-static double \hyperlink{hydra_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+static double \hyperlink{hydra_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Computation of SPH forces and rate of entropy generation. This file contains the \char`\"{}second SPH loop\char`\"{}, where the SPH forces are computed, and where the rate of change of entropy due to the shock heating (via artificial viscosity) is computed. 
+\subsection{\-Detailed \-Description}
+\-Computation of \-S\-P\-H forces and rate of entropy generation. \-This file contains the \char`\"{}second S\-P\-H loop\char`\"{}, where the \-S\-P\-H forces are computed, and where the rate of change of entropy due to the shock heating (via artificial viscosity) is computed. 
 
-Definition in file \hyperlink{hydra_8c_source}{hydra.c}.
-
-
-
-\subsection{Define Documentation}
-\hypertarget{hydra_8c_a0ecceb71797a529fb6f2b8c47b51686c}{
-\index{hydra.c@{hydra.c}!boxHalf\_\-X@{boxHalf\_\-X}}
-\index{boxHalf\_\-X@{boxHalf\_\-X}!hydra.c@{hydra.c}}
-\subsubsection[{boxHalf\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-X~{\bf boxHalf}}}
-\label{hydra_8c_a0ecceb71797a529fb6f2b8c47b51686c}
-
-
-Definition at line 28 of file hydra.c.
+\-Definition in file \hyperlink{hydra_8c_source}{hydra.\-c}.
 
 
 
-Referenced by hydro\_\-evaluate(), and hydro\_\-force().
-
-\hypertarget{hydra_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{
-\index{hydra.c@{hydra.c}!boxHalf\_\-Y@{boxHalf\_\-Y}}
-\index{boxHalf\_\-Y@{boxHalf\_\-Y}!hydra.c@{hydra.c}}
-\subsubsection[{boxHalf\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-Y~{\bf boxHalf}}}
-\label{hydra_8c_a59f20d7decc2bdfedcaafb70ef23df0e}
+\subsection{\-Define \-Documentation}
+\hypertarget{hydra_8c_a0ecceb71797a529fb6f2b8c47b51686c}{\index{hydra.\-c@{hydra.\-c}!box\-Half\-\_\-\-X@{box\-Half\-\_\-\-X}}
+\index{box\-Half\-\_\-\-X@{box\-Half\-\_\-\-X}!hydra.c@{hydra.\-c}}
+\subsubsection[{box\-Half\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Half\-\_\-\-X}~{\bf box\-Half}}}\label{hydra_8c_a0ecceb71797a529fb6f2b8c47b51686c}
 
 
-Definition at line 34 of file hydra.c.
+\-Definition at line 28 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-evaluate(), and hydro\_\-force().
+\-Referenced by hydro\-\_\-evaluate(), and hydro\-\_\-force().
 
-\hypertarget{hydra_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{
-\index{hydra.c@{hydra.c}!boxHalf\_\-Z@{boxHalf\_\-Z}}
-\index{boxHalf\_\-Z@{boxHalf\_\-Z}!hydra.c@{hydra.c}}
-\subsubsection[{boxHalf\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-Z~{\bf boxHalf}}}
-\label{hydra_8c_a34e9d5d079320cbfc0576d26f58d2fe7}
+\hypertarget{hydra_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{\index{hydra.\-c@{hydra.\-c}!box\-Half\-\_\-\-Y@{box\-Half\-\_\-\-Y}}
+\index{box\-Half\-\_\-\-Y@{box\-Half\-\_\-\-Y}!hydra.c@{hydra.\-c}}
+\subsubsection[{box\-Half\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Half\-\_\-\-Y}~{\bf box\-Half}}}\label{hydra_8c_a59f20d7decc2bdfedcaafb70ef23df0e}
 
 
-Definition at line 40 of file hydra.c.
+\-Definition at line 34 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-evaluate(), and hydro\_\-force().
+\-Referenced by hydro\-\_\-evaluate(), and hydro\-\_\-force().
 
-\hypertarget{hydra_8c_a5c5328b307b005e6682669279878cef0}{
-\index{hydra.c@{hydra.c}!boxSize\_\-X@{boxSize\_\-X}}
-\index{boxSize\_\-X@{boxSize\_\-X}!hydra.c@{hydra.c}}
-\subsubsection[{boxSize\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-X~{\bf boxSize}}}
-\label{hydra_8c_a5c5328b307b005e6682669279878cef0}
+\hypertarget{hydra_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{\index{hydra.\-c@{hydra.\-c}!box\-Half\-\_\-\-Z@{box\-Half\-\_\-\-Z}}
+\index{box\-Half\-\_\-\-Z@{box\-Half\-\_\-\-Z}!hydra.c@{hydra.\-c}}
+\subsubsection[{box\-Half\-\_\-\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Half\-\_\-\-Z}~{\bf box\-Half}}}\label{hydra_8c_a34e9d5d079320cbfc0576d26f58d2fe7}
 
 
-Definition at line 27 of file hydra.c.
+\-Definition at line 40 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-force().
+\-Referenced by hydro\-\_\-evaluate(), and hydro\-\_\-force().
 
-\hypertarget{hydra_8c_ab0db73a31e08d33d840e28651e3cf610}{
-\index{hydra.c@{hydra.c}!boxSize\_\-Y@{boxSize\_\-Y}}
-\index{boxSize\_\-Y@{boxSize\_\-Y}!hydra.c@{hydra.c}}
-\subsubsection[{boxSize\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-Y~{\bf boxSize}}}
-\label{hydra_8c_ab0db73a31e08d33d840e28651e3cf610}
+\hypertarget{hydra_8c_a5c5328b307b005e6682669279878cef0}{\index{hydra.\-c@{hydra.\-c}!box\-Size\-\_\-\-X@{box\-Size\-\_\-\-X}}
+\index{box\-Size\-\_\-\-X@{box\-Size\-\_\-\-X}!hydra.c@{hydra.\-c}}
+\subsubsection[{box\-Size\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Size\-\_\-\-X}~{\bf box\-Size}}}\label{hydra_8c_a5c5328b307b005e6682669279878cef0}
 
 
-Definition at line 33 of file hydra.c.
+\-Definition at line 27 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-force().
+\-Referenced by hydro\-\_\-evaluate(), and hydro\-\_\-force().
 
-\hypertarget{hydra_8c_a8a97a1c456bdd396791c84c370f0aa18}{
-\index{hydra.c@{hydra.c}!boxSize\_\-Z@{boxSize\_\-Z}}
-\index{boxSize\_\-Z@{boxSize\_\-Z}!hydra.c@{hydra.c}}
-\subsubsection[{boxSize\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-Z~{\bf boxSize}}}
-\label{hydra_8c_a8a97a1c456bdd396791c84c370f0aa18}
+\hypertarget{hydra_8c_ab0db73a31e08d33d840e28651e3cf610}{\index{hydra.\-c@{hydra.\-c}!box\-Size\-\_\-\-Y@{box\-Size\-\_\-\-Y}}
+\index{box\-Size\-\_\-\-Y@{box\-Size\-\_\-\-Y}!hydra.c@{hydra.\-c}}
+\subsubsection[{box\-Size\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Size\-\_\-\-Y}~{\bf box\-Size}}}\label{hydra_8c_ab0db73a31e08d33d840e28651e3cf610}
 
 
-Definition at line 39 of file hydra.c.
+\-Definition at line 33 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-force().
+\-Referenced by hydro\-\_\-evaluate(), and hydro\-\_\-force().
+
+\hypertarget{hydra_8c_a8a97a1c456bdd396791c84c370f0aa18}{\index{hydra.\-c@{hydra.\-c}!box\-Size\-\_\-\-Z@{box\-Size\-\_\-\-Z}}
+\index{box\-Size\-\_\-\-Z@{box\-Size\-\_\-\-Z}!hydra.c@{hydra.\-c}}
+\subsubsection[{box\-Size\-\_\-\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Size\-\_\-\-Z}~{\bf box\-Size}}}\label{hydra_8c_a8a97a1c456bdd396791c84c370f0aa18}
+
+
+\-Definition at line 39 of file hydra.\-c.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a}{
-\index{hydra.c@{hydra.c}!hydro\_\-compare\_\-key@{hydro\_\-compare\_\-key}}
-\index{hydro\_\-compare\_\-key@{hydro\_\-compare\_\-key}!hydra.c@{hydra.c}}
-\subsubsection[{hydro\_\-compare\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int hydro\_\-compare\_\-key (
+\-Referenced by hydro\-\_\-evaluate(), and hydro\-\_\-force().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a}{\index{hydra.\-c@{hydra.\-c}!hydro\-\_\-compare\-\_\-key@{hydro\-\_\-compare\-\_\-key}}
+\index{hydro\-\_\-compare\-\_\-key@{hydro\-\_\-compare\-\_\-key}!hydra.c@{hydra.\-c}}
+\subsubsection[{hydro\-\_\-compare\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hydro\-\_\-compare\-\_\-key} (
 \begin{DoxyParamCaption}
-\item[{const void $\ast$}]{ a, }
-\item[{const void $\ast$}]{ b}
+\item[{const void $\ast$}]{a, }
+\item[{const void $\ast$}]{b}
 \end{DoxyParamCaption}
-)}}
-\label{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a}
-This is a comparison kernel for a sort routine, which is used to group particles that are going to be exported to the same CPU. 
+)}}\label{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a}
+\-This is a comparison kernel for a sort routine, which is used to group particles that are going to be exported to the same \-C\-P\-U. 
 
-Definition at line 563 of file hydra.c.
-
+\-Definition at line 563 of file hydra.\-c.
 
 
-Referenced by hydro\_\-force().
 
-
+\-Referenced by hydro\-\_\-force().
 
 
 \begin{DoxyCode}
@@ -191,49 +174,39 @@ Referenced by hydro\_\-force().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a_icgraph}
+\includegraphics[width=350pt]{hydra_8c_a8331f87f49dedbeb9e7d61d0deb8926a_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e}{
-\index{hydra.c@{hydra.c}!hydro\_\-evaluate@{hydro\_\-evaluate}}
-\index{hydro\_\-evaluate@{hydro\_\-evaluate}!hydra.c@{hydra.c}}
-\subsubsection[{hydro\_\-evaluate}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\_\-evaluate (
+\hypertarget{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e}{\index{hydra.\-c@{hydra.\-c}!hydro\-\_\-evaluate@{hydro\-\_\-evaluate}}
+\index{hydro\-\_\-evaluate@{hydro\-\_\-evaluate}!hydra.c@{hydra.\-c}}
+\subsubsection[{hydro\-\_\-evaluate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf hydro\-\_\-evaluate} (
 \begin{DoxyParamCaption}
-\item[{int}]{ target, }
-\item[{int}]{ mode}
+\item[{int}]{target, }
+\item[{int}]{mode}
 \end{DoxyParamCaption}
-)}}
-\label{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e}
-This function is the 'core' of the SPH force computation. A target particle is specified which may either be local, or reside in the communication buffer. 
-
-$<$ adiabatic index of simulated gas
+)}}\label{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e}
+\-This function is the 'core' of the \-S\-P\-H force computation. \-A target particle is specified which may either be local, or reside in the communication buffer. $<$ adiabatic index of simulated gas
 
 $<$ adiabatic index of simulated gas
 
 $<$ adiabatic index of simulated gas 
 
-
-
-Definition at line 353 of file hydra.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::ArtBulkViscConst, boxHalf\_\-X, boxHalf\_\-Y, boxHalf\_\-Z, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, sph\_\-particle\_\-data::CurlVel, hydrodata\_\-in::Density, sph\_\-particle\_\-data::Density, hydrodata\_\-in::DhsmlDensityFactor, sph\_\-particle\_\-data::DhsmlDensityFactor, dmin(), hydrodata\_\-out::DtEntropy, sph\_\-particle\_\-data::DtEntropy, hydrodata\_\-in::F1, fac\_\-mu, fac\_\-vsic\_\-fix, FLOAT, GAMMA, hydrodata\_\-in::Hsml, sph\_\-particle\_\-data::Hsml, hubble\_\-a2, HydroDataGet, HydroDataResult, imax(), KERNEL\_\-COEFF\_\-3, KERNEL\_\-COEFF\_\-6, state\_\-of\_\-system::Mass, hydrodata\_\-in::Mass, particle\_\-data::Mass, global\_\-data\_\-all\_\-processes::MaxPart, hydrodata\_\-out::MaxSignalVel, sph\_\-particle\_\-data::MaxSignalVel, ngb\_\-treefind\_\-pairs(), Ngblist, P, hydrodata\_\-in::Pos, particle\_\-data::Pos, hydrodata\_\-in::Pressure, sph\_\-particle\_\-data::Pressure, SphP, particle\_\-data::Ti\_\-begstep, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, hydrodata\_\-in::Timestep, hydrodata\_\-in::Vel, and sph\_\-particle\_\-data::VelPred.
+\-Definition at line 353 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-force().
+\-References \-All, box\-Half\-\_\-\-X, box\-Half\-\_\-\-Y, box\-Half\-\_\-\-Z, box\-Size\-\_\-\-X, box\-Size\-\_\-\-Y, box\-Size\-\_\-\-Z, dmin(), fac\-\_\-mu, fac\-\_\-vsic\-\_\-fix, hubble\-\_\-a2, \-Hydro\-Data\-Get, \-Hydro\-Data\-Result, imax(), ngb\-\_\-treefind\-\_\-pairs(), \-Ngblist, \-P, and \-Sph\-P.
 
 
+
+\-Referenced by hydro\-\_\-force().
 
 
 \begin{DoxyCode}
@@ -303,8 +276,8 @@ Referenced by hydro\_\-force().
           dy = pos[1] - P[j].Pos[1];
           dz = pos[2] - P[j].Pos[2];
 
-#ifdef PERIODIC                 /*  find the closest image in the given box size 
-       */
+#ifdef PERIODIC                 /*  find the closest image in the given box
+       size  */
           if(dx > boxHalf_X)
             dx -= boxSize_X;
           if(dx < -boxHalf_X)
@@ -325,8 +298,8 @@ Referenced by hydro\_\-force().
               r = sqrt(r2);
               if(r > 0)
                 {
-                  p_over_rho2_j = SphP[j].Pressure / (SphP[j].Density * SphP[j].
-      Density);
+                  p_over_rho2_j = SphP[j].Pressure / (SphP[j].Density * SphP[j]
+      .Density);
                   soundspeed_j = sqrt(GAMMA * p_over_rho2_j * SphP[j].Density);
                   dvx = vel[0] - SphP[j].VelPred[0];
                   dvy = vel[1] - SphP[j].VelPred[1];
@@ -348,8 +321,8 @@ Referenced by hydro\_\-force().
 #endif
                       u = r * hinv;
                       if(u < 0.5)
-                        dwk_i = hinv4 * u * (KERNEL_COEFF_3 * u - KERNEL_COEFF_4)
-      ;
+                        dwk_i = hinv4 * u * (KERNEL_COEFF_3 * u - 
+      KERNEL_COEFF_4);
                       else
                         dwk_i = hinv4 * KERNEL_COEFF_6 * (1.0 - u) * (1.0 - u);
                     }
@@ -368,8 +341,8 @@ Referenced by hydro\_\-force().
 #endif
                       u = r * hinv;
                       if(u < 0.5)
-                        dwk_j = hinv4 * u * (KERNEL_COEFF_3 * u - KERNEL_COEFF_4)
-      ;
+                        dwk_j = hinv4 * u * (KERNEL_COEFF_3 * u - 
+      KERNEL_COEFF_4);
                       else
                         dwk_j = hinv4 * KERNEL_COEFF_6 * (1.0 - u) * (1.0 - u);
                     }
@@ -383,8 +356,8 @@ Referenced by hydro\_\-force().
 
                   if(vdotr2 < 0)        /* ... artificial viscosity */
                     {
-                      mu_ij = fac_mu * vdotr2 / r;      /* note: this is negative
-      ! */
+                      mu_ij = fac_mu * vdotr2 / r;      /* note: this is
+       negative! */
 
                       vsig = soundspeed_i + soundspeed_j - 3 * mu_ij;
 
@@ -395,22 +368,23 @@ Referenced by hydro\_\-force().
                       f2 =
                         fabs(SphP[j].DivVel) / (fabs(SphP[j].DivVel) + SphP[j].
       CurlVel +
-                                                0.0001 * soundspeed_j / fac_mu / 
-      SphP[j].Hsml);
+                                                0.0001 * soundspeed_j / fac_mu 
+      / SphP[j].Hsml);
 
-                      visc = 0.25 * All.ArtBulkViscConst * vsig * (-mu_ij) / rho_
-      ij * (f1 + f2);
+                      visc = 0.25 * All.ArtBulkViscConst * vsig * (-mu_ij) / 
+      rho_ij * (f1 + f2);
 
                       /* .... end artificial viscosity evaluation */
 #ifndef NOVISCOSITYLIMITER
-                      /* make sure that viscous acceleration is not too large */
-                      dt = imax(timestep, (P[j].Ti_endstep - P[j].Ti_begstep)) * 
-      All.Timebase_interval;
+                      /* make sure that viscous acceleration is not too large 
+      */
+                      dt = imax(timestep, (P[j].Ti_endstep - P[j].Ti_begstep)) 
+      * All.Timebase_interval;
                       if(dt > 0 && (dwk_i + dwk_j) < 0)
                         {
                           visc = dmin(visc, 0.5 * fac_vsic_fix * vdotr2 /
-                                      (0.5 * (mass + P[j].Mass) * (dwk_i + dwk_j)
-       * r * dt));
+                                      (0.5 * (mass + P[j].Mass) * (dwk_i + 
+      dwk_j) * r * dt));
                         }
 #endif
                     }
@@ -421,8 +395,8 @@ Referenced by hydro\_\-force().
 
                   hfc_visc = 0.5 * P[j].Mass * visc * (dwk_i + dwk_j) / r;
 
-                  hfc = hfc_visc + P[j].Mass * (p_over_rho2_i * dwk_i + p_over_rh
-      o2_j * dwk_j) / r;
+                  hfc = hfc_visc + P[j].Mass * (p_over_rho2_i * dwk_i + 
+      p_over_rho2_j * dwk_j) / r;
 
                   acc[0] -= hfc * dx;
                   acc[1] -= hfc * dy;
@@ -453,9 +427,7 @@ Referenced by hydro\_\-force().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -467,28 +439,24 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e_icgraph}
+\includegraphics[width=350pt]{hydra_8c_a818695254c9525e01bc9ddc95e8eaf7e_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{hydra_8c_a6789381bce7d1c316df8ecf04b47a607}{
-\index{hydra.c@{hydra.c}!hydro\_\-force@{hydro\_\-force}}
-\index{hydro\_\-force@{hydro\_\-force}!hydra.c@{hydra.c}}
-\subsubsection[{hydro\_\-force}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\_\-force (
+\hypertarget{hydra_8c_a6789381bce7d1c316df8ecf04b47a607}{\index{hydra.\-c@{hydra.\-c}!hydro\-\_\-force@{hydro\-\_\-force}}
+\index{hydro\-\_\-force@{hydro\-\_\-force}!hydra.c@{hydra.\-c}}
+\subsubsection[{hydro\-\_\-force}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf hydro\-\_\-force} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{hydra_8c_a6789381bce7d1c316df8ecf04b47a607}
-This function is the driver routine for the calculation of hydrodynamical force and rate of change of entropy due to shock heating for all active particles . 
-
-$<$ adiabatic index of simulated gas
+)}}\label{hydra_8c_a6789381bce7d1c316df8ecf04b47a607}
+\-This function is the driver routine for the calculation of hydrodynamical force and rate of change of entropy due to shock heating for all active particles . $<$ adiabatic index of simulated gas
 
 $<$ adiabatic index of simulated gas
 
@@ -500,19 +468,15 @@ $<$ adiabatic index of simulated gas
 
 $<$ adiabatic index of simulated gas 
 
-
-
-Definition at line 50 of file hydra.c.
-
-
-
-References a3inv, All, atime, boxHalf, boxHalf\_\-X, boxHalf\_\-Y, boxHalf\_\-Z, global\_\-data\_\-all\_\-processes::BoxSize, boxSize, boxSize\_\-X, boxSize\_\-Y, boxSize\_\-Z, global\_\-data\_\-all\_\-processes::BunchSizeHydro, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CPU\_\-HydCommSumm, global\_\-data\_\-all\_\-processes::CPU\_\-HydCompWalk, global\_\-data\_\-all\_\-processes::CPU\_\-HydImbalance, sph\_\-particle\_\-data::CurlVel, sph\_\-particle\_\-data::Density, hydrodata\_\-in::Density, sph\_\-particle\_\-data::DhsmlDensityFactor, hydrodata\_\-in::DhsmlDensityFactor, hydrodata\_\-out::DtEntropy, sph\_\-particle\_\-data::DtEntropy, Exportflag, hydrodata\_\-in::F1, fac\_\-egy, fac\_\-mu, fac\_\-vsic\_\-fix, GAMMA, GAMMA\_\-MINUS1, sph\_\-particle\_\-data::Hsml, hydrodata\_\-in::Hsml, global\_\-data\_\-all\_\-processes::Hubble, hubble\_\-a, hubble\_\-a2, hydro\_\-compare\_\-key(), hydro\_\-evaluate(), HydroDataGet, HydroDataIn, HydroDataPartialResult, HydroDataResult, hydrodata\_\-in::Index, particle\_\-data::Mass, hydrodata\_\-in::Mass, hydrodata\_\-out::MaxSignalVel, sph\_\-particle\_\-data::MaxSignalVel, N\_\-gas, NTask, NumSphUpdate, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, P, particle\_\-data::Pos, hydrodata\_\-in::Pos, pow(), sph\_\-particle\_\-data::Pressure, hydrodata\_\-in::Pressure, PTask, second(), SphP, TAG\_\-HYDRO\_\-A, TAG\_\-HYDRO\_\-B, hydrodata\_\-in::Task, ThisTask, particle\_\-data::Ti\_\-begstep, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Time, timediff(), hydrodata\_\-in::Timestep, hydrodata\_\-in::Vel, and sph\_\-particle\_\-data::VelPred.
+\-Definition at line 50 of file hydra.\-c.
 
 
 
-Referenced by compute\_\-accelerations().
+\-References a3inv, \-All, atime, box\-Half, box\-Half\-\_\-\-X, box\-Half\-\_\-\-Y, box\-Half\-\_\-\-Z, box\-Size, box\-Size\-\_\-\-X, box\-Size\-\_\-\-Y, box\-Size\-\_\-\-Z, \-Exportflag, fac\-\_\-egy, fac\-\_\-mu, fac\-\_\-vsic\-\_\-fix, hubble\-\_\-a, hubble\-\_\-a2, hydro\-\_\-compare\-\_\-key(), hydro\-\_\-evaluate(), \-Hydro\-Data\-Get, \-Hydro\-Data\-In, \-Hydro\-Data\-Partial\-Result, \-Hydro\-Data\-Result, \-N\-\_\-gas, \-N\-Task, \-Num\-Sph\-Update, \-P, pow(), \-P\-Task, second(), \-Sph\-P, \-T\-A\-G\-\_\-\-H\-Y\-D\-R\-O\-\_\-\-A, \-T\-A\-G\-\_\-\-H\-Y\-D\-R\-O\-\_\-\-B, \-This\-Task, and timediff().
 
 
+
+\-Referenced by compute\-\_\-accelerations().
 
 
 \begin{DoxyCode}
@@ -563,12 +527,12 @@ Referenced by compute\_\-accelerations().
       atime = All.Time;
     }
   else
-    hubble_a = hubble_a2 = atime = fac_mu = fac_vsic_fix = a3inv = fac_egy = 1.0;
-      
+    hubble_a = hubble_a2 = atime = fac_mu = fac_vsic_fix = a3inv = fac_egy = 1.
+      0;
 
 
-  /* `NumSphUpdate' gives the number of particles on this processor that want a f
-      orce update */
+  /* `NumSphUpdate' gives the number of particles on this processor that want a
+       force update */
   for(n = 0, NumSphUpdate = 0; n < N_gas; n++)
     {
       if(P[n].Ti_endstep == All.Ti_Current)
@@ -576,14 +540,15 @@ Referenced by compute\_\-accelerations().
     }
 
   numlist = malloc(NTask * sizeof(int) * NTask);
-  MPI_Allgather(&NumSphUpdate, 1, MPI_INT, numlist, 1, MPI_INT, MPI_COMM_WORLD);
+  MPI_Allgather(&NumSphUpdate, 1, MPI_INT, numlist, 1, MPI_INT, MPI_COMM_WORLD)
+      ;
   for(i = 0, ntot = 0; i < NTask; i++)
     ntot += numlist[i];
   free(numlist);
 
 
-  noffset = malloc(sizeof(int) * NTask);        /* offsets of bunches in common l
-      ist */
+  noffset = malloc(sizeof(int) * NTask);        /* offsets of bunches in common
+       list */
   nbuffer = malloc(sizeof(int) * NTask);
   nsend_local = malloc(sizeof(int) * NTask);
   nsend = malloc(sizeof(int) * NTask * NTask);
@@ -600,8 +565,8 @@ Referenced by compute\_\-accelerations().
 
       /* do local particles and prepare export list */
       tstart = second();
-      for(nexport = 0, ndone = 0; i < N_gas && nexport < All.BunchSizeHydro - NTa
-      sk; i++)
+      for(nexport = 0, ndone = 0; i < N_gas && nexport < All.BunchSizeHydro - 
+      NTask; i++)
         if(P[i].Ti_endstep == All.Ti_Current)
           {
             ndone++;
@@ -630,8 +595,8 @@ Referenced by compute\_\-accelerations().
       Ti_begstep;
 
                     /* calculation of F1 */
-                    soundspeed_i = sqrt(GAMMA * SphP[i].Pressure / SphP[i].Densit
-      y);
+                    soundspeed_i = sqrt(GAMMA * SphP[i].Pressure / SphP[i].
+      Density);
                     HydroDataIn[nexport].F1 = fabs(SphP[i].DivVel) /
                       (fabs(SphP[i].DivVel) + SphP[i].CurlVel +
                        0.0001 * soundspeed_i / SphP[i].Hsml / fac_mu);
@@ -646,16 +611,16 @@ Referenced by compute\_\-accelerations().
       tend = second();
       timecomp += timediff(tstart, tend);
 
-      qsort(HydroDataIn, nexport, sizeof(struct hydrodata_in), hydro_compare_key)
-      ;
+      qsort(HydroDataIn, nexport, sizeof(struct hydrodata_in), hydro_compare_key
+      );
 
       for(j = 1, noffset[0] = 0; j < NTask; j++)
         noffset[j] = noffset[j - 1] + nsend_local[j - 1];
 
       tstart = second();
 
-      MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, MPI_COMM_
-      WORLD);
+      MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, 
+      MPI_COMM_WORLD);
 
       tend = second();
       timeimbalance += timediff(tstart, tend);
@@ -686,8 +651,8 @@ Referenced by compute\_\-accelerations().
 
               if(recvTask < NTask)
                 {
-                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
-      Task + ThisTask] > 0)
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask *
+       NTask + ThisTask] > 0)
                     {
                       /* get the particles */
                       MPI_Sendrecv(&HydroDataIn[noffset[recvTask]],
@@ -695,10 +660,10 @@ Referenced by compute\_\-accelerations().
       hydrodata_in), MPI_BYTE,
                                    recvTask, TAG_HYDRO_A,
                                    &HydroDataGet[nbuffer[ThisTask]],
-                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
-      ruct hydrodata_in), MPI_BYTE,
-                                   recvTask, TAG_HYDRO_A, MPI_COMM_WORLD, &status
-      );
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(
+      struct hydrodata_in), MPI_BYTE,
+                                   recvTask, TAG_HYDRO_A, MPI_COMM_WORLD, &
+      status);
                     }
                 }
 
@@ -743,19 +708,19 @@ Referenced by compute\_\-accelerations().
 
               if(recvTask < NTask)
                 {
-                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
-      Task + ThisTask] > 0)
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask *
+       NTask + ThisTask] > 0)
                     {
                       /* send the results */
                       MPI_Sendrecv(&HydroDataResult[nbuffer[ThisTask]],
-                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
-      ruct hydrodata_out),
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(
+      struct hydrodata_out),
                                    MPI_BYTE, recvTask, TAG_HYDRO_B,
                                    &HydroDataPartialResult[noffset[recvTask]],
                                    nsend_local[recvTask] * sizeof(struct 
       hydrodata_out),
-                                   MPI_BYTE, recvTask, TAG_HYDRO_B, MPI_COMM_WORL
-      D, &status);
+                                   MPI_BYTE, recvTask, TAG_HYDRO_B, 
+      MPI_COMM_WORLD, &status);
 
                       /* add the result to the particles */
                       for(j = 0; j < nsend_local[recvTask]; j++)
@@ -764,16 +729,16 @@ Referenced by compute\_\-accelerations().
                           place = HydroDataIn[source].Index;
 
                           for(k = 0; k < 3; k++)
-                            SphP[place].HydroAccel[k] += HydroDataPartialResult[s
-      ource].Acc[k];
+                            SphP[place].HydroAccel[k] += HydroDataPartialResult
+      [source].Acc[k];
 
-                          SphP[place].DtEntropy += HydroDataPartialResult[source]
-      .DtEntropy;
+                          SphP[place].DtEntropy += HydroDataPartialResult[
+      source].DtEntropy;
 
-                          if(SphP[place].MaxSignalVel < HydroDataPartialResult[so
-      urce].MaxSignalVel)
-                            SphP[place].MaxSignalVel = HydroDataPartialResult[sou
-      rce].MaxSignalVel;
+                          if(SphP[place].MaxSignalVel < HydroDataPartialResult[
+      source].MaxSignalVel)
+                            SphP[place].MaxSignalVel = HydroDataPartialResult[
+      source].MaxSignalVel;
                         }
                     }
                 }
@@ -825,10 +790,10 @@ Referenced by compute\_\-accelerations().
   /* collect some timing information */
 
   MPI_Reduce(&timecomp, &sumt, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-  MPI_Reduce(&timecommsumm, &sumcomm, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-      
-  MPI_Reduce(&timeimbalance, &sumimbalance, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_W
-      ORLD);
+  MPI_Reduce(&timecommsumm, &sumcomm, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD
+      );
+  MPI_Reduce(&timeimbalance, &sumimbalance, 1, MPI_DOUBLE, MPI_SUM, 0, 
+      MPI_COMM_WORLD);
 
   if(ThisTask == 0)
     {
@@ -840,147 +805,127 @@ Referenced by compute\_\-accelerations().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{hydra_8c_a6789381bce7d1c316df8ecf04b47a607_cgraph}
+\includegraphics[width=350pt]{hydra_8c_a6789381bce7d1c316df8ecf04b47a607_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{hydra_8c_a6789381bce7d1c316df8ecf04b47a607_icgraph}
+\includegraphics[width=350pt]{hydra_8c_a6789381bce7d1c316df8ecf04b47a607_icgraph}
 \end{center}
 \end{figure}
 
 
 
 
-\subsection{Variable Documentation}
-\hypertarget{hydra_8c_a7f2a6bb4bade30e4e04ee29be22d0962}{
-\index{hydra.c@{hydra.c}!a3inv@{a3inv}}
-\index{a3inv@{a3inv}!hydra.c@{hydra.c}}
-\subsubsection[{a3inv}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf a3inv}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{hydra_8c_a7f2a6bb4bade30e4e04ee29be22d0962}
+\subsection{\-Variable \-Documentation}
+\hypertarget{hydra_8c_a7f2a6bb4bade30e4e04ee29be22d0962}{\index{hydra.\-c@{hydra.\-c}!a3inv@{a3inv}}
+\index{a3inv@{a3inv}!hydra.c@{hydra.\-c}}
+\subsubsection[{a3inv}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf a3inv}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{hydra_8c_a7f2a6bb4bade30e4e04ee29be22d0962}
 
 
-Definition at line 19 of file hydra.c.
-
-
-
-Referenced by fill\_\-write\_\-buffer(), and hydro\_\-force().
-
-\hypertarget{hydra_8c_aec7bcb1d46812f966d89f66dc1a399ea}{
-\index{hydra.c@{hydra.c}!atime@{atime}}
-\index{atime@{atime}!hydra.c@{hydra.c}}
-\subsubsection[{atime}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf atime}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{hydra_8c_aec7bcb1d46812f966d89f66dc1a399ea}
-
-
-Definition at line 19 of file hydra.c.
+\-Definition at line 19 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-force().
+\-Referenced by fill\-\_\-write\-\_\-buffer(), and hydro\-\_\-force().
 
-\hypertarget{hydra_8c_af62571c97dc75a691aeafead0528b369}{
-\index{hydra.c@{hydra.c}!boxHalf@{boxHalf}}
-\index{boxHalf@{boxHalf}!hydra.c@{hydra.c}}
-\subsubsection[{boxHalf}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf boxHalf}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{hydra_8c_af62571c97dc75a691aeafead0528b369}
+\hypertarget{hydra_8c_aec7bcb1d46812f966d89f66dc1a399ea}{\index{hydra.\-c@{hydra.\-c}!atime@{atime}}
+\index{atime@{atime}!hydra.c@{hydra.\-c}}
+\subsubsection[{atime}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf atime}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{hydra_8c_aec7bcb1d46812f966d89f66dc1a399ea}
 
 
-Definition at line 22 of file hydra.c.
+\-Definition at line 19 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-force().
+\-Referenced by hydro\-\_\-force().
 
-\hypertarget{hydra_8c_ac9067960018a06b81c117434c01f19cc}{
-\index{hydra.c@{hydra.c}!boxSize@{boxSize}}
-\index{boxSize@{boxSize}!hydra.c@{hydra.c}}
-\subsubsection[{boxSize}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf boxSize}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{hydra_8c_ac9067960018a06b81c117434c01f19cc}
+\hypertarget{hydra_8c_af62571c97dc75a691aeafead0528b369}{\index{hydra.\-c@{hydra.\-c}!box\-Half@{box\-Half}}
+\index{box\-Half@{box\-Half}!hydra.c@{hydra.\-c}}
+\subsubsection[{box\-Half}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf box\-Half}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{hydra_8c_af62571c97dc75a691aeafead0528b369}
 
 
-Definition at line 22 of file hydra.c.
+\-Definition at line 22 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-force().
+\-Referenced by hydro\-\_\-force().
 
-\hypertarget{hydra_8c_a10ab9a51765fc1b79e1282b3cccb2085}{
-\index{hydra.c@{hydra.c}!fac\_\-egy@{fac\_\-egy}}
-\index{fac\_\-egy@{fac\_\-egy}!hydra.c@{hydra.c}}
-\subsubsection[{fac\_\-egy}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac\_\-egy}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{hydra_8c_a10ab9a51765fc1b79e1282b3cccb2085}
+\hypertarget{hydra_8c_ac9067960018a06b81c117434c01f19cc}{\index{hydra.\-c@{hydra.\-c}!box\-Size@{box\-Size}}
+\index{box\-Size@{box\-Size}!hydra.c@{hydra.\-c}}
+\subsubsection[{box\-Size}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf box\-Size}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{hydra_8c_ac9067960018a06b81c117434c01f19cc}
 
 
-Definition at line 19 of file hydra.c.
+\-Definition at line 22 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-force().
+\-Referenced by hydro\-\_\-force().
 
-\hypertarget{hydra_8c_acb165aa9c0459664aba04d793812aa34}{
-\index{hydra.c@{hydra.c}!fac\_\-mu@{fac\_\-mu}}
-\index{fac\_\-mu@{fac\_\-mu}!hydra.c@{hydra.c}}
-\subsubsection[{fac\_\-mu}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac\_\-mu}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{hydra_8c_acb165aa9c0459664aba04d793812aa34}
+\hypertarget{hydra_8c_a10ab9a51765fc1b79e1282b3cccb2085}{\index{hydra.\-c@{hydra.\-c}!fac\-\_\-egy@{fac\-\_\-egy}}
+\index{fac\-\_\-egy@{fac\-\_\-egy}!hydra.c@{hydra.\-c}}
+\subsubsection[{fac\-\_\-egy}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac\-\_\-egy}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{hydra_8c_a10ab9a51765fc1b79e1282b3cccb2085}
 
 
-Definition at line 19 of file hydra.c.
+\-Definition at line 19 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-evaluate(), and hydro\_\-force().
+\-Referenced by hydro\-\_\-force().
 
-\hypertarget{hydra_8c_a99addeb2d520f107c59e4e228e8e76dd}{
-\index{hydra.c@{hydra.c}!fac\_\-vsic\_\-fix@{fac\_\-vsic\_\-fix}}
-\index{fac\_\-vsic\_\-fix@{fac\_\-vsic\_\-fix}!hydra.c@{hydra.c}}
-\subsubsection[{fac\_\-vsic\_\-fix}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac\_\-vsic\_\-fix}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{hydra_8c_a99addeb2d520f107c59e4e228e8e76dd}
+\hypertarget{hydra_8c_acb165aa9c0459664aba04d793812aa34}{\index{hydra.\-c@{hydra.\-c}!fac\-\_\-mu@{fac\-\_\-mu}}
+\index{fac\-\_\-mu@{fac\-\_\-mu}!hydra.c@{hydra.\-c}}
+\subsubsection[{fac\-\_\-mu}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac\-\_\-mu}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{hydra_8c_acb165aa9c0459664aba04d793812aa34}
 
 
-Definition at line 19 of file hydra.c.
+\-Definition at line 19 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-evaluate(), and hydro\_\-force().
+\-Referenced by hydro\-\_\-evaluate(), and hydro\-\_\-force().
 
-\hypertarget{hydra_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}{
-\index{hydra.c@{hydra.c}!hubble\_\-a@{hubble\_\-a}}
-\index{hubble\_\-a@{hubble\_\-a}!hydra.c@{hydra.c}}
-\subsubsection[{hubble\_\-a}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hubble\_\-a}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{hydra_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}
+\hypertarget{hydra_8c_a99addeb2d520f107c59e4e228e8e76dd}{\index{hydra.\-c@{hydra.\-c}!fac\-\_\-vsic\-\_\-fix@{fac\-\_\-vsic\-\_\-fix}}
+\index{fac\-\_\-vsic\-\_\-fix@{fac\-\_\-vsic\-\_\-fix}!hydra.c@{hydra.\-c}}
+\subsubsection[{fac\-\_\-vsic\-\_\-fix}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac\-\_\-vsic\-\_\-fix}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{hydra_8c_a99addeb2d520f107c59e4e228e8e76dd}
 
 
-Definition at line 19 of file hydra.c.
+\-Definition at line 19 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-force(), and prob\_\-of\_\-interaction().
+\-Referenced by hydro\-\_\-evaluate(), and hydro\-\_\-force().
 
-\hypertarget{hydra_8c_a15cf7694d03164516fd55696b858a125}{
-\index{hydra.c@{hydra.c}!hubble\_\-a2@{hubble\_\-a2}}
-\index{hubble\_\-a2@{hubble\_\-a2}!hydra.c@{hydra.c}}
-\subsubsection[{hubble\_\-a2}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hubble\_\-a2}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{hydra_8c_a15cf7694d03164516fd55696b858a125}
+\hypertarget{hydra_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}{\index{hydra.\-c@{hydra.\-c}!hubble\-\_\-a@{hubble\-\_\-a}}
+\index{hubble\-\_\-a@{hubble\-\_\-a}!hydra.c@{hydra.\-c}}
+\subsubsection[{hubble\-\_\-a}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hubble\-\_\-a}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{hydra_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}
 
 
-Definition at line 19 of file hydra.c.
+\-Definition at line 19 of file hydra.\-c.
 
 
 
-Referenced by hydro\_\-evaluate(), and hydro\_\-force().
+\-Referenced by hydro\-\_\-force(), and prob\-\_\-of\-\_\-interaction().
+
+\hypertarget{hydra_8c_a15cf7694d03164516fd55696b858a125}{\index{hydra.\-c@{hydra.\-c}!hubble\-\_\-a2@{hubble\-\_\-a2}}
+\index{hubble\-\_\-a2@{hubble\-\_\-a2}!hydra.c@{hydra.\-c}}
+\subsubsection[{hubble\-\_\-a2}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hubble\-\_\-a2}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{hydra_8c_a15cf7694d03164516fd55696b858a125}
+
+
+\-Definition at line 19 of file hydra.\-c.
+
+
+
+\-Referenced by hydro\-\_\-evaluate(), and hydro\-\_\-force().
 

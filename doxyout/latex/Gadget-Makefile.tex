@@ -1,235 +1,235 @@
-A number of features of GADGET-\/2 are controlled with compile-\/time options in the makefile rather than by the parameterfile. This has been done in order to allow the generation of highly optimised binaries by the compiler, even when the underlying source code allows for many different ways to run the code.
+\-A number of features of \-G\-A\-D\-G\-E\-T-\/2 are controlled with compile-\/time options in the makefile rather than by the parameterfile. \-This has been done in order to allow the generation of highly optimised binaries by the compiler, even when the underlying source code allows for many different ways to run the code.
 
-The makefile contains a dummy list of all available compile-\/time options, with most of them commented out by default. To activate a certain feature, the corresponding parameter should be commented in, and given the desired value, where appropriate. Below, a brief guide to these options is included.
+\-The makefile contains a dummy list of all available compile-\/time options, with most of them commented out by default. \-To activate a certain feature, the corresponding parameter should be commented in, and given the desired value, where appropriate. \-Below, a brief guide to these options is included.
 
-{\bfseries Important Note:} Whenever one of the compile-\/time options described below is modified, a full recompilation of the code may be necessary. To guarantee that this is done when a simple {\bfseries make} is specified, all source files have been specified in the Makefile as being dependent on the Makefile itself. Alternatively, one can also issue the command {\bfseries make clean}, which will erase all object files, followed by {\bfseries make}.
+{\bfseries \-Important \-Note\-:} \-Whenever one of the compile-\/time options described below is modified, a full recompilation of the code may be necessary. \-To guarantee that this is done when a simple {\bfseries make} is specified, all source files have been specified in the \-Makefile as being dependent on the \-Makefile itself. \-Alternatively, one can also issue the command {\bfseries make clean}, which will erase all object files, followed by {\bfseries make}.
 
-Note that the above technique has the disadvantage that different simulations may require different binaries of GADGET-\/2. If several simulations are run concurrently, there is hence the danger that a simulation is started/resumed with the `wrong' binary. Note that while GADGET-\/2 checks the plausibility of some of the most important code options, this is not done for all of them. To minimise the risk of using the wrong executable for a simulation, it is recommended to produce a separate executable for each simulation that is run. For example, a good strategy is to make a copy of the whole code together with its makefile in the output directory of each simulation run, and then to use this copy to compile the code and to run the simulation.
-
-\par
- \hypertarget{Gadget-Makefile_secmake1}{}\section{Basic operation mode of code}\label{Gadget-Makefile_secmake1}
-
-\begin{DoxyItemize}
-\item {\bfseries PERIODIC} \par
- Set this if you want to have periodic boundary conditions.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries UNEQUALSOFTENINGS} \par
- Set this if you use particles with different gravitational softening lengths.
-\end{DoxyItemize}
+\-Note that the above technique has the disadvantage that different simulations may require different binaries of \-G\-A\-D\-G\-E\-T-\/2. \-If several simulations are run concurrently, there is hence the danger that a simulation is started/resumed with the `wrong' binary. \-Note that while \-G\-A\-D\-G\-E\-T-\/2 checks the plausibility of some of the most important code options, this is not done for all of them. \-To minimise the risk of using the wrong executable for a simulation, it is recommended to produce a separate executable for each simulation that is run. \-For example, a good strategy is to make a copy of the whole code together with its makefile in the output directory of each simulation run, and then to use this copy to compile the code and to run the simulation.
 
 \par
- \hypertarget{Gadget-Makefile_secmake2}{}\section{Things that are always recommended}\label{Gadget-Makefile_secmake2}
+ \hypertarget{Gadget-Makefile_secmake1}{}\section{\-Basic operation mode of code}\label{Gadget-Makefile_secmake1}
 
 \begin{DoxyItemize}
-\item {\bfseries PEANOHILBERT} \par
- This is a tuning option. When set, the code will bring the particles into Peano-\/Hilbert order after each domain decomposition. This improves cache utilisation and performance.
+\item {\bfseries \-P\-E\-R\-I\-O\-D\-I\-C} \par
+ \-Set this if you want to have periodic boundary conditions.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
-\item {\bfseries WALLCLOCK} \par
- If set, a wallclock timer is used by the code to measure internal time consumption (see cpu-\/log file). Otherwise, a timer that measures consumed processor ticks is used.
+\item {\bfseries \-U\-N\-E\-Q\-U\-A\-L\-S\-O\-F\-T\-E\-N\-I\-N\-G\-S} \par
+ \-Set this if you use particles with different gravitational softening lengths.
 \end{DoxyItemize}
 
 \par
- \hypertarget{Gadget-Makefile_secmake3}{}\section{TreePM options}\label{Gadget-Makefile_secmake3}
+ \hypertarget{Gadget-Makefile_secmake2}{}\section{\-Things that are always recommended}\label{Gadget-Makefile_secmake2}
 
 \begin{DoxyItemize}
-\item {\bfseries PMGRID=128} \par
- This enables the TreePM method, i.e. the long-\/range force is computed with a PM-\/algorithm, and the short range force with the tree. The parameter has to be set to the size of the mesh that should be used, e.g.$\sim$64, 96, 128, etc. The mesh dimensions need not necessarily be a power of two, but the FFT is fastest for such a choice. Note: If the simulation is not in a periodic box, then a FFT method for vacuum boundaries is employed, using a mesh with dimension twice that specified by {\bfseries PMGRID}.
+\item {\bfseries \-P\-E\-A\-N\-O\-H\-I\-L\-B\-E\-R\-T} \par
+ \-This is a tuning option. \-When set, the code will bring the particles into \-Peano-\/\-Hilbert order after each domain decomposition. \-This improves cache utilisation and performance.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
-\item {\bfseries PLACEHIGHRESREGION=1+8} \par
- If this option is set (will only work together with {\bfseries PMGRID}), then the long range force is computed in two stages: One Fourier-\/grid is used to cover the whole simulation volume, allowing the computation of the large-\/scale force. A second Fourier mesh is placed on the region occupied by `high-\/resolution' particles, allowing the computation of an intermediate-\/scale force. Finally, the force on very small scales is computed by the tree. This procedure can be useful for `zoom-\/simulations', where the majority of particles (the high-\/res particles) are occupying only a small fraction of the volume. To activate this option, the parameter needs to be set to an integer that encodes the particle types that make up the high-\/res particles in the form of a bit mask. For example, if types 0, 1, and 4 are the high-\/res particles, then the parameter should be set to {\bfseries PLACEHIGHRESREGION=1+2+16}, i.e. to the sum $2^0+2^1+2^4$. The spatial region covered by the high-\/res grid is determined automatically from the initial conditions. Note: If a periodic box is used, the high-\/res zone is not allowed to intersect the box boundaries.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries  ENLARGEREGION=1.1} \par
- The spatial region covered by the high-\/res zone normally has a fixed size during the simulation, which initially is set to the smallest region that encompasses all high-\/res particles. Normally, the simulation will be interrupted if high-\/res particles leave this region in the course of the run. However, by setting this parameter to a value larger than one, the high-\/res region can be expanded on the fly. For example, setting it to 1.4 will enlarge its side-\/length by 40\% in such an event (it remains centred on the high-\/res particles). Hence, with such a setting, the high-\/res region may expand or move by a limited amount. If in addition {\bfseries SYNCHRONIZATION} is activated, then the code will be able to continue even if high-\/res particles leave the initial high-\/res grid. In this case, the code will update the size and position of the grid that is placed onto the high-\/resolution region automatically. To prevent that this potentially happens every single PM step, one should nevertheless assign a value slightly larger than 1 to {\bfseries ENLARGEREGION}.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries  ASMTH=1.25} \par
- This can be used to override the value assumed for the scale that defines the long-\/range/short-\/range force-\/split in the TreePM algorithm. The default value is 1.25, in mesh-\/cells.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries  RCUT=4.5} \par
- This can be used to override the maximum radius in which the short-\/range tree-\/force is evaluated (in case the TreePM algorithm is used). The default value is 4.5, given in mesh-\/cells.
+\item {\bfseries \-W\-A\-L\-L\-C\-L\-O\-C\-K} \par
+ \-If set, a wallclock timer is used by the code to measure internal time consumption (see cpu-\/log file). \-Otherwise, a timer that measures consumed processor ticks is used.
 \end{DoxyItemize}
 
 \par
- \hypertarget{Gadget-Makefile_secmake4}{}\section{Single or double precision}\label{Gadget-Makefile_secmake4}
+ \hypertarget{Gadget-Makefile_secmake3}{}\section{\-Tree\-P\-M options}\label{Gadget-Makefile_secmake3}
 
 \begin{DoxyItemize}
-\item {\bfseries DOUBLEPRECISION} \par
- This makes the code store and compute internal particle data in double precision. Note that output files are nevertheless written by converting the values that are saved to single precision.
+\item {\bfseries \-P\-M\-G\-R\-I\-D=128} \par
+ \-This enables the \-Tree\-P\-M method, i.\-e. the long-\/range force is computed with a \-P\-M-\/algorithm, and the short range force with the tree. \-The parameter has to be set to the size of the mesh that should be used, e.\-g.$\sim$64, 96, 128, etc. \-The mesh dimensions need not necessarily be a power of two, but the \-F\-F\-T is fastest for such a choice. \-Note\-: \-If the simulation is not in a periodic box, then a \-F\-F\-T method for vacuum boundaries is employed, using a mesh with dimension twice that specified by {\bfseries \-P\-M\-G\-R\-I\-D}.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
-\item {\bfseries DOUBLEPRECISION\_\-FFTW} \par
- If this is set, the code will use the double-\/precision version of FTTW, provided the latter has been explicitly installed with a \char`\"{}d\char`\"{} prefix, and NOTYPEPREFIX\_\-FFTW is not set. Otherwise the single precision version (\char`\"{}s\char`\"{} prefix) is used.
-\end{DoxyItemize}
-
-\par
- \hypertarget{Gadget-Makefile_secmake5}{}\section{Time integration options}\label{Gadget-Makefile_secmake5}
-
-\begin{DoxyItemize}
-\item {\bfseries SYNCHRONIZATION} \par
- When this is set, particles may only increase their timestep if the new timestep will put them into synchronisation with the higher time level. This typically means that only on half of the timesteps of a particle an increase of its step may occur. Especially for TreePM runs, it is usually advisable to set this option.
+\item {\bfseries \-P\-L\-A\-C\-E\-H\-I\-G\-H\-R\-E\-S\-R\-E\-G\-I\-O\-N=1+8} \par
+ \-If this option is set (will only work together with {\bfseries \-P\-M\-G\-R\-I\-D}), then the long range force is computed in two stages\-: \-One \-Fourier-\/grid is used to cover the whole simulation volume, allowing the computation of the large-\/scale force. \-A second \-Fourier mesh is placed on the region occupied by `high-\/resolution' particles, allowing the computation of an intermediate-\/scale force. \-Finally, the force on very small scales is computed by the tree. \-This procedure can be useful for `zoom-\/simulations', where the majority of particles (the high-\/res particles) are occupying only a small fraction of the volume. \-To activate this option, the parameter needs to be set to an integer that encodes the particle types that make up the high-\/res particles in the form of a bit mask. \-For example, if types 0, 1, and 4 are the high-\/res particles, then the parameter should be set to {\bfseries \-P\-L\-A\-C\-E\-H\-I\-G\-H\-R\-E\-S\-R\-E\-G\-I\-O\-N=1+2+16}, i.\-e. to the sum $2^0+2^1+2^4$. \-The spatial region covered by the high-\/res grid is determined automatically from the initial conditions. \-Note\-: \-If a periodic box is used, the high-\/res zone is not allowed to intersect the box boundaries.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
-\item {\bfseries FLEXSTEPS} \par
- This is an alternative to SYNCHRONIZATION. Particle timesteps are here allowed to be integer multiples of the minimum timestep that occurs among the particles, which in turn is rounded down to the nearest power-\/of-\/two devision of the total simulated timespan. This option distributes particles more evenly over individual system timesteps, particularly once a simulation has run for a while, and may then result in a reduction of work-\/load imbalance losses.
+\item {\bfseries  \-E\-N\-L\-A\-R\-G\-E\-R\-E\-G\-I\-O\-N=1.\-1} \par
+ \-The spatial region covered by the high-\/res zone normally has a fixed size during the simulation, which initially is set to the smallest region that encompasses all high-\/res particles. \-Normally, the simulation will be interrupted if high-\/res particles leave this region in the course of the run. \-However, by setting this parameter to a value larger than one, the high-\/res region can be expanded on the fly. \-For example, setting it to 1.\-4 will enlarge its side-\/length by 40\% in such an event (it remains centred on the high-\/res particles). \-Hence, with such a setting, the high-\/res region may expand or move by a limited amount. \-If in addition {\bfseries \-S\-Y\-N\-C\-H\-R\-O\-N\-I\-Z\-A\-T\-I\-O\-N} is activated, then the code will be able to continue even if high-\/res particles leave the initial high-\/res grid. \-In this case, the code will update the size and position of the grid that is placed onto the high-\/resolution region automatically. \-To prevent that this potentially happens every single \-P\-M step, one should nevertheless assign a value slightly larger than 1 to {\bfseries \-E\-N\-L\-A\-R\-G\-E\-R\-E\-G\-I\-O\-N}.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
-\item {\bfseries PSEUDOSYMMETRIC} \par
- When this option is set, the code will try to `anticipate' timestep changes by extrapolating the change of the acceleration into the future. This in general improves the long-\/term integration behaviour of periodic orbits, because then the adaptive integration becomes more akin to a strictly time reversible integrator. Note: This option has no effect if FLEXSTEPS is set.
+\item {\bfseries  \-A\-S\-M\-T\-H=1.\-25} \par
+ \-This can be used to override the value assumed for the scale that defines the long-\/range/short-\/range force-\/split in the \-Tree\-P\-M algorithm. \-The default value is 1.\-25, in mesh-\/cells.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
-\item {\bfseries NOSTOP\_\-WHEN\_\-BELOW\_\-MINTIMESTEP} \par
- If this is activated, the code will not terminate when the timestep falls below the value of {\bfseries MinSizeTimestep} specified in the parameterfile. This is useful for runs where one wants to enforce a constant timestep for all particles. This can be done by activating this option, and by setting {\bfseries MinSizeTimestep} and {\bfseries MaxSizeTimestep} to an equal value.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries NOPMSTEPADJUSTMENT} \par
- When this is set, the long-\/range timestep for the PM force computation is always determined by {\bfseries MaxSizeTimeStep}. Otherwise, it is set to the minimum of {\bfseries MaxSizeTimeStep} and the timestep obtained for the maximum long-\/range force with an effective softening scale equal to the PM smoothing-\/scale.
+\item {\bfseries  \-R\-C\-U\-T=4.\-5} \par
+ \-This can be used to override the maximum radius in which the short-\/range tree-\/force is evaluated (in case the \-Tree\-P\-M algorithm is used). \-The default value is 4.\-5, given in mesh-\/cells.
 \end{DoxyItemize}
 
 \par
- \hypertarget{Gadget-Makefile_secmake6}{}\section{Output options}\label{Gadget-Makefile_secmake6}
+ \hypertarget{Gadget-Makefile_secmake4}{}\section{\-Single or double precision}\label{Gadget-Makefile_secmake4}
 
 \begin{DoxyItemize}
-\item {\bfseries HAVE\_\-HDF5} \par
- If this is set, the code will be compiled with support for input and output in the HDF5 format. You need to have the HDF5 libraries and headers installed on your computer for this option to work. The HDF5 format can then be selected as format \char`\"{}3\char`\"{} in Gadget's parameterfile.
+\item {\bfseries \-D\-O\-U\-B\-L\-E\-P\-R\-E\-C\-I\-S\-I\-O\-N} \par
+ \-This makes the code store and compute internal particle data in double precision. \-Note that output files are nevertheless written by converting the values that are saved to single precision.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
-\item {\bfseries OUTPUTPOTENTIAL} \par
- This will force the code to compute gravitational potentials for all particles each time a snapshot file is generated. These values are then included in the snapshot files. Note that the computation of the values of the potential costs additional time.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries OUTPUTACCELERATION} \par
- This will include the physical acceleration of each particle in snapshot files.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries OUTPUTCHANGEOFENTROPY} \par
- This will include the rate of change of entropy of gas particles in snapshot files.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries OUTPUTTIMESTEP} \par
- This will include the timesteps actually taken by each particle in the snapshot files.
+\item {\bfseries \-D\-O\-U\-B\-L\-E\-P\-R\-E\-C\-I\-S\-I\-O\-N\-\_\-\-F\-F\-T\-W} \par
+ \-If this is set, the code will use the double-\/precision version of \-F\-T\-T\-W, provided the latter has been explicitly installed with a \char`\"{}d\char`\"{} prefix, and \-N\-O\-T\-Y\-P\-E\-P\-R\-E\-F\-I\-X\-\_\-\-F\-F\-T\-W is not set. \-Otherwise the single precision version (\char`\"{}s\char`\"{} prefix) is used.
 \end{DoxyItemize}
 
 \par
- \hypertarget{Gadget-Makefile_secmake7}{}\section{Things for special behaviour}\label{Gadget-Makefile_secmake7}
+ \hypertarget{Gadget-Makefile_secmake5}{}\section{\-Time integration options}\label{Gadget-Makefile_secmake5}
 
 \begin{DoxyItemize}
-\item {\bfseries NOGRAVITY} \par
- This switches off gravity. Makes only sense for pure SPH simulations in non-\/expanding space.
+\item {\bfseries \-S\-Y\-N\-C\-H\-R\-O\-N\-I\-Z\-A\-T\-I\-O\-N} \par
+ \-When this is set, particles may only increase their timestep if the new timestep will put them into synchronisation with the higher time level. \-This typically means that only on half of the timesteps of a particle an increase of its step may occur. \-Especially for \-Tree\-P\-M runs, it is usually advisable to set this option.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
-\item {\bfseries NOTREERND} \par
- If this is not set, the tree construction will succeed even when there are a few particles at identical locations. This is done by `rerouting' particles once the node-\/size has fallen below $10^{-3}$ of the softening length. When this option is activated, this will be suppressed and the tree construction will always fail if there are particles at extremely close or identical coordinates.
+\item {\bfseries \-F\-L\-E\-X\-S\-T\-E\-P\-S} \par
+ \-This is an alternative to \-S\-Y\-N\-C\-H\-R\-O\-N\-I\-Z\-A\-T\-I\-O\-N. \-Particle timesteps are here allowed to be integer multiples of the minimum timestep that occurs among the particles, which in turn is rounded down to the nearest power-\/of-\/two devision of the total simulated timespan. \-This option distributes particles more evenly over individual system timesteps, particularly once a simulation has run for a while, and may then result in a reduction of work-\/load imbalance losses.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
-\item {\bfseries NOTYPEPREFIX\_\-FFTW} \par
- If this is set, the fftw-\/header/libraries are accessed without type prefix (adopting whatever was chosen as default at compile-\/time of fftw). Otherwise, the type prefix 'd' for double-\/precision is used.
+\item {\bfseries \-P\-S\-E\-U\-D\-O\-S\-Y\-M\-M\-E\-T\-R\-I\-C} \par
+ \-When this option is set, the code will try to `anticipate' timestep changes by extrapolating the change of the acceleration into the future. \-This in general improves the long-\/term integration behaviour of periodic orbits, because then the adaptive integration becomes more akin to a strictly time reversible integrator. \-Note\-: \-This option has no effect if \-F\-L\-E\-X\-S\-T\-E\-P\-S is set.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
-\item {\bfseries LONG\_\-X/Y/Z} \par
- These options can be used together with PERIODIC and NOGRAVITY only. When set, the options define numerical factors that can be used to distort the periodic simulation cube into a parallelepiped of arbitrary aspect ratio. This can be useful for idealized SPH tests.
+\item {\bfseries \-N\-O\-S\-T\-O\-P\-\_\-\-W\-H\-E\-N\-\_\-\-B\-E\-L\-O\-W\-\_\-\-M\-I\-N\-T\-I\-M\-E\-S\-T\-E\-P} \par
+ \-If this is activated, the code will not terminate when the timestep falls below the value of {\bfseries \-Min\-Size\-Timestep} specified in the parameterfile. \-This is useful for runs where one wants to enforce a constant timestep for all particles. \-This can be done by activating this option, and by setting {\bfseries \-Min\-Size\-Timestep} and {\bfseries \-Max\-Size\-Timestep} to an equal value.
 \end{DoxyItemize}
 
 
 \begin{DoxyItemize}
-\item {\bfseries TWODIMS} \par
- This effectively switches of one dimension in SPH, i.e. the code follows only 2d hydrodynamics in the xy-\/, yz-\/, or xz-\/plane. This only works with NOGRAVITY, and if all coordinates of the third axis are exactly equal. Can be useful for idealized SPH tests.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries SPH\_\-BND\_\-PARTICLES} \par
- If this is set, particles with a particle-\/ID equal to zero do not receive any SPH acceleration. This can be useful for idealized SPH tests, where these particles represent fixed \char`\"{}walls\char`\"{}.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries NOVISCOSITYLIMITER} \par
- If this is set, there is no explicit upper limit on the viscosity. In the default version, this limiter will try to protect against possible particle `reflections', which could in principle occur if very poor timestepping is used in the presence of strong shocks.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries COMPUTE\_\-POTENTIAL\_\-ENERGY} \par
- When this option is set, the code will compute the gravitational potential energy each time a global statistics is computed. This can be useful for testing global energy conservation.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries ISOTHERM\_\-EQS} \par
- This special option makes the gas behave like an isothermal gas with equation of state $ P = c_s^2 \rho $. The sound-\/speed $ c_s $ is set by the thermal energy per unit mass in the intial conditions, i.e. $ c_s^2=u $. If the value for $ u $ is zero, then the initial gas temperature in the parameter file is used to define the sound speed according to $ c_s^2= k\,T/m_p $ , where $ m_p $ is the proton mass.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries ADAPTIVE\_\-GRAVSOFT\_\-FORGAS} \par
- When this option is set, the gravitational softening lengths used for gas particles is tied to their SPH smoothing length. This can be useful for dissipative collapse simulations. The option requires the setting of UNEQUALSOFTENINGS.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries SELECTIVE\_\-NO\_\-GRAVITY} \par
- This can be used for special computations where one wants to exclude certain particle types from receiving gravitational forces. The particle types that are excluded in this fashion are specified by a bit mask, in the same as for the PLACEHIGHRESREGION option.
-\end{DoxyItemize}
-
-
-\begin{DoxyItemize}
-\item {\bfseries LONGIDS} \par
- If this is set, the code assumes that particle-\/IDs are stored as 64-\/bit long integers. This is only really needed if you want to go beyond $\sim$2 billion particles.
+\item {\bfseries \-N\-O\-P\-M\-S\-T\-E\-P\-A\-D\-J\-U\-S\-T\-M\-E\-N\-T} \par
+ \-When this is set, the long-\/range timestep for the \-P\-M force computation is always determined by {\bfseries \-Max\-Size\-Time\-Step}. \-Otherwise, it is set to the minimum of {\bfseries \-Max\-Size\-Time\-Step} and the timestep obtained for the maximum long-\/range force with an effective softening scale equal to the \-P\-M smoothing-\/scale.
 \end{DoxyItemize}
 
 \par
- \hypertarget{Gadget-Makefile_secmake8}{}\section{Testing and Debugging options}\label{Gadget-Makefile_secmake8}
+ \hypertarget{Gadget-Makefile_secmake6}{}\section{\-Output options}\label{Gadget-Makefile_secmake6}
 
 \begin{DoxyItemize}
-\item {\bfseries FORCETEST=0}.01 \par
- This can be set to check the force accuracy of the code, and is only included as a debugging option. The option needs to be set to a number between 0 and 1 (e.g. 0.01), which specifies the fraction of randomly chosen particles for which at each timestep forces by direct summation are computed. The normal tree-\/forces and the `correct' direct summation forces are then collected in a file {\bfseries forcetest.txt} for later inspection. Note that the simulation itself is unaffected by this option, but it will of course run much(!) slower, particularly if {\bfseries  FORCETEST$\ast$NumPart$\ast$NumPart$>$$>$NumPart} Note: Particle IDs must be set to numbers $>$=1 for this option to work.
+\item {\bfseries \-H\-A\-V\-E\-\_\-\-H\-D\-F5} \par
+ \-If this is set, the code will be compiled with support for input and output in the \-H\-D\-F5 format. \-You need to have the \-H\-D\-F5 libraries and headers installed on your computer for this option to work. \-The \-H\-D\-F5 format can then be selected as format \char`\"{}3\char`\"{} in \-Gadget's parameterfile.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-O\-U\-T\-P\-U\-T\-P\-O\-T\-E\-N\-T\-I\-A\-L} \par
+ \-This will force the code to compute gravitational potentials for all particles each time a snapshot file is generated. \-These values are then included in the snapshot files. \-Note that the computation of the values of the potential costs additional time.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-O\-U\-T\-P\-U\-T\-A\-C\-C\-E\-L\-E\-R\-A\-T\-I\-O\-N} \par
+ \-This will include the physical acceleration of each particle in snapshot files.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-O\-U\-T\-P\-U\-T\-C\-H\-A\-N\-G\-E\-O\-F\-E\-N\-T\-R\-O\-P\-Y} \par
+ \-This will include the rate of change of entropy of gas particles in snapshot files.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-O\-U\-T\-P\-U\-T\-T\-I\-M\-E\-S\-T\-E\-P} \par
+ \-This will include the timesteps actually taken by each particle in the snapshot files.
 \end{DoxyItemize}
 
 \par
- \hypertarget{Gadget-Makefile_secmake9}{}\section{Glass making}\label{Gadget-Makefile_secmake9}
+ \hypertarget{Gadget-Makefile_secmake7}{}\section{\-Things for special behaviour}\label{Gadget-Makefile_secmake7}
 
 \begin{DoxyItemize}
-\item {\bfseries MAKEGLASS=262144} \par
- This option can be used to generate a glass-\/like particle configuration. The value assigned gives the particle load, which is initially generated as a Poisson sample and then evolved towards a glass with the sign of gravity reversed 
+\item {\bfseries \-N\-O\-G\-R\-A\-V\-I\-T\-Y} \par
+ \-This switches off gravity. \-Makes only sense for pure \-S\-P\-H simulations in non-\/expanding space.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-N\-O\-T\-R\-E\-E\-R\-N\-D} \par
+ \-If this is not set, the tree construction will succeed even when there are a few particles at identical locations. \-This is done by `rerouting' particles once the node-\/size has fallen below $10^{-3}$ of the softening length. \-When this option is activated, this will be suppressed and the tree construction will always fail if there are particles at extremely close or identical coordinates.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-N\-O\-T\-Y\-P\-E\-P\-R\-E\-F\-I\-X\-\_\-\-F\-F\-T\-W} \par
+ \-If this is set, the fftw-\/header/libraries are accessed without type prefix (adopting whatever was chosen as default at compile-\/time of fftw). \-Otherwise, the type prefix 'd' for double-\/precision is used.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-L\-O\-N\-G\-\_\-\-X/\-Y/\-Z} \par
+ \-These options can be used together with \-P\-E\-R\-I\-O\-D\-I\-C and \-N\-O\-G\-R\-A\-V\-I\-T\-Y only. \-When set, the options define numerical factors that can be used to distort the periodic simulation cube into a parallelepiped of arbitrary aspect ratio. \-This can be useful for idealized \-S\-P\-H tests.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-T\-W\-O\-D\-I\-M\-S} \par
+ \-This effectively switches of one dimension in \-S\-P\-H, i.\-e. the code follows only 2d hydrodynamics in the xy-\/, yz-\/, or xz-\/plane. \-This only works with \-N\-O\-G\-R\-A\-V\-I\-T\-Y, and if all coordinates of the third axis are exactly equal. \-Can be useful for idealized \-S\-P\-H tests.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-S\-P\-H\-\_\-\-B\-N\-D\-\_\-\-P\-A\-R\-T\-I\-C\-L\-E\-S} \par
+ \-If this is set, particles with a particle-\/\-I\-D equal to zero do not receive any \-S\-P\-H acceleration. \-This can be useful for idealized \-S\-P\-H tests, where these particles represent fixed \char`\"{}walls\char`\"{}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-N\-O\-V\-I\-S\-C\-O\-S\-I\-T\-Y\-L\-I\-M\-I\-T\-E\-R} \par
+ \-If this is set, there is no explicit upper limit on the viscosity. \-In the default version, this limiter will try to protect against possible particle `reflections', which could in principle occur if very poor timestepping is used in the presence of strong shocks.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-C\-O\-M\-P\-U\-T\-E\-\_\-\-P\-O\-T\-E\-N\-T\-I\-A\-L\-\_\-\-E\-N\-E\-R\-G\-Y} \par
+ \-When this option is set, the code will compute the gravitational potential energy each time a global statistics is computed. \-This can be useful for testing global energy conservation.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-I\-S\-O\-T\-H\-E\-R\-M\-\_\-\-E\-Q\-S} \par
+ \-This special option makes the gas behave like an isothermal gas with equation of state $ P = c_s^2 \rho $. \-The sound-\/speed $ c_s $ is set by the thermal energy per unit mass in the intial conditions, i.\-e. $ c_s^2=u $. \-If the value for $ u $ is zero, then the initial gas temperature in the parameter file is used to define the sound speed according to $ c_s^2= k\,T/m_p $ , where $ m_p $ is the proton mass.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-A\-D\-A\-P\-T\-I\-V\-E\-\_\-\-G\-R\-A\-V\-S\-O\-F\-T\-\_\-\-F\-O\-R\-G\-A\-S} \par
+ \-When this option is set, the gravitational softening lengths used for gas particles is tied to their \-S\-P\-H smoothing length. \-This can be useful for dissipative collapse simulations. \-The option requires the setting of \-U\-N\-E\-Q\-U\-A\-L\-S\-O\-F\-T\-E\-N\-I\-N\-G\-S.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-S\-E\-L\-E\-C\-T\-I\-V\-E\-\_\-\-N\-O\-\_\-\-G\-R\-A\-V\-I\-T\-Y} \par
+ \-This can be used for special computations where one wants to exclude certain particle types from receiving gravitational forces. \-The particle types that are excluded in this fashion are specified by a bit mask, in the same as for the \-P\-L\-A\-C\-E\-H\-I\-G\-H\-R\-E\-S\-R\-E\-G\-I\-O\-N option.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-L\-O\-N\-G\-I\-D\-S} \par
+ \-If this is set, the code assumes that particle-\/\-I\-Ds are stored as 64-\/bit long integers. \-This is only really needed if you want to go beyond $\sim$2 billion particles.
+\end{DoxyItemize}
+
+\par
+ \hypertarget{Gadget-Makefile_secmake8}{}\section{\-Testing and Debugging options}\label{Gadget-Makefile_secmake8}
+
+\begin{DoxyItemize}
+\item {\bfseries \-F\-O\-R\-C\-E\-T\-E\-S\-T=0.\-01} \par
+ \-This can be set to check the force accuracy of the code, and is only included as a debugging option. \-The option needs to be set to a number between 0 and 1 (e.\-g. 0.\-01), which specifies the fraction of randomly chosen particles for which at each timestep forces by direct summation are computed. \-The normal tree-\/forces and the `correct' direct summation forces are then collected in a file {\bfseries forcetest.\-txt} for later inspection. \-Note that the simulation itself is unaffected by this option, but it will of course run much(!) slower, particularly if {\bfseries  \-F\-O\-R\-C\-E\-T\-E\-S\-T$\ast$\-Num\-Part$\ast$\-Num\-Part$>$$>$\-Num\-Part} \-Note\-: \-Particle \-I\-Ds must be set to numbers $>$=1 for this option to work.
+\end{DoxyItemize}
+
+\par
+ \hypertarget{Gadget-Makefile_secmake9}{}\section{\-Glass making}\label{Gadget-Makefile_secmake9}
+
+\begin{DoxyItemize}
+\item {\bfseries \-M\-A\-K\-E\-G\-L\-A\-S\-S=262144} \par
+ \-This option can be used to generate a glass-\/like particle configuration. \-The value assigned gives the particle load, which is initially generated as a \-Poisson sample and then evolved towards a glass with the sign of gravity reversed 
 \end{DoxyItemize}

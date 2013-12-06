@@ -1,68 +1,63 @@
-\hypertarget{longrange_8c}{
-\section{longrange.c File Reference}
-\label{longrange_8c}\index{longrange.c@{longrange.c}}
+\hypertarget{longrange_8c}{\section{longrange.\-c \-File \-Reference}
+\label{longrange_8c}\index{longrange.\-c@{longrange.\-c}}
 }
 
 
-driver routines for computation of long-\/range gravitational PM force  
+driver routines for computation of long-\/range gravitational \-P\-M force  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for longrange.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for longrange.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{longrange_8c__incl}
+\includegraphics[width=350pt]{longrange_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{longrange_8c_af52079f2c63002aca9463ba0b13727df}{long\_\-range\_\-init} (void)
+void \hyperlink{longrange_8c_af52079f2c63002aca9463ba0b13727df}{long\-\_\-range\-\_\-init} (void)
 \item 
-void \hyperlink{longrange_8c_ad295b3023b3d8fad337637a640362262}{long\_\-range\_\-init\_\-regionsize} (void)
+void \hyperlink{longrange_8c_ad295b3023b3d8fad337637a640362262}{long\-\_\-range\-\_\-init\-\_\-regionsize} (void)
 \item 
-void \hyperlink{longrange_8c_a5989a3f57c7d6dfdef205dc6b72a1d25}{long\_\-range\_\-force} (void)
+void \hyperlink{longrange_8c_a5989a3f57c7d6dfdef205dc6b72a1d25}{long\-\_\-range\-\_\-force} (void)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-driver routines for computation of long-\/range gravitational PM force 
+\subsection{\-Detailed \-Description}
+driver routines for computation of long-\/range gravitational \-P\-M force 
 
-Definition in file \hyperlink{longrange_8c_source}{longrange.c}.
+\-Definition in file \hyperlink{longrange_8c_source}{longrange.\-c}.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{longrange_8c_a5989a3f57c7d6dfdef205dc6b72a1d25}{
-\index{longrange.c@{longrange.c}!long\_\-range\_\-force@{long\_\-range\_\-force}}
-\index{long\_\-range\_\-force@{long\_\-range\_\-force}!longrange.c@{longrange.c}}
-\subsubsection[{long\_\-range\_\-force}]{\setlength{\rightskip}{0pt plus 5cm}void long\_\-range\_\-force (
+\subsection{\-Function \-Documentation}
+\hypertarget{longrange_8c_a5989a3f57c7d6dfdef205dc6b72a1d25}{\index{longrange.\-c@{longrange.\-c}!long\-\_\-range\-\_\-force@{long\-\_\-range\-\_\-force}}
+\index{long\-\_\-range\-\_\-force@{long\-\_\-range\-\_\-force}!longrange.c@{longrange.\-c}}
+\subsubsection[{long\-\_\-range\-\_\-force}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf long\-\_\-range\-\_\-force} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{longrange_8c_a5989a3f57c7d6dfdef205dc6b72a1d25}
-This function is a driver routine for the long-\/range PM force computation. It calls periodic and/or non-\/periodic FFT routines as needed for the present simulation set-\/up. 
+)}}\label{longrange_8c_a5989a3f57c7d6dfdef205dc6b72a1d25}
+\-This function is a driver routine for the long-\/range \-P\-M force computation. \-It calls periodic and/or non-\/periodic \-F\-F\-T routines as needed for the present simulation set-\/up. 
 
-Definition at line 56 of file longrange.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, endrun(), global\_\-data\_\-all\_\-processes::Hubble, NumPart, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, P, pm\_\-init\_\-regionsize(), pm\_\-setup\_\-nonperiodic\_\-kernel(), pmforce\_\-nonperiodic(), and pmforce\_\-periodic().
+\-Definition at line 56 of file longrange.\-c.
 
 
 
-Referenced by compute\_\-accelerations().
+\-References \-All, endrun(), \-Num\-Part, \-P, pm\-\_\-init\-\_\-regionsize(), pm\-\_\-setup\-\_\-nonperiodic\-\_\-kernel(), pmforce\-\_\-nonperiodic(), and pmforce\-\_\-periodic().
 
 
+
+\-Referenced by compute\-\_\-accelerations().
 
 
 \begin{DoxyCode}
@@ -87,8 +82,8 @@ Referenced by compute\_\-accelerations().
   pmforce_periodic();
 #ifdef PLACEHIGHRESREGION
   i = pmforce_nonperiodic(1);
-  if(i == 1)                    /* this is returned if a particle lied outside al
-      lowed range */
+  if(i == 1)                    /* this is returned if a particle lied outside
+       allowed range */
     {
       pm_init_regionsize();
       pm_setup_nonperiodic_kernel();
@@ -99,8 +94,8 @@ Referenced by compute\_\-accelerations().
 #endif
 #else
   i = pmforce_nonperiodic(0);
-  if(i == 1)                    /* this is returned if a particle lied outside al
-      lowed range */
+  if(i == 1)                    /* this is returned if a particle lied outside
+       allowed range */
     {
       pm_init_regionsize();
       pm_setup_nonperiodic_kernel();
@@ -110,8 +105,8 @@ Referenced by compute\_\-accelerations().
     endrun(68687);
 #ifdef PLACEHIGHRESREGION
   i = pmforce_nonperiodic(1);
-  if(i == 1)                    /* this is returned if a particle lied outside al
-      lowed range */
+  if(i == 1)                    /* this is returned if a particle lied outside
+       allowed range */
     {
       pm_init_regionsize();
       pm_setup_nonperiodic_kernel();
@@ -140,8 +135,8 @@ Referenced by compute\_\-accelerations().
     }
 
 
-  /* Finally, the following factor allows a computation of cosmological simulatio
-      n 
+  /* Finally, the following factor allows a computation of cosmological
+       simulation 
      with vacuum energy in physical coordinates */
 
   if(All.ComovingIntegrationOn == 0)
@@ -158,52 +153,46 @@ Referenced by compute\_\-accelerations().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{longrange_8c_a5989a3f57c7d6dfdef205dc6b72a1d25_cgraph}
+\includegraphics[width=350pt]{longrange_8c_a5989a3f57c7d6dfdef205dc6b72a1d25_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{longrange_8c_a5989a3f57c7d6dfdef205dc6b72a1d25_icgraph}
+\includegraphics[width=350pt]{longrange_8c_a5989a3f57c7d6dfdef205dc6b72a1d25_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{longrange_8c_af52079f2c63002aca9463ba0b13727df}{
-\index{longrange.c@{longrange.c}!long\_\-range\_\-init@{long\_\-range\_\-init}}
-\index{long\_\-range\_\-init@{long\_\-range\_\-init}!longrange.c@{longrange.c}}
-\subsubsection[{long\_\-range\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void long\_\-range\_\-init (
+\hypertarget{longrange_8c_af52079f2c63002aca9463ba0b13727df}{\index{longrange.\-c@{longrange.\-c}!long\-\_\-range\-\_\-init@{long\-\_\-range\-\_\-init}}
+\index{long\-\_\-range\-\_\-init@{long\-\_\-range\-\_\-init}!longrange.c@{longrange.\-c}}
+\subsubsection[{long\-\_\-range\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf long\-\_\-range\-\_\-init} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{longrange_8c_af52079f2c63002aca9463ba0b13727df}
-Calls initializiation routines of periodic or/and non-\/periodic FFT routines. 
+)}}\label{longrange_8c_af52079f2c63002aca9463ba0b13727df}
+\-Calls initializiation routines of periodic or/and non-\/periodic \-F\-F\-T routines. 
 
-Definition at line 20 of file longrange.c.
-
-
-
-References pm\_\-init\_\-nonperiodic(), and pm\_\-init\_\-periodic().
+\-Definition at line 20 of file longrange.\-c.
 
 
 
-Referenced by begrun().
+\-References pm\-\_\-init\-\_\-nonperiodic(), and pm\-\_\-init\-\_\-periodic().
 
 
+
+\-Referenced by begrun().
 
 
 \begin{DoxyCode}
@@ -220,9 +209,7 @@ Referenced by begrun().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -234,7 +221,7 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -244,28 +231,24 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{longrange_8c_ad295b3023b3d8fad337637a640362262}{
-\index{longrange.c@{longrange.c}!long\_\-range\_\-init\_\-regionsize@{long\_\-range\_\-init\_\-regionsize}}
-\index{long\_\-range\_\-init\_\-regionsize@{long\_\-range\_\-init\_\-regionsize}!longrange.c@{longrange.c}}
-\subsubsection[{long\_\-range\_\-init\_\-regionsize}]{\setlength{\rightskip}{0pt plus 5cm}void long\_\-range\_\-init\_\-regionsize (
+\hypertarget{longrange_8c_ad295b3023b3d8fad337637a640362262}{\index{longrange.\-c@{longrange.\-c}!long\-\_\-range\-\_\-init\-\_\-regionsize@{long\-\_\-range\-\_\-init\-\_\-regionsize}}
+\index{long\-\_\-range\-\_\-init\-\_\-regionsize@{long\-\_\-range\-\_\-init\-\_\-regionsize}!longrange.c@{longrange.\-c}}
+\subsubsection[{long\-\_\-range\-\_\-init\-\_\-regionsize}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf long\-\_\-range\-\_\-init\-\_\-regionsize} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{longrange_8c_ad295b3023b3d8fad337637a640362262}
-This function calls subroutines that determine the spatial region covered by the PM mesh. 
+)}}\label{longrange_8c_ad295b3023b3d8fad337637a640362262}
+\-This function calls subroutines that determine the spatial region covered by the \-P\-M mesh. 
 
-Definition at line 36 of file longrange.c.
-
-
-
-References pm\_\-init\_\-regionsize(), pm\_\-setup\_\-nonperiodic\_\-kernel(), and RestartFlag.
+\-Definition at line 36 of file longrange.\-c.
 
 
 
-Referenced by begrun().
+\-References pm\-\_\-init\-\_\-regionsize(), pm\-\_\-setup\-\_\-nonperiodic\-\_\-kernel(), and \-Restart\-Flag.
 
 
+
+\-Referenced by begrun().
 
 
 \begin{DoxyCode}
@@ -285,26 +268,24 @@ Referenced by begrun().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{longrange_8c_ad295b3023b3d8fad337637a640362262_cgraph}
+\includegraphics[width=350pt]{longrange_8c_ad295b3023b3d8fad337637a640362262_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=388pt]{longrange_8c_ad295b3023b3d8fad337637a640362262_icgraph}
+\includegraphics[width=350pt]{longrange_8c_ad295b3023b3d8fad337637a640362262_icgraph}
 \end{center}
 \end{figure}
 

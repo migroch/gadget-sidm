@@ -1,73 +1,68 @@
-\hypertarget{run_8c}{
-\section{run.c File Reference}
-\label{run_8c}\index{run.c@{run.c}}
+\hypertarget{run_8c}{\section{run.\-c \-File \-Reference}
+\label{run_8c}\index{run.\-c@{run.\-c}}
 }
 
 
 iterates over timesteps, main loop  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include $<$unistd.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for run.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for run.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{run_8c__incl}
+\includegraphics[width=350pt]{run_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2}{run} (void)
 \item 
-void \hyperlink{run_8c_ad52604af910b3e1677718d863ab09391}{find\_\-next\_\-sync\_\-point\_\-and\_\-drift} (void)
+void \hyperlink{run_8c_ad52604af910b3e1677718d863ab09391}{find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift} (void)
 \item 
-int \hyperlink{run_8c_a00802290d71ce2a6de3f121de55ddd20}{find\_\-next\_\-outputtime} (int ti\_\-curr)
+int \hyperlink{run_8c_a00802290d71ce2a6de3f121de55ddd20}{find\-\_\-next\-\_\-outputtime} (int ti\-\_\-curr)
 \item 
-void \hyperlink{run_8c_a7e26319b203616f2c85b5fd6f2ade85d}{every\_\-timestep\_\-stuff} (void)
+void \hyperlink{run_8c_a7e26319b203616f2c85b5fd6f2ade85d}{every\-\_\-timestep\-\_\-stuff} (void)
 \item 
-void \hyperlink{run_8c_ae903322da17c6875ab606b032b918099}{energy\_\-statistics} (void)
+void \hyperlink{run_8c_ae903322da17c6875ab606b032b918099}{energy\-\_\-statistics} (void)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsection{\-Detailed \-Description}
 iterates over timesteps, main loop 
 
-Definition in file \hyperlink{run_8c_source}{run.c}.
+\-Definition in file \hyperlink{run_8c_source}{run.\-c}.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{run_8c_ae903322da17c6875ab606b032b918099}{
-\index{run.c@{run.c}!energy\_\-statistics@{energy\_\-statistics}}
-\index{energy\_\-statistics@{energy\_\-statistics}!run.c@{run.c}}
-\subsubsection[{energy\_\-statistics}]{\setlength{\rightskip}{0pt plus 5cm}void energy\_\-statistics (
+\subsection{\-Function \-Documentation}
+\hypertarget{run_8c_ae903322da17c6875ab606b032b918099}{\index{run.\-c@{run.\-c}!energy\-\_\-statistics@{energy\-\_\-statistics}}
+\index{energy\-\_\-statistics@{energy\-\_\-statistics}!run.c@{run.\-c}}
+\subsubsection[{energy\-\_\-statistics}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf energy\-\_\-statistics} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{run_8c_ae903322da17c6875ab606b032b918099}
-This routine first calls a computation of various global quantities of the particle distribution, and then writes some statistics about the energies in the various particle components to the file FdEnergy. 
+)}}\label{run_8c_ae903322da17c6875ab606b032b918099}
+\-This routine first calls a computation of various global quantities of the particle distribution, and then writes some statistics about the energies in the various particle components to the file \-Fd\-Energy. 
 
-Definition at line 432 of file run.c.
-
-
-
-References All, compute\_\-global\_\-quantities\_\-of\_\-system(), state\_\-of\_\-system::EnergyInt, state\_\-of\_\-system::EnergyIntComp, state\_\-of\_\-system::EnergyKin, state\_\-of\_\-system::EnergyKinComp, state\_\-of\_\-system::EnergyPot, state\_\-of\_\-system::EnergyPotComp, FdEnergy, state\_\-of\_\-system::MassComp, SysState, ThisTask, and global\_\-data\_\-all\_\-processes::Time.
+\-Definition at line 432 of file run.\-c.
 
 
 
-Referenced by run().
+\-References \-All, compute\-\_\-global\-\_\-quantities\-\_\-of\-\_\-system(), \-Fd\-Energy, \-Sys\-State, and \-This\-Task.
 
 
+
+\-Referenced by run().
 
 
 \begin{DoxyCode}
@@ -77,8 +72,8 @@ Referenced by run().
   if(ThisTask == 0)
     {
       fprintf(FdEnergy,
-              "%g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g 
-      %g %g %g %g %g %g\n",
+              "%g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g %g
+       %g %g %g %g %g %g %g\n",
               All.Time, SysState.EnergyInt, SysState.EnergyPot, SysState.
       EnergyKin, SysState.EnergyIntComp[0],
               SysState.EnergyPotComp[0], SysState.EnergyKinComp[0], SysState.
@@ -93,8 +88,8 @@ Referenced by run().
       EnergyIntComp[5],
               SysState.EnergyPotComp[5], SysState.EnergyKinComp[5], SysState.
       MassComp[0],
-              SysState.MassComp[1], SysState.MassComp[2], SysState.MassComp[3], 
-      SysState.MassComp[4],
+              SysState.MassComp[1], SysState.MassComp[2], SysState.MassComp[3],
+       SysState.MassComp[4],
               SysState.MassComp[5]);
 
       fflush(FdEnergy);
@@ -103,21 +98,19 @@ Referenced by run().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{run_8c_ae903322da17c6875ab606b032b918099_cgraph}
+\includegraphics[width=350pt]{run_8c_ae903322da17c6875ab606b032b918099_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -127,28 +120,24 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{run_8c_a7e26319b203616f2c85b5fd6f2ade85d}{
-\index{run.c@{run.c}!every\_\-timestep\_\-stuff@{every\_\-timestep\_\-stuff}}
-\index{every\_\-timestep\_\-stuff@{every\_\-timestep\_\-stuff}!run.c@{run.c}}
-\subsubsection[{every\_\-timestep\_\-stuff}]{\setlength{\rightskip}{0pt plus 5cm}void every\_\-timestep\_\-stuff (
+\hypertarget{run_8c_a7e26319b203616f2c85b5fd6f2ade85d}{\index{run.\-c@{run.\-c}!every\-\_\-timestep\-\_\-stuff@{every\-\_\-timestep\-\_\-stuff}}
+\index{every\-\_\-timestep\-\_\-stuff@{every\-\_\-timestep\-\_\-stuff}!run.c@{run.\-c}}
+\subsubsection[{every\-\_\-timestep\-\_\-stuff}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf every\-\_\-timestep\-\_\-stuff} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{run_8c_a7e26319b203616f2c85b5fd6f2ade85d}
-This routine writes one line for every timestep to two log-\/files. In FdInfo, we just list the timesteps that have been done, while in FdCPU the cumulative cpu-\/time consumption in various parts of the code is stored. 
+)}}\label{run_8c_a7e26319b203616f2c85b5fd6f2ade85d}
+\-This routine writes one line for every timestep to two log-\/files. \-In \-Fd\-Info, we just list the timesteps that have been done, while in \-Fd\-C\-P\-U the cumulative cpu-\/time consumption in various parts of the code is stored. 
 
-Definition at line 370 of file run.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CPU\_\-CommSum, global\_\-data\_\-all\_\-processes::CPU\_\-Domain, global\_\-data\_\-all\_\-processes::CPU\_\-EnsureNgb, global\_\-data\_\-all\_\-processes::CPU\_\-Gravity, global\_\-data\_\-all\_\-processes::CPU\_\-HydCommSumm, global\_\-data\_\-all\_\-processes::CPU\_\-HydCompWalk, global\_\-data\_\-all\_\-processes::CPU\_\-HydImbalance, global\_\-data\_\-all\_\-processes::CPU\_\-Hydro, global\_\-data\_\-all\_\-processes::CPU\_\-Imbalance, global\_\-data\_\-all\_\-processes::CPU\_\-Peano, global\_\-data\_\-all\_\-processes::CPU\_\-PM, global\_\-data\_\-all\_\-processes::CPU\_\-Potential, global\_\-data\_\-all\_\-processes::CPU\_\-Predict, global\_\-data\_\-all\_\-processes::CPU\_\-Snapshot, global\_\-data\_\-all\_\-processes::CPU\_\-TimeLine, global\_\-data\_\-all\_\-processes::CPU\_\-Total, global\_\-data\_\-all\_\-processes::CPU\_\-TreeConstruction, global\_\-data\_\-all\_\-processes::CPU\_\-TreeWalk, FdCPU, FdInfo, NTask, global\_\-data\_\-all\_\-processes::NumCurrentTiStep, set\_\-random\_\-numbers(), ThisTask, global\_\-data\_\-all\_\-processes::Time, and global\_\-data\_\-all\_\-processes::TimeStep.
+\-Definition at line 370 of file run.\-c.
 
 
 
-Referenced by run().
+\-References \-All, \-Fd\-C\-P\-U, \-Fd\-Info, \-N\-Task, set\-\_\-random\-\_\-numbers(), and \-This\-Task.
 
 
+
+\-Referenced by run().
 
 
 \begin{DoxyCode}
@@ -161,36 +150,37 @@ Referenced by run().
       if(All.ComovingIntegrationOn)
         {
           z = 1.0 / (All.Time) - 1;
-          fprintf(FdInfo, "\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %
-      g, Dloga: %g, NselfInteractions: %lu\n", 
+          fprintf(FdInfo, "\nBegin Step %d, Time: %g, Redshift: %g, Systemstep:
+       %g, Dloga: %g, NselfInteractions: %lu\n", 
                   All.NumCurrentTiStep, All.Time, z, All.TimeStep,
-                  log(All.Time) - log(All.Time - All.TimeStep),  All.Nself_intera
-      ctionsSum);
-          printf("\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %g, Dloga:
-       %g, NselfInteractions: %lu\n", All.NumCurrentTiStep,
+                  log(All.Time) - log(All.Time - All.TimeStep),  All.
+      Nself_interactionsSum);
+          printf("\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %g,
+       Dloga: %g, NselfInteractions: %lu\n", All.NumCurrentTiStep,
                  All.Time, z, All.TimeStep, log(All.Time) - log(All.Time - All.
       TimeStep), All.Nself_interactionsSum);
           fflush(FdInfo);
         }
       else
         {
-          fprintf(FdInfo, "\nBegin Step %d, Time: %g, Systemstep: %g, NselfIntera
-      ctions: %lu\n", All.NumCurrentTiStep, All.Time,
+          fprintf(FdInfo, "\nBegin Step %d, Time: %g, Systemstep: %g,
+       NselfInteractions: %lu\n", All.NumCurrentTiStep, All.Time,
                   All.TimeStep, All.Nself_interactionsSum);
-          printf("\nBegin Step %d, Time: %g, Systemstep: %g, NselfInteractions: %
-      lu\n", All.NumCurrentTiStep, All.Time, All.TimeStep, All.Nself_interactionsSum);
+          printf("\nBegin Step %d, Time: %g, Systemstep: %g, NselfInteractions:
+       %lu\n", All.NumCurrentTiStep, All.Time, All.TimeStep, All.Nself_interactionsSum
+      );
           fflush(FdInfo);
         }
 #else       
       if(All.ComovingIntegrationOn)
         {
           z = 1.0 / (All.Time) - 1;
-          fprintf(FdInfo, "\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %
-      g, Dloga: %g\n",
+          fprintf(FdInfo, "\nBegin Step %d, Time: %g, Redshift: %g, Systemstep:
+       %g, Dloga: %g\n",
                   All.NumCurrentTiStep, All.Time, z, All.TimeStep,
                   log(All.Time) - log(All.Time - All.TimeStep));
-          printf("\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %g, Dloga:
-       %g\n", All.NumCurrentTiStep,
+          printf("\nBegin Step %d, Time: %g, Redshift: %g, Systemstep: %g,
+       Dloga: %g\n", All.NumCurrentTiStep,
                  All.Time, z, All.TimeStep, log(All.Time) - log(All.Time - All.
       TimeStep));
           fflush(FdInfo);
@@ -205,20 +195,20 @@ Referenced by run().
           fflush(FdInfo);
         }
 #endif
-      fprintf(FdCPU, "Step %d, Time: %g, CPUs: %d\n", All.NumCurrentTiStep, All.
-      Time, NTask);
+      fprintf(FdCPU, "Step %d, Time: %g, CPUs: %d\n", All.NumCurrentTiStep, All
+      .Time, NTask);
 
       fprintf(FdCPU,
-              "%10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10
-      .2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f\n",
-              All.CPU_Total, All.CPU_Gravity, All.CPU_Hydro, All.CPU_Domain, All.
-      CPU_Potential,
+              "%10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f
+       %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f %10.2f\n",
+              All.CPU_Total, All.CPU_Gravity, All.CPU_Hydro, All.CPU_Domain, All
+      .CPU_Potential,
               All.CPU_Predict, All.CPU_TimeLine, All.CPU_Snapshot, All.
       CPU_TreeWalk, All.CPU_TreeConstruction,
               All.CPU_CommSum, All.CPU_Imbalance, All.CPU_HydCompWalk, All.
       CPU_HydCommSumm,
-              All.CPU_HydImbalance, All.CPU_EnsureNgb, All.CPU_PM, All.CPU_Peano)
-      ;
+              All.CPU_HydImbalance, All.CPU_EnsureNgb, All.CPU_PM, All.
+      CPU_Peano);
       fflush(FdCPU);
     }
 
@@ -227,21 +217,19 @@ Referenced by run().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=356pt]{run_8c_a7e26319b203616f2c85b5fd6f2ade85d_cgraph}
+\includegraphics[width=350pt]{run_8c_a7e26319b203616f2c85b5fd6f2ade85d_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -251,32 +239,24 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{run_8c_a00802290d71ce2a6de3f121de55ddd20}{
-\index{run.c@{run.c}!find\_\-next\_\-outputtime@{find\_\-next\_\-outputtime}}
-\index{find\_\-next\_\-outputtime@{find\_\-next\_\-outputtime}!run.c@{run.c}}
-\subsubsection[{find\_\-next\_\-outputtime}]{\setlength{\rightskip}{0pt plus 5cm}int find\_\-next\_\-outputtime (
+\hypertarget{run_8c_a00802290d71ce2a6de3f121de55ddd20}{\index{run.\-c@{run.\-c}!find\-\_\-next\-\_\-outputtime@{find\-\_\-next\-\_\-outputtime}}
+\index{find\-\_\-next\-\_\-outputtime@{find\-\_\-next\-\_\-outputtime}!run.c@{run.\-c}}
+\subsubsection[{find\-\_\-next\-\_\-outputtime}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf find\-\_\-next\-\_\-outputtime} (
 \begin{DoxyParamCaption}
-\item[{int}]{ ti\_\-curr}
+\item[{int}]{ti\-\_\-curr}
 \end{DoxyParamCaption}
-)}}
-\label{run_8c_a00802290d71ce2a6de3f121de55ddd20}
-this function returns the next output time that is equal or larger to ti\_\-curr 
+)}}\label{run_8c_a00802290d71ce2a6de3f121de55ddd20}
+this function returns the next output time that is equal or larger to ti\-\_\-curr $<$ \-The simulated timespan is mapped onto the integer interval \mbox{[}0,\-T\-I\-M\-E\-S\-P\-A\-N\mbox{]}, $\ast$ where \-T\-I\-M\-E\-S\-P\-A\-N needs to be a power of 2. \-Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
 
-$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
-
-
-
-Definition at line 244 of file run.c.
+\-Definition at line 244 of file run.\-c.
 
 
 
-References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, endrun(), global\_\-data\_\-all\_\-processes::OutputListLength, global\_\-data\_\-all\_\-processes::OutputListOn, global\_\-data\_\-all\_\-processes::OutputListTimes, ThisTask, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, global\_\-data\_\-all\_\-processes::TimeBegin, global\_\-data\_\-all\_\-processes::TimeBetSnapshot, global\_\-data\_\-all\_\-processes::TimeMax, and global\_\-data\_\-all\_\-processes::TimeOfFirstSnapshot.
+\-References \-All, endrun(), and \-This\-Task.
 
 
 
-Referenced by begrun(), and find\_\-next\_\-sync\_\-point\_\-and\_\-drift().
-
-
+\-Referenced by begrun(), and find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift().
 
 
 \begin{DoxyCode}
@@ -392,8 +372,8 @@ Referenced by begrun(), and find\_\-next\_\-sync\_\-point\_\-and\_\-drift().
         next = All.TimeBegin + ti_next * All.Timebase_interval;
 
       if(ThisTask == 0)
-        printf("\nSetting next time for snapshot file to Time_next= %g\n\n", next
-      );
+        printf("\nSetting next time for snapshot file to Time_next= %g\n\n", 
+      next);
     }
 
   return ti_next;
@@ -401,52 +381,46 @@ Referenced by begrun(), and find\_\-next\_\-sync\_\-point\_\-and\_\-drift().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{run_8c_a00802290d71ce2a6de3f121de55ddd20_cgraph}
+\includegraphics[width=350pt]{run_8c_a00802290d71ce2a6de3f121de55ddd20_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{run_8c_a00802290d71ce2a6de3f121de55ddd20_icgraph}
+\includegraphics[width=350pt]{run_8c_a00802290d71ce2a6de3f121de55ddd20_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{run_8c_ad52604af910b3e1677718d863ab09391}{
-\index{run.c@{run.c}!find\_\-next\_\-sync\_\-point\_\-and\_\-drift@{find\_\-next\_\-sync\_\-point\_\-and\_\-drift}}
-\index{find\_\-next\_\-sync\_\-point\_\-and\_\-drift@{find\_\-next\_\-sync\_\-point\_\-and\_\-drift}!run.c@{run.c}}
-\subsubsection[{find\_\-next\_\-sync\_\-point\_\-and\_\-drift}]{\setlength{\rightskip}{0pt plus 5cm}void find\_\-next\_\-sync\_\-point\_\-and\_\-drift (
+\hypertarget{run_8c_ad52604af910b3e1677718d863ab09391}{\index{run.\-c@{run.\-c}!find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift@{find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift}}
+\index{find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift@{find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift}!run.c@{run.\-c}}
+\subsubsection[{find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{run_8c_ad52604af910b3e1677718d863ab09391}
-This function finds the next synchronization point of the system (i.e. the earliest point of time any of the particles needs a force computation), and drifts the system to this point of time. If the system drifts over the desired time of a snapshot file, the function will drift to this moment, generate an output, and then resume the drift. 
+)}}\label{run_8c_ad52604af910b3e1677718d863ab09391}
+\-This function finds the next synchronization point of the system (i.\-e. the earliest point of time any of the particles needs a force computation), and drifts the system to this point of time. \-If the system drifts over the desired time of a snapshot file, the function will drift to this moment, generate an output, and then resume the drift. 
 
-Definition at line 151 of file run.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, compute\_\-potential(), global\_\-data\_\-all\_\-processes::CPU\_\-Predict, domain\_\-Decomposition(), find\_\-next\_\-outputtime(), Flag\_\-FullStep, move\_\-particles(), NTask, global\_\-data\_\-all\_\-processes::NumForcesSinceLastDomainDecomp, NumForceUpdate, NumPart, P, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-endstep, savepositions(), second(), global\_\-data\_\-all\_\-processes::SnapshotFileCount, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Ti\_\-nextoutput, global\_\-data\_\-all\_\-processes::Time, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, global\_\-data\_\-all\_\-processes::TimeBegin, timediff(), global\_\-data\_\-all\_\-processes::TimeStep, global\_\-data\_\-all\_\-processes::TotNumPart, and global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency.
+\-Definition at line 151 of file run.\-c.
 
 
 
-Referenced by run().
+\-References \-All, compute\-\_\-potential(), domain\-\_\-\-Decomposition(), find\-\_\-next\-\_\-outputtime(), \-Flag\-\_\-\-Full\-Step, move\-\_\-particles(), \-N\-Task, \-Num\-Force\-Update, \-Num\-Part, \-P, savepositions(), second(), and timediff().
 
 
+
+\-Referenced by run().
 
 
 \begin{DoxyCode}
@@ -465,8 +439,8 @@ Referenced by run().
 
   MPI_Allreduce(&min, &min_glob, 1, MPI_INT, MPI_MIN, MPI_COMM_WORLD);
 
-  /* We check whether this is a full step where all particles are synchronized */
-      
+  /* We check whether this is a full step where all particles are synchronized 
+      */
   flag = 1;
   for(n = 0; n < NumPart; n++)
     if(P[n].Ti_endstep > min_glob)
@@ -482,8 +456,8 @@ Referenced by run().
     }
 #endif
 
-  /* Determine 'NumForceUpdate', i.e. the number of particles on this processor t
-      hat are going to be active */
+  /* Determine 'NumForceUpdate', i.e. the number of particles on this processor
+       that are going to be active */
   for(n = 0, NumForceUpdate = 0; n < NumPart; n++)
     {
       if(P[n].Ti_endstep == min_glob)
@@ -542,56 +516,46 @@ Referenced by run().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{run_8c_ad52604af910b3e1677718d863ab09391_cgraph}
+\includegraphics[width=350pt]{run_8c_ad52604af910b3e1677718d863ab09391_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=390pt]{run_8c_ad52604af910b3e1677718d863ab09391_icgraph}
+\includegraphics[width=350pt]{run_8c_ad52604af910b3e1677718d863ab09391_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2}{
-\index{run.c@{run.c}!run@{run}}
-\index{run@{run}!run.c@{run.c}}
-\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void run (
+\hypertarget{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2}{\index{run.\-c@{run.\-c}!run@{run}}
+\index{run@{run}!run.c@{run.\-c}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf run} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2}
-This routine contains the main simulation loop that iterates over single timesteps. The loop terminates when the cpu-\/time limit is reached, when a `stop' file is found in the output directory, or when the simulation ends because we arrived at TimeMax. 
+)}}\label{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2}
+\-This routine contains the main simulation loop that iterates over single timesteps. \-The loop terminates when the cpu-\/time limit is reached, when a `stop' file is found in the output directory, or when the simulation ends because we arrived at \-Time\-Max. $<$ \-The simulated timespan is mapped onto the integer interval \mbox{[}0,\-T\-I\-M\-E\-S\-P\-A\-N\mbox{]}, $\ast$ where \-T\-I\-M\-E\-S\-P\-A\-N needs to be a power of 2. \-Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
 
-$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
-
-
-
-Definition at line 20 of file run.c.
+\-Definition at line 20 of file run.\-c.
 
 
 
-References advance\_\-and\_\-find\_\-timesteps(), All, close\_\-outputfiles(), compute\_\-accelerations(), compute\_\-potential(), global\_\-data\_\-all\_\-processes::CPU\_\-Total, CPUThisRun, global\_\-data\_\-all\_\-processes::CpuTimeBetRestartFile, domain\_\-Decomposition(), energy\_\-statistics(), every\_\-timestep\_\-stuff(), fd, find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), global\_\-data\_\-all\_\-processes::NumCurrentTiStep, global\_\-data\_\-all\_\-processes::OutputDir, restart(), global\_\-data\_\-all\_\-processes::ResubmitCommand, global\_\-data\_\-all\_\-processes::ResubmitOn, savepositions(), second(), global\_\-data\_\-all\_\-processes::SnapshotFileCount, ThisTask, global\_\-data\_\-all\_\-processes::Ti\_\-Current, global\_\-data\_\-all\_\-processes::Time, TIMEBASE, global\_\-data\_\-all\_\-processes::TimeBetStatistics, timediff(), global\_\-data\_\-all\_\-processes::TimeLastRestartFile, global\_\-data\_\-all\_\-processes::TimeLastStatistics, global\_\-data\_\-all\_\-processes::TimeLimitCPU, and global\_\-data\_\-all\_\-processes::TimeMax.
+\-References advance\-\_\-and\-\_\-find\-\_\-timesteps(), \-All, close\-\_\-outputfiles(), compute\-\_\-accelerations(), compute\-\_\-potential(), \-C\-P\-U\-This\-Run, domain\-\_\-\-Decomposition(), energy\-\_\-statistics(), every\-\_\-timestep\-\_\-stuff(), fd, find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift(), restart(), savepositions(), second(), \-This\-Task, and timediff().
 
 
 
-Referenced by main().
-
-
+\-Referenced by main().
 
 
 \begin{DoxyCode}
@@ -610,10 +574,10 @@ Referenced by main().
     {
       t0 = second();
 
-      find_next_sync_point_and_drift(); /* find next synchronization point and dr
-      ift particles to this time.
-                                         * If needed, this function will also wri
-      te an output file
+      find_next_sync_point_and_drift(); /* find next synchronization point and
+       drift particles to this time.
+                                         * If needed, this function will also
+       write an output file
                                          * at the desired time.
                                          */
 
@@ -686,8 +650,8 @@ Referenced by main().
       /* is it time to write a regular restart-file? (for security) */
       if(ThisTask == 0)
         {
-          if((CPUThisRun - All.TimeLastRestartFile) >= All.CpuTimeBetRestartFile)
-      
+          if((CPUThisRun - All.TimeLastRestartFile) >= All.
+      CpuTimeBetRestartFile)
             {
               All.TimeLastRestartFile = CPUThisRun;
               stopflag = 3;
@@ -723,21 +687,19 @@ Referenced by main().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2_cgraph}
+\includegraphics[width=350pt]{run_8c_a05e0ffe612d44e6d7f3a9ae5b9df56a2_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}

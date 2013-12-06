@@ -1,74 +1,69 @@
-\hypertarget{endrun_8c}{
-\section{endrun.c File Reference}
-\label{endrun_8c}\index{endrun.c@{endrun.c}}
+\hypertarget{endrun_8c}{\section{endrun.\-c \-File \-Reference}
+\label{endrun_8c}\index{endrun.\-c@{endrun.\-c}}
 }
 
 
-Termination of simulation.  
+\-Termination of simulation.  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include $<$signal.h$>$}\par
-{\ttfamily \#include $<$unistd.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for endrun.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include $<$signal.\-h$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for endrun.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{endrun_8c__incl}
+\includegraphics[width=350pt]{endrun_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{endrun_8c_a6c7c5d488c8a9e1fb9c408ae00aa8839}{endrun} (int ierr)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Termination of simulation. This file contains routines for termination of the simulation. 
+\subsection{\-Detailed \-Description}
+\-Termination of simulation. \-This file contains routines for termination of the simulation. 
 
-Definition in file \hyperlink{endrun_8c_source}{endrun.c}.
+\-Definition in file \hyperlink{endrun_8c_source}{endrun.\-c}.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{endrun_8c_a6c7c5d488c8a9e1fb9c408ae00aa8839}{
-\index{endrun.c@{endrun.c}!endrun@{endrun}}
-\index{endrun@{endrun}!endrun.c@{endrun.c}}
-\subsubsection[{endrun}]{\setlength{\rightskip}{0pt plus 5cm}void endrun (
+\subsection{\-Function \-Documentation}
+\hypertarget{endrun_8c_a6c7c5d488c8a9e1fb9c408ae00aa8839}{\index{endrun.\-c@{endrun.\-c}!endrun@{endrun}}
+\index{endrun@{endrun}!endrun.c@{endrun.\-c}}
+\subsubsection[{endrun}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf endrun} (
 \begin{DoxyParamCaption}
-\item[{int}]{ ierr}
+\item[{int}]{ierr}
 \end{DoxyParamCaption}
-)}}
-\label{endrun_8c_a6c7c5d488c8a9e1fb9c408ae00aa8839}
-This function aborts the simulations. If a single processors wants an immediate termination, the function needs to be called with ierr$>$0. A bunch of MPI-\/error messages may also appear in this case. For ierr=0, MPI is gracefully cleaned up, but this requires that all processors call \hyperlink{endrun_8c_a6c7c5d488c8a9e1fb9c408ae00aa8839}{endrun()}. 
+)}}\label{endrun_8c_a6c7c5d488c8a9e1fb9c408ae00aa8839}
+\-This function aborts the simulations. \-If a single processors wants an immediate termination, the function needs to be called with ierr$>$0. \-A bunch of \-M\-P\-I-\/error messages may also appear in this case. \-For ierr=0, \-M\-P\-I is gracefully cleaned up, but this requires that all processors call \hyperlink{endrun_8c_a6c7c5d488c8a9e1fb9c408ae00aa8839}{endrun()}. 
 
-Definition at line 25 of file endrun.c.
-
-
-
-References terminate\_\-processes(), and ThisTask.
+\-Definition at line 25 of file endrun.\-c.
 
 
 
-Referenced by allocate\_\-commbuffers(), allocate\_\-memory(), AllocateInteractionTable(), check\_\-omega(), compute\_\-potential(), density(), domain\_\-decompose(), domain\_\-exchangeParticles(), domain\_\-topsplit(), domain\_\-topsplit\_\-local(), find\_\-files(), find\_\-next\_\-outputtime(), force\_\-create\_\-empty\_\-nodes(), force\_\-insert\_\-pseudo\_\-particles(), force\_\-treeallocate(), force\_\-treebuild\_\-single(), force\_\-treeevaluate(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), force\_\-treeevaluate\_\-shortrange(), get\_\-particles\_\-in\_\-block(), get\_\-timestep(), gravity\_\-forcetest(), init(), long\_\-range\_\-force(), main(), my\_\-fread(), my\_\-fwrite(), ngb\_\-treeallocate(), open\_\-outputfiles(), pm\_\-init\_\-periodic\_\-allocate(), read\_\-file(), read\_\-parameter\_\-file(), readjust\_\-timebase(), restart(), savepositions(), update\_\-interaction\_\-table(), and write\_\-file().
+\-References terminate\-\_\-processes(), and \-This\-Task.
 
 
+
+\-Referenced by allocate\-\_\-commbuffers(), allocate\-\_\-memory(), \-Allocate\-Interaction\-Table(), check\-\_\-omega(), compute\-\_\-potential(), density(), domain\-\_\-decompose(), domain\-\_\-exchange\-Particles(), domain\-\_\-topsplit(), domain\-\_\-topsplit\-\_\-local(), find\-\_\-files(), find\-\_\-next\-\_\-outputtime(), force\-\_\-create\-\_\-empty\-\_\-nodes(), force\-\_\-insert\-\_\-pseudo\-\_\-particles(), force\-\_\-treeallocate(), force\-\_\-treebuild\-\_\-single(), force\-\_\-treeevaluate(), force\-\_\-treeevaluate\-\_\-potential(), force\-\_\-treeevaluate\-\_\-potential\-\_\-shortrange(), force\-\_\-treeevaluate\-\_\-shortrange(), get\-\_\-particles\-\_\-in\-\_\-block(), get\-\_\-timestep(), gravity\-\_\-forcetest(), init(), long\-\_\-range\-\_\-force(), main(), my\-\_\-fread(), my\-\_\-fwrite(), ngb\-\_\-treeallocate(), open\-\_\-outputfiles(), pm\-\_\-init\-\_\-periodic\-\_\-allocate(), read\-\_\-file(), read\-\_\-parameter\-\_\-file(), readjust\-\_\-timebase(), restart(), savepositions(), update\-\_\-interaction\-\_\-table(), and write\-\_\-file().
 
 
 \begin{DoxyCode}
 {
   if(ierr)
     {
-      printf("task %d: endrun called with an error level of %d\n\n\n", ThisTask, 
-      ierr);
+      printf("task %d: endrun called with an error level of %d\n\n\n", ThisTask
+      , ierr);
       fflush(stdout);
 #ifdef DEBUG
       terminate_processes();
@@ -86,9 +81,7 @@ Referenced by allocate\_\-commbuffers(), allocate\_\-memory(), AllocateInteracti
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -100,12 +93,12 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{endrun_8c_a6c7c5d488c8a9e1fb9c408ae00aa8839_icgraph}
+\includegraphics[width=350pt]{endrun_8c_a6c7c5d488c8a9e1fb9c408ae00aa8839_icgraph}
 \end{center}
 \end{figure}
 

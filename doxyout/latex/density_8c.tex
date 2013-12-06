@@ -1,168 +1,151 @@
-\hypertarget{density_8c}{
-\section{density.c File Reference}
-\label{density_8c}\index{density.c@{density.c}}
+\hypertarget{density_8c}{\section{density.\-c \-File \-Reference}
+\label{density_8c}\index{density.\-c@{density.\-c}}
 }
 
 
-SPH density computation and smoothing length determination.  
+\-S\-P\-H density computation and smoothing length determination.  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for density.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for density.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{density_8c__incl}
+\includegraphics[width=350pt]{density_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Defines}
+\subsection*{\-Defines}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{density_8c_a5c5328b307b005e6682669279878cef0}{boxSize\_\-X}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\#define \hyperlink{density_8c_a5c5328b307b005e6682669279878cef0}{box\-Size\-\_\-\-X}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-\#define \hyperlink{density_8c_a0ecceb71797a529fb6f2b8c47b51686c}{boxHalf\_\-X}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\#define \hyperlink{density_8c_a0ecceb71797a529fb6f2b8c47b51686c}{box\-Half\-\_\-\-X}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \item 
-\#define \hyperlink{density_8c_ab0db73a31e08d33d840e28651e3cf610}{boxSize\_\-Y}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\#define \hyperlink{density_8c_ab0db73a31e08d33d840e28651e3cf610}{box\-Size\-\_\-\-Y}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-\#define \hyperlink{density_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{boxHalf\_\-Y}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\#define \hyperlink{density_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{box\-Half\-\_\-\-Y}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \item 
-\#define \hyperlink{density_8c_a8a97a1c456bdd396791c84c370f0aa18}{boxSize\_\-Z}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\#define \hyperlink{density_8c_a8a97a1c456bdd396791c84c370f0aa18}{box\-Size\-\_\-\-Z}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-\#define \hyperlink{density_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{boxHalf\_\-Z}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\#define \hyperlink{density_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{box\-Half\-\_\-\-Z}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \end{DoxyCompactItemize}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{density_8c_ad86cdeb9e3bfbe9af379ac9f7daf194c}{density} (void)
 \item 
-void \hyperlink{density_8c_a4e6b32342a24a33518b6ae8723809749}{density\_\-evaluate} (int target, int mode)
+void \hyperlink{density_8c_a4e6b32342a24a33518b6ae8723809749}{density\-\_\-evaluate} (int target, int mode)
 \item 
-int \hyperlink{density_8c_ab6453dd0ac2ecf2478b1208374e68ae1}{dens\_\-compare\_\-key} (const void $\ast$a, const void $\ast$b)
+int \hyperlink{density_8c_ab6453dd0ac2ecf2478b1208374e68ae1}{dens\-\_\-compare\-\_\-key} (const void $\ast$a, const void $\ast$b)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
+\subsection*{\-Variables}
 \begin{DoxyCompactItemize}
 \item 
-static double \hyperlink{density_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+static double \hyperlink{density_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-static double \hyperlink{density_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+static double \hyperlink{density_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-SPH density computation and smoothing length determination. This file contains the \char`\"{}first SPH loop\char`\"{}, where the SPH densities and some auxiliary quantities are computed. If the number of neighbours obtained falls outside the target range, the correct smoothing length is determined iteratively, if needed. 
+\subsection{\-Detailed \-Description}
+\-S\-P\-H density computation and smoothing length determination. \-This file contains the \char`\"{}first S\-P\-H loop\char`\"{}, where the \-S\-P\-H densities and some auxiliary quantities are computed. \-If the number of neighbours obtained falls outside the target range, the correct smoothing length is determined iteratively, if needed. 
 
-Definition in file \hyperlink{density_8c_source}{density.c}.
-
-
-
-\subsection{Define Documentation}
-\hypertarget{density_8c_a0ecceb71797a529fb6f2b8c47b51686c}{
-\index{density.c@{density.c}!boxHalf\_\-X@{boxHalf\_\-X}}
-\index{boxHalf\_\-X@{boxHalf\_\-X}!density.c@{density.c}}
-\subsubsection[{boxHalf\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-X~{\bf boxHalf}}}
-\label{density_8c_a0ecceb71797a529fb6f2b8c47b51686c}
-
-
-Definition at line 28 of file density.c.
+\-Definition in file \hyperlink{density_8c_source}{density.\-c}.
 
 
 
-Referenced by density(), and density\_\-evaluate().
-
-\hypertarget{density_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{
-\index{density.c@{density.c}!boxHalf\_\-Y@{boxHalf\_\-Y}}
-\index{boxHalf\_\-Y@{boxHalf\_\-Y}!density.c@{density.c}}
-\subsubsection[{boxHalf\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-Y~{\bf boxHalf}}}
-\label{density_8c_a59f20d7decc2bdfedcaafb70ef23df0e}
+\subsection{\-Define \-Documentation}
+\hypertarget{density_8c_a0ecceb71797a529fb6f2b8c47b51686c}{\index{density.\-c@{density.\-c}!box\-Half\-\_\-\-X@{box\-Half\-\_\-\-X}}
+\index{box\-Half\-\_\-\-X@{box\-Half\-\_\-\-X}!density.c@{density.\-c}}
+\subsubsection[{box\-Half\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Half\-\_\-\-X}~{\bf box\-Half}}}\label{density_8c_a0ecceb71797a529fb6f2b8c47b51686c}
 
 
-Definition at line 34 of file density.c.
+\-Definition at line 28 of file density.\-c.
 
 
 
-Referenced by density(), and density\_\-evaluate().
+\-Referenced by density(), and density\-\_\-evaluate().
 
-\hypertarget{density_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{
-\index{density.c@{density.c}!boxHalf\_\-Z@{boxHalf\_\-Z}}
-\index{boxHalf\_\-Z@{boxHalf\_\-Z}!density.c@{density.c}}
-\subsubsection[{boxHalf\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-Z~{\bf boxHalf}}}
-\label{density_8c_a34e9d5d079320cbfc0576d26f58d2fe7}
+\hypertarget{density_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{\index{density.\-c@{density.\-c}!box\-Half\-\_\-\-Y@{box\-Half\-\_\-\-Y}}
+\index{box\-Half\-\_\-\-Y@{box\-Half\-\_\-\-Y}!density.c@{density.\-c}}
+\subsubsection[{box\-Half\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Half\-\_\-\-Y}~{\bf box\-Half}}}\label{density_8c_a59f20d7decc2bdfedcaafb70ef23df0e}
 
 
-Definition at line 40 of file density.c.
+\-Definition at line 34 of file density.\-c.
 
 
 
-Referenced by density(), and density\_\-evaluate().
+\-Referenced by density(), and density\-\_\-evaluate().
 
-\hypertarget{density_8c_a5c5328b307b005e6682669279878cef0}{
-\index{density.c@{density.c}!boxSize\_\-X@{boxSize\_\-X}}
-\index{boxSize\_\-X@{boxSize\_\-X}!density.c@{density.c}}
-\subsubsection[{boxSize\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-X~{\bf boxSize}}}
-\label{density_8c_a5c5328b307b005e6682669279878cef0}
+\hypertarget{density_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{\index{density.\-c@{density.\-c}!box\-Half\-\_\-\-Z@{box\-Half\-\_\-\-Z}}
+\index{box\-Half\-\_\-\-Z@{box\-Half\-\_\-\-Z}!density.c@{density.\-c}}
+\subsubsection[{box\-Half\-\_\-\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Half\-\_\-\-Z}~{\bf box\-Half}}}\label{density_8c_a34e9d5d079320cbfc0576d26f58d2fe7}
 
 
-Definition at line 27 of file density.c.
+\-Definition at line 40 of file density.\-c.
 
 
 
-Referenced by density().
+\-Referenced by density(), and density\-\_\-evaluate().
 
-\hypertarget{density_8c_ab0db73a31e08d33d840e28651e3cf610}{
-\index{density.c@{density.c}!boxSize\_\-Y@{boxSize\_\-Y}}
-\index{boxSize\_\-Y@{boxSize\_\-Y}!density.c@{density.c}}
-\subsubsection[{boxSize\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-Y~{\bf boxSize}}}
-\label{density_8c_ab0db73a31e08d33d840e28651e3cf610}
+\hypertarget{density_8c_a5c5328b307b005e6682669279878cef0}{\index{density.\-c@{density.\-c}!box\-Size\-\_\-\-X@{box\-Size\-\_\-\-X}}
+\index{box\-Size\-\_\-\-X@{box\-Size\-\_\-\-X}!density.c@{density.\-c}}
+\subsubsection[{box\-Size\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Size\-\_\-\-X}~{\bf box\-Size}}}\label{density_8c_a5c5328b307b005e6682669279878cef0}
 
 
-Definition at line 33 of file density.c.
+\-Definition at line 27 of file density.\-c.
 
 
 
-Referenced by density().
+\-Referenced by density(), and density\-\_\-evaluate().
 
-\hypertarget{density_8c_a8a97a1c456bdd396791c84c370f0aa18}{
-\index{density.c@{density.c}!boxSize\_\-Z@{boxSize\_\-Z}}
-\index{boxSize\_\-Z@{boxSize\_\-Z}!density.c@{density.c}}
-\subsubsection[{boxSize\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-Z~{\bf boxSize}}}
-\label{density_8c_a8a97a1c456bdd396791c84c370f0aa18}
+\hypertarget{density_8c_ab0db73a31e08d33d840e28651e3cf610}{\index{density.\-c@{density.\-c}!box\-Size\-\_\-\-Y@{box\-Size\-\_\-\-Y}}
+\index{box\-Size\-\_\-\-Y@{box\-Size\-\_\-\-Y}!density.c@{density.\-c}}
+\subsubsection[{box\-Size\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Size\-\_\-\-Y}~{\bf box\-Size}}}\label{density_8c_ab0db73a31e08d33d840e28651e3cf610}
 
 
-Definition at line 39 of file density.c.
+\-Definition at line 33 of file density.\-c.
 
 
 
-Referenced by density().
+\-Referenced by density(), and density\-\_\-evaluate().
+
+\hypertarget{density_8c_a8a97a1c456bdd396791c84c370f0aa18}{\index{density.\-c@{density.\-c}!box\-Size\-\_\-\-Z@{box\-Size\-\_\-\-Z}}
+\index{box\-Size\-\_\-\-Z@{box\-Size\-\_\-\-Z}!density.c@{density.\-c}}
+\subsubsection[{box\-Size\-\_\-\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Size\-\_\-\-Z}~{\bf box\-Size}}}\label{density_8c_a8a97a1c456bdd396791c84c370f0aa18}
+
+
+\-Definition at line 39 of file density.\-c.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{density_8c_ab6453dd0ac2ecf2478b1208374e68ae1}{
-\index{density.c@{density.c}!dens\_\-compare\_\-key@{dens\_\-compare\_\-key}}
-\index{dens\_\-compare\_\-key@{dens\_\-compare\_\-key}!density.c@{density.c}}
-\subsubsection[{dens\_\-compare\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int dens\_\-compare\_\-key (
+\-Referenced by density(), and density\-\_\-evaluate().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{density_8c_ab6453dd0ac2ecf2478b1208374e68ae1}{\index{density.\-c@{density.\-c}!dens\-\_\-compare\-\_\-key@{dens\-\_\-compare\-\_\-key}}
+\index{dens\-\_\-compare\-\_\-key@{dens\-\_\-compare\-\_\-key}!density.c@{density.\-c}}
+\subsubsection[{dens\-\_\-compare\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf dens\-\_\-compare\-\_\-key} (
 \begin{DoxyParamCaption}
-\item[{const void $\ast$}]{ a, }
-\item[{const void $\ast$}]{ b}
+\item[{const void $\ast$}]{a, }
+\item[{const void $\ast$}]{b}
 \end{DoxyParamCaption}
-)}}
-\label{density_8c_ab6453dd0ac2ecf2478b1208374e68ae1}
-This routine is a comparison kernel used in a sort routine to group particles that are exported to the same processor. 
+)}}\label{density_8c_ab6453dd0ac2ecf2478b1208374e68ae1}
+\-This routine is a comparison kernel used in a sort routine to group particles that are exported to the same processor. 
 
-Definition at line 607 of file density.c.
-
+\-Definition at line 607 of file density.\-c.
 
 
-Referenced by density().
 
-
+\-Referenced by density().
 
 
 \begin{DoxyCode}
@@ -178,54 +161,44 @@ Referenced by density().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{density_8c_ab6453dd0ac2ecf2478b1208374e68ae1_icgraph}
+\includegraphics[width=350pt]{density_8c_ab6453dd0ac2ecf2478b1208374e68ae1_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{density_8c_ad86cdeb9e3bfbe9af379ac9f7daf194c}{
-\index{density.c@{density.c}!density@{density}}
-\index{density@{density}!density.c@{density.c}}
-\subsubsection[{density}]{\setlength{\rightskip}{0pt plus 5cm}void density (
+\hypertarget{density_8c_ad86cdeb9e3bfbe9af379ac9f7daf194c}{\index{density.\-c@{density.\-c}!density@{density}}
+\index{density@{density}!density.c@{density.\-c}}
+\subsubsection[{density}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf density} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{density_8c_ad86cdeb9e3bfbe9af379ac9f7daf194c}
-This function computes the local density for each active SPH particle, the number of neighbours in the current smoothing radius, and the divergence and curl of the velocity field. The pressure is updated as well. If a particle with its smoothing region is fully inside the local domain, it is not exported to the other processors. The function also detects particles that have a number of neighbours outside the allowed tolerance range. For these particles, the smoothing length is adjusted accordingly, and the density computation is executed again. Note that the smoothing length is not allowed to fall below the lower bound set by MinGasHsml. 
-
-$<$ For 3D-\/normalized kernel
+)}}\label{density_8c_ad86cdeb9e3bfbe9af379ac9f7daf194c}
+\-This function computes the local density for each active \-S\-P\-H particle, the number of neighbours in the current smoothing radius, and the divergence and curl of the velocity field. \-The pressure is updated as well. \-If a particle with its smoothing region is fully inside the local domain, it is not exported to the other processors. \-The function also detects particles that have a number of neighbours outside the allowed tolerance range. \-For these particles, the smoothing length is adjusted accordingly, and the density computation is executed again. \-Note that the smoothing length is not allowed to fall below the lower bound set by \-Min\-Gas\-Hsml. $<$ \-For 3\-D-\/normalized kernel
 
 $<$ adiabatic index of simulated gas
 
-$<$ maxmimum number of steps for SPH neighbour iteration
+$<$ maxmimum number of steps for \-S\-P\-H neighbour iteration
 
-$<$ For 3D-\/normalized kernel
+$<$ \-For 3\-D-\/normalized kernel
 
-$<$ For 3D-\/normalized kernel
+$<$ \-For 3\-D-\/normalized kernel
 
-$<$ maxmimum number of steps for SPH neighbour iteration 
+$<$ maxmimum number of steps for \-S\-P\-H neighbour iteration 
 
-
-
-Definition at line 56 of file density.c.
+\-Definition at line 56 of file density.\-c.
 
 
 
-References All, boxHalf, boxHalf\_\-X, boxHalf\_\-Y, boxHalf\_\-Z, global\_\-data\_\-all\_\-processes::BoxSize, boxSize, boxSize\_\-X, boxSize\_\-Y, boxSize\_\-Z, global\_\-data\_\-all\_\-processes::BunchSizeDensity, global\_\-data\_\-all\_\-processes::CPU\_\-EnsureNgb, global\_\-data\_\-all\_\-processes::CPU\_\-HydCommSumm, global\_\-data\_\-all\_\-processes::CPU\_\-HydCompWalk, global\_\-data\_\-all\_\-processes::CPU\_\-HydImbalance, sph\_\-particle\_\-data::CurlVel, dens\_\-compare\_\-key(), DensDataGet, DensDataIn, DensDataPartialResult, DensDataResult, sph\_\-particle\_\-data::Density, density\_\-evaluate(), global\_\-data\_\-all\_\-processes::DesNumNgb, densdata\_\-out::DhsmlDensity, sph\_\-particle\_\-data::DhsmlDensityFactor, densdata\_\-out::Div, sph\_\-particle\_\-data::DivVel, dmax(), sph\_\-particle\_\-data::DtEntropy, endrun(), sph\_\-particle\_\-data::Entropy, Exportflag, GAMMA, sph\_\-particle\_\-data::Hsml, densdata\_\-in::Hsml, densdata\_\-in::Index, sph\_\-particle\_\-data::Left, MAXITER, global\_\-data\_\-all\_\-processes::MaxNumNgbDeviation, global\_\-data\_\-all\_\-processes::MinGasHsml, N\_\-gas, densdata\_\-out::Ngb, NTask, NUMDIMS, sph\_\-particle\_\-data::NumNgb, NumPart, NumSphUpdate, P, particle\_\-data::Pos, densdata\_\-in::Pos, pow(), sph\_\-particle\_\-data::Pressure, PTask, densdata\_\-out::Rho, sph\_\-particle\_\-data::Right, densdata\_\-out::Rot, sph\_\-particle\_\-data::Rot, second(), SphP, TAG\_\-DENS\_\-A, TAG\_\-DENS\_\-B, densdata\_\-in::Task, ThisTask, particle\_\-data::Ti\_\-begstep, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, timediff(), densdata\_\-in::Vel, and sph\_\-particle\_\-data::VelPred.
+\-References \-All, box\-Half, box\-Half\-\_\-\-X, box\-Half\-\_\-\-Y, box\-Half\-\_\-\-Z, box\-Size, box\-Size\-\_\-\-X, box\-Size\-\_\-\-Y, box\-Size\-\_\-\-Z, dens\-\_\-compare\-\_\-key(), \-Dens\-Data\-Get, \-Dens\-Data\-In, \-Dens\-Data\-Partial\-Result, \-Dens\-Data\-Result, density\-\_\-evaluate(), dmax(), endrun(), \-Exportflag, \-N\-\_\-gas, \-N\-Task, \-Num\-Part, \-Num\-Sph\-Update, \-P, pow(), \-P\-Task, second(), \-Sph\-P, \-T\-A\-G\-\_\-\-D\-E\-N\-S\-\_\-\-A, \-T\-A\-G\-\_\-\-D\-E\-N\-S\-\_\-\-B, \-This\-Task, and timediff().
 
 
 
-Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
-
-
+\-Referenced by compute\-\_\-accelerations(), and setup\-\_\-smoothinglengths().
 
 
 \begin{DoxyCode}
@@ -257,8 +230,8 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
 #endif
 
 
-  noffset = malloc(sizeof(int) * NTask);        /* offsets of bunches in common l
-      ist */
+  noffset = malloc(sizeof(int) * NTask);        /* offsets of bunches in common
+       list */
   nbuffer = malloc(sizeof(int) * NTask);
   nsend_local = malloc(sizeof(int) * NTask);
   nsend = malloc(sizeof(int) * NTask * NTask);
@@ -273,7 +246,8 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
     }
 
   numlist = malloc(NTask * sizeof(int) * NTask);
-  MPI_Allgather(&NumSphUpdate, 1, MPI_INT, numlist, 1, MPI_INT, MPI_COMM_WORLD);
+  MPI_Allgather(&NumSphUpdate, 1, MPI_INT, numlist, 1, MPI_INT, MPI_COMM_WORLD)
+      ;
   for(i = 0, ntot = 0; i < NTask; i++)
     ntot += numlist[i];
   free(numlist);
@@ -335,8 +309,8 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
 
           tstart = second();
 
-          MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, MPI_C
-      OMM_WORLD);
+          MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, 
+      MPI_COMM_WORLD);
 
           tend = second();
           timeimbalance += timediff(tstart, tend);
@@ -355,7 +329,8 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
                   for(j = 0; j < NTask; j++)
                     {
                       if((j ^ ngrp) < NTask)
-                        if(maxfill < nbuffer[j] + nsend[(j ^ ngrp) * NTask + j])
+                        if(maxfill < nbuffer[j] + nsend[(j ^ ngrp) * NTask + j]
+      )
                           maxfill = nbuffer[j] + nsend[(j ^ ngrp) * NTask + j];
                     }
                   if(maxfill >= All.BunchSizeDensity)
@@ -366,8 +341,8 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
 
                   if(recvTask < NTask)
                     {
-                      if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask
-       * NTask + ThisTask] > 0)
+                      if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[
+      recvTask * NTask + ThisTask] > 0)
                         {
                           /* get the particles */
                           MPI_Sendrecv(&DensDataIn[noffset[recvTask]],
@@ -375,10 +350,10 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
       densdata_in), MPI_BYTE,
                                        recvTask, TAG_DENS_A,
                                        &DensDataGet[nbuffer[ThisTask]],
-                                       nsend[recvTask * NTask + ThisTask] * sizeo
-      f(struct densdata_in),
-                                       MPI_BYTE, recvTask, TAG_DENS_A, MPI_COMM_W
-      ORLD, &status);
+                                       nsend[recvTask * NTask + ThisTask] * 
+      sizeof(struct densdata_in),
+                                       MPI_BYTE, recvTask, TAG_DENS_A, 
+      MPI_COMM_WORLD, &status);
                         }
                     }
 
@@ -412,7 +387,8 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
                   for(j = 0; j < NTask; j++)
                     {
                       if((j ^ ngrp) < NTask)
-                        if(maxfill < nbuffer[j] + nsend[(j ^ ngrp) * NTask + j])
+                        if(maxfill < nbuffer[j] + nsend[(j ^ ngrp) * NTask + j]
+      )
                           maxfill = nbuffer[j] + nsend[(j ^ ngrp) * NTask + j];
                     }
                   if(maxfill >= All.BunchSizeDensity)
@@ -423,20 +399,20 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
 
                   if(recvTask < NTask)
                     {
-                      if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask
-       * NTask + ThisTask] > 0)
+                      if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[
+      recvTask * NTask + ThisTask] > 0)
                         {
                           /* send the results */
                           MPI_Sendrecv(&DensDataResult[nbuffer[ThisTask]],
-                                       nsend[recvTask * NTask + ThisTask] * sizeo
-      f(struct densdata_out),
+                                       nsend[recvTask * NTask + ThisTask] * 
+      sizeof(struct densdata_out),
                                        MPI_BYTE, recvTask, TAG_DENS_B,
-                                       &DensDataPartialResult[noffset[recvTask]],
-      
+                                       &DensDataPartialResult[noffset[recvTask]
+      ],
                                        nsend_local[recvTask] * sizeof(struct 
       densdata_out),
-                                       MPI_BYTE, recvTask, TAG_DENS_B, MPI_COMM_W
-      ORLD, &status);
+                                       MPI_BYTE, recvTask, TAG_DENS_B, 
+      MPI_COMM_WORLD, &status);
 
                           /* add the result to the particles */
                           for(j = 0; j < nsend_local[recvTask]; j++)
@@ -444,22 +420,22 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
                               source = j + noffset[recvTask];
                               place = DensDataIn[source].Index;
 
-                              SphP[place].NumNgb += DensDataPartialResult[source]
-      .Ngb;
-                              SphP[place].Density += DensDataPartialResult[source
-      ].Rho;
-                              SphP[place].DivVel += DensDataPartialResult[source]
-      .Div;
+                              SphP[place].NumNgb += DensDataPartialResult[
+      source].Ngb;
+                              SphP[place].Density += DensDataPartialResult[
+      source].Rho;
+                              SphP[place].DivVel += DensDataPartialResult[
+      source].Div;
 
                               SphP[place].DhsmlDensityFactor += 
       DensDataPartialResult[source].DhsmlDensity;
 
-                              SphP[place].Rot[0] += DensDataPartialResult[source]
-      .Rot[0];
-                              SphP[place].Rot[1] += DensDataPartialResult[source]
-      .Rot[1];
-                              SphP[place].Rot[2] += DensDataPartialResult[source]
-      .Rot[2];
+                              SphP[place].Rot[0] += DensDataPartialResult[
+      source].Rot[0];
+                              SphP[place].Rot[1] += DensDataPartialResult[
+      source].Rot[1];
+                              SphP[place].Rot[2] += DensDataPartialResult[
+      source].Rot[2];
                             }
                         }
                     }
@@ -474,8 +450,8 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
               level = ngrp - 1;
             }
 
-          MPI_Allgather(&ndone, 1, MPI_INT, ndonelist, 1, MPI_INT, MPI_COMM_WORLD
-      );
+          MPI_Allgather(&ndone, 1, MPI_INT, ndonelist, 1, MPI_INT, 
+      MPI_COMM_WORLD);
           for(j = 0; j < NTask; j++)
             ntotleft -= ndonelist[j];
         }
@@ -490,22 +466,22 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
             {
               {
                 SphP[i].DhsmlDensityFactor =
-                  1 / (1 + SphP[i].Hsml * SphP[i].DhsmlDensityFactor / (NUMDIMS *
-       SphP[i].Density));
+                  1 / (1 + SphP[i].Hsml * SphP[i].DhsmlDensityFactor / (NUMDIMS
+       * SphP[i].Density));
 
                 SphP[i].CurlVel = sqrt(SphP[i].Rot[0] * SphP[i].Rot[0] +
                                        SphP[i].Rot[1] * SphP[i].Rot[1] +
-                                       SphP[i].Rot[2] * SphP[i].Rot[2]) / SphP[i]
-      .Density;
+                                       SphP[i].Rot[2] * SphP[i].Rot[2]) / SphP[
+      i].Density;
 
                 SphP[i].DivVel /= SphP[i].Density;
 
-                dt_entr = (All.Ti_Current - (P[i].Ti_begstep + P[i].Ti_endstep) /
-       2) * All.Timebase_interval;
+                dt_entr = (All.Ti_Current - (P[i].Ti_begstep + P[i].Ti_endstep)
+       / 2) * All.Timebase_interval;
 
                 SphP[i].Pressure =
-                  (SphP[i].Entropy + SphP[i].DtEntropy * dt_entr) * pow(SphP[i].D
-      ensity, GAMMA);
+                  (SphP[i].Entropy + SphP[i].DtEntropy * dt_entr) * pow(SphP[i]
+      .Density, GAMMA);
               }
 
 
@@ -523,8 +499,8 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
                       {
                         /* this one should be ok */
                         npleft--;
-                        P[i].Ti_endstep = -P[i].Ti_endstep - 1; /* Mark as inacti
-      ve */
+                        P[i].Ti_endstep = -P[i].Ti_endstep - 1; /* Mark as
+       inactive */
                         continue;
                       }
 
@@ -544,19 +520,19 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
                   if(iter >= MAXITER - 10)
                     {
                       printf
-                        ("i=%d task=%d ID=%d Hsml=%g Left=%g Right=%g Ngbs=%g Rig
-      ht-Left=%g\n   pos=(%g|%g|%g)\n",
-                         i, ThisTask, (int) P[i].ID, SphP[i].Hsml, SphP[i].Left, 
-      SphP[i].Right,
-                         (float) SphP[i].NumNgb, SphP[i].Right - SphP[i].Left, P[
-      i].Pos[0], P[i].Pos[1],
+                        ("i=%d task=%d ID=%d Hsml=%g Left=%g Right=%g Ngbs=%g
+       Right-Left=%g\n   pos=(%g|%g|%g)\n",
+                         i, ThisTask, (int) P[i].ID, SphP[i].Hsml, SphP[i].Left
+      , SphP[i].Right,
+                         (float) SphP[i].NumNgb, SphP[i].Right - SphP[i].Left, P
+      [i].Pos[0], P[i].Pos[1],
                          P[i].Pos[2]);
                       fflush(stdout);
                     }
 
                   if(SphP[i].Right > 0 && SphP[i].Left > 0)
-                    SphP[i].Hsml = pow(0.5 * (pow(SphP[i].Left, 3) + pow(SphP[i].
-      Right, 3)), 1.0 / 3);
+                    SphP[i].Hsml = pow(0.5 * (pow(SphP[i].Left, 3) + pow(SphP[i
+      ].Right, 3)), 1.0 / 3);
                   else
                     {
                       if(SphP[i].Right == 0 && SphP[i].Left == 0)
@@ -569,8 +545,8 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
                             {
                               SphP[i].Hsml *=
                                 1 - (SphP[i].NumNgb -
-                                     All.DesNumNgb) / (NUMDIMS * SphP[i].NumNgb) 
-      * SphP[i].DhsmlDensityFactor;
+                                     All.DesNumNgb) / (NUMDIMS * SphP[i].NumNgb
+      ) * SphP[i].DhsmlDensityFactor;
                             }
                           else
                             SphP[i].Hsml *= 1.26;
@@ -583,8 +559,8 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
                             {
                               SphP[i].Hsml *=
                                 1 - (SphP[i].NumNgb -
-                                     All.DesNumNgb) / (NUMDIMS * SphP[i].NumNgb) 
-      * SphP[i].DhsmlDensityFactor;
+                                     All.DesNumNgb) / (NUMDIMS * SphP[i].NumNgb
+      ) * SphP[i].DhsmlDensityFactor;
                             }
                           else
                             SphP[i].Hsml /= 1.26;
@@ -617,16 +593,16 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
 
           if(iter > 0 && ThisTask == 0)
             {
-              printf("ngb iteration %d: need to repeat for %d%09d particles.\n", 
-      iter,
+              printf("ngb iteration %d: need to repeat for %d%09d particles.\n"
+      , iter,
                      (int) (ntot / 1000000000), (int) (ntot % 1000000000));
               fflush(stdout);
             }
 
           if(iter > MAXITER)
             {
-              printf("failed to converge in neighbour iteration in density()\n");
-      
+              printf("failed to converge in neighbour iteration in density()\n"
+      );
               fflush(stdout);
               endrun(1155);
             }
@@ -657,10 +633,10 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
 
   MPI_Reduce(&timengb, &sumtimengb, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
   MPI_Reduce(&timecomp, &sumt, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-  MPI_Reduce(&timecommsumm, &sumcomm, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-      
-  MPI_Reduce(&timeimbalance, &sumimbalance, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_W
-      ORLD);
+  MPI_Reduce(&timecommsumm, &sumcomm, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD
+      );
+  MPI_Reduce(&timeimbalance, &sumimbalance, 1, MPI_DOUBLE, MPI_SUM, 0, 
+      MPI_COMM_WORLD);
 
   if(ThisTask == 0)
     {
@@ -673,61 +649,51 @@ Referenced by compute\_\-accelerations(), and setup\_\-smoothinglengths().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{density_8c_ad86cdeb9e3bfbe9af379ac9f7daf194c_cgraph}
+\includegraphics[width=350pt]{density_8c_ad86cdeb9e3bfbe9af379ac9f7daf194c_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{density_8c_ad86cdeb9e3bfbe9af379ac9f7daf194c_icgraph}
+\includegraphics[width=350pt]{density_8c_ad86cdeb9e3bfbe9af379ac9f7daf194c_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{density_8c_a4e6b32342a24a33518b6ae8723809749}{
-\index{density.c@{density.c}!density\_\-evaluate@{density\_\-evaluate}}
-\index{density\_\-evaluate@{density\_\-evaluate}!density.c@{density.c}}
-\subsubsection[{density\_\-evaluate}]{\setlength{\rightskip}{0pt plus 5cm}void density\_\-evaluate (
+\hypertarget{density_8c_a4e6b32342a24a33518b6ae8723809749}{\index{density.\-c@{density.\-c}!density\-\_\-evaluate@{density\-\_\-evaluate}}
+\index{density\-\_\-evaluate@{density\-\_\-evaluate}!density.c@{density.\-c}}
+\subsubsection[{density\-\_\-evaluate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf density\-\_\-evaluate} (
 \begin{DoxyParamCaption}
-\item[{int}]{ target, }
-\item[{int}]{ mode}
+\item[{int}]{target, }
+\item[{int}]{mode}
 \end{DoxyParamCaption}
-)}}
-\label{density_8c_a4e6b32342a24a33518b6ae8723809749}
-This function represents the core of the SPH density computation. The target particle may either be local, or reside in the communication buffer. 
+)}}\label{density_8c_a4e6b32342a24a33518b6ae8723809749}
+\-This function represents the core of the \-S\-P\-H density computation. \-The target particle may either be local, or reside in the communication buffer. $<$ \-Coefficients for \-S\-P\-H spline kernel and its derivative
 
-$<$ Coefficients for SPH spline kernel and its derivative
+$<$ \-Coefficient for kernel normalization. \-Note\-: 4.\-0/3 $\ast$ \-P\-I = 4.\-188790204786
 
-$<$ Coefficient for kernel normalization. Note: 4.0/3 $\ast$ PI = 4.188790204786
+$<$ \-For 3\-D-\/normalized kernel 
 
-$<$ For 3D-\/normalized kernel 
-
-
-
-Definition at line 467 of file density.c.
+\-Definition at line 467 of file density.\-c.
 
 
 
-References All, boxHalf\_\-X, boxHalf\_\-Y, boxHalf\_\-Z, DensDataGet, DensDataResult, sph\_\-particle\_\-data::Density, densdata\_\-out::DhsmlDensity, sph\_\-particle\_\-data::DhsmlDensityFactor, densdata\_\-out::Div, sph\_\-particle\_\-data::DivVel, FLOAT, densdata\_\-in::Hsml, sph\_\-particle\_\-data::Hsml, KERNEL\_\-COEFF\_\-1, KERNEL\_\-COEFF\_\-2, KERNEL\_\-COEFF\_\-3, KERNEL\_\-COEFF\_\-5, KERNEL\_\-COEFF\_\-6, particle\_\-data::Mass, global\_\-data\_\-all\_\-processes::MaxPart, densdata\_\-out::Ngb, ngb\_\-treefind\_\-variable(), Ngblist, NORM\_\-COEFF, NUMDIMS, sph\_\-particle\_\-data::NumNgb, P, densdata\_\-in::Pos, particle\_\-data::Pos, densdata\_\-out::Rho, densdata\_\-out::Rot, sph\_\-particle\_\-data::Rot, SphP, densdata\_\-in::Vel, and sph\_\-particle\_\-data::VelPred.
+\-References \-All, box\-Half\-\_\-\-X, box\-Half\-\_\-\-Y, box\-Half\-\_\-\-Z, box\-Size\-\_\-\-X, box\-Size\-\_\-\-Y, box\-Size\-\_\-\-Z, \-Dens\-Data\-Get, \-Dens\-Data\-Result, ngb\-\_\-treefind\-\_\-variable(), \-Ngblist, \-P, and \-Sph\-P.
 
 
 
-Referenced by density().
-
-
+\-Referenced by density().
 
 
 \begin{DoxyCode}
@@ -780,8 +746,8 @@ Referenced by density().
           dy = pos[1] - P[j].Pos[1];
           dz = pos[2] - P[j].Pos[2];
 
-#ifdef PERIODIC                 /*  now find the closest image in the given box s
-      ize  */
+#ifdef PERIODIC                 /*  now find the closest image in the given box
+       size  */
           if(dx > boxHalf_X)
             dx -= boxSize_X;
           if(dx < -boxHalf_X)
@@ -807,14 +773,14 @@ Referenced by density().
 
               if(u < 0.5)
                 {
-                  wk = hinv3 * (KERNEL_COEFF_1 + KERNEL_COEFF_2 * (u - 1) * u * u
-      );
+                  wk = hinv3 * (KERNEL_COEFF_1 + KERNEL_COEFF_2 * (u - 1) * u *
+       u);
                   dwk = hinv4 * u * (KERNEL_COEFF_3 * u - KERNEL_COEFF_4);
                 }
               else
                 {
-                  wk = hinv3 * KERNEL_COEFF_5 * (1.0 - u) * (1.0 - u) * (1.0 - u)
-      ;
+                  wk = hinv3 * KERNEL_COEFF_5 * (1.0 - u) * (1.0 - u) * (1.0 - 
+      u);
                   dwk = hinv4 * KERNEL_COEFF_6 * (1.0 - u) * (1.0 - u);
                 }
 
@@ -869,56 +835,50 @@ Referenced by density().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{density_8c_a4e6b32342a24a33518b6ae8723809749_cgraph}
+\includegraphics[width=350pt]{density_8c_a4e6b32342a24a33518b6ae8723809749_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{density_8c_a4e6b32342a24a33518b6ae8723809749_icgraph}
+\includegraphics[width=350pt]{density_8c_a4e6b32342a24a33518b6ae8723809749_icgraph}
 \end{center}
 \end{figure}
 
 
 
 
-\subsection{Variable Documentation}
-\hypertarget{density_8c_af62571c97dc75a691aeafead0528b369}{
-\index{density.c@{density.c}!boxHalf@{boxHalf}}
-\index{boxHalf@{boxHalf}!density.c@{density.c}}
-\subsubsection[{boxHalf}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf boxHalf}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{density_8c_af62571c97dc75a691aeafead0528b369}
+\subsection{\-Variable \-Documentation}
+\hypertarget{density_8c_af62571c97dc75a691aeafead0528b369}{\index{density.\-c@{density.\-c}!box\-Half@{box\-Half}}
+\index{box\-Half@{box\-Half}!density.c@{density.\-c}}
+\subsubsection[{box\-Half}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf box\-Half}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{density_8c_af62571c97dc75a691aeafead0528b369}
 
 
-Definition at line 22 of file density.c.
-
-
-
-Referenced by density().
-
-\hypertarget{density_8c_ac9067960018a06b81c117434c01f19cc}{
-\index{density.c@{density.c}!boxSize@{boxSize}}
-\index{boxSize@{boxSize}!density.c@{density.c}}
-\subsubsection[{boxSize}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf boxSize}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{density_8c_ac9067960018a06b81c117434c01f19cc}
-
-
-Definition at line 22 of file density.c.
+\-Definition at line 22 of file density.\-c.
 
 
 
-Referenced by density(), and fill\_\-write\_\-buffer().
+\-Referenced by density().
+
+\hypertarget{density_8c_ac9067960018a06b81c117434c01f19cc}{\index{density.\-c@{density.\-c}!box\-Size@{box\-Size}}
+\index{box\-Size@{box\-Size}!density.c@{density.\-c}}
+\subsubsection[{box\-Size}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf box\-Size}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{density_8c_ac9067960018a06b81c117434c01f19cc}
+
+
+\-Definition at line 22 of file density.\-c.
+
+
+
+\-Referenced by density(), and fill\-\_\-write\-\_\-buffer().
 

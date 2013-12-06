@@ -1,100 +1,95 @@
-\hypertarget{read__ic_8c}{
-\section{read\_\-ic.c File Reference}
-\label{read__ic_8c}\index{read\_\-ic.c@{read\_\-ic.c}}
+\hypertarget{read__ic_8c}{\section{read\-\_\-ic.\-c \-File \-Reference}
+\label{read__ic_8c}\index{read\-\_\-ic.\-c@{read\-\_\-ic.\-c}}
 }
 
 
-Read initial conditions in one of Gadget's file formats.  
+\-Read initial conditions in one of \-Gadget's file formats.  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for read\_\-ic.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for read\-\_\-ic.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{read__ic_8c__incl}
+\includegraphics[width=350pt]{read__ic_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Defines}
+\subsection*{\-Defines}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{read__ic_8c_a688a4adbb87520a2b68681bd6bfb199e}{SKIP}~\{my\_\-fread(\&blksize1,sizeof(int),1,\hyperlink{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}{fd});\}
+\#define \hyperlink{read__ic_8c_a688a4adbb87520a2b68681bd6bfb199e}{\-S\-K\-I\-P}~\{\hyperlink{proto_8h_a1609620c03f6b0068601735c42e3c660}{my\-\_\-fread}(\&blksize1,sizeof(int),1,\hyperlink{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}{fd});\}
 \item 
-\#define \hyperlink{read__ic_8c_ad6e22cd67afa690d73b53919372622d6}{SKIP2}~\{my\_\-fread(\&blksize2,sizeof(int),1,\hyperlink{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}{fd});\}
+\#define \hyperlink{read__ic_8c_ad6e22cd67afa690d73b53919372622d6}{\-S\-K\-I\-P2}~\{\hyperlink{proto_8h_a1609620c03f6b0068601735c42e3c660}{my\-\_\-fread}(\&blksize2,sizeof(int),1,\hyperlink{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}{fd});\}
 \end{DoxyCompactItemize}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{read__ic_8c_a150344fdc0c6e132aecdb6c646529df1}{read\_\-ic} (char $\ast$fname)
+void \hyperlink{read__ic_8c_a150344fdc0c6e132aecdb6c646529df1}{read\-\_\-ic} (char $\ast$fname)
 \item 
-void \hyperlink{read__ic_8c_a3757efb7e470353080a128388ccebec9}{empty\_\-read\_\-buffer} (enum \hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8}{iofields} blocknr, int offset, int pc, int type)
+void \hyperlink{read__ic_8c_a3757efb7e470353080a128388ccebec9}{empty\-\_\-read\-\_\-buffer} (enum iofields blocknr, int offset, int pc, int type)
 \item 
-void \hyperlink{read__ic_8c_affd0f4e6b7bcdabf7d6f8191145f78d1}{read\_\-file} (char $\ast$fname, int readTask, int lastTask)
+void \hyperlink{read__ic_8c_affd0f4e6b7bcdabf7d6f8191145f78d1}{read\-\_\-file} (char $\ast$fname, int read\-Task, int last\-Task)
 \item 
-int \hyperlink{read__ic_8c_ac028b474d53a40e79377b7ae5dde636a}{find\_\-files} (char $\ast$fname)
+int \hyperlink{read__ic_8c_ac028b474d53a40e79377b7ae5dde636a}{find\-\_\-files} (char $\ast$fname)
 \item 
-void \hyperlink{read__ic_8c_abf75a70e8719e8ed6de565a6ae90f1ab}{distribute\_\-file} (int nfiles, int firstfile, int firsttask, int lasttask, int $\ast$filenr, int $\ast$master, int $\ast$\hyperlink{forcetree_8c_a72e27dee31b1c4c6a504fbed29542d97}{last})
+void \hyperlink{read__ic_8c_abf75a70e8719e8ed6de565a6ae90f1ab}{distribute\-\_\-file} (int nfiles, int firstfile, int firsttask, int lasttask, int $\ast$filenr, int $\ast$master, int $\ast$\hyperlink{forcetree_8c_a72e27dee31b1c4c6a504fbed29542d97}{last})
 \item 
-void \hyperlink{read__ic_8c_af87c21a0c70ac5e7d5f769b952d08fe9}{read\_\-header\_\-attributes\_\-in\_\-hdf5} (char $\ast$fname)
+void \hyperlink{read__ic_8c_af87c21a0c70ac5e7d5f769b952d08fe9}{read\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5} (char $\ast$fname)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Read initial conditions in one of Gadget's file formats. 
+\subsection{\-Detailed \-Description}
+\-Read initial conditions in one of \-Gadget's file formats. 
 
-Definition in file \hyperlink{read__ic_8c_source}{read\_\-ic.c}.
-
-
-
-\subsection{Define Documentation}
-\hypertarget{read__ic_8c_a688a4adbb87520a2b68681bd6bfb199e}{
-\index{read\_\-ic.c@{read\_\-ic.c}!SKIP@{SKIP}}
-\index{SKIP@{SKIP}!read_ic.c@{read\_\-ic.c}}
-\subsubsection[{SKIP}]{\setlength{\rightskip}{0pt plus 5cm}\#define SKIP~\{my\_\-fread(\&blksize1,sizeof(int),1,{\bf fd});\}}}
-\label{read__ic_8c_a688a4adbb87520a2b68681bd6bfb199e}
-\hypertarget{read__ic_8c_ad6e22cd67afa690d73b53919372622d6}{
-\index{read\_\-ic.c@{read\_\-ic.c}!SKIP2@{SKIP2}}
-\index{SKIP2@{SKIP2}!read_ic.c@{read\_\-ic.c}}
-\subsubsection[{SKIP2}]{\setlength{\rightskip}{0pt plus 5cm}\#define SKIP2~\{my\_\-fread(\&blksize2,sizeof(int),1,{\bf fd});\}}}
-\label{read__ic_8c_ad6e22cd67afa690d73b53919372622d6}
+\-Definition in file \hyperlink{read__ic_8c_source}{read\-\_\-ic.\-c}.
 
 
-\subsection{Function Documentation}
-\hypertarget{read__ic_8c_abf75a70e8719e8ed6de565a6ae90f1ab}{
-\index{read\_\-ic.c@{read\_\-ic.c}!distribute\_\-file@{distribute\_\-file}}
-\index{distribute\_\-file@{distribute\_\-file}!read_ic.c@{read\_\-ic.c}}
-\subsubsection[{distribute\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void distribute\_\-file (
+
+\subsection{\-Define \-Documentation}
+\hypertarget{read__ic_8c_a688a4adbb87520a2b68681bd6bfb199e}{\index{read\-\_\-ic.\-c@{read\-\_\-ic.\-c}!\-S\-K\-I\-P@{\-S\-K\-I\-P}}
+\index{\-S\-K\-I\-P@{\-S\-K\-I\-P}!read_ic.c@{read\-\_\-ic.\-c}}
+\subsubsection[{\-S\-K\-I\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-S\-K\-I\-P}~\{{\bf my\-\_\-fread}(\&blksize1,sizeof(int),1,{\bf fd});\}}}\label{read__ic_8c_a688a4adbb87520a2b68681bd6bfb199e}
+\hypertarget{read__ic_8c_ad6e22cd67afa690d73b53919372622d6}{\index{read\-\_\-ic.\-c@{read\-\_\-ic.\-c}!\-S\-K\-I\-P2@{\-S\-K\-I\-P2}}
+\index{\-S\-K\-I\-P2@{\-S\-K\-I\-P2}!read_ic.c@{read\-\_\-ic.\-c}}
+\subsubsection[{\-S\-K\-I\-P2}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-S\-K\-I\-P2}~\{{\bf my\-\_\-fread}(\&blksize2,sizeof(int),1,{\bf fd});\}}}\label{read__ic_8c_ad6e22cd67afa690d73b53919372622d6}
+
+
+\-Referenced by read\-\_\-file().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{read__ic_8c_abf75a70e8719e8ed6de565a6ae90f1ab}{\index{read\-\_\-ic.\-c@{read\-\_\-ic.\-c}!distribute\-\_\-file@{distribute\-\_\-file}}
+\index{distribute\-\_\-file@{distribute\-\_\-file}!read_ic.c@{read\-\_\-ic.\-c}}
+\subsubsection[{distribute\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf distribute\-\_\-file} (
 \begin{DoxyParamCaption}
-\item[{int}]{ nfiles, }
-\item[{int}]{ firstfile, }
-\item[{int}]{ firsttask, }
-\item[{int}]{ lasttask, }
-\item[{int $\ast$}]{ filenr, }
-\item[{int $\ast$}]{ master, }
-\item[{int $\ast$}]{ last}
+\item[{int}]{nfiles, }
+\item[{int}]{firstfile, }
+\item[{int}]{firsttask, }
+\item[{int}]{lasttask, }
+\item[{int $\ast$}]{filenr, }
+\item[{int $\ast$}]{master, }
+\item[{int $\ast$}]{last}
 \end{DoxyParamCaption}
-)}}
-\label{read__ic_8c_abf75a70e8719e8ed6de565a6ae90f1ab}
-This function assigns a certain number of files to processors, such that each processor is exactly assigned to one file, and the number of cpus per file is as homogenous as possible. The number of files may at most be equal to the number of processors. 
+)}}\label{read__ic_8c_abf75a70e8719e8ed6de565a6ae90f1ab}
+\-This function assigns a certain number of files to processors, such that each processor is exactly assigned to one file, and the number of cpus per file is as homogenous as possible. \-The number of files may at most be equal to the number of processors. 
 
-Definition at line 724 of file read\_\-ic.c.
-
-
-
-References distribute\_\-file(), and ThisTask.
+\-Definition at line 724 of file read\-\_\-ic.\-c.
 
 
 
-Referenced by distribute\_\-file(), read\_\-ic(), and savepositions().
+\-References distribute\-\_\-file(), and \-This\-Task.
 
 
+
+\-Referenced by distribute\-\_\-file(), read\-\_\-ic(), and savepositions().
 
 
 \begin{DoxyCode}
@@ -116,10 +111,10 @@ Referenced by distribute\_\-file(), read\_\-ic(), and savepositions().
       tasksleft = ntask / 2;
       tasksright = ntask - tasksleft;
 
-      distribute_file(filesleft, firstfile, firsttask, firsttask + tasksleft - 1,
-       filenr, master, last);
-      distribute_file(filesright, firstfile + filesleft, firsttask + tasksleft, l
-      asttask, filenr, master,
+      distribute_file(filesleft, firstfile, firsttask, firsttask + tasksleft - 
+      1, filenr, master, last);
+      distribute_file(filesright, firstfile + filesleft, firsttask + tasksleft,
+       lasttask, filenr, master,
                       last);
     }
   else
@@ -135,9 +130,7 @@ Referenced by distribute\_\-file(), read\_\-ic(), and savepositions().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -149,41 +142,37 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{read__ic_8c_abf75a70e8719e8ed6de565a6ae90f1ab_icgraph}
+\includegraphics[width=350pt]{read__ic_8c_abf75a70e8719e8ed6de565a6ae90f1ab_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{read__ic_8c_a3757efb7e470353080a128388ccebec9}{
-\index{read\_\-ic.c@{read\_\-ic.c}!empty\_\-read\_\-buffer@{empty\_\-read\_\-buffer}}
-\index{empty\_\-read\_\-buffer@{empty\_\-read\_\-buffer}!read_ic.c@{read\_\-ic.c}}
-\subsubsection[{empty\_\-read\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void empty\_\-read\_\-buffer (
+\hypertarget{read__ic_8c_a3757efb7e470353080a128388ccebec9}{\index{read\-\_\-ic.\-c@{read\-\_\-ic.\-c}!empty\-\_\-read\-\_\-buffer@{empty\-\_\-read\-\_\-buffer}}
+\index{empty\-\_\-read\-\_\-buffer@{empty\-\_\-read\-\_\-buffer}!read_ic.c@{read\-\_\-ic.\-c}}
+\subsubsection[{empty\-\_\-read\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf empty\-\_\-read\-\_\-buffer} (
 \begin{DoxyParamCaption}
-\item[{enum {\bf iofields}}]{ blocknr, }
-\item[{int}]{ offset, }
-\item[{int}]{ pc, }
-\item[{int}]{ type}
+\item[{enum iofields}]{blocknr, }
+\item[{int}]{offset, }
+\item[{int}]{pc, }
+\item[{int}]{type}
 \end{DoxyParamCaption}
-)}}
-\label{read__ic_8c_a3757efb7e470353080a128388ccebec9}
-This function reads out the buffer that was filled with particle data, and stores it at the appropriate place in the particle structures. 
+)}}\label{read__ic_8c_a3757efb7e470353080a128388ccebec9}
+\-This function reads out the buffer that was filled with particle data, and stores it at the appropriate place in the particle structures. 
 
-Definition at line 168 of file read\_\-ic.c.
-
-
-
-References CommBuffer, particle\_\-data::ID, IO\_\-ACCEL, IO\_\-DTENTR, IO\_\-HSML, IO\_\-ID, IO\_\-MASS, IO\_\-POS, IO\_\-POT, IO\_\-RHO, IO\_\-TSTP, IO\_\-U, IO\_\-VEL, particle\_\-data::Mass, P, particle\_\-data::Pos, SphP, particle\_\-data::Type, and particle\_\-data::Vel.
+\-Definition at line 168 of file read\-\_\-ic.\-c.
 
 
 
-Referenced by read\_\-file().
+\-References \-Comm\-Buffer, \-P, and \-Sph\-P.
 
 
+
+\-Referenced by read\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -259,40 +248,34 @@ Referenced by read\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{read__ic_8c_a3757efb7e470353080a128388ccebec9_icgraph}
+\includegraphics[width=350pt]{read__ic_8c_a3757efb7e470353080a128388ccebec9_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{read__ic_8c_ac028b474d53a40e79377b7ae5dde636a}{
-\index{read\_\-ic.c@{read\_\-ic.c}!find\_\-files@{find\_\-files}}
-\index{find\_\-files@{find\_\-files}!read_ic.c@{read\_\-ic.c}}
-\subsubsection[{find\_\-files}]{\setlength{\rightskip}{0pt plus 5cm}int find\_\-files (
+\hypertarget{read__ic_8c_ac028b474d53a40e79377b7ae5dde636a}{\index{read\-\_\-ic.\-c@{read\-\_\-ic.\-c}!find\-\_\-files@{find\-\_\-files}}
+\index{find\-\_\-files@{find\-\_\-files}!read_ic.c@{read\-\_\-ic.\-c}}
+\subsubsection[{find\-\_\-files}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf find\-\_\-files} (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{ fname}
+\item[{char $\ast$}]{fname}
 \end{DoxyParamCaption}
-)}}
-\label{read__ic_8c_ac028b474d53a40e79377b7ae5dde636a}
-This function determines onto how many files a given snapshot is distributed. 
+)}}\label{read__ic_8c_ac028b474d53a40e79377b7ae5dde636a}
+\-This function determines onto how many files a given snapshot is distributed. 
 
-Definition at line 615 of file read\_\-ic.c.
-
-
-
-References All, endrun(), fd, header, global\_\-data\_\-all\_\-processes::ICFormat, io\_\-header::num\_\-files, read\_\-header\_\-attributes\_\-in\_\-hdf5(), and ThisTask.
+\-Definition at line 615 of file read\-\_\-ic.\-c.
 
 
 
-Referenced by read\_\-ic().
+\-References \-All, endrun(), fd, header, read\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5(), and \-This\-Task.
 
 
+
+\-Referenced by read\-\_\-ic().
 
 
 \begin{DoxyCode}
@@ -399,58 +382,48 @@ Referenced by read\_\-ic().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{read__ic_8c_ac028b474d53a40e79377b7ae5dde636a_cgraph}
+\includegraphics[width=350pt]{read__ic_8c_ac028b474d53a40e79377b7ae5dde636a_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{read__ic_8c_ac028b474d53a40e79377b7ae5dde636a_icgraph}
+\includegraphics[width=350pt]{read__ic_8c_ac028b474d53a40e79377b7ae5dde636a_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{read__ic_8c_affd0f4e6b7bcdabf7d6f8191145f78d1}{
-\index{read\_\-ic.c@{read\_\-ic.c}!read\_\-file@{read\_\-file}}
-\index{read\_\-file@{read\_\-file}!read_ic.c@{read\_\-ic.c}}
-\subsubsection[{read\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void read\_\-file (
+\hypertarget{read__ic_8c_affd0f4e6b7bcdabf7d6f8191145f78d1}{\index{read\-\_\-ic.\-c@{read\-\_\-ic.\-c}!read\-\_\-file@{read\-\_\-file}}
+\index{read\-\_\-file@{read\-\_\-file}!read_ic.c@{read\-\_\-ic.\-c}}
+\subsubsection[{read\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf read\-\_\-file} (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{ fname, }
-\item[{int}]{ readTask, }
-\item[{int}]{ lastTask}
+\item[{char $\ast$}]{fname, }
+\item[{int}]{read\-Task, }
+\item[{int}]{last\-Task}
 \end{DoxyParamCaption}
-)}}
-\label{read__ic_8c_affd0f4e6b7bcdabf7d6f8191145f78d1}
-This function reads a snapshot file and distributes the data it contains to tasks 'readTask' to 'lastTask'. 
+)}}\label{read__ic_8c_affd0f4e6b7bcdabf7d6f8191145f78d1}
+\-This function reads a snapshot file and distributes the data it contains to tasks 'read\-Task' to 'last\-Task'. $<$ total number of defined information blocks for snapshot files. \-Must be equal to the number of entries in \char`\"{}enum iofields\char`\"{} 
 
-$<$ total number of defined 0 0 for snapshot files. Must be equal to the number of entries in \char`\"{}enum iofields\char`\"{} 
-
-
-
-Definition at line 244 of file read\_\-ic.c.
+\-Definition at line 244 of file read\-\_\-ic.\-c.
 
 
 
-References All, allocate\_\-memory(), blockpresent(), global\_\-data\_\-all\_\-processes::BufferSize, CommBuffer, empty\_\-read\_\-buffer(), endrun(), fd, get\_\-bytes\_\-per\_\-blockelement(), get\_\-dataset\_\-name(), get\_\-datatype\_\-in\_\-block(), get\_\-particles\_\-in\_\-block(), get\_\-values\_\-per\_\-blockelement(), header, global\_\-data\_\-all\_\-processes::ICFormat, IO\_\-U, io\_\-header::mass, global\_\-data\_\-all\_\-processes::MassTable, global\_\-data\_\-all\_\-processes::MaxPart, global\_\-data\_\-all\_\-processes::MaxPartSph, my\_\-fread(), N\_\-gas, io\_\-header::npart, io\_\-header::npartTotal, io\_\-header::npartTotalHighWord, NTask, io\_\-header::num\_\-files, NumPart, P, global\_\-data\_\-all\_\-processes::PartAllocFactor, read\_\-header\_\-attributes\_\-in\_\-hdf5(), RestartFlag, Tab\_\-IO\_\-Labels, TAG\_\-HEADER, TAG\_\-PDATA, ThisTask, io\_\-header::time, global\_\-data\_\-all\_\-processes::Time, global\_\-data\_\-all\_\-processes::TimeBegin, global\_\-data\_\-all\_\-processes::TotN\_\-gas, and global\_\-data\_\-all\_\-processes::TotNumPart.
+\-References \-All, allocate\-\_\-memory(), blockpresent(), \-Comm\-Buffer, empty\-\_\-read\-\_\-buffer(), endrun(), fd, get\-\_\-bytes\-\_\-per\-\_\-blockelement(), get\-\_\-dataset\-\_\-name(), get\-\_\-datatype\-\_\-in\-\_\-block(), get\-\_\-particles\-\_\-in\-\_\-block(), get\-\_\-values\-\_\-per\-\_\-blockelement(), header, my\-\_\-fread(), \-N\-\_\-gas, \-N\-Task, \-Num\-Part, \-P, read\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5(), \-Restart\-Flag, \-S\-K\-I\-P, \-S\-K\-I\-P2, \-Tab\-\_\-\-I\-O\-\_\-\-Labels, \-T\-A\-G\-\_\-\-H\-E\-A\-D\-E\-R, \-T\-A\-G\-\_\-\-P\-D\-A\-T\-A, and \-This\-Task.
 
 
 
-Referenced by read\_\-ic().
-
-
+\-Referenced by read\-\_\-ic().
 
 
 \begin{DoxyCode}
@@ -483,8 +456,8 @@ Referenced by read\_\-ic().
         {
           if(!(fd = fopen(fname, "r")))
             {
-              printf("can't open file `%s' for reading initial conditions.\n", fn
-      ame);
+              printf("can't open file `%s' for reading initial conditions.\n", 
+      fname);
               endrun(123);
             }
 
@@ -493,8 +466,8 @@ Referenced by read\_\-ic().
               SKIP;
               my_fread(&label, sizeof(char), 4, fd);
               my_fread(&nextblock, sizeof(int), 1, fd);
-              printf("Reading header => '%c%c%c%c' (%d byte)\n", label[0], label[
-      1], label[2], label[3],
+              printf("Reading header => '%c%c%c%c' (%d byte)\n", label[0], 
+      label[1], label[2], label[3],
                      nextblock);
               SKIP2;
             }
@@ -531,12 +504,12 @@ Referenced by read\_\-ic().
 #endif
 
       for(task = readTask + 1; task <= lastTask; task++)
-        MPI_Ssend(&header, sizeof(header), MPI_BYTE, task, TAG_HEADER, MPI_COMM_W
-      ORLD);
+        MPI_Ssend(&header, sizeof(header), MPI_BYTE, task, TAG_HEADER, 
+      MPI_COMM_WORLD);
     }
   else
-    MPI_Recv(&header, sizeof(header), MPI_BYTE, readTask, TAG_HEADER, MPI_COMM_WO
-      RLD, &status);
+    MPI_Recv(&header, sizeof(header), MPI_BYTE, readTask, TAG_HEADER, 
+      MPI_COMM_WORLD, &status);
 
 
   if(All.TotNumPart == 0)
@@ -558,12 +531,12 @@ Referenced by read\_\-ic().
       for(i = 0; i < 6; i++)
         All.MassTable[i] = header.mass[i];
 
-      All.MaxPart = All.PartAllocFactor * (All.TotNumPart / NTask);     /* sets t
-      he maximum number of particles that may */
-      All.MaxPartSph = All.PartAllocFactor * (All.TotN_gas / NTask);    /* sets t
-      he maximum number of particles that may 
-                                                                           reside
-       on a processor */
+      All.MaxPart = All.PartAllocFactor * (All.TotNumPart / NTask);     /* sets
+       the maximum number of particles that may */
+      All.MaxPartSph = All.PartAllocFactor * (All.TotN_gas / NTask);    /* sets
+       the maximum number of particles that may 
+                                                                          
+       reside on a processor */
       allocate_memory();
 
       if(RestartFlag == 2)
@@ -584,24 +557,24 @@ Referenced by read\_\-ic().
              "Type 4 (stars): %8d  (tot=%6d%09d) masstab=%g\n"
              "Type 5 (bndry): %8d  (tot=%6d%09d) masstab=%g\n\n", fname, 
       ThisTask, n_in_file, readTask,
-             lastTask, header.npart[0], (int) (header.npartTotal[0] / 1000000000)
-      ,
-             (int) (header.npartTotal[0] % 1000000000), All.MassTable[0], header.
-      npart[1],
-             (int) (header.npartTotal[1] / 1000000000), (int) (header.npartTotal[
-      1] % 1000000000),
-             All.MassTable[1], header.npart[2], (int) (header.npartTotal[2] / 100
-      0000000),
-             (int) (header.npartTotal[2] % 1000000000), All.MassTable[2], header.
-      npart[3],
-             (int) (header.npartTotal[3] / 1000000000), (int) (header.npartTotal[
-      3] % 1000000000),
-             All.MassTable[3], header.npart[4], (int) (header.npartTotal[4] / 100
-      0000000),
-             (int) (header.npartTotal[4] % 1000000000), All.MassTable[4], header.
-      npart[5],
-             (int) (header.npartTotal[5] / 1000000000), (int) (header.npartTotal[
-      5] % 1000000000),
+             lastTask, header.npart[0], (int) (header.npartTotal[0] / 100000000
+      0),
+             (int) (header.npartTotal[0] % 1000000000), All.MassTable[0], header
+      .npart[1],
+             (int) (header.npartTotal[1] / 1000000000), (int) (header.
+      npartTotal[1] % 1000000000),
+             All.MassTable[1], header.npart[2], (int) (header.npartTotal[2] / 1
+      000000000),
+             (int) (header.npartTotal[2] % 1000000000), All.MassTable[2], header
+      .npart[3],
+             (int) (header.npartTotal[3] / 1000000000), (int) (header.
+      npartTotal[3] % 1000000000),
+             All.MassTable[3], header.npart[4], (int) (header.npartTotal[4] / 1
+      000000000),
+             (int) (header.npartTotal[4] % 1000000000), All.MassTable[4], header
+      .npart[5],
+             (int) (header.npartTotal[5] / 1000000000), (int) (header.
+      npartTotal[5] % 1000000000),
              All.MassTable[5]);
       fflush(stdout);
     }
@@ -636,13 +609,13 @@ Referenced by read\_\-ic().
       if(blockpresent(blocknr))
         {
           if(RestartFlag == 0 && blocknr > IO_U)
-            continue;           /* ignore all other blocks in initial conditions 
-      */
+            continue;           /* ignore all other blocks in initial
+       conditions */
 
           bytes_per_blockelement = get_bytes_per_blockelement(blocknr);
 
-          blockmaxlen = ((int) (All.BufferSize * 1024 * 1024)) / bytes_per_blocke
-      lement;
+          blockmaxlen = ((int) (All.BufferSize * 1024 * 1024)) / 
+      bytes_per_blockelement;
 
           npart = get_particles_in_block(blocknr, &typelist[0]);
 
@@ -655,8 +628,8 @@ Referenced by read\_\-ic().
                       SKIP;
                       my_fread(&label, sizeof(char), 4, fd);
                       my_fread(&nextblock, sizeof(int), 1, fd);
-                      printf("Reading header => '%c%c%c%c' (%d byte)\n", label[0]
-      , label[1], label[2],
+                      printf("Reading header => '%c%c%c%c' (%d byte)\n", label[
+      0], label[1], label[2],
                              label[3], nextblock);
                       SKIP2;
 
@@ -665,10 +638,10 @@ Referenced by read\_\-ic().
                           printf("incorrect block-structure!\n");
                           printf("expected '%c%c%c%c' but found '%c%c%c%c'\n",
                                  label[0], label[1], label[2], label[3],
-                                 Tab_IO_Labels[blocknr][0], Tab_IO_Labels[blocknr
-      ][1],
-                                 Tab_IO_Labels[blocknr][2], Tab_IO_Labels[blocknr
-      ][3]);
+                                 Tab_IO_Labels[blocknr][0], Tab_IO_Labels[
+      blocknr][1],
+                                 Tab_IO_Labels[blocknr][2], Tab_IO_Labels[
+      blocknr][3]);
                           fflush(stdout);
                           endrun(1890);
                         }
@@ -718,63 +691,63 @@ Referenced by read\_\-ic().
                               if(ThisTask == readTask)
                                 {
                                   if(All.ICFormat == 1 || All.ICFormat == 2)
-                                    my_fread(CommBuffer, bytes_per_blockelement, 
-      pc, fd);
+                                    my_fread(CommBuffer, bytes_per_blockelement
+      , pc, fd);
 #ifdef HAVE_HDF5
                                   if(All.ICFormat == 3)
                                     {
                                       get_dataset_name(blocknr, buf);
-                                      hdf5_dataset = H5Dopen(hdf5_grp[type], buf)
-      ;
+                                      hdf5_dataset = H5Dopen(hdf5_grp[type], 
+      buf);
 
                                       dims[0] = header.npart[type];
-                                      dims[1] = get_values_per_blockelement(block
-      nr);
+                                      dims[1] = get_values_per_blockelement(
+      blocknr);
                                       if(dims[1] == 1)
                                         rank = 1;
                                       else
                                         rank = 2;
 
-                                      hdf5_dataspace_in_file = H5Screate_simple(r
-      ank, dims, NULL);
+                                      hdf5_dataspace_in_file = H5Screate_simple
+      (rank, dims, NULL);
 
                                       dims[0] = pc;
-                                      hdf5_dataspace_in_memory = H5Screate_simple
-      (rank, dims, NULL);
+                                      hdf5_dataspace_in_memory = 
+      H5Screate_simple(rank, dims, NULL);
 
                                       start[0] = pcsum;
                                       start[1] = 0;
 
                                       count[0] = pc;
-                                      count[1] = get_values_per_blockelement(bloc
-      knr);
+                                      count[1] = get_values_per_blockelement(
+      blocknr);
                                       pcsum += pc;
 
-                                      H5Sselect_hyperslab(hdf5_dataspace_in_file,
-       H5S_SELECT_SET,
-                                                          start, NULL, count, NUL
-      L);
+                                      H5Sselect_hyperslab(
+      hdf5_dataspace_in_file, H5S_SELECT_SET,
+                                                          start, NULL, count, 
+      NULL);
 
                                       switch (get_datatype_in_block(blocknr))
                                         {
                                         case 0:
-                                          hdf5_datatype = H5Tcopy(H5T_NATIVE_UINT
-      );
+                                          hdf5_datatype = H5Tcopy(
+      H5T_NATIVE_UINT);
                                           break;
                                         case 1:
-                                          hdf5_datatype = H5Tcopy(H5T_NATIVE_FLOA
-      T);
+                                          hdf5_datatype = H5Tcopy(
+      H5T_NATIVE_FLOAT);
                                           break;
                                         case 2:
-                                          hdf5_datatype = H5Tcopy(H5T_NATIVE_UINT
-      64);
+                                          hdf5_datatype = H5Tcopy(
+      H5T_NATIVE_UINT64);
                                           break;
                                         }
 
-                                      H5Dread(hdf5_dataset, hdf5_datatype, hdf5_d
-      ataspace_in_memory,
-                                              hdf5_dataspace_in_file, H5P_DEFAULT
-      , CommBuffer);
+                                      H5Dread(hdf5_dataset, hdf5_datatype, 
+      hdf5_dataspace_in_memory,
+                                              hdf5_dataspace_in_file, 
+      H5P_DEFAULT, CommBuffer);
 
                                       H5Tclose(hdf5_datatype);
                                       H5Sclose(hdf5_dataspace_in_memory);
@@ -785,19 +758,19 @@ Referenced by read\_\-ic().
                                 }
 
                               if(ThisTask == readTask && task != readTask)
-                                MPI_Ssend(CommBuffer, bytes_per_blockelement * pc
-      , MPI_BYTE, task, TAG_PDATA,
+                                MPI_Ssend(CommBuffer, bytes_per_blockelement * 
+      pc, MPI_BYTE, task, TAG_PDATA,
                                           MPI_COMM_WORLD);
 
                               if(ThisTask != readTask && task == ThisTask)
-                                MPI_Recv(CommBuffer, bytes_per_blockelement * pc,
-       MPI_BYTE, readTask,
+                                MPI_Recv(CommBuffer, bytes_per_blockelement * 
+      pc, MPI_BYTE, readTask,
                                          TAG_PDATA, MPI_COMM_WORLD, &status);
 
                               if(ThisTask == task)
                                 {
-                                  empty_read_buffer(blocknr, nstart + offset, pc,
-       type);
+                                  empty_read_buffer(blocknr, nstart + offset, 
+      pc, type);
 
                                   offset += pc;
                                 }
@@ -816,8 +789,8 @@ Referenced by read\_\-ic().
                       if(blksize1 != blksize2)
                         {
                           printf("incorrect block-sizes detected!\n");
-                          printf("Task=%d   blocknr=%d  blksize1=%d  blksize2=%d\
-      n", ThisTask, blocknr,
+                          printf("Task=%d   blocknr=%d  blksize1=%d 
+       blksize2=%d\n", ThisTask, blocknr,
                                  blksize1, blksize2);
                           fflush(stdout);
                           endrun(1889);
@@ -861,52 +834,46 @@ Referenced by read\_\-ic().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{read__ic_8c_affd0f4e6b7bcdabf7d6f8191145f78d1_cgraph}
+\includegraphics[width=350pt]{read__ic_8c_affd0f4e6b7bcdabf7d6f8191145f78d1_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{read__ic_8c_affd0f4e6b7bcdabf7d6f8191145f78d1_icgraph}
+\includegraphics[width=350pt]{read__ic_8c_affd0f4e6b7bcdabf7d6f8191145f78d1_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{read__ic_8c_af87c21a0c70ac5e7d5f769b952d08fe9}{
-\index{read\_\-ic.c@{read\_\-ic.c}!read\_\-header\_\-attributes\_\-in\_\-hdf5@{read\_\-header\_\-attributes\_\-in\_\-hdf5}}
-\index{read\_\-header\_\-attributes\_\-in\_\-hdf5@{read\_\-header\_\-attributes\_\-in\_\-hdf5}!read_ic.c@{read\_\-ic.c}}
-\subsubsection[{read\_\-header\_\-attributes\_\-in\_\-hdf5}]{\setlength{\rightskip}{0pt plus 5cm}void read\_\-header\_\-attributes\_\-in\_\-hdf5 (
+\hypertarget{read__ic_8c_af87c21a0c70ac5e7d5f769b952d08fe9}{\index{read\-\_\-ic.\-c@{read\-\_\-ic.\-c}!read\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5@{read\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5}}
+\index{read\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5@{read\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5}!read_ic.c@{read\-\_\-ic.\-c}}
+\subsubsection[{read\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf read\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5} (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{ fname}
+\item[{char $\ast$}]{fname}
 \end{DoxyParamCaption}
-)}}
-\label{read__ic_8c_af87c21a0c70ac5e7d5f769b952d08fe9}
-This function reads the header information in case the HDF5 file format is used. 
+)}}\label{read__ic_8c_af87c21a0c70ac5e7d5f769b952d08fe9}
+\-This function reads the header information in case the \-H\-D\-F5 file format is used. 
 
-Definition at line 764 of file read\_\-ic.c.
-
-
-
-References io\_\-header::flag\_\-entropy\_\-instead\_\-u, header, io\_\-header::mass, io\_\-header::npart, io\_\-header::npartTotal, io\_\-header::npartTotalHighWord, io\_\-header::num\_\-files, and io\_\-header::time.
+\-Definition at line 764 of file read\-\_\-ic.\-c.
 
 
 
-Referenced by find\_\-files(), and read\_\-file().
+\-References header.
 
 
+
+\-Referenced by find\-\_\-files(), and read\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -952,56 +919,46 @@ Referenced by find\_\-files(), and read\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{read__ic_8c_af87c21a0c70ac5e7d5f769b952d08fe9_icgraph}
+\includegraphics[width=350pt]{read__ic_8c_af87c21a0c70ac5e7d5f769b952d08fe9_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{read__ic_8c_a150344fdc0c6e132aecdb6c646529df1}{
-\index{read\_\-ic.c@{read\_\-ic.c}!read\_\-ic@{read\_\-ic}}
-\index{read\_\-ic@{read\_\-ic}!read_ic.c@{read\_\-ic.c}}
-\subsubsection[{read\_\-ic}]{\setlength{\rightskip}{0pt plus 5cm}void read\_\-ic (
+\hypertarget{read__ic_8c_a150344fdc0c6e132aecdb6c646529df1}{\index{read\-\_\-ic.\-c@{read\-\_\-ic.\-c}!read\-\_\-ic@{read\-\_\-ic}}
+\index{read\-\_\-ic@{read\-\_\-ic}!read_ic.c@{read\-\_\-ic.\-c}}
+\subsubsection[{read\-\_\-ic}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf read\-\_\-ic} (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{ fname}
+\item[{char $\ast$}]{fname}
 \end{DoxyParamCaption}
-)}}
-\label{read__ic_8c_a150344fdc0c6e132aecdb6c646529df1}
-This function reads initial conditions, in one of the three possible file formats currently supported by Gadget. Note: When a snapshot file is started from initial conditions (start-\/option 0), not all the information in the header is used, in particular, the STARTING TIME needs to be set in the parameterfile. Also, for gas particles, only the internal energy is read, the density and mean molecular weight will be recomputed by the code. When InitGasTemp$>$0 is given, the gas temperature will be initialzed to this value assuming a mean colecular weight either corresponding to complete neutrality, or full ionization.
+)}}\label{read__ic_8c_a150344fdc0c6e132aecdb6c646529df1}
+\-This function reads initial conditions, in one of the three possible file formats currently supported by \-Gadget. \-Note\-: \-When a snapshot file is started from initial conditions (start-\/option 0), not all the information in the header is used, in particular, the \-S\-T\-A\-R\-T\-I\-N\-G \-T\-I\-M\-E needs to be set in the parameterfile. \-Also, for gas particles, only the internal energy is read, the density and mean molecular weight will be recomputed by the code. \-When \-Init\-Gas\-Temp$>$0 is given, the gas temperature will be initialzed to this value assuming a mean colecular weight either corresponding to complete neutrality, or full ionization.
 
-However, when the code is started with start-\/option 2, then all the this data in the snapshot files is preserved, i.e. this is also the way to resume a simulation from a snapshot file in case a regular restart file is not available. 
-
-$<$ adiabatic index of simulated gas
+\-However, when the code is started with start-\/option 2, then all the this data in the snapshot files is preserved, i.\-e. this is also the way to resume a simulation from a snapshot file in case a regular restart file is not available. $<$ adiabatic index of simulated gas
 
 $<$ mass fraction of hydrogen, relevant only for radiative cooling
 
 $<$ mass fraction of hydrogen, relevant only for radiative cooling 
 
-
-
-Definition at line 31 of file read\_\-ic.c.
-
-
-
-References All, BOLTZMANN, distribute\_\-file(), dmax(), sph\_\-particle\_\-data::Entropy, fill\_\-Tab\_\-IO\_\-Labels(), find\_\-files(), GAMMA\_\-MINUS1, global\_\-data\_\-all\_\-processes::ICFormat, global\_\-data\_\-all\_\-processes::InitGasTemp, particle\_\-data::Mass, global\_\-data\_\-all\_\-processes::MassTable, global\_\-data\_\-all\_\-processes::MinEgySpec, N\_\-gas, NTask, global\_\-data\_\-all\_\-processes::NumFilesWrittenInParallel, NumPart, P, read\_\-file(), RestartFlag, SphP, ThisTask, global\_\-data\_\-all\_\-processes::TotNumPart, particle\_\-data::Type, global\_\-data\_\-all\_\-processes::UnitEnergy\_\-in\_\-cgs, and global\_\-data\_\-all\_\-processes::UnitMass\_\-in\_\-g.
+\-Definition at line 31 of file read\-\_\-ic.\-c.
 
 
 
-Referenced by init().
+\-References \-All, distribute\-\_\-file(), dmax(), fill\-\_\-\-Tab\-\_\-\-I\-O\-\_\-\-Labels(), find\-\_\-files(), \-N\-\_\-gas, \-N\-Task, \-Num\-Part, \-P, read\-\_\-file(), \-Restart\-Flag, \-Sph\-P, and \-This\-Task.
 
 
+
+\-Referenced by init().
 
 
 \begin{DoxyCode}
 {
-  int i, num_files, rest_files, ngroups, gr, filenr, masterTask, lastTask, groupM
-      aster;
+  int i, num_files, rest_files, ngroups, gr, filenr, masterTask, lastTask, 
+      groupMaster;
   double u_init;
   char buf[500];
 
@@ -1035,8 +992,8 @@ Referenced by init().
 
       for(gr = 0; gr < ngroups; gr++)
         {
-          if(ThisTask == (groupMaster + gr))    /* ok, it's this processor's turn
-       */
+          if(ThisTask == (groupMaster + gr))    /* ok, it's this processor's
+       turn */
             read_file(buf, ThisTask, ThisTask);
           MPI_Barrier(MPI_COMM_WORLD);
         }
@@ -1047,8 +1004,8 @@ Referenced by init().
 
   if(rest_files > 0)
     {
-      distribute_file(rest_files, 0, 0, NTask - 1, &filenr, &masterTask, &lastTas
-      k);
+      distribute_file(rest_files, 0, 0, NTask - 1, &filenr, &masterTask, &
+      lastTask);
 
       if(num_files > 1)
         {
@@ -1069,15 +1026,16 @@ Referenced by init().
 
       for(gr = 0; gr < ngroups; gr++)
         {
-          if((filenr / All.NumFilesWrittenInParallel) == gr)    /* ok, it's this 
-      processor's turn */
+          if((filenr / All.NumFilesWrittenInParallel) == gr)    /* ok, it's
+       this processor's turn */
             read_file(buf, masterTask, lastTask);
           MPI_Barrier(MPI_COMM_WORLD);
         }
     }
 
 
-  /* this makes sure that masses are initialized in the case that the mass-block
+  /* this makes sure that masses are initialized in the case that the
+       mass-block
      is completely empty */
   for(i = 0; i < NumPart; i++)
     {
@@ -1090,8 +1048,8 @@ Referenced by init().
       if(All.InitGasTemp > 0)
         {
           u_init = (BOLTZMANN / PROTONMASS) * All.InitGasTemp;
-          u_init *= All.UnitMass_in_g / All.UnitEnergy_in_cgs;  /* unit conversio
-      n */
+          u_init *= All.UnitMass_in_g / All.UnitEnergy_in_cgs;  /* unit
+       conversion */
 
 #ifdef ISOTHERM_EQS
           u_init *= 1.0;
@@ -1111,8 +1069,8 @@ Referenced by init().
               if(SphP[i].Entropy == 0)
                 SphP[i].Entropy = u_init;
 
-              /* Note: the coversion to entropy will be done in the function init
-      (),
+              /* Note: the coversion to entropy will be done in the function
+       init(),
                  after the densities have been computed */
             }
         }
@@ -1132,34 +1090,32 @@ Referenced by init().
   if(ThisTask == 0)
     {
       printf("Total number of particles :  %d%09d\n\n",
-             (int) (All.TotNumPart / 1000000000), (int) (All.TotNumPart % 1000000
-      000));
+             (int) (All.TotNumPart / 1000000000), (int) (All.TotNumPart % 10000
+      00000));
       fflush(stdout);
     }
 }
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{read__ic_8c_a150344fdc0c6e132aecdb6c646529df1_cgraph}
+\includegraphics[width=350pt]{read__ic_8c_a150344fdc0c6e132aecdb6c646529df1_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=364pt]{read__ic_8c_a150344fdc0c6e132aecdb6c646529df1_icgraph}
+\includegraphics[width=350pt]{read__ic_8c_a150344fdc0c6e132aecdb6c646529df1_icgraph}
 \end{center}
 \end{figure}
 

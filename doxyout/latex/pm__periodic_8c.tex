@@ -1,142 +1,131 @@
-\hypertarget{pm__periodic_8c}{
-\section{pm\_\-periodic.c File Reference}
-\label{pm__periodic_8c}\index{pm\_\-periodic.c@{pm\_\-periodic.c}}
+\hypertarget{pm__periodic_8c}{\section{pm\-\_\-periodic.\-c \-File \-Reference}
+\label{pm__periodic_8c}\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}}
 }
 
 
-routines for periodic PM-\/force computation  
+routines for periodic \-P\-M-\/force computation  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$float.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include $<$srfftw\_\-mpi.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for pm\_\-periodic.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$float.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include $<$srfftw\-\_\-mpi.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for pm\-\_\-periodic.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{pm__periodic_8c__incl}
+\includegraphics[width=350pt]{pm__periodic_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Defines}
+\subsection*{\-Defines}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{pm__periodic_8c_a8a4d19d2948b1d7b3eff694719e5f436}{PMGRID2}~(2$\ast$(PMGRID/2 + 1))
+\#define \hyperlink{pm__periodic_8c_a8a4d19d2948b1d7b3eff694719e5f436}{\-P\-M\-G\-R\-I\-D2}~(2$\ast$(\-P\-M\-G\-R\-I\-D/2 + 1))
 \end{DoxyCompactItemize}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{pm__periodic_8c_a13e381f05efdb739cf5026384e908409}{pm\_\-init\_\-periodic} (void)
+void \hyperlink{pm__periodic_8c_a13e381f05efdb739cf5026384e908409}{pm\-\_\-init\-\_\-periodic} (void)
 \item 
-void \hyperlink{pm__periodic_8c_acb5c64377fad9e1a34bad88fb7c61a3e}{pm\_\-init\_\-periodic\_\-allocate} (int dimprod)
+void \hyperlink{pm__periodic_8c_acb5c64377fad9e1a34bad88fb7c61a3e}{pm\-\_\-init\-\_\-periodic\-\_\-allocate} (int dimprod)
 \item 
-void \hyperlink{pm__periodic_8c_a259e6f8400ee889c64bc667334060742}{pm\_\-init\_\-periodic\_\-free} (void)
+void \hyperlink{pm__periodic_8c_a259e6f8400ee889c64bc667334060742}{pm\-\_\-init\-\_\-periodic\-\_\-free} (void)
 \item 
-void \hyperlink{pm__periodic_8c_af8dfaf42f3b513118ad6aa3ab5cd3c1b}{pmforce\_\-periodic} (void)
+void \hyperlink{pm__periodic_8c_af8dfaf42f3b513118ad6aa3ab5cd3c1b}{pmforce\-\_\-periodic} (void)
 \item 
-void \hyperlink{pm__periodic_8c_a7938f2181f23d56ac46f3625d1a855a0}{pmpotential\_\-periodic} (void)
+void \hyperlink{pm__periodic_8c_a7938f2181f23d56ac46f3625d1a855a0}{pmpotential\-\_\-periodic} (void)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
+\subsection*{\-Variables}
 \begin{DoxyCompactItemize}
 \item 
-static rfftwnd\_\-mpi\_\-plan \hyperlink{pm__periodic_8c_ada1bb88285e667f67d30ddac8c9fa924}{fft\_\-forward\_\-plan}
+static rfftwnd\-\_\-mpi\-\_\-plan \hyperlink{pm__periodic_8c_ada1bb88285e667f67d30ddac8c9fa924}{fft\-\_\-forward\-\_\-plan}
 \item 
-static rfftwnd\_\-mpi\_\-plan \hyperlink{pm__periodic_8c_affe0aa143bfd852f161120fe9a09f285}{fft\_\-inverse\_\-plan}
+static rfftwnd\-\_\-mpi\-\_\-plan \hyperlink{pm__periodic_8c_affe0aa143bfd852f161120fe9a09f285}{fft\-\_\-inverse\-\_\-plan}
 \item 
-static int \hyperlink{pm__periodic_8c_af5fc4d76c1156f1aabbfa15968b9ad4c}{slab\_\-to\_\-task} \mbox{[}1\mbox{]}
+static int \hyperlink{pm__periodic_8c_af5fc4d76c1156f1aabbfa15968b9ad4c}{slab\-\_\-to\-\_\-task} \mbox{[}1\mbox{]}
 \item 
-static int $\ast$ \hyperlink{pm__periodic_8c_ad054897488b61bb22501d6ad4b01e6c8}{slabs\_\-per\_\-task}
+static int $\ast$ \hyperlink{pm__periodic_8c_ad054897488b61bb22501d6ad4b01e6c8}{slabs\-\_\-per\-\_\-task}
 \item 
-static int $\ast$ \hyperlink{pm__periodic_8c_a8b608f18c44e494650da5577ddb34082}{first\_\-slab\_\-of\_\-task}
+static int $\ast$ \hyperlink{pm__periodic_8c_a8b608f18c44e494650da5577ddb34082}{first\-\_\-slab\-\_\-of\-\_\-task}
 \item 
-static int $\ast$ \hyperlink{pm__periodic_8c_a0bdf8c7e2cab6c38a4357cf4817e7cbf}{meshmin\_\-list}
+static int $\ast$ \hyperlink{pm__periodic_8c_a0bdf8c7e2cab6c38a4357cf4817e7cbf}{meshmin\-\_\-list}
 \item 
-static int $\ast$ \hyperlink{pm__periodic_8c_aee0d2641b59b02dd9f5ed3070784d995}{meshmax\_\-list}
+static int $\ast$ \hyperlink{pm__periodic_8c_aee0d2641b59b02dd9f5ed3070784d995}{meshmax\-\_\-list}
 \item 
-static int \hyperlink{pm__periodic_8c_a140eccd2a65fea3b4e2080aea519eff1}{slabstart\_\-x}
+static int \hyperlink{pm__periodic_8c_a140eccd2a65fea3b4e2080aea519eff1}{slabstart\-\_\-x}
 \item 
-static int \hyperlink{pm__periodic_8c_a9dfa9b82d22c2a6cc503bcbebe6d774c}{nslab\_\-x}
+static int \hyperlink{pm__periodic_8c_a9dfa9b82d22c2a6cc503bcbebe6d774c}{nslab\-\_\-x}
 \item 
-static int \hyperlink{pm__periodic_8c_a17e825b584286e00d2e435dff44af196}{slabstart\_\-y}
+static int \hyperlink{pm__periodic_8c_a17e825b584286e00d2e435dff44af196}{slabstart\-\_\-y}
 \item 
-static int \hyperlink{pm__periodic_8c_ae33694d88449fd0eb1d291ac33498ac1}{nslab\_\-y}
+static int \hyperlink{pm__periodic_8c_ae33694d88449fd0eb1d291ac33498ac1}{nslab\-\_\-y}
 \item 
-static int \hyperlink{pm__periodic_8c_ab401ed54b1c5572b1b6a2949ffd5c1f8}{smallest\_\-slab}
+static int \hyperlink{pm__periodic_8c_ab401ed54b1c5572b1b6a2949ffd5c1f8}{smallest\-\_\-slab}
 \item 
 static int \hyperlink{pm__periodic_8c_a7575000a7b0c6532786de0ac15da4052}{fftsize}
 \item 
 static int \hyperlink{pm__periodic_8c_a9ae463305ca6786e02bc9000726802b1}{maxfftsize}
 \item 
-static fftw\_\-real $\ast$ \hyperlink{pm__periodic_8c_a07a721ff607175c756095575f9c14fe3}{rhogrid}
+static fftw\-\_\-real $\ast$ \hyperlink{pm__periodic_8c_a07a721ff607175c756095575f9c14fe3}{rhogrid}
 \item 
-static fftw\_\-real $\ast$ \hyperlink{pm__periodic_8c_afa4a65b248baddbf9f8c388a48a1787f}{forcegrid}
+static fftw\-\_\-real $\ast$ \hyperlink{pm__periodic_8c_afa4a65b248baddbf9f8c388a48a1787f}{forcegrid}
 \item 
-static fftw\_\-real $\ast$ \hyperlink{pm__periodic_8c_a182a8913bc59d672bb2a85e63ffcde0f}{workspace}
+static fftw\-\_\-real $\ast$ \hyperlink{pm__periodic_8c_a182a8913bc59d672bb2a85e63ffcde0f}{workspace}
 \item 
-static fftw\_\-complex $\ast$ \hyperlink{pm__periodic_8c_a8f0b56ad473150630454fbceefe2c1e7}{fft\_\-of\_\-rhogrid}
+static fftw\-\_\-complex $\ast$ \hyperlink{pm__periodic_8c_a8f0b56ad473150630454fbceefe2c1e7}{fft\-\_\-of\-\_\-rhogrid}
 \item 
-static float \hyperlink{pm__periodic_8c_a2a1ee0c9996dcb96caf409aacc6888cd}{to\_\-slab\_\-fac}
+static float \hyperlink{pm__periodic_8c_a2a1ee0c9996dcb96caf409aacc6888cd}{to\-\_\-slab\-\_\-fac}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-routines for periodic PM-\/force computation 
+\subsection{\-Detailed \-Description}
+routines for periodic \-P\-M-\/force computation 
 
-Definition in file \hyperlink{pm__periodic_8c_source}{pm\_\-periodic.c}.
-
-
-
-\subsection{Define Documentation}
-\hypertarget{pm__periodic_8c_a8a4d19d2948b1d7b3eff694719e5f436}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!PMGRID2@{PMGRID2}}
-\index{PMGRID2@{PMGRID2}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{PMGRID2}]{\setlength{\rightskip}{0pt plus 5cm}\#define PMGRID2~(2$\ast$(PMGRID/2 + 1))}}
-\label{pm__periodic_8c_a8a4d19d2948b1d7b3eff694719e5f436}
-
-
-Definition at line 29 of file pm\_\-periodic.c.
+\-Definition in file \hyperlink{pm__periodic_8c_source}{pm\-\_\-periodic.\-c}.
 
 
 
-Referenced by pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\subsection{\-Define \-Documentation}
+\hypertarget{pm__periodic_8c_a8a4d19d2948b1d7b3eff694719e5f436}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!\-P\-M\-G\-R\-I\-D2@{\-P\-M\-G\-R\-I\-D2}}
+\index{\-P\-M\-G\-R\-I\-D2@{\-P\-M\-G\-R\-I\-D2}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{\-P\-M\-G\-R\-I\-D2}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-P\-M\-G\-R\-I\-D2}~(2$\ast$(\-P\-M\-G\-R\-I\-D/2 + 1))}}\label{pm__periodic_8c_a8a4d19d2948b1d7b3eff694719e5f436}
+
+
+\-Definition at line 29 of file pm\-\_\-periodic.\-c.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{pm__periodic_8c_a13e381f05efdb739cf5026384e908409}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!pm\_\-init\_\-periodic@{pm\_\-init\_\-periodic}}
-\index{pm\_\-init\_\-periodic@{pm\_\-init\_\-periodic}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{pm\_\-init\_\-periodic}]{\setlength{\rightskip}{0pt plus 5cm}void pm\_\-init\_\-periodic (
+\-Referenced by pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{pm__periodic_8c_a13e381f05efdb739cf5026384e908409}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!pm\-\_\-init\-\_\-periodic@{pm\-\_\-init\-\_\-periodic}}
+\index{pm\-\_\-init\-\_\-periodic@{pm\-\_\-init\-\_\-periodic}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{pm\-\_\-init\-\_\-periodic}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf pm\-\_\-init\-\_\-periodic} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{pm__periodic_8c_a13e381f05efdb739cf5026384e908409}
-This routines generates the FFTW-\/plans to carry out the parallel FFTs later on. Some auxiliary variables are also initialized. 
+)}}\label{pm__periodic_8c_a13e381f05efdb739cf5026384e908409}
+\-This routines generates the \-F\-F\-T\-W-\/plans to carry out the parallel \-F\-F\-Ts later on. \-Some auxiliary variables are also initialized. $<$ \-A\-S\-M\-T\-H gives the scale of the short-\/range/long-\/range force split in units of \-F\-F\-T-\/mesh cells
 
-$<$ @-\/ASMTH gives the scale of the short-\/range/long-\/range force split in units of FFT-\/mesh cells
+$<$ \-R\-C\-U\-T gives the maximum distance (in units of the scale used for the force split) out to which short-\/range forces are evaluated in the short-\/range tree walk. 
 
-$<$ @-\/RCUT gives the maximum distance (in units of the scale used for the force split) out to which short-\/range forces are evaluated in the short-\/range tree walk. 
-
-
-
-Definition at line 55 of file pm\_\-periodic.c.
+\-Definition at line 55 of file pm\-\_\-periodic.\-c.
 
 
 
-References All, ASMTH, global\_\-data\_\-all\_\-processes::Asmth, global\_\-data\_\-all\_\-processes::BoxSize, fft\_\-forward\_\-plan, fft\_\-inverse\_\-plan, fftsize, first\_\-slab\_\-of\_\-task, maxfftsize, meshmax\_\-list, meshmin\_\-list, nslab\_\-x, nslab\_\-y, NTask, RCUT, global\_\-data\_\-all\_\-processes::Rcut, slab\_\-to\_\-task, slabs\_\-per\_\-task, slabstart\_\-x, slabstart\_\-y, smallest\_\-slab, ThisTask, and to\_\-slab\_\-fac.
+\-References \-All, fft\-\_\-forward\-\_\-plan, fft\-\_\-inverse\-\_\-plan, fftsize, first\-\_\-slab\-\_\-of\-\_\-task, maxfftsize, meshmax\-\_\-list, meshmin\-\_\-list, nslab\-\_\-x, nslab\-\_\-y, \-N\-Task, slab\-\_\-to\-\_\-task, slabs\-\_\-per\-\_\-task, slabstart\-\_\-x, slabstart\-\_\-y, smallest\-\_\-slab, \-This\-Task, and to\-\_\-slab\-\_\-fac.
 
 
 
-Referenced by long\_\-range\_\-init().
-
-
+\-Referenced by long\-\_\-range\-\_\-init().
 
 
 \begin{DoxyCode}
@@ -149,14 +138,14 @@ Referenced by long\_\-range\_\-init().
 
   /* Set up the FFTW plan files. */
 
-  fft_forward_plan = rfftw3d_mpi_create_plan(MPI_COMM_WORLD, PMGRID, PMGRID, PMGR
-      ID,
-                                             FFTW_REAL_TO_COMPLEX, FFTW_ESTIMATE 
-      | FFTW_IN_PLACE);
-  fft_inverse_plan = rfftw3d_mpi_create_plan(MPI_COMM_WORLD, PMGRID, PMGRID, PMGR
-      ID,
-                                             FFTW_COMPLEX_TO_REAL, FFTW_ESTIMATE 
-      | FFTW_IN_PLACE);
+  fft_forward_plan = rfftw3d_mpi_create_plan(MPI_COMM_WORLD, PMGRID, PMGRID, 
+      PMGRID,
+                                             FFTW_REAL_TO_COMPLEX, 
+      FFTW_ESTIMATE | FFTW_IN_PLACE);
+  fft_inverse_plan = rfftw3d_mpi_create_plan(MPI_COMM_WORLD, PMGRID, PMGRID, 
+      PMGRID,
+                                             FFTW_COMPLEX_TO_REAL, 
+      FFTW_ESTIMATE | FFTW_IN_PLACE);
 
   /* Workspace out the ranges on each processor. */
 
@@ -169,14 +158,14 @@ Referenced by long\_\-range\_\-init().
   for(i = 0; i < nslab_x; i++)
     slab_to_task_local[slabstart_x + i] = ThisTask;
 
-  MPI_Allreduce(slab_to_task_local, slab_to_task, PMGRID, MPI_INT, MPI_SUM, MPI_C
-      OMM_WORLD);
+  MPI_Allreduce(slab_to_task_local, slab_to_task, PMGRID, MPI_INT, MPI_SUM, 
+      MPI_COMM_WORLD);
 
   MPI_Allreduce(&nslab_x, &smallest_slab, 1, MPI_INT, MPI_MIN, MPI_COMM_WORLD);
 
   slabs_per_task = malloc(NTask * sizeof(int));
-  MPI_Allgather(&nslab_x, 1, MPI_INT, slabs_per_task, 1, MPI_INT, MPI_COMM_WORLD)
-      ;
+  MPI_Allgather(&nslab_x, 1, MPI_INT, slabs_per_task, 1, MPI_INT, 
+      MPI_COMM_WORLD);
 
   if(ThisTask == 0)
     {
@@ -185,8 +174,8 @@ Referenced by long\_\-range\_\-init().
     }
 
   first_slab_of_task = malloc(NTask * sizeof(int));
-  MPI_Allgather(&slabstart_x, 1, MPI_INT, first_slab_of_task, 1, MPI_INT, MPI_COM
-      M_WORLD);
+  MPI_Allgather(&slabstart_x, 1, MPI_INT, first_slab_of_task, 1, MPI_INT, 
+      MPI_COMM_WORLD);
 
   meshmin_list = malloc(3 * NTask * sizeof(int));
   meshmax_list = malloc(3 * NTask * sizeof(int));
@@ -199,40 +188,34 @@ Referenced by long\_\-range\_\-init().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{pm__periodic_8c_a13e381f05efdb739cf5026384e908409_icgraph}
+\includegraphics[width=350pt]{pm__periodic_8c_a13e381f05efdb739cf5026384e908409_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{pm__periodic_8c_acb5c64377fad9e1a34bad88fb7c61a3e}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!pm\_\-init\_\-periodic\_\-allocate@{pm\_\-init\_\-periodic\_\-allocate}}
-\index{pm\_\-init\_\-periodic\_\-allocate@{pm\_\-init\_\-periodic\_\-allocate}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{pm\_\-init\_\-periodic\_\-allocate}]{\setlength{\rightskip}{0pt plus 5cm}void pm\_\-init\_\-periodic\_\-allocate (
+\hypertarget{pm__periodic_8c_acb5c64377fad9e1a34bad88fb7c61a3e}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!pm\-\_\-init\-\_\-periodic\-\_\-allocate@{pm\-\_\-init\-\_\-periodic\-\_\-allocate}}
+\index{pm\-\_\-init\-\_\-periodic\-\_\-allocate@{pm\-\_\-init\-\_\-periodic\-\_\-allocate}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{pm\-\_\-init\-\_\-periodic\-\_\-allocate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf pm\-\_\-init\-\_\-periodic\-\_\-allocate} (
 \begin{DoxyParamCaption}
-\item[{int}]{ dimprod}
+\item[{int}]{dimprod}
 \end{DoxyParamCaption}
-)}}
-\label{pm__periodic_8c_acb5c64377fad9e1a34bad88fb7c61a3e}
-This function allocates the memory neeed to compute the long-\/range PM force. Three fields are used, one to hold the density (and its FFT, and then the real-\/space potential), one to hold the force field obtained by finite differencing, and finally a workspace field, which is used both as workspace for the parallel FFT, and as buffer for the communication algorithm used in the force computation. 
+)}}\label{pm__periodic_8c_acb5c64377fad9e1a34bad88fb7c61a3e}
+\-This function allocates the memory neeed to compute the long-\/range \-P\-M force. \-Three fields are used, one to hold the density (and its \-F\-F\-T, and then the real-\/space potential), one to hold the force field obtained by finite differencing, and finally a workspace field, which is used both as workspace for the parallel \-F\-F\-T, and as buffer for the communication algorithm used in the force computation. 
 
-Definition at line 113 of file pm\_\-periodic.c.
-
-
-
-References endrun(), fft\_\-of\_\-rhogrid, fftsize, forcegrid, imax(), maxfftsize, rhogrid, ThisTask, and workspace.
+\-Definition at line 113 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-References endrun(), fft\-\_\-of\-\_\-rhogrid, fftsize, forcegrid, imax(), maxfftsize, rhogrid, \-This\-Task, and workspace.
 
 
+
+\-Referenced by pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
 
 \begin{DoxyCode}
@@ -248,27 +231,27 @@ Referenced by pmforce\_\-periodic(), and pmpotential\_\-periodic().
 
   if(!(rhogrid = (fftw_real *) malloc(bytes = fftsize * sizeof(fftw_real))))
     {
-      printf("failed to allocate memory for `FFT-rhogrid' (%g MB).\n", bytes / (1
-      024.0 * 1024.0));
-      endrun(1);
-    }
-  bytes_tot += bytes;
-
-
-  if(!(forcegrid = (fftw_real *) malloc(bytes = imax(fftsize, dimprodmax) * sizeo
-      f(fftw_real))))
-    {
-      printf("failed to allocate memory for `FFT-forcegrid' (%g MB).\n", bytes / 
+      printf("failed to allocate memory for `FFT-rhogrid' (%g MB).\n", bytes / 
       (1024.0 * 1024.0));
       endrun(1);
     }
   bytes_tot += bytes;
 
-  if(!(workspace = (fftw_real *) malloc(bytes = imax(maxfftsize, dimprodmax) * si
-      zeof(fftw_real))))
+
+  if(!(forcegrid = (fftw_real *) malloc(bytes = imax(fftsize, dimprodmax) * 
+      sizeof(fftw_real))))
     {
-      printf("failed to allocate memory for `FFT-workspace' (%g MB).\n", bytes / 
-      (1024.0 * 1024.0));
+      printf("failed to allocate memory for `FFT-forcegrid' (%g MB).\n", bytes 
+      / (1024.0 * 1024.0));
+      endrun(1);
+    }
+  bytes_tot += bytes;
+
+  if(!(workspace = (fftw_real *) malloc(bytes = imax(maxfftsize, dimprodmax) * 
+      sizeof(fftw_real))))
+    {
+      printf("failed to allocate memory for `FFT-workspace' (%g MB).\n", bytes 
+      / (1024.0 * 1024.0));
       endrun(1);
     }
   bytes_tot += bytes;
@@ -277,8 +260,8 @@ Referenced by pmforce\_\-periodic(), and pmpotential\_\-periodic().
     {
       first_alloc = 0;
       if(ThisTask == 0)
-        printf("\nAllocated %g MByte for FFT data.\n\n", bytes_tot / (1024.0 * 10
-      24.0));
+        printf("\nAllocated %g MByte for FFT data.\n\n", bytes_tot / (1024.0 * 
+      1024.0));
     }
 
   fft_of_rhogrid = (fftw_complex *) & rhogrid[0];
@@ -286,52 +269,46 @@ Referenced by pmforce\_\-periodic(), and pmpotential\_\-periodic().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{pm__periodic_8c_acb5c64377fad9e1a34bad88fb7c61a3e_cgraph}
+\includegraphics[width=350pt]{pm__periodic_8c_acb5c64377fad9e1a34bad88fb7c61a3e_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{pm__periodic_8c_acb5c64377fad9e1a34bad88fb7c61a3e_icgraph}
+\includegraphics[width=350pt]{pm__periodic_8c_acb5c64377fad9e1a34bad88fb7c61a3e_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{pm__periodic_8c_a259e6f8400ee889c64bc667334060742}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!pm\_\-init\_\-periodic\_\-free@{pm\_\-init\_\-periodic\_\-free}}
-\index{pm\_\-init\_\-periodic\_\-free@{pm\_\-init\_\-periodic\_\-free}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{pm\_\-init\_\-periodic\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void pm\_\-init\_\-periodic\_\-free (
+\hypertarget{pm__periodic_8c_a259e6f8400ee889c64bc667334060742}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!pm\-\_\-init\-\_\-periodic\-\_\-free@{pm\-\_\-init\-\_\-periodic\-\_\-free}}
+\index{pm\-\_\-init\-\_\-periodic\-\_\-free@{pm\-\_\-init\-\_\-periodic\-\_\-free}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{pm\-\_\-init\-\_\-periodic\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf pm\-\_\-init\-\_\-periodic\-\_\-free} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{pm__periodic_8c_a259e6f8400ee889c64bc667334060742}
-This routine frees the space allocated for the parallel FFT algorithm. 
+)}}\label{pm__periodic_8c_a259e6f8400ee889c64bc667334060742}
+\-This routine frees the space allocated for the parallel \-F\-F\-T algorithm. 
 
-Definition at line 160 of file pm\_\-periodic.c.
-
-
-
-References forcegrid, rhogrid, and workspace.
+\-Definition at line 160 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-References forcegrid, rhogrid, and workspace.
 
 
+
+\-Referenced by pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
 
 \begin{DoxyCode}
@@ -344,40 +321,34 @@ Referenced by pmforce\_\-periodic(), and pmpotential\_\-periodic().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{pm__periodic_8c_a259e6f8400ee889c64bc667334060742_icgraph}
+\includegraphics[width=350pt]{pm__periodic_8c_a259e6f8400ee889c64bc667334060742_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{pm__periodic_8c_af8dfaf42f3b513118ad6aa3ab5cd3c1b}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!pmforce\_\-periodic@{pmforce\_\-periodic}}
-\index{pmforce\_\-periodic@{pmforce\_\-periodic}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{pmforce\_\-periodic}]{\setlength{\rightskip}{0pt plus 5cm}void pmforce\_\-periodic (
+\hypertarget{pm__periodic_8c_af8dfaf42f3b513118ad6aa3ab5cd3c1b}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!pmforce\-\_\-periodic@{pmforce\-\_\-periodic}}
+\index{pmforce\-\_\-periodic@{pmforce\-\_\-periodic}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{pmforce\-\_\-periodic}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf pmforce\-\_\-periodic} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{pm__periodic_8c_af8dfaf42f3b513118ad6aa3ab5cd3c1b}
-Calculates the long-\/range periodic force given the particle positions using the PM method. The force is Gaussian filtered with Asmth, given in mesh-\/cell units. We carry out a CIC charge assignment, and compute the potenial by Fourier transform methods. The potential is finite differenced using a 4-\/point finite differencing formula, and the forces are interpolated tri-\/linearly to the particle positions. The CIC kernel is deconvolved. Note that the particle distribution is not in the slab decomposition that is used for the FFT. Instead, overlapping patches between local domains and FFT slabs are communicated as needed. 
+)}}\label{pm__periodic_8c_af8dfaf42f3b513118ad6aa3ab5cd3c1b}
+\-Calculates the long-\/range periodic force given the particle positions using the \-P\-M method. \-The force is \-Gaussian filtered with \-Asmth, given in mesh-\/cell units. \-We carry out a \-C\-I\-C charge assignment, and compute the potenial by \-Fourier transform methods. \-The potential is finite differenced using a 4-\/point finite differencing formula, and the forces are interpolated tri-\/linearly to the particle positions. \-The \-C\-I\-C kernel is deconvolved. \-Note that the particle distribution is not in the slab decomposition that is used for the \-F\-F\-T. \-Instead, overlapping patches between local domains and \-F\-F\-T slabs are communicated as needed. 
 
-Definition at line 180 of file pm\_\-periodic.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::Asmth, global\_\-data\_\-all\_\-processes::BoxSize, fft\_\-forward\_\-plan, fft\_\-inverse\_\-plan, fft\_\-of\_\-rhogrid, fftsize, first\_\-slab\_\-of\_\-task, force\_\-treeallocate(), force\_\-treefree(), forcegrid, global\_\-data\_\-all\_\-processes::G, particle\_\-data::GravPM, particle\_\-data::Mass, global\_\-data\_\-all\_\-processes::MaxPart, meshmax\_\-list, meshmin\_\-list, nslab\_\-y, NTask, global\_\-data\_\-all\_\-processes::NumForcesSinceLastDomainDecomp, NumPart, P, pm\_\-init\_\-periodic\_\-allocate(), pm\_\-init\_\-periodic\_\-free(), PMGRID2, particle\_\-data::Pos, PTask, rhogrid, slab\_\-to\_\-task, slabs\_\-per\_\-task, slabstart\_\-y, TAG\_\-PERIODIC\_\-A, TAG\_\-PERIODIC\_\-B, ThisTask, to\_\-slab\_\-fac, global\_\-data\_\-all\_\-processes::TotNumPart, global\_\-data\_\-all\_\-processes::TreeAllocFactor, global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency, and workspace.
+\-Definition at line 180 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by long\_\-range\_\-force().
+\-References \-All, fft\-\_\-forward\-\_\-plan, fft\-\_\-inverse\-\_\-plan, fft\-\_\-of\-\_\-rhogrid, fftsize, first\-\_\-slab\-\_\-of\-\_\-task, force\-\_\-treeallocate(), force\-\_\-treefree(), forcegrid, meshmax\-\_\-list, meshmin\-\_\-list, nslab\-\_\-y, \-N\-Task, \-Num\-Part, \-P, pm\-\_\-init\-\_\-periodic\-\_\-allocate(), pm\-\_\-init\-\_\-periodic\-\_\-free(), \-P\-M\-G\-R\-I\-D2, \-P\-Task, rhogrid, slab\-\_\-to\-\_\-task, slabs\-\_\-per\-\_\-task, slabstart\-\_\-y, \-T\-A\-G\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-A, \-T\-A\-G\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-B, \-This\-Task, to\-\_\-slab\-\_\-fac, and workspace.
 
 
+
+\-Referenced by long\-\_\-range\-\_\-force().
 
 
 \begin{DoxyCode}
@@ -391,8 +362,8 @@ Referenced by long\_\-range\_\-force().
   int slab_x, slab_y, slab_z;
   int slab_xx, slab_yy, slab_zz;
   int meshmin[3], meshmax[3], sendmin, sendmax, recvmin, recvmax;
-  int rep, ncont, cont_sendmin[2], cont_sendmax[2], cont_recvmin[2], cont_recvmax
-      [2];
+  int rep, ncont, cont_sendmin[2], cont_sendmax[2], cont_recvmin[2], 
+      cont_recvmax[2];
   int dimx, dimy, dimz, recv_dimx, recv_dimy, recv_dimz;
   MPI_Status status;
 
@@ -472,31 +443,31 @@ Referenced by long\_\-range\_\-force().
       slab_z -= meshmin[2];
       slab_zz = slab_z + 1;
 
-      workspace[(slab_x * dimy + slab_y) * dimz + slab_z] += P[i].Mass * (1.0 - d
-      x) * (1.0 - dy) * (1.0 - dz);
-      workspace[(slab_x * dimy + slab_yy) * dimz + slab_z] += P[i].Mass * (1.0 - 
-      dx) * dy * (1.0 - dz);
-      workspace[(slab_x * dimy + slab_y) * dimz + slab_zz] += P[i].Mass * (1.0 - 
-      dx) * (1.0 - dy) * dz;
-      workspace[(slab_x * dimy + slab_yy) * dimz + slab_zz] += P[i].Mass * (1.0 -
-       dx) * dy * dz;
+      workspace[(slab_x * dimy + slab_y) * dimz + slab_z] += P[i].Mass * (1.0 -
+       dx) * (1.0 - dy) * (1.0 - dz);
+      workspace[(slab_x * dimy + slab_yy) * dimz + slab_z] += P[i].Mass * (1.0 
+      - dx) * dy * (1.0 - dz);
+      workspace[(slab_x * dimy + slab_y) * dimz + slab_zz] += P[i].Mass * (1.0 
+      - dx) * (1.0 - dy) * dz;
+      workspace[(slab_x * dimy + slab_yy) * dimz + slab_zz] += P[i].Mass * (1.0
+       - dx) * dy * dz;
 
-      workspace[(slab_xx * dimy + slab_y) * dimz + slab_z] += P[i].Mass * (dx) * 
-      (1.0 - dy) * (1.0 - dz);
-      workspace[(slab_xx * dimy + slab_yy) * dimz + slab_z] += P[i].Mass * (dx) *
-       dy * (1.0 - dz);
-      workspace[(slab_xx * dimy + slab_y) * dimz + slab_zz] += P[i].Mass * (dx) *
-       (1.0 - dy) * dz;
-      workspace[(slab_xx * dimy + slab_yy) * dimz + slab_zz] += P[i].Mass * (dx) 
-      * dy * dz;
+      workspace[(slab_xx * dimy + slab_y) * dimz + slab_z] += P[i].Mass * (dx) 
+      * (1.0 - dy) * (1.0 - dz);
+      workspace[(slab_xx * dimy + slab_yy) * dimz + slab_z] += P[i].Mass * (dx)
+       * dy * (1.0 - dz);
+      workspace[(slab_xx * dimy + slab_y) * dimz + slab_zz] += P[i].Mass * (dx)
+       * (1.0 - dy) * dz;
+      workspace[(slab_xx * dimy + slab_yy) * dimz + slab_zz] += P[i].Mass * (dx
+      ) * dy * dz;
     }
 
 
   for(i = 0; i < fftsize; i++)  /* clear local density field */
     rhogrid[i] = 0;
 
-  for(level = 0; level < (1 << PTask); level++) /* note: for level=0, target is t
-      he same task */
+  for(level = 0; level < (1 << PTask); level++) /* note: for level=0, target is
+       the same task */
     {
       sendTask = ThisTask;
       recvTask = ThisTask ^ level;
@@ -519,8 +490,8 @@ Referenced by long\_\-range\_\-force().
           /* check how much we have to receive */
           recvmin = 2 * PMGRID;
           recvmax = -1;
-          for(slab_x = meshmin_list[3 * recvTask]; slab_x < meshmax_list[3 * recv
-      Task] + 2; slab_x++)
+          for(slab_x = meshmin_list[3 * recvTask]; slab_x < meshmax_list[3 * 
+      recvTask] + 2; slab_x++)
             if(slab_to_task[slab_x % PMGRID] == sendTask)
               {
                 if(slab_x < recvmin)
@@ -532,33 +503,34 @@ Referenced by long\_\-range\_\-force().
             recvmin = 0;
 
 
-          if((recvmax - recvmin) >= 0 || (sendmax - sendmin) >= 0)      /* ok, we
-       have a contribution to the slab */
+          if((recvmax - recvmin) >= 0 || (sendmax - sendmin) >= 0)      /* ok,
+       we have a contribution to the slab */
             {
-              recv_dimx = meshmax_list[3 * recvTask + 0] - meshmin_list[3 * recvT
-      ask + 0] + 2;
-              recv_dimy = meshmax_list[3 * recvTask + 1] - meshmin_list[3 * recvT
-      ask + 1] + 2;
-              recv_dimz = meshmax_list[3 * recvTask + 2] - meshmin_list[3 * recvT
-      ask + 2] + 2;
+              recv_dimx = meshmax_list[3 * recvTask + 0] - meshmin_list[3 * 
+      recvTask + 0] + 2;
+              recv_dimy = meshmax_list[3 * recvTask + 1] - meshmin_list[3 * 
+      recvTask + 1] + 2;
+              recv_dimz = meshmax_list[3 * recvTask + 2] - meshmin_list[3 * 
+      recvTask + 2] + 2;
 
               if(level > 0)
                 {
-                  MPI_Sendrecv(workspace + (sendmin - meshmin[0]) * dimy * dimz,
-                               (sendmax - sendmin + 1) * dimy * dimz * sizeof(fft
-      w_real), MPI_BYTE, recvTask,
+                  MPI_Sendrecv(workspace + (sendmin - meshmin[0]) * dimy * dimz
+      ,
+                               (sendmax - sendmin + 1) * dimy * dimz * sizeof(
+      fftw_real), MPI_BYTE, recvTask,
                                TAG_PERIODIC_A, forcegrid,
-                               (recvmax - recvmin + 1) * recv_dimy * recv_dimz * 
-      sizeof(fftw_real), MPI_BYTE,
-                               recvTask, TAG_PERIODIC_A, MPI_COMM_WORLD, &status)
-      ;
+                               (recvmax - recvmin + 1) * recv_dimy * recv_dimz 
+      * sizeof(fftw_real), MPI_BYTE,
+                               recvTask, TAG_PERIODIC_A, MPI_COMM_WORLD, &
+      status);
                 }
               else
                 {
-                  memcpy(forcegrid, workspace + (sendmin - meshmin[0]) * dimy * d
-      imz,
-                         (sendmax - sendmin + 1) * dimy * dimz * sizeof(fftw_real
-      ));
+                  memcpy(forcegrid, workspace + (sendmin - meshmin[0]) * dimy *
+       dimz,
+                         (sendmax - sendmin + 1) * dimy * dimz * sizeof(
+      fftw_real));
                 }
 
               for(slab_x = recvmin; slab_x <= recvmax; slab_x++)
@@ -568,28 +540,28 @@ Referenced by long\_\-range\_\-force().
                   if(slab_xx >= 0 && slab_xx < slabs_per_task[ThisTask])
                     {
                       for(slab_y = meshmin_list[3 * recvTask + 1];
-                          slab_y <= meshmax_list[3 * recvTask + 1] + 1; slab_y++)
-      
+                          slab_y <= meshmax_list[3 * recvTask + 1] + 1; slab_y+
+      +)
                         {
                           slab_yy = slab_y;
                           if(slab_yy >= PMGRID)
                             slab_yy -= PMGRID;
 
                           for(slab_z = meshmin_list[3 * recvTask + 2];
-                              slab_z <= meshmax_list[3 * recvTask + 2] + 1; slab_
-      z++)
+                              slab_z <= meshmax_list[3 * recvTask + 2] + 1; 
+      slab_z++)
                             {
                               slab_zz = slab_z;
                               if(slab_zz >= PMGRID)
                                 slab_zz -= PMGRID;
 
-                              rhogrid[PMGRID * PMGRID2 * slab_xx + PMGRID2 * slab
-      _yy + slab_zz] +=
+                              rhogrid[PMGRID * PMGRID2 * slab_xx + PMGRID2 * 
+      slab_yy + slab_zz] +=
                                 forcegrid[((slab_x - recvmin) * recv_dimy +
-                                           (slab_y - meshmin_list[3 * recvTask + 
-      1])) * recv_dimz +
-                                          (slab_z - meshmin_list[3 * recvTask + 2
-      ])];
+                                           (slab_y - meshmin_list[3 * recvTask 
+      + 1])) * recv_dimz +
+                                          (slab_z - meshmin_list[3 * recvTask +
+       2])];
                             }
                         }
                     }
@@ -650,8 +622,8 @@ Referenced by long\_\-range\_\-force().
 
               /* end deconvolution */
 
-              ip = PMGRID * (PMGRID / 2 + 1) * (y - slabstart_y) + (PMGRID / 2 + 
-      1) * x + z;
+              ip = PMGRID * (PMGRID / 2 + 1) * (y - slabstart_y) + (PMGRID / 2 
+      + 1) * x + z;
               fft_of_rhogrid[ip].re *= smth;
               fft_of_rhogrid[ip].im *= smth;
             }
@@ -672,8 +644,8 @@ Referenced by long\_\-range\_\-force().
   dimy = meshmax[1] - meshmin[1] + 6;
   dimz = meshmax[2] - meshmin[2] + 6;
 
-  for(level = 0; level < (1 << PTask); level++) /* note: for level=0, target is t
-      he same task */
+  for(level = 0; level < (1 << PTask); level++) /* note: for level=0, target is
+       the same task */
     {
       sendTask = ThisTask;
       recvTask = ThisTask ^ level;
@@ -684,8 +656,8 @@ Referenced by long\_\-range\_\-force().
           /* check how much we have to send */
           sendmin = 2 * PMGRID;
           sendmax = -PMGRID;
-          for(slab_x = meshmin_list[3 * recvTask] - 2; slab_x < meshmax_list[3 * 
-      recvTask] + 4; slab_x++)
+          for(slab_x = meshmin_list[3 * recvTask] - 2; slab_x < meshmax_list[3 
+      * recvTask] + 4; slab_x++)
             if(slab_to_task[(slab_x + PMGRID) % PMGRID] == sendTask)
               {
                 if(slab_x < sendmin)
@@ -711,15 +683,15 @@ Referenced by long\_\-range\_\-force().
           if(recvmax == -PMGRID)
             recvmin = recvmax + 1;
 
-          if((recvmax - recvmin) >= 0 || (sendmax - sendmin) >= 0)      /* ok, we
-       have a contribution to the slab */
+          if((recvmax - recvmin) >= 0 || (sendmax - sendmin) >= 0)      /* ok,
+       we have a contribution to the slab */
             {
-              recv_dimx = meshmax_list[3 * recvTask + 0] - meshmin_list[3 * recvT
-      ask + 0] + 6;
-              recv_dimy = meshmax_list[3 * recvTask + 1] - meshmin_list[3 * recvT
-      ask + 1] + 6;
-              recv_dimz = meshmax_list[3 * recvTask + 2] - meshmin_list[3 * recvT
-      ask + 2] + 6;
+              recv_dimx = meshmax_list[3 * recvTask + 0] - meshmin_list[3 * 
+      recvTask + 0] + 6;
+              recv_dimy = meshmax_list[3 * recvTask + 1] - meshmin_list[3 * 
+      recvTask + 1] + 6;
+              recv_dimz = meshmax_list[3 * recvTask + 2] - meshmin_list[3 * 
+      recvTask + 2] + 6;
 
               ncont = 1;
               cont_sendmin[0] = sendmin;
@@ -738,8 +710,8 @@ Referenced by long\_\-range\_\-force().
                     {
                       /* non-contiguous */
                       cont_sendmax[0] = slab_x - 1;
-                      while(slab_to_task[(slab_x + PMGRID) % PMGRID] != ThisTask)
-      
+                      while(slab_to_task[(slab_x + PMGRID) % PMGRID] != ThisTask
+      )
                         slab_x++;
                       cont_sendmin[1] = slab_x;
                       ncont++;
@@ -752,8 +724,8 @@ Referenced by long\_\-range\_\-force().
                     {
                       /* non-contiguous */
                       cont_recvmax[0] = slab_x - 1;
-                      while(slab_to_task[(slab_x + PMGRID) % PMGRID] != recvTask)
-      
+                      while(slab_to_task[(slab_x + PMGRID) % PMGRID] != 
+      recvTask)
                         slab_x++;
                       cont_recvmin[1] = slab_x;
                       if(ncont == 1)
@@ -778,24 +750,24 @@ Referenced by long\_\-range\_\-force().
       first_slab_of_task[ThisTask];
 
                           for(slab_y = meshmin_list[3 * recvTask + 1] - 2;
-                              slab_y < meshmax_list[3 * recvTask + 1] + 4; slab_y
-      ++)
+                              slab_y < meshmax_list[3 * recvTask + 1] + 4; 
+      slab_y++)
                             {
                               slab_yy = (slab_y + PMGRID) % PMGRID;
 
                               for(slab_z = meshmin_list[3 * recvTask + 2] - 2;
-                                  slab_z < meshmax_list[3 * recvTask + 2] + 4; sl
-      ab_z++)
+                                  slab_z < meshmax_list[3 * recvTask + 2] + 4; 
+      slab_z++)
                                 {
                                   slab_zz = (slab_z + PMGRID) % PMGRID;
 
                                   forcegrid[((slab_x - sendmin) * recv_dimy +
-                                             (slab_y - (meshmin_list[3 * recvTask
-       + 1] - 2))) * recv_dimz +
-                                            slab_z - (meshmin_list[3 * recvTask +
-       2] - 2)] =
-                                    rhogrid[PMGRID * PMGRID2 * slab_xx + PMGRID2 
-      * slab_yy + slab_zz];
+                                             (slab_y - (meshmin_list[3 * 
+      recvTask + 1] - 2))) * recv_dimz +
+                                            slab_z - (meshmin_list[3 * recvTask
+       + 2] - 2)] =
+                                    rhogrid[PMGRID * PMGRID2 * slab_xx + PMGRID2
+       * slab_yy + slab_zz];
                                 }
                             }
                         }
@@ -804,22 +776,22 @@ Referenced by long\_\-range\_\-force().
                   if(level > 0)
                     {
                       MPI_Sendrecv(forcegrid,
-                                   (sendmax - sendmin + 1) * recv_dimy * recv_dim
-      z * sizeof(fftw_real),
+                                   (sendmax - sendmin + 1) * recv_dimy * 
+      recv_dimz * sizeof(fftw_real),
                                    MPI_BYTE, recvTask, TAG_PERIODIC_B,
-                                   workspace + (recvmin - (meshmin[0] - 2)) * dim
-      y * dimz,
-                                   (recvmax - recvmin + 1) * dimy * dimz * sizeof
-      (fftw_real), MPI_BYTE,
-                                   recvTask, TAG_PERIODIC_B, MPI_COMM_WORLD, &sta
-      tus);
+                                   workspace + (recvmin - (meshmin[0] - 2)) * 
+      dimy * dimz,
+                                   (recvmax - recvmin + 1) * dimy * dimz * 
+      sizeof(fftw_real), MPI_BYTE,
+                                   recvTask, TAG_PERIODIC_B, MPI_COMM_WORLD, &
+      status);
                     }
                   else
                     {
-                      memcpy(workspace + (recvmin - (meshmin[0] - 2)) * dimy * di
-      mz,
-                             forcegrid, (recvmax - recvmin + 1) * dimy * dimz * s
-      izeof(fftw_real));
+                      memcpy(workspace + (recvmin - (meshmin[0] - 2)) * dimy * 
+      dimz,
+                             forcegrid, (recvmax - recvmin + 1) * dimy * dimz *
+       sizeof(fftw_real));
                     }
                 }
             }
@@ -839,8 +811,8 @@ Referenced by long\_\-range\_\-force().
   for(dim = 0; dim < 3; dim++)  /* Calculate each component of the force. */
     {
       /* get the force component by finite differencing the potential */
-      /* note: "workspace" now contains the potential for the local patch, plus a
-       suffiently large buffer region */
+      /* note: "workspace" now contains the potential for the local patch, plus
+       a suffiently large buffer region */
 
       for(x = 0; x < meshmax[0] - meshmin[0] + 2; x++)
         for(y = 0; y < meshmax[1] - meshmin[1] + 2; y++)
@@ -875,15 +847,15 @@ Referenced by long\_\-range\_\-force().
               forcegrid[(x * dimy + y) * dimz + z]
                 =
                 fac * ((4.0 / 3) *
-                       (workspace[((xl + 2) * recv_dimy + (yl + 2)) * recv_dimz +
-       (zl + 2)]
-                        - workspace[((xr + 2) * recv_dimy + (yr + 2)) * recv_dimz
-       + (zr + 2)]) -
+                       (workspace[((xl + 2) * recv_dimy + (yl + 2)) * recv_dimz
+       + (zl + 2)]
+                        - workspace[((xr + 2) * recv_dimy + (yr + 2)) * 
+      recv_dimz + (zr + 2)]) -
                        (1.0 / 6) *
-                       (workspace[((xll + 2) * recv_dimy + (yll + 2)) * recv_dimz
-       + (zll + 2)] -
-                        workspace[((xrr + 2) * recv_dimy + (yrr + 2)) * recv_dimz
-       + (zrr + 2)]));
+                       (workspace[((xll + 2) * recv_dimy + (yll + 2)) * 
+      recv_dimz + (zll + 2)] -
+                        workspace[((xrr + 2) * recv_dimy + (yrr + 2)) * 
+      recv_dimz + (zrr + 2)]));
             }
 
       /* read out the forces */
@@ -912,23 +884,23 @@ Referenced by long\_\-range\_\-force().
           slab_zz = slab_z + 1;
 
           acc_dim =
-            forcegrid[(slab_x * dimy + slab_y) * dimz + slab_z] * (1.0 - dx) * (1
-      .0 - dy) * (1.0 - dz);
-          acc_dim += forcegrid[(slab_x * dimy + slab_yy) * dimz + slab_z] * (1.0 
-      - dx) * dy * (1.0 - dz);
-          acc_dim += forcegrid[(slab_x * dimy + slab_y) * dimz + slab_zz] * (1.0 
-      - dx) * (1.0 - dy) * dz;
-          acc_dim += forcegrid[(slab_x * dimy + slab_yy) * dimz + slab_zz] * (1.0
-       - dx) * dy * dz;
+            forcegrid[(slab_x * dimy + slab_y) * dimz + slab_z] * (1.0 - dx) * 
+      (1.0 - dy) * (1.0 - dz);
+          acc_dim += forcegrid[(slab_x * dimy + slab_yy) * dimz + slab_z] * (1.
+      0 - dx) * dy * (1.0 - dz);
+          acc_dim += forcegrid[(slab_x * dimy + slab_y) * dimz + slab_zz] * (1.
+      0 - dx) * (1.0 - dy) * dz;
+          acc_dim += forcegrid[(slab_x * dimy + slab_yy) * dimz + slab_zz] * (1
+      .0 - dx) * dy * dz;
 
-          acc_dim += forcegrid[(slab_xx * dimy + slab_y) * dimz + slab_z] * (dx) 
-      * (1.0 - dy) * (1.0 - dz);
-          acc_dim += forcegrid[(slab_xx * dimy + slab_yy) * dimz + slab_z] * (dx)
-       * dy * (1.0 - dz);
-          acc_dim += forcegrid[(slab_xx * dimy + slab_y) * dimz + slab_zz] * (dx)
-       * (1.0 - dy) * dz;
-          acc_dim += forcegrid[(slab_xx * dimy + slab_yy) * dimz + slab_zz] * (dx
-      ) * dy * dz;
+          acc_dim += forcegrid[(slab_xx * dimy + slab_y) * dimz + slab_z] * (dx
+      ) * (1.0 - dy) * (1.0 - dz);
+          acc_dim += forcegrid[(slab_xx * dimy + slab_yy) * dimz + slab_z] * (
+      dx) * dy * (1.0 - dz);
+          acc_dim += forcegrid[(slab_xx * dimy + slab_y) * dimz + slab_zz] * (
+      dx) * (1.0 - dy) * dz;
+          acc_dim += forcegrid[(slab_xx * dimy + slab_yy) * dimz + slab_zz] * (
+      dx) * dy * dz;
 
           P[i].GravPM[dim] = acc_dim;
         }
@@ -949,52 +921,46 @@ Referenced by long\_\-range\_\-force().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{pm__periodic_8c_af8dfaf42f3b513118ad6aa3ab5cd3c1b_cgraph}
+\includegraphics[width=350pt]{pm__periodic_8c_af8dfaf42f3b513118ad6aa3ab5cd3c1b_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{pm__periodic_8c_af8dfaf42f3b513118ad6aa3ab5cd3c1b_icgraph}
+\includegraphics[width=350pt]{pm__periodic_8c_af8dfaf42f3b513118ad6aa3ab5cd3c1b_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{pm__periodic_8c_a7938f2181f23d56ac46f3625d1a855a0}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!pmpotential\_\-periodic@{pmpotential\_\-periodic}}
-\index{pmpotential\_\-periodic@{pmpotential\_\-periodic}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{pmpotential\_\-periodic}]{\setlength{\rightskip}{0pt plus 5cm}void pmpotential\_\-periodic (
+\hypertarget{pm__periodic_8c_a7938f2181f23d56ac46f3625d1a855a0}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!pmpotential\-\_\-periodic@{pmpotential\-\_\-periodic}}
+\index{pmpotential\-\_\-periodic@{pmpotential\-\_\-periodic}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{pmpotential\-\_\-periodic}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf pmpotential\-\_\-periodic} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{pm__periodic_8c_a7938f2181f23d56ac46f3625d1a855a0}
-Calculates the long-\/range potential using the PM method. The potential is Gaussian filtered with Asmth, given in mesh-\/cell units. We carry out a CIC charge assignment, and compute the potenial by Fourier transform methods. The CIC kernel is deconvolved. 
+)}}\label{pm__periodic_8c_a7938f2181f23d56ac46f3625d1a855a0}
+\-Calculates the long-\/range potential using the \-P\-M method. \-The potential is \-Gaussian filtered with \-Asmth, given in mesh-\/cell units. \-We carry out a \-C\-I\-C charge assignment, and compute the potenial by \-Fourier transform methods. \-The \-C\-I\-C kernel is deconvolved. 
 
-Definition at line 693 of file pm\_\-periodic.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::Asmth, global\_\-data\_\-all\_\-processes::BoxSize, fft\_\-forward\_\-plan, fft\_\-inverse\_\-plan, fft\_\-of\_\-rhogrid, fftsize, first\_\-slab\_\-of\_\-task, force\_\-treeallocate(), force\_\-treefree(), forcegrid, global\_\-data\_\-all\_\-processes::G, particle\_\-data::Mass, global\_\-data\_\-all\_\-processes::MaxPart, meshmax\_\-list, meshmin\_\-list, nslab\_\-y, NTask, global\_\-data\_\-all\_\-processes::NumForcesSinceLastDomainDecomp, NumPart, P, pm\_\-init\_\-periodic\_\-allocate(), pm\_\-init\_\-periodic\_\-free(), PMGRID2, particle\_\-data::Pos, particle\_\-data::Potential, PTask, rhogrid, slab\_\-to\_\-task, slabs\_\-per\_\-task, slabstart\_\-y, TAG\_\-PERIODIC\_\-C, TAG\_\-PERIODIC\_\-D, ThisTask, to\_\-slab\_\-fac, global\_\-data\_\-all\_\-processes::TotNumPart, global\_\-data\_\-all\_\-processes::TreeAllocFactor, global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency, and workspace.
+\-Definition at line 693 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by compute\_\-potential().
+\-References \-All, fft\-\_\-forward\-\_\-plan, fft\-\_\-inverse\-\_\-plan, fft\-\_\-of\-\_\-rhogrid, fftsize, first\-\_\-slab\-\_\-of\-\_\-task, force\-\_\-treeallocate(), force\-\_\-treefree(), forcegrid, meshmax\-\_\-list, meshmin\-\_\-list, nslab\-\_\-y, \-N\-Task, \-Num\-Part, \-P, pm\-\_\-init\-\_\-periodic\-\_\-allocate(), pm\-\_\-init\-\_\-periodic\-\_\-free(), \-P\-M\-G\-R\-I\-D2, \-P\-Task, rhogrid, slab\-\_\-to\-\_\-task, slabs\-\_\-per\-\_\-task, slabstart\-\_\-y, \-T\-A\-G\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-C, \-T\-A\-G\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-D, \-This\-Task, to\-\_\-slab\-\_\-fac, and workspace.
 
 
+
+\-Referenced by compute\-\_\-potential().
 
 
 \begin{DoxyCode}
@@ -1008,8 +974,8 @@ Referenced by compute\_\-potential().
   int slab_x, slab_y, slab_z;
   int slab_xx, slab_yy, slab_zz;
   int meshmin[3], meshmax[3], sendmin, sendmax, recvmin, recvmax;
-  int rep, ncont, cont_sendmin[2], cont_sendmax[2], cont_recvmin[2], cont_recvmax
-      [2];
+  int rep, ncont, cont_sendmin[2], cont_sendmax[2], cont_recvmin[2], 
+      cont_recvmax[2];
   int dimx, dimy, dimz, recv_dimx, recv_dimy, recv_dimz;
   MPI_Status status;
 
@@ -1085,31 +1051,31 @@ Referenced by compute\_\-potential().
       slab_z -= meshmin[2];
       slab_zz = slab_z + 1;
 
-      workspace[(slab_x * dimy + slab_y) * dimz + slab_z] += P[i].Mass * (1.0 - d
-      x) * (1.0 - dy) * (1.0 - dz);
-      workspace[(slab_x * dimy + slab_yy) * dimz + slab_z] += P[i].Mass * (1.0 - 
-      dx) * dy * (1.0 - dz);
-      workspace[(slab_x * dimy + slab_y) * dimz + slab_zz] += P[i].Mass * (1.0 - 
-      dx) * (1.0 - dy) * dz;
-      workspace[(slab_x * dimy + slab_yy) * dimz + slab_zz] += P[i].Mass * (1.0 -
-       dx) * dy * dz;
+      workspace[(slab_x * dimy + slab_y) * dimz + slab_z] += P[i].Mass * (1.0 -
+       dx) * (1.0 - dy) * (1.0 - dz);
+      workspace[(slab_x * dimy + slab_yy) * dimz + slab_z] += P[i].Mass * (1.0 
+      - dx) * dy * (1.0 - dz);
+      workspace[(slab_x * dimy + slab_y) * dimz + slab_zz] += P[i].Mass * (1.0 
+      - dx) * (1.0 - dy) * dz;
+      workspace[(slab_x * dimy + slab_yy) * dimz + slab_zz] += P[i].Mass * (1.0
+       - dx) * dy * dz;
 
-      workspace[(slab_xx * dimy + slab_y) * dimz + slab_z] += P[i].Mass * (dx) * 
-      (1.0 - dy) * (1.0 - dz);
-      workspace[(slab_xx * dimy + slab_yy) * dimz + slab_z] += P[i].Mass * (dx) *
-       dy * (1.0 - dz);
-      workspace[(slab_xx * dimy + slab_y) * dimz + slab_zz] += P[i].Mass * (dx) *
-       (1.0 - dy) * dz;
-      workspace[(slab_xx * dimy + slab_yy) * dimz + slab_zz] += P[i].Mass * (dx) 
-      * dy * dz;
+      workspace[(slab_xx * dimy + slab_y) * dimz + slab_z] += P[i].Mass * (dx) 
+      * (1.0 - dy) * (1.0 - dz);
+      workspace[(slab_xx * dimy + slab_yy) * dimz + slab_z] += P[i].Mass * (dx)
+       * dy * (1.0 - dz);
+      workspace[(slab_xx * dimy + slab_y) * dimz + slab_zz] += P[i].Mass * (dx)
+       * (1.0 - dy) * dz;
+      workspace[(slab_xx * dimy + slab_yy) * dimz + slab_zz] += P[i].Mass * (dx
+      ) * dy * dz;
     }
 
 
   for(i = 0; i < fftsize; i++)  /* clear local density field */
     rhogrid[i] = 0;
 
-  for(level = 0; level < (1 << PTask); level++) /* note: for level=0, target is t
-      he same task */
+  for(level = 0; level < (1 << PTask); level++) /* note: for level=0, target is
+       the same task */
     {
       sendTask = ThisTask;
       recvTask = ThisTask ^ level;
@@ -1132,8 +1098,8 @@ Referenced by compute\_\-potential().
           /* check how much we have to receive */
           recvmin = 2 * PMGRID;
           recvmax = -1;
-          for(slab_x = meshmin_list[3 * recvTask]; slab_x < meshmax_list[3 * recv
-      Task] + 2; slab_x++)
+          for(slab_x = meshmin_list[3 * recvTask]; slab_x < meshmax_list[3 * 
+      recvTask] + 2; slab_x++)
             if(slab_to_task[slab_x % PMGRID] == sendTask)
               {
                 if(slab_x < recvmin)
@@ -1145,33 +1111,34 @@ Referenced by compute\_\-potential().
             recvmin = 0;
 
 
-          if((recvmax - recvmin) >= 0 || (sendmax - sendmin) >= 0)      /* ok, we
-       have a contribution to the slab */
+          if((recvmax - recvmin) >= 0 || (sendmax - sendmin) >= 0)      /* ok,
+       we have a contribution to the slab */
             {
-              recv_dimx = meshmax_list[3 * recvTask + 0] - meshmin_list[3 * recvT
-      ask + 0] + 2;
-              recv_dimy = meshmax_list[3 * recvTask + 1] - meshmin_list[3 * recvT
-      ask + 1] + 2;
-              recv_dimz = meshmax_list[3 * recvTask + 2] - meshmin_list[3 * recvT
-      ask + 2] + 2;
+              recv_dimx = meshmax_list[3 * recvTask + 0] - meshmin_list[3 * 
+      recvTask + 0] + 2;
+              recv_dimy = meshmax_list[3 * recvTask + 1] - meshmin_list[3 * 
+      recvTask + 1] + 2;
+              recv_dimz = meshmax_list[3 * recvTask + 2] - meshmin_list[3 * 
+      recvTask + 2] + 2;
 
               if(level > 0)
                 {
-                  MPI_Sendrecv(workspace + (sendmin - meshmin[0]) * dimy * dimz,
-                               (sendmax - sendmin + 1) * dimy * dimz * sizeof(fft
-      w_real), MPI_BYTE, recvTask,
+                  MPI_Sendrecv(workspace + (sendmin - meshmin[0]) * dimy * dimz
+      ,
+                               (sendmax - sendmin + 1) * dimy * dimz * sizeof(
+      fftw_real), MPI_BYTE, recvTask,
                                TAG_PERIODIC_C, forcegrid,
-                               (recvmax - recvmin + 1) * recv_dimy * recv_dimz * 
-      sizeof(fftw_real), MPI_BYTE,
-                               recvTask, TAG_PERIODIC_C, MPI_COMM_WORLD, &status)
-      ;
+                               (recvmax - recvmin + 1) * recv_dimy * recv_dimz 
+      * sizeof(fftw_real), MPI_BYTE,
+                               recvTask, TAG_PERIODIC_C, MPI_COMM_WORLD, &
+      status);
                 }
               else
                 {
-                  memcpy(forcegrid, workspace + (sendmin - meshmin[0]) * dimy * d
-      imz,
-                         (sendmax - sendmin + 1) * dimy * dimz * sizeof(fftw_real
-      ));
+                  memcpy(forcegrid, workspace + (sendmin - meshmin[0]) * dimy *
+       dimz,
+                         (sendmax - sendmin + 1) * dimy * dimz * sizeof(
+      fftw_real));
                 }
 
               for(slab_x = recvmin; slab_x <= recvmax; slab_x++)
@@ -1181,28 +1148,28 @@ Referenced by compute\_\-potential().
                   if(slab_xx >= 0 && slab_xx < slabs_per_task[ThisTask])
                     {
                       for(slab_y = meshmin_list[3 * recvTask + 1];
-                          slab_y <= meshmax_list[3 * recvTask + 1] + 1; slab_y++)
-      
+                          slab_y <= meshmax_list[3 * recvTask + 1] + 1; slab_y+
+      +)
                         {
                           slab_yy = slab_y;
                           if(slab_yy >= PMGRID)
                             slab_yy -= PMGRID;
 
                           for(slab_z = meshmin_list[3 * recvTask + 2];
-                              slab_z <= meshmax_list[3 * recvTask + 2] + 1; slab_
-      z++)
+                              slab_z <= meshmax_list[3 * recvTask + 2] + 1; 
+      slab_z++)
                             {
                               slab_zz = slab_z;
                               if(slab_zz >= PMGRID)
                                 slab_zz -= PMGRID;
 
-                              rhogrid[PMGRID * PMGRID2 * slab_xx + PMGRID2 * slab
-      _yy + slab_zz] +=
+                              rhogrid[PMGRID * PMGRID2 * slab_xx + PMGRID2 * 
+      slab_yy + slab_zz] +=
                                 forcegrid[((slab_x - recvmin) * recv_dimy +
-                                           (slab_y - meshmin_list[3 * recvTask + 
-      1])) * recv_dimz +
-                                          (slab_z - meshmin_list[3 * recvTask + 2
-      ])];
+                                           (slab_y - meshmin_list[3 * recvTask 
+      + 1])) * recv_dimz +
+                                          (slab_z - meshmin_list[3 * recvTask +
+       2])];
                             }
                         }
                     }
@@ -1262,8 +1229,8 @@ Referenced by compute\_\-potential().
               smth *= ff * ff * ff * ff;
               /* end deconvolution */
 
-              ip = PMGRID * (PMGRID / 2 + 1) * (y - slabstart_y) + (PMGRID / 2 + 
-      1) * x + z;
+              ip = PMGRID * (PMGRID / 2 + 1) * (y - slabstart_y) + (PMGRID / 2 
+      + 1) * x + z;
               fft_of_rhogrid[ip].re *= smth;
               fft_of_rhogrid[ip].im *= smth;
             }
@@ -1284,8 +1251,8 @@ Referenced by compute\_\-potential().
   dimy = meshmax[1] - meshmin[1] + 6;
   dimz = meshmax[2] - meshmin[2] + 6;
 
-  for(level = 0; level < (1 << PTask); level++) /* note: for level=0, target is t
-      he same task */
+  for(level = 0; level < (1 << PTask); level++) /* note: for level=0, target is
+       the same task */
     {
       sendTask = ThisTask;
       recvTask = ThisTask ^ level;
@@ -1296,8 +1263,8 @@ Referenced by compute\_\-potential().
           /* check how much we have to send */
           sendmin = 2 * PMGRID;
           sendmax = -PMGRID;
-          for(slab_x = meshmin_list[3 * recvTask] - 2; slab_x < meshmax_list[3 * 
-      recvTask] + 4; slab_x++)
+          for(slab_x = meshmin_list[3 * recvTask] - 2; slab_x < meshmax_list[3 
+      * recvTask] + 4; slab_x++)
             if(slab_to_task[(slab_x + PMGRID) % PMGRID] == sendTask)
               {
                 if(slab_x < sendmin)
@@ -1323,15 +1290,15 @@ Referenced by compute\_\-potential().
           if(recvmax == -PMGRID)
             recvmin = recvmax + 1;
 
-          if((recvmax - recvmin) >= 0 || (sendmax - sendmin) >= 0)      /* ok, we
-       have a contribution to the slab */
+          if((recvmax - recvmin) >= 0 || (sendmax - sendmin) >= 0)      /* ok,
+       we have a contribution to the slab */
             {
-              recv_dimx = meshmax_list[3 * recvTask + 0] - meshmin_list[3 * recvT
-      ask + 0] + 6;
-              recv_dimy = meshmax_list[3 * recvTask + 1] - meshmin_list[3 * recvT
-      ask + 1] + 6;
-              recv_dimz = meshmax_list[3 * recvTask + 2] - meshmin_list[3 * recvT
-      ask + 2] + 6;
+              recv_dimx = meshmax_list[3 * recvTask + 0] - meshmin_list[3 * 
+      recvTask + 0] + 6;
+              recv_dimy = meshmax_list[3 * recvTask + 1] - meshmin_list[3 * 
+      recvTask + 1] + 6;
+              recv_dimz = meshmax_list[3 * recvTask + 2] - meshmin_list[3 * 
+      recvTask + 2] + 6;
 
               ncont = 1;
               cont_sendmin[0] = sendmin;
@@ -1350,8 +1317,8 @@ Referenced by compute\_\-potential().
                     {
                       /* non-contiguous */
                       cont_sendmax[0] = slab_x - 1;
-                      while(slab_to_task[(slab_x + PMGRID) % PMGRID] != ThisTask)
-      
+                      while(slab_to_task[(slab_x + PMGRID) % PMGRID] != ThisTask
+      )
                         slab_x++;
                       cont_sendmin[1] = slab_x;
                       ncont++;
@@ -1364,8 +1331,8 @@ Referenced by compute\_\-potential().
                     {
                       /* non-contiguous */
                       cont_recvmax[0] = slab_x - 1;
-                      while(slab_to_task[(slab_x + PMGRID) % PMGRID] != recvTask)
-      
+                      while(slab_to_task[(slab_x + PMGRID) % PMGRID] != 
+      recvTask)
                         slab_x++;
                       cont_recvmin[1] = slab_x;
                       if(ncont == 1)
@@ -1390,24 +1357,24 @@ Referenced by compute\_\-potential().
       first_slab_of_task[ThisTask];
 
                           for(slab_y = meshmin_list[3 * recvTask + 1] - 2;
-                              slab_y < meshmax_list[3 * recvTask + 1] + 4; slab_y
-      ++)
+                              slab_y < meshmax_list[3 * recvTask + 1] + 4; 
+      slab_y++)
                             {
                               slab_yy = (slab_y + PMGRID) % PMGRID;
 
                               for(slab_z = meshmin_list[3 * recvTask + 2] - 2;
-                                  slab_z < meshmax_list[3 * recvTask + 2] + 4; sl
-      ab_z++)
+                                  slab_z < meshmax_list[3 * recvTask + 2] + 4; 
+      slab_z++)
                                 {
                                   slab_zz = (slab_z + PMGRID) % PMGRID;
 
                                   forcegrid[((slab_x - sendmin) * recv_dimy +
-                                             (slab_y - (meshmin_list[3 * recvTask
-       + 1] - 2))) * recv_dimz +
-                                            slab_z - (meshmin_list[3 * recvTask +
-       2] - 2)] =
-                                    rhogrid[PMGRID * PMGRID2 * slab_xx + PMGRID2 
-      * slab_yy + slab_zz];
+                                             (slab_y - (meshmin_list[3 * 
+      recvTask + 1] - 2))) * recv_dimz +
+                                            slab_z - (meshmin_list[3 * recvTask
+       + 2] - 2)] =
+                                    rhogrid[PMGRID * PMGRID2 * slab_xx + PMGRID2
+       * slab_yy + slab_zz];
                                 }
                             }
                         }
@@ -1416,22 +1383,22 @@ Referenced by compute\_\-potential().
                   if(level > 0)
                     {
                       MPI_Sendrecv(forcegrid,
-                                   (sendmax - sendmin + 1) * recv_dimy * recv_dim
-      z * sizeof(fftw_real),
+                                   (sendmax - sendmin + 1) * recv_dimy * 
+      recv_dimz * sizeof(fftw_real),
                                    MPI_BYTE, recvTask, TAG_PERIODIC_D,
-                                   workspace + (recvmin - (meshmin[0] - 2)) * dim
-      y * dimz,
-                                   (recvmax - recvmin + 1) * dimy * dimz * sizeof
-      (fftw_real), MPI_BYTE,
-                                   recvTask, TAG_PERIODIC_D, MPI_COMM_WORLD, &sta
-      tus);
+                                   workspace + (recvmin - (meshmin[0] - 2)) * 
+      dimy * dimz,
+                                   (recvmax - recvmin + 1) * dimy * dimz * 
+      sizeof(fftw_real), MPI_BYTE,
+                                   recvTask, TAG_PERIODIC_D, MPI_COMM_WORLD, &
+      status);
                     }
                   else
                     {
-                      memcpy(workspace + (recvmin - (meshmin[0] - 2)) * dimy * di
-      mz,
-                             forcegrid, (recvmax - recvmin + 1) * dimy * dimz * s
-      izeof(fftw_real));
+                      memcpy(workspace + (recvmin - (meshmin[0] - 2)) * dimy * 
+      dimz,
+                             forcegrid, (recvmax - recvmin + 1) * dimy * dimz *
+       sizeof(fftw_real));
                     }
                 }
             }
@@ -1484,23 +1451,23 @@ Referenced by compute\_\-potential().
       slab_zz = slab_z + 1;
 
       P[i].Potential +=
-        forcegrid[(slab_x * dimy + slab_y) * dimz + slab_z] * (1.0 - dx) * (1.0 -
-       dy) * (1.0 - dz);
-      P[i].Potential += forcegrid[(slab_x * dimy + slab_yy) * dimz + slab_z] * (1
-      .0 - dx) * dy * (1.0 - dz);
-      P[i].Potential += forcegrid[(slab_x * dimy + slab_y) * dimz + slab_zz] * (1
-      .0 - dx) * (1.0 - dy) * dz;
-      P[i].Potential += forcegrid[(slab_x * dimy + slab_yy) * dimz + slab_zz] * (
-      1.0 - dx) * dy * dz;
+        forcegrid[(slab_x * dimy + slab_y) * dimz + slab_z] * (1.0 - dx) * (1.0
+       - dy) * (1.0 - dz);
+      P[i].Potential += forcegrid[(slab_x * dimy + slab_yy) * dimz + slab_z] * 
+      (1.0 - dx) * dy * (1.0 - dz);
+      P[i].Potential += forcegrid[(slab_x * dimy + slab_y) * dimz + slab_zz] * 
+      (1.0 - dx) * (1.0 - dy) * dz;
+      P[i].Potential += forcegrid[(slab_x * dimy + slab_yy) * dimz + slab_zz] *
+       (1.0 - dx) * dy * dz;
 
-      P[i].Potential += forcegrid[(slab_xx * dimy + slab_y) * dimz + slab_z] * (d
-      x) * (1.0 - dy) * (1.0 - dz);
-      P[i].Potential += forcegrid[(slab_xx * dimy + slab_yy) * dimz + slab_z] * (
-      dx) * dy * (1.0 - dz);
-      P[i].Potential += forcegrid[(slab_xx * dimy + slab_y) * dimz + slab_zz] * (
-      dx) * (1.0 - dy) * dz;
-      P[i].Potential += forcegrid[(slab_xx * dimy + slab_yy) * dimz + slab_zz] * 
-      (dx) * dy * dz;
+      P[i].Potential += forcegrid[(slab_xx * dimy + slab_y) * dimz + slab_z] * 
+      (dx) * (1.0 - dy) * (1.0 - dz);
+      P[i].Potential += forcegrid[(slab_xx * dimy + slab_yy) * dimz + slab_z] *
+       (dx) * dy * (1.0 - dz);
+      P[i].Potential += forcegrid[(slab_xx * dimy + slab_y) * dimz + slab_zz] *
+       (dx) * (1.0 - dy) * dz;
+      P[i].Potential += forcegrid[(slab_xx * dimy + slab_yy) * dimz + slab_zz] 
+      * (dx) * dy * dz;
     }
 
   pm_init_periodic_free();
@@ -1518,277 +1485,237 @@ Referenced by compute\_\-potential().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{pm__periodic_8c_a7938f2181f23d56ac46f3625d1a855a0_cgraph}
+\includegraphics[width=350pt]{pm__periodic_8c_a7938f2181f23d56ac46f3625d1a855a0_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{pm__periodic_8c_a7938f2181f23d56ac46f3625d1a855a0_icgraph}
+\includegraphics[width=350pt]{pm__periodic_8c_a7938f2181f23d56ac46f3625d1a855a0_icgraph}
 \end{center}
 \end{figure}
 
 
 
 
-\subsection{Variable Documentation}
-\hypertarget{pm__periodic_8c_ada1bb88285e667f67d30ddac8c9fa924}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!fft\_\-forward\_\-plan@{fft\_\-forward\_\-plan}}
-\index{fft\_\-forward\_\-plan@{fft\_\-forward\_\-plan}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{fft\_\-forward\_\-plan}]{\setlength{\rightskip}{0pt plus 5cm}rfftwnd\_\-mpi\_\-plan {\bf fft\_\-forward\_\-plan}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_ada1bb88285e667f67d30ddac8c9fa924}
+\subsection{\-Variable \-Documentation}
+\hypertarget{pm__periodic_8c_ada1bb88285e667f67d30ddac8c9fa924}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!fft\-\_\-forward\-\_\-plan@{fft\-\_\-forward\-\_\-plan}}
+\index{fft\-\_\-forward\-\_\-plan@{fft\-\_\-forward\-\_\-plan}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{fft\-\_\-forward\-\_\-plan}]{\setlength{\rightskip}{0pt plus 5cm}rfftwnd\-\_\-mpi\-\_\-plan {\bf fft\-\_\-forward\-\_\-plan}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_ada1bb88285e667f67d30ddac8c9fa924}
 
 
-Definition at line 34 of file pm\_\-periodic.c.
+\-Definition at line 34 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_affe0aa143bfd852f161120fe9a09f285}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!fft\_\-inverse\_\-plan@{fft\_\-inverse\_\-plan}}
-\index{fft\_\-inverse\_\-plan@{fft\_\-inverse\_\-plan}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{fft\_\-inverse\_\-plan}]{\setlength{\rightskip}{0pt plus 5cm}rfftwnd\_\-mpi\_\-plan {\bf fft\_\-inverse\_\-plan}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_affe0aa143bfd852f161120fe9a09f285}
+\hypertarget{pm__periodic_8c_affe0aa143bfd852f161120fe9a09f285}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!fft\-\_\-inverse\-\_\-plan@{fft\-\_\-inverse\-\_\-plan}}
+\index{fft\-\_\-inverse\-\_\-plan@{fft\-\_\-inverse\-\_\-plan}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{fft\-\_\-inverse\-\_\-plan}]{\setlength{\rightskip}{0pt plus 5cm}rfftwnd\-\_\-mpi\-\_\-plan {\bf fft\-\_\-inverse\-\_\-plan}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_affe0aa143bfd852f161120fe9a09f285}
 
 
-Definition at line 34 of file pm\_\-periodic.c.
+\-Definition at line 34 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_a8f0b56ad473150630454fbceefe2c1e7}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!fft\_\-of\_\-rhogrid@{fft\_\-of\_\-rhogrid}}
-\index{fft\_\-of\_\-rhogrid@{fft\_\-of\_\-rhogrid}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{fft\_\-of\_\-rhogrid}]{\setlength{\rightskip}{0pt plus 5cm}fftw\_\-complex$\ast$ {\bf fft\_\-of\_\-rhogrid}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_a8f0b56ad473150630454fbceefe2c1e7}
+\hypertarget{pm__periodic_8c_a8f0b56ad473150630454fbceefe2c1e7}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!fft\-\_\-of\-\_\-rhogrid@{fft\-\_\-of\-\_\-rhogrid}}
+\index{fft\-\_\-of\-\_\-rhogrid@{fft\-\_\-of\-\_\-rhogrid}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{fft\-\_\-of\-\_\-rhogrid}]{\setlength{\rightskip}{0pt plus 5cm}fftw\-\_\-complex$\ast$ {\bf fft\-\_\-of\-\_\-rhogrid}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_a8f0b56ad473150630454fbceefe2c1e7}
 
 
-Definition at line 46 of file pm\_\-periodic.c.
+\-Definition at line 46 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic\_\-allocate(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic\-\_\-allocate(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_a7575000a7b0c6532786de0ac15da4052}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!fftsize@{fftsize}}
-\index{fftsize@{fftsize}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{fftsize}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf fftsize}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_a7575000a7b0c6532786de0ac15da4052}
+\hypertarget{pm__periodic_8c_a7575000a7b0c6532786de0ac15da4052}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!fftsize@{fftsize}}
+\index{fftsize@{fftsize}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{fftsize}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf fftsize}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_a7575000a7b0c6532786de0ac15da4052}
 
 
-Definition at line 43 of file pm\_\-periodic.c.
+\-Definition at line 43 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), pm\_\-init\_\-periodic\_\-allocate(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), pm\-\_\-init\-\_\-periodic\-\_\-allocate(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_a8b608f18c44e494650da5577ddb34082}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!first\_\-slab\_\-of\_\-task@{first\_\-slab\_\-of\_\-task}}
-\index{first\_\-slab\_\-of\_\-task@{first\_\-slab\_\-of\_\-task}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{first\_\-slab\_\-of\_\-task}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf first\_\-slab\_\-of\_\-task}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_a8b608f18c44e494650da5577ddb34082}
+\hypertarget{pm__periodic_8c_a8b608f18c44e494650da5577ddb34082}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!first\-\_\-slab\-\_\-of\-\_\-task@{first\-\_\-slab\-\_\-of\-\_\-task}}
+\index{first\-\_\-slab\-\_\-of\-\_\-task@{first\-\_\-slab\-\_\-of\-\_\-task}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{first\-\_\-slab\-\_\-of\-\_\-task}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf first\-\_\-slab\-\_\-of\-\_\-task}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_a8b608f18c44e494650da5577ddb34082}
 
 
-Definition at line 38 of file pm\_\-periodic.c.
+\-Definition at line 38 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_afa4a65b248baddbf9f8c388a48a1787f}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!forcegrid@{forcegrid}}
-\index{forcegrid@{forcegrid}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{forcegrid}]{\setlength{\rightskip}{0pt plus 5cm}fftw\_\-real $\ast$ {\bf forcegrid}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_afa4a65b248baddbf9f8c388a48a1787f}
+\hypertarget{pm__periodic_8c_afa4a65b248baddbf9f8c388a48a1787f}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!forcegrid@{forcegrid}}
+\index{forcegrid@{forcegrid}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{forcegrid}]{\setlength{\rightskip}{0pt plus 5cm}fftw\-\_\-real $\ast$ {\bf forcegrid}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_afa4a65b248baddbf9f8c388a48a1787f}
 
 
-Definition at line 45 of file pm\_\-periodic.c.
+\-Definition at line 45 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic\_\-allocate(), pm\_\-init\_\-periodic\_\-free(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic\-\_\-allocate(), pm\-\_\-init\-\_\-periodic\-\_\-free(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_a9ae463305ca6786e02bc9000726802b1}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!maxfftsize@{maxfftsize}}
-\index{maxfftsize@{maxfftsize}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{maxfftsize}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf maxfftsize}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_a9ae463305ca6786e02bc9000726802b1}
+\hypertarget{pm__periodic_8c_a9ae463305ca6786e02bc9000726802b1}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!maxfftsize@{maxfftsize}}
+\index{maxfftsize@{maxfftsize}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{maxfftsize}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf maxfftsize}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_a9ae463305ca6786e02bc9000726802b1}
 
 
-Definition at line 43 of file pm\_\-periodic.c.
+\-Definition at line 43 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), and pm\_\-init\_\-periodic\_\-allocate().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), and pm\-\_\-init\-\_\-periodic\-\_\-allocate().
 
-\hypertarget{pm__periodic_8c_aee0d2641b59b02dd9f5ed3070784d995}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!meshmax\_\-list@{meshmax\_\-list}}
-\index{meshmax\_\-list@{meshmax\_\-list}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{meshmax\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ {\bf meshmax\_\-list}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_aee0d2641b59b02dd9f5ed3070784d995}
+\hypertarget{pm__periodic_8c_aee0d2641b59b02dd9f5ed3070784d995}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!meshmax\-\_\-list@{meshmax\-\_\-list}}
+\index{meshmax\-\_\-list@{meshmax\-\_\-list}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{meshmax\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ {\bf meshmax\-\_\-list}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_aee0d2641b59b02dd9f5ed3070784d995}
 
 
-Definition at line 39 of file pm\_\-periodic.c.
+\-Definition at line 39 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_a0bdf8c7e2cab6c38a4357cf4817e7cbf}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!meshmin\_\-list@{meshmin\_\-list}}
-\index{meshmin\_\-list@{meshmin\_\-list}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{meshmin\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf meshmin\_\-list}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_a0bdf8c7e2cab6c38a4357cf4817e7cbf}
+\hypertarget{pm__periodic_8c_a0bdf8c7e2cab6c38a4357cf4817e7cbf}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!meshmin\-\_\-list@{meshmin\-\_\-list}}
+\index{meshmin\-\_\-list@{meshmin\-\_\-list}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{meshmin\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf meshmin\-\_\-list}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_a0bdf8c7e2cab6c38a4357cf4817e7cbf}
 
 
-Definition at line 39 of file pm\_\-periodic.c.
+\-Definition at line 39 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_a9dfa9b82d22c2a6cc503bcbebe6d774c}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!nslab\_\-x@{nslab\_\-x}}
-\index{nslab\_\-x@{nslab\_\-x}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{nslab\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf nslab\_\-x}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_a9dfa9b82d22c2a6cc503bcbebe6d774c}
+\hypertarget{pm__periodic_8c_a9dfa9b82d22c2a6cc503bcbebe6d774c}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!nslab\-\_\-x@{nslab\-\_\-x}}
+\index{nslab\-\_\-x@{nslab\-\_\-x}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{nslab\-\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf nslab\-\_\-x}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_a9dfa9b82d22c2a6cc503bcbebe6d774c}
 
 
-Definition at line 41 of file pm\_\-periodic.c.
+\-Definition at line 41 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_ae33694d88449fd0eb1d291ac33498ac1}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!nslab\_\-y@{nslab\_\-y}}
-\index{nslab\_\-y@{nslab\_\-y}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{nslab\_\-y}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf nslab\_\-y}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_ae33694d88449fd0eb1d291ac33498ac1}
+\hypertarget{pm__periodic_8c_ae33694d88449fd0eb1d291ac33498ac1}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!nslab\-\_\-y@{nslab\-\_\-y}}
+\index{nslab\-\_\-y@{nslab\-\_\-y}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{nslab\-\_\-y}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf nslab\-\_\-y}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_ae33694d88449fd0eb1d291ac33498ac1}
 
 
-Definition at line 41 of file pm\_\-periodic.c.
+\-Definition at line 41 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_a07a721ff607175c756095575f9c14fe3}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!rhogrid@{rhogrid}}
-\index{rhogrid@{rhogrid}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{rhogrid}]{\setlength{\rightskip}{0pt plus 5cm}fftw\_\-real$\ast$ {\bf rhogrid}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_a07a721ff607175c756095575f9c14fe3}
+\hypertarget{pm__periodic_8c_a07a721ff607175c756095575f9c14fe3}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!rhogrid@{rhogrid}}
+\index{rhogrid@{rhogrid}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{rhogrid}]{\setlength{\rightskip}{0pt plus 5cm}fftw\-\_\-real$\ast$ {\bf rhogrid}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_a07a721ff607175c756095575f9c14fe3}
 
 
-Definition at line 45 of file pm\_\-periodic.c.
+\-Definition at line 45 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic\_\-allocate(), pm\_\-init\_\-periodic\_\-free(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic\-\_\-allocate(), pm\-\_\-init\-\_\-periodic\-\_\-free(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_af5fc4d76c1156f1aabbfa15968b9ad4c}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!slab\_\-to\_\-task@{slab\_\-to\_\-task}}
-\index{slab\_\-to\_\-task@{slab\_\-to\_\-task}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{slab\_\-to\_\-task}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf slab\_\-to\_\-task}\mbox{[}1\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_af5fc4d76c1156f1aabbfa15968b9ad4c}
+\hypertarget{pm__periodic_8c_af5fc4d76c1156f1aabbfa15968b9ad4c}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!slab\-\_\-to\-\_\-task@{slab\-\_\-to\-\_\-task}}
+\index{slab\-\_\-to\-\_\-task@{slab\-\_\-to\-\_\-task}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{slab\-\_\-to\-\_\-task}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf slab\-\_\-to\-\_\-task}\mbox{[}1\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_af5fc4d76c1156f1aabbfa15968b9ad4c}
 
 
-Definition at line 36 of file pm\_\-periodic.c.
+\-Definition at line 36 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_ad054897488b61bb22501d6ad4b01e6c8}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!slabs\_\-per\_\-task@{slabs\_\-per\_\-task}}
-\index{slabs\_\-per\_\-task@{slabs\_\-per\_\-task}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{slabs\_\-per\_\-task}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf slabs\_\-per\_\-task}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_ad054897488b61bb22501d6ad4b01e6c8}
+\hypertarget{pm__periodic_8c_ad054897488b61bb22501d6ad4b01e6c8}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!slabs\-\_\-per\-\_\-task@{slabs\-\_\-per\-\_\-task}}
+\index{slabs\-\_\-per\-\_\-task@{slabs\-\_\-per\-\_\-task}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{slabs\-\_\-per\-\_\-task}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf slabs\-\_\-per\-\_\-task}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_ad054897488b61bb22501d6ad4b01e6c8}
 
 
-Definition at line 37 of file pm\_\-periodic.c.
+\-Definition at line 37 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_a140eccd2a65fea3b4e2080aea519eff1}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!slabstart\_\-x@{slabstart\_\-x}}
-\index{slabstart\_\-x@{slabstart\_\-x}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{slabstart\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf slabstart\_\-x}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_a140eccd2a65fea3b4e2080aea519eff1}
+\hypertarget{pm__periodic_8c_a140eccd2a65fea3b4e2080aea519eff1}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!slabstart\-\_\-x@{slabstart\-\_\-x}}
+\index{slabstart\-\_\-x@{slabstart\-\_\-x}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{slabstart\-\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf slabstart\-\_\-x}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_a140eccd2a65fea3b4e2080aea519eff1}
 
 
-Definition at line 41 of file pm\_\-periodic.c.
+\-Definition at line 41 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_a17e825b584286e00d2e435dff44af196}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!slabstart\_\-y@{slabstart\_\-y}}
-\index{slabstart\_\-y@{slabstart\_\-y}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{slabstart\_\-y}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf slabstart\_\-y}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_a17e825b584286e00d2e435dff44af196}
+\hypertarget{pm__periodic_8c_a17e825b584286e00d2e435dff44af196}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!slabstart\-\_\-y@{slabstart\-\_\-y}}
+\index{slabstart\-\_\-y@{slabstart\-\_\-y}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{slabstart\-\_\-y}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf slabstart\-\_\-y}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_a17e825b584286e00d2e435dff44af196}
 
 
-Definition at line 41 of file pm\_\-periodic.c.
+\-Definition at line 41 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_ab401ed54b1c5572b1b6a2949ffd5c1f8}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!smallest\_\-slab@{smallest\_\-slab}}
-\index{smallest\_\-slab@{smallest\_\-slab}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{smallest\_\-slab}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf smallest\_\-slab}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_ab401ed54b1c5572b1b6a2949ffd5c1f8}
+\hypertarget{pm__periodic_8c_ab401ed54b1c5572b1b6a2949ffd5c1f8}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!smallest\-\_\-slab@{smallest\-\_\-slab}}
+\index{smallest\-\_\-slab@{smallest\-\_\-slab}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{smallest\-\_\-slab}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf smallest\-\_\-slab}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_ab401ed54b1c5572b1b6a2949ffd5c1f8}
 
 
-Definition at line 41 of file pm\_\-periodic.c.
+\-Definition at line 41 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_a2a1ee0c9996dcb96caf409aacc6888cd}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!to\_\-slab\_\-fac@{to\_\-slab\_\-fac}}
-\index{to\_\-slab\_\-fac@{to\_\-slab\_\-fac}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{to\_\-slab\_\-fac}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf to\_\-slab\_\-fac}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_a2a1ee0c9996dcb96caf409aacc6888cd}
+\hypertarget{pm__periodic_8c_a2a1ee0c9996dcb96caf409aacc6888cd}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!to\-\_\-slab\-\_\-fac@{to\-\_\-slab\-\_\-fac}}
+\index{to\-\_\-slab\-\_\-fac@{to\-\_\-slab\-\_\-fac}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{to\-\_\-slab\-\_\-fac}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf to\-\_\-slab\-\_\-fac}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_a2a1ee0c9996dcb96caf409aacc6888cd}
 
 
-Definition at line 49 of file pm\_\-periodic.c.
+\-Definition at line 49 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by pm\_\-init\_\-periodic(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by pm\-\_\-init\-\_\-periodic(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 
-\hypertarget{pm__periodic_8c_a182a8913bc59d672bb2a85e63ffcde0f}{
-\index{pm\_\-periodic.c@{pm\_\-periodic.c}!workspace@{workspace}}
-\index{workspace@{workspace}!pm_periodic.c@{pm\_\-periodic.c}}
-\subsubsection[{workspace}]{\setlength{\rightskip}{0pt plus 5cm}fftw\_\-real $\ast$ {\bf workspace}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{pm__periodic_8c_a182a8913bc59d672bb2a85e63ffcde0f}
+\hypertarget{pm__periodic_8c_a182a8913bc59d672bb2a85e63ffcde0f}{\index{pm\-\_\-periodic.\-c@{pm\-\_\-periodic.\-c}!workspace@{workspace}}
+\index{workspace@{workspace}!pm_periodic.c@{pm\-\_\-periodic.\-c}}
+\subsubsection[{workspace}]{\setlength{\rightskip}{0pt plus 5cm}fftw\-\_\-real $\ast$ {\bf workspace}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{pm__periodic_8c_a182a8913bc59d672bb2a85e63ffcde0f}
 
 
-Definition at line 45 of file pm\_\-periodic.c.
+\-Definition at line 45 of file pm\-\_\-periodic.\-c.
 
 
 
-Referenced by geofactor\_\-integ(), init\_\-drift\_\-table(), init\_\-geofactor\_\-table(), pm\_\-init\_\-periodic\_\-allocate(), pm\_\-init\_\-periodic\_\-free(), pmforce\_\-periodic(), and pmpotential\_\-periodic().
+\-Referenced by geofactor\-\_\-integ(), init\-\_\-drift\-\_\-table(), init\-\_\-geofactor\-\_\-table(), pm\-\_\-init\-\_\-periodic\-\_\-allocate(), pm\-\_\-init\-\_\-periodic\-\_\-free(), pmforce\-\_\-periodic(), and pmpotential\-\_\-periodic().
 

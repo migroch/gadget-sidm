@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$io_8c.html#a1609620c03f6b0068601735c42e3c660" title="my_fread" alt="" coords="93,5,176,35"/>
-<area shape="rect" id="node9" href="$io_8c.html#aab1e6568bf14b3a23c66f70c94aabd21" title="my_fwrite" alt="" coords="93,59,176,88"/>
-<area shape="rect" id="node5" href="$endrun_8c.html#a6c7c5d488c8a9e1fb9c408ae00aa8839" title="endrun" alt="" coords="224,32,291,61"/>
-<area shape="rect" id="node7" href="$proto_8h.html#a869daac8b2af5667db265026f09fb9d8" title="terminate_processes" alt="" coords="339,32,496,61"/>
+<area shape="rect" id="node3" href="$io_8c.html#a1609620c03f6b0068601735c42e3c660" title="my_fread" alt="" coords="93,5,176,33"/>
+<area shape="rect" id="node9" href="$io_8c.html#aab1e6568bf14b3a23c66f70c94aabd21" title="my_fwrite" alt="" coords="93,55,176,83"/>
+<area shape="rect" id="node5" href="$endrun_8c.html#a6c7c5d488c8a9e1fb9c408ae00aa8839" title="endrun" alt="" coords="224,30,291,58"/>
+<area shape="rect" id="node7" href="$proto_8h.html#a869daac8b2af5667db265026f09fb9d8" title="terminate_processes" alt="" coords="339,30,496,58"/>
 </map>

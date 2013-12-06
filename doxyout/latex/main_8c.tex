@@ -1,61 +1,56 @@
-\hypertarget{main_8c}{
-\section{main.c File Reference}
-\label{main_8c}\index{main.c@{main.c}}
+\hypertarget{main_8c}{\section{main.\-c \-File \-Reference}
+\label{main_8c}\index{main.\-c@{main.\-c}}
 }
 
 
 start of the program  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for main.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for main.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{main_8c__incl}
+\includegraphics[width=350pt]{main_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsection{\-Detailed \-Description}
 start of the program 
 
-Definition in file \hyperlink{main_8c_source}{main.c}.
+\-Definition in file \hyperlink{main_8c_source}{main.\-c}.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{
-\index{main.c@{main.c}!main@{main}}
-\index{main@{main}!main.c@{main.c}}
-\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\subsection{\-Function \-Documentation}
+\hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{\index{main.\-c@{main.\-c}!main@{main}}
+\index{main@{main}!main.c@{main.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf main} (
 \begin{DoxyParamCaption}
-\item[{int}]{ argc, }
-\item[{char $\ast$$\ast$}]{ argv}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
-)}}
-\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}
-This function initializes the MPI communication packages, and sets cpu-\/time counters to 0. Then \hyperlink{begrun_8c_aceeb5c8909331b90ea8345e0fc853f82}{begrun()} is called, which sets up the simulation either from IC's or from restart files. Finally, \hyperlink{proto_8h_a05e0ffe612d44e6d7f3a9ae5b9df56a2}{run()} is started, the main simulation loop, which iterates over the timesteps. 
+)}}\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+\-This function initializes the \-M\-P\-I communication packages, and sets cpu-\/time counters to 0. \-Then \hyperlink{begrun_8c_aceeb5c8909331b90ea8345e0fc853f82}{begrun()} is called, which sets up the simulation either from \-I\-C's or from restart files. \-Finally, \hyperlink{proto_8h_a05e0ffe612d44e6d7f3a9ae5b9df56a2}{run()} is started, the main simulation loop, which iterates over the timesteps. 
 
-Definition at line 22 of file main.c.
-
+\-Definition at line 22 of file main.\-c.
 
 
-References All, begrun(), global\_\-data\_\-all\_\-processes::CPU\_\-CommSum, global\_\-data\_\-all\_\-processes::CPU\_\-Domain, global\_\-data\_\-all\_\-processes::CPU\_\-EnsureNgb, global\_\-data\_\-all\_\-processes::CPU\_\-Gravity, global\_\-data\_\-all\_\-processes::CPU\_\-HydCommSumm, global\_\-data\_\-all\_\-processes::CPU\_\-HydCompWalk, global\_\-data\_\-all\_\-processes::CPU\_\-HydImbalance, global\_\-data\_\-all\_\-processes::CPU\_\-Hydro, global\_\-data\_\-all\_\-processes::CPU\_\-Imbalance, global\_\-data\_\-all\_\-processes::CPU\_\-Peano, global\_\-data\_\-all\_\-processes::CPU\_\-PM, global\_\-data\_\-all\_\-processes::CPU\_\-Potential, global\_\-data\_\-all\_\-processes::CPU\_\-Predict, global\_\-data\_\-all\_\-processes::CPU\_\-Snapshot, global\_\-data\_\-all\_\-processes::CPU\_\-TimeLine, global\_\-data\_\-all\_\-processes::CPU\_\-Total, global\_\-data\_\-all\_\-processes::CPU\_\-TreeConstruction, global\_\-data\_\-all\_\-processes::CPU\_\-TreeWalk, CPUThisRun, endrun(), NTask, ParameterFile, PTask, RestartFlag, run(), second(), ThisTask, and timediff().
 
-
+\-References \-All, begrun(), \-C\-P\-U\-This\-Run, endrun(), \-N\-Task, \-Parameter\-File, \-P\-Task, \-Restart\-Flag, run(), second(), \-This\-Task, and timediff().
 
 
 \begin{DoxyCode}
@@ -70,9 +65,9 @@ References All, begrun(), global\_\-data\_\-all\_\-processes::CPU\_\-CommSum, gl
     {
       if(ThisTask == 0)
         printf
-          ("Note: This is a massively parallel code, but you are running with 1 p
-      rocessor only.\nCompared to an equivalent serial code, there is some unnecessary 
-      overhead.\n");
+          ("Note: This is a massively parallel code, but you are running with 1
+       processor only.\nCompared to an equivalent serial code, there is some
+       unnecessary overhead.\n");
     }
 
   for(PTask = 0; NTask > (1 << PTask); PTask++);
@@ -96,8 +91,8 @@ References All, begrun(), global\_\-data\_\-all\_\-processes::CPU\_\-CommSum, gl
 
   All.CPU_TreeConstruction = All.CPU_TreeWalk = All.CPU_Gravity = All.
       CPU_Potential = All.CPU_Domain =
-    All.CPU_Snapshot = All.CPU_Total = All.CPU_CommSum = All.CPU_Imbalance = All.
-      CPU_Hydro =
+    All.CPU_Snapshot = All.CPU_Total = All.CPU_CommSum = All.CPU_Imbalance = All
+      .CPU_Hydro =
     All.CPU_HydCompWalk = All.CPU_HydCommSumm = All.CPU_HydImbalance =
     All.CPU_EnsureNgb = All.CPU_Predict = All.CPU_TimeLine = All.CPU_PM = All.
       CPU_Peano = 0;
@@ -121,14 +116,12 @@ References All, begrun(), global\_\-data\_\-all\_\-processes::CPU\_\-CommSum, gl
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=600pt]{main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\includegraphics[height=550pt]{main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
 \end{center}
 \end{figure}
 

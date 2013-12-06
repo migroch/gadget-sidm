@@ -1,107 +1,100 @@
-\hypertarget{sidm__routines_8c}{
-\section{sidm\_\-routines.c File Reference}
-\label{sidm__routines_8c}\index{sidm\_\-routines.c@{sidm\_\-routines.c}}
+\hypertarget{sidm__routines_8c}{\section{sidm\-\_\-routines.\-c \-File \-Reference}
+\label{sidm__routines_8c}\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}}
 }
 
 
-Extra fuctions and routines needed for the calculations of dark matter self interactions.  
+\-Extra fuctions and routines needed for the calculations of dark matter self interactions.  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$time.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include $<$gsl/gsl\_\-math.h$>$}\par
-{\ttfamily \#include $<$gsl/gsl\_\-integration.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for sidm\_\-routines.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$time.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include $<$gsl/gsl\-\_\-math.\-h$>$}\*
+{\ttfamily \#include $<$gsl/gsl\-\_\-integration.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for sidm\-\_\-routines.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{sidm__routines_8c__incl}
+\includegraphics[width=350pt]{sidm__routines_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Defines}
+\subsection*{\-Defines}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{sidm__routines_8c_af3f7d23e690c4253a44e7a674d31d276}{GSLWORKSIZE}~100000
+\#define \hyperlink{sidm__routines_8c_af3f7d23e690c4253a44e7a674d31d276}{\-G\-S\-L\-W\-O\-R\-K\-S\-I\-Z\-E}~100000
 \end{DoxyCompactItemize}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
-double \hyperlink{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d}{g\_\-geo} (double r)
+double \hyperlink{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d}{g\-\_\-geo} (double r)
 \item 
-double \hyperlink{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc}{geofactor\_\-integ} (double x, void $\ast$params)
+double \hyperlink{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc}{geofactor\-\_\-integ} (double x, void $\ast$params)
 \item 
-double \hyperlink{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7}{geofactor\_\-angle\_\-integ} (double u, void $\ast$params)
+double \hyperlink{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7}{geofactor\-\_\-angle\-\_\-integ} (double u, void $\ast$params)
 \item 
 double \hyperlink{sidm__routines_8c_a1d33f5b567083ba4e0775814536fd0b4}{kernel} (double u)
 \item 
-double \hyperlink{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8}{prob\_\-of\_\-interaction} (double r, float Vtarget\mbox{[}3\mbox{]}, float Vno\mbox{[}3\mbox{]}, int tbegin, int tend)
+double \hyperlink{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8}{prob\-\_\-of\-\_\-interaction} (double r, float \-Vtarget\mbox{[}3\mbox{]}, float \-Vno\mbox{[}3\mbox{]}, int tbegin, int tend)
 \item 
-void \hyperlink{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}{calculate\_\-interact\_\-kick} (float Vtarget\mbox{[}3\mbox{]}, float Vno\mbox{[}3\mbox{]}, double kick\_\-target\mbox{[}3\mbox{]}, double kick\_\-no\mbox{[}3\mbox{]})
+void \hyperlink{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}{calculate\-\_\-interact\-\_\-kick} (float \-Vtarget\mbox{[}3\mbox{]}, float \-Vno\mbox{[}3\mbox{]}, double kick\-\_\-target\mbox{[}3\mbox{]}, double kick\-\_\-no\mbox{[}3\mbox{]})
 \item 
-void \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\_\-geofactor\_\-table} (void)
+void \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\-\_\-geofactor\-\_\-table} (void)
 \item 
-void \hyperlink{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615}{update\_\-interaction\_\-table} (IDTYPE id1, IDTYPE id2)
+void \hyperlink{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615}{update\-\_\-interaction\-\_\-table} (\-I\-D\-T\-Y\-P\-E id1, \-I\-D\-T\-Y\-P\-E id2)
 \item 
-int \hyperlink{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4}{check\_\-interaction\_\-table} (IDTYPE id1, IDTYPE id2)
+int \hyperlink{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4}{check\-\_\-interaction\-\_\-table} (\-I\-D\-T\-Y\-P\-E id1, \-I\-D\-T\-Y\-P\-E id2)
 \item 
-void \hyperlink{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1}{AllocateInteractionTable} (int x, int y)
+void \hyperlink{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1}{\-Allocate\-Interaction\-Table} (int x, int y)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Extra fuctions and routines needed for the calculations of dark matter self interactions. This file contains the functions and routines necesary for the computation of the self interactions probabilities and the velocity kicks due to the interactios. Written by Miguel Rocha, \href{mailto:rocham@uci.edu}{\tt rocham@uci.edu}. Oct 2010 
+\subsection{\-Detailed \-Description}
+\-Extra fuctions and routines needed for the calculations of dark matter self interactions. \-This file contains the functions and routines necesary for the computation of the self interactions probabilities and the velocity kicks due to the interactios. \-Written by \-Miguel \-Rocha, \href{mailto:rocham@uci.edu}{\tt rocham@uci.\-edu}. \-Oct 2010 
 
-Definition in file \hyperlink{sidm__routines_8c_source}{sidm\_\-routines.c}.
-
-
-
-\subsection{Define Documentation}
-\hypertarget{sidm__routines_8c_af3f7d23e690c4253a44e7a674d31d276}{
-\index{sidm\_\-routines.c@{sidm\_\-routines.c}!GSLWORKSIZE@{GSLWORKSIZE}}
-\index{GSLWORKSIZE@{GSLWORKSIZE}!sidm_routines.c@{sidm\_\-routines.c}}
-\subsubsection[{GSLWORKSIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define GSLWORKSIZE~100000}}
-\label{sidm__routines_8c_af3f7d23e690c4253a44e7a674d31d276}
-
-
-Definition at line 13 of file sidm\_\-routines.c.
+\-Definition in file \hyperlink{sidm__routines_8c_source}{sidm\-\_\-routines.\-c}.
 
 
 
-Referenced by geofactor\_\-integ(), and init\_\-geofactor\_\-table().
+\subsection{\-Define \-Documentation}
+\hypertarget{sidm__routines_8c_af3f7d23e690c4253a44e7a674d31d276}{\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}!\-G\-S\-L\-W\-O\-R\-K\-S\-I\-Z\-E@{\-G\-S\-L\-W\-O\-R\-K\-S\-I\-Z\-E}}
+\index{\-G\-S\-L\-W\-O\-R\-K\-S\-I\-Z\-E@{\-G\-S\-L\-W\-O\-R\-K\-S\-I\-Z\-E}!sidm_routines.c@{sidm\-\_\-routines.\-c}}
+\subsubsection[{\-G\-S\-L\-W\-O\-R\-K\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-G\-S\-L\-W\-O\-R\-K\-S\-I\-Z\-E}~100000}}\label{sidm__routines_8c_af3f7d23e690c4253a44e7a674d31d276}
+
+
+\-Definition at line 13 of file sidm\-\_\-routines.\-c.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1}{
-\index{sidm\_\-routines.c@{sidm\_\-routines.c}!AllocateInteractionTable@{AllocateInteractionTable}}
-\index{AllocateInteractionTable@{AllocateInteractionTable}!sidm_routines.c@{sidm\_\-routines.c}}
-\subsubsection[{AllocateInteractionTable}]{\setlength{\rightskip}{0pt plus 5cm}void AllocateInteractionTable (
+\-Referenced by geofactor\-\_\-integ(), and init\-\_\-geofactor\-\_\-table().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1}{\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}!\-Allocate\-Interaction\-Table@{\-Allocate\-Interaction\-Table}}
+\index{\-Allocate\-Interaction\-Table@{\-Allocate\-Interaction\-Table}!sidm_routines.c@{sidm\-\_\-routines.\-c}}
+\subsubsection[{\-Allocate\-Interaction\-Table}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Allocate\-Interaction\-Table} (
 \begin{DoxyParamCaption}
-\item[{int}]{ x, }
-\item[{int}]{ y}
+\item[{int}]{x, }
+\item[{int}]{y}
 \end{DoxyParamCaption}
-)}}
-\label{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1}
+)}}\label{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1}
 
 
-Definition at line 323 of file sidm\_\-routines.c.
-
-
-
-References endrun().
+\-Definition at line 326 of file sidm\-\_\-routines.\-c.
 
 
 
-Referenced by begrun().
+\-References endrun().
 
 
+
+\-Referenced by begrun().
 
 
 \begin{DoxyCode}
@@ -112,7 +105,7 @@ Referenced by begrun().
   if (InteractionTable == NULL)
     {
       free(InteractionTable);
-      printf("Failed to allocate memory for the interaction table");
+      printf("Failed to allocate memory for the interaction table\n");
       endrun(2);
     }
 
@@ -122,7 +115,7 @@ Referenced by begrun().
       if (InteractionTable[i] == NULL)
         {
           free(InteractionTable[i]);
-          printf("Failed to allocate memory for the interaction table");
+          printf("Failed to allocate memory for the interaction table\n");
           endrun(2);
         }
     }
@@ -134,55 +127,49 @@ Referenced by begrun().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1_cgraph}
+\includegraphics[width=350pt]{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=376pt]{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1_icgraph}
+\includegraphics[width=350pt]{sidm__routines_8c_a75d4b55f95852e708a563c3521438fe1_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}{
-\index{sidm\_\-routines.c@{sidm\_\-routines.c}!calculate\_\-interact\_\-kick@{calculate\_\-interact\_\-kick}}
-\index{calculate\_\-interact\_\-kick@{calculate\_\-interact\_\-kick}!sidm_routines.c@{sidm\_\-routines.c}}
-\subsubsection[{calculate\_\-interact\_\-kick}]{\setlength{\rightskip}{0pt plus 5cm}void calculate\_\-interact\_\-kick (
+\hypertarget{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}{\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}!calculate\-\_\-interact\-\_\-kick@{calculate\-\_\-interact\-\_\-kick}}
+\index{calculate\-\_\-interact\-\_\-kick@{calculate\-\_\-interact\-\_\-kick}!sidm_routines.c@{sidm\-\_\-routines.\-c}}
+\subsubsection[{calculate\-\_\-interact\-\_\-kick}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf calculate\-\_\-interact\-\_\-kick} (
 \begin{DoxyParamCaption}
-\item[{float}]{ Vtarget\mbox{[}3\mbox{]}, }
-\item[{float}]{ Vno\mbox{[}3\mbox{]}, }
-\item[{double}]{ kick\_\-target\mbox{[}3\mbox{]}, }
-\item[{double}]{ kick\_\-no\mbox{[}3\mbox{]}}
+\item[{float}]{\-Vtarget\mbox{[}3\mbox{]}, }
+\item[{float}]{\-Vno\mbox{[}3\mbox{]}, }
+\item[{double}]{kick\-\_\-target\mbox{[}3\mbox{]}, }
+\item[{double}]{kick\-\_\-no\mbox{[}3\mbox{]}}
 \end{DoxyParamCaption}
-)}}
-\label{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}
-This routine sets the kicks for each particle after it has been decided that they will interact. It uses an algorithm tha conserves energy and momentum but picks a random direction so it does not conserves angular momentum. 
+)}}\label{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9}
+\-This routine sets the kicks for each particle after it has been decided that they will interact. \-It uses an algorithm tha conserves energy and momentum but picks a random direction so it does not conserves angular momentum. 
 
-Definition at line 94 of file sidm\_\-routines.c.
-
-
-
-References random\_\-generator.
+\-Definition at line 94 of file sidm\-\_\-routines.\-c.
 
 
 
-Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange().
+\-References random\-\_\-generator.
 
 
+
+\-Referenced by force\-\_\-treeevaluate(), and force\-\_\-treeevaluate\-\_\-shortrange().
 
 
 \begin{DoxyCode}
@@ -194,7 +181,7 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
   dvz = Vno[2]-Vtarget[2];
   dV = sqrt(dvx*dvx + dvy*dvy + dvz*dvz);
 
-  theta = gsl_rng_uniform(random_generator)*M_PI;
+  theta = acos(2*gsl_rng_uniform(random_generator)-1.0);
   phi = gsl_rng_uniform(random_generator)*2.0*M_PI;
 
   kick_target[0] = (-Vtarget[0] + Vno[0] + dV*sin(theta)*cos(phi))/2.0;
@@ -209,37 +196,31 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9_icgraph}
+\includegraphics[width=350pt]{sidm__routines_8c_a7601ceef7848e2277fd5dd1f2800dfd9_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4}{
-\index{sidm\_\-routines.c@{sidm\_\-routines.c}!check\_\-interaction\_\-table@{check\_\-interaction\_\-table}}
-\index{check\_\-interaction\_\-table@{check\_\-interaction\_\-table}!sidm_routines.c@{sidm\_\-routines.c}}
-\subsubsection[{check\_\-interaction\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int check\_\-interaction\_\-table (
+\hypertarget{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4}{\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}!check\-\_\-interaction\-\_\-table@{check\-\_\-interaction\-\_\-table}}
+\index{check\-\_\-interaction\-\_\-table@{check\-\_\-interaction\-\_\-table}!sidm_routines.c@{sidm\-\_\-routines.\-c}}
+\subsubsection[{check\-\_\-interaction\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf check\-\_\-interaction\-\_\-table} (
 \begin{DoxyParamCaption}
-\item[{IDTYPE}]{ id1, }
-\item[{IDTYPE}]{ id2}
+\item[{\-I\-D\-T\-Y\-P\-E}]{id1, }
+\item[{\-I\-D\-T\-Y\-P\-E}]{id2}
 \end{DoxyParamCaption}
-)}}
-\label{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4}
-This function checks if a pair of particles have interacted in the current time step. It looks at the InteractionTable and returns 0 if the pair is not found and 1 if pair is found. This is used to avoid double counting of interactions. 
+)}}\label{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4}
+\-This function checks if a pair of particles have interacted in the current time step. \-It looks at the \-Interaction\-Table and returns 0 if the pair is not found and 1 if pair is found. \-This is used to avoid double counting of interactions. 
 
-Definition at line 292 of file sidm\_\-routines.c.
-
+\-Definition at line 282 of file sidm\-\_\-routines.\-c.
 
 
-Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange().
 
-
+\-Referenced by force\-\_\-treeevaluate(), and force\-\_\-treeevaluate\-\_\-shortrange().
 
 
 \begin{DoxyCode}
@@ -252,19 +233,32 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
   
   for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
     { 
-      if(InteractionTable[i][0] == id1 || InteractionTable[i][0] == id2 )
+      if(InteractionTable[i][0] == id1)
         {
           for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
             {
-              if(InteractionTable[i][0] == id1 && InteractionTable[i][j] == id2)
+              if(InteractionTable[i][j] == id2)
                 { 
                   flag = 1;
                   break;
                 }
-              if(InteractionTable[i][0] == id2 && InteractionTable[i][j] == id1)
+            }
+        }
+    }
+
+  if(flag == 0)
+    {
+      for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
+        { 
+          if(InteractionTable[i][0] == id2)
+            {
+              for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
                 {
-                  flag = 1;
-                  break;
+                  if(InteractionTable[i][j] == id1)
+                    { 
+                      flag = 1;
+                      break;
+                    }
                 }
             }
         }
@@ -275,36 +269,30 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4_icgraph}
+\includegraphics[width=350pt]{sidm__routines_8c_a06b0e0f213ae5bd086307e76cddc68a4_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d}{
-\index{sidm\_\-routines.c@{sidm\_\-routines.c}!g\_\-geo@{g\_\-geo}}
-\index{g\_\-geo@{g\_\-geo}!sidm_routines.c@{sidm\_\-routines.c}}
-\subsubsection[{g\_\-geo}]{\setlength{\rightskip}{0pt plus 5cm}double g\_\-geo (
+\hypertarget{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d}{\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}!g\-\_\-geo@{g\-\_\-geo}}
+\index{g\-\_\-geo@{g\-\_\-geo}!sidm_routines.c@{sidm\-\_\-routines.\-c}}
+\subsubsection[{g\-\_\-geo}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf g\-\_\-geo} (
 \begin{DoxyParamCaption}
-\item[{double}]{ r}
+\item[{double}]{r}
 \end{DoxyParamCaption}
-)}}
-\label{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d}
-This function returns the value of the geometrical factor needed for the calculation of the interaction probability. 
+)}}\label{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d}
+\-This function returns the value of the geometrical factor needed for the calculation of the interaction probability. 
 
-Definition at line 72 of file sidm\_\-routines.c.
-
+\-Definition at line 72 of file sidm\-\_\-routines.\-c.
 
 
-Referenced by prob\_\-of\_\-interaction().
 
-
+\-Referenced by prob\-\_\-of\-\_\-interaction().
 
 
 \begin{DoxyCode}
@@ -320,45 +308,43 @@ Referenced by prob\_\-of\_\-interaction().
   if (i <= 1)
     f = 0.992318  + (GeoFactorTable[0] - 0.992318)*u;
   else
-    f = GeoFactorTable[i - 1] + (GeoFactorTable[i] - GeoFactorTable[i - 1]) * (u 
-      - i);
+    f = GeoFactorTable[i - 1] + (GeoFactorTable[i] - GeoFactorTable[i - 1]) * (
+      u - i);
 
   return f;
 }
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d_icgraph}
+\includegraphics[width=350pt]{sidm__routines_8c_ab5ff10bfb368309b0dd01aaa72c6be1d_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7}{
-\index{sidm\_\-routines.c@{sidm\_\-routines.c}!geofactor\_\-angle\_\-integ@{geofactor\_\-angle\_\-integ}}
-\index{geofactor\_\-angle\_\-integ@{geofactor\_\-angle\_\-integ}!sidm_routines.c@{sidm\_\-routines.c}}
-\subsubsection[{geofactor\_\-angle\_\-integ}]{\setlength{\rightskip}{0pt plus 5cm}double geofactor\_\-angle\_\-integ (
+\hypertarget{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7}{\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}!geofactor\-\_\-angle\-\_\-integ@{geofactor\-\_\-angle\-\_\-integ}}
+\index{geofactor\-\_\-angle\-\_\-integ@{geofactor\-\_\-angle\-\_\-integ}!sidm_routines.c@{sidm\-\_\-routines.\-c}}
+\subsubsection[{geofactor\-\_\-angle\-\_\-integ}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf geofactor\-\_\-angle\-\_\-integ} (
 \begin{DoxyParamCaption}
-\item[{double}]{ u, }
-\item[{void $\ast$}]{ params}
+\item[{double}]{u, }
+\item[{void $\ast$}]{params}
 \end{DoxyParamCaption}
-)}}
-\label{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7}
-This function returns the integrand of the angular part of the integral done on \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\_\-geofactor\_\-table()}. 
+)}}\label{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7}
+\-This function returns the integrand of the angular part of the integral done on \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\-\_\-geofactor\-\_\-table()}. 
 
-Definition at line 167 of file sidm\_\-routines.c.
-
+\-Definition at line 167 of file sidm\-\_\-routines.\-c.
 
 
-References kernel().
+
+\-References kernel().
 
 
+
+\-Referenced by geofactor\-\_\-integ().
 
 
 \begin{DoxyCode}
@@ -374,9 +360,7 @@ References kernel().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -386,25 +370,37 @@ Here is the call graph for this function:
 \end{figure}
 
 
-\hypertarget{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc}{
-\index{sidm\_\-routines.c@{sidm\_\-routines.c}!geofactor\_\-integ@{geofactor\_\-integ}}
-\index{geofactor\_\-integ@{geofactor\_\-integ}!sidm_routines.c@{sidm\_\-routines.c}}
-\subsubsection[{geofactor\_\-integ}]{\setlength{\rightskip}{0pt plus 5cm}double geofactor\_\-integ (
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sidm__routines_8c_a309de7eeb7e8c96c4d127696d4d9a4a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc}{\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}!geofactor\-\_\-integ@{geofactor\-\_\-integ}}
+\index{geofactor\-\_\-integ@{geofactor\-\_\-integ}!sidm_routines.c@{sidm\-\_\-routines.\-c}}
+\subsubsection[{geofactor\-\_\-integ}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf geofactor\-\_\-integ} (
 \begin{DoxyParamCaption}
-\item[{double}]{ x, }
-\item[{void $\ast$}]{ params}
+\item[{double}]{x, }
+\item[{void $\ast$}]{params}
 \end{DoxyParamCaption}
-)}}
-\label{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc}
-This function returns the integrand of the numerical integration done on \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\_\-geofactor\_\-table()}. 
+)}}\label{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc}
+\-This function returns the integrand of the numerical integration done on \hyperlink{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{init\-\_\-geofactor\-\_\-table()}. 
 
-Definition at line 141 of file sidm\_\-routines.c.
-
+\-Definition at line 141 of file sidm\-\_\-routines.\-c.
 
 
-References GSLWORKSIZE, kernel(), and workspace.
+
+\-References geofactor\-\_\-angle\-\_\-integ(), \-G\-S\-L\-W\-O\-R\-K\-S\-I\-Z\-E, kernel(), and workspace.
 
 
+
+\-Referenced by init\-\_\-geofactor\-\_\-table().
 
 
 \begin{DoxyCode}
@@ -423,8 +419,8 @@ References GSLWORKSIZE, kernel(), and workspace.
   F.function = &geofactor_angle_integ;
   F.params = newparams;
 
-  gsl_integration_qag(&F, -1.0, 1.0, 0, 1.0e-8, GSLWORKSIZE, GSL_INTEG_GAUSS41,wo
-      rkspace, &result, &abserr);
+  gsl_integration_qag(&F, -1.0, 1.0, 0, 1.0e-8, GSLWORKSIZE, GSL_INTEG_GAUSS41,
+      workspace, &result, &abserr);
 
   gsl_integration_workspace_free(workspace);
 
@@ -433,40 +429,46 @@ References GSLWORKSIZE, kernel(), and workspace.
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=254pt]{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc_cgraph}
+\includegraphics[width=350pt]{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{
-\index{sidm\_\-routines.c@{sidm\_\-routines.c}!init\_\-geofactor\_\-table@{init\_\-geofactor\_\-table}}
-\index{init\_\-geofactor\_\-table@{init\_\-geofactor\_\-table}!sidm_routines.c@{sidm\_\-routines.c}}
-\subsubsection[{init\_\-geofactor\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-geofactor\_\-table (
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sidm__routines_8c_a5b60a9da4d9d0c091769f0e9fc6c6bdc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}{\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}!init\-\_\-geofactor\-\_\-table@{init\-\_\-geofactor\-\_\-table}}
+\index{init\-\_\-geofactor\-\_\-table@{init\-\_\-geofactor\-\_\-table}!sidm_routines.c@{sidm\-\_\-routines.\-c}}
+\subsubsection[{init\-\_\-geofactor\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf init\-\_\-geofactor\-\_\-table} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}
-This routine initialazes the table that will be used to get the geometrical factor as a function of the two particle separations. It populates a table with the results of the numerical integration. 
+)}}\label{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5}
+\-This routine initialazes the table that will be used to get the geometrical factor as a function of the two particle separations. \-It populates a table with the results of the numerical integration. 
 
-Definition at line 120 of file sidm\_\-routines.c.
-
-
-
-References GSLWORKSIZE, and workspace.
+\-Definition at line 120 of file sidm\-\_\-routines.\-c.
 
 
 
-Referenced by begrun().
+\-References geofactor\-\_\-integ(), \-G\-S\-L\-W\-O\-R\-K\-S\-I\-Z\-E, and workspace.
 
 
+
+\-Referenced by begrun().
 
 
 \begin{DoxyCode}
@@ -482,8 +484,8 @@ Referenced by begrun().
     r =  2.0/GEOFACTOR_TABLE_LENGTH * (i + 1);
     F.function = &geofactor_integ;
     F.params = &r;
-    gsl_integration_qag(&F, 0.0, 1.0, 0, 1.0e-8, GSLWORKSIZE, GSL_INTEG_GAUSS41,w
-      orkspace, &result, &abserr);
+    gsl_integration_qag(&F, 0.0, 1.0, 0, 1.0e-8, GSLWORKSIZE, GSL_INTEG_GAUSS41
+      ,workspace, &result, &abserr);
     GeoFactorTable[i] = 2*M_PI*result;
   }
   gsl_integration_workspace_free(workspace);
@@ -491,44 +493,42 @@ Referenced by begrun().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=356pt]{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5_icgraph}
+\includegraphics[width=350pt]{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{sidm__routines_8c_a1d33f5b567083ba4e0775814536fd0b4}{
-\index{sidm\_\-routines.c@{sidm\_\-routines.c}!kernel@{kernel}}
-\index{kernel@{kernel}!sidm_routines.c@{sidm\_\-routines.c}}
-\subsubsection[{kernel}]{\setlength{\rightskip}{0pt plus 5cm}double kernel (
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sidm__routines_8c_ae54bb3071b061a41ef29fcd551f50da5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sidm__routines_8c_a1d33f5b567083ba4e0775814536fd0b4}{\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}!kernel@{kernel}}
+\index{kernel@{kernel}!sidm_routines.c@{sidm\-\_\-routines.\-c}}
+\subsubsection[{kernel}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf kernel} (
 \begin{DoxyParamCaption}
-\item[{double}]{ u}
+\item[{double}]{u}
 \end{DoxyParamCaption}
-)}}
-\label{sidm__routines_8c_a1d33f5b567083ba4e0775814536fd0b4}
-This function returns the value W(x). The values of the density kernel as a funtion of x=r/h. 
+)}}\label{sidm__routines_8c_a1d33f5b567083ba4e0775814536fd0b4}
+\-This function returns the value \-W(x). \-The values of the density kernel as a funtion of x=r/h. $<$ \-Coefficients for \-S\-P\-H spline kernel and its derivative 
 
-$<$ Coefficients for SPH spline kernel and its derivative 
-
-
-
-Definition at line 180 of file sidm\_\-routines.c.
+\-Definition at line 180 of file sidm\-\_\-routines.\-c.
 
 
 
-References KERNEL\_\-COEFF\_\-1, KERNEL\_\-COEFF\_\-2, and KERNEL\_\-COEFF\_\-5.
-
-
-
-Referenced by geofactor\_\-angle\_\-integ(), and geofactor\_\-integ().
-
-
+\-Referenced by geofactor\-\_\-angle\-\_\-integ(), and geofactor\-\_\-integ().
 
 
 \begin{DoxyCode}
@@ -556,44 +556,38 @@ Referenced by geofactor\_\-angle\_\-integ(), and geofactor\_\-integ().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=286pt]{sidm__routines_8c_a1d33f5b567083ba4e0775814536fd0b4_icgraph}
+\includegraphics[width=350pt]{sidm__routines_8c_a1d33f5b567083ba4e0775814536fd0b4_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8}{
-\index{sidm\_\-routines.c@{sidm\_\-routines.c}!prob\_\-of\_\-interaction@{prob\_\-of\_\-interaction}}
-\index{prob\_\-of\_\-interaction@{prob\_\-of\_\-interaction}!sidm_routines.c@{sidm\_\-routines.c}}
-\subsubsection[{prob\_\-of\_\-interaction}]{\setlength{\rightskip}{0pt plus 5cm}double prob\_\-of\_\-interaction (
+\hypertarget{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8}{\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}!prob\-\_\-of\-\_\-interaction@{prob\-\_\-of\-\_\-interaction}}
+\index{prob\-\_\-of\-\_\-interaction@{prob\-\_\-of\-\_\-interaction}!sidm_routines.c@{sidm\-\_\-routines.\-c}}
+\subsubsection[{prob\-\_\-of\-\_\-interaction}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf prob\-\_\-of\-\_\-interaction} (
 \begin{DoxyParamCaption}
-\item[{double}]{ r, }
-\item[{float}]{ Vtarget\mbox{[}3\mbox{]}, }
-\item[{float}]{ Vno\mbox{[}3\mbox{]}, }
-\item[{int}]{ tbegin, }
-\item[{int}]{ tend}
+\item[{double}]{r, }
+\item[{float}]{\-Vtarget\mbox{[}3\mbox{]}, }
+\item[{float}]{\-Vno\mbox{[}3\mbox{]}, }
+\item[{int}]{tbegin, }
+\item[{int}]{tend}
 \end{DoxyParamCaption}
-)}}
-\label{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8}
-This function calculates the interaction probability between two particles. It checks if comoving integration is on and does the necesary change of variables and units. 
+)}}\label{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8}
+\-This function calculates the interaction probability between two particles. \-It checks if comoving integration is on and does the necesary change of variables and units. 
 
-Definition at line 32 of file sidm\_\-routines.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::ForceSoftening, g\_\-geo(), global\_\-data\_\-all\_\-processes::Hubble, hubble\_\-a, global\_\-data\_\-all\_\-processes::MassTable, mp, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, global\_\-data\_\-all\_\-processes::Time, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, global\_\-data\_\-all\_\-processes::UnitLength\_\-in\_\-cm, and global\_\-data\_\-all\_\-processes::UnitMass\_\-in\_\-g.
+\-Definition at line 32 of file sidm\-\_\-routines.\-c.
 
 
 
-Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange().
+\-References \-All, g\-\_\-geo(), hubble\-\_\-a, and mp.
 
 
+
+\-Referenced by force\-\_\-treeevaluate(), and force\-\_\-treeevaluate\-\_\-shortrange().
 
 
 \begin{DoxyCode}
@@ -608,39 +602,39 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
     if(All.ComovingIntegrationOn)
       {
         r =  All.Time*r;
-        h = All.ForceSoftening[1]*All.Time;
+        h = All.SIDMSmoothingFactor*All.ForceSoftening[1]*All.Time;
 
         dloga = (tend - tbegin)*All.Timebase_interval;
         hubble_a = (All.Omega0 / (All.Time * All.Time * All.Time)
-                    + (1 - All.Omega0 - All.OmegaLambda) / (All.Time * All.Time) 
-      + All.OmegaLambda);
+                    + (1 - All.Omega0 - All.OmegaLambda) / (All.Time * All.Time
+      ) + All.OmegaLambda);
         hubble_a = All.Hubble * sqrt(hubble_a);
         dT = dloga/hubble_a;
 
-        dV = dV/All.Time; /* Convert from internal velocity p = a^2 dx/dt to pecu
-      liar velocity v = a dx/dt*/
-        dV -= hubble_a*r; /* Substract Hubble flow */
+        dV = dV/All.Time; /* Convert from internal velocity p = a^2 dx/dt to
+       peculiar velocity v = a dx/dt*/
+        //dV -= hubble_a*r; /* This is not the right way to do it, disregard
+       for know */
    
       }
     else
       {
         dT = (tend-tbegin)*All.Timebase_interval;
-        h = All.ForceSoftening[1];
+        h = All.SIDMSmoothingFactor*All.ForceSoftening[1];
       }
 
     mp =  All.MassTable[1]*All.UnitMass_in_g;
     prob = mp*All.InteractionCrossSection*dV*dT*g_geo(r/h)/(h*h*h*All.
       UnitLength_in_cm*All.UnitLength_in_cm);
 
-    return prob;
-
+    return prob/2; /* The factor of 2 comes from tests showing that the number
+       of interactions converge to twice the
+                      expected number of interactions*/
   }
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -652,39 +646,35 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8_icgraph}
+\includegraphics[width=350pt]{sidm__routines_8c_a5b36e92449c7102086706b7b24899be8_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615}{
-\index{sidm\_\-routines.c@{sidm\_\-routines.c}!update\_\-interaction\_\-table@{update\_\-interaction\_\-table}}
-\index{update\_\-interaction\_\-table@{update\_\-interaction\_\-table}!sidm_routines.c@{sidm\_\-routines.c}}
-\subsubsection[{update\_\-interaction\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}void update\_\-interaction\_\-table (
+\hypertarget{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615}{\index{sidm\-\_\-routines.\-c@{sidm\-\_\-routines.\-c}!update\-\_\-interaction\-\_\-table@{update\-\_\-interaction\-\_\-table}}
+\index{update\-\_\-interaction\-\_\-table@{update\-\_\-interaction\-\_\-table}!sidm_routines.c@{sidm\-\_\-routines.\-c}}
+\subsubsection[{update\-\_\-interaction\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf update\-\_\-interaction\-\_\-table} (
 \begin{DoxyParamCaption}
-\item[{IDTYPE}]{ id1, }
-\item[{IDTYPE}]{ id2}
+\item[{\-I\-D\-T\-Y\-P\-E}]{id1, }
+\item[{\-I\-D\-T\-Y\-P\-E}]{id2}
 \end{DoxyParamCaption}
-)}}
-\label{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615}
-This routine updates the interaction table each time there is an interaction. 
+)}}\label{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615}
+\-This routine updates the interaction table each time there is an interaction. 
 
-Definition at line 205 of file sidm\_\-routines.c.
-
-
-
-References endrun().
+\-Definition at line 205 of file sidm\-\_\-routines.\-c.
 
 
 
-Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange().
+\-References endrun().
 
 
+
+\-Referenced by force\-\_\-treeevaluate(), and force\-\_\-treeevaluate\-\_\-shortrange().
 
 
 \begin{DoxyCode}
@@ -697,11 +687,19 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
 
   for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
     {
-      if(InteractionTable[i][0] == id1) id1_index = i;
-      if(InteractionTable[i][0] == id2) id2_index = i;
+      if(InteractionTable[i][0] == id1)
+        {
+          id1_index = i;
+          break;
+        }
+      else if(InteractionTable[i][0] == id2) 
+        {
+          id2_index = i;
+          break;
+        }
     }
 
-   if(id1_index == -1)
+   if(id1_index == -1 && id2_index == -1)
     {
       for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
         {
@@ -713,89 +711,68 @@ Referenced by force\_\-treeevaluate(), and force\_\-treeevaluate\_\-shortrange()
             }
           if (i == INTERACTION_TABLE_LENGTH - 1)
             {
-              printf("ERROR: There were more interactions in this timestep than I
-      NTERACTION_TABLE_LENGTH");
+              printf("ERROR: There were more interactions in this timestep than
+       INTERACTION_TABLE_LENGTH\n");
               endrun(1);
             }
         }
     }
-  else
-    {
-      for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
-        {
-          if(InteractionTable[id1_index][j] == 0)
-            {
-              InteractionTable[id1_index][j] = id2;
-              break;
-            }
-          if (j == PARTICLE_MAX_INTERACTIONS )
-            {
-              printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERAC
-      TIONS");
-              endrun(1);
-            }
-        }
-    } 
-
-  if(id2_index == -1)
-    {
-      for(i = 0; i < INTERACTION_TABLE_LENGTH; i++)
-        {
-          if(InteractionTable[i][0] == 0)
-            {
-              InteractionTable[i][0] = id2;
-              InteractionTable[i][1] = id1;
-              break;
-            }
-          if (i == INTERACTION_TABLE_LENGTH - 1)
-            {
-              printf("ERROR: There were more interactions in this timestep than I
-      NTERACTION_TABLE_LENGTH");
-              endrun(1);
-            }
-        }
-    }
-  else
-    {
-      for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
-        {
-          if(InteractionTable[id2_index][j] == 0)
-            {
-              InteractionTable[id2_index][j] = id1;
-              break;
-            }
-          if (j == PARTICLE_MAX_INTERACTIONS )
-            {
-              printf("ERROR: A particle interacted more than PARTICLE_MAX_INTERAC
-      TIONS");
-              endrun(1);
-            }
-        }
-    }
+   else if(id1_index >= 0)
+     {
+       for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
+         {
+           if(InteractionTable[id1_index][j] == 0)
+             {
+               InteractionTable[id1_index][j] = id2;
+               break;
+             }
+           if (j == PARTICLE_MAX_INTERACTIONS )
+             {
+               printf("ERROR: A particle interacted more than
+       PARTICLE_MAX_INTERACTIONS\n");
+               endrun(1);
+             }
+         }
+     } 
+   else if(id2_index >= 0)
+     {
+       for(j = 1; j < PARTICLE_MAX_INTERACTIONS + 1; j++)
+         {
+           if(InteractionTable[id2_index][j] == 0)
+             {
+               InteractionTable[id2_index][j] = id1;
+               break;
+             }
+           if (j == PARTICLE_MAX_INTERACTIONS )
+             {
+               printf("ERROR: A particle interacted more than
+       PARTICLE_MAX_INTERACTIONS\n");
+               endrun(1);
+             }
+         }
+     }
 }
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615_cgraph}
+\includegraphics[width=350pt]{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615_icgraph}
+\includegraphics[width=350pt]{sidm__routines_8c_a07ab80a1f9370ead2bc2a38884436615_icgraph}
 \end{center}
 \end{figure}
 

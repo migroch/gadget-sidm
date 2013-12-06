@@ -1,155 +1,150 @@
-\hypertarget{domain_8c}{
-\section{domain.c File Reference}
-\label{domain_8c}\index{domain.c@{domain.c}}
+\hypertarget{domain_8c}{\section{domain.\-c \-File \-Reference}
+\label{domain_8c}\index{domain.\-c@{domain.\-c}}
 }
 
 
 code for domain decomposition  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for domain.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for domain.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c__incl}
+\includegraphics[width=350pt]{domain_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Data Structures}
+\subsection*{\-Data \-Structures}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structtopnode__exchange}{topnode\_\-exchange}
+struct \hyperlink{structtopnode__exchange}{topnode\-\_\-exchange}
 \end{DoxyCompactItemize}
-\subsection*{Defines}
+\subsection*{\-Defines}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{domain_8c_aebefeda80791480c21adcdd296f92c90}{TOPNODEFACTOR}~20.0
+\#define \hyperlink{domain_8c_aebefeda80791480c21adcdd296f92c90}{\-T\-O\-P\-N\-O\-D\-E\-F\-A\-C\-T\-O\-R}~20.\-0
 \item 
-\#define \hyperlink{domain_8c_a503173887b0902500751aee72367e074}{REDUC\_\-FAC}~0.98
+\#define \hyperlink{domain_8c_a503173887b0902500751aee72367e074}{\-R\-E\-D\-U\-C\-\_\-\-F\-A\-C}~0.\-98
 \end{DoxyCompactItemize}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{domain_8c_ae8e3aa408eaab9544cb7f93e69185492}{domain\_\-Decomposition} (void)
+void \hyperlink{domain_8c_ae8e3aa408eaab9544cb7f93e69185492}{domain\-\_\-\-Decomposition} (void)
 \item 
-void \hyperlink{domain_8c_a647e0c1a76b7f064ed5d201662f364bf}{domain\_\-decompose} (void)
+void \hyperlink{domain_8c_a647e0c1a76b7f064ed5d201662f364bf}{domain\-\_\-decompose} (void)
 \item 
-int \hyperlink{domain_8c_a412d5d8810751249cc8dcd9e219e4e57}{domain\_\-findSplit} (int cpustart, int ncpu, int first, int \hyperlink{forcetree_8c_a72e27dee31b1c4c6a504fbed29542d97}{last})
+int \hyperlink{domain_8c_a412d5d8810751249cc8dcd9e219e4e57}{domain\-\_\-find\-Split} (int cpustart, int ncpu, int first, int \hyperlink{forcetree_8c_a72e27dee31b1c4c6a504fbed29542d97}{last})
 \item 
-void \hyperlink{domain_8c_a89c54187117b91d4270a4f0c406ce2ba}{domain\_\-shiftSplit} (void)
+void \hyperlink{domain_8c_a89c54187117b91d4270a4f0c406ce2ba}{domain\-\_\-shift\-Split} (void)
 \item 
-void \hyperlink{domain_8c_a0e758ec7eef32fc7180092547f5a11b9}{domain\_\-findExchangeNumbers} (int task, int partner, int sphflag, int $\ast$send, int $\ast$recv)
+void \hyperlink{domain_8c_a0e758ec7eef32fc7180092547f5a11b9}{domain\-\_\-find\-Exchange\-Numbers} (int task, int partner, int sphflag, int $\ast$send, int $\ast$recv)
 \item 
-void \hyperlink{domain_8c_ab7d41435f73c1626208d63b2d5ba28ca}{domain\_\-exchangeParticles} (int partner, int sphflag, int send\_\-count, int recv\_\-count)
+void \hyperlink{domain_8c_ab7d41435f73c1626208d63b2d5ba28ca}{domain\-\_\-exchange\-Particles} (int partner, int sphflag, int send\-\_\-count, int recv\-\_\-count)
 \item 
-void \hyperlink{domain_8c_a77c115c3aa2069d0eb8521329be0483c}{domain\_\-countToGo} (void)
+void \hyperlink{domain_8c_a77c115c3aa2069d0eb8521329be0483c}{domain\-\_\-count\-To\-Go} (void)
 \item 
-void \hyperlink{domain_8c_a9b1062a5c460164de378d5e8c45736c4}{domain\_\-walktoptree} (int no)
+void \hyperlink{domain_8c_a9b1062a5c460164de378d5e8c45736c4}{domain\-\_\-walktoptree} (int no)
 \item 
-void \hyperlink{domain_8c_a25aada0d3751c2afd2a376151d1d917e}{domain\_\-sumCost} (void)
+void \hyperlink{domain_8c_a25aada0d3751c2afd2a376151d1d917e}{domain\-\_\-sum\-Cost} (void)
 \item 
-void \hyperlink{domain_8c_add5620cbc133c73f0ce7da3a8fe9c01e}{domain\_\-findExtent} (void)
+void \hyperlink{domain_8c_add5620cbc133c73f0ce7da3a8fe9c01e}{domain\-\_\-find\-Extent} (void)
 \item 
-void \hyperlink{domain_8c_a25b4f5eb395f918bad4b4bc1fc3dc729}{domain\_\-determineTopTree} (void)
+void \hyperlink{domain_8c_a25b4f5eb395f918bad4b4bc1fc3dc729}{domain\-\_\-determine\-Top\-Tree} (void)
 \item 
-void \hyperlink{domain_8c_aa5001f9be833c4673392b40e7be3a421}{domain\_\-topsplit\_\-local} (int node, \hyperlink{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{peanokey} startkey)
+void \hyperlink{domain_8c_aa5001f9be833c4673392b40e7be3a421}{domain\-\_\-topsplit\-\_\-local} (int node, peanokey startkey)
 \item 
-void \hyperlink{domain_8c_a606de536756a67ad8f79f1135009195e}{domain\_\-topsplit} (int node, \hyperlink{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{peanokey} startkey)
+void \hyperlink{domain_8c_a606de536756a67ad8f79f1135009195e}{domain\-\_\-topsplit} (int node, peanokey startkey)
 \item 
-int \hyperlink{domain_8c_a381621bc90438c5a50826bfdac8e4700}{domain\_\-compare\_\-toplist} (const void $\ast$a, const void $\ast$b)
+int \hyperlink{domain_8c_a381621bc90438c5a50826bfdac8e4700}{domain\-\_\-compare\-\_\-toplist} (const void $\ast$a, const void $\ast$b)
 \item 
-int \hyperlink{domain_8c_a5b596de46669fab5e125f163d44edc37}{domain\_\-compare\_\-key} (const void $\ast$a, const void $\ast$b)
+int \hyperlink{domain_8c_a5b596de46669fab5e125f163d44edc37}{domain\-\_\-compare\-\_\-key} (const void $\ast$a, const void $\ast$b)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
+\subsection*{\-Variables}
 \begin{DoxyCompactItemize}
 \item 
-static int $\ast$ \hyperlink{domain_8c_a52aefc67245e1a334c311a420f89130c}{toGo}
+static int $\ast$ \hyperlink{domain_8c_a52aefc67245e1a334c311a420f89130c}{to\-Go}
 \item 
-static int $\ast$ \hyperlink{domain_8c_af00bb52ac4aa095d4d6daac54833675f}{toGoSph}
+static int $\ast$ \hyperlink{domain_8c_af00bb52ac4aa095d4d6daac54833675f}{to\-Go\-Sph}
 \item 
-static int $\ast$ \hyperlink{domain_8c_a394783c89866b4e48255038384f9539b}{local\_\-toGo}
+static int $\ast$ \hyperlink{domain_8c_a394783c89866b4e48255038384f9539b}{local\-\_\-to\-Go}
 \item 
-static int $\ast$ \hyperlink{domain_8c_a119a354c6c46ee11fdb9c7ad131b787a}{local\_\-toGoSph}
+static int $\ast$ \hyperlink{domain_8c_a119a354c6c46ee11fdb9c7ad131b787a}{local\-\_\-to\-Go\-Sph}
 \item 
-static int $\ast$ \hyperlink{domain_8c_a040694ce8b01a0b994df96d39588813a}{list\_\-NumPart}
+static int $\ast$ \hyperlink{domain_8c_a040694ce8b01a0b994df96d39588813a}{list\-\_\-\-Num\-Part}
 \item 
-static int $\ast$ \hyperlink{domain_8c_a9819cd512382caee762325ea86f4b221}{list\_\-N\_\-gas}
+static int $\ast$ \hyperlink{domain_8c_a9819cd512382caee762325ea86f4b221}{list\-\_\-\-N\-\_\-gas}
 \item 
-static int $\ast$ \hyperlink{domain_8c_af3343810478135e16ac72ea1f0172cd6}{list\_\-load}
+static int $\ast$ \hyperlink{domain_8c_af3343810478135e16ac72ea1f0172cd6}{list\-\_\-load}
 \item 
-static int $\ast$ \hyperlink{domain_8c_a97ae02d63ef3ac017dcbaea0d3b4dda4}{list\_\-loadsph}
+static int $\ast$ \hyperlink{domain_8c_a97ae02d63ef3ac017dcbaea0d3b4dda4}{list\-\_\-loadsph}
 \item 
-static double $\ast$ \hyperlink{domain_8c_ad25e64ba07e1ed5350cceeab486c6f4a}{list\_\-work}
+static double $\ast$ \hyperlink{domain_8c_ad25e64ba07e1ed5350cceeab486c6f4a}{list\-\_\-work}
 \item 
 static long long \hyperlink{domain_8c_ac54707073f160b11ee4ba864066487c3}{maxload}
 \item 
 static long long \hyperlink{domain_8c_afa6a98969329aca0189182e060a2834e}{maxloadsph}
 \item 
-static struct \hyperlink{structtopnode__exchange}{topnode\_\-exchange} $\ast$ \hyperlink{domain_8c_aa4d05cc74afde41e1777c117c9103471}{toplist}
+static struct \hyperlink{structtopnode__exchange}{topnode\-\_\-exchange} $\ast$ \hyperlink{domain_8c_aa4d05cc74afde41e1777c117c9103471}{toplist}
 \item 
-static struct \hyperlink{structtopnode__exchange}{topnode\_\-exchange} $\ast$ \hyperlink{domain_8c_a62244375ee3d9bdb3f7428a58de42085}{toplist\_\-local}
+static struct \hyperlink{structtopnode__exchange}{topnode\-\_\-exchange} $\ast$ \hyperlink{domain_8c_a62244375ee3d9bdb3f7428a58de42085}{toplist\-\_\-local}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-code for domain decomposition This file contains the code for the domain decomposition of the simulation volume. The domains are constructed from disjoint subsets of the leaves of a fiducial top-\/level tree that covers the full simulation volume. Domain boundaries hence run along tree-\/node divisions of a fiducial global BH tree. As a result of this method, the tree force are in principle strictly independent of the way the domains are cut. The domain decomposition can be carried out for an arbitrary number of CPUs. Individual domains are not cubical, but spatially coherent since the leaves are traversed in a Peano-\/Hilbert order and individual domains form segments along this order. This also ensures that each domain has a small surface to volume ratio, which minimizes communication. 
+\subsection{\-Detailed \-Description}
+code for domain decomposition \-This file contains the code for the domain decomposition of the simulation volume. \-The domains are constructed from disjoint subsets of the leaves of a fiducial top-\/level tree that covers the full simulation volume. \-Domain boundaries hence run along tree-\/node divisions of a fiducial global \-B\-H tree. \-As a result of this method, the tree force are in principle strictly independent of the way the domains are cut. \-The domain decomposition can be carried out for an arbitrary number of \-C\-P\-Us. \-Individual domains are not cubical, but spatially coherent since the leaves are traversed in a \-Peano-\/\-Hilbert order and individual domains form segments along this order. \-This also ensures that each domain has a small surface to volume ratio, which minimizes communication. 
 
-Definition in file \hyperlink{domain_8c_source}{domain.c}.
-
-
-
-\subsection{Define Documentation}
-\hypertarget{domain_8c_a503173887b0902500751aee72367e074}{
-\index{domain.c@{domain.c}!REDUC\_\-FAC@{REDUC\_\-FAC}}
-\index{REDUC\_\-FAC@{REDUC\_\-FAC}!domain.c@{domain.c}}
-\subsubsection[{REDUC\_\-FAC}]{\setlength{\rightskip}{0pt plus 5cm}\#define REDUC\_\-FAC~0.98}}
-\label{domain_8c_a503173887b0902500751aee72367e074}
-
-
-Definition at line 31 of file domain.c.
-
-\hypertarget{domain_8c_aebefeda80791480c21adcdd296f92c90}{
-\index{domain.c@{domain.c}!TOPNODEFACTOR@{TOPNODEFACTOR}}
-\index{TOPNODEFACTOR@{TOPNODEFACTOR}!domain.c@{domain.c}}
-\subsubsection[{TOPNODEFACTOR}]{\setlength{\rightskip}{0pt plus 5cm}\#define TOPNODEFACTOR~20.0}}
-\label{domain_8c_aebefeda80791480c21adcdd296f92c90}
-
-
-Definition at line 29 of file domain.c.
+\-Definition in file \hyperlink{domain_8c_source}{domain.\-c}.
 
 
 
-Referenced by domain\_\-topsplit(), and domain\_\-topsplit\_\-local().
+\subsection{\-Define \-Documentation}
+\hypertarget{domain_8c_a503173887b0902500751aee72367e074}{\index{domain.\-c@{domain.\-c}!\-R\-E\-D\-U\-C\-\_\-\-F\-A\-C@{\-R\-E\-D\-U\-C\-\_\-\-F\-A\-C}}
+\index{\-R\-E\-D\-U\-C\-\_\-\-F\-A\-C@{\-R\-E\-D\-U\-C\-\_\-\-F\-A\-C}!domain.c@{domain.\-c}}
+\subsubsection[{\-R\-E\-D\-U\-C\-\_\-\-F\-A\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-R\-E\-D\-U\-C\-\_\-\-F\-A\-C}~0.\-98}}\label{domain_8c_a503173887b0902500751aee72367e074}
+
+
+\-Definition at line 31 of file domain.\-c.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{domain_8c_a5b596de46669fab5e125f163d44edc37}{
-\index{domain.c@{domain.c}!domain\_\-compare\_\-key@{domain\_\-compare\_\-key}}
-\index{domain\_\-compare\_\-key@{domain\_\-compare\_\-key}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-compare\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int domain\_\-compare\_\-key (
+\-Referenced by domain\-\_\-\-Decomposition().
+
+\hypertarget{domain_8c_aebefeda80791480c21adcdd296f92c90}{\index{domain.\-c@{domain.\-c}!\-T\-O\-P\-N\-O\-D\-E\-F\-A\-C\-T\-O\-R@{\-T\-O\-P\-N\-O\-D\-E\-F\-A\-C\-T\-O\-R}}
+\index{\-T\-O\-P\-N\-O\-D\-E\-F\-A\-C\-T\-O\-R@{\-T\-O\-P\-N\-O\-D\-E\-F\-A\-C\-T\-O\-R}!domain.c@{domain.\-c}}
+\subsubsection[{\-T\-O\-P\-N\-O\-D\-E\-F\-A\-C\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-O\-P\-N\-O\-D\-E\-F\-A\-C\-T\-O\-R}~20.\-0}}\label{domain_8c_aebefeda80791480c21adcdd296f92c90}
+
+
+\-Definition at line 29 of file domain.\-c.
+
+
+
+\-Referenced by domain\-\_\-topsplit(), and domain\-\_\-topsplit\-\_\-local().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{domain_8c_a5b596de46669fab5e125f163d44edc37}{\index{domain.\-c@{domain.\-c}!domain\-\_\-compare\-\_\-key@{domain\-\_\-compare\-\_\-key}}
+\index{domain\-\_\-compare\-\_\-key@{domain\-\_\-compare\-\_\-key}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-compare\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf domain\-\_\-compare\-\_\-key} (
 \begin{DoxyParamCaption}
-\item[{const void $\ast$}]{ a, }
-\item[{const void $\ast$}]{ b}
+\item[{const void $\ast$}]{a, }
+\item[{const void $\ast$}]{b}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_a5b596de46669fab5e125f163d44edc37}
-This is a comparison kernel used in a sort routine. 
+)}}\label{domain_8c_a5b596de46669fab5e125f163d44edc37}
+\-This is a comparison kernel used in a sort routine. 
 
-Definition at line 1119 of file domain.c.
-
+\-Definition at line 1119 of file domain.\-c.
 
 
-Referenced by domain\_\-determineTopTree().
 
-
+\-Referenced by domain\-\_\-determine\-Top\-Tree().
 
 
 \begin{DoxyCode}
@@ -165,51 +160,45 @@ Referenced by domain\_\-determineTopTree().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a5b596de46669fab5e125f163d44edc37_icgraph}
+\includegraphics[width=350pt]{domain_8c_a5b596de46669fab5e125f163d44edc37_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_a381621bc90438c5a50826bfdac8e4700}{
-\index{domain.c@{domain.c}!domain\_\-compare\_\-toplist@{domain\_\-compare\_\-toplist}}
-\index{domain\_\-compare\_\-toplist@{domain\_\-compare\_\-toplist}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-compare\_\-toplist}]{\setlength{\rightskip}{0pt plus 5cm}int domain\_\-compare\_\-toplist (
+\hypertarget{domain_8c_a381621bc90438c5a50826bfdac8e4700}{\index{domain.\-c@{domain.\-c}!domain\-\_\-compare\-\_\-toplist@{domain\-\_\-compare\-\_\-toplist}}
+\index{domain\-\_\-compare\-\_\-toplist@{domain\-\_\-compare\-\_\-toplist}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-compare\-\_\-toplist}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf domain\-\_\-compare\-\_\-toplist} (
 \begin{DoxyParamCaption}
-\item[{const void $\ast$}]{ a, }
-\item[{const void $\ast$}]{ b}
+\item[{const void $\ast$}]{a, }
+\item[{const void $\ast$}]{b}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_a381621bc90438c5a50826bfdac8e4700}
-This is a comparison kernel used in a sort routine. 
+)}}\label{domain_8c_a381621bc90438c5a50826bfdac8e4700}
+\-This is a comparison kernel used in a sort routine. 
 
-Definition at line 1106 of file domain.c.
-
-
-
-References topnode\_\-exchange::Startkey.
+\-Definition at line 1106 of file domain.\-c.
 
 
 
-Referenced by domain\_\-determineTopTree().
+\-References topnode\-\_\-exchange\-::\-Startkey.
 
 
+
+\-Referenced by domain\-\_\-determine\-Top\-Tree().
 
 
 \begin{DoxyCode}
 {
-  if(((struct topnode_exchange *) a)->Startkey < (((struct topnode_exchange *) b)
-      ->Startkey))
+  if(((struct topnode_exchange *) a)->Startkey < (((struct topnode_exchange *) 
+      b)->Startkey))
     return -1;
 
-  if(((struct topnode_exchange *) a)->Startkey > (((struct topnode_exchange *) b)
-      ->Startkey))
+  if(((struct topnode_exchange *) a)->Startkey > (((struct topnode_exchange *) 
+      b)->Startkey))
     return +1;
 
   return 0;
@@ -217,40 +206,34 @@ Referenced by domain\_\-determineTopTree().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a381621bc90438c5a50826bfdac8e4700_icgraph}
+\includegraphics[width=350pt]{domain_8c_a381621bc90438c5a50826bfdac8e4700_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_a77c115c3aa2069d0eb8521329be0483c}{
-\index{domain.c@{domain.c}!domain\_\-countToGo@{domain\_\-countToGo}}
-\index{domain\_\-countToGo@{domain\_\-countToGo}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-countToGo}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-countToGo (
+\hypertarget{domain_8c_a77c115c3aa2069d0eb8521329be0483c}{\index{domain.\-c@{domain.\-c}!domain\-\_\-count\-To\-Go@{domain\-\_\-count\-To\-Go}}
+\index{domain\-\_\-count\-To\-Go@{domain\-\_\-count\-To\-Go}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-count\-To\-Go}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-count\-To\-Go} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_a77c115c3aa2069d0eb8521329be0483c}
-This function determines how many particles that are currently stored on the local CPU have to be moved off according to the domain decomposition. 
+)}}\label{domain_8c_a77c115c3aa2069d0eb8521329be0483c}
+\-This function determines how many particles that are currently stored on the local \-C\-P\-U have to be moved off according to the domain decomposition. 
 
-Definition at line 729 of file domain.c.
-
-
-
-References topnode\_\-data::Daughter, DomainTask, Key, topnode\_\-data::Leaf, local\_\-toGo, local\_\-toGoSph, NTask, NumPart, P, topnode\_\-data::StartKey, ThisTask, toGo, toGoSph, and TopNodes.
+\-Definition at line 729 of file domain.\-c.
 
 
 
-Referenced by domain\_\-decompose().
+\-References \-Domain\-Task, \-Key, local\-\_\-to\-Go, local\-\_\-to\-Go\-Sph, \-N\-Task, \-Num\-Part, \-P, \-This\-Task, to\-Go, to\-Go\-Sph, and \-Top\-Nodes.
 
 
+
+\-Referenced by domain\-\_\-decompose().
 
 
 \begin{DoxyCode}
@@ -281,48 +264,42 @@ Referenced by domain\_\-decompose().
         }
     }
 
-  MPI_Allgather(local_toGo, NTask, MPI_INT, toGo, NTask, MPI_INT, MPI_COMM_WORLD)
-      ;
-  MPI_Allgather(local_toGoSph, NTask, MPI_INT, toGoSph, NTask, MPI_INT, MPI_COMM_
-      WORLD);
+  MPI_Allgather(local_toGo, NTask, MPI_INT, toGo, NTask, MPI_INT, 
+      MPI_COMM_WORLD);
+  MPI_Allgather(local_toGoSph, NTask, MPI_INT, toGoSph, NTask, MPI_INT, 
+      MPI_COMM_WORLD);
 }
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a77c115c3aa2069d0eb8521329be0483c_icgraph}
+\includegraphics[width=350pt]{domain_8c_a77c115c3aa2069d0eb8521329be0483c_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_a647e0c1a76b7f064ed5d201662f364bf}{
-\index{domain.c@{domain.c}!domain\_\-decompose@{domain\_\-decompose}}
-\index{domain\_\-decompose@{domain\_\-decompose}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-decompose}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-decompose (
+\hypertarget{domain_8c_a647e0c1a76b7f064ed5d201662f364bf}{\index{domain.\-c@{domain.\-c}!domain\-\_\-decompose@{domain\-\_\-decompose}}
+\index{domain\-\_\-decompose@{domain\-\_\-decompose}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-decompose}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-decompose} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_a647e0c1a76b7f064ed5d201662f364bf}
-This function carries out the actual domain decomposition for all particle types. It will try to balance the work-\/load for each domain, as estimated based on the P\mbox{[}i\mbox{]}-\/GravCost values. The decomposition will respect the maximum allowed memory-\/imbalance given by the value of PartAllocFactor. 
+)}}\label{domain_8c_a647e0c1a76b7f064ed5d201662f364bf}
+\-This function carries out the actual domain decomposition for all particle types. \-It will try to balance the work-\/load for each domain, as estimated based on the \-P\mbox{[}i\mbox{]}-\/\-Grav\-Cost values. \-The decomposition will respect the maximum allowed memory-\/imbalance given by the value of \-Part\-Alloc\-Factor. 
 
-Definition at line 154 of file domain.c.
-
-
-
-References All, domain\_\-countToGo(), domain\_\-determineTopTree(), domain\_\-exchangeParticles(), domain\_\-findExchangeNumbers(), domain\_\-findExtent(), domain\_\-findSplit(), domain\_\-shiftSplit(), domain\_\-sumCost(), DomainEndList, DomainMyLast, DomainMyStart, DomainStartList, endrun(), list\_\-load, list\_\-N\_\-gas, list\_\-NumPart, list\_\-work, maxload, NTask, NTopleaves, Ntype, NtypeLocal, NumPart, P, PTask, global\_\-data\_\-all\_\-processes::SofteningTable, ThisTask, toGo, toGoSph, and global\_\-data\_\-all\_\-processes::TotN\_\-gas.
+\-Definition at line 154 of file domain.\-c.
 
 
 
-Referenced by domain\_\-Decomposition().
+\-References \-All, domain\-\_\-count\-To\-Go(), domain\-\_\-determine\-Top\-Tree(), domain\-\_\-exchange\-Particles(), domain\-\_\-find\-Exchange\-Numbers(), domain\-\_\-find\-Extent(), domain\-\_\-find\-Split(), domain\-\_\-shift\-Split(), domain\-\_\-sum\-Cost(), \-Domain\-End\-List, \-Domain\-My\-Last, \-Domain\-My\-Start, \-Domain\-Start\-List, endrun(), list\-\_\-load, list\-\_\-\-N\-\_\-gas, list\-\_\-\-Num\-Part, list\-\_\-work, maxload, \-N\-Task, \-N\-Topleaves, \-Ntype, \-Ntype\-Local, \-Num\-Part, \-P, \-P\-Task, \-This\-Task, to\-Go, and to\-Go\-Sph.
 
 
+
+\-Referenced by domain\-\_\-\-Decomposition().
 
 
 \begin{DoxyCode}
@@ -364,10 +341,10 @@ Referenced by domain\_\-Decomposition().
           {
             if(ThisTask == 0)
               {
-                fprintf(stdout, "Code was not compiled with UNEQUALSOFTENINGS, bu
-      t some of the\n");
-                fprintf(stdout, "softening lengths are unequal nevertheless.\n");
-      
+                fprintf(stdout, "Code was not compiled with UNEQUALSOFTENINGS,
+       but some of the\n");
+                fprintf(stdout, "softening lengths are unequal nevertheless.\n"
+      );
                 fprintf(stdout, "This is not allowed.\n");
               }
             endrun(0);
@@ -389,8 +366,8 @@ Referenced by domain\_\-Decomposition().
   if(status != 0)
     {
       if(ThisTask == 0)
-        printf("\nNo domain decomposition that stays within memory bounds is poss
-      ible.\n");
+        printf("\nNo domain decomposition that stays within memory bounds is
+       possible.\n");
       endrun(0);
     }
 
@@ -417,13 +394,13 @@ Referenced by domain\_\-Decomposition().
         }
 
       printf("work-load balance=%g   memory-balance=%g\n",
-             maxwork / (sumwork / NTask), maxload / (((double) sumload) / NTask))
-      ;
+             maxwork / (sumwork / NTask), maxload / (((double) sumload) / NTask
+      ));
     }
 
 
-  /* determine for each cpu how many particles have to be shifted to other cpus *
-      /
+  /* determine for each cpu how many particles have to be shifted to other cpus
+       */
   domain_countToGo();
 
   for(i = 0, sumtogo = 0; i < NTask * NTask; i++)
@@ -433,7 +410,8 @@ Referenced by domain\_\-Decomposition().
     {
       if(ThisTask == 0)
         {
-          printf("exchange of %d%09d particles\n", (int) (sumtogo / 1000000000),
+          printf("exchange of %d%09d particles\n", (int) (sumtogo / 1000000000)
+      ,
                  (int) (sumtogo % 1000000000));
           fflush(stdout);
         }
@@ -449,8 +427,8 @@ Referenced by domain\_\-Decomposition().
                   /* treat SPH separately */
                   if(All.TotN_gas > 0)
                     {
-                      domain_findExchangeNumbers(task, partner, 1, &sendcount, &r
-      ecvcount);
+                      domain_findExchangeNumbers(task, partner, 1, &sendcount, 
+      &recvcount);
 
                       list_NumPart[task] += recvcount - sendcount;
                       list_NumPart[partner] -= recvcount - sendcount;
@@ -462,16 +440,17 @@ Referenced by domain\_\-Decomposition().
                       toGoSph[task * NTask + partner] -= sendcount;
                       toGoSph[partner * NTask + task] -= recvcount;
 
-                      if(task == ThisTask)      /* actually carry out the exchang
-      e */
-                        domain_exchangeParticles(partner, 1, sendcount, recvcount
-      );
+                      if(task == ThisTask)      /* actually carry out the
+       exchange */
+                        domain_exchangeParticles(partner, 1, sendcount, 
+      recvcount);
                       if(partner == ThisTask)
-                        domain_exchangeParticles(task, 1, recvcount, sendcount);
+                        domain_exchangeParticles(task, 1, recvcount, sendcount)
+      ;
                     }
 
-                  domain_findExchangeNumbers(task, partner, 0, &sendcount, &recvc
-      ount);
+                  domain_findExchangeNumbers(task, partner, 0, &sendcount, &
+      recvcount);
 
                   list_NumPart[task] += recvcount - sendcount;
                   list_NumPart[partner] -= recvcount - sendcount;
@@ -494,52 +473,46 @@ Referenced by domain\_\-Decomposition().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a647e0c1a76b7f064ed5d201662f364bf_cgraph}
+\includegraphics[width=350pt]{domain_8c_a647e0c1a76b7f064ed5d201662f364bf_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a647e0c1a76b7f064ed5d201662f364bf_icgraph}
+\includegraphics[width=350pt]{domain_8c_a647e0c1a76b7f064ed5d201662f364bf_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_ae8e3aa408eaab9544cb7f93e69185492}{
-\index{domain.c@{domain.c}!domain\_\-Decomposition@{domain\_\-Decomposition}}
-\index{domain\_\-Decomposition@{domain\_\-Decomposition}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-Decomposition}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-Decomposition (
+\hypertarget{domain_8c_ae8e3aa408eaab9544cb7f93e69185492}{\index{domain.\-c@{domain.\-c}!domain\-\_\-\-Decomposition@{domain\-\_\-\-Decomposition}}
+\index{domain\-\_\-\-Decomposition@{domain\-\_\-\-Decomposition}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-\-Decomposition}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-\-Decomposition} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_ae8e3aa408eaab9544cb7f93e69185492}
-This is the main routine for the domain decomposition. It acts as a driver routine that allocates various temporary buffers, maps the particles back onto the periodic box if needed, and then does the domain decomposition, and a final Peano-\/Hilbert order of all particles as a tuning measure. 
+)}}\label{domain_8c_ae8e3aa408eaab9544cb7f93e69185492}
+\-This is the main routine for the domain decomposition. \-It acts as a driver routine that allocates various temporary buffers, maps the particles back onto the periodic box if needed, and then does the domain decomposition, and a final \-Peano-\/\-Hilbert order of all particles as a tuning measure. 
 
-Definition at line 62 of file domain.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::CPU\_\-Domain, global\_\-data\_\-all\_\-processes::CPU\_\-Peano, do\_\-box\_\-wrapping(), domain\_\-decompose(), Key, KeySorted, list\_\-load, list\_\-loadsph, list\_\-N\_\-gas, list\_\-NumPart, list\_\-work, local\_\-toGo, local\_\-toGoSph, maxload, maxloadsph, global\_\-data\_\-all\_\-processes::MaxPart, global\_\-data\_\-all\_\-processes::MaxPartSph, N\_\-gas, NTask, global\_\-data\_\-all\_\-processes::NumForcesSinceLastDomainDecomp, NumPart, peano\_\-hilbert\_\-order(), global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-endstep, second(), ThisTask, global\_\-data\_\-all\_\-processes::Ti\_\-Current, timediff(), toGo, toGoSph, global\_\-data\_\-all\_\-processes::TotNumPart, global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency, and TreeReconstructFlag.
+\-Definition at line 62 of file domain.\-c.
 
 
 
-Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), init(), and run().
+\-References \-All, do\-\_\-box\-\_\-wrapping(), domain\-\_\-decompose(), \-Key, \-Key\-Sorted, list\-\_\-load, list\-\_\-loadsph, list\-\_\-\-N\-\_\-gas, list\-\_\-\-Num\-Part, list\-\_\-work, local\-\_\-to\-Go, local\-\_\-to\-Go\-Sph, maxload, maxloadsph, \-N\-\_\-gas, \-N\-Task, \-Num\-Part, peano\-\_\-hilbert\-\_\-order(), \-R\-E\-D\-U\-C\-\_\-\-F\-A\-C, second(), \-This\-Task, timediff(), to\-Go, to\-Go\-Sph, and \-Tree\-Reconstruct\-Flag.
 
 
+
+\-Referenced by find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift(), init(), and run().
 
 
 \begin{DoxyCode}
@@ -551,10 +524,10 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), init(), and run()
     {
       All.NumForcesSinceLastDomainDecomp = 1 + All.TotNumPart * All.
       TreeDomainUpdateFrequency;
-      /* to make sure that we do a domain decomposition before the PM-force is ev
-      aluated.
-         this is needed to make sure that the particles are wrapped into the box 
-      */
+      /* to make sure that we do a domain decomposition before the PM-force is
+       evaluated.
+         this is needed to make sure that the particles are wrapped into the
+       box */
     }
 #endif
 
@@ -589,9 +562,10 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), init(), and run()
       list_loadsph = malloc(sizeof(int) * NTask);
       list_work = malloc(sizeof(double) * NTask);
 
-      MPI_Allgather(&NumPart, 1, MPI_INT, list_NumPart, 1, MPI_INT, MPI_COMM_WORL
-      D);
-      MPI_Allgather(&N_gas, 1, MPI_INT, list_N_gas, 1, MPI_INT, MPI_COMM_WORLD);
+      MPI_Allgather(&NumPart, 1, MPI_INT, list_NumPart, 1, MPI_INT, 
+      MPI_COMM_WORLD);
+      MPI_Allgather(&N_gas, 1, MPI_INT, list_N_gas, 1, MPI_INT, MPI_COMM_WORLD)
+      ;
 
       maxload = All.MaxPart * REDUC_FAC;
       maxloadsph = All.MaxPartSph * REDUC_FAC;
@@ -633,64 +607,54 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), init(), and run()
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_ae8e3aa408eaab9544cb7f93e69185492_cgraph}
+\includegraphics[width=350pt]{domain_8c_ae8e3aa408eaab9544cb7f93e69185492_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_ae8e3aa408eaab9544cb7f93e69185492_icgraph}
+\includegraphics[width=350pt]{domain_8c_ae8e3aa408eaab9544cb7f93e69185492_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_a25b4f5eb395f918bad4b4bc1fc3dc729}{
-\index{domain.c@{domain.c}!domain\_\-determineTopTree@{domain\_\-determineTopTree}}
-\index{domain\_\-determineTopTree@{domain\_\-determineTopTree}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-determineTopTree}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-determineTopTree (
+\hypertarget{domain_8c_a25b4f5eb395f918bad4b4bc1fc3dc729}{\index{domain.\-c@{domain.\-c}!domain\-\_\-determine\-Top\-Tree@{domain\-\_\-determine\-Top\-Tree}}
+\index{domain\-\_\-determine\-Top\-Tree@{domain\-\_\-determine\-Top\-Tree}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-determine\-Top\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-determine\-Top\-Tree} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_a25b4f5eb395f918bad4b4bc1fc3dc729}
-This function constructs the global top-\/level tree node that is used for the domain decomposition. This is done by considering the string of Peano-\/Hilbert keys for all particles, which is recursively chopped off in pieces of eight segments until each segment holds at most a certain number of particles. 
+)}}\label{domain_8c_a25b4f5eb395f918bad4b4bc1fc3dc729}
+\-This function constructs the global top-\/level tree node that is used for the domain decomposition. \-This is done by considering the string of \-Peano-\/\-Hilbert keys for all particles, which is recursively chopped off in pieces of eight segments until each segment holds at most a certain number of particles. $<$ \-Bits per dimension available for \-Peano-\/\-Hilbert order. \-Note\-: \-If peanokey is defined as type int, the allowed maximum is 10. \-If 64-\/bit integers are used, the maximum is 21
 
-$<$ Bits per dimension available for Peano-\/Hilbert order. Note: If peanokey is defined 0 0 int, the allowed maximum is 10. If 64-\/bit integers are used, the maximum is 21
+$<$ \-Bits per dimension available for \-Peano-\/\-Hilbert order. \-Note\-: \-If peanokey is defined as type int, the allowed maximum is 10. \-If 64-\/bit integers are used, the maximum is 21
 
-$<$ Bits per dimension available for Peano-\/Hilbert order. Note: If peanokey is defined 0 0 0 , the allowed maximum is 10. If 64-\/bit integers are used, the maximum is 21
+$<$ \-The number of different \-Peano-\/\-Hilbert cells
 
-$<$ The number of different Peano-\/Hilbert cells
+$<$ \-Bits per dimension available for \-Peano-\/\-Hilbert order. \-Note\-: \-If peanokey is defined as type int, the allowed maximum is 10. \-If 64-\/bit integers are used, the maximum is 21
 
-$<$ Bits per dimension available for Peano-\/Hilbert order. Note: If peanokey is defined 0 0 0 , the allowed maximum is 10. If 64-\/bit integers are used, the maximum is 21
+$<$ \-The number of different \-Peano-\/\-Hilbert cells 
 
-$<$ The number of different Peano-\/Hilbert cells 
-
-
-
-Definition at line 896 of file domain.c.
+\-Definition at line 896 of file domain.\-c.
 
 
 
-References All, BITS\_\-PER\_\-DIMENSION, topnode\_\-data::Blocks, topnode\_\-exchange::Count, topnode\_\-data::Count, topnode\_\-data::Daughter, domain\_\-compare\_\-key(), domain\_\-compare\_\-toplist(), domain\_\-topsplit(), domain\_\-topsplit\_\-local(), DomainCorner, DomainFac, Key, KeySorted, NTask, NTopnodes, NumPart, P, peano\_\-hilbert\_\-key(), topnode\_\-data::Pstart, topnode\_\-data::Size, topnode\_\-exchange::Startkey, topnode\_\-data::StartKey, toplist, toplist\_\-local, TopNodes, and global\_\-data\_\-all\_\-processes::TotNumPart.
+\-References \-All, topnode\-\_\-exchange\-::\-Count, domain\-\_\-compare\-\_\-key(), domain\-\_\-compare\-\_\-toplist(), domain\-\_\-topsplit(), domain\-\_\-topsplit\-\_\-local(), \-Domain\-Corner, \-Domain\-Fac, \-Key, \-Key\-Sorted, \-N\-Task, \-N\-Topnodes, \-Num\-Part, \-P, peano\-\_\-hilbert\-\_\-key(), topnode\-\_\-exchange\-::\-Startkey, toplist, toplist\-\_\-local, and \-Top\-Nodes.
 
 
 
-Referenced by domain\_\-decompose().
-
-
+\-Referenced by domain\-\_\-decompose().
 
 
 \begin{DoxyCode}
@@ -700,12 +664,12 @@ Referenced by domain\_\-decompose().
 
   for(i = 0; i < NumPart; i++)
     {
-      KeySorted[i] = Key[i] = peano_hilbert_key((P[i].Pos[0] - DomainCorner[0]) *
-       DomainFac,
-                                                (P[i].Pos[1] - DomainCorner[1]) *
-       DomainFac,
-                                                (P[i].Pos[2] - DomainCorner[2]) *
-       DomainFac,
+      KeySorted[i] = Key[i] = peano_hilbert_key((P[i].Pos[0] - DomainCorner[0])
+       * DomainFac,
+                                                (P[i].Pos[1] - DomainCorner[1])
+       * DomainFac,
+                                                (P[i].Pos[2] - DomainCorner[2])
+       * DomainFac,
                                                 BITS_PER_DIMENSION);
     }
 
@@ -735,8 +699,8 @@ Referenced by domain\_\-decompose().
   ntopnodelist = malloc(sizeof(int) * NTask);
   ntopoffset = malloc(sizeof(int) * NTask);
 
-  MPI_Allgather(&ntop_local, 1, MPI_INT, ntopnodelist, 1, MPI_INT, MPI_COMM_WORLD
-      );
+  MPI_Allgather(&ntop_local, 1, MPI_INT, ntopnodelist, 1, MPI_INT, 
+      MPI_COMM_WORLD);
 
   for(i = 0, ntop = 0, ntopoffset[0] = 0; i < NTask; i++)
     {
@@ -754,11 +718,12 @@ Referenced by domain\_\-decompose().
       ntopoffset[i] *= sizeof(struct topnode_exchange);
     }
 
-  MPI_Allgatherv(toplist_local, ntop_local * sizeof(struct topnode_exchange), MPI
-      _BYTE,
+  MPI_Allgatherv(toplist_local, ntop_local * sizeof(struct topnode_exchange), 
+      MPI_BYTE,
                  toplist, ntopnodelist, ntopoffset, MPI_BYTE, MPI_COMM_WORLD);
 
-  qsort(toplist, ntop, sizeof(struct topnode_exchange), domain_compare_toplist);
+  qsort(toplist, ntop, sizeof(struct topnode_exchange), domain_compare_toplist)
+      ;
 
   NTopnodes = 1;
   TopNodes[0].Daughter = -1;
@@ -779,55 +744,49 @@ Referenced by domain\_\-decompose().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a25b4f5eb395f918bad4b4bc1fc3dc729_cgraph}
+\includegraphics[width=350pt]{domain_8c_a25b4f5eb395f918bad4b4bc1fc3dc729_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a25b4f5eb395f918bad4b4bc1fc3dc729_icgraph}
+\includegraphics[width=350pt]{domain_8c_a25b4f5eb395f918bad4b4bc1fc3dc729_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_ab7d41435f73c1626208d63b2d5ba28ca}{
-\index{domain.c@{domain.c}!domain\_\-exchangeParticles@{domain\_\-exchangeParticles}}
-\index{domain\_\-exchangeParticles@{domain\_\-exchangeParticles}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-exchangeParticles}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-exchangeParticles (
+\hypertarget{domain_8c_ab7d41435f73c1626208d63b2d5ba28ca}{\index{domain.\-c@{domain.\-c}!domain\-\_\-exchange\-Particles@{domain\-\_\-exchange\-Particles}}
+\index{domain\-\_\-exchange\-Particles@{domain\-\_\-exchange\-Particles}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-exchange\-Particles}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-exchange\-Particles} (
 \begin{DoxyParamCaption}
-\item[{int}]{ partner, }
-\item[{int}]{ sphflag, }
-\item[{int}]{ send\_\-count, }
-\item[{int}]{ recv\_\-count}
+\item[{int}]{partner, }
+\item[{int}]{sphflag, }
+\item[{int}]{send\-\_\-count, }
+\item[{int}]{recv\-\_\-count}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_ab7d41435f73c1626208d63b2d5ba28ca}
-This function exchanges particles between two CPUs according to the domain split. In doing this, the memory boundaries which may restrict the exhange process are observed. 
+)}}\label{domain_8c_ab7d41435f73c1626208d63b2d5ba28ca}
+\-This function exchanges particles between two \-C\-P\-Us according to the domain split. \-In doing this, the memory boundaries which may restrict the exhange process are observed. 
 
-Definition at line 595 of file domain.c.
-
-
-
-References topnode\_\-data::Daughter, DomainKeyBuf, DomainPartBuf, DomainSphBuf, DomainTask, endrun(), Key, topnode\_\-data::Leaf, N\_\-gas, NumPart, P, SphP, topnode\_\-data::StartKey, TAG\_\-KEY, TAG\_\-PDATA, TAG\_\-SPHDATA, ThisTask, and TopNodes.
+\-Definition at line 595 of file domain.\-c.
 
 
 
-Referenced by domain\_\-decompose().
+\-References \-Domain\-Key\-Buf, \-Domain\-Part\-Buf, \-Domain\-Sph\-Buf, \-Domain\-Task, endrun(), \-Key, \-N\-\_\-gas, \-Num\-Part, \-P, \-Sph\-P, \-T\-A\-G\-\_\-\-K\-E\-Y, \-T\-A\-G\-\_\-\-P\-D\-A\-T\-A, \-T\-A\-G\-\_\-\-S\-P\-H\-D\-A\-T\-A, \-This\-Task, and \-Top\-Nodes.
 
 
+
+\-Referenced by domain\-\_\-decompose().
 
 
 \begin{DoxyCode}
@@ -858,11 +817,11 @@ Referenced by domain\_\-decompose().
 
       if(DomainTask[no] == partner)
         {
-          if(sphflag)           /* special reorder routine for SPH particles (nee
-      d to stay at beginning) */
+          if(sphflag)           /* special reorder routine for SPH particles
+       (need to stay at beginning) */
             {
-              DomainPartBuf[count] = P[n];      /* copy particle and collect in c
-      ontiguous memory */
+              DomainPartBuf[count] = P[n];      /* copy particle and collect in
+       contiguous memory */
               DomainKeyBuf[count] = Key[n];
               DomainSphBuf[count] = SphP[n];
 
@@ -878,8 +837,8 @@ Referenced by domain\_\-decompose().
             }
           else
             {
-              DomainPartBuf[count] = P[n];      /* copy particle and collect in c
-      ontiguous memory */
+              DomainPartBuf[count] = P[n];      /* copy particle and collect in
+       contiguous memory */
               DomainKeyBuf[count] = Key[n];
               P[n] = P[NumPart - 1];
               Key[n] = Key[NumPart - 1];
@@ -894,8 +853,8 @@ Referenced by domain\_\-decompose().
   if(count != send_count)
     {
       printf("Houston, we got a problem...\n");
-      printf("ThisTask=%d count=%d send_count=%d\n", ThisTask, count, send_count)
-      ;
+      printf("ThisTask=%d count=%d send_count=%d\n", ThisTask, count, 
+      send_count);
       endrun(88);
     }
 
@@ -911,8 +870,8 @@ Referenced by domain\_\-decompose().
       particle_data), MPI_BYTE, partner,
                         TAG_PDATA, MPI_COMM_WORLD);
 
-              MPI_Ssend(&DomainKeyBuf[0], send_count * sizeof(peanokey), MPI_BYTE
-      , partner, TAG_KEY,
+              MPI_Ssend(&DomainKeyBuf[0], send_count * sizeof(peanokey), 
+      MPI_BYTE, partner, TAG_KEY,
                         MPI_COMM_WORLD);
 
               if(sphflag)
@@ -945,11 +904,11 @@ Referenced by domain\_\-decompose().
                         }
                     }
 
-                  MPI_Recv(&P[N_gas], recv_count * sizeof(struct particle_data), 
-      MPI_BYTE, partner, TAG_PDATA,
+                  MPI_Recv(&P[N_gas], recv_count * sizeof(struct particle_data)
+      , MPI_BYTE, partner, TAG_PDATA,
                            MPI_COMM_WORLD, &status);
-                  MPI_Recv(&Key[N_gas], recv_count * sizeof(peanokey), MPI_BYTE, 
-      partner, TAG_KEY,
+                  MPI_Recv(&Key[N_gas], recv_count * sizeof(peanokey), MPI_BYTE
+      , partner, TAG_KEY,
                            MPI_COMM_WORLD, &status);
                   MPI_Recv(&SphP[N_gas], recv_count * sizeof(struct 
       sph_particle_data), MPI_BYTE, partner,
@@ -959,11 +918,11 @@ Referenced by domain\_\-decompose().
                 }
               else
                 {
-                  MPI_Recv(&P[NumPart], recv_count * sizeof(struct particle_data)
-      , MPI_BYTE, partner,
+                  MPI_Recv(&P[NumPart], recv_count * sizeof(struct 
+      particle_data), MPI_BYTE, partner,
                            TAG_PDATA, MPI_COMM_WORLD, &status);
-                  MPI_Recv(&Key[NumPart], recv_count * sizeof(peanokey), MPI_BYTE
-      , partner,
+                  MPI_Recv(&Key[NumPart], recv_count * sizeof(peanokey), 
+      MPI_BYTE, partner,
                            TAG_KEY, MPI_COMM_WORLD, &status);
                 }
 
@@ -975,56 +934,50 @@ Referenced by domain\_\-decompose().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_ab7d41435f73c1626208d63b2d5ba28ca_cgraph}
+\includegraphics[width=350pt]{domain_8c_ab7d41435f73c1626208d63b2d5ba28ca_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_ab7d41435f73c1626208d63b2d5ba28ca_icgraph}
+\includegraphics[width=350pt]{domain_8c_ab7d41435f73c1626208d63b2d5ba28ca_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_a0e758ec7eef32fc7180092547f5a11b9}{
-\index{domain.c@{domain.c}!domain\_\-findExchangeNumbers@{domain\_\-findExchangeNumbers}}
-\index{domain\_\-findExchangeNumbers@{domain\_\-findExchangeNumbers}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-findExchangeNumbers}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-findExchangeNumbers (
+\hypertarget{domain_8c_a0e758ec7eef32fc7180092547f5a11b9}{\index{domain.\-c@{domain.\-c}!domain\-\_\-find\-Exchange\-Numbers@{domain\-\_\-find\-Exchange\-Numbers}}
+\index{domain\-\_\-find\-Exchange\-Numbers@{domain\-\_\-find\-Exchange\-Numbers}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-find\-Exchange\-Numbers}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-find\-Exchange\-Numbers} (
 \begin{DoxyParamCaption}
-\item[{int}]{ task, }
-\item[{int}]{ partner, }
-\item[{int}]{ sphflag, }
-\item[{int $\ast$}]{ send, }
-\item[{int $\ast$}]{ recv}
+\item[{int}]{task, }
+\item[{int}]{partner, }
+\item[{int}]{sphflag, }
+\item[{int $\ast$}]{send, }
+\item[{int $\ast$}]{recv}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_a0e758ec7eef32fc7180092547f5a11b9}
-This function counts how many particles have to be exchanged between two CPUs according to the domain split. If the CPUs are already quite full and hold data from other CPUs as well, not all the particles may be exchanged at once. In this case the communication phase has to be repeated, until enough of the third-\/party particles have been moved away such that the decomposition can be completed. 
+)}}\label{domain_8c_a0e758ec7eef32fc7180092547f5a11b9}
+\-This function counts how many particles have to be exchanged between two \-C\-P\-Us according to the domain split. \-If the \-C\-P\-Us are already quite full and hold data from other \-C\-P\-Us as well, not all the particles may be exchanged at once. \-In this case the communication phase has to be repeated, until enough of the third-\/party particles have been moved away such that the decomposition can be completed. 
 
-Definition at line 534 of file domain.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::BunchSizeDomain, imin(), list\_\-N\_\-gas, list\_\-NumPart, global\_\-data\_\-all\_\-processes::MaxPart, global\_\-data\_\-all\_\-processes::MaxPartSph, NTask, toGo, and toGoSph.
+\-Definition at line 534 of file domain.\-c.
 
 
 
-Referenced by domain\_\-decompose().
+\-References \-All, imin(), list\-\_\-\-N\-\_\-gas, list\-\_\-\-Num\-Part, \-N\-Task, to\-Go, and to\-Go\-Sph.
 
 
+
+\-Referenced by domain\-\_\-decompose().
 
 
 \begin{DoxyCode}
@@ -1045,10 +998,10 @@ Referenced by domain\_\-decompose().
     }
   else
     {
-      ntobesentA = toGo[task * NTask + partner] - toGoSph[task * NTask + partner]
-      ;
-      ntobesentB = toGo[partner * NTask + task] - toGoSph[partner * NTask + task]
-      ;
+      ntobesentA = toGo[task * NTask + partner] - toGoSph[task * NTask + 
+      partner];
+      ntobesentB = toGo[partner * NTask + task] - toGoSph[partner * NTask + 
+      task];
     }
 
   maxsendA = imin(ntobesentA, All.BunchSizeDomain);
@@ -1085,9 +1038,7 @@ Referenced by domain\_\-decompose().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -1099,42 +1050,34 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a0e758ec7eef32fc7180092547f5a11b9_icgraph}
+\includegraphics[width=350pt]{domain_8c_a0e758ec7eef32fc7180092547f5a11b9_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_add5620cbc133c73f0ce7da3a8fe9c01e}{
-\index{domain.c@{domain.c}!domain\_\-findExtent@{domain\_\-findExtent}}
-\index{domain\_\-findExtent@{domain\_\-findExtent}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-findExtent}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-findExtent (
+\hypertarget{domain_8c_add5620cbc133c73f0ce7da3a8fe9c01e}{\index{domain.\-c@{domain.\-c}!domain\-\_\-find\-Extent@{domain\-\_\-find\-Extent}}
+\index{domain\-\_\-find\-Extent@{domain\-\_\-find\-Extent}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-find\-Extent}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-find\-Extent} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_add5620cbc133c73f0ce7da3a8fe9c01e}
-This routine finds the extent of the global domain grid. 
+)}}\label{domain_8c_add5620cbc133c73f0ce7da3a8fe9c01e}
+\-This routine finds the extent of the global domain grid. $<$ \-Bits per dimension available for \-Peano-\/\-Hilbert order. \-Note\-: \-If peanokey is defined as type int, the allowed maximum is 10. \-If 64-\/bit integers are used, the maximum is 21 
 
-$<$ Bits per dimension available for Peano-\/Hilbert order. Note: If peanokey is defined 0 0 int, the allowed maximum is 10. If 64-\/bit integers are used, the maximum is 21 
-
-
-
-Definition at line 845 of file domain.c.
+\-Definition at line 845 of file domain.\-c.
 
 
 
-References DomainCenter, DomainCorner, DomainFac, DomainLen, NumPart, P, and particle\_\-data::Pos.
+\-References \-Domain\-Center, \-Domain\-Corner, \-Domain\-Fac, \-Domain\-Len, \-Num\-Part, and \-P.
 
 
 
-Referenced by domain\_\-decompose().
-
-
+\-Referenced by domain\-\_\-decompose().
 
 
 \begin{DoxyCode}
@@ -1183,45 +1126,39 @@ Referenced by domain\_\-decompose().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_add5620cbc133c73f0ce7da3a8fe9c01e_icgraph}
+\includegraphics[width=350pt]{domain_8c_add5620cbc133c73f0ce7da3a8fe9c01e_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_a412d5d8810751249cc8dcd9e219e4e57}{
-\index{domain.c@{domain.c}!domain\_\-findSplit@{domain\_\-findSplit}}
-\index{domain\_\-findSplit@{domain\_\-findSplit}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-findSplit}]{\setlength{\rightskip}{0pt plus 5cm}int domain\_\-findSplit (
+\hypertarget{domain_8c_a412d5d8810751249cc8dcd9e219e4e57}{\index{domain.\-c@{domain.\-c}!domain\-\_\-find\-Split@{domain\-\_\-find\-Split}}
+\index{domain\-\_\-find\-Split@{domain\-\_\-find\-Split}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-find\-Split}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf domain\-\_\-find\-Split} (
 \begin{DoxyParamCaption}
-\item[{int}]{ cpustart, }
-\item[{int}]{ ncpu, }
-\item[{int}]{ first, }
-\item[{int}]{ last}
+\item[{int}]{cpustart, }
+\item[{int}]{ncpu, }
+\item[{int}]{first, }
+\item[{int}]{last}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_a412d5d8810751249cc8dcd9e219e4e57}
-This function tries to find a split point in a range of cells in the domain-\/grid. The range of cells starts at 'first', and ends at 'last' (inclusively). The number of cpus that holds the range is 'ncpu', with the first cpu given by 'cpustart'. If more than 2 cpus are to be split, the function calls itself recursively. The division tries to achieve a best particle-\/load balance under the constraint that 'maxload' and 'maxloadsph' may not be exceeded, and that each cpu holds at least one cell from the domaingrid. If such a decomposition cannot be achieved, a non-\/zero error code is returned.
+)}}\label{domain_8c_a412d5d8810751249cc8dcd9e219e4e57}
+\-This function tries to find a split point in a range of cells in the domain-\/grid. \-The range of cells starts at 'first', and ends at 'last' (inclusively). \-The number of cpus that holds the range is 'ncpu', with the first cpu given by 'cpustart'. \-If more than 2 cpus are to be split, the function calls itself recursively. \-The division tries to achieve a best particle-\/load balance under the constraint that 'maxload' and 'maxloadsph' may not be exceeded, and that each cpu holds at least one cell from the domaingrid. \-If such a decomposition cannot be achieved, a non-\/zero error code is returned.
 
-After successful completion, DomainMyStart\mbox{[}\mbox{]} and DomainMyLast\mbox{[}\mbox{]} contain the first and last cell of the domaingrid assigned to the local task for the given type. Also, DomainTask\mbox{[}\mbox{]} contains for each cell the task it was assigned to. 
+\-After successful completion, \-Domain\-My\-Start\mbox{[}\mbox{]} and \-Domain\-My\-Last\mbox{[}\mbox{]} contain the first and last cell of the domaingrid assigned to the local task for the given type. \-Also, \-Domain\-Task\mbox{[}\mbox{]} contains for each cell the task it was assigned to. 
 
-Definition at line 327 of file domain.c.
-
-
-
-References dmax(), domain\_\-findSplit(), DomainCount, DomainCountSph, DomainEndList, DomainStartList, DomainTask, list\_\-load, list\_\-loadsph, maxload, and maxloadsph.
+\-Definition at line 327 of file domain.\-c.
 
 
 
-Referenced by domain\_\-decompose(), and domain\_\-findSplit().
+\-References dmax(), domain\-\_\-find\-Split(), \-Domain\-Count, \-Domain\-Count\-Sph, \-Domain\-End\-List, \-Domain\-Start\-List, \-Domain\-Task, last, list\-\_\-load, list\-\_\-loadsph, maxload, and maxloadsph.
 
 
+
+\-Referenced by domain\-\_\-decompose(), and domain\-\_\-find\-Split().
 
 
 \begin{DoxyCode}
@@ -1253,13 +1190,13 @@ Referenced by domain\_\-decompose(), and domain\_\-findSplit().
   while(split < last - (ncpu - ncpu_leftOfSplit - 1) && split > 0)
     {
       maxAvgLoad_CurrentSplit =
-        dmax(load_leftOfSplit / ncpu_leftOfSplit, (load - load_leftOfSplit) / (nc
-      pu - ncpu_leftOfSplit));
+        dmax(load_leftOfSplit / ncpu_leftOfSplit, (load - load_leftOfSplit) / (
+      ncpu - ncpu_leftOfSplit));
 
       maxAvgLoad_NewSplit =
         dmax((load_leftOfSplit + DomainCount[split]) / ncpu_leftOfSplit,
-             (load - load_leftOfSplit - DomainCount[split]) / (ncpu - ncpu_leftOf
-      Split));
+             (load - load_leftOfSplit - DomainCount[split]) / (ncpu - 
+      ncpu_leftOfSplit));
 
       if(maxAvgLoad_NewSplit <= maxAvgLoad_CurrentSplit)
         {
@@ -1272,8 +1209,8 @@ Referenced by domain\_\-decompose(), and domain\_\-findSplit().
     }
 
 
-  /* we will now have to check whether this solution is possible given the restri
-      ctions on the maximum load */
+  /* we will now have to check whether this solution is possible given the
+       restrictions on the maximum load */
 
   for(i = first, load_leftOfSplit = 0, sphload_leftOfSplit = 0; i < split; i++)
     {
@@ -1301,8 +1238,8 @@ Referenced by domain\_\-decompose(), and domain\_\-findSplit().
     ok_left = 0;
 
   if((ncpu - ncpu_leftOfSplit) >= 2)
-    ok_right = domain_findSplit(cpustart + ncpu_leftOfSplit, ncpu - ncpu_leftOfSp
-      lit, split, last);
+    ok_right = domain_findSplit(cpustart + ncpu_leftOfSplit, ncpu - 
+      ncpu_leftOfSplit, split, last);
   else
     ok_right = 0;
 
@@ -1327,8 +1264,8 @@ Referenced by domain\_\-decompose(), and domain\_\-findSplit().
             DomainTask[i] = cpustart + ncpu_leftOfSplit;
 
           list_load[cpustart + ncpu_leftOfSplit] = load - load_leftOfSplit;
-          list_loadsph[cpustart + ncpu_leftOfSplit] = sphload - sphload_leftOfSpl
-      it;
+          list_loadsph[cpustart + ncpu_leftOfSplit] = sphload - 
+      sphload_leftOfSplit;
           DomainStartList[cpustart + ncpu_leftOfSplit] = split;
           DomainEndList[cpustart + ncpu_leftOfSplit] = last;
         }
@@ -1342,9 +1279,7 @@ Referenced by domain\_\-decompose(), and domain\_\-findSplit().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -1356,38 +1291,34 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a412d5d8810751249cc8dcd9e219e4e57_icgraph}
+\includegraphics[width=350pt]{domain_8c_a412d5d8810751249cc8dcd9e219e4e57_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_a89c54187117b91d4270a4f0c406ce2ba}{
-\index{domain.c@{domain.c}!domain\_\-shiftSplit@{domain\_\-shiftSplit}}
-\index{domain\_\-shiftSplit@{domain\_\-shiftSplit}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-shiftSplit}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-shiftSplit (
+\hypertarget{domain_8c_a89c54187117b91d4270a4f0c406ce2ba}{\index{domain.\-c@{domain.\-c}!domain\-\_\-shift\-Split@{domain\-\_\-shift\-Split}}
+\index{domain\-\_\-shift\-Split@{domain\-\_\-shift\-Split}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-shift\-Split}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-shift\-Split} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_a89c54187117b91d4270a4f0c406ce2ba}
-This function tries to improve the domain decomposition found by \hyperlink{domain_8c_a412d5d8810751249cc8dcd9e219e4e57}{domain\_\-findSplit()} with respect to work-\/load balance. To this end, the boundaries in the existing domain-\/split solution (which was found by trying to balance the particle load) are shifted as long as this leads to better work-\/load while still remaining within the allowed memory-\/imbalance constraints. 
+)}}\label{domain_8c_a89c54187117b91d4270a4f0c406ce2ba}
+\-This function tries to improve the domain decomposition found by \hyperlink{domain_8c_a412d5d8810751249cc8dcd9e219e4e57}{domain\-\_\-find\-Split()} with respect to work-\/load balance. \-To this end, the boundaries in the existing domain-\/split solution (which was found by trying to balance the particle load) are shifted as long as this leads to better work-\/load while still remaining within the allowed memory-\/imbalance constraints. 
 
-Definition at line 447 of file domain.c.
-
-
-
-References dmax(), DomainCount, DomainCountSph, DomainEndList, DomainStartList, DomainTask, DomainWork, list\_\-load, list\_\-loadsph, list\_\-work, maxload, maxloadsph, NTask, and NTopleaves.
+\-Definition at line 447 of file domain.\-c.
 
 
 
-Referenced by domain\_\-decompose().
+\-References dmax(), \-Domain\-Count, \-Domain\-Count\-Sph, \-Domain\-End\-List, \-Domain\-Start\-List, \-Domain\-Task, \-Domain\-Work, list\-\_\-load, list\-\_\-loadsph, list\-\_\-work, maxload, maxloadsph, \-N\-Task, and \-N\-Topleaves.
 
 
+
+\-Referenced by domain\-\_\-decompose().
 
 
 \begin{DoxyCode}
@@ -1409,30 +1340,31 @@ Referenced by domain\_\-decompose().
 
           if(list_work[task] < list_work[task + 1])
             {
-              newmaxw = dmax(list_work[task] + DomainWork[DomainStartList[task + 
-      1]],
-                             list_work[task + 1] - DomainWork[DomainStartList[tas
-      k + 1]]);
+              newmaxw = dmax(list_work[task] + DomainWork[DomainStartList[task 
+      + 1]],
+                             list_work[task + 1] - DomainWork[DomainStartList[
+      task + 1]]);
               if(newmaxw <= maxw)
                 {
-                  if(list_load[task] + DomainCount[DomainStartList[task + 1]] <= 
-      maxload)
+                  if(list_load[task] + DomainCount[DomainStartList[task + 1]] 
+      <= maxload)
                     {
-                      if(list_loadsph[task] + DomainCountSph[DomainStartList[task
-       + 1]] > maxloadsph)
+                      if(list_loadsph[task] + DomainCountSph[DomainStartList[
+      task + 1]] > maxloadsph)
                         continue;
 
                       /* ok, we can move one domain cell from right to left */
                       list_work[task] += DomainWork[DomainStartList[task + 1]];
-                      list_load[task] += DomainCount[DomainStartList[task + 1]];
-                      list_loadsph[task] += DomainCountSph[DomainStartList[task +
+                      list_load[task] += DomainCount[DomainStartList[task + 1]]
+      ;
+                      list_loadsph[task] += DomainCountSph[DomainStartList[task
+       + 1]];
+                      list_work[task + 1] -= DomainWork[DomainStartList[task + 
+      1]];
+                      list_load[task + 1] -= DomainCount[DomainStartList[task +
        1]];
-                      list_work[task + 1] -= DomainWork[DomainStartList[task + 1]
-      ];
-                      list_load[task + 1] -= DomainCount[DomainStartList[task + 1
-      ]];
-                      list_loadsph[task + 1] -= DomainCountSph[DomainStartList[ta
-      sk + 1]];
+                      list_loadsph[task + 1] -= DomainCountSph[DomainStartList[
+      task + 1]];
 
                       DomainTask[DomainStartList[task + 1]] = task;
                       DomainStartList[task + 1] += 1;
@@ -1445,25 +1377,26 @@ Referenced by domain\_\-decompose().
           else
             {
               newmaxw = dmax(list_work[task] - DomainWork[DomainEndList[task]],
-                             list_work[task + 1] + DomainWork[DomainEndList[task]
-      ]);
+                             list_work[task + 1] + DomainWork[DomainEndList[
+      task]]);
               if(newmaxw <= maxw)
                 {
                   if(list_load[task + 1] + DomainCount[DomainEndList[task]] <= 
       maxload)
                     {
-                      if(list_loadsph[task + 1] + DomainCountSph[DomainEndList[ta
-      sk]] > maxloadsph)
+                      if(list_loadsph[task + 1] + DomainCountSph[DomainEndList[
+      task]] > maxloadsph)
                         continue;
 
                       /* ok, we can move one domain cell from left to right */
                       list_work[task] -= DomainWork[DomainEndList[task]];
                       list_load[task] -= DomainCount[DomainEndList[task]];
-                      list_loadsph[task] -= DomainCountSph[DomainEndList[task]];
+                      list_loadsph[task] -= DomainCountSph[DomainEndList[task]]
+      ;
                       list_work[task + 1] += DomainWork[DomainEndList[task]];
                       list_load[task + 1] += DomainCount[DomainEndList[task]];
-                      list_loadsph[task + 1] += DomainCountSph[DomainEndList[task
-      ]];
+                      list_loadsph[task + 1] += DomainCountSph[DomainEndList[
+      task]];
 
                       DomainTask[DomainEndList[task]] = task + 1;
                       DomainEndList[task] -= 1;
@@ -1483,9 +1416,7 @@ Referenced by domain\_\-decompose().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -1497,38 +1428,34 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a89c54187117b91d4270a4f0c406ce2ba_icgraph}
+\includegraphics[width=350pt]{domain_8c_a89c54187117b91d4270a4f0c406ce2ba_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_a25aada0d3751c2afd2a376151d1d917e}{
-\index{domain.c@{domain.c}!domain\_\-sumCost@{domain\_\-sumCost}}
-\index{domain\_\-sumCost@{domain\_\-sumCost}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-sumCost}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-sumCost (
+\hypertarget{domain_8c_a25aada0d3751c2afd2a376151d1d917e}{\index{domain.\-c@{domain.\-c}!domain\-\_\-sum\-Cost@{domain\-\_\-sum\-Cost}}
+\index{domain\-\_\-sum\-Cost@{domain\-\_\-sum\-Cost}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-sum\-Cost}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-sum\-Cost} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_a25aada0d3751c2afd2a376151d1d917e}
-This routine bins the particles onto the domain-\/grid, i.e. it sums up the total number of particles and the total amount of work in each of the domain-\/cells. This information forms the basis for the actual decision on the adopted domain decomposition. 
+)}}\label{domain_8c_a25aada0d3751c2afd2a376151d1d917e}
+\-This routine bins the particles onto the domain-\/grid, i.\-e. it sums up the total number of particles and the total amount of work in each of the domain-\/cells. \-This information forms the basis for the actual decision on the adopted domain decomposition. 
 
-Definition at line 786 of file domain.c.
-
-
-
-References topnode\_\-data::Daughter, domain\_\-walktoptree(), DomainCount, DomainCountSph, DomainWork, particle\_\-data::GravCost, Key, topnode\_\-data::Leaf, NTopleaves, NTopnodes, NumPart, P, topnode\_\-data::StartKey, ThisTask, and TopNodes.
+\-Definition at line 786 of file domain.\-c.
 
 
 
-Referenced by domain\_\-decompose().
+\-References domain\-\_\-walktoptree(), \-Domain\-Count, \-Domain\-Count\-Sph, \-Domain\-Work, \-Key, \-N\-Topleaves, \-N\-Topnodes, \-Num\-Part, \-P, \-This\-Task, and \-Top\-Nodes.
 
 
+
+\-Referenced by domain\-\_\-decompose().
 
 
 \begin{DoxyCode}
@@ -1569,8 +1496,8 @@ Referenced by domain\_\-decompose().
       no = TopNodes[no].Leaf;
 
       if(P[n].Ti_endstep > P[n].Ti_begstep)
-        local_DomainWork[no] += (1.0 + P[n].GravCost) / (P[n].Ti_endstep - P[n].T
-      i_begstep);
+        local_DomainWork[no] += (1.0 + P[n].GravCost) / (P[n].Ti_endstep - P[n]
+      .Ti_begstep);
       else
         local_DomainWork[no] += (1.0 + P[n].GravCost);
 
@@ -1579,12 +1506,12 @@ Referenced by domain\_\-decompose().
         local_DomainCountSph[no] += 1;
     }
 
-  MPI_Allreduce(local_DomainWork, DomainWork, NTopleaves, MPI_DOUBLE, MPI_SUM, MP
-      I_COMM_WORLD);
-  MPI_Allreduce(local_DomainCount, DomainCount, NTopleaves, MPI_INT, MPI_SUM, MPI
-      _COMM_WORLD);
-  MPI_Allreduce(local_DomainCountSph, DomainCountSph, NTopleaves, MPI_INT, MPI_SU
-      M, MPI_COMM_WORLD);
+  MPI_Allreduce(local_DomainWork, DomainWork, NTopleaves, MPI_DOUBLE, MPI_SUM, 
+      MPI_COMM_WORLD);
+  MPI_Allreduce(local_DomainCount, DomainCount, NTopleaves, MPI_INT, MPI_SUM, 
+      MPI_COMM_WORLD);
+  MPI_Allreduce(local_DomainCountSph, DomainCountSph, NTopleaves, MPI_INT, 
+      MPI_SUM, MPI_COMM_WORLD);
 
 
   free(local_DomainCountSph);
@@ -1594,9 +1521,7 @@ Referenced by domain\_\-decompose().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -1608,43 +1533,35 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a25aada0d3751c2afd2a376151d1d917e_icgraph}
+\includegraphics[width=350pt]{domain_8c_a25aada0d3751c2afd2a376151d1d917e_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_a606de536756a67ad8f79f1135009195e}{
-\index{domain.c@{domain.c}!domain\_\-topsplit@{domain\_\-topsplit}}
-\index{domain\_\-topsplit@{domain\_\-topsplit}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-topsplit}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-topsplit (
+\hypertarget{domain_8c_a606de536756a67ad8f79f1135009195e}{\index{domain.\-c@{domain.\-c}!domain\-\_\-topsplit@{domain\-\_\-topsplit}}
+\index{domain\-\_\-topsplit@{domain\-\_\-topsplit}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-topsplit}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-topsplit} (
 \begin{DoxyParamCaption}
-\item[{int}]{ node, }
-\item[{{\bf peanokey}}]{ startkey}
+\item[{int}]{node, }
+\item[{peanokey}]{startkey}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_a606de536756a67ad8f79f1135009195e}
-This function is responsible for constructing the global top-\/level tree segments. Starting from a joint list of all local top-\/level segments, in which mulitple occurences of the same spatial segment have been combined, a segment is subdivided into 8 pieces recursively until the number of particles in each segment has fallen below All.TotNumPart / (TOPNODEFACTOR $\ast$ NTask). 
+)}}\label{domain_8c_a606de536756a67ad8f79f1135009195e}
+\-This function is responsible for constructing the global top-\/level tree segments. \-Starting from a joint list of all local top-\/level segments, in which mulitple occurences of the same spatial segment have been combined, a segment is subdivided into 8 pieces recursively until the number of particles in each segment has fallen below \-All.\-Tot\-Num\-Part / (\-T\-O\-P\-N\-O\-D\-E\-F\-A\-C\-T\-O\-R $\ast$ \-N\-Task). $<$ \-Maximum number of nodes in the top-\/level tree used for domain decomposition 
 
-$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition 
-
-
-
-Definition at line 1049 of file domain.c.
+\-Definition at line 1049 of file domain.\-c.
 
 
 
-References All, topnode\_\-data::Blocks, topnode\_\-exchange::Count, topnode\_\-data::Count, topnode\_\-data::Daughter, domain\_\-topsplit(), endrun(), MAXTOPNODES, NTask, NTopnodes, topnode\_\-data::Pstart, topnode\_\-data::Size, topnode\_\-exchange::Startkey, topnode\_\-data::StartKey, ThisTask, toplist, TOPNODEFACTOR, TopNodes, and global\_\-data\_\-all\_\-processes::TotNumPart.
+\-References \-All, topnode\-\_\-exchange\-::\-Count, domain\-\_\-topsplit(), endrun(), \-N\-Task, \-N\-Topnodes, topnode\-\_\-exchange\-::\-Startkey, \-This\-Task, toplist, \-T\-O\-P\-N\-O\-D\-E\-F\-A\-C\-T\-O\-R, and \-Top\-Nodes.
 
 
 
-Referenced by domain\_\-determineTopTree(), and domain\_\-topsplit().
-
-
+\-Referenced by domain\-\_\-determine\-Top\-Tree(), and domain\-\_\-topsplit().
 
 
 \begin{DoxyCode}
@@ -1670,16 +1587,16 @@ Referenced by domain\_\-determineTopTree(), and domain\_\-topsplit().
             }
           else
             {
-              printf("Task=%d: We are out of Topnodes. Increasing the constant MA
-      XTOPNODES might help.\n",
+              printf("Task=%d: We are out of Topnodes. Increasing the constant
+       MAXTOPNODES might help.\n",
                      ThisTask);
               fflush(stdout);
               endrun(137213);
             }
         }
 
-      for(p = TopNodes[node].Pstart; p < TopNodes[node].Pstart + TopNodes[node].
-      Blocks; p++)
+      for(p = TopNodes[node].Pstart; p < TopNodes[node].Pstart + TopNodes[node]
+      .Blocks; p++)
         {
           bin = (toplist[p].Startkey - startkey) / (TopNodes[node].Size / 8);
           sub = TopNodes[node].Daughter + bin;
@@ -1705,57 +1622,47 @@ Referenced by domain\_\-determineTopTree(), and domain\_\-topsplit().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a606de536756a67ad8f79f1135009195e_cgraph}
+\includegraphics[width=350pt]{domain_8c_a606de536756a67ad8f79f1135009195e_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a606de536756a67ad8f79f1135009195e_icgraph}
+\includegraphics[width=350pt]{domain_8c_a606de536756a67ad8f79f1135009195e_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_aa5001f9be833c4673392b40e7be3a421}{
-\index{domain.c@{domain.c}!domain\_\-topsplit\_\-local@{domain\_\-topsplit\_\-local}}
-\index{domain\_\-topsplit\_\-local@{domain\_\-topsplit\_\-local}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-topsplit\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-topsplit\_\-local (
+\hypertarget{domain_8c_aa5001f9be833c4673392b40e7be3a421}{\index{domain.\-c@{domain.\-c}!domain\-\_\-topsplit\-\_\-local@{domain\-\_\-topsplit\-\_\-local}}
+\index{domain\-\_\-topsplit\-\_\-local@{domain\-\_\-topsplit\-\_\-local}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-topsplit\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-topsplit\-\_\-local} (
 \begin{DoxyParamCaption}
-\item[{int}]{ node, }
-\item[{{\bf peanokey}}]{ startkey}
+\item[{int}]{node, }
+\item[{peanokey}]{startkey}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_aa5001f9be833c4673392b40e7be3a421}
-This function is responsible for constructing the local top-\/level Peano-\/Hilbert segments. A segment is cut into 8 pieces recursively until the number of particles in the segment has fallen below All.TotNumPart / (TOPNODEFACTOR $\ast$ NTask $\ast$ NTask). 
+)}}\label{domain_8c_aa5001f9be833c4673392b40e7be3a421}
+\-This function is responsible for constructing the local top-\/level \-Peano-\/\-Hilbert segments. \-A segment is cut into 8 pieces recursively until the number of particles in the segment has fallen below \-All.\-Tot\-Num\-Part / (\-T\-O\-P\-N\-O\-D\-E\-F\-A\-C\-T\-O\-R $\ast$ \-N\-Task $\ast$ \-N\-Task). $<$ \-Maximum number of nodes in the top-\/level tree used for domain decomposition 
 
-$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition 
-
-
-
-Definition at line 982 of file domain.c.
+\-Definition at line 982 of file domain.\-c.
 
 
 
-References All, topnode\_\-exchange::Count, topnode\_\-data::Count, topnode\_\-data::Daughter, domain\_\-topsplit\_\-local(), endrun(), KeySorted, MAXTOPNODES, NTask, NTopnodes, topnode\_\-data::Pstart, topnode\_\-data::Size, topnode\_\-data::StartKey, ThisTask, TOPNODEFACTOR, TopNodes, and global\_\-data\_\-all\_\-processes::TotNumPart.
+\-References \-All, topnode\-\_\-exchange\-::\-Count, domain\-\_\-topsplit\-\_\-local(), endrun(), \-Key\-Sorted, \-N\-Task, \-N\-Topnodes, \-This\-Task, \-T\-O\-P\-N\-O\-D\-E\-F\-A\-C\-T\-O\-R, and \-Top\-Nodes.
 
 
 
-Referenced by domain\_\-determineTopTree(), and domain\_\-topsplit\_\-local().
-
-
+\-Referenced by domain\-\_\-determine\-Top\-Tree(), and domain\-\_\-topsplit\-\_\-local().
 
 
 \begin{DoxyCode}
@@ -1781,16 +1688,16 @@ Referenced by domain\_\-determineTopTree(), and domain\_\-topsplit\_\-local().
             }
           else
             {
-              printf("task=%d: We are out of Topnodes. Increasing the constant MA
-      XTOPNODES might help.\n",
+              printf("task=%d: We are out of Topnodes. Increasing the constant
+       MAXTOPNODES might help.\n",
                      ThisTask);
               fflush(stdout);
               endrun(13213);
             }
         }
 
-      for(p = TopNodes[node].Pstart; p < TopNodes[node].Pstart + TopNodes[node].
-      Count; p++)
+      for(p = TopNodes[node].Pstart; p < TopNodes[node].Pstart + TopNodes[node]
+      .Count; p++)
         {
           bin = (KeySorted[p] - startkey) / (TopNodes[node].Size / 8);
 
@@ -1822,52 +1729,46 @@ Referenced by domain\_\-determineTopTree(), and domain\_\-topsplit\_\-local().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_aa5001f9be833c4673392b40e7be3a421_cgraph}
+\includegraphics[width=350pt]{domain_8c_aa5001f9be833c4673392b40e7be3a421_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_aa5001f9be833c4673392b40e7be3a421_icgraph}
+\includegraphics[width=350pt]{domain_8c_aa5001f9be833c4673392b40e7be3a421_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{domain_8c_a9b1062a5c460164de378d5e8c45736c4}{
-\index{domain.c@{domain.c}!domain\_\-walktoptree@{domain\_\-walktoptree}}
-\index{domain\_\-walktoptree@{domain\_\-walktoptree}!domain.c@{domain.c}}
-\subsubsection[{domain\_\-walktoptree}]{\setlength{\rightskip}{0pt plus 5cm}void domain\_\-walktoptree (
+\hypertarget{domain_8c_a9b1062a5c460164de378d5e8c45736c4}{\index{domain.\-c@{domain.\-c}!domain\-\_\-walktoptree@{domain\-\_\-walktoptree}}
+\index{domain\-\_\-walktoptree@{domain\-\_\-walktoptree}!domain.c@{domain.\-c}}
+\subsubsection[{domain\-\_\-walktoptree}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf domain\-\_\-walktoptree} (
 \begin{DoxyParamCaption}
-\item[{int}]{ no}
+\item[{int}]{no}
 \end{DoxyParamCaption}
-)}}
-\label{domain_8c_a9b1062a5c460164de378d5e8c45736c4}
-This function walks the global top tree in order to establish the number of leaves it has. These leaves are distributed to different processors. 
+)}}\label{domain_8c_a9b1062a5c460164de378d5e8c45736c4}
+\-This function walks the global top tree in order to establish the number of leaves it has. \-These leaves are distributed to different processors. 
 
-Definition at line 765 of file domain.c.
-
-
-
-References topnode\_\-data::Leaf, NTopleaves, and TopNodes.
+\-Definition at line 765 of file domain.\-c.
 
 
 
-Referenced by domain\_\-sumCost().
+\-References \-N\-Topleaves, and \-Top\-Nodes.
 
 
+
+\-Referenced by domain\-\_\-sum\-Cost().
 
 
 \begin{DoxyCode}
@@ -1888,180 +1789,152 @@ Referenced by domain\_\-sumCost().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{domain_8c_a9b1062a5c460164de378d5e8c45736c4_icgraph}
+\includegraphics[width=350pt]{domain_8c_a9b1062a5c460164de378d5e8c45736c4_icgraph}
 \end{center}
 \end{figure}
 
 
 
 
-\subsection{Variable Documentation}
-\hypertarget{domain_8c_af3343810478135e16ac72ea1f0172cd6}{
-\index{domain.c@{domain.c}!list\_\-load@{list\_\-load}}
-\index{list\_\-load@{list\_\-load}!domain.c@{domain.c}}
-\subsubsection[{list\_\-load}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf list\_\-load}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_af3343810478135e16ac72ea1f0172cd6}
+\subsection{\-Variable \-Documentation}
+\hypertarget{domain_8c_af3343810478135e16ac72ea1f0172cd6}{\index{domain.\-c@{domain.\-c}!list\-\_\-load@{list\-\_\-load}}
+\index{list\-\_\-load@{list\-\_\-load}!domain.c@{domain.\-c}}
+\subsubsection[{list\-\_\-load}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf list\-\_\-load}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_af3343810478135e16ac72ea1f0172cd6}
 
 
-Definition at line 41 of file domain.c.
+\-Definition at line 41 of file domain.\-c.
 
 
 
-Referenced by domain\_\-decompose(), domain\_\-Decomposition(), domain\_\-findSplit(), and domain\_\-shiftSplit().
+\-Referenced by domain\-\_\-decompose(), domain\-\_\-\-Decomposition(), domain\-\_\-find\-Split(), and domain\-\_\-shift\-Split().
 
-\hypertarget{domain_8c_a97ae02d63ef3ac017dcbaea0d3b4dda4}{
-\index{domain.c@{domain.c}!list\_\-loadsph@{list\_\-loadsph}}
-\index{list\_\-loadsph@{list\_\-loadsph}!domain.c@{domain.c}}
-\subsubsection[{list\_\-loadsph}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf list\_\-loadsph}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_a97ae02d63ef3ac017dcbaea0d3b4dda4}
+\hypertarget{domain_8c_a97ae02d63ef3ac017dcbaea0d3b4dda4}{\index{domain.\-c@{domain.\-c}!list\-\_\-loadsph@{list\-\_\-loadsph}}
+\index{list\-\_\-loadsph@{list\-\_\-loadsph}!domain.c@{domain.\-c}}
+\subsubsection[{list\-\_\-loadsph}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf list\-\_\-loadsph}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_a97ae02d63ef3ac017dcbaea0d3b4dda4}
 
 
-Definition at line 42 of file domain.c.
+\-Definition at line 42 of file domain.\-c.
 
 
 
-Referenced by domain\_\-Decomposition(), domain\_\-findSplit(), and domain\_\-shiftSplit().
+\-Referenced by domain\-\_\-\-Decomposition(), domain\-\_\-find\-Split(), and domain\-\_\-shift\-Split().
 
-\hypertarget{domain_8c_a9819cd512382caee762325ea86f4b221}{
-\index{domain.c@{domain.c}!list\_\-N\_\-gas@{list\_\-N\_\-gas}}
-\index{list\_\-N\_\-gas@{list\_\-N\_\-gas}!domain.c@{domain.c}}
-\subsubsection[{list\_\-N\_\-gas}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf list\_\-N\_\-gas}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_a9819cd512382caee762325ea86f4b221}
+\hypertarget{domain_8c_a9819cd512382caee762325ea86f4b221}{\index{domain.\-c@{domain.\-c}!list\-\_\-\-N\-\_\-gas@{list\-\_\-\-N\-\_\-gas}}
+\index{list\-\_\-\-N\-\_\-gas@{list\-\_\-\-N\-\_\-gas}!domain.c@{domain.\-c}}
+\subsubsection[{list\-\_\-\-N\-\_\-gas}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf list\-\_\-\-N\-\_\-gas}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_a9819cd512382caee762325ea86f4b221}
 
 
-Definition at line 40 of file domain.c.
+\-Definition at line 40 of file domain.\-c.
 
 
 
-Referenced by domain\_\-decompose(), domain\_\-Decomposition(), and domain\_\-findExchangeNumbers().
+\-Referenced by domain\-\_\-decompose(), domain\-\_\-\-Decomposition(), and domain\-\_\-find\-Exchange\-Numbers().
 
-\hypertarget{domain_8c_a040694ce8b01a0b994df96d39588813a}{
-\index{domain.c@{domain.c}!list\_\-NumPart@{list\_\-NumPart}}
-\index{list\_\-NumPart@{list\_\-NumPart}!domain.c@{domain.c}}
-\subsubsection[{list\_\-NumPart}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf list\_\-NumPart}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_a040694ce8b01a0b994df96d39588813a}
+\hypertarget{domain_8c_a040694ce8b01a0b994df96d39588813a}{\index{domain.\-c@{domain.\-c}!list\-\_\-\-Num\-Part@{list\-\_\-\-Num\-Part}}
+\index{list\-\_\-\-Num\-Part@{list\-\_\-\-Num\-Part}!domain.c@{domain.\-c}}
+\subsubsection[{list\-\_\-\-Num\-Part}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf list\-\_\-\-Num\-Part}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_a040694ce8b01a0b994df96d39588813a}
 
 
-Definition at line 39 of file domain.c.
+\-Definition at line 39 of file domain.\-c.
 
 
 
-Referenced by domain\_\-decompose(), domain\_\-Decomposition(), and domain\_\-findExchangeNumbers().
+\-Referenced by domain\-\_\-decompose(), domain\-\_\-\-Decomposition(), and domain\-\_\-find\-Exchange\-Numbers().
 
-\hypertarget{domain_8c_ad25e64ba07e1ed5350cceeab486c6f4a}{
-\index{domain.c@{domain.c}!list\_\-work@{list\_\-work}}
-\index{list\_\-work@{list\_\-work}!domain.c@{domain.c}}
-\subsubsection[{list\_\-work}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ {\bf list\_\-work}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_ad25e64ba07e1ed5350cceeab486c6f4a}
+\hypertarget{domain_8c_ad25e64ba07e1ed5350cceeab486c6f4a}{\index{domain.\-c@{domain.\-c}!list\-\_\-work@{list\-\_\-work}}
+\index{list\-\_\-work@{list\-\_\-work}!domain.c@{domain.\-c}}
+\subsubsection[{list\-\_\-work}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ {\bf list\-\_\-work}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_ad25e64ba07e1ed5350cceeab486c6f4a}
 
 
-Definition at line 43 of file domain.c.
+\-Definition at line 43 of file domain.\-c.
 
 
 
-Referenced by domain\_\-decompose(), domain\_\-Decomposition(), and domain\_\-shiftSplit().
+\-Referenced by domain\-\_\-decompose(), domain\-\_\-\-Decomposition(), and domain\-\_\-shift\-Split().
 
-\hypertarget{domain_8c_a394783c89866b4e48255038384f9539b}{
-\index{domain.c@{domain.c}!local\_\-toGo@{local\_\-toGo}}
-\index{local\_\-toGo@{local\_\-toGo}!domain.c@{domain.c}}
-\subsubsection[{local\_\-toGo}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf local\_\-toGo}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_a394783c89866b4e48255038384f9539b}
+\hypertarget{domain_8c_a394783c89866b4e48255038384f9539b}{\index{domain.\-c@{domain.\-c}!local\-\_\-to\-Go@{local\-\_\-to\-Go}}
+\index{local\-\_\-to\-Go@{local\-\_\-to\-Go}!domain.c@{domain.\-c}}
+\subsubsection[{local\-\_\-to\-Go}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf local\-\_\-to\-Go}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_a394783c89866b4e48255038384f9539b}
 
 
-Definition at line 38 of file domain.c.
+\-Definition at line 38 of file domain.\-c.
 
 
 
-Referenced by domain\_\-countToGo(), and domain\_\-Decomposition().
+\-Referenced by domain\-\_\-count\-To\-Go(), and domain\-\_\-\-Decomposition().
 
-\hypertarget{domain_8c_a119a354c6c46ee11fdb9c7ad131b787a}{
-\index{domain.c@{domain.c}!local\_\-toGoSph@{local\_\-toGoSph}}
-\index{local\_\-toGoSph@{local\_\-toGoSph}!domain.c@{domain.c}}
-\subsubsection[{local\_\-toGoSph}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ {\bf local\_\-toGoSph}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_a119a354c6c46ee11fdb9c7ad131b787a}
+\hypertarget{domain_8c_a119a354c6c46ee11fdb9c7ad131b787a}{\index{domain.\-c@{domain.\-c}!local\-\_\-to\-Go\-Sph@{local\-\_\-to\-Go\-Sph}}
+\index{local\-\_\-to\-Go\-Sph@{local\-\_\-to\-Go\-Sph}!domain.c@{domain.\-c}}
+\subsubsection[{local\-\_\-to\-Go\-Sph}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ {\bf local\-\_\-to\-Go\-Sph}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_a119a354c6c46ee11fdb9c7ad131b787a}
 
 
-Definition at line 38 of file domain.c.
+\-Definition at line 38 of file domain.\-c.
 
 
 
-Referenced by domain\_\-countToGo(), and domain\_\-Decomposition().
+\-Referenced by domain\-\_\-count\-To\-Go(), and domain\-\_\-\-Decomposition().
 
-\hypertarget{domain_8c_ac54707073f160b11ee4ba864066487c3}{
-\index{domain.c@{domain.c}!maxload@{maxload}}
-\index{maxload@{maxload}!domain.c@{domain.c}}
-\subsubsection[{maxload}]{\setlength{\rightskip}{0pt plus 5cm}long long {\bf maxload}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_ac54707073f160b11ee4ba864066487c3}
+\hypertarget{domain_8c_ac54707073f160b11ee4ba864066487c3}{\index{domain.\-c@{domain.\-c}!maxload@{maxload}}
+\index{maxload@{maxload}!domain.c@{domain.\-c}}
+\subsubsection[{maxload}]{\setlength{\rightskip}{0pt plus 5cm}long long {\bf maxload}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_ac54707073f160b11ee4ba864066487c3}
 
 
-Definition at line 45 of file domain.c.
+\-Definition at line 45 of file domain.\-c.
 
 
 
-Referenced by domain\_\-decompose(), domain\_\-Decomposition(), domain\_\-findSplit(), and domain\_\-shiftSplit().
+\-Referenced by domain\-\_\-decompose(), domain\-\_\-\-Decomposition(), domain\-\_\-find\-Split(), and domain\-\_\-shift\-Split().
 
-\hypertarget{domain_8c_afa6a98969329aca0189182e060a2834e}{
-\index{domain.c@{domain.c}!maxloadsph@{maxloadsph}}
-\index{maxloadsph@{maxloadsph}!domain.c@{domain.c}}
-\subsubsection[{maxloadsph}]{\setlength{\rightskip}{0pt plus 5cm}long long {\bf maxloadsph}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_afa6a98969329aca0189182e060a2834e}
+\hypertarget{domain_8c_afa6a98969329aca0189182e060a2834e}{\index{domain.\-c@{domain.\-c}!maxloadsph@{maxloadsph}}
+\index{maxloadsph@{maxloadsph}!domain.c@{domain.\-c}}
+\subsubsection[{maxloadsph}]{\setlength{\rightskip}{0pt plus 5cm}long long {\bf maxloadsph}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_afa6a98969329aca0189182e060a2834e}
 
 
-Definition at line 45 of file domain.c.
+\-Definition at line 45 of file domain.\-c.
 
 
 
-Referenced by domain\_\-Decomposition(), domain\_\-findSplit(), and domain\_\-shiftSplit().
+\-Referenced by domain\-\_\-\-Decomposition(), domain\-\_\-find\-Split(), and domain\-\_\-shift\-Split().
 
-\hypertarget{domain_8c_a52aefc67245e1a334c311a420f89130c}{
-\index{domain.c@{domain.c}!toGo@{toGo}}
-\index{toGo@{toGo}!domain.c@{domain.c}}
-\subsubsection[{toGo}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf toGo}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_a52aefc67245e1a334c311a420f89130c}
-toGo\mbox{[}task$\ast$NTask + partner\mbox{]} gives the number of particles in task 'task' that have to go to task 'partner' 
+\hypertarget{domain_8c_a52aefc67245e1a334c311a420f89130c}{\index{domain.\-c@{domain.\-c}!to\-Go@{to\-Go}}
+\index{to\-Go@{to\-Go}!domain.c@{domain.\-c}}
+\subsubsection[{to\-Go}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf to\-Go}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_a52aefc67245e1a334c311a420f89130c}
+to\-Go\mbox{[}task$\ast$\-N\-Task + partner\mbox{]} gives the number of particles in task 'task' that have to go to task 'partner' 
 
-Definition at line 37 of file domain.c.
+\-Definition at line 37 of file domain.\-c.
 
 
 
-Referenced by domain\_\-countToGo(), domain\_\-decompose(), domain\_\-Decomposition(), and domain\_\-findExchangeNumbers().
+\-Referenced by domain\-\_\-count\-To\-Go(), domain\-\_\-decompose(), domain\-\_\-\-Decomposition(), and domain\-\_\-find\-Exchange\-Numbers().
 
-\hypertarget{domain_8c_af00bb52ac4aa095d4d6daac54833675f}{
-\index{domain.c@{domain.c}!toGoSph@{toGoSph}}
-\index{toGoSph@{toGoSph}!domain.c@{domain.c}}
-\subsubsection[{toGoSph}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ {\bf toGoSph}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_af00bb52ac4aa095d4d6daac54833675f}
+\hypertarget{domain_8c_af00bb52ac4aa095d4d6daac54833675f}{\index{domain.\-c@{domain.\-c}!to\-Go\-Sph@{to\-Go\-Sph}}
+\index{to\-Go\-Sph@{to\-Go\-Sph}!domain.c@{domain.\-c}}
+\subsubsection[{to\-Go\-Sph}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ {\bf to\-Go\-Sph}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_af00bb52ac4aa095d4d6daac54833675f}
 
 
-Definition at line 37 of file domain.c.
+\-Definition at line 37 of file domain.\-c.
 
 
 
-Referenced by domain\_\-countToGo(), domain\_\-decompose(), domain\_\-Decomposition(), and domain\_\-findExchangeNumbers().
+\-Referenced by domain\-\_\-count\-To\-Go(), domain\-\_\-decompose(), domain\-\_\-\-Decomposition(), and domain\-\_\-find\-Exchange\-Numbers().
 
-\hypertarget{domain_8c_aa4d05cc74afde41e1777c117c9103471}{
-\index{domain.c@{domain.c}!toplist@{toplist}}
-\index{toplist@{toplist}!domain.c@{domain.c}}
-\subsubsection[{toplist}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf topnode\_\-exchange}
- $\ast$ {\bf toplist}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_aa4d05cc74afde41e1777c117c9103471}
+\hypertarget{domain_8c_aa4d05cc74afde41e1777c117c9103471}{\index{domain.\-c@{domain.\-c}!toplist@{toplist}}
+\index{toplist@{toplist}!domain.c@{domain.\-c}}
+\subsubsection[{toplist}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf topnode\-\_\-exchange}
+ $\ast$ {\bf toplist}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_aa4d05cc74afde41e1777c117c9103471}
 
 
-Referenced by domain\_\-determineTopTree(), and domain\_\-topsplit().
+\-Referenced by domain\-\_\-determine\-Top\-Tree(), and domain\-\_\-topsplit().
 
-\hypertarget{domain_8c_a62244375ee3d9bdb3f7428a58de42085}{
-\index{domain.c@{domain.c}!toplist\_\-local@{toplist\_\-local}}
-\index{toplist\_\-local@{toplist\_\-local}!domain.c@{domain.c}}
-\subsubsection[{toplist\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf topnode\_\-exchange} $\ast$ {\bf toplist\_\-local}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{domain_8c_a62244375ee3d9bdb3f7428a58de42085}
+\hypertarget{domain_8c_a62244375ee3d9bdb3f7428a58de42085}{\index{domain.\-c@{domain.\-c}!toplist\-\_\-local@{toplist\-\_\-local}}
+\index{toplist\-\_\-local@{toplist\-\_\-local}!domain.c@{domain.\-c}}
+\subsubsection[{toplist\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf topnode\-\_\-exchange} $\ast$ {\bf toplist\-\_\-local}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{domain_8c_a62244375ee3d9bdb3f7428a58de42085}
 
 
-Referenced by domain\_\-determineTopTree().
+\-Referenced by domain\-\_\-determine\-Top\-Tree().
 

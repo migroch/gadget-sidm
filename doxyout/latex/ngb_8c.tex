@@ -1,237 +1,214 @@
-\hypertarget{ngb_8c}{
-\section{ngb.c File Reference}
-\label{ngb_8c}\index{ngb.c@{ngb.c}}
+\hypertarget{ngb_8c}{\section{ngb.\-c \-File \-Reference}
+\label{ngb_8c}\index{ngb.\-c@{ngb.\-c}}
 }
 
 
 neighbour search by means of the tree  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$time.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for ngb.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$time.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for ngb.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{ngb_8c__incl}
+\includegraphics[width=350pt]{ngb_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Defines}
+\subsection*{\-Defines}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{ngb_8c_a5c5328b307b005e6682669279878cef0}{boxSize\_\-X}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\#define \hyperlink{ngb_8c_a5c5328b307b005e6682669279878cef0}{box\-Size\-\_\-\-X}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-\#define \hyperlink{ngb_8c_a0ecceb71797a529fb6f2b8c47b51686c}{boxHalf\_\-X}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\#define \hyperlink{ngb_8c_a0ecceb71797a529fb6f2b8c47b51686c}{box\-Half\-\_\-\-X}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \item 
-\#define \hyperlink{ngb_8c_ab0db73a31e08d33d840e28651e3cf610}{boxSize\_\-Y}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\#define \hyperlink{ngb_8c_ab0db73a31e08d33d840e28651e3cf610}{box\-Size\-\_\-\-Y}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-\#define \hyperlink{ngb_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{boxHalf\_\-Y}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\#define \hyperlink{ngb_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{box\-Half\-\_\-\-Y}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \item 
-\#define \hyperlink{ngb_8c_a8a97a1c456bdd396791c84c370f0aa18}{boxSize\_\-Z}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+\#define \hyperlink{ngb_8c_a8a97a1c456bdd396791c84c370f0aa18}{box\-Size\-\_\-\-Z}~\hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-\#define \hyperlink{ngb_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{boxHalf\_\-Z}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+\#define \hyperlink{ngb_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{box\-Half\-\_\-\-Z}~\hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \item 
-\#define \hyperlink{ngb_8c_a49d4cb21065981774552d097f6f8832c}{NGB\_\-PERIODIC\_\-X}(x)~(xtmp=(x),(xtmp$>$boxHalf\_\-X)?(xtmp-\/boxSize\_\-X):((xtmp$<$-\/boxHalf\_\-X)?(xtmp+boxSize\_\-X):xtmp))
+\#define \hyperlink{ngb_8c_a49d4cb21065981774552d097f6f8832c}{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-X}(x)~(xtmp=(x),(xtmp$>$\hyperlink{ngb_8c_a0ecceb71797a529fb6f2b8c47b51686c}{box\-Half\-\_\-\-X})?(xtmp-\/\hyperlink{ngb_8c_a5c5328b307b005e6682669279878cef0}{box\-Size\-\_\-\-X})\-:((xtmp$<$-\/\hyperlink{ngb_8c_a0ecceb71797a529fb6f2b8c47b51686c}{box\-Half\-\_\-\-X})?(xtmp+\hyperlink{ngb_8c_a5c5328b307b005e6682669279878cef0}{box\-Size\-\_\-\-X})\-:xtmp))
 \item 
-\#define \hyperlink{ngb_8c_a3721767146404458e6955428a6e78cfd}{NGB\_\-PERIODIC\_\-Y}(x)~(xtmp=(x),(xtmp$>$boxHalf\_\-Y)?(xtmp-\/boxSize\_\-Y):((xtmp$<$-\/boxHalf\_\-Y)?(xtmp+boxSize\_\-Y):xtmp))
+\#define \hyperlink{ngb_8c_a3721767146404458e6955428a6e78cfd}{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Y}(x)~(xtmp=(x),(xtmp$>$\hyperlink{ngb_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{box\-Half\-\_\-\-Y})?(xtmp-\/\hyperlink{ngb_8c_ab0db73a31e08d33d840e28651e3cf610}{box\-Size\-\_\-\-Y})\-:((xtmp$<$-\/\hyperlink{ngb_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{box\-Half\-\_\-\-Y})?(xtmp+\hyperlink{ngb_8c_ab0db73a31e08d33d840e28651e3cf610}{box\-Size\-\_\-\-Y})\-:xtmp))
 \item 
-\#define \hyperlink{ngb_8c_ab563068e480f07f2fea4a94fb29ac11b}{NGB\_\-PERIODIC\_\-Z}(x)~(xtmp=(x),(xtmp$>$boxHalf\_\-Z)?(xtmp-\/boxSize\_\-Z):((xtmp$<$-\/boxHalf\_\-Z)?(xtmp+boxSize\_\-Z):xtmp))
+\#define \hyperlink{ngb_8c_ab563068e480f07f2fea4a94fb29ac11b}{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Z}(x)~(xtmp=(x),(xtmp$>$\hyperlink{ngb_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{box\-Half\-\_\-\-Z})?(xtmp-\/\hyperlink{ngb_8c_a8a97a1c456bdd396791c84c370f0aa18}{box\-Size\-\_\-\-Z})\-:((xtmp$<$-\/\hyperlink{ngb_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{box\-Half\-\_\-\-Z})?(xtmp+\hyperlink{ngb_8c_a8a97a1c456bdd396791c84c370f0aa18}{box\-Size\-\_\-\-Z})\-:xtmp))
 \end{DoxyCompactItemize}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd}{ngb\_\-treefind\_\-pairs} (float searchcenter\mbox{[}3\mbox{]}, float hsml, int $\ast$startnode)
+int \hyperlink{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd}{ngb\-\_\-treefind\-\_\-pairs} (float searchcenter\mbox{[}3\mbox{]}, float hsml, int $\ast$startnode)
 \item 
-int \hyperlink{ngb_8c_ae39a878e9bb71ae346097aace71632f9}{ngb\_\-treefind\_\-variable} (float searchcenter\mbox{[}3\mbox{]}, float hsml, int $\ast$startnode)
+int \hyperlink{ngb_8c_ae39a878e9bb71ae346097aace71632f9}{ngb\-\_\-treefind\-\_\-variable} (float searchcenter\mbox{[}3\mbox{]}, float hsml, int $\ast$startnode)
 \item 
-int \hyperlink{ngb_8c_a674ac0d18eaff78ba700f1278f078274}{ngb\_\-clear\_\-buf} (float searchcenter\mbox{[}3\mbox{]}, float hsml, int numngb)
+int \hyperlink{ngb_8c_a674ac0d18eaff78ba700f1278f078274}{ngb\-\_\-clear\-\_\-buf} (float searchcenter\mbox{[}3\mbox{]}, float hsml, int numngb)
 \item 
-void \hyperlink{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55}{ngb\_\-treeallocate} (int npart)
+void \hyperlink{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55}{ngb\-\_\-treeallocate} (int npart)
 \item 
-void \hyperlink{ngb_8c_aab22cf240079ef5846d83729e4565f97}{ngb\_\-treefree} (void)
+void \hyperlink{ngb_8c_aab22cf240079ef5846d83729e4565f97}{ngb\-\_\-treefree} (void)
 \item 
-void \hyperlink{ngb_8c_ac56af97a1dbbbbb07db8207246852f79}{ngb\_\-treebuild} (void)
+void \hyperlink{ngb_8c_ac56af97a1dbbbbb07db8207246852f79}{ngb\-\_\-treebuild} (void)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
+\subsection*{\-Variables}
 \begin{DoxyCompactItemize}
 \item 
-static double \hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{boxSize}
+static double \hyperlink{ngb_8c_ac9067960018a06b81c117434c01f19cc}{box\-Size}
 \item 
-static double \hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{boxHalf}
+static double \hyperlink{ngb_8c_af62571c97dc75a691aeafead0528b369}{box\-Half}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-neighbour search by means of the tree This file contains routines for neighbour finding. We use the gravity-\/tree and a range-\/searching technique to find neighbours. 
+\subsection{\-Detailed \-Description}
+neighbour search by means of the tree \-This file contains routines for neighbour finding. \-We use the gravity-\/tree and a range-\/searching technique to find neighbours. 
 
-Definition in file \hyperlink{ngb_8c_source}{ngb.c}.
-
-
-
-\subsection{Define Documentation}
-\hypertarget{ngb_8c_a0ecceb71797a529fb6f2b8c47b51686c}{
-\index{ngb.c@{ngb.c}!boxHalf\_\-X@{boxHalf\_\-X}}
-\index{boxHalf\_\-X@{boxHalf\_\-X}!ngb.c@{ngb.c}}
-\subsubsection[{boxHalf\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-X~{\bf boxHalf}}}
-\label{ngb_8c_a0ecceb71797a529fb6f2b8c47b51686c}
-
-
-Definition at line 26 of file ngb.c.
+\-Definition in file \hyperlink{ngb_8c_source}{ngb.\-c}.
 
 
 
-Referenced by ngb\_\-treeallocate().
-
-\hypertarget{ngb_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{
-\index{ngb.c@{ngb.c}!boxHalf\_\-Y@{boxHalf\_\-Y}}
-\index{boxHalf\_\-Y@{boxHalf\_\-Y}!ngb.c@{ngb.c}}
-\subsubsection[{boxHalf\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-Y~{\bf boxHalf}}}
-\label{ngb_8c_a59f20d7decc2bdfedcaafb70ef23df0e}
+\subsection{\-Define \-Documentation}
+\hypertarget{ngb_8c_a0ecceb71797a529fb6f2b8c47b51686c}{\index{ngb.\-c@{ngb.\-c}!box\-Half\-\_\-\-X@{box\-Half\-\_\-\-X}}
+\index{box\-Half\-\_\-\-X@{box\-Half\-\_\-\-X}!ngb.c@{ngb.\-c}}
+\subsubsection[{box\-Half\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Half\-\_\-\-X}~{\bf box\-Half}}}\label{ngb_8c_a0ecceb71797a529fb6f2b8c47b51686c}
 
 
-Definition at line 32 of file ngb.c.
+\-Definition at line 26 of file ngb.\-c.
 
 
 
-Referenced by ngb\_\-treeallocate().
+\-Referenced by ngb\-\_\-treeallocate().
 
-\hypertarget{ngb_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{
-\index{ngb.c@{ngb.c}!boxHalf\_\-Z@{boxHalf\_\-Z}}
-\index{boxHalf\_\-Z@{boxHalf\_\-Z}!ngb.c@{ngb.c}}
-\subsubsection[{boxHalf\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxHalf\_\-Z~{\bf boxHalf}}}
-\label{ngb_8c_a34e9d5d079320cbfc0576d26f58d2fe7}
+\hypertarget{ngb_8c_a59f20d7decc2bdfedcaafb70ef23df0e}{\index{ngb.\-c@{ngb.\-c}!box\-Half\-\_\-\-Y@{box\-Half\-\_\-\-Y}}
+\index{box\-Half\-\_\-\-Y@{box\-Half\-\_\-\-Y}!ngb.c@{ngb.\-c}}
+\subsubsection[{box\-Half\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Half\-\_\-\-Y}~{\bf box\-Half}}}\label{ngb_8c_a59f20d7decc2bdfedcaafb70ef23df0e}
 
 
-Definition at line 38 of file ngb.c.
+\-Definition at line 32 of file ngb.\-c.
 
 
 
-Referenced by ngb\_\-treeallocate().
+\-Referenced by ngb\-\_\-treeallocate().
 
-\hypertarget{ngb_8c_a5c5328b307b005e6682669279878cef0}{
-\index{ngb.c@{ngb.c}!boxSize\_\-X@{boxSize\_\-X}}
-\index{boxSize\_\-X@{boxSize\_\-X}!ngb.c@{ngb.c}}
-\subsubsection[{boxSize\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-X~{\bf boxSize}}}
-\label{ngb_8c_a5c5328b307b005e6682669279878cef0}
+\hypertarget{ngb_8c_a34e9d5d079320cbfc0576d26f58d2fe7}{\index{ngb.\-c@{ngb.\-c}!box\-Half\-\_\-\-Z@{box\-Half\-\_\-\-Z}}
+\index{box\-Half\-\_\-\-Z@{box\-Half\-\_\-\-Z}!ngb.c@{ngb.\-c}}
+\subsubsection[{box\-Half\-\_\-\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Half\-\_\-\-Z}~{\bf box\-Half}}}\label{ngb_8c_a34e9d5d079320cbfc0576d26f58d2fe7}
 
 
-Definition at line 25 of file ngb.c.
+\-Definition at line 38 of file ngb.\-c.
 
 
 
-Referenced by ngb\_\-treeallocate().
+\-Referenced by ngb\-\_\-treeallocate().
 
-\hypertarget{ngb_8c_ab0db73a31e08d33d840e28651e3cf610}{
-\index{ngb.c@{ngb.c}!boxSize\_\-Y@{boxSize\_\-Y}}
-\index{boxSize\_\-Y@{boxSize\_\-Y}!ngb.c@{ngb.c}}
-\subsubsection[{boxSize\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-Y~{\bf boxSize}}}
-\label{ngb_8c_ab0db73a31e08d33d840e28651e3cf610}
+\hypertarget{ngb_8c_a5c5328b307b005e6682669279878cef0}{\index{ngb.\-c@{ngb.\-c}!box\-Size\-\_\-\-X@{box\-Size\-\_\-\-X}}
+\index{box\-Size\-\_\-\-X@{box\-Size\-\_\-\-X}!ngb.c@{ngb.\-c}}
+\subsubsection[{box\-Size\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Size\-\_\-\-X}~{\bf box\-Size}}}\label{ngb_8c_a5c5328b307b005e6682669279878cef0}
 
 
-Definition at line 31 of file ngb.c.
+\-Definition at line 25 of file ngb.\-c.
 
 
 
-Referenced by ngb\_\-treeallocate().
+\-Referenced by ngb\-\_\-treeallocate().
 
-\hypertarget{ngb_8c_a8a97a1c456bdd396791c84c370f0aa18}{
-\index{ngb.c@{ngb.c}!boxSize\_\-Z@{boxSize\_\-Z}}
-\index{boxSize\_\-Z@{boxSize\_\-Z}!ngb.c@{ngb.c}}
-\subsubsection[{boxSize\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define boxSize\_\-Z~{\bf boxSize}}}
-\label{ngb_8c_a8a97a1c456bdd396791c84c370f0aa18}
+\hypertarget{ngb_8c_ab0db73a31e08d33d840e28651e3cf610}{\index{ngb.\-c@{ngb.\-c}!box\-Size\-\_\-\-Y@{box\-Size\-\_\-\-Y}}
+\index{box\-Size\-\_\-\-Y@{box\-Size\-\_\-\-Y}!ngb.c@{ngb.\-c}}
+\subsubsection[{box\-Size\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Size\-\_\-\-Y}~{\bf box\-Size}}}\label{ngb_8c_ab0db73a31e08d33d840e28651e3cf610}
 
 
-Definition at line 37 of file ngb.c.
+\-Definition at line 31 of file ngb.\-c.
 
 
 
-Referenced by ngb\_\-treeallocate().
+\-Referenced by ngb\-\_\-treeallocate().
 
-\hypertarget{ngb_8c_a49d4cb21065981774552d097f6f8832c}{
-\index{ngb.c@{ngb.c}!NGB\_\-PERIODIC\_\-X@{NGB\_\-PERIODIC\_\-X}}
-\index{NGB\_\-PERIODIC\_\-X@{NGB\_\-PERIODIC\_\-X}!ngb.c@{ngb.c}}
-\subsubsection[{NGB\_\-PERIODIC\_\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define NGB\_\-PERIODIC\_\-X(
+\hypertarget{ngb_8c_a8a97a1c456bdd396791c84c370f0aa18}{\index{ngb.\-c@{ngb.\-c}!box\-Size\-\_\-\-Z@{box\-Size\-\_\-\-Z}}
+\index{box\-Size\-\_\-\-Z@{box\-Size\-\_\-\-Z}!ngb.c@{ngb.\-c}}
+\subsubsection[{box\-Size\-\_\-\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf box\-Size\-\_\-\-Z}~{\bf box\-Size}}}\label{ngb_8c_a8a97a1c456bdd396791c84c370f0aa18}
+
+
+\-Definition at line 37 of file ngb.\-c.
+
+
+
+\-Referenced by ngb\-\_\-treeallocate().
+
+\hypertarget{ngb_8c_a49d4cb21065981774552d097f6f8832c}{\index{ngb.\-c@{ngb.\-c}!\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-X@{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-X}}
+\index{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-X@{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-X}!ngb.c@{ngb.\-c}}
+\subsubsection[{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-X}(
 \begin{DoxyParamCaption}
 \item[{}]{x}
 \end{DoxyParamCaption}
-)~(xtmp=(x),(xtmp$>$boxHalf\_\-X)?(xtmp-\/boxSize\_\-X):((xtmp$<$-\/boxHalf\_\-X)?(xtmp+boxSize\_\-X):xtmp))}}
-\label{ngb_8c_a49d4cb21065981774552d097f6f8832c}
+)~(xtmp=(x),(xtmp$>${\bf box\-Half\-\_\-\-X})?(xtmp-\/{\bf box\-Size\-\_\-\-X})\-:((xtmp$<$-\/{\bf box\-Half\-\_\-\-X})?(xtmp+{\bf box\-Size\-\_\-\-X})\-:xtmp))}}\label{ngb_8c_a49d4cb21065981774552d097f6f8832c}
 these macros maps a coordinate difference to the nearest periodic image 
 
-Definition at line 47 of file ngb.c.
+\-Definition at line 47 of file ngb.\-c.
 
 
 
-Referenced by ngb\_\-clear\_\-buf(), ngb\_\-treefind\_\-pairs(), and ngb\_\-treefind\_\-variable().
+\-Referenced by ngb\-\_\-clear\-\_\-buf(), ngb\-\_\-treefind\-\_\-pairs(), and ngb\-\_\-treefind\-\_\-variable().
 
-\hypertarget{ngb_8c_a3721767146404458e6955428a6e78cfd}{
-\index{ngb.c@{ngb.c}!NGB\_\-PERIODIC\_\-Y@{NGB\_\-PERIODIC\_\-Y}}
-\index{NGB\_\-PERIODIC\_\-Y@{NGB\_\-PERIODIC\_\-Y}!ngb.c@{ngb.c}}
-\subsubsection[{NGB\_\-PERIODIC\_\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define NGB\_\-PERIODIC\_\-Y(
+\hypertarget{ngb_8c_a3721767146404458e6955428a6e78cfd}{\index{ngb.\-c@{ngb.\-c}!\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Y@{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Y}}
+\index{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Y@{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Y}!ngb.c@{ngb.\-c}}
+\subsubsection[{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Y}(
 \begin{DoxyParamCaption}
 \item[{}]{x}
 \end{DoxyParamCaption}
-)~(xtmp=(x),(xtmp$>$boxHalf\_\-Y)?(xtmp-\/boxSize\_\-Y):((xtmp$<$-\/boxHalf\_\-Y)?(xtmp+boxSize\_\-Y):xtmp))}}
-\label{ngb_8c_a3721767146404458e6955428a6e78cfd}
+)~(xtmp=(x),(xtmp$>${\bf box\-Half\-\_\-\-Y})?(xtmp-\/{\bf box\-Size\-\_\-\-Y})\-:((xtmp$<$-\/{\bf box\-Half\-\_\-\-Y})?(xtmp+{\bf box\-Size\-\_\-\-Y})\-:xtmp))}}\label{ngb_8c_a3721767146404458e6955428a6e78cfd}
 
 
-Definition at line 48 of file ngb.c.
+\-Definition at line 48 of file ngb.\-c.
 
 
 
-Referenced by ngb\_\-clear\_\-buf(), ngb\_\-treefind\_\-pairs(), and ngb\_\-treefind\_\-variable().
+\-Referenced by ngb\-\_\-clear\-\_\-buf(), ngb\-\_\-treefind\-\_\-pairs(), and ngb\-\_\-treefind\-\_\-variable().
 
-\hypertarget{ngb_8c_ab563068e480f07f2fea4a94fb29ac11b}{
-\index{ngb.c@{ngb.c}!NGB\_\-PERIODIC\_\-Z@{NGB\_\-PERIODIC\_\-Z}}
-\index{NGB\_\-PERIODIC\_\-Z@{NGB\_\-PERIODIC\_\-Z}!ngb.c@{ngb.c}}
-\subsubsection[{NGB\_\-PERIODIC\_\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define NGB\_\-PERIODIC\_\-Z(
+\hypertarget{ngb_8c_ab563068e480f07f2fea4a94fb29ac11b}{\index{ngb.\-c@{ngb.\-c}!\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Z@{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Z}}
+\index{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Z@{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Z}!ngb.c@{ngb.\-c}}
+\subsubsection[{\-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Z}(
 \begin{DoxyParamCaption}
 \item[{}]{x}
 \end{DoxyParamCaption}
-)~(xtmp=(x),(xtmp$>$boxHalf\_\-Z)?(xtmp-\/boxSize\_\-Z):((xtmp$<$-\/boxHalf\_\-Z)?(xtmp+boxSize\_\-Z):xtmp))}}
-\label{ngb_8c_ab563068e480f07f2fea4a94fb29ac11b}
+)~(xtmp=(x),(xtmp$>${\bf box\-Half\-\_\-\-Z})?(xtmp-\/{\bf box\-Size\-\_\-\-Z})\-:((xtmp$<$-\/{\bf box\-Half\-\_\-\-Z})?(xtmp+{\bf box\-Size\-\_\-\-Z})\-:xtmp))}}\label{ngb_8c_ab563068e480f07f2fea4a94fb29ac11b}
 
 
-Definition at line 49 of file ngb.c.
-
-
-
-Referenced by ngb\_\-clear\_\-buf(), ngb\_\-treefind\_\-pairs(), and ngb\_\-treefind\_\-variable().
+\-Definition at line 49 of file ngb.\-c.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{ngb_8c_a674ac0d18eaff78ba700f1278f078274}{
-\index{ngb.c@{ngb.c}!ngb\_\-clear\_\-buf@{ngb\_\-clear\_\-buf}}
-\index{ngb\_\-clear\_\-buf@{ngb\_\-clear\_\-buf}!ngb.c@{ngb.c}}
-\subsubsection[{ngb\_\-clear\_\-buf}]{\setlength{\rightskip}{0pt plus 5cm}int ngb\_\-clear\_\-buf (
+\-Referenced by ngb\-\_\-clear\-\_\-buf(), ngb\-\_\-treefind\-\_\-pairs(), and ngb\-\_\-treefind\-\_\-variable().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{ngb_8c_a674ac0d18eaff78ba700f1278f078274}{\index{ngb.\-c@{ngb.\-c}!ngb\-\_\-clear\-\_\-buf@{ngb\-\_\-clear\-\_\-buf}}
+\index{ngb\-\_\-clear\-\_\-buf@{ngb\-\_\-clear\-\_\-buf}!ngb.c@{ngb.\-c}}
+\subsubsection[{ngb\-\_\-clear\-\_\-buf}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ngb\-\_\-clear\-\_\-buf} (
 \begin{DoxyParamCaption}
-\item[{float}]{ searchcenter\mbox{[}3\mbox{]}, }
-\item[{float}]{ hsml, }
-\item[{int}]{ numngb}
+\item[{float}]{searchcenter\mbox{[}3\mbox{]}, }
+\item[{float}]{hsml, }
+\item[{int}]{numngb}
 \end{DoxyParamCaption}
-)}}
-\label{ngb_8c_a674ac0d18eaff78ba700f1278f078274}
-The buffer for the neighbour list has a finite length MAX\_\-NGB. For a large search region, this buffer can get full, in which case this routine can be called to eliminate some of the superfluous particles in the \char`\"{}corners\char`\"{} of the search box -\/ only the ones in the inscribed sphere need to be kept. 
+)}}\label{ngb_8c_a674ac0d18eaff78ba700f1278f078274}
+\-The buffer for the neighbour list has a finite length \-M\-A\-X\-\_\-\-N\-G\-B. \-For a large search region, this buffer can get full, in which case this routine can be called to eliminate some of the superfluous particles in the \char`\"{}corners\char`\"{} of the search box -\/ only the ones in the inscribed sphere need to be kept. 
 
-Definition at line 320 of file ngb.c.
-
-
-
-References FLOAT, NGB\_\-PERIODIC\_\-X, NGB\_\-PERIODIC\_\-Y, NGB\_\-PERIODIC\_\-Z, Ngblist, P, and particle\_\-data::Pos.
+\-Definition at line 320 of file ngb.\-c.
 
 
 
-Referenced by ngb\_\-treefind\_\-variable().
+\-References \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-X, \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Y, \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Z, \-Ngblist, and \-P.
 
 
+
+\-Referenced by ngb\-\_\-treefind\-\_\-variable().
 
 
 \begin{DoxyCode}
@@ -270,40 +247,34 @@ Referenced by ngb\_\-treefind\_\-variable().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{ngb_8c_a674ac0d18eaff78ba700f1278f078274_icgraph}
+\includegraphics[width=350pt]{ngb_8c_a674ac0d18eaff78ba700f1278f078274_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55}{
-\index{ngb.c@{ngb.c}!ngb\_\-treeallocate@{ngb\_\-treeallocate}}
-\index{ngb\_\-treeallocate@{ngb\_\-treeallocate}!ngb.c@{ngb.c}}
-\subsubsection[{ngb\_\-treeallocate}]{\setlength{\rightskip}{0pt plus 5cm}void ngb\_\-treeallocate (
+\hypertarget{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55}{\index{ngb.\-c@{ngb.\-c}!ngb\-\_\-treeallocate@{ngb\-\_\-treeallocate}}
+\index{ngb\-\_\-treeallocate@{ngb\-\_\-treeallocate}!ngb.c@{ngb.\-c}}
+\subsubsection[{ngb\-\_\-treeallocate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ngb\-\_\-treeallocate} (
 \begin{DoxyParamCaption}
-\item[{int}]{ npart}
+\item[{int}]{npart}
 \end{DoxyParamCaption}
-)}}
-\label{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55}
-Allocates memory for the neighbour list buffer. 
+)}}\label{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55}
+\-Allocates memory for the neighbour list buffer. 
 
-Definition at line 358 of file ngb.c.
-
-
-
-References All, boxHalf, boxHalf\_\-X, boxHalf\_\-Y, boxHalf\_\-Z, global\_\-data\_\-all\_\-processes::BoxSize, boxSize, boxSize\_\-X, boxSize\_\-Y, boxSize\_\-Z, endrun(), Ngblist, and ThisTask.
+\-Definition at line 358 of file ngb.\-c.
 
 
 
-Referenced by init(), and restart().
+\-References \-All, box\-Half, box\-Half\-\_\-\-X, box\-Half\-\_\-\-Y, box\-Half\-\_\-\-Z, box\-Size, box\-Size\-\_\-\-X, box\-Size\-\_\-\-Y, box\-Size\-\_\-\-Z, endrun(), \-Ngblist, and \-This\-Task.
 
 
+
+\-Referenced by init(), and restart().
 
 
 \begin{DoxyCode}
@@ -330,65 +301,59 @@ Referenced by init(), and restart().
 
   if(!(Ngblist = malloc(bytes = npart * (long) sizeof(int))))
     {
-      printf("Failed to allocate %g MB for ngblist array\n", bytes / (1024.0 * 10
-      24.0));
+      printf("Failed to allocate %g MB for ngblist array\n", bytes / (1024.0 * 
+      1024.0));
       endrun(78);
     }
   totbytes += bytes;
 
   if(ThisTask == 0)
-    printf("allocated %g Mbyte for ngb search.\n", totbytes / (1024.0 * 1024.0));
-      
+    printf("allocated %g Mbyte for ngb search.\n", totbytes / (1024.0 * 1024.0)
+      );
 }
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55_cgraph}
+\includegraphics[width=350pt]{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55_icgraph}
+\includegraphics[width=350pt]{ngb_8c_a6f7a3b85f10701b9067f012cc9a30f55_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{ngb_8c_ac56af97a1dbbbbb07db8207246852f79}{
-\index{ngb.c@{ngb.c}!ngb\_\-treebuild@{ngb\_\-treebuild}}
-\index{ngb\_\-treebuild@{ngb\_\-treebuild}!ngb.c@{ngb.c}}
-\subsubsection[{ngb\_\-treebuild}]{\setlength{\rightskip}{0pt plus 5cm}void ngb\_\-treebuild (
+\hypertarget{ngb_8c_ac56af97a1dbbbbb07db8207246852f79}{\index{ngb.\-c@{ngb.\-c}!ngb\-\_\-treebuild@{ngb\-\_\-treebuild}}
+\index{ngb\-\_\-treebuild@{ngb\-\_\-treebuild}!ngb.c@{ngb.\-c}}
+\subsubsection[{ngb\-\_\-treebuild}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ngb\-\_\-treebuild} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{ngb_8c_ac56af97a1dbbbbb07db8207246852f79}
-This function constructs the neighbour tree. To this end, we actually need to construct the gravitational tree, because we use it now for the neighbour search. 
+)}}\label{ngb_8c_ac56af97a1dbbbbb07db8207246852f79}
+\-This function constructs the neighbour tree. \-To this end, we actually need to construct the gravitational tree, because we use it now for the neighbour search. 
 
-Definition at line 403 of file ngb.c.
-
-
-
-References force\_\-treebuild(), N\_\-gas, and ThisTask.
+\-Definition at line 403 of file ngb.\-c.
 
 
 
-Referenced by init().
+\-References force\-\_\-treebuild(), \-N\-\_\-gas, and \-This\-Task.
 
 
+
+\-Referenced by init().
 
 
 \begin{DoxyCode}
@@ -404,62 +369,52 @@ Referenced by init().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{ngb_8c_ac56af97a1dbbbbb07db8207246852f79_cgraph}
+\includegraphics[width=350pt]{ngb_8c_ac56af97a1dbbbbb07db8207246852f79_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=394pt]{ngb_8c_ac56af97a1dbbbbb07db8207246852f79_icgraph}
+\includegraphics[width=350pt]{ngb_8c_ac56af97a1dbbbbb07db8207246852f79_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd}{
-\index{ngb.c@{ngb.c}!ngb\_\-treefind\_\-pairs@{ngb\_\-treefind\_\-pairs}}
-\index{ngb\_\-treefind\_\-pairs@{ngb\_\-treefind\_\-pairs}!ngb.c@{ngb.c}}
-\subsubsection[{ngb\_\-treefind\_\-pairs}]{\setlength{\rightskip}{0pt plus 5cm}int ngb\_\-treefind\_\-pairs (
+\hypertarget{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd}{\index{ngb.\-c@{ngb.\-c}!ngb\-\_\-treefind\-\_\-pairs@{ngb\-\_\-treefind\-\_\-pairs}}
+\index{ngb\-\_\-treefind\-\_\-pairs@{ngb\-\_\-treefind\-\_\-pairs}!ngb.c@{ngb.\-c}}
+\subsubsection[{ngb\-\_\-treefind\-\_\-pairs}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ngb\-\_\-treefind\-\_\-pairs} (
 \begin{DoxyParamCaption}
-\item[{float}]{ searchcenter\mbox{[}3\mbox{]}, }
-\item[{float}]{ hsml, }
-\item[{int $\ast$}]{ startnode}
+\item[{float}]{searchcenter\mbox{[}3\mbox{]}, }
+\item[{float}]{hsml, }
+\item[{int $\ast$}]{startnode}
 \end{DoxyParamCaption}
-)}}
-\label{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd}
-This routine finds all neighbours `j' that can interact with the particle `i' in the communication buffer.
+)}}\label{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd}
+\-This routine finds all neighbours `j' that can interact with the particle `i' in the communication buffer.
 
-Note that an interaction can take place if $ r_{ij} < h_i $ OR if $ r_{ij} < h_j $.
+\-Note that an interaction can take place if $ r_{ij} < h_i $ \-O\-R if $ r_{ij} < h_j $.
 
-In the range-\/search this is taken into account, i.e. it is guaranteed that all particles are found that fulfil this condition, including the (more difficult) second part of it. For this purpose, each node knows the maximum h occuring among the particles it represents. 
+\-In the range-\/search this is taken into account, i.\-e. it is guaranteed that all particles are found that fulfil this condition, including the (more difficult) second part of it. \-For this purpose, each node knows the maximum h occuring among the particles it represents. $<$ defines maximum length of neighbour list 
 
-$<$ defines maximum length of neighbour list 
-
-
-
-Definition at line 64 of file ngb.c.
+\-Definition at line 64 of file ngb.\-c.
 
 
 
-References All, NODE::center, DomainTask, Exportflag, Extnodes, FLOAT, extNODE::hmax, sph\_\-particle\_\-data::Hsml, NODE::len, MAX\_\-NGB, MaxNodes, global\_\-data\_\-all\_\-processes::MaxPart, Nextnode, NGB\_\-PERIODIC\_\-X, NGB\_\-PERIODIC\_\-Y, NGB\_\-PERIODIC\_\-Z, Ngblist, Nodes, P, SphP, ThisTask, and NODE::u.
+\-References \-All, \-Domain\-Task, \-Exportflag, \-Extnodes, \-Max\-Nodes, \-Nextnode, \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-X, \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Y, \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Z, \-Ngblist, \-Nodes, \-P, \-Sph\-P, and \-This\-Task.
 
 
 
-Referenced by hydro\_\-evaluate().
-
-
+\-Referenced by hydro\-\_\-evaluate().
 
 
 \begin{DoxyCode}
@@ -528,10 +483,10 @@ Referenced by hydro\_\-evaluate().
           if(numngb == MAX_NGB)
             {
               printf
-                ("ThisTask=%d: Need to do a second neighbour loop in hydro-force 
-      for (%g|%g|%g) hsml=%g no=%d\n",
-                 ThisTask, searchcenter[0], searchcenter[1], searchcenter[2], hsm
-      l, no);
+                ("ThisTask=%d: Need to do a second neighbour loop in
+       hydro-force for (%g|%g|%g) hsml=%g no=%d\n",
+                 ThisTask, searchcenter[0], searchcenter[1], searchcenter[2], 
+      hsml, no);
               *startnode = no;
               return numngb;
             }
@@ -595,48 +550,38 @@ Referenced by hydro\_\-evaluate().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd_icgraph}
+\includegraphics[width=350pt]{ngb_8c_a96ec7acfa3c046abc6902ca77ee4bddd_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{ngb_8c_ae39a878e9bb71ae346097aace71632f9}{
-\index{ngb.c@{ngb.c}!ngb\_\-treefind\_\-variable@{ngb\_\-treefind\_\-variable}}
-\index{ngb\_\-treefind\_\-variable@{ngb\_\-treefind\_\-variable}!ngb.c@{ngb.c}}
-\subsubsection[{ngb\_\-treefind\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}int ngb\_\-treefind\_\-variable (
+\hypertarget{ngb_8c_ae39a878e9bb71ae346097aace71632f9}{\index{ngb.\-c@{ngb.\-c}!ngb\-\_\-treefind\-\_\-variable@{ngb\-\_\-treefind\-\_\-variable}}
+\index{ngb\-\_\-treefind\-\_\-variable@{ngb\-\_\-treefind\-\_\-variable}!ngb.c@{ngb.\-c}}
+\subsubsection[{ngb\-\_\-treefind\-\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ngb\-\_\-treefind\-\_\-variable} (
 \begin{DoxyParamCaption}
-\item[{float}]{ searchcenter\mbox{[}3\mbox{]}, }
-\item[{float}]{ hsml, }
-\item[{int $\ast$}]{ startnode}
+\item[{float}]{searchcenter\mbox{[}3\mbox{]}, }
+\item[{float}]{hsml, }
+\item[{int $\ast$}]{startnode}
 \end{DoxyParamCaption}
-)}}
-\label{ngb_8c_ae39a878e9bb71ae346097aace71632f9}
-This function returns neighbours with distance $<$= hsml and returns them in Ngblist. Actually, particles in a box of half side length hsml are returned, i.e. the reduction to a sphere still needs to be done in the calling routine. 
-
-$<$ defines maximum length of neighbour list
+)}}\label{ngb_8c_ae39a878e9bb71ae346097aace71632f9}
+\-This function returns neighbours with distance $<$= hsml and returns them in \-Ngblist. \-Actually, particles in a box of half side length hsml are returned, i.\-e. the reduction to a sphere still needs to be done in the calling routine. $<$ defines maximum length of neighbour list
 
 $<$ defines maximum length of neighbour list 
 
-
-
-Definition at line 194 of file ngb.c.
-
-
-
-References All, NODE::center, DomainTask, Exportflag, FLOAT, NODE::len, MAX\_\-NGB, MaxNodes, global\_\-data\_\-all\_\-processes::MaxPart, Nextnode, ngb\_\-clear\_\-buf(), NGB\_\-PERIODIC\_\-X, NGB\_\-PERIODIC\_\-Y, NGB\_\-PERIODIC\_\-Z, Ngblist, Nodes, P, ThisTask, and NODE::u.
+\-Definition at line 194 of file ngb.\-c.
 
 
 
-Referenced by density\_\-evaluate().
+\-References \-All, \-Domain\-Task, \-Exportflag, \-Max\-Nodes, \-Nextnode, ngb\-\_\-clear\-\_\-buf(), \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-X, \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Y, \-N\-G\-B\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-Z, \-Ngblist, \-Nodes, \-P, and \-This\-Task.
 
 
+
+\-Referenced by density\-\_\-evaluate().
 
 
 \begin{DoxyCode}
@@ -703,10 +648,10 @@ Referenced by density\_\-evaluate().
               numngb = ngb_clear_buf(searchcenter, hsml, numngb);
               if(numngb == MAX_NGB)
                 {
-                  printf("ThisTask=%d: Need to do a second neighbour loop for (%g
-      |%g|%g) hsml=%g no=%d\n",
-                         ThisTask, searchcenter[0], searchcenter[1], searchcenter
-      [2], hsml, no);
+                  printf("ThisTask=%d: Need to do a second neighbour loop for
+       (%g|%g|%g) hsml=%g no=%d\n",
+                         ThisTask, searchcenter[0], searchcenter[1], 
+      searchcenter[2], hsml, no);
                   *startnode = no;
                   return numngb;
                 }
@@ -767,9 +712,7 @@ Referenced by density\_\-evaluate().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -781,34 +724,30 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{ngb_8c_ae39a878e9bb71ae346097aace71632f9_icgraph}
+\includegraphics[width=350pt]{ngb_8c_ae39a878e9bb71ae346097aace71632f9_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{ngb_8c_aab22cf240079ef5846d83729e4565f97}{
-\index{ngb.c@{ngb.c}!ngb\_\-treefree@{ngb\_\-treefree}}
-\index{ngb\_\-treefree@{ngb\_\-treefree}!ngb.c@{ngb.c}}
-\subsubsection[{ngb\_\-treefree}]{\setlength{\rightskip}{0pt plus 5cm}void ngb\_\-treefree (
+\hypertarget{ngb_8c_aab22cf240079ef5846d83729e4565f97}{\index{ngb.\-c@{ngb.\-c}!ngb\-\_\-treefree@{ngb\-\_\-treefree}}
+\index{ngb\-\_\-treefree@{ngb\-\_\-treefree}!ngb.c@{ngb.\-c}}
+\subsubsection[{ngb\-\_\-treefree}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ngb\-\_\-treefree} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{ngb_8c_aab22cf240079ef5846d83729e4565f97}
+)}}\label{ngb_8c_aab22cf240079ef5846d83729e4565f97}
 free memory allocated for neighbour list buffer. 
 
-Definition at line 394 of file ngb.c.
+\-Definition at line 394 of file ngb.\-c.
 
 
 
-References Ngblist.
-
-
+\-References \-Ngblist.
 
 
 \begin{DoxyCode}
@@ -818,32 +757,26 @@ References Ngblist.
 \end{DoxyCode}
 
 
+\subsection{\-Variable \-Documentation}
+\hypertarget{ngb_8c_af62571c97dc75a691aeafead0528b369}{\index{ngb.\-c@{ngb.\-c}!box\-Half@{box\-Half}}
+\index{box\-Half@{box\-Half}!ngb.c@{ngb.\-c}}
+\subsubsection[{box\-Half}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf box\-Half}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{ngb_8c_af62571c97dc75a691aeafead0528b369}
 
 
-\subsection{Variable Documentation}
-\hypertarget{ngb_8c_af62571c97dc75a691aeafead0528b369}{
-\index{ngb.c@{ngb.c}!boxHalf@{boxHalf}}
-\index{boxHalf@{boxHalf}!ngb.c@{ngb.c}}
-\subsubsection[{boxHalf}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf boxHalf}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{ngb_8c_af62571c97dc75a691aeafead0528b369}
-
-
-Definition at line 20 of file ngb.c.
+\-Definition at line 20 of file ngb.\-c.
 
 
 
-Referenced by ngb\_\-treeallocate().
+\-Referenced by ngb\-\_\-treeallocate().
 
-\hypertarget{ngb_8c_ac9067960018a06b81c117434c01f19cc}{
-\index{ngb.c@{ngb.c}!boxSize@{boxSize}}
-\index{boxSize@{boxSize}!ngb.c@{ngb.c}}
-\subsubsection[{boxSize}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf boxSize}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{ngb_8c_ac9067960018a06b81c117434c01f19cc}
+\hypertarget{ngb_8c_ac9067960018a06b81c117434c01f19cc}{\index{ngb.\-c@{ngb.\-c}!box\-Size@{box\-Size}}
+\index{box\-Size@{box\-Size}!ngb.c@{ngb.\-c}}
+\subsubsection[{box\-Size}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf box\-Size}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{ngb_8c_ac9067960018a06b81c117434c01f19cc}
 
 
-Definition at line 20 of file ngb.c.
+\-Definition at line 20 of file ngb.\-c.
 
 
 
-Referenced by ngb\_\-treeallocate().
+\-Referenced by ngb\-\_\-treeallocate().
 

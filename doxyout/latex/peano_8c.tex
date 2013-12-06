@@ -1,113 +1,108 @@
-\hypertarget{peano_8c}{
-\section{peano.c File Reference}
-\label{peano_8c}\index{peano.c@{peano.c}}
+\hypertarget{peano_8c}{\section{peano.\-c \-File \-Reference}
+\label{peano_8c}\index{peano.\-c@{peano.\-c}}
 }
 
 
-Routines to compute a Peano-\/Hilbert order.  
+\-Routines to compute a \-Peano-\/\-Hilbert order.  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for peano.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for peano.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{peano_8c__incl}
+\includegraphics[width=350pt]{peano_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Data Structures}
+\subsection*{\-Data \-Structures}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structpeano__hilbert__data}{peano\_\-hilbert\_\-data}
+struct \hyperlink{structpeano__hilbert__data}{peano\-\_\-hilbert\-\_\-data}
 \end{DoxyCompactItemize}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{peano_8c_af3e45a4293584b3fe28e83af75c6ed71}{peano\_\-hilbert\_\-order} (void)
+void \hyperlink{peano_8c_af3e45a4293584b3fe28e83af75c6ed71}{peano\-\_\-hilbert\-\_\-order} (void)
 \item 
-int \hyperlink{peano_8c_af3ffb253e14a79419d1effeee1b7261d}{compare\_\-key} (const void $\ast$a, const void $\ast$b)
+int \hyperlink{peano_8c_af3ffb253e14a79419d1effeee1b7261d}{compare\-\_\-key} (const void $\ast$a, const void $\ast$b)
 \item 
-void \hyperlink{peano_8c_af744cef873e3093ba2924da8265d1711}{reorder\_\-gas} (void)
+void \hyperlink{peano_8c_af744cef873e3093ba2924da8265d1711}{reorder\-\_\-gas} (void)
 \item 
-void \hyperlink{peano_8c_afcb358154dd7fd5de8b4156f417fb0ba}{reorder\_\-particles} (void)
+void \hyperlink{peano_8c_afcb358154dd7fd5de8b4156f417fb0ba}{reorder\-\_\-particles} (void)
 \item 
-\hyperlink{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{peanokey} \hyperlink{peano_8c_a9eec17b80ae63eb79e98064f2d4f25df}{peano\_\-hilbert\_\-key} (int x, int y, int z, int bits)
+peanokey \hyperlink{peano_8c_a9eec17b80ae63eb79e98064f2d4f25df}{peano\-\_\-hilbert\-\_\-key} (int x, int y, int z, int bits)
 \item 
-void \hyperlink{peano_8c_a047f8c04c56b0983e593e98a4f0eb70d}{peano\_\-hilbert\_\-key\_\-inverse} (\hyperlink{allvars_8h_a63f10772bd5776dcb4b6301f425e0d26}{peanokey} key, int bits, int $\ast$x, int $\ast$y, int $\ast$z)
+void \hyperlink{peano_8c_a047f8c04c56b0983e593e98a4f0eb70d}{peano\-\_\-hilbert\-\_\-key\-\_\-inverse} (peanokey key, int bits, int $\ast$x, int $\ast$y, int $\ast$z)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
+\subsection*{\-Variables}
 \begin{DoxyCompactItemize}
 \item 
-static struct \hyperlink{structpeano__hilbert__data}{peano\_\-hilbert\_\-data} $\ast$ \hyperlink{peano_8c_a6bca09dac540caff82dc91b8875b2893}{mp}
+static struct \hyperlink{structpeano__hilbert__data}{peano\-\_\-hilbert\-\_\-data} $\ast$ \hyperlink{peano_8c_a6bca09dac540caff82dc91b8875b2893}{mp}
 \item 
-static int $\ast$ \hyperlink{peano_8c_a202e834159688d90a2ea91fb77e7a094}{Id}
+static int $\ast$ \hyperlink{peano_8c_a202e834159688d90a2ea91fb77e7a094}{\-Id}
 \item 
 static int \hyperlink{peano_8c_a2ac73023fc426510c30117291895c0cf}{quadrants} \mbox{[}24\mbox{]}\mbox{[}2\mbox{]}\mbox{[}2\mbox{]}\mbox{[}2\mbox{]}
 \item 
-static int \hyperlink{peano_8c_a1ca16b25390042ce60f1da39ddf70898}{rotxmap\_\-table} \mbox{[}24\mbox{]}
+static int \hyperlink{peano_8c_a1ca16b25390042ce60f1da39ddf70898}{rotxmap\-\_\-table} \mbox{[}24\mbox{]}
 \item 
-static int \hyperlink{peano_8c_add83bc48170e288d517578afecfca407}{rotymap\_\-table} \mbox{[}24\mbox{]}
+static int \hyperlink{peano_8c_add83bc48170e288d517578afecfca407}{rotymap\-\_\-table} \mbox{[}24\mbox{]}
 \item 
-static int \hyperlink{peano_8c_a44d18b8e2bb99c6899f2eb7e06a57e84}{rotx\_\-table} \mbox{[}8\mbox{]} = \{ 3, 0, 0, 2, 2, 0, 0, 1 \}
+static int \hyperlink{peano_8c_a44d18b8e2bb99c6899f2eb7e06a57e84}{rotx\-\_\-table} \mbox{[}8\mbox{]} = \{ 3, 0, 0, 2, 2, 0, 0, 1 \}
 \item 
-static int \hyperlink{peano_8c_a8bfd50e9b83d86c8585a42c306012cba}{roty\_\-table} \mbox{[}8\mbox{]} = \{ 0, 1, 1, 2, 2, 3, 3, 0 \}
+static int \hyperlink{peano_8c_a8bfd50e9b83d86c8585a42c306012cba}{roty\-\_\-table} \mbox{[}8\mbox{]} = \{ 0, 1, 1, 2, 2, 3, 3, 0 \}
 \item 
-static int \hyperlink{peano_8c_a4bf6cdb1f31bb545b55e6f70d3b720e5}{sense\_\-table} \mbox{[}8\mbox{]} = \{ -\/1, -\/1, -\/1, +1, +1, -\/1, -\/1, -\/1 \}
+static int \hyperlink{peano_8c_a4bf6cdb1f31bb545b55e6f70d3b720e5}{sense\-\_\-table} \mbox{[}8\mbox{]} = \{ -\/1, -\/1, -\/1, +1, +1, -\/1, -\/1, -\/1 \}
 \item 
-static int \hyperlink{peano_8c_ab208a7d15f0ca62ca2a381d90e3755fd}{flag\_\-quadrants\_\-inverse} = 1
+static int \hyperlink{peano_8c_ab208a7d15f0ca62ca2a381d90e3755fd}{flag\-\_\-quadrants\-\_\-inverse} = 1
 \item 
-static char \hyperlink{peano_8c_a7fac2200b4a314b6eb19aaf5887ba13d}{quadrants\_\-inverse\_\-x} \mbox{[}24\mbox{]}\mbox{[}8\mbox{]}
+static char \hyperlink{peano_8c_a7fac2200b4a314b6eb19aaf5887ba13d}{quadrants\-\_\-inverse\-\_\-x} \mbox{[}24\mbox{]}\mbox{[}8\mbox{]}
 \item 
-static char \hyperlink{peano_8c_abe2f025b3a200c6446028fdf6147cd30}{quadrants\_\-inverse\_\-y} \mbox{[}24\mbox{]}\mbox{[}8\mbox{]}
+static char \hyperlink{peano_8c_abe2f025b3a200c6446028fdf6147cd30}{quadrants\-\_\-inverse\-\_\-y} \mbox{[}24\mbox{]}\mbox{[}8\mbox{]}
 \item 
-static char \hyperlink{peano_8c_aface04a2d7228eb2bd5d290d30940c33}{quadrants\_\-inverse\_\-z} \mbox{[}24\mbox{]}\mbox{[}8\mbox{]}
+static char \hyperlink{peano_8c_aface04a2d7228eb2bd5d290d30940c33}{quadrants\-\_\-inverse\-\_\-z} \mbox{[}24\mbox{]}\mbox{[}8\mbox{]}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Routines to compute a Peano-\/Hilbert order. This file contains routines to compute Peano-\/Hilbert keys, and to put the particle data into the order of these keys, i.e. into the order of a space-\/filling fractal curve. 
+\subsection{\-Detailed \-Description}
+\-Routines to compute a \-Peano-\/\-Hilbert order. \-This file contains routines to compute \-Peano-\/\-Hilbert keys, and to put the particle data into the order of these keys, i.\-e. into the order of a space-\/filling fractal curve. 
 
-Definition in file \hyperlink{peano_8c_source}{peano.c}.
+\-Definition in file \hyperlink{peano_8c_source}{peano.\-c}.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{peano_8c_af3ffb253e14a79419d1effeee1b7261d}{
-\index{peano.c@{peano.c}!compare\_\-key@{compare\_\-key}}
-\index{compare\_\-key@{compare\_\-key}!peano.c@{peano.c}}
-\subsubsection[{compare\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int compare\_\-key (
+\subsection{\-Function \-Documentation}
+\hypertarget{peano_8c_af3ffb253e14a79419d1effeee1b7261d}{\index{peano.\-c@{peano.\-c}!compare\-\_\-key@{compare\-\_\-key}}
+\index{compare\-\_\-key@{compare\-\_\-key}!peano.c@{peano.\-c}}
+\subsubsection[{compare\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf compare\-\_\-key} (
 \begin{DoxyParamCaption}
-\item[{const void $\ast$}]{ a, }
-\item[{const void $\ast$}]{ b}
+\item[{const void $\ast$}]{a, }
+\item[{const void $\ast$}]{b}
 \end{DoxyParamCaption}
-)}}
-\label{peano_8c_af3ffb253e14a79419d1effeee1b7261d}
-This function is a comparison kernel for sorting the Peano-\/Hilbert keys. 
+)}}\label{peano_8c_af3ffb253e14a79419d1effeee1b7261d}
+\-This function is a comparison kernel for sorting the \-Peano-\/\-Hilbert keys. 
 
-Definition at line 98 of file peano.c.
-
+\-Definition at line 98 of file peano.\-c.
 
 
-Referenced by peano\_\-hilbert\_\-order().
 
-
+\-Referenced by peano\-\_\-hilbert\-\_\-order().
 
 
 \begin{DoxyCode}
 {
-  if(((struct peano_hilbert_data *) a)->key < (((struct peano_hilbert_data *) b)-
-      >key))
+  if(((struct peano_hilbert_data *) a)->key < (((struct peano_hilbert_data *) b
+      )->key))
     return -1;
 
-  if(((struct peano_hilbert_data *) a)->key > (((struct peano_hilbert_data *) b)-
-      >key))
+  if(((struct peano_hilbert_data *) a)->key > (((struct peano_hilbert_data *) b
+      )->key))
     return +1;
 
   return 0;
@@ -115,43 +110,37 @@ Referenced by peano\_\-hilbert\_\-order().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{peano_8c_af3ffb253e14a79419d1effeee1b7261d_icgraph}
+\includegraphics[width=350pt]{peano_8c_af3ffb253e14a79419d1effeee1b7261d_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{peano_8c_a9eec17b80ae63eb79e98064f2d4f25df}{
-\index{peano.c@{peano.c}!peano\_\-hilbert\_\-key@{peano\_\-hilbert\_\-key}}
-\index{peano\_\-hilbert\_\-key@{peano\_\-hilbert\_\-key}!peano.c@{peano.c}}
-\subsubsection[{peano\_\-hilbert\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf peanokey} peano\_\-hilbert\_\-key (
+\hypertarget{peano_8c_a9eec17b80ae63eb79e98064f2d4f25df}{\index{peano.\-c@{peano.\-c}!peano\-\_\-hilbert\-\_\-key@{peano\-\_\-hilbert\-\_\-key}}
+\index{peano\-\_\-hilbert\-\_\-key@{peano\-\_\-hilbert\-\_\-key}!peano.c@{peano.\-c}}
+\subsubsection[{peano\-\_\-hilbert\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}peanokey {\bf peano\-\_\-hilbert\-\_\-key} (
 \begin{DoxyParamCaption}
-\item[{int}]{ x, }
-\item[{int}]{ y, }
-\item[{int}]{ z, }
-\item[{int}]{ bits}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{z, }
+\item[{int}]{bits}
 \end{DoxyParamCaption}
-)}}
-\label{peano_8c_a9eec17b80ae63eb79e98064f2d4f25df}
-This function computes a Peano-\/Hilbert key for an integer triplet (x,y,z), with x,y,z in the range between 0 and 2$^\wedge$bits-\/1. 
+)}}\label{peano_8c_a9eec17b80ae63eb79e98064f2d4f25df}
+\-This function computes a \-Peano-\/\-Hilbert key for an integer triplet (x,y,z), with x,y,z in the range between 0 and 2$^\wedge$bits-\/1. 
 
-Definition at line 263 of file peano.c.
-
-
-
-References quadrants, rotx\_\-table, rotxmap\_\-table, roty\_\-table, rotymap\_\-table, and sense\_\-table.
+\-Definition at line 263 of file peano.\-c.
 
 
 
-Referenced by domain\_\-determineTopTree(), force\_\-create\_\-empty\_\-nodes(), and force\_\-treebuild\_\-single().
+\-References quadrants, rotx\-\_\-table, rotxmap\-\_\-table, roty\-\_\-table, rotymap\-\_\-table, and sense\-\_\-table.
 
 
+
+\-Referenced by domain\-\_\-determine\-Top\-Tree(), force\-\_\-create\-\_\-empty\-\_\-nodes(), and force\-\_\-treebuild\-\_\-single().
 
 
 \begin{DoxyCode}
@@ -200,40 +189,34 @@ Referenced by domain\_\-determineTopTree(), force\_\-create\_\-empty\_\-nodes(),
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{peano_8c_a9eec17b80ae63eb79e98064f2d4f25df_icgraph}
+\includegraphics[width=350pt]{peano_8c_a9eec17b80ae63eb79e98064f2d4f25df_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{peano_8c_a047f8c04c56b0983e593e98a4f0eb70d}{
-\index{peano.c@{peano.c}!peano\_\-hilbert\_\-key\_\-inverse@{peano\_\-hilbert\_\-key\_\-inverse}}
-\index{peano\_\-hilbert\_\-key\_\-inverse@{peano\_\-hilbert\_\-key\_\-inverse}!peano.c@{peano.c}}
-\subsubsection[{peano\_\-hilbert\_\-key\_\-inverse}]{\setlength{\rightskip}{0pt plus 5cm}void peano\_\-hilbert\_\-key\_\-inverse (
+\hypertarget{peano_8c_a047f8c04c56b0983e593e98a4f0eb70d}{\index{peano.\-c@{peano.\-c}!peano\-\_\-hilbert\-\_\-key\-\_\-inverse@{peano\-\_\-hilbert\-\_\-key\-\_\-inverse}}
+\index{peano\-\_\-hilbert\-\_\-key\-\_\-inverse@{peano\-\_\-hilbert\-\_\-key\-\_\-inverse}!peano.c@{peano.\-c}}
+\subsubsection[{peano\-\_\-hilbert\-\_\-key\-\_\-inverse}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf peano\-\_\-hilbert\-\_\-key\-\_\-inverse} (
 \begin{DoxyParamCaption}
-\item[{{\bf peanokey}}]{ key, }
-\item[{int}]{ bits, }
-\item[{int $\ast$}]{ x, }
-\item[{int $\ast$}]{ y, }
-\item[{int $\ast$}]{ z}
+\item[{peanokey}]{key, }
+\item[{int}]{bits, }
+\item[{int $\ast$}]{x, }
+\item[{int $\ast$}]{y, }
+\item[{int $\ast$}]{z}
 \end{DoxyParamCaption}
-)}}
-\label{peano_8c_a047f8c04c56b0983e593e98a4f0eb70d}
-This function computes for a given Peano-\/Hilbert key, the inverse, i.e. the integer triplet (x,y,z) with a Peano-\/Hilbert key equal to the input key. (This functionality is actually not needed in the present code.) 
+)}}\label{peano_8c_a047f8c04c56b0983e593e98a4f0eb70d}
+\-This function computes for a given \-Peano-\/\-Hilbert key, the inverse, i.\-e. the integer triplet (x,y,z) with a \-Peano-\/\-Hilbert key equal to the input key. (\-This functionality is actually not needed in the present code.) 
 
-Definition at line 313 of file peano.c.
-
+\-Definition at line 313 of file peano.\-c.
 
 
-References flag\_\-quadrants\_\-inverse, quadrants, quadrants\_\-inverse\_\-x, quadrants\_\-inverse\_\-y, quadrants\_\-inverse\_\-z, rotx\_\-table, rotxmap\_\-table, roty\_\-table, rotymap\_\-table, and sense\_\-table.
 
-
+\-References flag\-\_\-quadrants\-\_\-inverse, quadrants, quadrants\-\_\-inverse\-\_\-x, quadrants\-\_\-inverse\-\_\-y, quadrants\-\_\-inverse\-\_\-z, rotx\-\_\-table, rotxmap\-\_\-table, roty\-\_\-table, rotymap\-\_\-table, and sense\-\_\-table.
 
 
 \begin{DoxyCode}
@@ -292,30 +275,24 @@ References flag\_\-quadrants\_\-inverse, quadrants, quadrants\_\-inverse\_\-x, q
     }
 }
 \end{DoxyCode}
-
-
-\hypertarget{peano_8c_af3e45a4293584b3fe28e83af75c6ed71}{
-\index{peano.c@{peano.c}!peano\_\-hilbert\_\-order@{peano\_\-hilbert\_\-order}}
-\index{peano\_\-hilbert\_\-order@{peano\_\-hilbert\_\-order}!peano.c@{peano.c}}
-\subsubsection[{peano\_\-hilbert\_\-order}]{\setlength{\rightskip}{0pt plus 5cm}void peano\_\-hilbert\_\-order (
+\hypertarget{peano_8c_af3e45a4293584b3fe28e83af75c6ed71}{\index{peano.\-c@{peano.\-c}!peano\-\_\-hilbert\-\_\-order@{peano\-\_\-hilbert\-\_\-order}}
+\index{peano\-\_\-hilbert\-\_\-order@{peano\-\_\-hilbert\-\_\-order}!peano.c@{peano.\-c}}
+\subsubsection[{peano\-\_\-hilbert\-\_\-order}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf peano\-\_\-hilbert\-\_\-order} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{peano_8c_af3e45a4293584b3fe28e83af75c6ed71}
-This function puts the particles into Peano-\/Hilbert order by sorting them according to their keys. The latter half already been computed in the domain decomposition. Since gas particles need to stay at the beginning of the particle list, they are sorted as a separate block. 
+)}}\label{peano_8c_af3e45a4293584b3fe28e83af75c6ed71}
+\-This function puts the particles into \-Peano-\/\-Hilbert order by sorting them according to their keys. \-The latter half already been computed in the domain decomposition. \-Since gas particles need to stay at the beginning of the particle list, they are sorted as a separate block. 
 
-Definition at line 34 of file peano.c.
-
-
-
-References compare\_\-key(), Id, peano\_\-hilbert\_\-data::index, Key, peano\_\-hilbert\_\-data::key, mp, N\_\-gas, NumPart, reorder\_\-gas(), reorder\_\-particles(), and ThisTask.
+\-Definition at line 34 of file peano.\-c.
 
 
 
-Referenced by domain\_\-Decomposition().
+\-References compare\-\_\-key(), \-Id, peano\-\_\-hilbert\-\_\-data\-::index, peano\-\_\-hilbert\-\_\-data\-::key, \-Key, mp, \-N\-\_\-gas, \-Num\-Part, reorder\-\_\-gas(), reorder\-\_\-particles(), and \-This\-Task.
 
 
+
+\-Referenced by domain\-\_\-\-Decomposition().
 
 
 \begin{DoxyCode}
@@ -382,9 +359,7 @@ Referenced by domain\_\-Decomposition().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -396,38 +371,34 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{peano_8c_af3e45a4293584b3fe28e83af75c6ed71_icgraph}
+\includegraphics[width=350pt]{peano_8c_af3e45a4293584b3fe28e83af75c6ed71_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{peano_8c_af744cef873e3093ba2924da8265d1711}{
-\index{peano.c@{peano.c}!reorder\_\-gas@{reorder\_\-gas}}
-\index{reorder\_\-gas@{reorder\_\-gas}!peano.c@{peano.c}}
-\subsubsection[{reorder\_\-gas}]{\setlength{\rightskip}{0pt plus 5cm}void reorder\_\-gas (
+\hypertarget{peano_8c_af744cef873e3093ba2924da8265d1711}{\index{peano.\-c@{peano.\-c}!reorder\-\_\-gas@{reorder\-\_\-gas}}
+\index{reorder\-\_\-gas@{reorder\-\_\-gas}!peano.c@{peano.\-c}}
+\subsubsection[{reorder\-\_\-gas}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf reorder\-\_\-gas} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{peano_8c_af744cef873e3093ba2924da8265d1711}
-This function brings the gas particles into the same order as the sorted keys. (The sort is first done only on the keys themselves and done directly on the gas particles in order to reduce the amount of data that needs to be moved in memory. Only once the order is established, the gas particles are rearranged, such that each particle has to be moved at most once.) 
+)}}\label{peano_8c_af744cef873e3093ba2924da8265d1711}
+\-This function brings the gas particles into the same order as the sorted keys. (\-The sort is first done only on the keys themselves and done directly on the gas particles in order to reduce the amount of data that needs to be moved in memory. \-Only once the order is established, the gas particles are rearranged, such that each particle has to be moved at most once.) 
 
-Definition at line 117 of file peano.c.
-
-
-
-References Id, N\_\-gas, P, and SphP.
+\-Definition at line 117 of file peano.\-c.
 
 
 
-Referenced by peano\_\-hilbert\_\-order().
+\-References \-Id, \-N\-\_\-gas, \-P, and \-Sph\-P.
 
 
+
+\-Referenced by peano\-\_\-hilbert\-\_\-order().
 
 
 \begin{DoxyCode}
@@ -473,40 +444,34 @@ Referenced by peano\_\-hilbert\_\-order().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{peano_8c_af744cef873e3093ba2924da8265d1711_icgraph}
+\includegraphics[width=350pt]{peano_8c_af744cef873e3093ba2924da8265d1711_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{peano_8c_afcb358154dd7fd5de8b4156f417fb0ba}{
-\index{peano.c@{peano.c}!reorder\_\-particles@{reorder\_\-particles}}
-\index{reorder\_\-particles@{reorder\_\-particles}!peano.c@{peano.c}}
-\subsubsection[{reorder\_\-particles}]{\setlength{\rightskip}{0pt plus 5cm}void reorder\_\-particles (
+\hypertarget{peano_8c_afcb358154dd7fd5de8b4156f417fb0ba}{\index{peano.\-c@{peano.\-c}!reorder\-\_\-particles@{reorder\-\_\-particles}}
+\index{reorder\-\_\-particles@{reorder\-\_\-particles}!peano.c@{peano.\-c}}
+\subsubsection[{reorder\-\_\-particles}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf reorder\-\_\-particles} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{peano_8c_afcb358154dd7fd5de8b4156f417fb0ba}
-This function brings the collisionless particles into the same order as the sorted keys. (The sort is first done only on the keys themselves and done directly on the particles in order to reduce the amount of data that needs to be moved in memory. Only once the order is established, the particles are rearranged, such that each particle has to be moved at most once.) 
+)}}\label{peano_8c_afcb358154dd7fd5de8b4156f417fb0ba}
+\-This function brings the collisionless particles into the same order as the sorted keys. (\-The sort is first done only on the keys themselves and done directly on the particles in order to reduce the amount of data that needs to be moved in memory. \-Only once the order is established, the particles are rearranged, such that each particle has to be moved at most once.) 
 
-Definition at line 166 of file peano.c.
-
-
-
-References Id, N\_\-gas, NumPart, and P.
+\-Definition at line 166 of file peano.\-c.
 
 
 
-Referenced by peano\_\-hilbert\_\-order().
+\-References \-Id, \-N\-\_\-gas, \-Num\-Part, and \-P.
 
 
+
+\-Referenced by peano\-\_\-hilbert\-\_\-order().
 
 
 \begin{DoxyCode}
@@ -547,128 +512,108 @@ Referenced by peano\_\-hilbert\_\-order().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{peano_8c_afcb358154dd7fd5de8b4156f417fb0ba_icgraph}
+\includegraphics[width=350pt]{peano_8c_afcb358154dd7fd5de8b4156f417fb0ba_icgraph}
 \end{center}
 \end{figure}
 
 
 
 
-\subsection{Variable Documentation}
-\hypertarget{peano_8c_ab208a7d15f0ca62ca2a381d90e3755fd}{
-\index{peano.c@{peano.c}!flag\_\-quadrants\_\-inverse@{flag\_\-quadrants\_\-inverse}}
-\index{flag\_\-quadrants\_\-inverse@{flag\_\-quadrants\_\-inverse}!peano.c@{peano.c}}
-\subsubsection[{flag\_\-quadrants\_\-inverse}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf flag\_\-quadrants\_\-inverse} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_ab208a7d15f0ca62ca2a381d90e3755fd}
+\subsection{\-Variable \-Documentation}
+\hypertarget{peano_8c_ab208a7d15f0ca62ca2a381d90e3755fd}{\index{peano.\-c@{peano.\-c}!flag\-\_\-quadrants\-\_\-inverse@{flag\-\_\-quadrants\-\_\-inverse}}
+\index{flag\-\_\-quadrants\-\_\-inverse@{flag\-\_\-quadrants\-\_\-inverse}!peano.c@{peano.\-c}}
+\subsubsection[{flag\-\_\-quadrants\-\_\-inverse}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf flag\-\_\-quadrants\-\_\-inverse} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_ab208a7d15f0ca62ca2a381d90e3755fd}
 
 
-Definition at line 254 of file peano.c.
-
-
-
-Referenced by peano\_\-hilbert\_\-key\_\-inverse().
-
-\hypertarget{peano_8c_a202e834159688d90a2ea91fb77e7a094}{
-\index{peano.c@{peano.c}!Id@{Id}}
-\index{Id@{Id}!peano.c@{peano.c}}
-\subsubsection[{Id}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf Id}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_a202e834159688d90a2ea91fb77e7a094}
-
-
-Definition at line 26 of file peano.c.
+\-Definition at line 254 of file peano.\-c.
 
 
 
-Referenced by peano\_\-hilbert\_\-order(), reorder\_\-gas(), and reorder\_\-particles().
+\-Referenced by peano\-\_\-hilbert\-\_\-key\-\_\-inverse().
 
-\hypertarget{peano_8c_a6bca09dac540caff82dc91b8875b2893}{
-\index{peano.c@{peano.c}!mp@{mp}}
-\index{mp@{mp}!peano.c@{peano.c}}
-\subsubsection[{mp}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf peano\_\-hilbert\_\-data}
- $\ast$ {\bf mp}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_a6bca09dac540caff82dc91b8875b2893}
+\hypertarget{peano_8c_a202e834159688d90a2ea91fb77e7a094}{\index{peano.\-c@{peano.\-c}!\-Id@{\-Id}}
+\index{\-Id@{\-Id}!peano.c@{peano.\-c}}
+\subsubsection[{\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf \-Id}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_a202e834159688d90a2ea91fb77e7a094}
 
 
-Referenced by peano\_\-hilbert\_\-order(), and prob\_\-of\_\-interaction().
-
-\hypertarget{peano_8c_a2ac73023fc426510c30117291895c0cf}{
-\index{peano.c@{peano.c}!quadrants@{quadrants}}
-\index{quadrants@{quadrants}!peano.c@{peano.c}}
-\subsubsection[{quadrants}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf quadrants}\mbox{[}24\mbox{]}\mbox{[}2\mbox{]}\mbox{[}2\mbox{]}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_a2ac73023fc426510c30117291895c0cf}
-
-
-Definition at line 207 of file peano.c.
+\-Definition at line 26 of file peano.\-c.
 
 
 
-Referenced by peano\_\-hilbert\_\-key(), and peano\_\-hilbert\_\-key\_\-inverse().
+\-Referenced by peano\-\_\-hilbert\-\_\-order(), reorder\-\_\-gas(), and reorder\-\_\-particles().
 
-\hypertarget{peano_8c_a7fac2200b4a314b6eb19aaf5887ba13d}{
-\index{peano.c@{peano.c}!quadrants\_\-inverse\_\-x@{quadrants\_\-inverse\_\-x}}
-\index{quadrants\_\-inverse\_\-x@{quadrants\_\-inverse\_\-x}!peano.c@{peano.c}}
-\subsubsection[{quadrants\_\-inverse\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf quadrants\_\-inverse\_\-x}\mbox{[}24\mbox{]}\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_a7fac2200b4a314b6eb19aaf5887ba13d}
-
-
-Definition at line 255 of file peano.c.
+\hypertarget{peano_8c_a6bca09dac540caff82dc91b8875b2893}{\index{peano.\-c@{peano.\-c}!mp@{mp}}
+\index{mp@{mp}!peano.c@{peano.\-c}}
+\subsubsection[{mp}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf peano\-\_\-hilbert\-\_\-data}
+ $\ast$ {\bf mp}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_a6bca09dac540caff82dc91b8875b2893}
 
 
+\-Referenced by peano\-\_\-hilbert\-\_\-order(), and prob\-\_\-of\-\_\-interaction().
 
-Referenced by peano\_\-hilbert\_\-key\_\-inverse().
-
-\hypertarget{peano_8c_abe2f025b3a200c6446028fdf6147cd30}{
-\index{peano.c@{peano.c}!quadrants\_\-inverse\_\-y@{quadrants\_\-inverse\_\-y}}
-\index{quadrants\_\-inverse\_\-y@{quadrants\_\-inverse\_\-y}!peano.c@{peano.c}}
-\subsubsection[{quadrants\_\-inverse\_\-y}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf quadrants\_\-inverse\_\-y}\mbox{[}24\mbox{]}\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_abe2f025b3a200c6446028fdf6147cd30}
+\hypertarget{peano_8c_a2ac73023fc426510c30117291895c0cf}{\index{peano.\-c@{peano.\-c}!quadrants@{quadrants}}
+\index{quadrants@{quadrants}!peano.c@{peano.\-c}}
+\subsubsection[{quadrants}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf quadrants}\mbox{[}24\mbox{]}\mbox{[}2\mbox{]}\mbox{[}2\mbox{]}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_a2ac73023fc426510c30117291895c0cf}
 
 
-Definition at line 256 of file peano.c.
+\-Definition at line 207 of file peano.\-c.
 
 
 
-Referenced by peano\_\-hilbert\_\-key\_\-inverse().
+\-Referenced by peano\-\_\-hilbert\-\_\-key(), and peano\-\_\-hilbert\-\_\-key\-\_\-inverse().
 
-\hypertarget{peano_8c_aface04a2d7228eb2bd5d290d30940c33}{
-\index{peano.c@{peano.c}!quadrants\_\-inverse\_\-z@{quadrants\_\-inverse\_\-z}}
-\index{quadrants\_\-inverse\_\-z@{quadrants\_\-inverse\_\-z}!peano.c@{peano.c}}
-\subsubsection[{quadrants\_\-inverse\_\-z}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf quadrants\_\-inverse\_\-z}\mbox{[}24\mbox{]}\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_aface04a2d7228eb2bd5d290d30940c33}
+\hypertarget{peano_8c_a7fac2200b4a314b6eb19aaf5887ba13d}{\index{peano.\-c@{peano.\-c}!quadrants\-\_\-inverse\-\_\-x@{quadrants\-\_\-inverse\-\_\-x}}
+\index{quadrants\-\_\-inverse\-\_\-x@{quadrants\-\_\-inverse\-\_\-x}!peano.c@{peano.\-c}}
+\subsubsection[{quadrants\-\_\-inverse\-\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf quadrants\-\_\-inverse\-\_\-x}\mbox{[}24\mbox{]}\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_a7fac2200b4a314b6eb19aaf5887ba13d}
 
 
-Definition at line 257 of file peano.c.
+\-Definition at line 255 of file peano.\-c.
 
 
 
-Referenced by peano\_\-hilbert\_\-key\_\-inverse().
+\-Referenced by peano\-\_\-hilbert\-\_\-key\-\_\-inverse().
 
-\hypertarget{peano_8c_a44d18b8e2bb99c6899f2eb7e06a57e84}{
-\index{peano.c@{peano.c}!rotx\_\-table@{rotx\_\-table}}
-\index{rotx\_\-table@{rotx\_\-table}!peano.c@{peano.c}}
-\subsubsection[{rotx\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rotx\_\-table}\mbox{[}8\mbox{]} = \{ 3, 0, 0, 2, 2, 0, 0, 1 \}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_a44d18b8e2bb99c6899f2eb7e06a57e84}
+\hypertarget{peano_8c_abe2f025b3a200c6446028fdf6147cd30}{\index{peano.\-c@{peano.\-c}!quadrants\-\_\-inverse\-\_\-y@{quadrants\-\_\-inverse\-\_\-y}}
+\index{quadrants\-\_\-inverse\-\_\-y@{quadrants\-\_\-inverse\-\_\-y}!peano.c@{peano.\-c}}
+\subsubsection[{quadrants\-\_\-inverse\-\_\-y}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf quadrants\-\_\-inverse\-\_\-y}\mbox{[}24\mbox{]}\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_abe2f025b3a200c6446028fdf6147cd30}
 
 
-Definition at line 249 of file peano.c.
+\-Definition at line 256 of file peano.\-c.
 
 
 
-Referenced by peano\_\-hilbert\_\-key(), and peano\_\-hilbert\_\-key\_\-inverse().
+\-Referenced by peano\-\_\-hilbert\-\_\-key\-\_\-inverse().
 
-\hypertarget{peano_8c_a1ca16b25390042ce60f1da39ddf70898}{
-\index{peano.c@{peano.c}!rotxmap\_\-table@{rotxmap\_\-table}}
-\index{rotxmap\_\-table@{rotxmap\_\-table}!peano.c@{peano.c}}
-\subsubsection[{rotxmap\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rotxmap\_\-table}\mbox{[}24\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_a1ca16b25390042ce60f1da39ddf70898}
-{\bfseries Initial value:}
+\hypertarget{peano_8c_aface04a2d7228eb2bd5d290d30940c33}{\index{peano.\-c@{peano.\-c}!quadrants\-\_\-inverse\-\_\-z@{quadrants\-\_\-inverse\-\_\-z}}
+\index{quadrants\-\_\-inverse\-\_\-z@{quadrants\-\_\-inverse\-\_\-z}!peano.c@{peano.\-c}}
+\subsubsection[{quadrants\-\_\-inverse\-\_\-z}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf quadrants\-\_\-inverse\-\_\-z}\mbox{[}24\mbox{]}\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_aface04a2d7228eb2bd5d290d30940c33}
+
+
+\-Definition at line 257 of file peano.\-c.
+
+
+
+\-Referenced by peano\-\_\-hilbert\-\_\-key\-\_\-inverse().
+
+\hypertarget{peano_8c_a44d18b8e2bb99c6899f2eb7e06a57e84}{\index{peano.\-c@{peano.\-c}!rotx\-\_\-table@{rotx\-\_\-table}}
+\index{rotx\-\_\-table@{rotx\-\_\-table}!peano.c@{peano.\-c}}
+\subsubsection[{rotx\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rotx\-\_\-table}\mbox{[}8\mbox{]} = \{ 3, 0, 0, 2, 2, 0, 0, 1 \}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_a44d18b8e2bb99c6899f2eb7e06a57e84}
+
+
+\-Definition at line 249 of file peano.\-c.
+
+
+
+\-Referenced by peano\-\_\-hilbert\-\_\-key(), and peano\-\_\-hilbert\-\_\-key\-\_\-inverse().
+
+\hypertarget{peano_8c_a1ca16b25390042ce60f1da39ddf70898}{\index{peano.\-c@{peano.\-c}!rotxmap\-\_\-table@{rotxmap\-\_\-table}}
+\index{rotxmap\-\_\-table@{rotxmap\-\_\-table}!peano.c@{peano.\-c}}
+\subsubsection[{rotxmap\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rotxmap\-\_\-table}\mbox{[}24\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_a1ca16b25390042ce60f1da39ddf70898}
+{\bfseries \-Initial value\-:}
 \begin{DoxyCode}
  { 4, 5, 6, 7, 8, 9, 10, 11,
   12, 13, 14, 15, 0, 1, 2, 3, 17, 18, 19, 16, 23, 20, 21, 22
@@ -676,31 +621,27 @@ Referenced by peano\_\-hilbert\_\-key(), and peano\_\-hilbert\_\-key\_\-inverse(
 \end{DoxyCode}
 
 
-Definition at line 241 of file peano.c.
+\-Definition at line 241 of file peano.\-c.
 
 
 
-Referenced by peano\_\-hilbert\_\-key(), and peano\_\-hilbert\_\-key\_\-inverse().
+\-Referenced by peano\-\_\-hilbert\-\_\-key(), and peano\-\_\-hilbert\-\_\-key\-\_\-inverse().
 
-\hypertarget{peano_8c_a8bfd50e9b83d86c8585a42c306012cba}{
-\index{peano.c@{peano.c}!roty\_\-table@{roty\_\-table}}
-\index{roty\_\-table@{roty\_\-table}!peano.c@{peano.c}}
-\subsubsection[{roty\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf roty\_\-table}\mbox{[}8\mbox{]} = \{ 0, 1, 1, 2, 2, 3, 3, 0 \}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_a8bfd50e9b83d86c8585a42c306012cba}
+\hypertarget{peano_8c_a8bfd50e9b83d86c8585a42c306012cba}{\index{peano.\-c@{peano.\-c}!roty\-\_\-table@{roty\-\_\-table}}
+\index{roty\-\_\-table@{roty\-\_\-table}!peano.c@{peano.\-c}}
+\subsubsection[{roty\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf roty\-\_\-table}\mbox{[}8\mbox{]} = \{ 0, 1, 1, 2, 2, 3, 3, 0 \}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_a8bfd50e9b83d86c8585a42c306012cba}
 
 
-Definition at line 250 of file peano.c.
+\-Definition at line 250 of file peano.\-c.
 
 
 
-Referenced by peano\_\-hilbert\_\-key(), and peano\_\-hilbert\_\-key\_\-inverse().
+\-Referenced by peano\-\_\-hilbert\-\_\-key(), and peano\-\_\-hilbert\-\_\-key\-\_\-inverse().
 
-\hypertarget{peano_8c_add83bc48170e288d517578afecfca407}{
-\index{peano.c@{peano.c}!rotymap\_\-table@{rotymap\_\-table}}
-\index{rotymap\_\-table@{rotymap\_\-table}!peano.c@{peano.c}}
-\subsubsection[{rotymap\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rotymap\_\-table}\mbox{[}24\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_add83bc48170e288d517578afecfca407}
-{\bfseries Initial value:}
+\hypertarget{peano_8c_add83bc48170e288d517578afecfca407}{\index{peano.\-c@{peano.\-c}!rotymap\-\_\-table@{rotymap\-\_\-table}}
+\index{rotymap\-\_\-table@{rotymap\-\_\-table}!peano.c@{peano.\-c}}
+\subsubsection[{rotymap\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rotymap\-\_\-table}\mbox{[}24\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_add83bc48170e288d517578afecfca407}
+{\bfseries \-Initial value\-:}
 \begin{DoxyCode}
  { 1, 2, 3, 0, 16, 17, 18, 19,
   11, 8, 9, 10, 22, 23, 20, 21, 14, 15, 12, 13, 4, 5, 6, 7
@@ -708,22 +649,20 @@ Referenced by peano\_\-hilbert\_\-key(), and peano\_\-hilbert\_\-key\_\-inverse(
 \end{DoxyCode}
 
 
-Definition at line 245 of file peano.c.
+\-Definition at line 245 of file peano.\-c.
 
 
 
-Referenced by peano\_\-hilbert\_\-key(), and peano\_\-hilbert\_\-key\_\-inverse().
+\-Referenced by peano\-\_\-hilbert\-\_\-key(), and peano\-\_\-hilbert\-\_\-key\-\_\-inverse().
 
-\hypertarget{peano_8c_a4bf6cdb1f31bb545b55e6f70d3b720e5}{
-\index{peano.c@{peano.c}!sense\_\-table@{sense\_\-table}}
-\index{sense\_\-table@{sense\_\-table}!peano.c@{peano.c}}
-\subsubsection[{sense\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf sense\_\-table}\mbox{[}8\mbox{]} = \{ -\/1, -\/1, -\/1, +1, +1, -\/1, -\/1, -\/1 \}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{peano_8c_a4bf6cdb1f31bb545b55e6f70d3b720e5}
+\hypertarget{peano_8c_a4bf6cdb1f31bb545b55e6f70d3b720e5}{\index{peano.\-c@{peano.\-c}!sense\-\_\-table@{sense\-\_\-table}}
+\index{sense\-\_\-table@{sense\-\_\-table}!peano.c@{peano.\-c}}
+\subsubsection[{sense\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf sense\-\_\-table}\mbox{[}8\mbox{]} = \{ -\/1, -\/1, -\/1, +1, +1, -\/1, -\/1, -\/1 \}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{peano_8c_a4bf6cdb1f31bb545b55e6f70d3b720e5}
 
 
-Definition at line 252 of file peano.c.
+\-Definition at line 252 of file peano.\-c.
 
 
 
-Referenced by peano\_\-hilbert\_\-key(), and peano\_\-hilbert\_\-key\_\-inverse().
+\-Referenced by peano\-\_\-hilbert\-\_\-key(), and peano\-\_\-hilbert\-\_\-key\-\_\-inverse().
 

@@ -1,37 +1,36 @@
-\hypertarget{timestep_8c}{
-\section{timestep.c File Reference}
-\label{timestep_8c}\index{timestep.c@{timestep.c}}
+\hypertarget{timestep_8c}{\section{timestep.\-c \-File \-Reference}
+\label{timestep_8c}\index{timestep.\-c@{timestep.\-c}}
 }
 
 
 routines for 'kicking' particles in momentum space and assigning new timesteps  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for timestep.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for timestep.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{timestep_8c__incl}
+\includegraphics[width=350pt]{timestep_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{timestep_8c_a05e5a546d63684b55d2457aa56efdd06}{advance\_\-and\_\-find\_\-timesteps} (void)
+void \hyperlink{timestep_8c_a05e5a546d63684b55d2457aa56efdd06}{advance\-\_\-and\-\_\-find\-\_\-timesteps} (void)
 \item 
-int \hyperlink{timestep_8c_af48922752ff457721f558510789e61e1}{get\_\-timestep} (int p, double $\ast$aphys, int flag)
+int \hyperlink{timestep_8c_af48922752ff457721f558510789e61e1}{get\-\_\-timestep} (int p, double $\ast$aphys, int flag)
 \item 
-void \hyperlink{timestep_8c_a78ed439b8a1cb93647a2b9de998d9269}{find\_\-dt\_\-displacement\_\-constraint} (double hfac)
+void \hyperlink{timestep_8c_a78ed439b8a1cb93647a2b9de998d9269}{find\-\_\-dt\-\_\-displacement\-\_\-constraint} (double hfac)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
+\subsection*{\-Variables}
 \begin{DoxyCompactItemize}
 \item 
 static double \hyperlink{timestep_8c_a59a20f8242197c1ba41f7a0b1b880d62}{fac1}
@@ -40,77 +39,69 @@ static double \hyperlink{timestep_8c_a1a666a0983f6d540fa41ec867aa40d09}{fac2}
 \item 
 static double \hyperlink{timestep_8c_aebe1da050ef46b7b63c856394494292c}{fac3}
 \item 
-static double \hyperlink{timestep_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}{hubble\_\-a}
+static double \hyperlink{timestep_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}{hubble\-\_\-a}
 \item 
 static double \hyperlink{timestep_8c_aec7bcb1d46812f966d89f66dc1a399ea}{atime}
 \item 
 static double \hyperlink{timestep_8c_a7f2a6bb4bade30e4e04ee29be22d0962}{a3inv}
 \item 
-static double \hyperlink{timestep_8c_aebcd2de4b9dfac8c2feb1594616f4803}{dt\_\-displacement} = 0
+static double \hyperlink{timestep_8c_aebcd2de4b9dfac8c2feb1594616f4803}{dt\-\_\-displacement} = 0
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsection{\-Detailed \-Description}
 routines for 'kicking' particles in momentum space and assigning new timesteps 
 
-Definition in file \hyperlink{timestep_8c_source}{timestep.c}.
+\-Definition in file \hyperlink{timestep_8c_source}{timestep.\-c}.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{timestep_8c_a05e5a546d63684b55d2457aa56efdd06}{
-\index{timestep.c@{timestep.c}!advance\_\-and\_\-find\_\-timesteps@{advance\_\-and\_\-find\_\-timesteps}}
-\index{advance\_\-and\_\-find\_\-timesteps@{advance\_\-and\_\-find\_\-timesteps}!timestep.c@{timestep.c}}
-\subsubsection[{advance\_\-and\_\-find\_\-timesteps}]{\setlength{\rightskip}{0pt plus 5cm}void advance\_\-and\_\-find\_\-timesteps (
+\subsection{\-Function \-Documentation}
+\hypertarget{timestep_8c_a05e5a546d63684b55d2457aa56efdd06}{\index{timestep.\-c@{timestep.\-c}!advance\-\_\-and\-\_\-find\-\_\-timesteps@{advance\-\_\-and\-\_\-find\-\_\-timesteps}}
+\index{advance\-\_\-and\-\_\-find\-\_\-timesteps@{advance\-\_\-and\-\_\-find\-\_\-timesteps}!timestep.c@{timestep.\-c}}
+\subsubsection[{advance\-\_\-and\-\_\-find\-\_\-timesteps}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf advance\-\_\-and\-\_\-find\-\_\-timesteps} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{timestep_8c_a05e5a546d63684b55d2457aa56efdd06}
-This function advances the system in momentum space, i.e. it does apply the 'kick' operation after the forces have been computed. Additionally, it assigns new timesteps to particles. At start-\/up, a half-\/timestep is carried out, as well as at the end of the simulation. In between, the half-\/step kick that ends the previous timestep and the half-\/step kick for the new timestep are combined into one operation. 
+)}}\label{timestep_8c_a05e5a546d63684b55d2457aa56efdd06}
+\-This function advances the system in momentum space, i.\-e. it does apply the 'kick' operation after the forces have been computed. \-Additionally, it assigns new timesteps to particles. \-At start-\/up, a half-\/timestep is carried out, as well as at the end of the simulation. \-In between, the half-\/step kick that ends the previous timestep and the half-\/step kick for the new timestep are combined into one operation. $<$ adiabatic index of simulated gas
+
+$<$ adiabatic index of simulated gas
+
+$<$ \-The simulated timespan is mapped onto the integer interval \mbox{[}0,\-T\-I\-M\-E\-S\-P\-A\-N\mbox{]}, $\ast$ where \-T\-I\-M\-E\-S\-P\-A\-N needs to be a power of 2. \-Note that (1$<$$<$28) corresponds to 2$^\wedge$29
+
+$<$ \-The simulated timespan is mapped onto the integer interval \mbox{[}0,\-T\-I\-M\-E\-S\-P\-A\-N\mbox{]}, $\ast$ where \-T\-I\-M\-E\-S\-P\-A\-N needs to be a power of 2. \-Note that (1$<$$<$28) corresponds to 2$^\wedge$29
+
+$<$ \-The simulated timespan is mapped onto the integer interval \mbox{[}0,\-T\-I\-M\-E\-S\-P\-A\-N\mbox{]}, $\ast$ where \-T\-I\-M\-E\-S\-P\-A\-N needs to be a power of 2. \-Note that (1$<$$<$28) corresponds to 2$^\wedge$29
+
+$<$ \-The simulated timespan is mapped onto the integer interval \mbox{[}0,\-T\-I\-M\-E\-S\-P\-A\-N\mbox{]}, $\ast$ where \-T\-I\-M\-E\-S\-P\-A\-N needs to be a power of 2. \-Note that (1$<$$<$28) corresponds to 2$^\wedge$29
 
 $<$ adiabatic index of simulated gas
 
 $<$ adiabatic index of simulated gas
 
-$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29
+$<$ \-The simulated timespan is mapped onto the integer interval \mbox{[}0,\-T\-I\-M\-E\-S\-P\-A\-N\mbox{]}, $\ast$ where \-T\-I\-M\-E\-S\-P\-A\-N needs to be a power of 2. \-Note that (1$<$$<$28) corresponds to 2$^\wedge$29
 
-$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29
+$<$ \-The simulated timespan is mapped onto the integer interval \mbox{[}0,\-T\-I\-M\-E\-S\-P\-A\-N\mbox{]}, $\ast$ where \-T\-I\-M\-E\-S\-P\-A\-N needs to be a power of 2. \-Note that (1$<$$<$28) corresponds to 2$^\wedge$29
 
-$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29
+$<$ \-The simulated timespan is mapped onto the integer interval \mbox{[}0,\-T\-I\-M\-E\-S\-P\-A\-N\mbox{]}, $\ast$ where \-T\-I\-M\-E\-S\-P\-A\-N needs to be a power of 2. \-Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
 
-$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29
-
-$<$ adiabatic index of simulated gas
-
-$<$ adiabatic index of simulated gas
-
-$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29
-
-$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29
-
-$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
+\-Definition at line 24 of file timestep.\-c.
 
 
 
-Definition at line 24 of file timestep.c.
+\-References a3inv, \-All, atime, dt\-\_\-displacement, \-Extnodes, fac1, fac2, fac3, \-Father, find\-\_\-dt\-\_\-displacement\-\_\-constraint(), \-Flag\-\_\-\-Full\-Step, get\-\_\-gravkick\-\_\-factor(), get\-\_\-hydrokick\-\_\-factor(), get\-\_\-random\-\_\-number(), get\-\_\-timestep(), hubble\-\_\-a, \-Nodes, \-Num\-Part, \-P, pow(), second(), \-Sph\-P, \-This\-Task, and timediff().
 
 
 
-References a3inv, All, atime, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CPU\_\-TimeLine, NODE::d, dt\_\-displacement, sph\_\-particle\_\-data::DtEntropy, sph\_\-particle\_\-data::Entropy, Extnodes, fac1, fac2, fac3, Father, find\_\-dt\_\-displacement\_\-constraint(), Flag\_\-FullStep, FLOAT, global\_\-data\_\-all\_\-processes::G, GAMMA, GAMMA\_\-MINUS1, get\_\-gravkick\_\-factor(), get\_\-hydrokick\_\-factor(), get\_\-random\_\-number(), get\_\-timestep(), particle\_\-data::GravAccel, particle\_\-data::GravPM, global\_\-data\_\-all\_\-processes::Hubble, hubble\_\-a, sph\_\-particle\_\-data::HydroAccel, global\_\-data\_\-all\_\-processes::MaxSizeTimestep, global\_\-data\_\-all\_\-processes::MinEgySpec, Nodes, global\_\-data\_\-all\_\-processes::NumForcesSinceLastDomainDecomp, NumPart, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, P, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-begstep, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-endstep, particle\_\-data::Pos, pow(), second(), SphP, ThisTask, particle\_\-data::Ti\_\-begstep, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Time, TIMEBASE, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, timediff(), global\_\-data\_\-all\_\-processes::TotNumPart, global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency, NODE::u, particle\_\-data::Vel, and sph\_\-particle\_\-data::VelPred.
-
-
-
-Referenced by run().
-
-
+\-Referenced by run().
 
 
 \begin{DoxyCode}
 {
   int i, j, no, ti_step, ti_min, tend, tstart;
-  double dt_entr, dt_entr2, dt_gravkick, dt_hydrokick, dt_gravkick2, dt_hydrokick
-      2, t0, t1;
+  double dt_entr, dt_entr2, dt_gravkick, dt_hydrokick, dt_gravkick2, 
+      dt_hydrokick2, t0, t1;
   double minentropy, aphys;
   FLOAT dv[3];
 
@@ -159,13 +150,14 @@ Referenced by run().
       get_gravkick_factor(All.PM_Ti_begstep, (All.PM_Ti_begstep + All.
       PM_Ti_endstep) / 2);
   else
-    dt_gravkickB = (All.Ti_Current - (All.PM_Ti_begstep + All.PM_Ti_endstep) / 2)
-       * All.Timebase_interval;
+    dt_gravkickB = (All.Ti_Current - (All.PM_Ti_begstep + All.PM_Ti_endstep) / 
+      2) * All.Timebase_interval;
 
-  if(All.PM_Ti_endstep == All.Ti_Current)       /* need to do long-range kick */
+  if(All.PM_Ti_endstep == All.Ti_Current)       /* need to do long-range kick 
+      */
     {
-      /* make sure that we reconstruct the domain/tree next time because we don't
-       kick the tree nodes in this case */
+      /* make sure that we reconstruct the domain/tree next time because we
+       don't kick the tree nodes in this case */
       All.NumForcesSinceLastDomainDecomp = 1 + All.TotNumPart * All.
       TreeDomainUpdateFrequency;
     }
@@ -184,8 +176,8 @@ Referenced by run().
         }
 
       disp = sqrt(P[i].GravAccel[0] * P[i].GravAccel[0] +
-                  P[i].GravAccel[1] * P[i].GravAccel[1] + P[i].GravAccel[2] * P[i
-      ].GravAccel[2]);
+                  P[i].GravAccel[1] * P[i].GravAccel[1] + P[i].GravAccel[2] * P
+      [i].GravAccel[2]);
 
       disp *= 2.0 / (3 * All.Hubble * All.Hubble);
 
@@ -196,11 +188,11 @@ Referenced by run().
     }
 
   MPI_Allreduce(&dispmax, &globmax, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
-  MPI_Allreduce(&disp2sum, &globdisp2sum, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD)
-      ;
+  MPI_Allreduce(&disp2sum, &globdisp2sum, 1, MPI_DOUBLE, MPI_SUM, 
+      MPI_COMM_WORLD);
 
-  dmean = pow(P[0].Mass / (All.Omega0 * 3 * All.Hubble * All.Hubble / (8 * M_PI *
-       All.G)), 1.0 / 3);
+  dmean = pow(P[0].Mass / (All.Omega0 * 3 * All.Hubble * All.Hubble / (8 * M_PI
+       * All.G)), 1.0 / 3);
 
   if(globmax > dmean)
     fac = dmean / globmax;
@@ -209,7 +201,8 @@ Referenced by run().
 
   if(ThisTask == 0)
     {
-      printf("\nglass-making:  dmean= %g  global disp-maximum= %g  rms= %g\n\n",
+      printf("\nglass-making:  dmean= %g  global disp-maximum= %g  rms= %g\n\n"
+      ,
              dmean, globmax, sqrt(globdisp2sum / All.TotNumPart));
       fflush(stdout);
     }
@@ -254,8 +247,8 @@ Referenced by run().
     }
 
   ti_step = All.PresentMinStep;
-  MPI_Allreduce(&ti_step, &All.PresentMinStep, 1, MPI_INT, MPI_MIN, MPI_COMM_WORL
-      D);
+  MPI_Allreduce(&ti_step, &All.PresentMinStep, 1, MPI_INT, MPI_MIN, 
+      MPI_COMM_WORLD);
 
   if(dt_displacement < All.MaxSizeTimestep)
     ti_step = (int) (dt_displacement / All.Timebase_interval);
@@ -271,8 +264,8 @@ Referenced by run().
 
   if(ThisTask == 0)
     printf("Syn Range = %g  PresentMinStep = %d  PresentMaxStep = %d \n",
-           (double) All.PresentMaxStep / All.PresentMinStep, All.PresentMinStep, 
-      All.PresentMaxStep);
+           (double) All.PresentMaxStep / All.PresentMinStep, All.PresentMinStep
+      , All.PresentMaxStep);
 
 #endif
 
@@ -292,8 +285,8 @@ Referenced by run().
 #ifdef FLEXSTEPS
           ti_grp = P[i].FlexStepGrp % All.PresentMaxStep;
           ti_grp = (ti_grp / All.PresentMinStep) * All.PresentMinStep;
-          ti_step = ((P[i].Ti_endstep + ti_grp + ti_step) / ti_step) * ti_step - 
-      (P[i].Ti_endstep + ti_grp);
+          ti_step = ((P[i].Ti_endstep + ti_grp + ti_step) / ti_step) * ti_step 
+      - (P[i].Ti_endstep + ti_grp);
 #else
 
 #ifdef PSEUDOSYMMETRIC
@@ -301,8 +294,8 @@ Referenced by run().
             {
               if(P[i].Ti_endstep > P[i].Ti_begstep)
                 {
-                  apred = aphys + ((aphys - P[i].AphysOld) / (P[i].Ti_endstep - 
-      P[i].Ti_begstep)) * ti_step;
+                  apred = aphys + ((aphys - P[i].AphysOld) / (P[i].Ti_endstep -
+       P[i].Ti_begstep)) * ti_step;
                   if(fabs(apred - aphys) < 0.5 * aphys)
                     {
                       ti_step2 = get_timestep(i, &apred, -1);
@@ -340,26 +333,26 @@ Referenced by run().
 #endif
 
 #ifdef SYNCHRONIZATION
-          if(ti_step > (P[i].Ti_endstep - P[i].Ti_begstep))     /* timestep wants
-       to increase */
+          if(ti_step > (P[i].Ti_endstep - P[i].Ti_begstep))     /* timestep
+       wants to increase */
             {
               if(((TIMEBASE - P[i].Ti_endstep) % ti_step) > 0)
-                ti_step = P[i].Ti_endstep - P[i].Ti_begstep;    /* leave at old s
-      tep */
+                ti_step = P[i].Ti_endstep - P[i].Ti_begstep;    /* leave at old
+       step */
             }
 #endif
 #endif /* end of FLEXSTEPS */
 
-          if(All.Ti_Current == TIMEBASE)        /* we here finish the last timest
-      ep. */
+          if(All.Ti_Current == TIMEBASE)        /* we here finish the last
+       timestep. */
             ti_step = 0;
 
-          if((TIMEBASE - All.Ti_Current) < ti_step)     /* check that we don't ru
-      n beyond the end */
+          if((TIMEBASE - All.Ti_Current) < ti_step)     /* check that we don't
+       run beyond the end */
             ti_step = TIMEBASE - All.Ti_Current;
 
-          tstart = (P[i].Ti_begstep + P[i].Ti_endstep) / 2;     /* midpoint of ol
-      d step */
+          tstart = (P[i].Ti_begstep + P[i].Ti_endstep) / 2;     /* midpoint of
+       old step */
           tend = P[i].Ti_endstep + ti_step / 2; /* midpoint of new step */
 
           if(All.ComovingIntegrationOn)
@@ -375,8 +368,8 @@ Referenced by run().
             {
               dt_entr = dt_gravkick = dt_hydrokick = (tend - tstart) * All.
       Timebase_interval;
-              dt_gravkick2 = dt_hydrokick2 = dt_entr2 = (tend - P[i].Ti_endstep) 
-      * All.Timebase_interval;
+              dt_gravkick2 = dt_hydrokick2 = dt_entr2 = (tend - P[i].Ti_endstep
+      ) * All.Timebase_interval;
             }
 
           P[i].Ti_begstep = P[i].Ti_endstep;
@@ -399,8 +392,8 @@ Referenced by run().
                   P[i].Vel[j] += SphP[i].HydroAccel[j] * dt_hydrokick;
 
                   SphP[i].VelPred[j] =
-                    P[i].Vel[j] - dt_gravkick2 * P[i].GravAccel[j] - dt_hydrokick
-      2 * SphP[i].HydroAccel[j];
+                    P[i].Vel[j] - dt_gravkick2 * P[i].GravAccel[j] - 
+      dt_hydrokick2 * SphP[i].HydroAccel[j];
 #ifdef PMGRID
                   SphP[i].VelPred[j] += P[i].GravPM[j] * dt_gravkickB;
 #endif
@@ -416,8 +409,8 @@ Referenced by run().
 
               if(All.MinEgySpec)
                 {
-                  minentropy = All.MinEgySpec * GAMMA_MINUS1 / pow(SphP[i].Densit
-      y * a3inv, GAMMA_MINUS1);
+                  minentropy = All.MinEgySpec * GAMMA_MINUS1 / pow(SphP[i].
+      Density * a3inv, GAMMA_MINUS1);
                   if(SphP[i].Entropy < minentropy)
                     {
                       SphP[i].Entropy = minentropy;
@@ -432,14 +425,14 @@ Referenced by run().
                  the middle to the end of the current step */
 
               dt_entr = ti_step / 2 * All.Timebase_interval;
-              if(SphP[i].Entropy + SphP[i].DtEntropy * dt_entr < 0.5 * SphP[i].En
-      tropy)
+              if(SphP[i].Entropy + SphP[i].DtEntropy * dt_entr < 0.5 * SphP[i].
+      Entropy)
                 SphP[i].DtEntropy = -0.5 * SphP[i].Entropy / dt_entr;
             }
 
 
-          /* if tree is not going to be reconstructed, kick parent nodes dynamica
-      lly.
+          /* if tree is not going to be reconstructed, kick parent nodes
+       dynamically.
            */
           if(All.NumForcesSinceLastDomainDecomp < All.TotNumPart * All.
       TreeDomainUpdateFrequency)
@@ -448,8 +441,8 @@ Referenced by run().
               while(no >= 0)
                 {
                   for(j = 0; j < 3; j++)
-                    Extnodes[no].vs[j] += dv[j] * P[i].Mass / Nodes[no].u.d.mass;
-      
+                    Extnodes[no].vs[j] += dv[j] * P[i].Mass / Nodes[no].u.d.
+      mass;
 
                   no = Nodes[no].u.d.father;
                 }
@@ -460,20 +453,21 @@ Referenced by run().
 
 
 #ifdef PMGRID
-  if(All.PM_Ti_endstep == All.Ti_Current)       /* need to do long-range kick */
+  if(All.PM_Ti_endstep == All.Ti_Current)       /* need to do long-range kick 
+      */
     {
       ti_step = TIMEBASE;
       while(ti_step > (dt_displacement / All.Timebase_interval))
         ti_step >>= 1;
 
-      if(ti_step > (All.PM_Ti_endstep - All.PM_Ti_begstep))     /* PM-timestep wa
-      nts to increase */
+      if(ti_step > (All.PM_Ti_endstep - All.PM_Ti_begstep))     /* PM-timestep
+       wants to increase */
         {
-          /* we only increase if an integer number of steps will bring us to the 
-      end */
+          /* we only increase if an integer number of steps will bring us to
+       the end */
           if(((TIMEBASE - All.PM_Ti_endstep) % ti_step) > 0)
-            ti_step = All.PM_Ti_endstep - All.PM_Ti_begstep;    /* leave at old s
-      tep */
+            ti_step = All.PM_Ti_endstep - All.PM_Ti_begstep;    /* leave at old
+       step */
         }
 
       if(All.Ti_Current == TIMEBASE)    /* we here finish the last timestep. */
@@ -509,12 +503,12 @@ Referenced by run().
                 {
                   dt_gravkickA = get_gravkick_factor(P[i].Ti_begstep, All.
       Ti_Current) -
-                    get_gravkick_factor(P[i].Ti_begstep, (P[i].Ti_begstep + P[i].
-      Ti_endstep) / 2);
+                    get_gravkick_factor(P[i].Ti_begstep, (P[i].Ti_begstep + P[i
+      ].Ti_endstep) / 2);
                   dt_hydrokick = get_hydrokick_factor(P[i].Ti_begstep, All.
       Ti_Current) -
-                    get_hydrokick_factor(P[i].Ti_begstep, (P[i].Ti_begstep + P[i]
-      .Ti_endstep) / 2);
+                    get_hydrokick_factor(P[i].Ti_begstep, (P[i].Ti_begstep + P[
+      i].Ti_endstep) / 2);
                 }
               else
                 dt_gravkickA = dt_hydrokick =
@@ -524,8 +518,8 @@ Referenced by run().
               for(j = 0; j < 3; j++)
                 SphP[i].VelPred[j] = P[i].Vel[j]
                   + P[i].GravAccel[j] * dt_gravkickA
-                  + SphP[i].HydroAccel[j] * dt_hydrokick + P[i].GravPM[j] * dt_gr
-      avkickB;
+                  + SphP[i].HydroAccel[j] * dt_hydrokick + P[i].GravPM[j] * 
+      dt_gravkickB;
             }
         }
     }
@@ -537,55 +531,51 @@ Referenced by run().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{timestep_8c_a05e5a546d63684b55d2457aa56efdd06_cgraph}
+\includegraphics[width=350pt]{timestep_8c_a05e5a546d63684b55d2457aa56efdd06_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=382pt]{timestep_8c_a05e5a546d63684b55d2457aa56efdd06_icgraph}
+\includegraphics[width=350pt]{timestep_8c_a05e5a546d63684b55d2457aa56efdd06_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{timestep_8c_a78ed439b8a1cb93647a2b9de998d9269}{
-\index{timestep.c@{timestep.c}!find\_\-dt\_\-displacement\_\-constraint@{find\_\-dt\_\-displacement\_\-constraint}}
-\index{find\_\-dt\_\-displacement\_\-constraint@{find\_\-dt\_\-displacement\_\-constraint}!timestep.c@{timestep.c}}
-\subsubsection[{find\_\-dt\_\-displacement\_\-constraint}]{\setlength{\rightskip}{0pt plus 5cm}void find\_\-dt\_\-displacement\_\-constraint (
+\hypertarget{timestep_8c_a78ed439b8a1cb93647a2b9de998d9269}{\index{timestep.\-c@{timestep.\-c}!find\-\_\-dt\-\_\-displacement\-\_\-constraint@{find\-\_\-dt\-\_\-displacement\-\_\-constraint}}
+\index{find\-\_\-dt\-\_\-displacement\-\_\-constraint@{find\-\_\-dt\-\_\-displacement\-\_\-constraint}!timestep.c@{timestep.\-c}}
+\subsubsection[{find\-\_\-dt\-\_\-displacement\-\_\-constraint}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf find\-\_\-dt\-\_\-displacement\-\_\-constraint} (
 \begin{DoxyParamCaption}
-\item[{double}]{ hfac}
+\item[{double}]{hfac}
 \end{DoxyParamCaption}
-)}}
-\label{timestep_8c_a78ed439b8a1cb93647a2b9de998d9269}
-This function computes an upper limit ('dt\_\-displacement') to the global timestep of the system based on the rms velocities of particles. For cosmological simulations, the criterion used is that the rms displacement should be at most a fraction MaxRMSDisplacementFac of the mean particle separation. Note that the latter is estimated using the assigned particle masses, separately for each particle type. If comoving integration is not used, the function imposes no constraint on the timestep. 
-\begin{DoxyParams}{Parameters}
-\item[{\em hfac}]should be a$^\wedge$2$\ast$H(a) \end{DoxyParams}
+)}}\label{timestep_8c_a78ed439b8a1cb93647a2b9de998d9269}
+\-This function computes an upper limit ('dt\-\_\-displacement') to the global timestep of the system based on the rms velocities of particles. \-For cosmological simulations, the criterion used is that the rms displacement should be at most a fraction \-Max\-R\-M\-S\-Displacement\-Fac of the mean particle separation. \-Note that the latter is estimated using the assigned particle masses, separately for each particle type. \-If comoving integration is not used, the function imposes no constraint on the timestep. 
+\begin{DoxyParams}{\-Parameters}
+{\em hfac} & should be a$^\wedge$2$\ast$\-H(a) \\
+\hline
+\end{DoxyParams}
 
 
-Definition at line 566 of file timestep.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::Asmth, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, dt\_\-displacement, global\_\-data\_\-all\_\-processes::G, global\_\-data\_\-all\_\-processes::Hubble, global\_\-data\_\-all\_\-processes::MaxRMSDisplacementFac, global\_\-data\_\-all\_\-processes::MaxSizeTimestep, NTask, NumPart, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaBaryon, P, pow(), ThisTask, global\_\-data\_\-all\_\-processes::Time, and particle\_\-data::Type.
+\-Definition at line 579 of file timestep.\-c.
 
 
 
-Referenced by advance\_\-and\_\-find\_\-timesteps().
+\-References \-All, dt\-\_\-displacement, \-N\-Task, \-Num\-Part, \-P, pow(), and \-This\-Task.
 
 
+
+\-Referenced by advance\-\_\-and\-\_\-find\-\_\-timesteps().
 
 
 \begin{DoxyCode}
@@ -609,8 +599,8 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
 
       for(i = 0; i < NumPart; i++)
         {
-          v[P[i].Type] += P[i].Vel[0] * P[i].Vel[0] + P[i].Vel[1] * P[i].Vel[1] +
-       P[i].Vel[2] * P[i].Vel[2];
+          v[P[i].Type] += P[i].Vel[0] * P[i].Vel[0] + P[i].Vel[1] * P[i].Vel[1]
+       + P[i].Vel[2] * P[i].Vel[2];
           if(mim[P[i].Type] > P[i].Mass)
             mim[P[i].Type] = P[i].Mass;
           count[P[i].Type]++;
@@ -645,8 +635,8 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
       Hubble / (8 * M_PI * All.G)),
                       1.0 / 3);
 
-              dt = All.MaxRMSDisplacementFac * hfac * dmean / sqrt(v_sum[type] / 
-      count_sum[type]);
+              dt = All.MaxRMSDisplacementFac * hfac * dmean / sqrt(v_sum[type] 
+      / count_sum[type]);
 
 #ifdef PMGRID
               asmth = All.Asmth[0];
@@ -655,15 +645,15 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
                 asmth = All.Asmth[1];
 #endif
               if(asmth < dmean)
-                dt = All.MaxRMSDisplacementFac * hfac * asmth / sqrt(v_sum[type] 
-      / count_sum[type]);
+                dt = All.MaxRMSDisplacementFac * hfac * asmth / sqrt(v_sum[type
+      ] / count_sum[type]);
 #endif
 
               if(ThisTask == 0)
-                printf("type=%d  dmean=%g asmth=%g minmass=%g a=%g  sqrt(<p^2>)=%
-      g  dlogmax=%g\n",
-                       type, dmean, asmth, min_mass[type], All.Time, sqrt(v_sum[t
-      ype] / count_sum[type]), dt);
+                printf("type=%d  dmean=%g asmth=%g minmass=%g a=%g 
+       sqrt(<p^2>)=%g  dlogmax=%g\n",
+                       type, dmean, asmth, min_mass[type], All.Time, sqrt(v_sum
+      [type] / count_sum[type]), dt);
 
               if(dt < dt_displacement)
                 dt_displacement = dt;
@@ -671,16 +661,14 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
         }
 
       if(ThisTask == 0)
-        printf("displacement time constraint: %g  (%g)\n", dt_displacement, All.
-      MaxSizeTimestep);
+        printf("displacement time constraint: %g  (%g)\n", dt_displacement, All
+      .MaxSizeTimestep);
     }
 }
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -692,49 +680,47 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{timestep_8c_a78ed439b8a1cb93647a2b9de998d9269_icgraph}
+\includegraphics[width=350pt]{timestep_8c_a78ed439b8a1cb93647a2b9de998d9269_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{timestep_8c_af48922752ff457721f558510789e61e1}{
-\index{timestep.c@{timestep.c}!get\_\-timestep@{get\_\-timestep}}
-\index{get\_\-timestep@{get\_\-timestep}!timestep.c@{timestep.c}}
-\subsubsection[{get\_\-timestep}]{\setlength{\rightskip}{0pt plus 5cm}int get\_\-timestep (
+\hypertarget{timestep_8c_af48922752ff457721f558510789e61e1}{\index{timestep.\-c@{timestep.\-c}!get\-\_\-timestep@{get\-\_\-timestep}}
+\index{get\-\_\-timestep@{get\-\_\-timestep}!timestep.c@{timestep.\-c}}
+\subsubsection[{get\-\_\-timestep}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf get\-\_\-timestep} (
 \begin{DoxyParamCaption}
-\item[{int}]{ p, }
-\item[{double $\ast$}]{ aphys, }
-\item[{int}]{ flag}
+\item[{int}]{p, }
+\item[{double $\ast$}]{aphys, }
+\item[{int}]{flag}
 \end{DoxyParamCaption}
-)}}
-\label{timestep_8c_af48922752ff457721f558510789e61e1}
-This function normally (for flag==0) returns the maximum allowed timestep of a particle, expressed in terms of the integer mapping that is used to represent the total simulated timespan. The physical acceleration is returned in `aphys'. The latter is used in conjunction with the PSEUDOSYMMETRIC integration option, which also makes of the second function of get\_\-timestep. When it is called with a finite timestep for flag, it returns the physical acceleration that would lead to this timestep, assuming timestep criterion 0. 
+)}}\label{timestep_8c_af48922752ff457721f558510789e61e1}
+\-This function normally (for flag==0) returns the maximum allowed timestep of a particle, expressed in terms of the integer mapping that is used to represent the total simulated timespan. \-The physical acceleration is returned in `aphys'. \-The latter is used in conjunction with the \-P\-S\-E\-U\-D\-O\-S\-Y\-M\-M\-E\-T\-R\-I\-C integration option, which also makes of the second function of get\-\_\-timestep. \-When it is called with a finite timestep for flag, it returns the physical acceleration that would lead to this timestep, assuming timestep criterion 0. $<$ adiabatic index of simulated gas
 
-$<$ adiabatic index of simulated gas
-
-$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
-
-
-\begin{DoxyParams}{Parameters}
-\item[{\em p}]particle index \item[{\em aphys}]acceleration (physical units) \item[{\em flag}]either 0 for normal operation, or finite timestep to get corresponding aphys \end{DoxyParams}
-
-
-Definition at line 423 of file timestep.c.
+$<$ \-The simulated timespan is mapped onto the integer interval \mbox{[}0,\-T\-I\-M\-E\-S\-P\-A\-N\mbox{]}, $\ast$ where \-T\-I\-M\-E\-S\-P\-A\-N needs to be a power of 2. \-Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
+\begin{DoxyParams}{\-Parameters}
+{\em p} & particle index \\
+\hline
+{\em aphys} & acceleration (physical units) \\
+\hline
+{\em flag} & either 0 for normal operation, or finite timestep to get corresponding aphys \\
+\hline
+\end{DoxyParams}
 
 
-
-References All, atime, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CourantFac, dt\_\-displacement, endrun(), global\_\-data\_\-all\_\-processes::ErrTolIntAccuracy, fac1, fac2, fac3, GAMMA, particle\_\-data::GravAccel, particle\_\-data::GravPM, sph\_\-particle\_\-data::Hsml, hubble\_\-a, sph\_\-particle\_\-data::HydroAccel, sph\_\-particle\_\-data::MaxSignalVel, global\_\-data\_\-all\_\-processes::MaxSizeTimestep, global\_\-data\_\-all\_\-processes::MinSizeTimestep, P, particle\_\-data::Pos, global\_\-data\_\-all\_\-processes::SofteningTable, SphP, ThisTask, global\_\-data\_\-all\_\-processes::Time, TIMEBASE, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, particle\_\-data::Type, and global\_\-data\_\-all\_\-processes::TypeOfTimestepCriterion.
+\-Definition at line 423 of file timestep.\-c.
 
 
 
-Referenced by advance\_\-and\_\-find\_\-timesteps().
+\-References \-All, atime, dt\-\_\-displacement, endrun(), fac1, fac2, fac3, hubble\-\_\-a, \-P, \-Sph\-P, and \-This\-Task.
 
 
+
+\-Referenced by advance\-\_\-and\-\_\-find\-\_\-timesteps().
 
 
 \begin{DoxyCode}
@@ -766,8 +752,8 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
           az += fac2 * SphP[p].HydroAccel[2];
         }
 
-      ac = sqrt(ax * ax + ay * ay + az * az);   /* this is now the physical accel
-      eration */
+      ac = sqrt(ax * ax + ay * ay + az * az);   /* this is now the physical
+       acceleration */
       *aphys = ac;
     }
   else
@@ -783,8 +769,8 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
         {
           dt = flag * All.Timebase_interval;
           dt /= hubble_a;       /* convert dloga to physical timestep  */
-          ac = 2 * All.ErrTolIntAccuracy * atime * All.SofteningTable[P[p].Type] 
-      / (dt * dt);
+          ac = 2 * All.ErrTolIntAccuracy * atime * All.SofteningTable[P[p].Type
+      ] / (dt * dt);
           *aphys = ac;
           return flag;
         }
@@ -792,8 +778,8 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
       SofteningTable[P[p].Type] / ac);
 #ifdef ADAPTIVE_GRAVSOFT_FORGAS
       if(P[p].Type == 0)
-        dt = dt_accel = sqrt(2 * All.ErrTolIntAccuracy * atime * SphP[p].Hsml / 2
-      .8 / ac);
+        dt = dt_accel = sqrt(2 * All.ErrTolIntAccuracy * atime * SphP[p].Hsml /
+       2.8 / ac);
 #endif
       break;
     default:
@@ -806,8 +792,8 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
       csnd = sqrt(GAMMA * SphP[p].Pressure / SphP[p].Density);
 
       if(All.ComovingIntegrationOn)
-        dt_courant = 2 * All.CourantFac * All.Time * SphP[p].Hsml / (fac3 * SphP[
-      p].MaxSignalVel);
+        dt_courant = 2 * All.CourantFac * All.Time * SphP[p].Hsml / (fac3 * SphP
+      [p].MaxSignalVel);
       else
         dt_courant = 2 * All.CourantFac * SphP[p].Hsml / SphP[p].MaxSignalVel;
 
@@ -815,8 +801,8 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
         dt = dt_courant;
     }
 
-  /* convert the physical timestep to dloga if needed. Note: If comoving integrat
-      ion has not been selected,
+  /* convert the physical timestep to dloga if needed. Note: If comoving
+       integration has not been selected,
      hubble_a=1.
    */
   dt *= hubble_a;
@@ -830,16 +816,16 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
   if(dt < All.MinSizeTimestep)
     {
 #ifndef NOSTOP_WHEN_BELOW_MINTIMESTEP
-      printf("warning: Timestep wants to be below the limit `MinSizeTimestep'\n")
-      ;
+      printf("warning: Timestep wants to be below the limit `MinSizeTimestep'\n
+      ");
 
       if(P[p].Type == 0)
         {
           printf
-            ("Part-ID=%d  dt=%g dtc=%g ac=%g xyz=(%g|%g|%g)  hsml=%g  maxsignalve
-      l=%g dt0=%g eps=%g\n",
-             (int) P[p].ID, dt, dt_courant * hubble_a, ac, P[p].Pos[0], P[p].Pos[
-      1], P[p].Pos[2],
+            ("Part-ID=%d  dt=%g dtc=%g ac=%g xyz=(%g|%g|%g)  hsml=%g 
+       maxsignalvel=%g dt0=%g eps=%g\n",
+             (int) P[p].ID, dt, dt_courant * hubble_a, ac, P[p].Pos[0], P[p].
+      Pos[1], P[p].Pos[2],
              SphP[p].Hsml, SphP[p].MaxSignalVel,
              sqrt(2 * All.ErrTolIntAccuracy * atime * All.SofteningTable[P[p].
       Type] / ac) * hubble_a,
@@ -847,8 +833,8 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
         }
       else
         {
-          printf("Part-ID=%d  dt=%g ac=%g xyz=(%g|%g|%g)\n", (int) P[p].ID, dt, a
-      c, P[p].Pos[0], P[p].Pos[1],
+          printf("Part-ID=%d  dt=%g ac=%g xyz=(%g|%g|%g)\n", (int) P[p].ID, dt,
+       ac, P[p].Pos[0], P[p].Pos[1],
                  P[p].Pos[2]);
         }
       fflush(stdout);
@@ -859,23 +845,38 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
 
   ti_step = dt / All.Timebase_interval;
 
+#ifdef COMPUTE_SELFINTERACTION_FORDARK
+  if(P[p].dTi_selfInt > 0)
+    {
+      if(P[p].dTi_selfInt < ti_step)
+        ti_step = P[p].dTi_selfInt;
+      else
+        P[p].dTi_selfInt = 0;
+      
+      if(ti_step*All.Timebase_interval < All.MinSizeTimestep)
+        printf("Warning: A Timestep below the limit`MinSizeTimestep' is being
+       used to keep self interaction probabilities smaller than one. dt = %g\n",ti_step*
+      All.Timebase_interval);
+    }
+#endif
+
   if(!(ti_step > 0 && ti_step < TIMEBASE))
     {
-      printf("\nError: A timestep of size zero was assigned on the integer timeli
-      ne!\n"
+      printf("\nError: A timestep of size zero was assigned on the integer
+       timeline!\n"
              "We better stop.\n"
-             "Task=%d Part-ID=%d dt=%g tibase=%g ti_step=%d ac=%g xyz=(%g|%g|%g) 
-      tree=(%g|%g%g)\n\n",
+             "Task=%d Part-ID=%d dt=%g tibase=%g ti_step=%d ac=%g
+       xyz=(%g|%g|%g) tree=(%g|%g%g)\n\n",
              ThisTask, (int) P[p].ID, dt, All.Timebase_interval, ti_step, ac,
              P[p].Pos[0], P[p].Pos[1], P[p].Pos[2], P[p].GravAccel[0], P[p].
       GravAccel[1], P[p].GravAccel[2]);
 #ifdef PMGRID
-      printf("pm_force=(%g|%g|%g)\n", P[p].GravPM[0], P[p].GravPM[1], P[p].GravPM
-      [2]);
+      printf("pm_force=(%g|%g|%g)\n", P[p].GravPM[0], P[p].GravPM[1], P[p].
+      GravPM[2]);
 #endif
       if(P[p].Type == 0)
-        printf("hydro-frc=(%g|%g|%g)\n", SphP[p].HydroAccel[0], SphP[p].HydroAcce
-      l[1], SphP[p].HydroAccel[2]);
+        printf("hydro-frc=(%g|%g|%g)\n", SphP[p].HydroAccel[0], SphP[p].
+      HydroAccel[1], SphP[p].HydroAccel[2]);
 
       fflush(stdout);
       endrun(818);
@@ -886,121 +887,105 @@ Referenced by advance\_\-and\_\-find\_\-timesteps().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{timestep_8c_af48922752ff457721f558510789e61e1_cgraph}
+\includegraphics[width=350pt]{timestep_8c_af48922752ff457721f558510789e61e1_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{timestep_8c_af48922752ff457721f558510789e61e1_icgraph}
+\includegraphics[width=350pt]{timestep_8c_af48922752ff457721f558510789e61e1_icgraph}
 \end{center}
 \end{figure}
 
 
 
 
-\subsection{Variable Documentation}
-\hypertarget{timestep_8c_a7f2a6bb4bade30e4e04ee29be22d0962}{
-\index{timestep.c@{timestep.c}!a3inv@{a3inv}}
-\index{a3inv@{a3inv}!timestep.c@{timestep.c}}
-\subsubsection[{a3inv}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf a3inv}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{timestep_8c_a7f2a6bb4bade30e4e04ee29be22d0962}
+\subsection{\-Variable \-Documentation}
+\hypertarget{timestep_8c_a7f2a6bb4bade30e4e04ee29be22d0962}{\index{timestep.\-c@{timestep.\-c}!a3inv@{a3inv}}
+\index{a3inv@{a3inv}!timestep.c@{timestep.\-c}}
+\subsubsection[{a3inv}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf a3inv}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{timestep_8c_a7f2a6bb4bade30e4e04ee29be22d0962}
 
 
-Definition at line 13 of file timestep.c.
-
-
-
-Referenced by advance\_\-and\_\-find\_\-timesteps().
-
-\hypertarget{timestep_8c_aec7bcb1d46812f966d89f66dc1a399ea}{
-\index{timestep.c@{timestep.c}!atime@{atime}}
-\index{atime@{atime}!timestep.c@{timestep.c}}
-\subsubsection[{atime}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf atime}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{timestep_8c_aec7bcb1d46812f966d89f66dc1a399ea}
-
-
-Definition at line 13 of file timestep.c.
+\-Definition at line 13 of file timestep.\-c.
 
 
 
-Referenced by advance\_\-and\_\-find\_\-timesteps(), and get\_\-timestep().
+\-Referenced by advance\-\_\-and\-\_\-find\-\_\-timesteps().
 
-\hypertarget{timestep_8c_aebcd2de4b9dfac8c2feb1594616f4803}{
-\index{timestep.c@{timestep.c}!dt\_\-displacement@{dt\_\-displacement}}
-\index{dt\_\-displacement@{dt\_\-displacement}!timestep.c@{timestep.c}}
-\subsubsection[{dt\_\-displacement}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf dt\_\-displacement} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{timestep_8c_aebcd2de4b9dfac8c2feb1594616f4803}
+\hypertarget{timestep_8c_aec7bcb1d46812f966d89f66dc1a399ea}{\index{timestep.\-c@{timestep.\-c}!atime@{atime}}
+\index{atime@{atime}!timestep.c@{timestep.\-c}}
+\subsubsection[{atime}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf atime}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{timestep_8c_aec7bcb1d46812f966d89f66dc1a399ea}
 
 
-Definition at line 14 of file timestep.c.
+\-Definition at line 13 of file timestep.\-c.
 
 
 
-Referenced by advance\_\-and\_\-find\_\-timesteps(), find\_\-dt\_\-displacement\_\-constraint(), and get\_\-timestep().
+\-Referenced by advance\-\_\-and\-\_\-find\-\_\-timesteps(), and get\-\_\-timestep().
 
-\hypertarget{timestep_8c_a59a20f8242197c1ba41f7a0b1b880d62}{
-\index{timestep.c@{timestep.c}!fac1@{fac1}}
-\index{fac1@{fac1}!timestep.c@{timestep.c}}
-\subsubsection[{fac1}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac1}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{timestep_8c_a59a20f8242197c1ba41f7a0b1b880d62}
+\hypertarget{timestep_8c_aebcd2de4b9dfac8c2feb1594616f4803}{\index{timestep.\-c@{timestep.\-c}!dt\-\_\-displacement@{dt\-\_\-displacement}}
+\index{dt\-\_\-displacement@{dt\-\_\-displacement}!timestep.c@{timestep.\-c}}
+\subsubsection[{dt\-\_\-displacement}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf dt\-\_\-displacement} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{timestep_8c_aebcd2de4b9dfac8c2feb1594616f4803}
 
 
-Definition at line 13 of file timestep.c.
+\-Definition at line 14 of file timestep.\-c.
 
 
 
-Referenced by advance\_\-and\_\-find\_\-timesteps(), fill\_\-write\_\-buffer(), get\_\-timestep(), and gravity\_\-forcetest().
+\-Referenced by advance\-\_\-and\-\_\-find\-\_\-timesteps(), find\-\_\-dt\-\_\-displacement\-\_\-constraint(), and get\-\_\-timestep().
 
-\hypertarget{timestep_8c_a1a666a0983f6d540fa41ec867aa40d09}{
-\index{timestep.c@{timestep.c}!fac2@{fac2}}
-\index{fac2@{fac2}!timestep.c@{timestep.c}}
-\subsubsection[{fac2}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac2}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{timestep_8c_a1a666a0983f6d540fa41ec867aa40d09}
+\hypertarget{timestep_8c_a59a20f8242197c1ba41f7a0b1b880d62}{\index{timestep.\-c@{timestep.\-c}!fac1@{fac1}}
+\index{fac1@{fac1}!timestep.c@{timestep.\-c}}
+\subsubsection[{fac1}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac1}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{timestep_8c_a59a20f8242197c1ba41f7a0b1b880d62}
 
 
-Definition at line 13 of file timestep.c.
+\-Definition at line 13 of file timestep.\-c.
 
 
 
-Referenced by advance\_\-and\_\-find\_\-timesteps(), fill\_\-write\_\-buffer(), and get\_\-timestep().
+\-Referenced by advance\-\_\-and\-\_\-find\-\_\-timesteps(), fill\-\_\-write\-\_\-buffer(), get\-\_\-timestep(), and gravity\-\_\-forcetest().
 
-\hypertarget{timestep_8c_aebe1da050ef46b7b63c856394494292c}{
-\index{timestep.c@{timestep.c}!fac3@{fac3}}
-\index{fac3@{fac3}!timestep.c@{timestep.c}}
-\subsubsection[{fac3}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac3}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{timestep_8c_aebe1da050ef46b7b63c856394494292c}
+\hypertarget{timestep_8c_a1a666a0983f6d540fa41ec867aa40d09}{\index{timestep.\-c@{timestep.\-c}!fac2@{fac2}}
+\index{fac2@{fac2}!timestep.c@{timestep.\-c}}
+\subsubsection[{fac2}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac2}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{timestep_8c_a1a666a0983f6d540fa41ec867aa40d09}
 
 
-Definition at line 13 of file timestep.c.
+\-Definition at line 13 of file timestep.\-c.
 
 
 
-Referenced by advance\_\-and\_\-find\_\-timesteps(), and get\_\-timestep().
+\-Referenced by advance\-\_\-and\-\_\-find\-\_\-timesteps(), fill\-\_\-write\-\_\-buffer(), and get\-\_\-timestep().
 
-\hypertarget{timestep_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}{
-\index{timestep.c@{timestep.c}!hubble\_\-a@{hubble\_\-a}}
-\index{hubble\_\-a@{hubble\_\-a}!timestep.c@{timestep.c}}
-\subsubsection[{hubble\_\-a}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hubble\_\-a}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{timestep_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}
+\hypertarget{timestep_8c_aebe1da050ef46b7b63c856394494292c}{\index{timestep.\-c@{timestep.\-c}!fac3@{fac3}}
+\index{fac3@{fac3}!timestep.c@{timestep.\-c}}
+\subsubsection[{fac3}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf fac3}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{timestep_8c_aebe1da050ef46b7b63c856394494292c}
 
 
-Definition at line 13 of file timestep.c.
+\-Definition at line 13 of file timestep.\-c.
 
 
 
-Referenced by advance\_\-and\_\-find\_\-timesteps(), and get\_\-timestep().
+\-Referenced by advance\-\_\-and\-\_\-find\-\_\-timesteps(), and get\-\_\-timestep().
+
+\hypertarget{timestep_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}{\index{timestep.\-c@{timestep.\-c}!hubble\-\_\-a@{hubble\-\_\-a}}
+\index{hubble\-\_\-a@{hubble\-\_\-a}!timestep.c@{timestep.\-c}}
+\subsubsection[{hubble\-\_\-a}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hubble\-\_\-a}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{timestep_8c_abb7074f2e4b01309c6f2dc87bb3a1a40}
+
+
+\-Definition at line 13 of file timestep.\-c.
+
+
+
+\-Referenced by advance\-\_\-and\-\_\-find\-\_\-timesteps(), and get\-\_\-timestep().
 

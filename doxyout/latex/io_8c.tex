@@ -1,110 +1,103 @@
-\hypertarget{io_8c}{
-\section{io.c File Reference}
-\label{io_8c}\index{io.c@{io.c}}
+\hypertarget{io_8c}{\section{io.\-c \-File \-Reference}
+\label{io_8c}\index{io.\-c@{io.\-c}}
 }
 
 
-Routines for producing a snapshot file on disk.  
+\-Routines for producing a snapshot file on disk.  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include $<$errno.h$>$}\par
-{\ttfamily \#include $<$hdf5.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for io.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include $<$errno.\-h$>$}\*
+{\ttfamily \#include $<$hdf5.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for io.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c__incl}
+\includegraphics[width=350pt]{io_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Defines}
+\subsection*{\-Defines}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{io_8c_a688a4adbb87520a2b68681bd6bfb199e}{SKIP}~\{my\_\-fwrite(\&blksize,sizeof(int),1,\hyperlink{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}{fd});\}
+\#define \hyperlink{io_8c_a688a4adbb87520a2b68681bd6bfb199e}{\-S\-K\-I\-P}~\{\hyperlink{proto_8h_aab1e6568bf14b3a23c66f70c94aabd21}{my\-\_\-fwrite}(\&blksize,sizeof(int),1,\hyperlink{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}{fd});\}
 \end{DoxyCompactItemize}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{io_8c_a523730833804b6d92aa7f4dd474805c5}{savepositions} (int num)
 \item 
-void \hyperlink{io_8c_a4b34f2381777023014f80c959ad1f88a}{fill\_\-write\_\-buffer} (enum \hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8}{iofields} blocknr, int $\ast$startindex, int pc, int type)
+void \hyperlink{io_8c_a4b34f2381777023014f80c959ad1f88a}{fill\-\_\-write\-\_\-buffer} (enum iofields blocknr, int $\ast$startindex, int pc, int type)
 \item 
-int \hyperlink{io_8c_a49492470fcccf9d05bf51993f281f16c}{get\_\-bytes\_\-per\_\-blockelement} (enum \hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8}{iofields} blocknr)
+int \hyperlink{io_8c_a49492470fcccf9d05bf51993f281f16c}{get\-\_\-bytes\-\_\-per\-\_\-blockelement} (enum iofields blocknr)
 \item 
-int \hyperlink{io_8c_acdf59daa02f065452a596cf88b4de1a1}{get\_\-datatype\_\-in\_\-block} (enum \hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8}{iofields} blocknr)
+int \hyperlink{io_8c_acdf59daa02f065452a596cf88b4de1a1}{get\-\_\-datatype\-\_\-in\-\_\-block} (enum iofields blocknr)
 \item 
-int \hyperlink{io_8c_a3892776d6528c51f720d2a48deb2486f}{get\_\-values\_\-per\_\-blockelement} (enum \hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8}{iofields} blocknr)
+int \hyperlink{io_8c_a3892776d6528c51f720d2a48deb2486f}{get\-\_\-values\-\_\-per\-\_\-blockelement} (enum iofields blocknr)
 \item 
-int \hyperlink{io_8c_a5ce310b1efc19d96d530c1264fd5eca9}{get\_\-particles\_\-in\_\-block} (enum \hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8}{iofields} blocknr, int $\ast$typelist)
+int \hyperlink{io_8c_a5ce310b1efc19d96d530c1264fd5eca9}{get\-\_\-particles\-\_\-in\-\_\-block} (enum iofields blocknr, int $\ast$typelist)
 \item 
-int \hyperlink{io_8c_ad9c685a2d6d48224bfec61680ce82b1e}{blockpresent} (enum \hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8}{iofields} blocknr)
+int \hyperlink{io_8c_ad9c685a2d6d48224bfec61680ce82b1e}{blockpresent} (enum iofields blocknr)
 \item 
-void \hyperlink{io_8c_a10281a87abe1e07d6ca603de6a533345}{fill\_\-Tab\_\-IO\_\-Labels} (void)
+void \hyperlink{io_8c_a10281a87abe1e07d6ca603de6a533345}{fill\-\_\-\-Tab\-\_\-\-I\-O\-\_\-\-Labels} (void)
 \item 
-void \hyperlink{io_8c_a4d30ce1aad9c69d5af676a6a13173686}{get\_\-dataset\_\-name} (enum \hyperlink{allvars_8h_a3f7452ec51c4f746e7070abd666147d8}{iofields} blocknr, char $\ast$buf)
+void \hyperlink{io_8c_a4d30ce1aad9c69d5af676a6a13173686}{get\-\_\-dataset\-\_\-name} (enum iofields blocknr, char $\ast$buf)
 \item 
-void \hyperlink{io_8c_a2b3f5bacd7313da0f3ffa55e41907481}{write\_\-file} (char $\ast$fname, int writeTask, int lastTask)
+void \hyperlink{io_8c_a2b3f5bacd7313da0f3ffa55e41907481}{write\-\_\-file} (char $\ast$fname, int write\-Task, int last\-Task)
 \item 
-void \hyperlink{io_8c_ad5243b69dcba17be62f7d64f422bfbbf}{write\_\-header\_\-attributes\_\-in\_\-hdf5} (hid\_\-t handle)
+void \hyperlink{io_8c_ad5243b69dcba17be62f7d64f422bfbbf}{write\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5} (hid\-\_\-t handle)
 \item 
-size\_\-t \hyperlink{io_8c_aab1e6568bf14b3a23c66f70c94aabd21}{my\_\-fwrite} (void $\ast$ptr, size\_\-t size, size\_\-t nmemb, FILE $\ast$stream)
+size\-\_\-t \hyperlink{io_8c_aab1e6568bf14b3a23c66f70c94aabd21}{my\-\_\-fwrite} (void $\ast$ptr, size\-\_\-t size, size\-\_\-t nmemb, \-F\-I\-L\-E $\ast$stream)
 \item 
-size\_\-t \hyperlink{io_8c_a1609620c03f6b0068601735c42e3c660}{my\_\-fread} (void $\ast$ptr, size\_\-t size, size\_\-t nmemb, FILE $\ast$stream)
+size\-\_\-t \hyperlink{io_8c_a1609620c03f6b0068601735c42e3c660}{my\-\_\-fread} (void $\ast$ptr, size\-\_\-t size, size\-\_\-t nmemb, \-F\-I\-L\-E $\ast$stream)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
+\subsection*{\-Variables}
 \begin{DoxyCompactItemize}
 \item 
-static int \hyperlink{io_8c_a217c441656b4bdc1caf0019b5a809bee}{n\_\-type} \mbox{[}6\mbox{]}
+static int \hyperlink{io_8c_a217c441656b4bdc1caf0019b5a809bee}{n\-\_\-type} \mbox{[}6\mbox{]}
 \item 
-static long long \hyperlink{io_8c_a3cfb701790acb5a9b71ba995148bbf40}{ntot\_\-type\_\-all} \mbox{[}6\mbox{]}
+static long long \hyperlink{io_8c_a3cfb701790acb5a9b71ba995148bbf40}{ntot\-\_\-type\-\_\-all} \mbox{[}6\mbox{]}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Routines for producing a snapshot file on disk. 
+\subsection{\-Detailed \-Description}
+\-Routines for producing a snapshot file on disk. 
 
-Definition in file \hyperlink{io_8c_source}{io.c}.
-
-
-
-\subsection{Define Documentation}
-\hypertarget{io_8c_a688a4adbb87520a2b68681bd6bfb199e}{
-\index{io.c@{io.c}!SKIP@{SKIP}}
-\index{SKIP@{SKIP}!io.c@{io.c}}
-\subsubsection[{SKIP}]{\setlength{\rightskip}{0pt plus 5cm}\#define SKIP~\{my\_\-fwrite(\&blksize,sizeof(int),1,{\bf fd});\}}}
-\label{io_8c_a688a4adbb87520a2b68681bd6bfb199e}
+\-Definition in file \hyperlink{io_8c_source}{io.\-c}.
 
 
-\subsection{Function Documentation}
-\hypertarget{io_8c_ad9c685a2d6d48224bfec61680ce82b1e}{
-\index{io.c@{io.c}!blockpresent@{blockpresent}}
-\index{blockpresent@{blockpresent}!io.c@{io.c}}
-\subsubsection[{blockpresent}]{\setlength{\rightskip}{0pt plus 5cm}int blockpresent (
+
+\subsection{\-Define \-Documentation}
+\hypertarget{io_8c_a688a4adbb87520a2b68681bd6bfb199e}{\index{io.\-c@{io.\-c}!\-S\-K\-I\-P@{\-S\-K\-I\-P}}
+\index{\-S\-K\-I\-P@{\-S\-K\-I\-P}!io.c@{io.\-c}}
+\subsubsection[{\-S\-K\-I\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-S\-K\-I\-P}~\{{\bf my\-\_\-fwrite}(\&blksize,sizeof(int),1,{\bf fd});\}}}\label{io_8c_a688a4adbb87520a2b68681bd6bfb199e}
+
+
+\-Referenced by read\-\_\-file(), and write\-\_\-file().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{io_8c_ad9c685a2d6d48224bfec61680ce82b1e}{\index{io.\-c@{io.\-c}!blockpresent@{blockpresent}}
+\index{blockpresent@{blockpresent}!io.c@{io.\-c}}
+\subsubsection[{blockpresent}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf blockpresent} (
 \begin{DoxyParamCaption}
-\item[{enum {\bf iofields}}]{ blocknr}
+\item[{enum iofields}]{blocknr}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_ad9c685a2d6d48224bfec61680ce82b1e}
-This function tells whether or not a given block in the output file is present, depending on the type of simulation run and the compile-\/time options. If one wants to add a new output-\/block, this function should be augmented accordingly. 
+)}}\label{io_8c_ad9c685a2d6d48224bfec61680ce82b1e}
+\-This function tells whether or not a given block in the output file is present, depending on the type of simulation run and the compile-\/time options. \-If one wants to add a new output-\/block, this function should be augmented accordingly. 
 
-Definition at line 532 of file io.c.
-
-
-
-References IO\_\-ACCEL, IO\_\-DTENTR, IO\_\-POT, and IO\_\-TSTP.
+\-Definition at line 532 of file io.\-c.
 
 
 
-Referenced by read\_\-file(), and write\_\-file().
-
-
+\-Referenced by read\-\_\-file(), and write\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -135,44 +128,34 @@ Referenced by read\_\-file(), and write\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_ad9c685a2d6d48224bfec61680ce82b1e_icgraph}
+\includegraphics[width=350pt]{io_8c_ad9c685a2d6d48224bfec61680ce82b1e_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_a10281a87abe1e07d6ca603de6a533345}{
-\index{io.c@{io.c}!fill\_\-Tab\_\-IO\_\-Labels@{fill\_\-Tab\_\-IO\_\-Labels}}
-\index{fill\_\-Tab\_\-IO\_\-Labels@{fill\_\-Tab\_\-IO\_\-Labels}!io.c@{io.c}}
-\subsubsection[{fill\_\-Tab\_\-IO\_\-Labels}]{\setlength{\rightskip}{0pt plus 5cm}void fill\_\-Tab\_\-IO\_\-Labels (
+\hypertarget{io_8c_a10281a87abe1e07d6ca603de6a533345}{\index{io.\-c@{io.\-c}!fill\-\_\-\-Tab\-\_\-\-I\-O\-\_\-\-Labels@{fill\-\_\-\-Tab\-\_\-\-I\-O\-\_\-\-Labels}}
+\index{fill\-\_\-\-Tab\-\_\-\-I\-O\-\_\-\-Labels@{fill\-\_\-\-Tab\-\_\-\-I\-O\-\_\-\-Labels}!io.c@{io.\-c}}
+\subsubsection[{fill\-\_\-\-Tab\-\_\-\-I\-O\-\_\-\-Labels}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf fill\-\_\-\-Tab\-\_\-\-I\-O\-\_\-\-Labels} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_a10281a87abe1e07d6ca603de6a533345}
-This function associates a short 4-\/character block name with each block number. This is stored in front of each block for snapshot FileFormat=2. If one wants to add a new output-\/block, this function should be augmented accordingly. 
+)}}\label{io_8c_a10281a87abe1e07d6ca603de6a533345}
+\-This function associates a short 4-\/character block name with each block number. \-This is stored in front of each block for snapshot \-File\-Format=2. \-If one wants to add a new output-\/block, this function should be augmented accordingly. $<$ total number of defined information blocks for snapshot files. \-Must be equal to the number of entries in \char`\"{}enum iofields\char`\"{} 
 
-$<$ total number of defined 0 0 for snapshot files. Must be equal to the number of entries in \char`\"{}enum iofields\char`\"{} 
-
-
-
-Definition at line 566 of file io.c.
+\-Definition at line 566 of file io.\-c.
 
 
 
-References IO\_\-ACCEL, IO\_\-DTENTR, IO\_\-HSML, IO\_\-ID, IO\_\-MASS, IO\_\-POS, IO\_\-POT, IO\_\-RHO, IO\_\-TSTP, IO\_\-U, IO\_\-VEL, and Tab\_\-IO\_\-Labels.
+\-References \-Tab\-\_\-\-I\-O\-\_\-\-Labels.
 
 
 
-Referenced by read\_\-ic(), and savepositions().
-
-
+\-Referenced by read\-\_\-ic(), and savepositions().
 
 
 \begin{DoxyCode}
@@ -220,51 +203,41 @@ Referenced by read\_\-ic(), and savepositions().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a10281a87abe1e07d6ca603de6a533345_icgraph}
+\includegraphics[width=350pt]{io_8c_a10281a87abe1e07d6ca603de6a533345_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_a4b34f2381777023014f80c959ad1f88a}{
-\index{io.c@{io.c}!fill\_\-write\_\-buffer@{fill\_\-write\_\-buffer}}
-\index{fill\_\-write\_\-buffer@{fill\_\-write\_\-buffer}!io.c@{io.c}}
-\subsubsection[{fill\_\-write\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void fill\_\-write\_\-buffer (
+\hypertarget{io_8c_a4b34f2381777023014f80c959ad1f88a}{\index{io.\-c@{io.\-c}!fill\-\_\-write\-\_\-buffer@{fill\-\_\-write\-\_\-buffer}}
+\index{fill\-\_\-write\-\_\-buffer@{fill\-\_\-write\-\_\-buffer}!io.c@{io.\-c}}
+\subsubsection[{fill\-\_\-write\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf fill\-\_\-write\-\_\-buffer} (
 \begin{DoxyParamCaption}
-\item[{enum {\bf iofields}}]{ blocknr, }
-\item[{int $\ast$}]{ startindex, }
-\item[{int}]{ pc, }
-\item[{int}]{ type}
+\item[{enum iofields}]{blocknr, }
+\item[{int $\ast$}]{startindex, }
+\item[{int}]{pc, }
+\item[{int}]{type}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_a4b34f2381777023014f80c959ad1f88a}
-This function fills the write buffer with particle data. New output blocks can in principle be added here. 
-
-$<$ adiabatic index of simulated gas
+)}}\label{io_8c_a4b34f2381777023014f80c959ad1f88a}
+\-This function fills the write buffer with particle data. \-New output blocks can in principle be added here. $<$ adiabatic index of simulated gas
 
 $<$ adiabatic index of simulated gas
 
 $<$ adiabatic index of simulated gas 
 
-
-
-Definition at line 129 of file io.c.
-
-
-
-References a3inv, All, global\_\-data\_\-all\_\-processes::BoxSize, boxSize, CommBuffer, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, sph\_\-particle\_\-data::Density, dmax(), sph\_\-particle\_\-data::DtEntropy, sph\_\-particle\_\-data::Entropy, fac1, fac2, FLOAT, GAMMA, GAMMA\_\-MINUS1, get\_\-gravkick\_\-factor(), get\_\-hydrokick\_\-factor(), particle\_\-data::GravAccel, sph\_\-particle\_\-data::Hsml, sph\_\-particle\_\-data::HydroAccel, particle\_\-data::ID, IO\_\-ACCEL, IO\_\-DTENTR, IO\_\-HSML, IO\_\-ID, IO\_\-MASS, IO\_\-POS, IO\_\-POT, IO\_\-RHO, IO\_\-TSTP, IO\_\-U, IO\_\-VEL, particle\_\-data::Mass, global\_\-data\_\-all\_\-processes::MinEgySpec, P, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-begstep, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-endstep, particle\_\-data::Pos, particle\_\-data::Potential, pow(), SphP, particle\_\-data::Ti\_\-begstep, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Time, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, and particle\_\-data::Vel.
+\-Definition at line 129 of file io.\-c.
 
 
 
-Referenced by write\_\-file().
+\-References a3inv, \-All, box\-Size, \-Comm\-Buffer, dmax(), fac1, fac2, get\-\_\-gravkick\-\_\-factor(), get\-\_\-hydrokick\-\_\-factor(), \-P, pow(), and \-Sph\-P.
 
 
+
+\-Referenced by write\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -304,8 +277,8 @@ Referenced by write\_\-file().
       get_gravkick_factor(All.PM_Ti_begstep, (All.PM_Ti_begstep + All.
       PM_Ti_endstep) / 2);
   else
-    dt_gravkick_pm = (All.Ti_Current - (All.PM_Ti_begstep + All.PM_Ti_endstep) / 
-      2) * All.Timebase_interval;
+    dt_gravkick_pm = (All.Ti_Current - (All.PM_Ti_begstep + All.PM_Ti_endstep) 
+      / 2) * All.Timebase_interval;
 #endif
 
 
@@ -359,23 +332,24 @@ Referenced by write\_\-file().
                   get_gravkick_factor(P[pindex].Ti_begstep,
                                       All.Ti_Current) -
                   get_gravkick_factor(P[pindex].Ti_begstep,
-                                      (P[pindex].Ti_begstep + P[pindex].Ti_endste
-      p) / 2);
+                                      (P[pindex].Ti_begstep + P[pindex].
+      Ti_endstep) / 2);
                 dt_hydrokick =
                   get_hydrokick_factor(P[pindex].Ti_begstep,
                                        All.Ti_Current) -
                   get_hydrokick_factor(P[pindex].Ti_begstep,
-                                       (P[pindex].Ti_begstep + P[pindex].Ti_endst
-      ep) / 2);
+                                       (P[pindex].Ti_begstep + P[pindex].
+      Ti_endstep) / 2);
               }
             else
               dt_gravkick = dt_hydrokick =
-                (All.Ti_Current - (P[pindex].Ti_begstep + P[pindex].Ti_endstep) /
-       2) * All.Timebase_interval;
+                (All.Ti_Current - (P[pindex].Ti_begstep + P[pindex].Ti_endstep)
+       / 2) * All.Timebase_interval;
 
             for(k = 0; k < 3; k++)
               {
-                fp[k] = P[pindex].Vel[k] + P[pindex].GravAccel[k] * dt_gravkick;
+                fp[k] = P[pindex].Vel[k] + P[pindex].GravAccel[k] * dt_gravkick
+      ;
                 if(P[pindex].Type == 0)
                   fp[k] += SphP[pindex].HydroAccel[k] * dt_hydrokick;
               }
@@ -418,8 +392,8 @@ Referenced by write\_\-file().
 #else
             *fp++ =
               dmax(All.MinEgySpec,
-                   SphP[pindex].Entropy / GAMMA_MINUS1 * pow(SphP[pindex].Density
-       * a3inv, GAMMA_MINUS1));
+                   SphP[pindex].Entropy / GAMMA_MINUS1 * pow(SphP[pindex].
+      Density * a3inv, GAMMA_MINUS1));
 #endif
             n++;
           }
@@ -506,9 +480,7 @@ Referenced by write\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -520,38 +492,30 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a4b34f2381777023014f80c959ad1f88a_icgraph}
+\includegraphics[width=350pt]{io_8c_a4b34f2381777023014f80c959ad1f88a_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_a49492470fcccf9d05bf51993f281f16c}{
-\index{io.c@{io.c}!get\_\-bytes\_\-per\_\-blockelement@{get\_\-bytes\_\-per\_\-blockelement}}
-\index{get\_\-bytes\_\-per\_\-blockelement@{get\_\-bytes\_\-per\_\-blockelement}!io.c@{io.c}}
-\subsubsection[{get\_\-bytes\_\-per\_\-blockelement}]{\setlength{\rightskip}{0pt plus 5cm}int get\_\-bytes\_\-per\_\-blockelement (
+\hypertarget{io_8c_a49492470fcccf9d05bf51993f281f16c}{\index{io.\-c@{io.\-c}!get\-\_\-bytes\-\_\-per\-\_\-blockelement@{get\-\_\-bytes\-\_\-per\-\_\-blockelement}}
+\index{get\-\_\-bytes\-\_\-per\-\_\-blockelement@{get\-\_\-bytes\-\_\-per\-\_\-blockelement}!io.c@{io.\-c}}
+\subsubsection[{get\-\_\-bytes\-\_\-per\-\_\-blockelement}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf get\-\_\-bytes\-\_\-per\-\_\-blockelement} (
 \begin{DoxyParamCaption}
-\item[{enum {\bf iofields}}]{ blocknr}
+\item[{enum iofields}]{blocknr}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_a49492470fcccf9d05bf51993f281f16c}
-This function tells the size of one data entry in each of the blocks defined for the output file. If one wants to add a new output-\/block, this function should be augmented accordingly. 
+)}}\label{io_8c_a49492470fcccf9d05bf51993f281f16c}
+\-This function tells the size of one data entry in each of the blocks defined for the output file. \-If one wants to add a new output-\/block, this function should be augmented accordingly. 
 
-Definition at line 366 of file io.c.
-
-
-
-References IO\_\-ACCEL, IO\_\-DTENTR, IO\_\-HSML, IO\_\-ID, IO\_\-MASS, IO\_\-POS, IO\_\-POT, IO\_\-RHO, IO\_\-TSTP, IO\_\-U, and IO\_\-VEL.
+\-Definition at line 366 of file io.\-c.
 
 
 
-Referenced by read\_\-file(), and write\_\-file().
-
-
+\-Referenced by read\-\_\-file(), and write\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -590,41 +554,31 @@ Referenced by read\_\-file(), and write\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a49492470fcccf9d05bf51993f281f16c_icgraph}
+\includegraphics[width=350pt]{io_8c_a49492470fcccf9d05bf51993f281f16c_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_a4d30ce1aad9c69d5af676a6a13173686}{
-\index{io.c@{io.c}!get\_\-dataset\_\-name@{get\_\-dataset\_\-name}}
-\index{get\_\-dataset\_\-name@{get\_\-dataset\_\-name}!io.c@{io.c}}
-\subsubsection[{get\_\-dataset\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}void get\_\-dataset\_\-name (
+\hypertarget{io_8c_a4d30ce1aad9c69d5af676a6a13173686}{\index{io.\-c@{io.\-c}!get\-\_\-dataset\-\_\-name@{get\-\_\-dataset\-\_\-name}}
+\index{get\-\_\-dataset\-\_\-name@{get\-\_\-dataset\-\_\-name}!io.c@{io.\-c}}
+\subsubsection[{get\-\_\-dataset\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf get\-\_\-dataset\-\_\-name} (
 \begin{DoxyParamCaption}
-\item[{enum {\bf iofields}}]{ blocknr, }
-\item[{char $\ast$}]{ buf}
+\item[{enum iofields}]{blocknr, }
+\item[{char $\ast$}]{buf}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_a4d30ce1aad9c69d5af676a6a13173686}
-This function returns a descriptive character string that describes the name of the block when the HDF5 file format is used. If one wants to add a new output-\/block, this function should be augmented accordingly. 
+)}}\label{io_8c_a4d30ce1aad9c69d5af676a6a13173686}
+\-This function returns a descriptive character string that describes the name of the block when the \-H\-D\-F5 file format is used. \-If one wants to add a new output-\/block, this function should be augmented accordingly. 
 
-Definition at line 613 of file io.c.
-
-
-
-References IO\_\-ACCEL, IO\_\-DTENTR, IO\_\-HSML, IO\_\-ID, IO\_\-MASS, IO\_\-POS, IO\_\-POT, IO\_\-RHO, IO\_\-TSTP, IO\_\-U, and IO\_\-VEL.
+\-Definition at line 613 of file io.\-c.
 
 
 
-Referenced by read\_\-file(), and write\_\-file().
-
-
+\-Referenced by read\-\_\-file(), and write\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -672,40 +626,30 @@ Referenced by read\_\-file(), and write\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a4d30ce1aad9c69d5af676a6a13173686_icgraph}
+\includegraphics[width=350pt]{io_8c_a4d30ce1aad9c69d5af676a6a13173686_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_acdf59daa02f065452a596cf88b4de1a1}{
-\index{io.c@{io.c}!get\_\-datatype\_\-in\_\-block@{get\_\-datatype\_\-in\_\-block}}
-\index{get\_\-datatype\_\-in\_\-block@{get\_\-datatype\_\-in\_\-block}!io.c@{io.c}}
-\subsubsection[{get\_\-datatype\_\-in\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}int get\_\-datatype\_\-in\_\-block (
+\hypertarget{io_8c_acdf59daa02f065452a596cf88b4de1a1}{\index{io.\-c@{io.\-c}!get\-\_\-datatype\-\_\-in\-\_\-block@{get\-\_\-datatype\-\_\-in\-\_\-block}}
+\index{get\-\_\-datatype\-\_\-in\-\_\-block@{get\-\_\-datatype\-\_\-in\-\_\-block}!io.c@{io.\-c}}
+\subsubsection[{get\-\_\-datatype\-\_\-in\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf get\-\_\-datatype\-\_\-in\-\_\-block} (
 \begin{DoxyParamCaption}
-\item[{enum {\bf iofields}}]{ blocknr}
+\item[{enum iofields}]{blocknr}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_acdf59daa02f065452a596cf88b4de1a1}
-This function returns the type of the data contained in a given block of the output file. If one wants to add a new output-\/block, this function should be augmented accordingly. 
+)}}\label{io_8c_acdf59daa02f065452a596cf88b4de1a1}
+\-This function returns the type of the data contained in a given block of the output file. \-If one wants to add a new output-\/block, this function should be augmented accordingly. 
 
-Definition at line 405 of file io.c.
-
-
-
-References IO\_\-ID.
+\-Definition at line 405 of file io.\-c.
 
 
 
-Referenced by read\_\-file(), and write\_\-file().
-
-
+\-Referenced by read\-\_\-file(), and write\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -732,41 +676,35 @@ Referenced by read\_\-file(), and write\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_acdf59daa02f065452a596cf88b4de1a1_icgraph}
+\includegraphics[width=350pt]{io_8c_acdf59daa02f065452a596cf88b4de1a1_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_a5ce310b1efc19d96d530c1264fd5eca9}{
-\index{io.c@{io.c}!get\_\-particles\_\-in\_\-block@{get\_\-particles\_\-in\_\-block}}
-\index{get\_\-particles\_\-in\_\-block@{get\_\-particles\_\-in\_\-block}!io.c@{io.c}}
-\subsubsection[{get\_\-particles\_\-in\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}int get\_\-particles\_\-in\_\-block (
+\hypertarget{io_8c_a5ce310b1efc19d96d530c1264fd5eca9}{\index{io.\-c@{io.\-c}!get\-\_\-particles\-\_\-in\-\_\-block@{get\-\_\-particles\-\_\-in\-\_\-block}}
+\index{get\-\_\-particles\-\_\-in\-\_\-block@{get\-\_\-particles\-\_\-in\-\_\-block}!io.c@{io.\-c}}
+\subsubsection[{get\-\_\-particles\-\_\-in\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf get\-\_\-particles\-\_\-in\-\_\-block} (
 \begin{DoxyParamCaption}
-\item[{enum {\bf iofields}}]{ blocknr, }
-\item[{int $\ast$}]{ typelist}
+\item[{enum iofields}]{blocknr, }
+\item[{int $\ast$}]{typelist}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_a5ce310b1efc19d96d530c1264fd5eca9}
-This function determines how many particles there are in a given block, based on the information in the header-\/structure. It also flags particle types that are present in the block in the typelist array. If one wants to add a new output-\/block, this function should be augmented accordingly. 
+)}}\label{io_8c_a5ce310b1efc19d96d530c1264fd5eca9}
+\-This function determines how many particles there are in a given block, based on the information in the header-\/structure. \-It also flags particle types that are present in the block in the typelist array. \-If one wants to add a new output-\/block, this function should be augmented accordingly. 
 
-Definition at line 465 of file io.c.
-
-
-
-References All, endrun(), header, IO\_\-ACCEL, IO\_\-DTENTR, IO\_\-HSML, IO\_\-ID, IO\_\-MASS, IO\_\-POS, IO\_\-POT, IO\_\-RHO, IO\_\-TSTP, IO\_\-U, IO\_\-VEL, global\_\-data\_\-all\_\-processes::MassTable, and io\_\-header::npart.
+\-Definition at line 465 of file io.\-c.
 
 
 
-Referenced by read\_\-file(), and write\_\-file().
+\-References \-All, endrun(), and header.
 
 
+
+\-Referenced by read\-\_\-file(), and write\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -831,52 +769,42 @@ Referenced by read\_\-file(), and write\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a5ce310b1efc19d96d530c1264fd5eca9_cgraph}
+\includegraphics[width=350pt]{io_8c_a5ce310b1efc19d96d530c1264fd5eca9_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a5ce310b1efc19d96d530c1264fd5eca9_icgraph}
+\includegraphics[width=350pt]{io_8c_a5ce310b1efc19d96d530c1264fd5eca9_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_a3892776d6528c51f720d2a48deb2486f}{
-\index{io.c@{io.c}!get\_\-values\_\-per\_\-blockelement@{get\_\-values\_\-per\_\-blockelement}}
-\index{get\_\-values\_\-per\_\-blockelement@{get\_\-values\_\-per\_\-blockelement}!io.c@{io.c}}
-\subsubsection[{get\_\-values\_\-per\_\-blockelement}]{\setlength{\rightskip}{0pt plus 5cm}int get\_\-values\_\-per\_\-blockelement (
+\hypertarget{io_8c_a3892776d6528c51f720d2a48deb2486f}{\index{io.\-c@{io.\-c}!get\-\_\-values\-\_\-per\-\_\-blockelement@{get\-\_\-values\-\_\-per\-\_\-blockelement}}
+\index{get\-\_\-values\-\_\-per\-\_\-blockelement@{get\-\_\-values\-\_\-per\-\_\-blockelement}!io.c@{io.\-c}}
+\subsubsection[{get\-\_\-values\-\_\-per\-\_\-blockelement}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf get\-\_\-values\-\_\-per\-\_\-blockelement} (
 \begin{DoxyParamCaption}
-\item[{enum {\bf iofields}}]{ blocknr}
+\item[{enum iofields}]{blocknr}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_a3892776d6528c51f720d2a48deb2486f}
-This function informs about the number of elements stored per particle for the given block of the output file. If one wants to add a new output-\/block, this function should be augmented accordingly. 
+)}}\label{io_8c_a3892776d6528c51f720d2a48deb2486f}
+\-This function informs about the number of elements stored per particle for the given block of the output file. \-If one wants to add a new output-\/block, this function should be augmented accordingly. 
 
-Definition at line 432 of file io.c.
-
-
-
-References IO\_\-ACCEL, IO\_\-DTENTR, IO\_\-HSML, IO\_\-ID, IO\_\-MASS, IO\_\-POS, IO\_\-POT, IO\_\-RHO, IO\_\-TSTP, IO\_\-U, and IO\_\-VEL.
+\-Definition at line 432 of file io.\-c.
 
 
 
-Referenced by read\_\-file(), and write\_\-file().
-
-
+\-Referenced by read\-\_\-file(), and write\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -908,43 +836,37 @@ Referenced by read\_\-file(), and write\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a3892776d6528c51f720d2a48deb2486f_icgraph}
+\includegraphics[width=350pt]{io_8c_a3892776d6528c51f720d2a48deb2486f_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_a1609620c03f6b0068601735c42e3c660}{
-\index{io.c@{io.c}!my\_\-fread@{my\_\-fread}}
-\index{my\_\-fread@{my\_\-fread}!io.c@{io.c}}
-\subsubsection[{my\_\-fread}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t my\_\-fread (
+\hypertarget{io_8c_a1609620c03f6b0068601735c42e3c660}{\index{io.\-c@{io.\-c}!my\-\_\-fread@{my\-\_\-fread}}
+\index{my\-\_\-fread@{my\-\_\-fread}!io.c@{io.\-c}}
+\subsubsection[{my\-\_\-fread}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t {\bf my\-\_\-fread} (
 \begin{DoxyParamCaption}
-\item[{void $\ast$}]{ ptr, }
-\item[{size\_\-t}]{ size, }
-\item[{size\_\-t}]{ nmemb, }
-\item[{FILE $\ast$}]{ stream}
+\item[{void $\ast$}]{ptr, }
+\item[{size\-\_\-t}]{size, }
+\item[{size\-\_\-t}]{nmemb, }
+\item[{\-F\-I\-L\-E $\ast$}]{stream}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_a1609620c03f6b0068601735c42e3c660}
-This catches I/O errors occuring for fread(). In this case we better stop. 
+)}}\label{io_8c_a1609620c03f6b0068601735c42e3c660}
+\-This catches \-I/\-O errors occuring for fread(). \-In this case we better stop. 
 
-Definition at line 1139 of file io.c.
-
-
-
-References endrun(), and ThisTask.
+\-Definition at line 1139 of file io.\-c.
 
 
 
-Referenced by byten(), ewald\_\-init(), in(), and read\_\-file().
+\-References endrun(), and \-This\-Task.
 
 
+
+\-Referenced by byten(), ewald\-\_\-init(), in(), and read\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -953,8 +875,8 @@ Referenced by byten(), ewald\_\-init(), in(), and read\_\-file().
 
   if((nread = fread(ptr, size, nmemb, stream)) != nmemb)
     {
-      printf("I/O error (fread) on task=%d has occured: %s\n", ThisTask, strerror
-      (errno));
+      printf("I/O error (fread) on task=%d has occured: %s\n", ThisTask, 
+      strerror(errno));
       fflush(stdout);
       endrun(778);
     }
@@ -963,55 +885,49 @@ Referenced by byten(), ewald\_\-init(), in(), and read\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=382pt]{io_8c_a1609620c03f6b0068601735c42e3c660_cgraph}
+\includegraphics[width=350pt]{io_8c_a1609620c03f6b0068601735c42e3c660_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a1609620c03f6b0068601735c42e3c660_icgraph}
+\includegraphics[width=350pt]{io_8c_a1609620c03f6b0068601735c42e3c660_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_aab1e6568bf14b3a23c66f70c94aabd21}{
-\index{io.c@{io.c}!my\_\-fwrite@{my\_\-fwrite}}
-\index{my\_\-fwrite@{my\_\-fwrite}!io.c@{io.c}}
-\subsubsection[{my\_\-fwrite}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t my\_\-fwrite (
+\hypertarget{io_8c_aab1e6568bf14b3a23c66f70c94aabd21}{\index{io.\-c@{io.\-c}!my\-\_\-fwrite@{my\-\_\-fwrite}}
+\index{my\-\_\-fwrite@{my\-\_\-fwrite}!io.c@{io.\-c}}
+\subsubsection[{my\-\_\-fwrite}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t {\bf my\-\_\-fwrite} (
 \begin{DoxyParamCaption}
-\item[{void $\ast$}]{ ptr, }
-\item[{size\_\-t}]{ size, }
-\item[{size\_\-t}]{ nmemb, }
-\item[{FILE $\ast$}]{ stream}
+\item[{void $\ast$}]{ptr, }
+\item[{size\-\_\-t}]{size, }
+\item[{size\-\_\-t}]{nmemb, }
+\item[{\-F\-I\-L\-E $\ast$}]{stream}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_aab1e6568bf14b3a23c66f70c94aabd21}
-This catches I/O errors occuring for \hyperlink{io_8c_aab1e6568bf14b3a23c66f70c94aabd21}{my\_\-fwrite()}. In this case we better stop. 
+)}}\label{io_8c_aab1e6568bf14b3a23c66f70c94aabd21}
+\-This catches \-I/\-O errors occuring for \hyperlink{io_8c_aab1e6568bf14b3a23c66f70c94aabd21}{my\-\_\-fwrite()}. \-In this case we better stop. 
 
-Definition at line 1122 of file io.c.
-
-
-
-References endrun(), and ThisTask.
+\-Definition at line 1122 of file io.\-c.
 
 
 
-Referenced by byten(), dump\_\-particles(), ewald\_\-init(), in(), and write\_\-file().
+\-References endrun(), and \-This\-Task.
 
 
+
+\-Referenced by byten(), dump\-\_\-particles(), ewald\-\_\-init(), in(), and write\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -1020,8 +936,8 @@ Referenced by byten(), dump\_\-particles(), ewald\_\-init(), in(), and write\_\-
 
   if((nwritten = fwrite(ptr, size, nmemb, stream)) != nmemb)
     {
-      printf("I/O error (fwrite) on task=%d has occured: %s\n", ThisTask, strerro
-      r(errno));
+      printf("I/O error (fwrite) on task=%d has occured: %s\n", ThisTask, 
+      strerror(errno));
       fflush(stdout);
       endrun(777);
     }
@@ -1030,52 +946,46 @@ Referenced by byten(), dump\_\-particles(), ewald\_\-init(), in(), and write\_\-
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=382pt]{io_8c_aab1e6568bf14b3a23c66f70c94aabd21_cgraph}
+\includegraphics[width=350pt]{io_8c_aab1e6568bf14b3a23c66f70c94aabd21_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_aab1e6568bf14b3a23c66f70c94aabd21_icgraph}
+\includegraphics[width=350pt]{io_8c_aab1e6568bf14b3a23c66f70c94aabd21_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_a523730833804b6d92aa7f4dd474805c5}{
-\index{io.c@{io.c}!savepositions@{savepositions}}
-\index{savepositions@{savepositions}!io.c@{io.c}}
-\subsubsection[{savepositions}]{\setlength{\rightskip}{0pt plus 5cm}void savepositions (
+\hypertarget{io_8c_a523730833804b6d92aa7f4dd474805c5}{\index{io.\-c@{io.\-c}!savepositions@{savepositions}}
+\index{savepositions@{savepositions}!io.c@{io.\-c}}
+\subsubsection[{savepositions}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf savepositions} (
 \begin{DoxyParamCaption}
-\item[{int}]{ num}
+\item[{int}]{num}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_a523730833804b6d92aa7f4dd474805c5}
-This function writes a snapshot of the particle distribution to one or several files using the selected file format. If NumFilesPerSnapshot$>$1, the snapshot is distributed onto several files, several of them can be written simultaneously (up to NumFilesWrittenInParallel). Each file contains data from a group of processors. 
+)}}\label{io_8c_a523730833804b6d92aa7f4dd474805c5}
+\-This function writes a snapshot of the particle distribution to one or several files using the selected file format. \-If \-Num\-Files\-Per\-Snapshot$>$1, the snapshot is distributed onto several files, several of them can be written simultaneously (up to \-Num\-Files\-Written\-In\-Parallel). \-Each file contains data from a group of processors. 
 
-Definition at line 33 of file io.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::CPU\_\-Snapshot, distribute\_\-file(), endrun(), fill\_\-Tab\_\-IO\_\-Labels(), n\_\-type, NTask, ntot\_\-type\_\-all, global\_\-data\_\-all\_\-processes::NumFilesPerSnapshot, global\_\-data\_\-all\_\-processes::NumFilesWrittenInParallel, global\_\-data\_\-all\_\-processes::NumForcesSinceLastDomainDecomp, NumPart, global\_\-data\_\-all\_\-processes::OutputDir, P, second(), global\_\-data\_\-all\_\-processes::SnapFormat, global\_\-data\_\-all\_\-processes::SnapshotFileBase, ThisTask, timediff(), global\_\-data\_\-all\_\-processes::TotNumPart, global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency, and write\_\-file().
+\-Definition at line 33 of file io.\-c.
 
 
 
-Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
+\-References \-All, distribute\-\_\-file(), endrun(), fill\-\_\-\-Tab\-\_\-\-I\-O\-\_\-\-Labels(), n\-\_\-type, \-N\-Task, ntot\-\_\-type\-\_\-all, \-Num\-Part, \-P, second(), \-This\-Task, timediff(), and write\-\_\-file().
 
 
+
+\-Referenced by find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift(), and run().
 
 
 \begin{DoxyCode}
@@ -1099,8 +1009,8 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
   if(NTask < All.NumFilesPerSnapshot)
     {
       if(ThisTask == 0)
-        printf("Fatal error.\nNumber of processors must be larger or equal than A
-      ll.NumFilesPerSnapshot.\n");
+        printf("Fatal error.\nNumber of processors must be larger or equal than
+       All.NumFilesPerSnapshot.\n");
       endrun(0);
     }
   if(All.SnapFormat < 1 || All.SnapFormat > 3)
@@ -1141,14 +1051,14 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
 
 
   /* assign processors to output files */
-  distribute_file(All.NumFilesPerSnapshot, 0, 0, NTask - 1, &filenr, &masterTask,
-       &lastTask);
+  distribute_file(All.NumFilesPerSnapshot, 0, 0, NTask - 1, &filenr, &
+      masterTask, &lastTask);
 
   fill_Tab_IO_Labels();
 
   if(All.NumFilesPerSnapshot > 1)
-    sprintf(buf, "%s%s_%03d.%d", All.OutputDir, All.SnapshotFileBase, num, filenr
-      );
+    sprintf(buf, "%s%s_%03d.%d", All.OutputDir, All.SnapshotFileBase, num, 
+      filenr);
   else
     sprintf(buf, "%s%s_%03d", All.OutputDir, All.SnapshotFileBase, num);
 
@@ -1158,8 +1068,8 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
 
   for(gr = 0; gr < ngroups; gr++)
     {
-      if((filenr / All.NumFilesWrittenInParallel) == gr)        /* ok, it's this 
-      processor's turn */
+      if((filenr / All.NumFilesWrittenInParallel) == gr)        /* ok, it's
+       this processor's turn */
         write_file(buf, masterTask, lastTask);
       MPI_Barrier(MPI_COMM_WORLD);
     }
@@ -1176,62 +1086,52 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a523730833804b6d92aa7f4dd474805c5_cgraph}
+\includegraphics[width=350pt]{io_8c_a523730833804b6d92aa7f4dd474805c5_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a523730833804b6d92aa7f4dd474805c5_icgraph}
+\includegraphics[width=350pt]{io_8c_a523730833804b6d92aa7f4dd474805c5_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_a2b3f5bacd7313da0f3ffa55e41907481}{
-\index{io.c@{io.c}!write\_\-file@{write\_\-file}}
-\index{write\_\-file@{write\_\-file}!io.c@{io.c}}
-\subsubsection[{write\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void write\_\-file (
+\hypertarget{io_8c_a2b3f5bacd7313da0f3ffa55e41907481}{\index{io.\-c@{io.\-c}!write\-\_\-file@{write\-\_\-file}}
+\index{write\-\_\-file@{write\-\_\-file}!io.c@{io.\-c}}
+\subsubsection[{write\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf write\-\_\-file} (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{ fname, }
-\item[{int}]{ writeTask, }
-\item[{int}]{ lastTask}
+\item[{char $\ast$}]{fname, }
+\item[{int}]{write\-Task, }
+\item[{int}]{last\-Task}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_a2b3f5bacd7313da0f3ffa55e41907481}
-This function writes an actual snapshot file containing the data from processors 'writeTask' to 'lastTask'. 'writeTask' is the one that actually writes. Each snapshot file contains a header first, then particle positions, velocities and ID's. Particle masses are written only for those particle types with zero entry in MassTable. After that, first the internal energies u, and then the density is written for the SPH particles. If cooling is enabled, mean molecular weight and neutral hydrogen abundance are written for the gas particles. This is followed by the SPH smoothing length and further blocks of information, depending on included physics and compile-\/time flags. If HDF5 is used, the header is stored in a group called \char`\"{}/Header\char`\"{}, and the particle data is stored separately for each particle type in groups calles \char`\"{}/PartType0\char`\"{}, \char`\"{}/PartType1\char`\"{}, etc. The sequence of the blocks is unimportant in this case. 
+)}}\label{io_8c_a2b3f5bacd7313da0f3ffa55e41907481}
+\-This function writes an actual snapshot file containing the data from processors 'write\-Task' to 'last\-Task'. 'write\-Task' is the one that actually writes. \-Each snapshot file contains a header first, then particle positions, velocities and \-I\-D's. \-Particle masses are written only for those particle types with zero entry in \-Mass\-Table. \-After that, first the internal energies u, and then the density is written for the \-S\-P\-H particles. \-If cooling is enabled, mean molecular weight and neutral hydrogen abundance are written for the gas particles. \-This is followed by the \-S\-P\-H smoothing length and further blocks of information, depending on included physics and compile-\/time flags. \-If \-H\-D\-F5 is used, the header is stored in a group called \char`\"{}/\-Header\char`\"{}, and the particle data is stored separately for each particle type in groups calles \char`\"{}/\-Part\-Type0\char`\"{}, \char`\"{}/\-Part\-Type1\char`\"{}, etc. \-The sequence of the blocks is unimportant in this case. $<$ \-Various tags used for labelling \-M\-P\-I messages
 
-$<$ Various tags used for labelling MPI messages
+$<$ \-Various tags used for labelling \-M\-P\-I messages
 
-$<$ Various tags used for labelling MPI messages
+$<$ total number of defined information blocks for snapshot files. \-Must be equal to the number of entries in \char`\"{}enum iofields\char`\"{} 
 
-$<$ total number of defined 0 0 for snapshot files. Must be equal to the number of entries in \char`\"{}enum iofields\char`\"{} 
-
-
-
-Definition at line 672 of file io.c.
+\-Definition at line 672 of file io.\-c.
 
 
 
-References All, blockpresent(), global\_\-data\_\-all\_\-processes::BoxSize, io\_\-header::BoxSize, global\_\-data\_\-all\_\-processes::BufferSize, CommBuffer, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, endrun(), fd, fill\_\-write\_\-buffer(), io\_\-header::flag\_\-cooling, io\_\-header::flag\_\-feedback, io\_\-header::flag\_\-metals, io\_\-header::flag\_\-sfr, io\_\-header::flag\_\-stellarage, get\_\-bytes\_\-per\_\-blockelement(), get\_\-dataset\_\-name(), get\_\-datatype\_\-in\_\-block(), get\_\-particles\_\-in\_\-block(), get\_\-values\_\-per\_\-blockelement(), header, global\_\-data\_\-all\_\-processes::HubbleParam, io\_\-header::HubbleParam, io\_\-header::mass, global\_\-data\_\-all\_\-processes::MassTable, my\_\-fwrite(), n\_\-type, io\_\-header::npart, io\_\-header::npartTotal, io\_\-header::npartTotalHighWord, ntot\_\-type\_\-all, io\_\-header::num\_\-files, global\_\-data\_\-all\_\-processes::NumFilesPerSnapshot, global\_\-data\_\-all\_\-processes::Omega0, io\_\-header::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, io\_\-header::OmegaLambda, io\_\-header::redshift, global\_\-data\_\-all\_\-processes::SnapFormat, Tab\_\-IO\_\-Labels, TAG\_\-LOCALN, TAG\_\-N, TAG\_\-NFORTHISTASK, TAG\_\-PDATA, ThisTask, global\_\-data\_\-all\_\-processes::Time, io\_\-header::time, and write\_\-header\_\-attributes\_\-in\_\-hdf5().
+\-References \-All, blockpresent(), \-Comm\-Buffer, endrun(), fd, fill\-\_\-write\-\_\-buffer(), get\-\_\-bytes\-\_\-per\-\_\-blockelement(), get\-\_\-dataset\-\_\-name(), get\-\_\-datatype\-\_\-in\-\_\-block(), get\-\_\-particles\-\_\-in\-\_\-block(), get\-\_\-values\-\_\-per\-\_\-blockelement(), header, my\-\_\-fwrite(), n\-\_\-type, ntot\-\_\-type\-\_\-all, \-S\-K\-I\-P, \-Tab\-\_\-\-I\-O\-\_\-\-Labels, \-T\-A\-G\-\_\-\-L\-O\-C\-A\-L\-N, \-T\-A\-G\-\_\-\-N, \-T\-A\-G\-\_\-\-N\-F\-O\-R\-T\-H\-I\-S\-T\-A\-S\-K, \-T\-A\-G\-\_\-\-P\-D\-A\-T\-A, \-This\-Task, and write\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5().
 
 
 
-Referenced by savepositions().
-
-
+\-Referenced by savepositions().
 
 
 \begin{DoxyCode}
@@ -1264,8 +1164,8 @@ Referenced by savepositions().
 
       for(task = writeTask + 1; task <= lastTask; task++)
         {
-          MPI_Recv(&nn[0], 6, MPI_INT, task, TAG_LOCALN, MPI_COMM_WORLD, &status)
-      ;
+          MPI_Recv(&nn[0], 6, MPI_INT, task, TAG_LOCALN, MPI_COMM_WORLD, &
+      status);
           for(n = 0; n < 6; n++)
             ntot_type[n] += nn[n];
         }
@@ -1276,8 +1176,8 @@ Referenced by savepositions().
   else
     {
       MPI_Send(&n_type[0], 6, MPI_INT, writeTask, TAG_LOCALN, MPI_COMM_WORLD);
-      MPI_Recv(&ntot_type[0], 6, MPI_INT, writeTask, TAG_N, MPI_COMM_WORLD, &stat
-      us);
+      MPI_Recv(&ntot_type[0], 6, MPI_INT, writeTask, TAG_N, MPI_COMM_WORLD, &
+      status);
     }
 
 
@@ -1385,8 +1285,8 @@ Referenced by savepositions().
         {
           bytes_per_blockelement = get_bytes_per_blockelement(blocknr);
 
-          blockmaxlen = ((int) (All.BufferSize * 1024 * 1024)) / bytes_per_blocke
-      lement;
+          blockmaxlen = ((int) (All.BufferSize * 1024 * 1024)) / 
+      bytes_per_blockelement;
 
           npart = get_particles_in_block(blocknr, &typelist[0]);
 
@@ -1401,10 +1301,10 @@ Referenced by savepositions().
                         {
                           blksize = sizeof(int) + 4 * sizeof(char);
                           SKIP;
-                          my_fwrite(Tab_IO_Labels[blocknr], sizeof(char), 4, fd);
-      
-                          nextblock = npart * bytes_per_blockelement + 2 * sizeof
-      (int);
+                          my_fwrite(Tab_IO_Labels[blocknr], sizeof(char), 4, fd
+      );
+                          nextblock = npart * bytes_per_blockelement + 2 * 
+      sizeof(int);
                           my_fwrite(&nextblock, sizeof(int), 1, fd);
                           SKIP;
                         }
@@ -1420,8 +1320,8 @@ Referenced by savepositions().
                   if(typelist[type])
                     {
 #ifdef HAVE_HDF5
-                      if(ThisTask == writeTask && All.SnapFormat == 3 && header.
-      npart[type] > 0)
+                      if(ThisTask == writeTask && All.SnapFormat == 3 && header
+      .npart[type] > 0)
                         {
                           switch (get_datatype_in_block(blocknr))
                             {
@@ -1445,18 +1345,18 @@ Referenced by savepositions().
 
                           get_dataset_name(blocknr, buf);
 
-                          hdf5_dataspace_in_file = H5Screate_simple(rank, dims, N
-      ULL);
+                          hdf5_dataspace_in_file = H5Screate_simple(rank, dims,
+       NULL);
                           hdf5_dataset =
-                            H5Dcreate(hdf5_grp[type], buf, hdf5_datatype, hdf5_da
-      taspace_in_file,
+                            H5Dcreate(hdf5_grp[type], buf, hdf5_datatype, 
+      hdf5_dataspace_in_file,
                                       H5P_DEFAULT);
                           pcsum = 0;
                         }
 #endif
 
-                      for(task = writeTask, offset = 0; task <= lastTask; task++)
-      
+                      for(task = writeTask, offset = 0; task <= lastTask; task+
+      +)
                         {
                           if(task == ThisTask)
                             {
@@ -1483,13 +1383,13 @@ Referenced by savepositions().
                                 fill_write_buffer(blocknr, &offset, pc, type);
 
                               if(ThisTask == writeTask && task != writeTask)
-                                MPI_Recv(CommBuffer, bytes_per_blockelement * pc,
-       MPI_BYTE, task,
+                                MPI_Recv(CommBuffer, bytes_per_blockelement * 
+      pc, MPI_BYTE, task,
                                          TAG_PDATA, MPI_COMM_WORLD, &status);
 
                               if(ThisTask != writeTask && task == ThisTask)
-                                MPI_Ssend(CommBuffer, bytes_per_blockelement * pc
-      , MPI_BYTE, writeTask,
+                                MPI_Ssend(CommBuffer, bytes_per_blockelement * 
+      pc, MPI_BYTE, writeTask,
                                           TAG_PDATA, MPI_COMM_WORLD);
 
                               if(ThisTask == writeTask)
@@ -1501,33 +1401,33 @@ Referenced by savepositions().
                                       start[1] = 0;
 
                                       count[0] = pc;
-                                      count[1] = get_values_per_blockelement(bloc
-      knr);
+                                      count[1] = get_values_per_blockelement(
+      blocknr);
                                       pcsum += pc;
 
-                                      H5Sselect_hyperslab(hdf5_dataspace_in_file,
-       H5S_SELECT_SET,
-                                                          start, NULL, count, NUL
-      L);
+                                      H5Sselect_hyperslab(
+      hdf5_dataspace_in_file, H5S_SELECT_SET,
+                                                          start, NULL, count, 
+      NULL);
 
                                       dims[0] = pc;
-                                      dims[1] = get_values_per_blockelement(block
-      nr);
-                                      hdf5_dataspace_memory = H5Screate_simple(ra
-      nk, dims, NULL);
+                                      dims[1] = get_values_per_blockelement(
+      blocknr);
+                                      hdf5_dataspace_memory = H5Screate_simple(
+      rank, dims, NULL);
 
                                       hdf5_status =
-                                        H5Dwrite(hdf5_dataset, hdf5_datatype, hdf
-      5_dataspace_memory,
-                                                 hdf5_dataspace_in_file, H5P_DEFA
-      ULT, CommBuffer);
+                                        H5Dwrite(hdf5_dataset, hdf5_datatype, 
+      hdf5_dataspace_memory,
+                                                 hdf5_dataspace_in_file, 
+      H5P_DEFAULT, CommBuffer);
 
                                       H5Sclose(hdf5_dataspace_memory);
 #endif
                                     }
                                   else
-                                    my_fwrite(CommBuffer, bytes_per_blockelement,
-       pc, fd);
+                                    my_fwrite(CommBuffer, 
+      bytes_per_blockelement, pc, fd);
                                 }
 
                               n_for_this_task -= pc;
@@ -1535,8 +1435,8 @@ Referenced by savepositions().
                         }
 
 #ifdef HAVE_HDF5
-                      if(ThisTask == writeTask && All.SnapFormat == 3 && header.
-      npart[type] > 0)
+                      if(ThisTask == writeTask && All.SnapFormat == 3 && header
+      .npart[type] > 0)
                         {
                           if(All.SnapFormat == 3)
                             {
@@ -1577,52 +1477,46 @@ Referenced by savepositions().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a2b3f5bacd7313da0f3ffa55e41907481_cgraph}
+\includegraphics[width=350pt]{io_8c_a2b3f5bacd7313da0f3ffa55e41907481_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_a2b3f5bacd7313da0f3ffa55e41907481_icgraph}
+\includegraphics[width=350pt]{io_8c_a2b3f5bacd7313da0f3ffa55e41907481_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{io_8c_ad5243b69dcba17be62f7d64f422bfbbf}{
-\index{io.c@{io.c}!write\_\-header\_\-attributes\_\-in\_\-hdf5@{write\_\-header\_\-attributes\_\-in\_\-hdf5}}
-\index{write\_\-header\_\-attributes\_\-in\_\-hdf5@{write\_\-header\_\-attributes\_\-in\_\-hdf5}!io.c@{io.c}}
-\subsubsection[{write\_\-header\_\-attributes\_\-in\_\-hdf5}]{\setlength{\rightskip}{0pt plus 5cm}void write\_\-header\_\-attributes\_\-in\_\-hdf5 (
+\hypertarget{io_8c_ad5243b69dcba17be62f7d64f422bfbbf}{\index{io.\-c@{io.\-c}!write\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5@{write\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5}}
+\index{write\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5@{write\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5}!io.c@{io.\-c}}
+\subsubsection[{write\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf write\-\_\-header\-\_\-attributes\-\_\-in\-\_\-hdf5} (
 \begin{DoxyParamCaption}
-\item[{hid\_\-t}]{ handle}
+\item[{hid\-\_\-t}]{handle}
 \end{DoxyParamCaption}
-)}}
-\label{io_8c_ad5243b69dcba17be62f7d64f422bfbbf}
-This function writes the header information in case HDF5 is selected as file format. 
+)}}\label{io_8c_ad5243b69dcba17be62f7d64f422bfbbf}
+\-This function writes the header information in case \-H\-D\-F5 is selected as file format. 
 
-Definition at line 998 of file io.c.
-
-
-
-References io\_\-header::BoxSize, io\_\-header::flag\_\-cooling, io\_\-header::flag\_\-entropy\_\-instead\_\-u, io\_\-header::flag\_\-feedback, io\_\-header::flag\_\-metals, io\_\-header::flag\_\-sfr, io\_\-header::flag\_\-stellarage, header, io\_\-header::HubbleParam, io\_\-header::mass, io\_\-header::npart, io\_\-header::npartTotal, io\_\-header::npartTotalHighWord, io\_\-header::num\_\-files, io\_\-header::Omega0, io\_\-header::OmegaLambda, io\_\-header::redshift, and io\_\-header::time.
+\-Definition at line 998 of file io.\-c.
 
 
 
-Referenced by write\_\-file().
+\-References header.
 
 
+
+\-Referenced by write\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -1632,24 +1526,24 @@ Referenced by write\_\-file().
 
   hdf5_dataspace = H5Screate(H5S_SIMPLE);
   H5Sset_extent_simple(hdf5_dataspace, 1, adim, NULL);
-  hdf5_attribute = H5Acreate(handle, "NumPart_ThisFile", H5T_NATIVE_INT, hdf5_dat
-      aspace, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "NumPart_ThisFile", H5T_NATIVE_INT, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_UINT, header.npart);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SIMPLE);
   H5Sset_extent_simple(hdf5_dataspace, 1, adim, NULL);
-  hdf5_attribute = H5Acreate(handle, "NumPart_Total", H5T_NATIVE_UINT, hdf5_datas
-      pace, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "NumPart_Total", H5T_NATIVE_UINT, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_UINT, header.npartTotal);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SIMPLE);
   H5Sset_extent_simple(hdf5_dataspace, 1, adim, NULL);
-  hdf5_attribute = H5Acreate(handle, "NumPart_Total_HW", H5T_NATIVE_UINT, hdf5_da
-      taspace, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "NumPart_Total_HW", H5T_NATIVE_UINT, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_UINT, header.npartTotalHighWord);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
@@ -1657,92 +1551,92 @@ Referenced by write\_\-file().
 
   hdf5_dataspace = H5Screate(H5S_SIMPLE);
   H5Sset_extent_simple(hdf5_dataspace, 1, adim, NULL);
-  hdf5_attribute = H5Acreate(handle, "MassTable", H5T_NATIVE_DOUBLE, hdf5_dataspa
-      ce, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "MassTable", H5T_NATIVE_DOUBLE, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_DOUBLE, header.mass);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "Time", H5T_NATIVE_DOUBLE, hdf5_dataspace, H
-      5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "Time", H5T_NATIVE_DOUBLE, hdf5_dataspace,
+       H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_DOUBLE, &header.time);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "Redshift", H5T_NATIVE_DOUBLE, hdf5_dataspac
-      e, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "Redshift", H5T_NATIVE_DOUBLE, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_DOUBLE, &header.redshift);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "BoxSize", H5T_NATIVE_DOUBLE, hdf5_dataspace
-      , H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "BoxSize", H5T_NATIVE_DOUBLE, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_DOUBLE, &header.BoxSize);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "NumFilesPerSnapshot", H5T_NATIVE_INT, hdf5_
-      dataspace, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "NumFilesPerSnapshot", H5T_NATIVE_INT, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_INT, &header.num_files);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "Omega0", H5T_NATIVE_DOUBLE, hdf5_dataspace,
-       H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "Omega0", H5T_NATIVE_DOUBLE, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_DOUBLE, &header.Omega0);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "OmegaLambda", H5T_NATIVE_DOUBLE, hdf5_datas
-      pace, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "OmegaLambda", H5T_NATIVE_DOUBLE, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_DOUBLE, &header.OmegaLambda);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "HubbleParam", H5T_NATIVE_DOUBLE, hdf5_datas
-      pace, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "HubbleParam", H5T_NATIVE_DOUBLE, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_DOUBLE, &header.HubbleParam);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "Flag_Sfr", H5T_NATIVE_INT, hdf5_dataspace, 
-      H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "Flag_Sfr", H5T_NATIVE_INT, hdf5_dataspace
+      , H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_INT, &header.flag_sfr);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "Flag_Cooling", H5T_NATIVE_INT, hdf5_dataspa
-      ce, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "Flag_Cooling", H5T_NATIVE_INT, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_INT, &header.flag_cooling);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "Flag_StellarAge", H5T_NATIVE_INT, hdf5_data
-      space, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "Flag_StellarAge", H5T_NATIVE_INT, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_INT, &header.flag_stellarage);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "Flag_Metals", H5T_NATIVE_INT, hdf5_dataspac
-      e, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "Flag_Metals", H5T_NATIVE_INT, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_INT, &header.flag_metals);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
 
   hdf5_dataspace = H5Screate(H5S_SCALAR);
-  hdf5_attribute = H5Acreate(handle, "Flag_Feedback", H5T_NATIVE_INT, hdf5_datasp
-      ace, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "Flag_Feedback", H5T_NATIVE_INT, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_INT, &header.flag_feedback);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
@@ -1751,8 +1645,8 @@ Referenced by write\_\-file().
 
   hdf5_dataspace = H5Screate(H5S_SIMPLE);
   H5Sset_extent_simple(hdf5_dataspace, 1, adim, NULL);
-  hdf5_attribute = H5Acreate(handle, "Flag_Entropy_ICs", H5T_NATIVE_UINT, hdf5_da
-      taspace, H5P_DEFAULT);
+  hdf5_attribute = H5Acreate(handle, "Flag_Entropy_ICs", H5T_NATIVE_UINT, 
+      hdf5_dataspace, H5P_DEFAULT);
   H5Awrite(hdf5_attribute, H5T_NATIVE_UINT, &header.flag_entropy_instead_u);
   H5Aclose(hdf5_attribute);
   H5Sclose(hdf5_dataspace);
@@ -1760,44 +1654,38 @@ Referenced by write\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{io_8c_ad5243b69dcba17be62f7d64f422bfbbf_icgraph}
+\includegraphics[width=350pt]{io_8c_ad5243b69dcba17be62f7d64f422bfbbf_icgraph}
 \end{center}
 \end{figure}
 
 
 
 
-\subsection{Variable Documentation}
-\hypertarget{io_8c_a217c441656b4bdc1caf0019b5a809bee}{
-\index{io.c@{io.c}!n\_\-type@{n\_\-type}}
-\index{n\_\-type@{n\_\-type}!io.c@{io.c}}
-\subsubsection[{n\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf n\_\-type}\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{io_8c_a217c441656b4bdc1caf0019b5a809bee}
+\subsection{\-Variable \-Documentation}
+\hypertarget{io_8c_a217c441656b4bdc1caf0019b5a809bee}{\index{io.\-c@{io.\-c}!n\-\_\-type@{n\-\_\-type}}
+\index{n\-\_\-type@{n\-\_\-type}!io.c@{io.\-c}}
+\subsubsection[{n\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf n\-\_\-type}\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{io_8c_a217c441656b4bdc1caf0019b5a809bee}
 
 
-Definition at line 21 of file io.c.
-
-
-
-Referenced by savepositions(), and write\_\-file().
-
-\hypertarget{io_8c_a3cfb701790acb5a9b71ba995148bbf40}{
-\index{io.c@{io.c}!ntot\_\-type\_\-all@{ntot\_\-type\_\-all}}
-\index{ntot\_\-type\_\-all@{ntot\_\-type\_\-all}!io.c@{io.c}}
-\subsubsection[{ntot\_\-type\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}long long {\bf ntot\_\-type\_\-all}\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{io_8c_a3cfb701790acb5a9b71ba995148bbf40}
-
-
-Definition at line 22 of file io.c.
+\-Definition at line 21 of file io.\-c.
 
 
 
-Referenced by savepositions(), and write\_\-file().
+\-Referenced by savepositions(), and write\-\_\-file().
+
+\hypertarget{io_8c_a3cfb701790acb5a9b71ba995148bbf40}{\index{io.\-c@{io.\-c}!ntot\-\_\-type\-\_\-all@{ntot\-\_\-type\-\_\-all}}
+\index{ntot\-\_\-type\-\_\-all@{ntot\-\_\-type\-\_\-all}!io.c@{io.\-c}}
+\subsubsection[{ntot\-\_\-type\-\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}long long {\bf ntot\-\_\-type\-\_\-all}\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{io_8c_a3cfb701790acb5a9b71ba995148bbf40}
+
+
+\-Definition at line 22 of file io.\-c.
+
+
+
+\-Referenced by savepositions(), and write\-\_\-file().
 

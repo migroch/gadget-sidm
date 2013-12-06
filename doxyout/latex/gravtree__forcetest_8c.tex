@@ -1,65 +1,60 @@
-\hypertarget{gravtree__forcetest_8c}{
-\section{gravtree\_\-forcetest.c File Reference}
-\label{gravtree__forcetest_8c}\index{gravtree\_\-forcetest.c@{gravtree\_\-forcetest.c}}
+\hypertarget{gravtree__forcetest_8c}{\section{gravtree\-\_\-forcetest.\-c \-File \-Reference}
+\label{gravtree__forcetest_8c}\index{gravtree\-\_\-forcetest.\-c@{gravtree\-\_\-forcetest.\-c}}
 }
 
 
 routines for direct summation forces  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$float.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for gravtree\_\-forcetest.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$float.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for gravtree\-\_\-forcetest.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{gravtree__forcetest_8c__incl}
+\includegraphics[width=350pt]{gravtree__forcetest_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79}{gravity\_\-forcetest} (void)
+void \hyperlink{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79}{gravity\-\_\-forcetest} (void)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-routines for direct summation forces The code in this file allows to compute checks of the force accuracy by an independent direct summation computation. To this end, one can instruct GADGET in the Makefile to coompute direct summation forces for a certain random subfraction of particles. 
+\subsection{\-Detailed \-Description}
+routines for direct summation forces \-The code in this file allows to compute checks of the force accuracy by an independent direct summation computation. \-To this end, one can instruct \-G\-A\-D\-G\-E\-T in the \-Makefile to coompute direct summation forces for a certain random subfraction of particles. 
 
-Definition in file \hyperlink{gravtree__forcetest_8c_source}{gravtree\_\-forcetest.c}.
+\-Definition in file \hyperlink{gravtree__forcetest_8c_source}{gravtree\-\_\-forcetest.\-c}.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79}{
-\index{gravtree\_\-forcetest.c@{gravtree\_\-forcetest.c}!gravity\_\-forcetest@{gravity\_\-forcetest}}
-\index{gravity\_\-forcetest@{gravity\_\-forcetest}!gravtree_forcetest.c@{gravtree\_\-forcetest.c}}
-\subsubsection[{gravity\_\-forcetest}]{\setlength{\rightskip}{0pt plus 5cm}void gravity\_\-forcetest (
+\subsection{\-Function \-Documentation}
+\hypertarget{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79}{\index{gravtree\-\_\-forcetest.\-c@{gravtree\-\_\-forcetest.\-c}!gravity\-\_\-forcetest@{gravity\-\_\-forcetest}}
+\index{gravity\-\_\-forcetest@{gravity\-\_\-forcetest}!gravtree_forcetest.c@{gravtree\-\_\-forcetest.\-c}}
+\subsubsection[{gravity\-\_\-forcetest}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf gravity\-\_\-forcetest} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79}
-This routine does the test of the gravitational tree force by computing the force for a random subset of particles with direct summation. 
+)}}\label{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79}
+\-This routine does the test of the gravitational tree force by computing the force for a random subset of particles with direct summation. 
 
-Definition at line 28 of file gravtree\_\-forcetest.c.
-
-
-
-References gravdata\_\-in::Acc, All, global\_\-data\_\-all\_\-processes::BunchSizeForce, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, endrun(), Exportflag, fac1, FdForceTest, FdTimings, force\_\-treeevaluate\_\-direct(), global\_\-data\_\-all\_\-processes::G, get\_\-random\_\-number(), grav\_\-tree\_\-compare\_\-key(), particle\_\-data::GravAccel, particle\_\-data::GravAccelDirect, GravDataGet, GravDataIn, GravDataIndexTable, GravDataOut, GravDataResult, particle\_\-data::GravPM, global\_\-data\_\-all\_\-processes::Hubble, gravdata\_\-index::Index, NTask, NumForceUpdate, NumPart, particle\_\-data::OldAcc, gravdata\_\-in::OldAcc, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, global\_\-data\_\-all\_\-processes::OutputDir, P, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-endstep, particle\_\-data::Pos, gravdata\_\-in::Pos, PTask, second(), set\_\-softenings(), gravdata\_\-index::SortIndex, TAG\_\-DIRECT\_\-A, TAG\_\-DIRECT\_\-B, gravdata\_\-index::Task, ThisTask, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, global\_\-data\_\-all\_\-processes::Time, timediff(), TimeOfLastTreeConstruction, global\_\-data\_\-all\_\-processes::TotNumPart, particle\_\-data::Type, and gravdata\_\-in::w.
+\-Definition at line 28 of file gravtree\-\_\-forcetest.\-c.
 
 
 
-Referenced by compute\_\-accelerations().
+\-References \-All, endrun(), \-Exportflag, fac1, \-Fd\-Force\-Test, \-Fd\-Timings, force\-\_\-treeevaluate\-\_\-direct(), get\-\_\-random\-\_\-number(), grav\-\_\-tree\-\_\-compare\-\_\-key(), \-Grav\-Data\-Get, \-Grav\-Data\-In, \-Grav\-Data\-Index\-Table, \-Grav\-Data\-Out, \-Grav\-Data\-Result, \-N\-Task, \-Num\-Force\-Update, \-Num\-Part, \-P, \-P\-Task, second(), set\-\_\-softenings(), \-T\-A\-G\-\_\-\-D\-I\-R\-E\-C\-T\-\_\-\-A, \-T\-A\-G\-\_\-\-D\-I\-R\-E\-C\-T\-\_\-\-B, \-This\-Task, timediff(), and \-Time\-Of\-Last\-Tree\-Construction.
 
 
+
+\-Referenced by compute\-\_\-accelerations().
 
 
 \begin{DoxyCode}
@@ -100,15 +95,15 @@ Referenced by compute\_\-accelerations().
         }
     }
 
-  /* NumForceUpdate is the number of particles on this processor that want a forc
-      e update */
+  /* NumForceUpdate is the number of particles on this processor that want a
+       force update */
 
   MPI_Allreduce(&NumForceUpdate, &ntot, 1, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
 
   costtotal = 0;
 
-  noffset = malloc(sizeof(int) * NTask);        /* offsets of bunches in common l
-      ist */
+  noffset = malloc(sizeof(int) * NTask);        /* offsets of bunches in common
+       list */
   nbuffer = malloc(sizeof(int) * NTask);
   nsend_local = malloc(sizeof(int) * NTask);
   nsend = malloc(sizeof(int) * NTask * NTask);
@@ -125,8 +120,8 @@ Referenced by compute\_\-accelerations().
 
       /* do local particles and prepare export list */
       tstart = second();
-      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - N
-      Task; i++)
+      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce -
+       NTask; i++)
         if(P[i].Ti_endstep < 0)
           {
             ndone++;
@@ -170,8 +165,8 @@ Referenced by compute\_\-accelerations().
       for(j = 1, noffset[0] = 0; j < NTask; j++)
         noffset[j] = noffset[j - 1] + nsend_local[j - 1];
 
-      MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, MPI_COMM_
-      WORLD);
+      MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, 
+      MPI_COMM_WORLD);
 
       /* now do the particles that need to be exported */
 
@@ -196,8 +191,8 @@ Referenced by compute\_\-accelerations().
 
               if(recvTask < NTask)
                 {
-                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
-      Task + ThisTask] > 0)
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask *
+       NTask + ThisTask] > 0)
                     {
                       /* get the particles */
                       MPI_Sendrecv(&GravDataIn[noffset[recvTask]],
@@ -205,10 +200,10 @@ Referenced by compute\_\-accelerations().
       gravdata_in), MPI_BYTE,
                                    recvTask, TAG_DIRECT_A,
                                    &GravDataGet[nbuffer[ThisTask]],
-                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
-      ruct gravdata_in), MPI_BYTE,
-                                   recvTask, TAG_DIRECT_A, MPI_COMM_WORLD, &statu
-      s);
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(
+      struct gravdata_in), MPI_BYTE,
+                                   recvTask, TAG_DIRECT_A, MPI_COMM_WORLD, &
+      status);
                     }
                 }
 
@@ -245,19 +240,19 @@ Referenced by compute\_\-accelerations().
               recvTask = ThisTask ^ ngrp;
               if(recvTask < NTask)
                 {
-                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
-      Task + ThisTask] > 0)
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask *
+       NTask + ThisTask] > 0)
                     {
                       /* send the results */
                       MPI_Sendrecv(&GravDataResult[nbuffer[ThisTask]],
-                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
-      ruct gravdata_in),
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(
+      struct gravdata_in),
                                    MPI_BYTE, recvTask, TAG_DIRECT_B,
                                    &GravDataOut[noffset[recvTask]],
                                    nsend_local[recvTask] * sizeof(struct 
       gravdata_in),
-                                   MPI_BYTE, recvTask, TAG_DIRECT_B, MPI_COMM_WOR
-      LD, &status);
+                                   MPI_BYTE, recvTask, TAG_DIRECT_B, 
+      MPI_COMM_WORLD, &status);
 
                       /* add the result to the particles */
                       for(j = 0; j < nsend_local[recvTask]; j++)
@@ -266,8 +261,8 @@ Referenced by compute\_\-accelerations().
       Index;
 
                           for(k = 0; k < 3; k++)
-                            P[place].GravAccelDirect[k] += GravDataOut[j + noffse
-      t[recvTask]].u.Acc[k];
+                            P[place].GravAccelDirect[k] += GravDataOut[j + 
+      noffset[recvTask]].u.Acc[k];
                         }
                     }
                 }
@@ -316,8 +311,8 @@ Referenced by compute\_\-accelerations().
 
 
 
-  /* Finally, the following factor allows a computation of cosmological simulatio
-      n 
+  /* Finally, the following factor allows a computation of cosmological
+       simulation 
      with vacuum energy in physical coordinates */
 
   if(All.ComovingIntegrationOn == 0)
@@ -352,20 +347,21 @@ Referenced by compute\_\-accelerations().
                         P[i].Pos[0], P[i].Pos[1], P[i].Pos[2],
                         P[i].GravAccelDirect[0], P[i].GravAccelDirect[1], P[i].
       GravAccelDirect[2],
-                        P[i].GravAccel[0], P[i].GravAccel[1], P[i].GravAccel[2]);
-      
+                        P[i].GravAccel[0], P[i].GravAccel[1], P[i].GravAccel[2]
+      );
 #else
-                fprintf(FdForceTest, "%d %g %g %g %g %g %g %g %g %g %g %g %g %g %
-      g\n",
+                fprintf(FdForceTest, "%d %g %g %g %g %g %g %g %g %g %g %g %g %g
+       %g\n",
                         P[i].Type, All.Time, All.Time - 
       TimeOfLastTreeConstruction,
                         P[i].Pos[0], P[i].Pos[1], P[i].Pos[2],
                         P[i].GravAccelDirect[0], P[i].GravAccelDirect[1], P[i].
       GravAccelDirect[2],
-                        P[i].GravAccel[0], P[i].GravAccel[1], P[i].GravAccel[2],
+                        P[i].GravAccel[0], P[i].GravAccel[1], P[i].GravAccel[2]
+      ,
                         P[i].GravPM[0] + P[i].GravAccel[0],
-                        P[i].GravPM[1] + P[i].GravAccel[1], P[i].GravPM[2] + P[i]
-      .GravAccel[2]);
+                        P[i].GravPM[1] + P[i].GravAccel[1], P[i].GravPM[2] + P[
+      i].GravAccel[2]);
 #endif
               }
           fclose(FdForceTest);
@@ -384,17 +380,17 @@ Referenced by compute\_\-accelerations().
   timetreelist = malloc(sizeof(double) * NTask);
   costtreelist = malloc(sizeof(double) * NTask);
 
-  MPI_Gather(&costtotal, 1, MPI_DOUBLE, costtreelist, 1, MPI_DOUBLE, 0, MPI_COMM_
-      WORLD);
-  MPI_Gather(&timetree, 1, MPI_DOUBLE, timetreelist, 1, MPI_DOUBLE, 0, MPI_COMM_W
-      ORLD);
+  MPI_Gather(&costtotal, 1, MPI_DOUBLE, costtreelist, 1, MPI_DOUBLE, 0, 
+      MPI_COMM_WORLD);
+  MPI_Gather(&timetree, 1, MPI_DOUBLE, timetreelist, 1, MPI_DOUBLE, 0, 
+      MPI_COMM_WORLD);
 
   if(ThisTask == 0)
     {
       fac = NTask / ((double) All.TotNumPart);
 
-      for(i = 0, maxt = timetreelist[0], sumt = 0, costtotal = 0; i < NTask; i++)
-      
+      for(i = 0, maxt = timetreelist[0], sumt = 0, costtotal = 0; i < NTask; i+
+      +)
         {
           costtotal += costtreelist[i];
 
@@ -403,8 +399,8 @@ Referenced by compute\_\-accelerations().
           sumt += timetreelist[i];
         }
 
-      fprintf(FdTimings, "DIRECT Nf= %d    part/sec=%g | %g  ia/part=%g \n", ntot
-      , ntot / (sumt + 1.0e-20),
+      fprintf(FdTimings, "DIRECT Nf= %d    part/sec=%g | %g  ia/part=%g \n", 
+      ntot, ntot / (sumt + 1.0e-20),
               ntot / (maxt * NTask), ((double) (costtotal)) / ntot);
       fprintf(FdTimings, "\n");
 
@@ -417,26 +413,24 @@ Referenced by compute\_\-accelerations().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79_cgraph}
+\includegraphics[width=350pt]{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79_icgraph}
+\includegraphics[width=350pt]{gravtree__forcetest_8c_a51b074bdf1ec1efc0f7a323415a47e79_icgraph}
 \end{center}
 \end{figure}
 

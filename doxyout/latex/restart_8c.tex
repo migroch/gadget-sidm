@@ -1,81 +1,76 @@
-\hypertarget{restart_8c}{
-\section{restart.c File Reference}
-\label{restart_8c}\index{restart.c@{restart.c}}
+\hypertarget{restart_8c}{\section{restart.\-c \-File \-Reference}
+\label{restart_8c}\index{restart.\-c@{restart.\-c}}
 }
 
 
-Code for reading and writing restart files.  
+\-Code for reading and writing restart files.  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include $<$fcntl.h$>$}\par
-{\ttfamily \#include $<$sys/stat.h$>$}\par
-{\ttfamily \#include $<$sys/types.h$>$}\par
-{\ttfamily \#include $<$sys/file.h$>$}\par
-{\ttfamily \#include $<$unistd.h$>$}\par
-{\ttfamily \#include $<$gsl/gsl\_\-rng.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for restart.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\*
+{\ttfamily \#include $<$sys/file.\-h$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$gsl/gsl\-\_\-rng.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for restart.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{restart_8c__incl}
+\includegraphics[width=350pt]{restart_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{restart_8c_a2f4631df8dbc2cc10c5d7ce28c975ad5}{in} (int $\ast$x, int modus)
 \item 
-static void \hyperlink{restart_8c_aaecf930e789ca4889b8e40770306fe21}{byten} (void $\ast$x, size\_\-t n, int modus)
+static void \hyperlink{restart_8c_aaecf930e789ca4889b8e40770306fe21}{byten} (void $\ast$x, size\-\_\-t n, int modus)
 \item 
 void \hyperlink{restart_8c_ae81d30f52dddd39aef76bb1890d16f2f}{restart} (int modus)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
+\subsection*{\-Variables}
 \begin{DoxyCompactItemize}
 \item 
-static FILE $\ast$ \hyperlink{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}{fd}
+static \-F\-I\-L\-E $\ast$ \hyperlink{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}{fd}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Code for reading and writing restart files. 
+\subsection{\-Detailed \-Description}
+\-Code for reading and writing restart files. 
 
-Definition in file \hyperlink{restart_8c_source}{restart.c}.
+\-Definition in file \hyperlink{restart_8c_source}{restart.\-c}.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{restart_8c_aaecf930e789ca4889b8e40770306fe21}{
-\index{restart.c@{restart.c}!byten@{byten}}
-\index{byten@{byten}!restart.c@{restart.c}}
-\subsubsection[{byten}]{\setlength{\rightskip}{0pt plus 5cm}void byten (
+\subsection{\-Function \-Documentation}
+\hypertarget{restart_8c_aaecf930e789ca4889b8e40770306fe21}{\index{restart.\-c@{restart.\-c}!byten@{byten}}
+\index{byten@{byten}!restart.c@{restart.\-c}}
+\subsubsection[{byten}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf byten} (
 \begin{DoxyParamCaption}
-\item[{void $\ast$}]{ x, }
-\item[{size\_\-t}]{ n, }
-\item[{int}]{ modus}
+\item[{void $\ast$}]{x, }
+\item[{size\-\_\-t}]{n, }
+\item[{int}]{modus}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{restart_8c_aaecf930e789ca4889b8e40770306fe21}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{restart_8c_aaecf930e789ca4889b8e40770306fe21}
 reads/writes n bytes in restart routine 
 
-Definition at line 289 of file restart.c.
+\-Definition at line 289 of file restart.\-c.
 
 
 
-References fd, my\_\-fread(), and my\_\-fwrite().
+\-References fd, my\-\_\-fread(), and my\-\_\-fwrite().
 
 
 
-Referenced by restart().
-
-
+\-Referenced by restart().
 
 
 \begin{DoxyCode}
@@ -88,53 +83,47 @@ Referenced by restart().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{restart_8c_aaecf930e789ca4889b8e40770306fe21_cgraph}
+\includegraphics[width=350pt]{restart_8c_aaecf930e789ca4889b8e40770306fe21_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=374pt]{restart_8c_aaecf930e789ca4889b8e40770306fe21_icgraph}
+\includegraphics[width=350pt]{restart_8c_aaecf930e789ca4889b8e40770306fe21_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{restart_8c_a2f4631df8dbc2cc10c5d7ce28c975ad5}{
-\index{restart.c@{restart.c}!in@{in}}
-\index{in@{in}!restart.c@{restart.c}}
-\subsubsection[{in}]{\setlength{\rightskip}{0pt plus 5cm}void in (
+\hypertarget{restart_8c_a2f4631df8dbc2cc10c5d7ce28c975ad5}{\index{restart.\-c@{restart.\-c}!in@{in}}
+\index{in@{in}!restart.c@{restart.\-c}}
+\subsubsection[{in}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf in} (
 \begin{DoxyParamCaption}
-\item[{int $\ast$}]{ x, }
-\item[{int}]{ modus}
+\item[{int $\ast$}]{x, }
+\item[{int}]{modus}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{restart_8c_a2f4631df8dbc2cc10c5d7ce28c975ad5}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{restart_8c_a2f4631df8dbc2cc10c5d7ce28c975ad5}
 reads/writes one `int' variable in restart routine 
 
-Definition at line 300 of file restart.c.
+\-Definition at line 300 of file restart.\-c.
 
 
 
-References fd, my\_\-fread(), and my\_\-fwrite().
+\-References fd, my\-\_\-fread(), and my\-\_\-fwrite().
 
 
 
-Referenced by restart().
-
-
+\-Referenced by restart().
 
 
 \begin{DoxyCode}
@@ -147,74 +136,64 @@ Referenced by restart().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{restart_8c_a2f4631df8dbc2cc10c5d7ce28c975ad5_cgraph}
+\includegraphics[width=350pt]{restart_8c_a2f4631df8dbc2cc10c5d7ce28c975ad5_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=360pt]{restart_8c_a2f4631df8dbc2cc10c5d7ce28c975ad5_icgraph}
+\includegraphics[width=350pt]{restart_8c_a2f4631df8dbc2cc10c5d7ce28c975ad5_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{restart_8c_ae81d30f52dddd39aef76bb1890d16f2f}{
-\index{restart.c@{restart.c}!restart@{restart}}
-\index{restart@{restart}!restart.c@{restart.c}}
-\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}void restart (
+\hypertarget{restart_8c_ae81d30f52dddd39aef76bb1890d16f2f}{\index{restart.\-c@{restart.\-c}!restart@{restart}}
+\index{restart@{restart}!restart.c@{restart.\-c}}
+\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf restart} (
 \begin{DoxyParamCaption}
-\item[{int}]{ modus}
+\item[{int}]{modus}
 \end{DoxyParamCaption}
-)}}
-\label{restart_8c_ae81d30f52dddd39aef76bb1890d16f2f}
-This function reads or writes the restart files. Each processor writes its own restart file, with the I/O being done in parallel. To avoid congestion of the disks you can tell the program to restrict the number of files that are simultaneously written to NumFilesWrittenInParallel.
+)}}\label{restart_8c_ae81d30f52dddd39aef76bb1890d16f2f}
+\-This function reads or writes the restart files. \-Each processor writes its own restart file, with the \-I/\-O being done in parallel. \-To avoid congestion of the disks you can tell the program to restrict the number of files that are simultaneously written to \-Num\-Files\-Written\-In\-Parallel.
 
-If modus$>$0 the \hyperlink{proto_8h_af3e3dd8294f983f9ed9f75c81d149ec9}{restart()}-\/routine reads, if modus==0 it writes a restart file. 
+\-If modus$>$0 the \hyperlink{proto_8h_af3e3dd8294f983f9ed9f75c81d149ec9}{restart()}-\/routine reads, if modus==0 it writes a restart file. $<$ defines maximum length of neighbour list
 
-$<$ defines maximum length of neighbour list
+$<$ \-Maximum number of nodes in the top-\/level tree used for domain decomposition
 
-$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+$<$ \-Maximum number of nodes in the top-\/level tree used for domain decomposition
 
-$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+$<$ \-Maximum number of nodes in the top-\/level tree used for domain decomposition
 
-$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+$<$ \-Maximum number of nodes in the top-\/level tree used for domain decomposition
 
-$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+$<$ \-Maximum number of nodes in the top-\/level tree used for domain decomposition
 
-$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+$<$ \-Maximum number of nodes in the top-\/level tree used for domain decomposition
 
-$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+$<$ \-Maximum number of nodes in the top-\/level tree used for domain decomposition
 
-$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition
+$<$ \-Maximum number of nodes in the top-\/level tree used for domain decomposition 
 
-$<$ Maximum number of nodes in the top-\/level tree used for domain decomposition 
-
-
-
-Definition at line 35 of file restart.c.
+\-Definition at line 35 of file restart.\-c.
 
 
 
-References All, allocate\_\-memory(), byten(), NODE::d, DomainCenter, DomainCorner, DomainEndList, DomainFac, DomainHmax, DomainLen, DomainMoment, DomainMyLast, DomainMyStart, DomainNodeIndex, DomainStartList, DomainTask, DomainTreeNodeLen, endrun(), Extnodes\_\-base, Father, fd, FLOAT, force\_\-treeallocate(), in(), MAX\_\-NGB, MaxNodes, global\_\-data\_\-all\_\-processes::MaxPart, global\_\-data\_\-all\_\-processes::MaxPartSph, MAXTOPNODES, N\_\-gas, Nextnode, ngb\_\-treeallocate(), Nodes\_\-base, NTask, global\_\-data\_\-all\_\-processes::NumFilesWrittenInParallel, Numnodestree, NumPart, global\_\-data\_\-all\_\-processes::OutputDir, P, global\_\-data\_\-all\_\-processes::PartAllocFactor, random\_\-generator, global\_\-data\_\-all\_\-processes::RestartFile, SphP, ThisTask, global\_\-data\_\-all\_\-processes::Time, global\_\-data\_\-all\_\-processes::TotN\_\-gas, global\_\-data\_\-all\_\-processes::TotNumPart, global\_\-data\_\-all\_\-processes::TreeAllocFactor, and NODE::u.
+\-References \-All, allocate\-\_\-memory(), byten(), \-Domain\-Center, \-Domain\-Corner, \-Domain\-End\-List, \-Domain\-Fac, \-Domain\-Hmax, \-Domain\-Len, \-Domain\-Moment, \-Domain\-My\-Last, \-Domain\-My\-Start, \-Domain\-Node\-Index, \-Domain\-Start\-List, \-Domain\-Task, \-Domain\-Tree\-Node\-Len, endrun(), \-Extnodes\-\_\-base, \-Father, fd, force\-\_\-treeallocate(), in(), \-Max\-Nodes, \-N\-\_\-gas, \-Nextnode, ngb\-\_\-treeallocate(), \-Nodes\-\_\-base, \-N\-Task, \-Numnodestree, \-Num\-Part, \-P, random\-\_\-generator, \-Sph\-P, and \-This\-Task.
 
 
 
-Referenced by begrun(), and run().
-
-
+\-Referenced by begrun(), and run().
 
 
 \begin{DoxyCode}
@@ -233,8 +212,8 @@ Referenced by begrun(), and run().
   if((NTask < All.NumFilesWrittenInParallel))
     {
       printf
-        ("Fatal error.\nNumber of processors must be a smaller or equal than `Num
-      FilesWrittenInParallel'.\n");
+        ("Fatal error.\nNumber of processors must be a smaller or equal than
+       `NumFilesWrittenInParallel'.\n");
       endrun(2131);
     }
 
@@ -249,8 +228,8 @@ Referenced by begrun(), and run().
 
   for(groupTask = 0; groupTask < nprocgroup; groupTask++)
     {
-      if(ThisTask == (masterTask + groupTask))  /* ok, it's this processor's turn
-       */
+      if(ThisTask == (masterTask + groupTask))  /* ok, it's this processor's
+       turn */
         {
           if(modus)
             {
@@ -283,8 +262,8 @@ Referenced by begrun(), and run().
 
           if(modus > 0 && groupTask == 0)       /* read */
             {
-              MPI_Bcast(&all_task0, sizeof(struct global_data_all_processes), MPI
-      _BYTE, 0, MPI_COMM_WORLD);
+              MPI_Bcast(&all_task0, sizeof(struct global_data_all_processes), 
+      MPI_BYTE, 0, MPI_COMM_WORLD);
             }
 
           old_MaxPart = All.MaxPart;
@@ -296,7 +275,8 @@ Referenced by begrun(), and run().
                 {
                   All.PartAllocFactor = save_PartAllocFactor;
                   All.MaxPart = All.PartAllocFactor * (All.TotNumPart / NTask);
-                  All.MaxPartSph = All.PartAllocFactor * (All.TotN_gas / NTask);
+                  All.MaxPartSph = All.PartAllocFactor * (All.TotN_gas / NTask)
+      ;
                   save_PartAllocFactor = -1;
                 }
 
@@ -308,8 +288,8 @@ Referenced by begrun(), and run().
 
               if(all_task0.Time != All.Time)
                 {
-                  printf("The restart file on task=%d is not consistent with the 
-      one on task=0\n", ThisTask);
+                  printf("The restart file on task=%d is not consistent with
+       the one on task=0\n", ThisTask);
                   fflush(stdout);
                   endrun(16);
                 }
@@ -322,8 +302,8 @@ Referenced by begrun(), and run().
           if(NumPart > All.MaxPart)
             {
               printf
-                ("it seems you have reduced(!) 'PartAllocFactor' below the value 
-      of %g needed to load the restart file.\n",
+                ("it seems you have reduced(!) 'PartAllocFactor' below the
+       value of %g needed to load the restart file.\n",
                  NumPart / (((double) All.TotNumPart) / NTask));
               printf("fatal error\n");
               endrun(22);
@@ -339,8 +319,8 @@ Referenced by begrun(), and run().
               if(N_gas > All.MaxPartSph)
                 {
                   printf
-                    ("SPH: it seems you have reduced(!) 'PartAllocFactor' below t
-      he value of %g needed to load the restart file.\n",
+                    ("SPH: it seems you have reduced(!) 'PartAllocFactor' below
+       the value of %g needed to load the restart file.\n",
                      N_gas / (((double) All.TotN_gas) / NTask));
                   printf("fatal error\n");
                   endrun(222);
@@ -350,8 +330,8 @@ Referenced by begrun(), and run().
             }
 
           /* write state of random number generator */
-          byten(gsl_rng_state(random_generator), gsl_rng_size(random_generator), 
-      modus);
+          byten(gsl_rng_state(random_generator), gsl_rng_size(random_generator)
+      , modus);
 
 
           /* now store relevant data for tree */
@@ -360,8 +340,8 @@ Referenced by begrun(), and run().
             {
               ngb_treeallocate(MAX_NGB);
 
-              force_treeallocate(All.TreeAllocFactor * All.MaxPart, All.MaxPart);
-      
+              force_treeallocate(All.TreeAllocFactor * All.MaxPart, All.MaxPart
+      );
             }
 
 
@@ -370,8 +350,8 @@ Referenced by begrun(), and run().
           if(Numnodestree > MaxNodes)
             {
               printf
-                ("Tree storage: it seems you have reduced(!) 'PartAllocFactor' be
-      low the value needed to load the restart file (task=%d). "
+                ("Tree storage: it seems you have reduced(!) 'PartAllocFactor'
+       below the value needed to load the restart file (task=%d). "
                  "Numnodestree=%d  MaxNodes=%d\n", ThisTask, Numnodestree, 
       MaxNodes);
               endrun(221);
@@ -411,8 +391,8 @@ Referenced by begrun(), and run().
                   if(Nextnode[i] >= old_MaxPart)
                     {
                       if(Nextnode[i] >= old_MaxPart + old_MaxNodes)
-                        Nextnode[i] += (All.MaxPart - old_MaxPart) + (MaxNodes - 
-      old_MaxPart);
+                        Nextnode[i] += (All.MaxPart - old_MaxPart) + (MaxNodes 
+      - old_MaxPart);
                       else
                         Nextnode[i] += (All.MaxPart - old_MaxPart);
                     }
@@ -421,50 +401,50 @@ Referenced by begrun(), and run().
                   {
                     if(Nodes_base[i].u.d.sibling >= old_MaxPart)
                       {
-                        if(Nodes_base[i].u.d.sibling >= old_MaxPart + old_MaxNode
-      s)
+                        if(Nodes_base[i].u.d.sibling >= old_MaxPart + 
+      old_MaxNodes)
                           Nodes_base[i].u.d.sibling +=
-                            (All.MaxPart - old_MaxPart) + (MaxNodes - old_MaxNode
-      s);
+                            (All.MaxPart - old_MaxPart) + (MaxNodes - 
+      old_MaxNodes);
                         else
-                          Nodes_base[i].u.d.sibling += (All.MaxPart - old_MaxPart
-      );
+                          Nodes_base[i].u.d.sibling += (All.MaxPart - 
+      old_MaxPart);
                       }
 
                     if(Nodes_base[i].u.d.father >= old_MaxPart)
                       {
-                        if(Nodes_base[i].u.d.father >= old_MaxPart + old_MaxNodes
-      )
-                          Nodes_base[i].u.d.father += (All.MaxPart - old_MaxPart)
-       + (MaxNodes - old_MaxNodes);
+                        if(Nodes_base[i].u.d.father >= old_MaxPart + 
+      old_MaxNodes)
+                          Nodes_base[i].u.d.father += (All.MaxPart - 
+      old_MaxPart) + (MaxNodes - old_MaxNodes);
                         else
-                          Nodes_base[i].u.d.father += (All.MaxPart - old_MaxPart)
-      ;
+                          Nodes_base[i].u.d.father += (All.MaxPart - 
+      old_MaxPart);
                       }
 
                     if(Nodes_base[i].u.d.nextnode >= old_MaxPart)
                       {
-                        if(Nodes_base[i].u.d.nextnode >= old_MaxPart + old_MaxNod
-      es)
+                        if(Nodes_base[i].u.d.nextnode >= old_MaxPart + 
+      old_MaxNodes)
                           Nodes_base[i].u.d.nextnode +=
-                            (All.MaxPart - old_MaxPart) + (MaxNodes - old_MaxNode
-      s);
+                            (All.MaxPart - old_MaxPart) + (MaxNodes - 
+      old_MaxNodes);
                         else
-                          Nodes_base[i].u.d.nextnode += (All.MaxPart - old_MaxPar
-      t);
+                          Nodes_base[i].u.d.nextnode += (All.MaxPart - 
+      old_MaxPart);
                       }
                   }
 
                 for(i = 0; i < MAXTOPNODES; i++)
                   if(Nextnode[i + All.MaxPart] >= old_MaxPart)
                     {
-                      if(Nextnode[i + All.MaxPart] >= old_MaxPart + old_MaxNodes)
-      
-                        Nextnode[i + All.MaxPart] += (All.MaxPart - old_MaxPart) 
-      + (MaxNodes - old_MaxNodes);
+                      if(Nextnode[i + All.MaxPart] >= old_MaxPart + 
+      old_MaxNodes)
+                        Nextnode[i + All.MaxPart] += (All.MaxPart - old_MaxPart
+      ) + (MaxNodes - old_MaxNodes);
                       else
-                        Nextnode[i + All.MaxPart] += (All.MaxPart - old_MaxPart);
-      
+                        Nextnode[i + All.MaxPart] += (All.MaxPart - old_MaxPart
+      );
                     }
 
                 for(i = 0; i < MAXTOPNODES; i++)
@@ -484,8 +464,8 @@ Referenced by begrun(), and run().
         {
           if(modus > 0 && groupTask == 0)       /* read */
             {
-              MPI_Bcast(&all_task0, sizeof(struct global_data_all_processes), MPI
-      _BYTE, 0, MPI_COMM_WORLD);
+              MPI_Bcast(&all_task0, sizeof(struct global_data_all_processes), 
+      MPI_BYTE, 0, MPI_COMM_WORLD);
             }
         }
 
@@ -495,21 +475,19 @@ Referenced by begrun(), and run().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{restart_8c_ae81d30f52dddd39aef76bb1890d16f2f_cgraph}
+\includegraphics[width=350pt]{restart_8c_ae81d30f52dddd39aef76bb1890d16f2f_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -521,17 +499,15 @@ Here is the caller graph for this function:
 
 
 
-\subsection{Variable Documentation}
-\hypertarget{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}{
-\index{restart.c@{restart.c}!fd@{fd}}
-\index{fd@{fd}!restart.c@{restart.c}}
-\subsubsection[{fd}]{\setlength{\rightskip}{0pt plus 5cm}FILE$\ast$ {\bf fd}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}
+\subsection{\-Variable \-Documentation}
+\hypertarget{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}{\index{restart.\-c@{restart.\-c}!fd@{fd}}
+\index{fd@{fd}!restart.c@{restart.\-c}}
+\subsubsection[{fd}]{\setlength{\rightskip}{0pt plus 5cm}\-F\-I\-L\-E$\ast$ {\bf fd}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{restart_8c_a600b792d6d2ff2e71096dfa60d97a3b0}
 
 
-Definition at line 21 of file restart.c.
+\-Definition at line 21 of file restart.\-c.
 
 
 
-Referenced by byten(), dump\_\-particles(), ewald\_\-init(), find\_\-files(), in(), read\_\-file(), read\_\-outputlist(), read\_\-parameter\_\-file(), restart(), run(), and write\_\-file().
+\-Referenced by byten(), dump\-\_\-particles(), ewald\-\_\-init(), find\-\_\-files(), in(), read\-\_\-file(), read\-\_\-outputlist(), read\-\_\-parameter\-\_\-file(), restart(), run(), and write\-\_\-file().
 

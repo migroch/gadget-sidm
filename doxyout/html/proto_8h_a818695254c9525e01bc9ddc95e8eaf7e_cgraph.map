@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$proto_8h.html#a128779c23a7c6e9cca2374c5e7c91483" title="dmin" alt="" coords="217,5,271,35"/>
-<area shape="rect" id="node5" href="$proto_8h.html#a05ba897ffe0dfe737254a09c91c50d10" title="imax" alt="" coords="217,59,271,88"/>
-<area shape="rect" id="node7" href="$ngb_8c.html#a96ec7acfa3c046abc6902ca77ee4bddd" title="ngb_treefind_pairs" alt="" coords="175,112,313,141"/>
+<area shape="rect" id="node3" href="$proto_8h.html#a128779c23a7c6e9cca2374c5e7c91483" title="dmin" alt="" coords="217,5,271,33"/>
+<area shape="rect" id="node5" href="$proto_8h.html#a05ba897ffe0dfe737254a09c91c50d10" title="imax" alt="" coords="217,55,271,83"/>
+<area shape="rect" id="node7" href="$ngb_8c.html#a96ec7acfa3c046abc6902ca77ee4bddd" title="ngb_treefind_pairs" alt="" coords="175,106,313,134"/>
 </map>

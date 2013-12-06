@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node19" href="$allvars_8h.html" title="declares global variables." alt="" coords="752,160,827,189"/>
-<area shape="rect" id="node26" href="$proto_8h.html" title="this file contains all function prototypes of the code" alt="" coords="838,83,904,112"/>
-<area shape="rect" id="node24" href="$tags_8h.html" title="declares various tags for labelling MPI messages." alt="" coords="812,237,874,267"/>
+<area shape="rect" id="node19" href="$allvars_8h.html" title="declares global variables." alt="" coords="752,161,827,189"/>
+<area shape="rect" id="node26" href="$proto_8h.html" title="this file contains all function prototypes of the code" alt="" coords="838,83,904,111"/>
+<area shape="rect" id="node24" href="$tags_8h.html" title="declares various tags for labelling MPI messages." alt="" coords="812,238,874,266"/>
 </map>

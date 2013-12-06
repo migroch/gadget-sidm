@@ -1,0 +1,28 @@
+var pm__periodic_8c =
+[
+    [ "PMGRID2", "pm__periodic_8c.html#a8a4d19d2948b1d7b3eff694719e5f436", null ],
+    [ "pm_init_periodic", "pm__periodic_8c.html#a13e381f05efdb739cf5026384e908409", null ],
+    [ "pm_init_periodic_allocate", "pm__periodic_8c.html#acb5c64377fad9e1a34bad88fb7c61a3e", null ],
+    [ "pm_init_periodic_free", "pm__periodic_8c.html#a259e6f8400ee889c64bc667334060742", null ],
+    [ "pmforce_periodic", "pm__periodic_8c.html#af8dfaf42f3b513118ad6aa3ab5cd3c1b", null ],
+    [ "pmpotential_periodic", "pm__periodic_8c.html#a7938f2181f23d56ac46f3625d1a855a0", null ],
+    [ "fft_forward_plan", "pm__periodic_8c.html#ada1bb88285e667f67d30ddac8c9fa924", null ],
+    [ "fft_inverse_plan", "pm__periodic_8c.html#affe0aa143bfd852f161120fe9a09f285", null ],
+    [ "fft_of_rhogrid", "pm__periodic_8c.html#a8f0b56ad473150630454fbceefe2c1e7", null ],
+    [ "fftsize", "pm__periodic_8c.html#a7575000a7b0c6532786de0ac15da4052", null ],
+    [ "first_slab_of_task", "pm__periodic_8c.html#a8b608f18c44e494650da5577ddb34082", null ],
+    [ "forcegrid", "pm__periodic_8c.html#afa4a65b248baddbf9f8c388a48a1787f", null ],
+    [ "maxfftsize", "pm__periodic_8c.html#a9ae463305ca6786e02bc9000726802b1", null ],
+    [ "meshmax_list", "pm__periodic_8c.html#aee0d2641b59b02dd9f5ed3070784d995", null ],
+    [ "meshmin_list", "pm__periodic_8c.html#a0bdf8c7e2cab6c38a4357cf4817e7cbf", null ],
+    [ "nslab_x", "pm__periodic_8c.html#a9dfa9b82d22c2a6cc503bcbebe6d774c", null ],
+    [ "nslab_y", "pm__periodic_8c.html#ae33694d88449fd0eb1d291ac33498ac1", null ],
+    [ "rhogrid", "pm__periodic_8c.html#a07a721ff607175c756095575f9c14fe3", null ],
+    [ "slab_to_task", "pm__periodic_8c.html#af5fc4d76c1156f1aabbfa15968b9ad4c", null ],
+    [ "slabs_per_task", "pm__periodic_8c.html#ad054897488b61bb22501d6ad4b01e6c8", null ],
+    [ "slabstart_x", "pm__periodic_8c.html#a140eccd2a65fea3b4e2080aea519eff1", null ],
+    [ "slabstart_y", "pm__periodic_8c.html#a17e825b584286e00d2e435dff44af196", null ],
+    [ "smallest_slab", "pm__periodic_8c.html#ab401ed54b1c5572b1b6a2949ffd5c1f8", null ],
+    [ "to_slab_fac", "pm__periodic_8c.html#a2a1ee0c9996dcb96caf409aacc6888cd", null ],
+    [ "workspace", "pm__periodic_8c.html#a182a8913bc59d672bb2a85e63ffcde0f", null ]
+];

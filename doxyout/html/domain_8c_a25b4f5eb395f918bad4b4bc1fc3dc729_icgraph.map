@@ -1,9 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$proto_8h.html#a647e0c1a76b7f064ed5d201662f364bf" title="domain_decompose" alt="" coords="245,57,397,87"/>
-<area shape="rect" id="node5" href="$proto_8h.html#ae8e3aa408eaab9544cb7f93e69185492" title="domain_Decomposition" alt="" coords="445,57,619,87"/>
-<area shape="rect" id="node7" href="$run_8c.html#ad52604af910b3e1677718d863ab09391" title="find_next_sync_point_and_drift" alt="" coords="667,5,885,35"/>
-<area shape="rect" id="node9" href="$run_8c.html#a05e0ffe612d44e6d7f3a9ae5b9df56a2" title="run" alt="" coords="945,56,988,85"/>
-<area shape="rect" id="node13" href="$proto_8h.html#a2858154e2009b0e6e616f313177762bc" title="init" alt="" coords="756,109,796,139"/>
-<area shape="rect" id="node11" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1049,83,1103,112"/>
-<area shape="rect" id="node15" href="$proto_8h.html#aceeb5c8909331b90ea8345e0fc853f82" title="begrun" alt="" coords="933,109,1000,139"/>
+<area shape="rect" id="node3" href="$proto_8h.html#a647e0c1a76b7f064ed5d201662f364bf" title="domain_decompose" alt="" coords="245,55,397,83"/>
+<area shape="rect" id="node5" href="$proto_8h.html#ae8e3aa408eaab9544cb7f93e69185492" title="domain_Decomposition" alt="" coords="445,55,619,83"/>
+<area shape="rect" id="node7" href="$proto_8h.html#a2858154e2009b0e6e616f313177762bc" title="init" alt="" coords="756,5,796,33"/>
+<area shape="rect" id="node13" href="$run_8c.html#a05e0ffe612d44e6d7f3a9ae5b9df56a2" title="run" alt="" coords="945,55,988,83"/>
+<area shape="rect" id="node16" href="$run_8c.html#ad52604af910b3e1677718d863ab09391" title="find_next_sync_point_and_drift" alt="" coords="667,106,885,134"/>
+<area shape="rect" id="node9" href="$proto_8h.html#aceeb5c8909331b90ea8345e0fc853f82" title="begrun" alt="" coords="933,5,1000,33"/>
+<area shape="rect" id="node11" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1049,30,1103,58"/>
 </map>

@@ -1,65 +1,60 @@
-\hypertarget{potential_8c}{
-\section{potential.c File Reference}
-\label{potential_8c}\index{potential.c@{potential.c}}
+\hypertarget{potential_8c}{\section{potential.\-c \-File \-Reference}
+\label{potential_8c}\index{potential.\-c@{potential.\-c}}
 }
 
 
-Computation of the gravitational potential of particles.  
+\-Computation of the gravitational potential of particles.  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$float.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for potential.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$float.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for potential.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{potential_8c__incl}
+\includegraphics[width=350pt]{potential_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{potential_8c_a04474459731219f9601aaefedb37ab27}{compute\_\-potential} (void)
+void \hyperlink{potential_8c_a04474459731219f9601aaefedb37ab27}{compute\-\_\-potential} (void)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Computation of the gravitational potential of particles. 
+\subsection{\-Detailed \-Description}
+\-Computation of the gravitational potential of particles. 
 
-Definition in file \hyperlink{potential_8c_source}{potential.c}.
+\-Definition in file \hyperlink{potential_8c_source}{potential.\-c}.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{potential_8c_a04474459731219f9601aaefedb37ab27}{
-\index{potential.c@{potential.c}!compute\_\-potential@{compute\_\-potential}}
-\index{compute\_\-potential@{compute\_\-potential}!potential.c@{potential.c}}
-\subsubsection[{compute\_\-potential}]{\setlength{\rightskip}{0pt plus 5cm}void compute\_\-potential (
+\subsection{\-Function \-Documentation}
+\hypertarget{potential_8c_a04474459731219f9601aaefedb37ab27}{\index{potential.\-c@{potential.\-c}!compute\-\_\-potential@{compute\-\_\-potential}}
+\index{compute\-\_\-potential@{compute\-\_\-potential}!potential.c@{potential.\-c}}
+\subsubsection[{compute\-\_\-potential}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf compute\-\_\-potential} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{potential_8c_a04474459731219f9601aaefedb37ab27}
-This function computes the gravitational potential for ALL the particles. First, the (short-\/range) tree potential is computed, and then, if needed, the long range PM potential is added. 
+)}}\label{potential_8c_a04474459731219f9601aaefedb37ab27}
+\-This function computes the gravitational potential for \-A\-L\-L the particles. \-First, the (short-\/range) tree potential is computed, and then, if needed, the long range \-P\-M potential is added. 
 
-Definition at line 22 of file potential.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::BunchSizeForce, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CPU\_\-Potential, global\_\-data\_\-all\_\-processes::CPU\_\-TreeConstruction, endrun(), Exportflag, force\_\-treebuild(), force\_\-treeevaluate\_\-potential(), force\_\-treeevaluate\_\-potential\_\-shortrange(), global\_\-data\_\-all\_\-processes::G, grav\_\-tree\_\-compare\_\-key(), GravDataGet, GravDataIn, GravDataIndexTable, GravDataOut, GravDataResult, sph\_\-particle\_\-data::Hsml, global\_\-data\_\-all\_\-processes::Hubble, gravdata\_\-index::Index, particle\_\-data::Mass, NTask, NumPart, particle\_\-data::OldAcc, gravdata\_\-in::OldAcc, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaLambda, P, global\_\-data\_\-all\_\-processes::PeriodicBoundariesOn, pm\_\-init\_\-regionsize(), pm\_\-setup\_\-nonperiodic\_\-kernel(), pmpotential\_\-nonperiodic(), pmpotential\_\-periodic(), particle\_\-data::Pos, gravdata\_\-in::Pos, gravdata\_\-in::Potential, particle\_\-data::Potential, pow(), PTask, second(), set\_\-softenings(), global\_\-data\_\-all\_\-processes::SofteningTable, gravdata\_\-index::SortIndex, SphP, TAG\_\-POTENTIAL\_\-A, TAG\_\-POTENTIAL\_\-B, gravdata\_\-index::Task, ThisTask, timediff(), TreeReconstructFlag, particle\_\-data::Type, gravdata\_\-in::u, and gravdata\_\-in::w.
+\-Definition at line 22 of file potential.\-c.
 
 
 
-Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
+\-References \-All, endrun(), \-Exportflag, force\-\_\-treebuild(), force\-\_\-treeevaluate\-\_\-potential(), force\-\_\-treeevaluate\-\_\-potential\-\_\-shortrange(), grav\-\_\-tree\-\_\-compare\-\_\-key(), \-Grav\-Data\-Get, \-Grav\-Data\-In, \-Grav\-Data\-Index\-Table, \-Grav\-Data\-Out, \-Grav\-Data\-Result, \-N\-Task, \-Num\-Part, \-P, pm\-\_\-init\-\_\-regionsize(), pm\-\_\-setup\-\_\-nonperiodic\-\_\-kernel(), pmpotential\-\_\-nonperiodic(), pmpotential\-\_\-periodic(), pow(), \-P\-Task, second(), set\-\_\-softenings(), \-Sph\-P, \-T\-A\-G\-\_\-\-P\-O\-T\-E\-N\-T\-I\-A\-L\-\_\-\-A, \-T\-A\-G\-\_\-\-P\-O\-T\-E\-N\-T\-I\-A\-L\-\_\-\-B, \-This\-Task, timediff(), and \-Tree\-Reconstruct\-Flag.
 
 
+
+\-Referenced by find\-\_\-next\-\_\-sync\-\_\-point\-\_\-and\-\_\-drift(), and run().
 
 
 \begin{DoxyCode}
@@ -111,8 +106,8 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
     ntot += numlist[i];
   free(numlist);
 
-  noffset = malloc(sizeof(int) * NTask);        /* offsets of bunches in common l
-      ist */
+  noffset = malloc(sizeof(int) * NTask);        /* offsets of bunches in common
+       list */
   nbuffer = malloc(sizeof(int) * NTask);
   nsend_local = malloc(sizeof(int) * NTask);
   nsend = malloc(sizeof(int) * NTask * NTask);
@@ -127,8 +122,8 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
         nsend_local[j] = 0;
 
       /* do local particles and prepare export list */
-      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - N
-      Task; i++)
+      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce -
+       NTask; i++)
         {
           ndone++;
 
@@ -175,8 +170,8 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
       for(j = 1, noffset[0] = 0; j < NTask; j++)
         noffset[j] = noffset[j - 1] + nsend_local[j - 1];
 
-      MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, MPI_COMM_
-      WORLD);
+      MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, 
+      MPI_COMM_WORLD);
 
       /* now do the particles that need to be exported */
 
@@ -201,8 +196,8 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
 
               if(recvTask < NTask)
                 {
-                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
-      Task + ThisTask] > 0)
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask *
+       NTask + ThisTask] > 0)
                     {
                       /* get the particles */
                       MPI_Sendrecv(&GravDataIn[noffset[recvTask]],
@@ -210,10 +205,10 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
       gravdata_in), MPI_BYTE,
                                    recvTask, TAG_POTENTIAL_A,
                                    &GravDataGet[nbuffer[ThisTask]],
-                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
-      ruct gravdata_in), MPI_BYTE,
-                                   recvTask, TAG_POTENTIAL_A, MPI_COMM_WORLD, &st
-      atus);
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(
+      struct gravdata_in), MPI_BYTE,
+                                   recvTask, TAG_POTENTIAL_A, MPI_COMM_WORLD, &
+      status);
                     }
                 }
 
@@ -252,19 +247,19 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
 
               if(recvTask < NTask)
                 {
-                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask * N
-      Task + ThisTask] > 0)
+                  if(nsend[ThisTask * NTask + recvTask] > 0 || nsend[recvTask *
+       NTask + ThisTask] > 0)
                     {
                       /* send the results */
                       MPI_Sendrecv(&GravDataResult[nbuffer[ThisTask]],
-                                   nsend[recvTask * NTask + ThisTask] * sizeof(st
-      ruct gravdata_in),
+                                   nsend[recvTask * NTask + ThisTask] * sizeof(
+      struct gravdata_in),
                                    MPI_BYTE, recvTask, TAG_POTENTIAL_B,
                                    &GravDataOut[noffset[recvTask]],
                                    nsend_local[recvTask] * sizeof(struct 
       gravdata_in),
-                                   MPI_BYTE, recvTask, TAG_POTENTIAL_B, MPI_COMM_
-      WORLD, &status);
+                                   MPI_BYTE, recvTask, TAG_POTENTIAL_B, 
+      MPI_COMM_WORLD, &status);
 
                       /* add the result to the particles */
                       for(j = 0; j < nsend_local[recvTask]; j++)
@@ -272,8 +267,8 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
                           place = GravDataIndexTable[noffset[recvTask] + j].
       Index;
 
-                          P[place].Potential += GravDataOut[j + noffset[recvTask]
-      ].u.Potential;
+                          P[place].Potential += GravDataOut[j + noffset[
+      recvTask]].u.Potential;
                         }
                     }
                 }
@@ -308,8 +303,8 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
       if(All.ComovingIntegrationOn)
         if(All.PeriodicBoundariesOn)
           P[i].Potential -= 2.8372975 * pow(P[i].Mass, 2.0 / 3) *
-            pow(All.Omega0 * 3 * All.Hubble * All.Hubble / (8 * M_PI * All.G), 1.
-      0 / 3);
+            pow(All.Omega0 * 3 * All.Hubble * All.Hubble / (8 * M_PI * All.G), 
+      1.0 / 3);
     }
 
 
@@ -336,8 +331,8 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
 #endif
 #else
   i = pmpotential_nonperiodic(0);
-  if(i == 1)                    /* this is returned if a particle lied outside al
-      lowed range */
+  if(i == 1)                    /* this is returned if a particle lied outside
+       allowed range */
     {
       pm_init_regionsize();
       pm_setup_nonperiodic_kernel();
@@ -347,8 +342,8 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
     endrun(88687);
 #ifdef PLACEHIGHRESREGION
   i = pmpotential_nonperiodic(1);
-  if(i == 1)                    /* this is returned if a particle lied outside al
-      lowed range */
+  if(i == 1)                    /* this is returned if a particle lied outside
+       allowed range */
     {
       pm_init_regionsize();
 
@@ -411,26 +406,24 @@ Referenced by find\_\-next\_\-sync\_\-point\_\-and\_\-drift(), and run().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{potential_8c_a04474459731219f9601aaefedb37ab27_cgraph}
+\includegraphics[width=350pt]{potential_8c_a04474459731219f9601aaefedb37ab27_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{potential_8c_a04474459731219f9601aaefedb37ab27_icgraph}
+\includegraphics[width=350pt]{potential_8c_a04474459731219f9601aaefedb37ab27_icgraph}
 \end{center}
 \end{figure}
 

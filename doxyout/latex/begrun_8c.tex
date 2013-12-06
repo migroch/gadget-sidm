@@ -1,129 +1,116 @@
-\hypertarget{begrun_8c}{
-\section{begrun.c File Reference}
-\label{begrun_8c}\index{begrun.c@{begrun.c}}
+\hypertarget{begrun_8c}{\section{begrun.\-c \-File \-Reference}
+\label{begrun_8c}\index{begrun.\-c@{begrun.\-c}}
 }
 
 
 initial set-\/up of a simulation run  
 
 
-{\ttfamily \#include $<$stdio.h$>$}\par
-{\ttfamily \#include $<$stdlib.h$>$}\par
-{\ttfamily \#include $<$string.h$>$}\par
-{\ttfamily \#include $<$math.h$>$}\par
-{\ttfamily \#include $<$mpi.h$>$}\par
-{\ttfamily \#include $<$sys/types.h$>$}\par
-{\ttfamily \#include $<$unistd.h$>$}\par
-{\ttfamily \#include $<$gsl/gsl\_\-rng.h$>$}\par
-{\ttfamily \#include \char`\"{}allvars.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}proto.h\char`\"{}}\par
-Include dependency graph for begrun.c:
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$mpi.\-h$>$}\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$gsl/gsl\-\_\-rng.\-h$>$}\*
+{\ttfamily \#include \char`\"{}allvars.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}proto.\-h\char`\"{}}\*
+\-Include dependency graph for begrun.\-c\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{begrun_8c__incl}
+\includegraphics[width=350pt]{begrun_8c__incl}
 \end{center}
 \end{figure}
-\subsection*{Defines}
+\subsection*{\-Defines}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{begrun_8c_a8747af38b86aa2bbcda2f1b1aa0888c2}{DOUBLE}~1
+\#define \hyperlink{begrun_8c_a8747af38b86aa2bbcda2f1b1aa0888c2}{\-D\-O\-U\-B\-L\-E}~1
 \item 
-\#define \hyperlink{begrun_8c_a0f4d394a3ab4e09bff60f714c66dc5ee}{STRING}~2
+\#define \hyperlink{begrun_8c_a0f4d394a3ab4e09bff60f714c66dc5ee}{\-S\-T\-R\-I\-N\-G}~2
 \item 
-\#define \hyperlink{begrun_8c_afeeffe52c8fd59db7c61cf8b02042dbf}{INT}~3
+\#define \hyperlink{begrun_8c_afeeffe52c8fd59db7c61cf8b02042dbf}{\-I\-N\-T}~3
 \item 
-\#define \hyperlink{begrun_8c_a80a3e5dc9fa74f5cba16d39307f148e0}{MAXTAGS}~300
+\#define \hyperlink{begrun_8c_a80a3e5dc9fa74f5cba16d39307f148e0}{\-M\-A\-X\-T\-A\-G\-S}~300
 \end{DoxyCompactItemize}
-\subsection*{Functions}
+\subsection*{\-Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{begrun_8c_aceeb5c8909331b90ea8345e0fc853f82}{begrun} (void)
 \item 
-void \hyperlink{begrun_8c_aba986f6be1d66945199c7ea43e5c9610}{set\_\-units} (void)
+void \hyperlink{begrun_8c_aba986f6be1d66945199c7ea43e5c9610}{set\-\_\-units} (void)
 \item 
-void \hyperlink{begrun_8c_a6f629274f7b036874c743fb81d58ce68}{open\_\-outputfiles} (void)
+void \hyperlink{begrun_8c_a6f629274f7b036874c743fb81d58ce68}{open\-\_\-outputfiles} (void)
 \item 
-void \hyperlink{begrun_8c_aa1abb9ee0e0a43ec19cdaa55c8ecd43c}{close\_\-outputfiles} (void)
+void \hyperlink{begrun_8c_aa1abb9ee0e0a43ec19cdaa55c8ecd43c}{close\-\_\-outputfiles} (void)
 \item 
-void \hyperlink{begrun_8c_a952eae1977b498c4fdfabed1742a3ba2}{read\_\-parameter\_\-file} (char $\ast$fname)
+void \hyperlink{begrun_8c_a952eae1977b498c4fdfabed1742a3ba2}{read\-\_\-parameter\-\_\-file} (char $\ast$fname)
 \item 
-int \hyperlink{begrun_8c_a849a294ac908c933ffb82dc4319af513}{read\_\-outputlist} (char $\ast$fname)
+int \hyperlink{begrun_8c_a849a294ac908c933ffb82dc4319af513}{read\-\_\-outputlist} (char $\ast$fname)
 \item 
-void \hyperlink{begrun_8c_acc4d1f5e4e51140090a7ce25ea263b98}{readjust\_\-timebase} (double TimeMax\_\-old, double TimeMax\_\-new)
+void \hyperlink{begrun_8c_acc4d1f5e4e51140090a7ce25ea263b98}{readjust\-\_\-timebase} (double \-Time\-Max\-\_\-old, double \-Time\-Max\-\_\-new)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-initial set-\/up of a simulation run This file contains various functions to initialize a simulation run. In particular, the parameterfile is read in and parsed, the initial conditions or restart files are read, and global variables are initialized to their proper values. 
+\subsection{\-Detailed \-Description}
+initial set-\/up of a simulation run \-This file contains various functions to initialize a simulation run. \-In particular, the parameterfile is read in and parsed, the initial conditions or restart files are read, and global variables are initialized to their proper values. 
 
-Definition in file \hyperlink{begrun_8c_source}{begrun.c}.
-
-
-
-\subsection{Define Documentation}
-\hypertarget{begrun_8c_a8747af38b86aa2bbcda2f1b1aa0888c2}{
-\index{begrun.c@{begrun.c}!DOUBLE@{DOUBLE}}
-\index{DOUBLE@{DOUBLE}!begrun.c@{begrun.c}}
-\subsubsection[{DOUBLE}]{\setlength{\rightskip}{0pt plus 5cm}\#define DOUBLE~1}}
-\label{begrun_8c_a8747af38b86aa2bbcda2f1b1aa0888c2}
-
-
-Referenced by read\_\-parameter\_\-file().
-
-\hypertarget{begrun_8c_afeeffe52c8fd59db7c61cf8b02042dbf}{
-\index{begrun.c@{begrun.c}!INT@{INT}}
-\index{INT@{INT}!begrun.c@{begrun.c}}
-\subsubsection[{INT}]{\setlength{\rightskip}{0pt plus 5cm}\#define INT~3}}
-\label{begrun_8c_afeeffe52c8fd59db7c61cf8b02042dbf}
-
-
-Referenced by read\_\-parameter\_\-file().
-
-\hypertarget{begrun_8c_a80a3e5dc9fa74f5cba16d39307f148e0}{
-\index{begrun.c@{begrun.c}!MAXTAGS@{MAXTAGS}}
-\index{MAXTAGS@{MAXTAGS}!begrun.c@{begrun.c}}
-\subsubsection[{MAXTAGS}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAXTAGS~300}}
-\label{begrun_8c_a80a3e5dc9fa74f5cba16d39307f148e0}
-\hypertarget{begrun_8c_a0f4d394a3ab4e09bff60f714c66dc5ee}{
-\index{begrun.c@{begrun.c}!STRING@{STRING}}
-\index{STRING@{STRING}!begrun.c@{begrun.c}}
-\subsubsection[{STRING}]{\setlength{\rightskip}{0pt plus 5cm}\#define STRING~2}}
-\label{begrun_8c_a0f4d394a3ab4e09bff60f714c66dc5ee}
-
-
-Referenced by read\_\-parameter\_\-file().
+\-Definition in file \hyperlink{begrun_8c_source}{begrun.\-c}.
 
 
 
-\subsection{Function Documentation}
-\hypertarget{begrun_8c_aceeb5c8909331b90ea8345e0fc853f82}{
-\index{begrun.c@{begrun.c}!begrun@{begrun}}
-\index{begrun@{begrun}!begrun.c@{begrun.c}}
-\subsubsection[{begrun}]{\setlength{\rightskip}{0pt plus 5cm}void begrun (
+\subsection{\-Define \-Documentation}
+\hypertarget{begrun_8c_a8747af38b86aa2bbcda2f1b1aa0888c2}{\index{begrun.\-c@{begrun.\-c}!\-D\-O\-U\-B\-L\-E@{\-D\-O\-U\-B\-L\-E}}
+\index{\-D\-O\-U\-B\-L\-E@{\-D\-O\-U\-B\-L\-E}!begrun.c@{begrun.\-c}}
+\subsubsection[{\-D\-O\-U\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-D\-O\-U\-B\-L\-E}~1}}\label{begrun_8c_a8747af38b86aa2bbcda2f1b1aa0888c2}
+
+
+\-Referenced by read\-\_\-parameter\-\_\-file().
+
+\hypertarget{begrun_8c_afeeffe52c8fd59db7c61cf8b02042dbf}{\index{begrun.\-c@{begrun.\-c}!\-I\-N\-T@{\-I\-N\-T}}
+\index{\-I\-N\-T@{\-I\-N\-T}!begrun.c@{begrun.\-c}}
+\subsubsection[{\-I\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-I\-N\-T}~3}}\label{begrun_8c_afeeffe52c8fd59db7c61cf8b02042dbf}
+
+
+\-Referenced by read\-\_\-parameter\-\_\-file().
+
+\hypertarget{begrun_8c_a80a3e5dc9fa74f5cba16d39307f148e0}{\index{begrun.\-c@{begrun.\-c}!\-M\-A\-X\-T\-A\-G\-S@{\-M\-A\-X\-T\-A\-G\-S}}
+\index{\-M\-A\-X\-T\-A\-G\-S@{\-M\-A\-X\-T\-A\-G\-S}!begrun.c@{begrun.\-c}}
+\subsubsection[{\-M\-A\-X\-T\-A\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-M\-A\-X\-T\-A\-G\-S}~300}}\label{begrun_8c_a80a3e5dc9fa74f5cba16d39307f148e0}
+
+
+\-Referenced by read\-\_\-parameter\-\_\-file().
+
+\hypertarget{begrun_8c_a0f4d394a3ab4e09bff60f714c66dc5ee}{\index{begrun.\-c@{begrun.\-c}!\-S\-T\-R\-I\-N\-G@{\-S\-T\-R\-I\-N\-G}}
+\index{\-S\-T\-R\-I\-N\-G@{\-S\-T\-R\-I\-N\-G}!begrun.c@{begrun.\-c}}
+\subsubsection[{\-S\-T\-R\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-S\-T\-R\-I\-N\-G}~2}}\label{begrun_8c_a0f4d394a3ab4e09bff60f714c66dc5ee}
+
+
+\-Referenced by read\-\_\-parameter\-\_\-file().
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{begrun_8c_aceeb5c8909331b90ea8345e0fc853f82}{\index{begrun.\-c@{begrun.\-c}!begrun@{begrun}}
+\index{begrun@{begrun}!begrun.c@{begrun.\-c}}
+\subsubsection[{begrun}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf begrun} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{begrun_8c_aceeb5c8909331b90ea8345e0fc853f82}
-This function performs the initial set-\/up of the simulation. First, the parameterfile is set, then routines for setting units, reading ICs/restart-\/files are called, auxialiary memory is allocated, etc. 
+)}}\label{begrun_8c_aceeb5c8909331b90ea8345e0fc853f82}
+\-This function performs the initial set-\/up of the simulation. \-First, the parameterfile is set, then routines for setting units, reading \-I\-Cs/restart-\/files are called, auxialiary memory is allocated, etc. $<$ code version string 
 
-$<$ code version string 
-
-
-
-Definition at line 28 of file begrun.c.
+\-Definition at line 28 of file begrun.\-c.
 
 
 
-References All, allocate\_\-commbuffers(), AllocateInteractionTable(), global\_\-data\_\-all\_\-processes::ArtBulkViscConst, global\_\-data\_\-all\_\-processes::BufferSize, global\_\-data\_\-all\_\-processes::BunchSizeDensity, global\_\-data\_\-all\_\-processes::BunchSizeDomain, global\_\-data\_\-all\_\-processes::BunchSizeForce, global\_\-data\_\-all\_\-processes::BunchSizeHydro, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CourantFac, global\_\-data\_\-all\_\-processes::CpuFile, CPUThisRun, global\_\-data\_\-all\_\-processes::CpuTimeBetRestartFile, global\_\-data\_\-all\_\-processes::EnergyFile, global\_\-data\_\-all\_\-processes::ErrTolForceAcc, global\_\-data\_\-all\_\-processes::ErrTolIntAccuracy, ewald\_\-init(), find\_\-next\_\-outputtime(), GADGETVERSION, global\_\-data\_\-all\_\-processes::InfoFile, init(), init\_\-drift\_\-table(), init\_\-geofactor\_\-table(), long\_\-range\_\-init(), long\_\-range\_\-init\_\-regionsize(), global\_\-data\_\-all\_\-processes::MaxNumNgbDeviation, global\_\-data\_\-all\_\-processes::MaxRMSDisplacementFac, global\_\-data\_\-all\_\-processes::MaxSizeTimestep, global\_\-data\_\-all\_\-processes::MinSizeTimestep, NTask, global\_\-data\_\-all\_\-processes::NumFilesPerSnapshot, global\_\-data\_\-all\_\-processes::NumFilesWrittenInParallel, open\_\-outputfiles(), global\_\-data\_\-all\_\-processes::OutputDir, global\_\-data\_\-all\_\-processes::OutputListFilename, global\_\-data\_\-all\_\-processes::OutputListLength, global\_\-data\_\-all\_\-processes::OutputListOn, global\_\-data\_\-all\_\-processes::OutputListTimes, ParameterFile, random\_\-generator, read\_\-parameter\_\-file(), readjust\_\-timebase(), restart(), global\_\-data\_\-all\_\-processes::RestartFile, RestartFlag, global\_\-data\_\-all\_\-processes::ResubmitCommand, global\_\-data\_\-all\_\-processes::ResubmitOn, set\_\-random\_\-numbers(), set\_\-units(), global\_\-data\_\-all\_\-processes::SnapFormat, global\_\-data\_\-all\_\-processes::SnapshotFileBase, ThisTask, global\_\-data\_\-all\_\-processes::Ti\_\-Current, global\_\-data\_\-all\_\-processes::Ti\_\-nextoutput, global\_\-data\_\-all\_\-processes::TimeBetSnapshot, global\_\-data\_\-all\_\-processes::TimeBetStatistics, global\_\-data\_\-all\_\-processes::TimeLastRestartFile, global\_\-data\_\-all\_\-processes::TimeLimitCPU, global\_\-data\_\-all\_\-processes::TimeMax, global\_\-data\_\-all\_\-processes::TimingsFile, global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency, global\_\-data\_\-all\_\-processes::TypeOfOpeningCriterion, and global\_\-data\_\-all\_\-processes::TypeOfTimestepCriterion.
+\-References \-All, allocate\-\_\-commbuffers(), \-Allocate\-Interaction\-Table(), \-C\-P\-U\-This\-Run, ewald\-\_\-init(), find\-\_\-next\-\_\-outputtime(), init(), init\-\_\-drift\-\_\-table(), init\-\_\-geofactor\-\_\-table(), long\-\_\-range\-\_\-init(), long\-\_\-range\-\_\-init\-\_\-regionsize(), \-N\-Task, \-Num\-Part, open\-\_\-outputfiles(), \-P, \-Parameter\-File, random\-\_\-generator, read\-\_\-parameter\-\_\-file(), readjust\-\_\-timebase(), restart(), \-Restart\-Flag, set\-\_\-random\-\_\-numbers(), set\-\_\-units(), and \-This\-Task.
 
 
 
-Referenced by main().
-
-
+\-Referenced by main().
 
 
 \begin{DoxyCode}
@@ -136,8 +123,8 @@ Referenced by main().
       printf("\nRunning on %d processors.\n", NTask);
     }
 
-  read_parameter_file(ParameterFile);   /* ... read in parameters for this run */
-      
+  read_parameter_file(ParameterFile);   /* ... read in parameters for this run 
+      */
 
   allocate_commbuffers();       /* ... allocate buffer-memory for particle 
                                    exchange during force computation */
@@ -159,8 +146,11 @@ Referenced by main().
   All.TimeLastRestartFile = CPUThisRun;
 
 #ifdef COMPUTE_SELFINTERACTION_FORDARK
-  AllocateInteractionTable(INTERACTION_TABLE_LENGTH, PARTICLE_MAX_INTERACTIONS + 
-      1);
+  int i;
+  for(i = 0; i < NumPart; i++)
+    P[i].dTi_selfInt = 0;
+  AllocateInteractionTable(INTERACTION_TABLE_LENGTH, PARTICLE_MAX_INTERACTIONS 
+      + 1);
   init_geofactor_table();
 #endif
 
@@ -172,19 +162,19 @@ Referenced by main().
     }
   else
     {
-      all = All;                /* save global variables. (will be read from rest
-      art file) */
+      all = All;                /* save global variables. (will be read from
+       restart file) */
 
-      restart(RestartFlag);     /* ... read restart file. Note: This also resets 
-      
+      restart(RestartFlag);     /* ... read restart file. Note: This also
+       resets 
                                    all variables in the struct `All'. 
-                                   However, during the run, some variables in the
-       parameter
-                                   file are allowed to be changed, if desired. Th
-      ese need to 
+                                   However, during the run, some variables in
+       the parameter
+                                   file are allowed to be changed, if desired.
+       These need to 
                                    copied in the way below.
-                                   Note:  All.PartAllocFactor is treated in resta
-      rt() separately.  
+                                   Note:  All.PartAllocFactor is treated in
+       restart() separately.  
                                  */
 
       All.MinSizeTimestep = all.MinSizeTimestep;
@@ -256,21 +246,19 @@ Referenced by main().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{begrun_8c_aceeb5c8909331b90ea8345e0fc853f82_cgraph}
+\includegraphics[width=350pt]{begrun_8c_aceeb5c8909331b90ea8345e0fc853f82_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -280,34 +268,30 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{begrun_8c_aa1abb9ee0e0a43ec19cdaa55c8ecd43c}{
-\index{begrun.c@{begrun.c}!close\_\-outputfiles@{close\_\-outputfiles}}
-\index{close\_\-outputfiles@{close\_\-outputfiles}!begrun.c@{begrun.c}}
-\subsubsection[{close\_\-outputfiles}]{\setlength{\rightskip}{0pt plus 5cm}void close\_\-outputfiles (
+\hypertarget{begrun_8c_aa1abb9ee0e0a43ec19cdaa55c8ecd43c}{\index{begrun.\-c@{begrun.\-c}!close\-\_\-outputfiles@{close\-\_\-outputfiles}}
+\index{close\-\_\-outputfiles@{close\-\_\-outputfiles}!begrun.c@{begrun.\-c}}
+\subsubsection[{close\-\_\-outputfiles}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf close\-\_\-outputfiles} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{begrun_8c_aa1abb9ee0e0a43ec19cdaa55c8ecd43c}
-This function closes the global log-\/files. 
+)}}\label{begrun_8c_aa1abb9ee0e0a43ec19cdaa55c8ecd43c}
+\-This function closes the global log-\/files. 
 
-Definition at line 262 of file begrun.c.
-
-
-
-References FdCPU, FdEnergy, FdForceTest, FdInfo, FdTimings, and ThisTask.
+\-Definition at line 265 of file begrun.\-c.
 
 
 
-Referenced by run().
+\-References \-Fd\-C\-P\-U, \-Fd\-Energy, \-Fd\-Force\-Test, \-Fd\-Info, \-Fd\-Timings, and \-This\-Task.
 
 
+
+\-Referenced by run().
 
 
 \begin{DoxyCode}
 {
-  if(ThisTask != 0)             /* only the root processor writes to the log file
-      s */
+  if(ThisTask != 0)             /* only the root processor writes to the log
+       files */
     return;
 
   fclose(FdCPU);
@@ -321,9 +305,7 @@ Referenced by run().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -333,36 +315,32 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{begrun_8c_a6f629274f7b036874c743fb81d58ce68}{
-\index{begrun.c@{begrun.c}!open\_\-outputfiles@{open\_\-outputfiles}}
-\index{open\_\-outputfiles@{open\_\-outputfiles}!begrun.c@{begrun.c}}
-\subsubsection[{open\_\-outputfiles}]{\setlength{\rightskip}{0pt plus 5cm}void open\_\-outputfiles (
+\hypertarget{begrun_8c_a6f629274f7b036874c743fb81d58ce68}{\index{begrun.\-c@{begrun.\-c}!open\-\_\-outputfiles@{open\-\_\-outputfiles}}
+\index{open\-\_\-outputfiles@{open\-\_\-outputfiles}!begrun.c@{begrun.\-c}}
+\subsubsection[{open\-\_\-outputfiles}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf open\-\_\-outputfiles} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{begrun_8c_a6f629274f7b036874c743fb81d58ce68}
-This function opens various log-\/files that report on the status and performance of the simulstion. On restart from restart-\/files (start-\/option 1), the code will append to these files. 
+)}}\label{begrun_8c_a6f629274f7b036874c743fb81d58ce68}
+\-This function opens various log-\/files that report on the status and performance of the simulstion. \-On restart from restart-\/files (start-\/option 1), the code will append to these files. 
 
-Definition at line 204 of file begrun.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::CpuFile, endrun(), global\_\-data\_\-all\_\-processes::EnergyFile, FdCPU, FdEnergy, FdForceTest, FdInfo, FdTimings, global\_\-data\_\-all\_\-processes::InfoFile, global\_\-data\_\-all\_\-processes::OutputDir, RestartFlag, ThisTask, and global\_\-data\_\-all\_\-processes::TimingsFile.
+\-Definition at line 207 of file begrun.\-c.
 
 
 
-Referenced by begrun().
+\-References \-All, endrun(), \-Fd\-C\-P\-U, \-Fd\-Energy, \-Fd\-Force\-Test, \-Fd\-Info, \-Fd\-Timings, \-Restart\-Flag, and \-This\-Task.
 
 
+
+\-Referenced by begrun().
 
 
 \begin{DoxyCode}
 {
   char mode[2], buf[200];
 
-  if(ThisTask != 0)             /* only the root processor writes to the log file
-      s */
+  if(ThisTask != 0)             /* only the root processor writes to the log
+       files */
     return;
 
   if(RestartFlag == 0)
@@ -415,21 +393,19 @@ Referenced by begrun().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{begrun_8c_a6f629274f7b036874c743fb81d58ce68_cgraph}
+\includegraphics[width=350pt]{begrun_8c_a6f629274f7b036874c743fb81d58ce68_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -439,32 +415,24 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{begrun_8c_a849a294ac908c933ffb82dc4319af513}{
-\index{begrun.c@{begrun.c}!read\_\-outputlist@{read\_\-outputlist}}
-\index{read\_\-outputlist@{read\_\-outputlist}!begrun.c@{begrun.c}}
-\subsubsection[{read\_\-outputlist}]{\setlength{\rightskip}{0pt plus 5cm}int read\_\-outputlist (
+\hypertarget{begrun_8c_a849a294ac908c933ffb82dc4319af513}{\index{begrun.\-c@{begrun.\-c}!read\-\_\-outputlist@{read\-\_\-outputlist}}
+\index{read\-\_\-outputlist@{read\-\_\-outputlist}!begrun.c@{begrun.\-c}}
+\subsubsection[{read\-\_\-outputlist}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf read\-\_\-outputlist} (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{ fname}
+\item[{char $\ast$}]{fname}
 \end{DoxyParamCaption}
-)}}
-\label{begrun_8c_a849a294ac908c933ffb82dc4319af513}
-this function reads a table with a list of desired output times. The table does not have to be ordered in any way, but may not contain more than MAXLEN\_\-OUTPUTLIST entries. 
+)}}\label{begrun_8c_a849a294ac908c933ffb82dc4319af513}
+this function reads a table with a list of desired output times. \-The table does not have to be ordered in any way, but may not contain more than \-M\-A\-X\-L\-E\-N\-\_\-\-O\-U\-T\-P\-U\-T\-L\-I\-S\-T entries. $<$ maxmimum number of entries in list of snapshot output times 
 
-$<$ maxmimum number of entries in list of snapshot output times 
-
-
-
-Definition at line 770 of file begrun.c.
+\-Definition at line 777 of file begrun.\-c.
 
 
 
-References All, fd, MAXLEN\_\-OUTPUTLIST, global\_\-data\_\-all\_\-processes::OutputListLength, and global\_\-data\_\-all\_\-processes::OutputListTimes.
+\-References \-All, and fd.
 
 
 
-Referenced by read\_\-parameter\_\-file().
-
-
+\-Referenced by read\-\_\-parameter\-\_\-file().
 
 
 \begin{DoxyCode}
@@ -496,40 +464,34 @@ Referenced by read\_\-parameter\_\-file().
 \end{DoxyCode}
 
 
-
-
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{begrun_8c_a849a294ac908c933ffb82dc4319af513_icgraph}
+\includegraphics[width=350pt]{begrun_8c_a849a294ac908c933ffb82dc4319af513_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{begrun_8c_a952eae1977b498c4fdfabed1742a3ba2}{
-\index{begrun.c@{begrun.c}!read\_\-parameter\_\-file@{read\_\-parameter\_\-file}}
-\index{read\_\-parameter\_\-file@{read\_\-parameter\_\-file}!begrun.c@{begrun.c}}
-\subsubsection[{read\_\-parameter\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void read\_\-parameter\_\-file (
+\hypertarget{begrun_8c_a952eae1977b498c4fdfabed1742a3ba2}{\index{begrun.\-c@{begrun.\-c}!read\-\_\-parameter\-\_\-file@{read\-\_\-parameter\-\_\-file}}
+\index{read\-\_\-parameter\-\_\-file@{read\-\_\-parameter\-\_\-file}!begrun.c@{begrun.\-c}}
+\subsubsection[{read\-\_\-parameter\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf read\-\_\-parameter\-\_\-file} (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{ fname}
+\item[{char $\ast$}]{fname}
 \end{DoxyParamCaption}
-)}}
-\label{begrun_8c_a952eae1977b498c4fdfabed1742a3ba2}
-This function parses the parameterfile in a simple way. Each paramater is defined by a keyword (`tag'), and can be either of type double, int, or character string. The routine makes sure that each parameter appears exactly once in the parameterfile, otherwise error messages are produced that complain about the missing parameters. 
+)}}\label{begrun_8c_a952eae1977b498c4fdfabed1742a3ba2}
+\-This function parses the parameterfile in a simple way. \-Each paramater is defined by a keyword (`tag'), and can be either of type double, int, or character string. \-The routine makes sure that each parameter appears exactly once in the parameterfile, otherwise error messages are produced that complain about the missing parameters. 
 
-Definition at line 285 of file begrun.c.
-
-
-
-References All, global\_\-data\_\-all\_\-processes::ArtBulkViscConst, global\_\-data\_\-all\_\-processes::BoxSize, global\_\-data\_\-all\_\-processes::BufferSize, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, global\_\-data\_\-all\_\-processes::CourantFac, global\_\-data\_\-all\_\-processes::CpuFile, global\_\-data\_\-all\_\-processes::CpuTimeBetRestartFile, global\_\-data\_\-all\_\-processes::DesNumNgb, DOUBLE, endrun(), global\_\-data\_\-all\_\-processes::EnergyFile, global\_\-data\_\-all\_\-processes::ErrTolForceAcc, global\_\-data\_\-all\_\-processes::ErrTolIntAccuracy, global\_\-data\_\-all\_\-processes::ErrTolTheta, fd, global\_\-data\_\-all\_\-processes::GravityConstantInternal, global\_\-data\_\-all\_\-processes::HubbleParam, global\_\-data\_\-all\_\-processes::ICFormat, global\_\-data\_\-all\_\-processes::InfoFile, global\_\-data\_\-all\_\-processes::InitCondFile, global\_\-data\_\-all\_\-processes::InitGasTemp, INT, global\_\-data\_\-all\_\-processes::MaxNumNgbDeviation, global\_\-data\_\-all\_\-processes::MaxRMSDisplacementFac, global\_\-data\_\-all\_\-processes::MaxSizeTimestep, global\_\-data\_\-all\_\-processes::MinGasHsmlFractional, global\_\-data\_\-all\_\-processes::MinGasTemp, global\_\-data\_\-all\_\-processes::MinSizeTimestep, NTask, global\_\-data\_\-all\_\-processes::NumFilesPerSnapshot, global\_\-data\_\-all\_\-processes::NumFilesWrittenInParallel, global\_\-data\_\-all\_\-processes::Omega0, global\_\-data\_\-all\_\-processes::OmegaBaryon, global\_\-data\_\-all\_\-processes::OmegaLambda, global\_\-data\_\-all\_\-processes::OutputDir, global\_\-data\_\-all\_\-processes::OutputListFilename, global\_\-data\_\-all\_\-processes::OutputListLength, global\_\-data\_\-all\_\-processes::OutputListOn, global\_\-data\_\-all\_\-processes::PartAllocFactor, global\_\-data\_\-all\_\-processes::PeriodicBoundariesOn, read\_\-outputlist(), global\_\-data\_\-all\_\-processes::RestartFile, global\_\-data\_\-all\_\-processes::ResubmitCommand, global\_\-data\_\-all\_\-processes::ResubmitOn, global\_\-data\_\-all\_\-processes::SnapFormat, global\_\-data\_\-all\_\-processes::SnapshotFileBase, global\_\-data\_\-all\_\-processes::SofteningBndry, global\_\-data\_\-all\_\-processes::SofteningBndryMaxPhys, global\_\-data\_\-all\_\-processes::SofteningBulge, global\_\-data\_\-all\_\-processes::SofteningBulgeMaxPhys, global\_\-data\_\-all\_\-processes::SofteningDisk, global\_\-data\_\-all\_\-processes::SofteningDiskMaxPhys, global\_\-data\_\-all\_\-processes::SofteningGas, global\_\-data\_\-all\_\-processes::SofteningGasMaxPhys, global\_\-data\_\-all\_\-processes::SofteningHalo, global\_\-data\_\-all\_\-processes::SofteningHaloMaxPhys, global\_\-data\_\-all\_\-processes::SofteningStars, global\_\-data\_\-all\_\-processes::SofteningStarsMaxPhys, STRING, ThisTask, global\_\-data\_\-all\_\-processes::TimeBegin, global\_\-data\_\-all\_\-processes::TimeBetSnapshot, global\_\-data\_\-all\_\-processes::TimeBetStatistics, global\_\-data\_\-all\_\-processes::TimeLimitCPU, global\_\-data\_\-all\_\-processes::TimeMax, global\_\-data\_\-all\_\-processes::TimeOfFirstSnapshot, global\_\-data\_\-all\_\-processes::TimingsFile, global\_\-data\_\-all\_\-processes::TreeAllocFactor, global\_\-data\_\-all\_\-processes::TreeDomainUpdateFrequency, global\_\-data\_\-all\_\-processes::TypeOfOpeningCriterion, global\_\-data\_\-all\_\-processes::TypeOfTimestepCriterion, global\_\-data\_\-all\_\-processes::UnitLength\_\-in\_\-cm, global\_\-data\_\-all\_\-processes::UnitMass\_\-in\_\-g, and global\_\-data\_\-all\_\-processes::UnitVelocity\_\-in\_\-cm\_\-per\_\-s.
+\-Definition at line 288 of file begrun.\-c.
 
 
 
-Referenced by begrun().
+\-References \-All, \-D\-O\-U\-B\-L\-E, endrun(), fd, \-I\-N\-T, \-M\-A\-X\-T\-A\-G\-S, \-N\-Task, read\-\_\-outputlist(), \-S\-T\-R\-I\-N\-G, and \-This\-Task.
 
 
+
+\-Referenced by begrun().
 
 
 \begin{DoxyCode}
@@ -551,8 +513,8 @@ Referenced by begrun().
   if(sizeof(long long) != 8)
     {
       if(ThisTask == 0)
-        printf("\nType `long long' is not 64 bit on this platform. Stopping.\n\n"
-      );
+        printf("\nType `long long' is not 64 bit on this platform. Stopping.\n
+      \n");
       endrun(0);
     }
 
@@ -573,7 +535,8 @@ Referenced by begrun().
   if(sizeof(double) != 8)
     {
       if(ThisTask == 0)
-        printf("\nType `double' is not 64 bit on this platform. Stopping.\n\n");
+        printf("\nType `double' is not 64 bit on this platform. Stopping.\n\n")
+      ;
       endrun(0);
     }
 
@@ -846,6 +809,10 @@ Referenced by begrun().
       strcpy(tag[nt], "InteractionCrossSection");
       addr[nt] = &All.InteractionCrossSection;
       id[nt++] = DOUBLE;
+
+      strcpy(tag[nt], "SIDMSmoothingFactor");
+      addr[nt] = &All.SIDMSmoothingFactor;
+      id[nt++] = DOUBLE;
 #endif
 
       if((fd = fopen(fname, "r")))
@@ -882,8 +849,8 @@ Referenced by begrun().
                         {
                         case DOUBLE:
                           *((double *) addr[j]) = atof(buf2);
-                          fprintf(fdout, "%-35s%g\n", buf1, *((double *) addr[j])
-      );
+                          fprintf(fdout, "%-35s%g\n", buf1, *((double *) addr[j
+      ]));
                           break;
                         case STRING:
                           strcpy(addr[j], buf2);
@@ -891,14 +858,15 @@ Referenced by begrun().
                           break;
                         case INT:
                           *((int *) addr[j]) = atoi(buf2);
-                          fprintf(fdout, "%-35s%d\n", buf1, *((int *) addr[j]));
+                          fprintf(fdout, "%-35s%d\n", buf1, *((int *) addr[j]))
+      ;
                           break;
                         }
                     }
                   else
                     {
-                      fprintf(stdout, "Error in file %s:   Tag '%s' not allowed o
-      r multiple defined.\n",
+                      fprintf(stdout, "Error in file %s:   Tag '%s' not allowed
+       or multiple defined.\n",
                               fname, buf1);
                       errorFlag = 1;
                     }
@@ -928,8 +896,8 @@ Referenced by begrun().
           {
             if(*tag[i])
               {
-                printf("Error. I miss a value for tag '%s' in parameter file '%s'
-      .\n", tag[i], fname);
+                printf("Error. I miss a value for tag '%s' in parameter file
+       '%s'.\n", tag[i], fname);
                 errorFlag = 1;
               }
           }
@@ -949,8 +917,8 @@ Referenced by begrun().
     }
 
   /* now communicate the relevant parameters to the other processes */
-  MPI_Bcast(&All, sizeof(struct global_data_all_processes), MPI_BYTE, 0, MPI_COMM
-      _WORLD);
+  MPI_Bcast(&All, sizeof(struct global_data_all_processes), MPI_BYTE, 0, 
+      MPI_COMM_WORLD);
 
 
   if(All.NumFilesWrittenInParallel < 1)
@@ -963,8 +931,8 @@ Referenced by begrun().
   if(All.NumFilesWrittenInParallel > NTask)
     {
       if(ThisTask == 0)
-        printf("NumFilesWrittenInParallel MUST be smaller than number of processo
-      rs\n");
+        printf("NumFilesWrittenInParallel MUST be smaller than number of
+       processors\n");
       endrun(0);
     }
 
@@ -973,10 +941,10 @@ Referenced by begrun().
     {
       if(ThisTask == 0)
         {
-          printf("Code was compiled with periodic boundary conditions switched on
-      .\n");
-          printf("You must set `PeriodicBoundariesOn=1', or recompile the code.\n
-      ");
+          printf("Code was compiled with periodic boundary conditions switched
+       on.\n");
+          printf("You must set `PeriodicBoundariesOn=1', or recompile the code.
+      \n");
         }
       endrun(0);
     }
@@ -985,10 +953,10 @@ Referenced by begrun().
     {
       if(ThisTask == 0)
         {
-          printf("Code was compiled with periodic boundary conditions switched of
-      f.\n");
-          printf("You must set `PeriodicBoundariesOn=0', or recompile the code.\n
-      ");
+          printf("Code was compiled with periodic boundary conditions switched
+       off.\n");
+          printf("You must set `PeriodicBoundariesOn=0', or recompile the code.
+      \n");
         }
       endrun(0);
     }
@@ -1010,7 +978,8 @@ Referenced by begrun().
   if(ThisTask == 0)
     {
       printf("Code was compiled with LONG_X/Y/Z, but not with NOGRAVITY.\n");
-      printf("Stretched periodic boxes are not implemented for gravity yet.\n");
+      printf("Stretched periodic boxes are not implemented for gravity yet.\n")
+      ;
     }
   endrun(0);
 #endif
@@ -1024,57 +993,47 @@ Referenced by begrun().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{begrun_8c_a952eae1977b498c4fdfabed1742a3ba2_cgraph}
+\includegraphics[width=350pt]{begrun_8c_a952eae1977b498c4fdfabed1742a3ba2_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=358pt]{begrun_8c_a952eae1977b498c4fdfabed1742a3ba2_icgraph}
+\includegraphics[width=350pt]{begrun_8c_a952eae1977b498c4fdfabed1742a3ba2_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{begrun_8c_acc4d1f5e4e51140090a7ce25ea263b98}{
-\index{begrun.c@{begrun.c}!readjust\_\-timebase@{readjust\_\-timebase}}
-\index{readjust\_\-timebase@{readjust\_\-timebase}!begrun.c@{begrun.c}}
-\subsubsection[{readjust\_\-timebase}]{\setlength{\rightskip}{0pt plus 5cm}void readjust\_\-timebase (
+\hypertarget{begrun_8c_acc4d1f5e4e51140090a7ce25ea263b98}{\index{begrun.\-c@{begrun.\-c}!readjust\-\_\-timebase@{readjust\-\_\-timebase}}
+\index{readjust\-\_\-timebase@{readjust\-\_\-timebase}!begrun.c@{begrun.\-c}}
+\subsubsection[{readjust\-\_\-timebase}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf readjust\-\_\-timebase} (
 \begin{DoxyParamCaption}
-\item[{double}]{ TimeMax\_\-old, }
-\item[{double}]{ TimeMax\_\-new}
+\item[{double}]{\-Time\-Max\-\_\-old, }
+\item[{double}]{\-Time\-Max\-\_\-new}
 \end{DoxyParamCaption}
-)}}
-\label{begrun_8c_acc4d1f5e4e51140090a7ce25ea263b98}
-If a restart from restart-\/files is carried out where the TimeMax variable is increased, then the integer timeline needs to be adjusted. The approach taken here is to reduce the resolution of the integer timeline by factors of 2 until the new final time can be reached within TIMEBASE. 
+)}}\label{begrun_8c_acc4d1f5e4e51140090a7ce25ea263b98}
+\-If a restart from restart-\/files is carried out where the \-Time\-Max variable is increased, then the integer timeline needs to be adjusted. \-The approach taken here is to reduce the resolution of the integer timeline by factors of 2 until the new final time can be reached within \-T\-I\-M\-E\-B\-A\-S\-E. $<$ \-The simulated timespan is mapped onto the integer interval \mbox{[}0,\-T\-I\-M\-E\-S\-P\-A\-N\mbox{]}, $\ast$ where \-T\-I\-M\-E\-S\-P\-A\-N needs to be a power of 2. \-Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
 
-$<$ The simulated timespan is mapped onto the integer interval \mbox{[}0,TIMESPAN\mbox{]}, $\ast$ where TIMESPAN needs to be a power of 2. Note that (1$<$$<$28) corresponds to 2$^\wedge$29 
-
-
-
-Definition at line 804 of file begrun.c.
+\-Definition at line 811 of file begrun.\-c.
 
 
 
-References All, global\_\-data\_\-all\_\-processes::ComovingIntegrationOn, endrun(), NumPart, P, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-begstep, global\_\-data\_\-all\_\-processes::PM\_\-Ti\_\-endstep, ThisTask, particle\_\-data::Ti\_\-begstep, global\_\-data\_\-all\_\-processes::Ti\_\-Current, particle\_\-data::Ti\_\-endstep, TIMEBASE, global\_\-data\_\-all\_\-processes::Timebase\_\-interval, global\_\-data\_\-all\_\-processes::TimeBegin, and global\_\-data\_\-all\_\-processes::TimeMax.
+\-References \-All, endrun(), \-Num\-Part, \-P, and \-This\-Task.
 
 
 
-Referenced by begrun().
-
-
+\-Referenced by begrun().
 
 
 \begin{DoxyCode}
@@ -1124,21 +1083,19 @@ Referenced by begrun().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{begrun_8c_acc4d1f5e4e51140090a7ce25ea263b98_cgraph}
+\includegraphics[width=350pt]{begrun_8c_acc4d1f5e4e51140090a7ce25ea263b98_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -1148,36 +1105,28 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{begrun_8c_aba986f6be1d66945199c7ea43e5c9610}{
-\index{begrun.c@{begrun.c}!set\_\-units@{set\_\-units}}
-\index{set\_\-units@{set\_\-units}!begrun.c@{begrun.c}}
-\subsubsection[{set\_\-units}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-units (
+\hypertarget{begrun_8c_aba986f6be1d66945199c7ea43e5c9610}{\index{begrun.\-c@{begrun.\-c}!set\-\_\-units@{set\-\_\-units}}
+\index{set\-\_\-units@{set\-\_\-units}!begrun.c@{begrun.\-c}}
+\subsubsection[{set\-\_\-units}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf set\-\_\-units} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}}
-\label{begrun_8c_aba986f6be1d66945199c7ea43e5c9610}
-Computes conversion factors between internal code units and the cgs-\/system. 
-
-$<$ Gravitational constant (in cgs units)
+)}}\label{begrun_8c_aba986f6be1d66945199c7ea43e5c9610}
+\-Computes conversion factors between internal code units and the cgs-\/system. $<$ \-Gravitational constant (in cgs units)
 
 $<$ mass fraction of hydrogen, relevant only for radiative cooling
 
 $<$ adiabatic index of simulated gas 
 
-
-
-Definition at line 154 of file begrun.c.
-
-
-
-References All, BOLTZMANN, global\_\-data\_\-all\_\-processes::G, GRAVITY, global\_\-data\_\-all\_\-processes::GravityConstantInternal, HUBBLE, global\_\-data\_\-all\_\-processes::Hubble, global\_\-data\_\-all\_\-processes::MinEgySpec, global\_\-data\_\-all\_\-processes::MinGasTemp, pow(), PROTONMASS, ThisTask, global\_\-data\_\-all\_\-processes::UnitCoolingRate\_\-in\_\-cgs, global\_\-data\_\-all\_\-processes::UnitDensity\_\-in\_\-cgs, global\_\-data\_\-all\_\-processes::UnitEnergy\_\-in\_\-cgs, global\_\-data\_\-all\_\-processes::UnitLength\_\-in\_\-cm, global\_\-data\_\-all\_\-processes::UnitMass\_\-in\_\-g, global\_\-data\_\-all\_\-processes::UnitPressure\_\-in\_\-cgs, global\_\-data\_\-all\_\-processes::UnitTime\_\-in\_\-Megayears, global\_\-data\_\-all\_\-processes::UnitTime\_\-in\_\-s, and global\_\-data\_\-all\_\-processes::UnitVelocity\_\-in\_\-cm\_\-per\_\-s.
+\-Definition at line 157 of file begrun.\-c.
 
 
 
-Referenced by begrun().
+\-References \-All, pow(), and \-This\-Task.
 
 
+
+\-Referenced by begrun().
 
 
 \begin{DoxyCode}
@@ -1188,8 +1137,8 @@ Referenced by begrun().
   All.UnitTime_in_Megayears = All.UnitTime_in_s / SEC_PER_MEGAYEAR;
 
   if(All.GravityConstantInternal == 0)
-    All.G = GRAVITY / pow(All.UnitLength_in_cm, 3) * All.UnitMass_in_g * pow(All.
-      UnitTime_in_s, 2);
+    All.G = GRAVITY / pow(All.UnitLength_in_cm, 3) * All.UnitMass_in_g * pow(All
+      .UnitTime_in_s, 2);
   else
     All.G = All.GravityConstantInternal;
 
@@ -1197,8 +1146,8 @@ Referenced by begrun().
   All.UnitPressure_in_cgs = All.UnitMass_in_g / All.UnitLength_in_cm / pow(All.
       UnitTime_in_s, 2);
   All.UnitCoolingRate_in_cgs = All.UnitPressure_in_cgs / All.UnitTime_in_s;
-  All.UnitEnergy_in_cgs = All.UnitMass_in_g * pow(All.UnitLength_in_cm, 2) / pow(
-      All.UnitTime_in_s, 2);
+  All.UnitEnergy_in_cgs = All.UnitMass_in_g * pow(All.UnitLength_in_cm, 2) / pow
+      (All.UnitTime_in_s, 2);
 
   /* convert some physical input parameters to internal units */
 
@@ -1216,8 +1165,8 @@ Referenced by begrun().
       printf("\n");
     }
 
-  meanweight = 4.0 / (1 + 3 * HYDROGEN_MASSFRAC);       /* note: we assume neutra
-      l gas here */
+  meanweight = 4.0 / (1 + 3 * HYDROGEN_MASSFRAC);       /* note: we assume
+       neutral gas here */
 
 #ifdef ISOTHERM_EQS
   All.MinEgySpec = 0;
@@ -1231,9 +1180,7 @@ Referenced by begrun().
 \end{DoxyCode}
 
 
-
-
-Here is the call graph for this function:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -1245,7 +1192,7 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}

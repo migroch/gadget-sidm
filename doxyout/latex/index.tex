@@ -1,0 +1,52 @@
+\begin{DoxyAuthor}{\-Author}
+\-Volker \-Springel \par
+ \-Max-\/\-Planck-\/\-Institute for \-Astrophysics \par
+ \-Karl-\/\-Schwarzschild-\/\-Str. 1 \par
+ 85740 \-Garching \par
+ \-Germany \par
+ \href{mailto:volker@mpa-garching.mpg.de}{\tt volker@mpa-\/garching.\-mpg.\-de} \par
+
+\end{DoxyAuthor}
+\par
+\hypertarget{index_prelim}{}\section{\-Getting started}\label{index_prelim}
+\-G\-A\-D\-G\-E\-T-\/2 is a massively parallel code for hydrodynamical cosmological simulations. \-It is a flexible code that can be applied to a variety of different types of simulations, offering a number of sophisticated simulation algorithms.
+
+\-A full account of the numerical algorithms employed by the code is given in the accompanying code paper, and detailed instructions for usage of the code are given in the included code documentation.
+
+\-This html-\/document serves as a cross-\/referenced documentation of the source code itself -\/ in fact, using the doxygen tool, the html-\/pages have been produced from comments inlined in the source code. \-Apart from the source-\/code documentation, a brief guide to code compilation is given below, and under {\bfseries \-Related \-Pages (see link on top)} you can find an explanation of \-G\-A\-D\-G\-E\-T's parameterfile and a short guide to compile-\/time options of the code.\hypertarget{index_install}{}\section{\-Compilation}\label{index_install}
+\-G\-A\-D\-G\-E\-T-\/2 needs the following non-\/standard libraries for compilation\-:
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-M\-P\-I} -\/ the \-Message \-Passing \-Interface (version 1.\-0 or higher). \-Many vendor supplied versions exist, in addition to excellent open source implementations, e.\-g. \-M\-P\-I\-C\-H (\href{http://www-unix.mcs.anl.gov/mpi/mpich/}{\tt http\-://www-\/unix.\-mcs.\-anl.\-gov/mpi/mpich/}) or \-L\-A\-M (\href{http://www.lam-mpi.org/}{\tt http\-://www.\-lam-\/mpi.\-org/}).
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-G\-S\-L} -\/ the \-G\-N\-U scientific library. \-This open-\/source package can be obtained at \href{http://www.gnu.org/software/gsl}{\tt http\-://www.\-gnu.\-org/software/gsl} , for example. \-G\-A\-D\-G\-E\-T-\/2 needs this library for a few simple cosmological integrations at start-\/up, and for random number generation.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-H\-D\-F5} -\/ the {\itshape \-Hierarchical \-Data \-Format\/}. \-This library has been developed by \-N\-C\-S\-A and can be obtained at \href{http://hdf.ncsa.uiuc.edu/HDF5}{\tt http\-://hdf.\-ncsa.\-uiuc.\-edu/\-H\-D\-F5} . \-G\-A\-D\-G\-E\-T-\/2 can be compiled without this library, but then the \-H\-D\-F5 format is not supported.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-F\-F\-T\-W} -\/ the {\itshape \-Fastest \-Fourier \-Transform in the \-West\/}. \-This open-\/source package can be obtained at \href{http://www.fftw.org}{\tt http\-://www.\-fftw.\-org} . \-It is only needed for simulations that use the \-Tree\-P\-M algorithm. \-Note that the \-M\-P\-I-\/capable version 2.\-x of \-F\-F\-T\-W is required, and that \-F\-F\-T\-W needs to be explicitly compiled with parallel support enabled. \-This can be achieved by passing the option {\bfseries -\/-\/enable-\/mpi} to the configure script. \-When at it, you might as well add {\bfseries -\/-\/enable-\/type-\/prefix} to obtain the libraries in both a single and double precision version. \-If this has not been done, you should set the option {\itshape \-N\-O\-T\-Y\-P\-E\-P\-R\-E\-F\-I\-X\-\_\-\-F\-F\-T\-W\/} in \-G\-A\-D\-G\-E\-T's \hyperlink{Gadget-Makefile}{\-Makefile}.
+\end{DoxyItemize}
+
+\-Note that if any of the above libraries is not installed in standard locations on your system, the \hyperlink{Gadget-Makefile}{\-Makefile} provided with the code may need slight adjustments. \-Similarly, compiler options, particularly with respect to optimisations, may need adjustment to the \-C-\/compiler that is used. \-Finally, the \hyperlink{Gadget-Makefile}{\-Makefile} contains a number of compile-\/time options that need to be set appropriately for the type of simulation that is simulated.
+
+\-The provided makefile is compatible with \-G\-N\-U-\/make, i.\-e. typing {\bfseries make} or {\bfseries gmake} should then build the executable {\bfseries \-Gadget2}. \-If your site does not have \-G\-N\-U-\/make, get it, or write your own makefile.\hypertarget{index_howtorun}{}\section{\-Running the code}\label{index_howtorun}
+\-In order to start the simulation code, a \hyperlink{parameterfile}{parameterfile} needs to be specified. \-An additional optional numerical parameter can be used to signal whether a continuation from a set of restart files, or from a snapshot file, is desired. \-A typical command to start the code looks like the following\-: \par
+ \par
+
+
+{\bfseries  mpirun -\/np 8 ./\-Gadget2 $<$parameterfile$>$ \mbox{[}restartflag\mbox{]}} \par
+ \par
+
+
+\-This would start the code using 8 processors, assuming that the parallel environment uses the {\itshape mpirun\/} command to start \-M\-P\-I applications. \-Depending on the operating system, other commands may be required for this task, e.\-g. {\itshape poe\/} on \-I\-B\-M/\-A\-I\-X machines. \-Note that the code can in principle be started using an arbitrary number of processors, but the communication algorithms will be most efficient for powers of 2. \-It is also possible to use a single processor only, in which case the code behaves like a serial code, except that \-G\-A\-D\-G\-E\-T-\/2 will still go through some of the overhead induced by the parallelization algorithms, so the code will not quite reach the same performance as an optimum serial solution in this case.
+
+\-The optional {\itshape restartflag\/} can have the values 0, 1, or 2, only. \char`\"{}1\char`\"{} signals a continuation from restart files, while \char`\"{}2\char`\"{} can be used to restart from a snapshot file produced by the code. \-If omitted (equivalent to the default of \char`\"{}0\char`\"{}), the code starts from initial conditions. 
