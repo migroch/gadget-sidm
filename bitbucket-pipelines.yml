@@ -7,6 +7,5 @@ pipelines:
           enabled: false
         script:
           - git clone --bare git@bitbucket.org:migroch/gadget-sidm.git
-          - cd spheric.git
+          - cd gadget-sidm.git
           - git push --mirror git@github.com:migroch/gadget-sidm.git
-	  
